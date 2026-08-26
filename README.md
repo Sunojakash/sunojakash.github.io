@@ -44,6 +44,18 @@ disabled by default — flip `enabled` to `True` next to it only if you're
 running the script somewhere with a residential IP (e.g. a self-hosted
 runner), otherwise it'll just log a warning every run and add nothing.
 
+## CVE intelligence sync
+
+The `Refresh CVE intelligence` workflow runs every 6 hours and can also be
+started manually from the Actions tab. It calls the OpenCVE API v2 from the
+GitHub Actions runner and writes a bounded, sanitized snapshot to
+`data/cves.json`. The browser never receives the OpenCVE token.
+
+Before running it, add an Actions secret named `OPENCVE_API_TOKEN` under
+**Settings → Secrets and variables → Actions**. The token must be an OpenCVE
+organization API token. If the secret is missing, the workflow stops without
+overwriting the existing CVE data.
+
 ## Preview locally
 
 No build step — just serve the folder:

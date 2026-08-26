@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', initCves);
 async function initCves() {
   populateInventory();
   document.getElementById('lookup-form').addEventListener('submit', lookupProduct);
+  document.getElementById('productLookup').addEventListener('input', updateVendorSearch);
   document.getElementById('categoryFilter').addEventListener('change', populateInventory);
   bindFilters();
   try {
@@ -74,9 +75,40 @@ function populateInventory() {
   document.querySelectorAll('.inventory-item').forEach(button => {
     button.addEventListener('click', () => {
       document.getElementById('productLookup').value = button.textContent;
+      updateVendorSearch();
       lookupProduct(button.dataset.query);
     });
   });
+}
+
+function updateVendorSearch() {
+  const link = document.getElementById('vendor-search');
+  const value = document.getElementById('productLookup').value;
+  if (isFortinet(value)) {
+    link.href = 'https://www.fortiguard.com/psirt';
+    link.textContent = 'FortiGuard PSIRT →';
+    link.hidden = false;
+  } else if (isCisco(value)) {
+    link.href = 'https://sec.cloudapps.cisco.com/security/center/publicationListing.x';
+    link.textContent = 'Cisco Security Advisories →';
+    link.hidden = false;
+  } else if (isPaloAlto(value)) {
+    link.href = 'https://security.paloaltonetworks.com/';
+    link.textContent = 'Palo Alto Security Advisories →';
+    link.hidden = false;
+  } else if (isMicrosoft(value)) {
+    link.href = 'https://msrc.microsoft.com/update-guide';
+    link.textContent = 'Microsoft Security Updates →';
+    link.hidden = false;
+  } else if (isF5(value)) {
+    link.href = 'https://my.f5.com/manage/s/global-search/%40uri#q=CVE&f-f5_document_type=Security%20Advisory&aq=%40f5_archived';
+    link.textContent = 'F5 Security Advisories →';
+    link.hidden = false;
+  } else {
+    link.href = 'https://app.opencve.io/cve/';
+    link.textContent = 'Search OpenCVE →';
+    link.hidden = false;
+  }
 }
 
 async function lookupProduct(eventOrQuery) {
@@ -260,6 +292,22 @@ function openDetail(x) {
   const links = [];
   if (x.nvd_url) links.push(`<a class="action" href="${escapeHtml(x.nvd_url)}" target="_blank" rel="noopener">NVD →</a>`);
   links.push(`<a class="action" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${encodeURIComponent(x.cve_id)}" target="_blank" rel="noopener">CISA KEV →</a>`);
+  if (isFortinet(`${x.asset_name} ${x.vendor} ${x.product}`)) {
+    links.push('<a class="action" href="https://www.fortiguard.com/psirt" target="_blank" rel="noopener">FortiGuard PSIRT →</a>');
+  }
+  if (isCisco(`${x.asset_name} ${x.vendor} ${x.product}`)) {
+    links.push('<a class="action" href="https://sec.cloudapps.cisco.com/security/center/publicationListing.x" target="_blank" rel="noopener">Cisco Security Advisories →</a>');
+  }
+  if (isPaloAlto(`${x.asset_name} ${x.vendor} ${x.product}`)) {
+    links.push('<a class="action" href="https://security.paloaltonetworks.com/" target="_blank" rel="noopener">Palo Alto Security Advisories →</a>');
+  }
+  if (isMicrosoft(`${x.asset_name} ${x.vendor} ${x.product}`)) {
+    links.push('<a class="action" href="https://msrc.microsoft.com/update-guide" target="_blank" rel="noopener">Microsoft Security Updates →</a>');
+  }
+  if (isF5(`${x.asset_name} ${x.vendor} ${x.product}`)) {
+    links.push('<a class="action" href="https://my.f5.com/manage/s/global-search/%40uri#q=CVE&f-f5_document_type=Security%20Advisory&aq=%40f5_archived" target="_blank" rel="noopener">F5 Security Advisories →</a>');
+  }
+  links.push(`<a class="action" href="https://app.opencve.io/cve/${encodeURIComponent(x.cve_id)}/" target="_blank" rel="noopener">OpenCVE →</a>`);
   if (isVendorUrl(x.vendor_url, x.asset_name, x.vendor)) {
     links.push(`<a class="action" href="${escapeHtml(normalizeVendorUrl(x.vendor_url))}" target="_blank" rel="noopener">Vendor advisory →</a>`);
   }
@@ -298,6 +346,26 @@ function normalizeVendorUrl(value) {
     /^http:\/\/fortiguard\.fortinet\.com\//i,
     'https://www.fortiguard.com/'
   );
+}
+
+function isFortinet(value) {
+  return /fortinet|fortios|fortiguard/i.test(String(value || ''));
+}
+
+function isCisco(value) {
+  return /cisco|asa|adaptive security appliance/i.test(String(value || ''));
+}
+
+function isPaloAlto(value) {
+  return /palo\s*alto|pan-?os|paloaltonetworks/i.test(String(value || ''));
+}
+
+function isMicrosoft(value) {
+  return /microsoft|windows|exchange|outlook/i.test(String(value || ''));
+}
+
+function isF5(value) {
+  return /\bf5\b|big[- ]?ip/i.test(String(value || ''));
 }
 
 function isVendorUrl(value, assetName = '', vendor = '') {

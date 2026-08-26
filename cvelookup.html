@@ -29,6 +29,8 @@
     .lookup-form input, .lookup-form select { font:500 13px "IBM Plex Mono",monospace; border:1px solid var(--border,#d8dde5); background:var(--surface,#fff); padding:11px 12px; min-height:42px; }
     .lookup-form input { flex:1 1 280px; }
     .lookup-form button { min-height:42px; border:1px solid #111827; background:#111827; color:#fff; padding:10px 15px; font:700 12px "IBM Plex Mono",monospace; cursor:pointer; }
+    .vendor-search { min-height:42px; border:1px solid var(--accent-network); color:var(--accent-network); padding:10px 15px; font:700 12px "IBM Plex Mono",monospace; text-decoration:none; }
+    .vendor-search[hidden] { display:none; }
     .inventory-list { display:flex; gap:7px; flex-wrap:wrap; margin-top:14px; }
     .inventory-item { border:1px solid var(--border,#d8dde5); background:transparent; padding:7px 9px; font:600 11px "IBM Plex Mono",monospace; cursor:pointer; }
     .inventory-item { color:var(--text-primary); }
@@ -120,6 +122,7 @@
         <option value="Software">Software</option>
       </select>
       <button type="submit">Find CVEs</button>
+      <a class="vendor-search" id="vendor-search" href="https://www.fortiguard.com/psirt" target="_blank" rel="noopener" hidden>FortiGuard PSIRT →</a>
     </form>
     <div class="inventory-list" id="inventory-list" aria-label="Starter inventory"></div>
   </section>
