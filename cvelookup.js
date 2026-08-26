@@ -122,7 +122,7 @@ function normalizeNvdCve(cve, assetName, category) {
     vendor: cve.configurations?.[0]?.nodes?.[0]?.cpeMatch?.[0]?.criteria?.split(':')[3] || '',
     product: '', version: 'See affected versions', severity, cvss: score,
     known_exploited: false, epss: null, fixed_version: '',
-    patch_available: Boolean(patchReference), vendor_url: patchReference?.url || '', source: 'NVD', description,
+    patch_available: Boolean(patchReference), vendor_url: normalizeVendorUrl(patchReference?.url), source: 'NVD', description,
     last_modified: cve.lastModified, nvd_url: `https://nvd.nist.gov/vuln/detail/${encodeURIComponent(cve.id)}`
   };
 }
@@ -176,6 +176,9 @@ function bindFilters() {
   });
 
   document.getElementById('detail-close').addEventListener('click', closeDetail);
+  document.addEventListener('click', e => {
+    if (e.target.closest('#detail-close')) closeDetail();
+  });
   document.getElementById('detail').addEventListener('click', e => {
     if (e.target.id === 'detail') closeDetail();
   });
@@ -269,14 +272,18 @@ function openDetail(x) {
 
   const links = [];
   if (x.nvd_url) links.push(`<a class="action" href="${escapeHtml(x.nvd_url)}" target="_blank" rel="noopener">NVD →</a>`);
-  if (x.vendor_url) links.push(`<a class="action" href="${escapeHtml(x.vendor_url)}" target="_blank" rel="noopener">Vendor advisory →</a>`);
+  if (x.vendor_url) links.push(`<a class="action" href="${escapeHtml(normalizeVendorUrl(x.vendor_url))}" target="_blank" rel="noopener">Vendor advisory →</a>`);
   document.getElementById('detail-actions').innerHTML = links.join('');
 
-  document.getElementById('detail').classList.add('open');
+  const detail = document.getElementById('detail');
+  detail.classList.add('open');
+  detail.setAttribute('aria-hidden', 'false');
 }
 
 function closeDetail() {
-  document.getElementById('detail').classList.remove('open');
+  const detail = document.getElementById('detail');
+  detail.classList.remove('open');
+  detail.setAttribute('aria-hidden', 'true');
 }
 
 function hasPatchGuidance(x) {
@@ -295,6 +302,14 @@ function patchBadge(x) {
   if (x.patch_available) return '<span class="badge advisory">Patch guidance</span>';
   if (x.vendor_url) return '<span class="badge patch-unknown">Check advisory</span>';
   return '<span class="badge no-patch">Patch unknown</span>';
+}
+
+function normalizeVendorUrl(value) {
+  if (!value) return '';
+  return String(value).replace(
+    /^http:\/\/fortiguard\.fortinet\.com\//i,
+    'https://www.fortiguard.com/'
+  );
 }
 
 function priorityScore(x) {
