@@ -114,15 +114,16 @@ function normalizeNvdCve(cve, assetName, category) {
   const score = metric?.cvssData?.baseScore;
   const severity = metric?.cvssData?.baseSeverity || (score >= 9 ? 'CRITICAL' : score >= 7 ? 'HIGH' : score >= 4 ? 'MEDIUM' : 'LOW');
   const references = cve.references || [];
-  const patchReference = references.find(reference =>
-    (reference.tags || []).some(tag => ['Patch', 'Release Notes', 'Vendor Advisory'].includes(tag))
+  const vendorReference = references.find(reference =>
+    (reference.tags || []).some(tag => ['Patch', 'Release Notes', 'Vendor Advisory'].includes(tag)) &&
+    isVendorUrl(reference.url, assetName)
   );
   return {
     cve_id: cve.id, asset_name: assetName, asset_id: assetName, category,
     vendor: cve.configurations?.[0]?.nodes?.[0]?.cpeMatch?.[0]?.criteria?.split(':')[3] || '',
     product: '', version: 'See affected versions', severity, cvss: score,
     known_exploited: false, epss: null, fixed_version: '',
-    patch_available: Boolean(patchReference), vendor_url: normalizeVendorUrl(patchReference?.url), source: 'NVD', description,
+    patch_available: Boolean(vendorReference), vendor_url: normalizeVendorUrl(vendorReference?.url), source: 'NVD', description,
     last_modified: cve.lastModified, nvd_url: `https://nvd.nist.gov/vuln/detail/${encodeURIComponent(cve.id)}`
   };
 }
@@ -259,7 +260,9 @@ function openDetail(x) {
   const links = [];
   if (x.nvd_url) links.push(`<a class="action" href="${escapeHtml(x.nvd_url)}" target="_blank" rel="noopener">NVD →</a>`);
   links.push(`<a class="action" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${encodeURIComponent(x.cve_id)}" target="_blank" rel="noopener">CISA KEV →</a>`);
-  if (x.vendor_url) links.push(`<a class="action" href="${escapeHtml(normalizeVendorUrl(x.vendor_url))}" target="_blank" rel="noopener">Vendor advisory →</a>`);
+  if (isVendorUrl(x.vendor_url, x.asset_name, x.vendor)) {
+    links.push(`<a class="action" href="${escapeHtml(normalizeVendorUrl(x.vendor_url))}" target="_blank" rel="noopener">Vendor advisory →</a>`);
+  }
   document.getElementById('detail-actions').innerHTML = links.join('');
 
   const detail = document.getElementById('detail');
@@ -274,20 +277,18 @@ function closeDetail() {
 }
 
 function hasPatchGuidance(x) {
-  return Boolean(x.fixed_version || x.patch_available || x.vendor_url);
+  return Boolean(x.fixed_version || isVendorUrl(x.vendor_url, x.asset_name, x.vendor));
 }
 
 function patchStatus(x) {
   if (x.fixed_version) return `Fixed version: ${x.fixed_version}`;
-  if (x.patch_available) return 'Vendor patch or release guidance available';
-  if (x.vendor_url) return 'Vendor advisory available; fixed version not specified';
+  if (isVendorUrl(x.vendor_url, x.asset_name, x.vendor)) return 'Vendor advisory available; fixed version not specified';
   return 'Patch status not published';
 }
 
 function patchBadge(x) {
   if (x.fixed_version) return `<span class="badge patch">Fix: ${escapeHtml(x.fixed_version)}</span>`;
-  if (x.patch_available) return '<span class="badge advisory">Patch guidance</span>';
-  if (x.vendor_url) return '<span class="badge patch-unknown">Check advisory</span>';
+  if (isVendorUrl(x.vendor_url, x.asset_name, x.vendor)) return '<span class="badge patch-unknown">Check advisory</span>';
   return '<span class="badge no-patch">Patch unknown</span>';
 }
 
@@ -297,6 +298,41 @@ function normalizeVendorUrl(value) {
     /^http:\/\/fortiguard\.fortinet\.com\//i,
     'https://www.fortiguard.com/'
   );
+}
+
+function isVendorUrl(value, assetName = '', vendor = '') {
+  if (!value) return false;
+  let host;
+  try {
+    host = new URL(value).hostname.toLowerCase().replace(/^www\./, '');
+  } catch {
+    return false;
+  }
+
+  const identity = `${assetName} ${vendor}`.toLowerCase();
+  const domains = identity.includes('palo alto') || identity.includes('pan-os') || identity.includes('paloaltonetworks')
+    ? ['paloaltonetworks.com']
+    : identity.includes('forti') || identity.includes('fortinet')
+      ? ['fortinet.com', 'fortiguard.com']
+      : identity.includes('cisco')
+        ? ['cisco.com']
+        : identity.includes('microsoft') || identity.includes('exchange') || identity.includes('outlook') || identity.includes('windows')
+          ? ['microsoft.com']
+          : identity.includes('f5') || identity.includes('big-ip')
+            ? ['f5.com']
+            : identity.includes('cloudflare')
+              ? ['cloudflare.com']
+              : identity.includes('mimecast')
+                ? ['mimecast.com']
+                : identity.includes('apache')
+                  ? ['apache.org']
+                  : identity.includes('chrome') || identity.includes('google')
+                    ? ['google.com', 'chromereleases.googleblog.com']
+                    : identity.includes('wordpress')
+                      ? ['wordpress.org']
+                      : [];
+
+  return domains.some(domain => host === domain || host.endsWith(`.${domain}`));
 }
 
 function priorityScore(x) {
