@@ -131,33 +131,19 @@ async function enrichFindings(findings) {
   const cveIds = findings.map(x => x.cve_id).filter(Boolean);
   if (!cveIds.length) return;
 
-  const [kevResult, epssResult] = await Promise.allSettled([
-    fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json').then(response => {
-      if (!response.ok) throw new Error(`CISA HTTP ${response.status}`);
-      return response.json();
-    }),
-    fetch(`https://api.first.org/data/v1/epss?cve=${encodeURIComponent(cveIds.join(','))}`).then(response => {
+  const epssResult = await Promise.allSettled([
+    fetch(`https://api.first.org/data/v1/epss?${new URLSearchParams({ cve: cveIds.join(',') })}`).then(response => {
       if (!response.ok) throw new Error(`EPSS HTTP ${response.status}`);
       return response.json();
     })
   ]);
 
-  const kevById = new Map();
-  if (kevResult.status === 'fulfilled') {
-    (kevResult.value.vulnerabilities || []).forEach(item => kevById.set(item.cveID, item));
-  }
   const epssById = new Map();
-  if (epssResult.status === 'fulfilled') {
-    (epssResult.value.data || []).forEach(item => epssById.set(item.cve, Number(item.epss)));
+  if (epssResult[0].status === 'fulfilled') {
+    (epssResult[0].value.data || []).forEach(item => epssById.set(item.cve, Number(item.epss)));
   }
 
   findings.forEach(item => {
-    const kev = kevById.get(item.cve_id);
-    if (kev) {
-      item.known_exploited = true;
-      item.kev_due_date = kev.dueDate;
-      item.source = 'NVD + CISA KEV';
-    }
     if (epssById.has(item.cve_id)) item.epss = epssById.get(item.cve_id);
   });
 }
@@ -272,6 +258,7 @@ function openDetail(x) {
 
   const links = [];
   if (x.nvd_url) links.push(`<a class="action" href="${escapeHtml(x.nvd_url)}" target="_blank" rel="noopener">NVD →</a>`);
+  links.push(`<a class="action" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${encodeURIComponent(x.cve_id)}" target="_blank" rel="noopener">CISA KEV →</a>`);
   if (x.vendor_url) links.push(`<a class="action" href="${escapeHtml(normalizeVendorUrl(x.vendor_url))}" target="_blank" rel="noopener">Vendor advisory →</a>`);
   document.getElementById('detail-actions').innerHTML = links.join('');
 
