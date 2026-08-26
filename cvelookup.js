@@ -22,6 +22,7 @@ async function initCves() {
   populateInventory();
   document.getElementById('lookup-form').addEventListener('submit', lookupProduct);
   document.getElementById('categoryFilter').addEventListener('change', populateInventory);
+  bindFilters();
   try {
     const response = await fetch('data/cves.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -34,7 +35,6 @@ async function initCves() {
 
     renderMetrics(data);
     populateAssets();
-    bindFilters();
     render();
   } catch (err) {
     console.error(err);
