@@ -4,7 +4,7 @@ let inventory = [
   { name: 'Palo Alto PAN-OS', category: 'Firewall', query: 'PAN-OS' },
   { name: 'Fortinet FortiOS', category: 'Firewall', query: 'FortiOS' },
   { name: 'Cisco ASA', category: 'Firewall', query: 'Cisco Adaptive Security Appliance' },
-  { name: 'Azure WAF', category: 'WAF', query: 'Azure Application Gateway' },
+  { name: 'Azure', category: 'Cloud', query: 'Azure Application Gateway' },
   { name: 'F5 BIG-IP', category: 'WAF', query: 'BIG-IP' },
   { name: 'Cloudflare WAF', category: 'WAF', query: 'Cloudflare WAF' },
   { name: 'Microsoft Exchange', category: 'Email & Phishing', query: 'Microsoft Exchange Server' },
