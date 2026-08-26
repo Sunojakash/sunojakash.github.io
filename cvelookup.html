@@ -68,6 +68,13 @@
     .detail-description { line-height:1.65; font-size:14px; }
     .actions { display:flex; gap:9px; flex-wrap:wrap; margin-top:18px; }
     .action { display:inline-block; border:1px solid var(--border,#d8dde5); padding:9px 11px; font:600 11px "IBM Plex Mono",monospace; text-decoration:none; }
+    .cve-page .metric, .cve-page .inventory, .cve-page .table-wrap, .detail-card { background:var(--bg-elevated); color:var(--text-primary); }
+    .cve-page input, .cve-page select { background:var(--bg-elevated); color:var(--text-primary); border-color:var(--border); }
+    .cve-page input::placeholder { color:var(--text-muted); }
+    .cve-table td, .cve-table th, .detail-field { border-color:var(--border); }
+    .detail-card h2, .detail-card .detail-field > div { color:var(--text-primary); }
+    .detail-card .detail-field label { color:var(--text-secondary); opacity:1; }
+    .detail-card .close { color:var(--text-primary); }
     @media (max-width: 800px) { .metric-grid { grid-template-columns:repeat(2,1fr); } .detail-grid { grid-template-columns:1fr; } }
     @media (max-width: 460px) { .metric-grid { grid-template-columns:1fr 1fr; } .metric-value { font-size:24px; } }
   </style>
