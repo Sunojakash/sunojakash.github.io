@@ -31,7 +31,8 @@
     .lookup-form button { min-height:42px; border:1px solid #111827; background:#111827; color:#fff; padding:10px 15px; font:700 12px "IBM Plex Mono",monospace; cursor:pointer; }
     .inventory-list { display:flex; gap:7px; flex-wrap:wrap; margin-top:14px; }
     .inventory-item { border:1px solid var(--border,#d8dde5); background:transparent; padding:7px 9px; font:600 11px "IBM Plex Mono",monospace; cursor:pointer; }
-    .inventory-item:hover, .inventory-item:focus { border-color:#111827; }
+    .inventory-item { color:var(--text-primary); }
+    .inventory-item:hover, .inventory-item:focus { border-color:var(--accent-network); color:var(--text-primary); }
     .toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:0 0 16px; }
     .toolbar input, .toolbar select { font:500 13px "IBM Plex Mono",monospace; border:1px solid var(--border,#d8dde5); background:var(--surface,#fff); padding:11px 12px; min-height:42px; }
     .toolbar input { flex:1 1 280px; }
@@ -53,7 +54,9 @@
     .low { background:#dcfce7; color:#166534; }
     .kev { background:#fee2e2; color:#991b1b; }
     .not-kev { background:#f3f4f6; color:#4b5563; }
-    .patch { background:#dcfce7; color:#166534; }
+    .patch { background:#164e3b; color:#a7f3d0; }
+    .advisory { background:#164e63; color:#a5f3fc; }
+    .patch-unknown { background:#4a3412; color:#fde68a; }
     .no-patch { background:#f3f4f6; color:#4b5563; }
     .cve-link { font:700 12px "IBM Plex Mono",monospace; }
     .empty { padding:42px 20px; text-align:center; opacity:.65; }
@@ -148,7 +151,7 @@
   <div class="chips" id="chips">
     <button class="chip active" data-view="all">All</button>
     <button class="chip" data-view="priority">Priority</button>
-    <button class="chip" data-view="patch">Patch available</button>
+    <button class="chip" data-view="patch">Patch guidance</button>
     <button class="chip" data-view="kev">Known exploited</button>
   </div>
 
@@ -163,10 +166,11 @@
           <th>Exploit</th>
           <th>EPSS</th>
           <th>Remediation</th>
+          <th>Sources</th>
         </tr>
       </thead>
       <tbody id="cve-body">
-        <tr><td colspan="7" class="empty">Loading…</td></tr>
+        <tr><td colspan="8" class="empty">Loading…</td></tr>
       </tbody>
     </table>
   </section>

@@ -41,7 +41,7 @@ async function initCves() {
     document.getElementById('sync-row').innerHTML =
       '<span class="dot" style="background:#ef4444"></span> Vulnerability feed unavailable';
     document.getElementById('cve-body').innerHTML =
-      '<tr><td colspan="7" class="empty">No generated CVE data found yet. Choose an item above to search the NVD.</td></tr>';
+      '<tr><td colspan="8" class="empty">No generated CVE data found yet. Choose an item above to search the NVD.</td></tr>';
   }
 }
 
@@ -87,12 +87,13 @@ async function lookupProduct(eventOrQuery) {
   const query = match?.query || entered;
   const sync = document.getElementById('sync-row');
   sync.innerHTML = '<span class="dot"></span> Searching NVD…';
-  document.getElementById('cve-body').innerHTML = '<tr><td colspan="7" class="empty">Loading CVEs for ' + escapeHtml(entered) + '…</td></tr>';
+  document.getElementById('cve-body').innerHTML = '<tr><td colspan="8" class="empty">Loading CVEs for ' + escapeHtml(entered) + '…</td></tr>';
   try {
     const response = await fetch(`https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=${encodeURIComponent(query)}&resultsPerPage=30`);
     if (!response.ok) throw new Error(`NVD HTTP ${response.status}`);
     const data = await response.json();
     allFindings = (data.vulnerabilities || []).map(({ cve }) => normalizeNvdCve(cve, entered, match?.category));
+    await enrichFindings(allFindings);
     document.getElementById('metric-assets').textContent = match ? '1' : '—';
     document.getElementById('metric-vulnerable').textContent = allFindings.length;
     document.getElementById('metric-critical').textContent = allFindings.filter(x => x.severity === 'CRITICAL').length;
@@ -103,7 +104,7 @@ async function lookupProduct(eventOrQuery) {
   } catch (err) {
     console.error(err);
     sync.innerHTML = '<span class="dot" style="background:#ef4444"></span> NVD lookup unavailable';
-    document.getElementById('cve-body').innerHTML = '<tr><td colspan="7" class="empty">Could not retrieve CVEs right now. Try again shortly.</td></tr>';
+    document.getElementById('cve-body').innerHTML = '<tr><td colspan="8" class="empty">Could not retrieve CVEs right now. Try again shortly.</td></tr>';
   }
 }
 
@@ -112,13 +113,53 @@ function normalizeNvdCve(cve, assetName, category) {
   const metric = cve.metrics?.cvssMetricV31?.[0] || cve.metrics?.cvssMetricV30?.[0] || cve.metrics?.cvssMetricV2?.[0];
   const score = metric?.cvssData?.baseScore;
   const severity = metric?.cvssData?.baseSeverity || (score >= 9 ? 'CRITICAL' : score >= 7 ? 'HIGH' : score >= 4 ? 'MEDIUM' : 'LOW');
+  const references = cve.references || [];
+  const patchReference = references.find(reference =>
+    (reference.tags || []).some(tag => ['Patch', 'Release Notes', 'Vendor Advisory'].includes(tag))
+  );
   return {
     cve_id: cve.id, asset_name: assetName, asset_id: assetName, category,
     vendor: cve.configurations?.[0]?.nodes?.[0]?.cpeMatch?.[0]?.criteria?.split(':')[3] || '',
     product: '', version: 'See affected versions', severity, cvss: score,
-    known_exploited: false, epss: null, fixed_version: '', description,
+    known_exploited: false, epss: null, fixed_version: '',
+    patch_available: Boolean(patchReference), vendor_url: patchReference?.url || '', source: 'NVD', description,
     last_modified: cve.lastModified, nvd_url: `https://nvd.nist.gov/vuln/detail/${encodeURIComponent(cve.id)}`
   };
+}
+
+async function enrichFindings(findings) {
+  const cveIds = findings.map(x => x.cve_id).filter(Boolean);
+  if (!cveIds.length) return;
+
+  const [kevResult, epssResult] = await Promise.allSettled([
+    fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json').then(response => {
+      if (!response.ok) throw new Error(`CISA HTTP ${response.status}`);
+      return response.json();
+    }),
+    fetch(`https://api.first.org/data/v1/epss?cve=${encodeURIComponent(cveIds.join(','))}`).then(response => {
+      if (!response.ok) throw new Error(`EPSS HTTP ${response.status}`);
+      return response.json();
+    })
+  ]);
+
+  const kevById = new Map();
+  if (kevResult.status === 'fulfilled') {
+    (kevResult.value.vulnerabilities || []).forEach(item => kevById.set(item.cveID, item));
+  }
+  const epssById = new Map();
+  if (epssResult.status === 'fulfilled') {
+    (epssResult.value.data || []).forEach(item => epssById.set(item.cve, Number(item.epss)));
+  }
+
+  findings.forEach(item => {
+    const kev = kevById.get(item.cve_id);
+    if (kev) {
+      item.known_exploited = true;
+      item.kev_due_date = kev.dueDate;
+      item.source = 'NVD + CISA KEV';
+    }
+    if (epssById.has(item.cve_id)) item.epss = epssById.get(item.cve_id);
+  });
 }
 
 function bindFilters() {
@@ -162,7 +203,7 @@ function render() {
     if (asset !== 'All' && x.asset_name !== asset) return false;
 
     if (activeView === 'priority' && !(x.known_exploited || x.severity === 'CRITICAL' || (x.epss || 0) >= 0.5)) return false;
-    if (activeView === 'patch' && !x.fixed_version) return false;
+    if (activeView === 'patch' && !hasPatchGuidance(x)) return false;
     if (activeView === 'kev' && !x.known_exploited) return false;
 
     return true;
@@ -195,8 +236,9 @@ function render() {
       <td><span class="badge ${x.known_exploited ? 'kev' : 'not-kev'}">${x.known_exploited ? 'KEV' : 'No KEV'}</span></td>
       <td class="mono">${x.epss != null ? (Number(x.epss) * 100).toFixed(1) + '%' : '—'}</td>
       <td>
-        ${x.fixed_version ? `<span class="badge patch">Fix: ${escapeHtml(x.fixed_version)}</span>` : '<span class="badge no-patch">No fixed version</span>'}
+        ${patchBadge(x)}
       </td>
+      <td><span class="muted">${escapeHtml(x.source || 'NVD')}</span></td>
     </tr>
   `).join('');
 
@@ -214,7 +256,8 @@ function openDetail(x) {
     ['CVSS', x.cvss != null ? `${Number(x.cvss).toFixed(1)} (${x.severity})` : 'Not available'],
     ['Exploit status', x.known_exploited ? 'KNOWN EXPLOITED — CISA KEV' : 'Not listed in CISA KEV'],
     ['EPSS', x.epss != null ? `${(Number(x.epss) * 100).toFixed(1)}%` : 'Not available'],
-    ['Fixed version', x.fixed_version || 'No fixed version identified'],
+    ['Patch status', patchStatus(x)],
+    ['Sources', x.source || 'NVD'],
     ['Last modified', x.last_modified ? new Date(x.last_modified).toLocaleDateString() : '—']
   ].map(([label,value]) => `
     <div class="detail-field"><label>${escapeHtml(label)}</label><div>${escapeHtml(String(value ?? '—'))}</div></div>
@@ -234,6 +277,24 @@ function openDetail(x) {
 
 function closeDetail() {
   document.getElementById('detail').classList.remove('open');
+}
+
+function hasPatchGuidance(x) {
+  return Boolean(x.fixed_version || x.patch_available || x.vendor_url);
+}
+
+function patchStatus(x) {
+  if (x.fixed_version) return `Fixed version: ${x.fixed_version}`;
+  if (x.patch_available) return 'Vendor patch or release guidance available';
+  if (x.vendor_url) return 'Vendor advisory available; fixed version not specified';
+  return 'Patch status not published';
+}
+
+function patchBadge(x) {
+  if (x.fixed_version) return `<span class="badge patch">Fix: ${escapeHtml(x.fixed_version)}</span>`;
+  if (x.patch_available) return '<span class="badge advisory">Patch guidance</span>';
+  if (x.vendor_url) return '<span class="badge patch-unknown">Check advisory</span>';
+  return '<span class="badge no-patch">Patch unknown</span>';
 }
 
 function priorityScore(x) {
