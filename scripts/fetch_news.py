@@ -24,6 +24,7 @@ import sys
 import time
 import html
 import calendar
+from urllib.parse import urlparse
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -56,6 +57,11 @@ FEEDS = [
 ]
 
 TAG_RE = re.compile(r"<[^>]+>")
+
+
+def is_safe_url(value: str) -> bool:
+    parsed = urlparse(value)
+    return parsed.scheme.lower() in {"http", "https"} and bool(parsed.netloc)
 
 
 def clean_summary(raw: str) -> str:
@@ -91,7 +97,7 @@ def fetch_feed(name: str, url: str) -> list[dict]:
     for entry in parsed.entries:
         link = getattr(entry, "link", None)
         title = getattr(entry, "title", None)
-        if not link or not title:
+        if not link or not title or not is_safe_url(link):
             continue
         items.append({
             "id": getattr(entry, "id", link) or link,
@@ -117,7 +123,7 @@ def load_existing() -> list[dict]:
 
 
 def main() -> None:
-    existing = load_existing()
+    existing = [article for article in load_existing() if is_safe_url(article.get("link", ""))]
     seen_links = {a["link"] for a in existing if a.get("link")}
 
     fresh = []

@@ -1,3 +1,12 @@
+function safeUrl(value) {
+  try {
+    const url = new URL(String(value));
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : '#';
+  } catch {
+    return '#';
+  }
+}
+
 // Shared helpers for reading data/news.json, written by scripts/fetch_news.py
 // (run on a schedule by .github/workflows/fetch-news.yml)
 

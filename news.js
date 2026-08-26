@@ -60,9 +60,9 @@ function render() {
         <span class="article-source">${escapeHtml(a.source)}</span>
         <span>${timeAgo(a.published)}</span>
       </div>
-      <h3><a href="${escapeHtml(a.link)}" target="_blank" rel="noopener">${escapeHtml(a.title)}</a></h3>
+      <h3><a href="${escapeHtml(safeUrl(a.link))}" target="_blank" rel="noopener">${escapeHtml(a.title)}</a></h3>
       ${a.summary ? `<p>${escapeHtml(a.summary)}</p>` : ''}
-      <a class="article-link" href="${escapeHtml(a.link)}" target="_blank" rel="noopener">Read on ${escapeHtml(a.source)} →</a>
+      <a class="article-link" href="${escapeHtml(safeUrl(a.link))}" target="_blank" rel="noopener">Read on ${escapeHtml(a.source)} →</a>
     </article>
   `).join('');
 }

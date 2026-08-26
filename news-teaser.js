@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <span class="article-source">${escapeHtml(a.source)}</span>
           <span>${timeAgo(a.published)}</span>
         </div>
-        <h3><a href="${escapeHtml(a.link)}" target="_blank" rel="noopener">${escapeHtml(a.title)}</a></h3>
+        <h3><a href="${escapeHtml(safeUrl(a.link))}" target="_blank" rel="noopener">${escapeHtml(a.title)}</a></h3>
       </div>
     `).join('');
   } catch (err) {
