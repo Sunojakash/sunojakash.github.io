@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVE Intelligence — Akash Sunoj</title>
+  <meta name="description" content="Asset-aware CVE and vulnerability intelligence dashboard.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="canonical" href="https://sunojakash.github.io/cvelookup.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cve-page { padding: 42px 0 70px; }
+    .cve-header { padding: 36px 0 26px; }
+    .cve-header h1 { font-size: clamp(30px, 4vw, 44px); margin: 8px 0 12px; }
+    .cve-header p { max-width: 72ch; }
+    .sync-row { margin-top: 16px; font: 500 12px/1.5 "IBM Plex Mono", monospace; }
+    .dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--accent-signal, #22c55e); margin-right:7px; }
+    .metric-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:20px 0 24px; }
+    .metric { border:1px solid var(--border, #d8dde5); padding:18px; background:var(--surface, #fff); }
+    .metric-label { font:600 11px "IBM Plex Mono",monospace; text-transform:uppercase; letter-spacing:.08em; opacity:.7; }
+    .metric-value { font:700 30px "IBM Plex Mono",monospace; margin-top:7px; }
+    .toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:0 0 16px; }
+    .toolbar input, .toolbar select { font:500 13px "IBM Plex Mono",monospace; border:1px solid var(--border,#d8dde5); background:var(--surface,#fff); padding:11px 12px; min-height:42px; }
+    .toolbar input { flex:1 1 280px; }
+    .chips { display:flex; gap:7px; flex-wrap:wrap; }
+    .chip { border:1px solid var(--border,#d8dde5); background:transparent; padding:8px 11px; font:600 11px "IBM Plex Mono",monospace; cursor:pointer; }
+    .chip.active { background:#111827; color:#fff; border-color:#111827; }
+    .table-wrap { overflow:auto; border:1px solid var(--border,#d8dde5); background:var(--surface,#fff); }
+    .cve-table { width:100%; border-collapse:collapse; min-width:1050px; }
+    .cve-table th { text-align:left; font:700 10px "IBM Plex Mono",monospace; text-transform:uppercase; letter-spacing:.07em; padding:12px; border-bottom:1px solid var(--border,#d8dde5); white-space:nowrap; }
+    .cve-table td { padding:14px 12px; border-bottom:1px solid var(--border,#e5e7eb); vertical-align:top; font-size:13px; }
+    .cve-table tr:last-child td { border-bottom:0; }
+    .asset-name { font-weight:600; }
+    .muted { opacity:.62; font-size:12px; }
+    .mono { font-family:"IBM Plex Mono",monospace; }
+    .badge { display:inline-block; padding:4px 7px; border-radius:3px; font:700 10px "IBM Plex Mono",monospace; text-transform:uppercase; white-space:nowrap; }
+    .critical { background:#fee2e2; color:#991b1b; }
+    .high { background:#ffedd5; color:#9a3412; }
+    .medium { background:#fef3c7; color:#92400e; }
+    .low { background:#dcfce7; color:#166534; }
+    .kev { background:#fee2e2; color:#991b1b; }
+    .not-kev { background:#f3f4f6; color:#4b5563; }
+    .patch { background:#dcfce7; color:#166534; }
+    .no-patch { background:#f3f4f6; color:#4b5563; }
+    .cve-link { font:700 12px "IBM Plex Mono",monospace; }
+    .empty { padding:42px 20px; text-align:center; opacity:.65; }
+    .detail { display:none; position:fixed; inset:0; background:rgba(0,0,0,.42); z-index:1000; padding:30px 18px; }
+    .detail.open { display:flex; align-items:center; justify-content:center; }
+    .detail-card { width:min(760px,100%); max-height:90vh; overflow:auto; background:var(--surface,#fff); border:1px solid var(--border,#d8dde5); padding:24px; }
+    .detail-top { display:flex; justify-content:space-between; gap:15px; }
+    .close { border:0; background:transparent; font:700 22px "IBM Plex Mono",monospace; cursor:pointer; }
+    .detail-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0; }
+    .detail-field { border-top:1px solid var(--border,#d8dde5); padding-top:10px; }
+    .detail-field label { display:block; font:700 10px "IBM Plex Mono",monospace; text-transform:uppercase; opacity:.6; margin-bottom:5px; }
+    .detail-description { line-height:1.65; font-size:14px; }
+    .actions { display:flex; gap:9px; flex-wrap:wrap; margin-top:18px; }
+    .action { display:inline-block; border:1px solid var(--border,#d8dde5); padding:9px 11px; font:600 11px "IBM Plex Mono",monospace; text-decoration:none; }
+    @media (max-width: 800px) { .metric-grid { grid-template-columns:repeat(2,1fr); } .detail-grid { grid-template-columns:1fr; } }
+    @media (max-width: 460px) { .metric-grid { grid-template-columns:1fr 1fr; } .metric-value { font-size:24px; } }
+  </style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">AKASH<span>/</span>SUNOJ</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#certifications">Certifications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="cves.html" class="active">CVE Intel</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
+  </div>
+</nav>
+
+<main class="wrap cve-page">
+  <header class="cve-header">
+    <span class="eyebrow">Vulnerability management</span>
+    <h1>CVE Intelligence</h1>
+    <p>Asset-aware vulnerability tracking that correlates products and versions with CVEs, CVSS, CISA Known Exploited Vulnerabilities, EPSS and remediation guidance.</p>
+    <div class="sync-row" id="sync-row"><span class="dot"></span> Loading vulnerability data…</div>
+  </header>
+
+  <section class="metric-grid" aria-label="Vulnerability summary">
+    <div class="metric"><div class="metric-label">Assets</div><div class="metric-value" id="metric-assets">—</div></div>
+    <div class="metric"><div class="metric-label">Vulnerable</div><div class="metric-value" id="metric-vulnerable">—</div></div>
+    <div class="metric"><div class="metric-label">Critical</div><div class="metric-value" id="metric-critical">—</div></div>
+    <div class="metric"><div class="metric-label">Known exploited</div><div class="metric-value" id="metric-kev">—</div></div>
+  </section>
+
+  <section class="toolbar" aria-label="CVE filters">
+    <input id="search" type="search" placeholder="Search CVE, asset, vendor, product or version…">
+    <select id="severity">
+      <option value="All">All severities</option>
+      <option value="CRITICAL">Critical</option>
+      <option value="HIGH">High</option>
+      <option value="MEDIUM">Medium</option>
+      <option value="LOW">Low</option>
+    </select>
+    <select id="exploit">
+      <option value="All">All exploit status</option>
+      <option value="KEV">Known exploited</option>
+      <option value="NOT_KEV">Not in KEV</option>
+    </select>
+    <select id="assetFilter"><option value="All">All assets</option></select>
+  </section>
+
+  <div class="chips" id="chips">
+    <button class="chip active" data-view="all">All</button>
+    <button class="chip" data-view="priority">Priority</button>
+    <button class="chip" data-view="patch">Patch available</button>
+    <button class="chip" data-view="kev">Known exploited</button>
+  </div>
+
+  <section class="table-wrap" style="margin-top:14px;">
+    <table class="cve-table">
+      <thead>
+        <tr>
+          <th>Asset</th>
+          <th>Product / Version</th>
+          <th>CVE</th>
+          <th>CVSS</th>
+          <th>Exploit</th>
+          <th>EPSS</th>
+          <th>Remediation</th>
+        </tr>
+      </thead>
+      <tbody id="cve-body">
+        <tr><td colspan="7" class="empty">Loading…</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="pipeline-note" style="margin-top:20px;">
+    <strong>HOW THIS STAYS CURRENT</strong> — A GitHub Actions workflow reads <code>data/assets.json</code>, queries NVD, CISA KEV and FIRST EPSS, correlates results, and writes <code>data/cves.json</code>. The page remains a static GitHub Pages site with no backend server.
+  </div>
+</main>
+
+<div class="detail" id="detail" role="dialog" aria-modal="true" aria-label="CVE details">
+  <div class="detail-card">
+    <div class="detail-top">
+      <div>
+        <div class="eyebrow">Vulnerability detail</div>
+        <h2 id="detail-title"></h2>
+      </div>
+      <button class="close" id="detail-close" aria-label="Close">×</button>
+    </div>
+    <div class="detail-grid" id="detail-grid"></div>
+    <div class="detail-description" id="detail-description"></div>
+    <div class="actions" id="detail-actions"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; <span data-year></span> Akash Sunoj. Built as a static site, deployed via CI/CD.</div>
+    <div><a href="mailto:akashsunoj1@gmail.com">Email</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="cvelookup.js"></script>
+</body>
+</html>
