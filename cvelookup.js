@@ -1,9 +1,27 @@
 let allFindings = [];
 let activeView = 'all';
+let inventory = [
+  { name: 'Palo Alto PAN-OS', category: 'Firewall', query: 'PAN-OS' },
+  { name: 'Fortinet FortiOS', category: 'Firewall', query: 'FortiOS' },
+  { name: 'Cisco ASA', category: 'Firewall', query: 'Cisco Adaptive Security Appliance' },
+  { name: 'Azure WAF', category: 'WAF', query: 'Azure Application Gateway' },
+  { name: 'F5 BIG-IP', category: 'WAF', query: 'BIG-IP' },
+  { name: 'Cloudflare WAF', category: 'WAF', query: 'Cloudflare WAF' },
+  { name: 'Microsoft Exchange', category: 'Email & Phishing', query: 'Microsoft Exchange Server' },
+  { name: 'Microsoft Outlook', category: 'Email & Phishing', query: 'Microsoft Outlook' },
+  { name: 'Mimecast', category: 'Email & Phishing', query: 'Mimecast' },
+  { name: 'Microsoft Windows', category: 'Software', query: 'Microsoft Windows' },
+  { name: 'Google Chrome', category: 'Software', query: 'Google Chrome' },
+  { name: 'Apache HTTP Server', category: 'Software', query: 'Apache HTTP Server' },
+  { name: 'WordPress', category: 'Software', query: 'WordPress' }
+];
 
 document.addEventListener('DOMContentLoaded', initCves);
 
 async function initCves() {
+  populateInventory();
+  document.getElementById('lookup-form').addEventListener('submit', lookupProduct);
+  document.getElementById('categoryFilter').addEventListener('change', populateInventory);
   try {
     const response = await fetch('data/cves.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -23,7 +41,7 @@ async function initCves() {
     document.getElementById('sync-row').innerHTML =
       '<span class="dot" style="background:#ef4444"></span> Vulnerability feed unavailable';
     document.getElementById('cve-body').innerHTML =
-      '<tr><td colspan="7" class="empty">No generated CVE data found yet. Add assets to <code>data/assets.json</code> and run the CVE sync workflow.</td></tr>';
+      '<tr><td colspan="7" class="empty">No generated CVE data found yet. Choose an item above to search the NVD.</td></tr>';
   }
 }
 
@@ -44,6 +62,63 @@ function populateAssets() {
   const assets = [...new Set(allFindings.map(x => x.asset_name).filter(Boolean))].sort();
   select.innerHTML = '<option value="All">All assets</option>' +
     assets.map(a => `<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`).join('');
+}
+
+function populateInventory() {
+  const category = document.getElementById('categoryFilter').value;
+  const items = inventory.filter(x => category === 'All' || x.category === category);
+  document.getElementById('inventory-options').innerHTML = inventory
+    .map(x => `<option value="${escapeHtml(x.name)}">${escapeHtml(x.category)}</option>`).join('');
+  document.getElementById('inventory-list').innerHTML = items
+    .map(x => `<button type="button" class="inventory-item" data-query="${escapeHtml(x.query)}">${escapeHtml(x.name)}</button>`).join('');
+  document.querySelectorAll('.inventory-item').forEach(button => {
+    button.addEventListener('click', () => {
+      document.getElementById('productLookup').value = button.textContent;
+      lookupProduct(button.dataset.query);
+    });
+  });
+}
+
+async function lookupProduct(eventOrQuery) {
+  if (eventOrQuery?.preventDefault) eventOrQuery.preventDefault();
+  const entered = typeof eventOrQuery === 'string' ? eventOrQuery : document.getElementById('productLookup').value.trim();
+  if (!entered) return;
+  const match = inventory.find(x => x.name.toLowerCase() === entered.toLowerCase());
+  const query = match?.query || entered;
+  const sync = document.getElementById('sync-row');
+  sync.innerHTML = '<span class="dot"></span> Searching NVD…';
+  document.getElementById('cve-body').innerHTML = '<tr><td colspan="7" class="empty">Loading CVEs for ' + escapeHtml(entered) + '…</td></tr>';
+  try {
+    const response = await fetch(`https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=${encodeURIComponent(query)}&resultsPerPage=30`);
+    if (!response.ok) throw new Error(`NVD HTTP ${response.status}`);
+    const data = await response.json();
+    allFindings = (data.vulnerabilities || []).map(({ cve }) => normalizeNvdCve(cve, entered, match?.category));
+    document.getElementById('metric-assets').textContent = match ? '1' : '—';
+    document.getElementById('metric-vulnerable').textContent = allFindings.length;
+    document.getElementById('metric-critical').textContent = allFindings.filter(x => x.severity === 'CRITICAL').length;
+    document.getElementById('metric-kev').textContent = '—';
+    populateAssets();
+    render();
+    sync.innerHTML = `<span class="dot"></span> NVD results for ${escapeHtml(entered)} · ${allFindings.length} findings`;
+  } catch (err) {
+    console.error(err);
+    sync.innerHTML = '<span class="dot" style="background:#ef4444"></span> NVD lookup unavailable';
+    document.getElementById('cve-body').innerHTML = '<tr><td colspan="7" class="empty">Could not retrieve CVEs right now. Try again shortly.</td></tr>';
+  }
+}
+
+function normalizeNvdCve(cve, assetName, category) {
+  const description = cve.descriptions?.find(x => x.lang === 'en')?.value || '';
+  const metric = cve.metrics?.cvssMetricV31?.[0] || cve.metrics?.cvssMetricV30?.[0] || cve.metrics?.cvssMetricV2?.[0];
+  const score = metric?.cvssData?.baseScore;
+  const severity = metric?.cvssData?.baseSeverity || (score >= 9 ? 'CRITICAL' : score >= 7 ? 'HIGH' : score >= 4 ? 'MEDIUM' : 'LOW');
+  return {
+    cve_id: cve.id, asset_name: assetName, asset_id: assetName, category,
+    vendor: cve.configurations?.[0]?.nodes?.[0]?.cpeMatch?.[0]?.criteria?.split(':')[3] || '',
+    product: '', version: 'See affected versions', severity, cvss: score,
+    known_exploited: false, epss: null, fixed_version: '', description,
+    last_modified: cve.lastModified, nvd_url: `https://nvd.nist.gov/vuln/detail/${encodeURIComponent(cve.id)}`
+  };
 }
 
 function bindFilters() {
@@ -105,6 +180,7 @@ function render() {
     <tr data-index="${i}" class="finding-row" style="cursor:pointer">
       <td>
         <div class="asset-name">${escapeHtml(x.asset_name || x.asset_id || 'Unknown asset')}</div>
+        <div class="muted">${escapeHtml(x.category || 'Inventory item')}</div>
         <div class="muted">${escapeHtml(x.environment || '')}</div>
       </td>
       <td>

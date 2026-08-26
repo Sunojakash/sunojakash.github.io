@@ -22,6 +22,16 @@
     .metric { border:1px solid var(--border, #d8dde5); padding:18px; background:var(--surface, #fff); }
     .metric-label { font:600 11px "IBM Plex Mono",monospace; text-transform:uppercase; letter-spacing:.08em; opacity:.7; }
     .metric-value { font:700 30px "IBM Plex Mono",monospace; margin-top:7px; }
+    .inventory { border:1px solid var(--border,#d8dde5); background:var(--surface,#fff); padding:18px; margin:4px 0 24px; }
+    .inventory h2 { margin:0 0 7px; font-size:18px; }
+    .inventory p { margin:0 0 14px; font-size:13px; }
+    .lookup-form { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .lookup-form input, .lookup-form select { font:500 13px "IBM Plex Mono",monospace; border:1px solid var(--border,#d8dde5); background:var(--surface,#fff); padding:11px 12px; min-height:42px; }
+    .lookup-form input { flex:1 1 280px; }
+    .lookup-form button { min-height:42px; border:1px solid #111827; background:#111827; color:#fff; padding:10px 15px; font:700 12px "IBM Plex Mono",monospace; cursor:pointer; }
+    .inventory-list { display:flex; gap:7px; flex-wrap:wrap; margin-top:14px; }
+    .inventory-item { border:1px solid var(--border,#d8dde5); background:transparent; padding:7px 9px; font:600 11px "IBM Plex Mono",monospace; cursor:pointer; }
+    .inventory-item:hover, .inventory-item:focus { border-color:#111827; }
     .toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:0 0 16px; }
     .toolbar input, .toolbar select { font:500 13px "IBM Plex Mono",monospace; border:1px solid var(--border,#d8dde5); background:var(--surface,#fff); padding:11px 12px; min-height:42px; }
     .toolbar input { flex:1 1 280px; }
@@ -72,7 +82,7 @@
       <li><a href="index.html#projects">Projects</a></li>
       <li><a href="index.html#certifications">Certifications</a></li>
       <li><a href="news.html">News</a></li>
-      <li><a href="cves.html" class="active">CVE Intel</a></li>
+      <li><a href="cvelookup.html" class="active">CVE Intel</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
   </div>
@@ -86,6 +96,24 @@
     <div class="sync-row" id="sync-row"><span class="dot"></span> Loading vulnerability data…</div>
   </header>
 
+  <section class="inventory" aria-labelledby="inventory-title">
+    <h2 id="inventory-title">Check a device or software</h2>
+    <p>Choose an inventory item or enter a product name to retrieve its current CVEs from NVD.</p>
+    <form class="lookup-form" id="lookup-form">
+      <input id="productLookup" type="search" list="inventory-options" placeholder="e.g. Palo Alto PAN-OS, Azure WAF or Microsoft Outlook" autocomplete="off" required>
+      <datalist id="inventory-options"></datalist>
+      <select id="categoryFilter" aria-label="Filter starter inventory by category">
+        <option value="All">All categories</option>
+        <option value="Firewall">Firewalls</option>
+        <option value="WAF">WAF</option>
+        <option value="Email & Phishing">Email &amp; Phishing</option>
+        <option value="Software">Software</option>
+      </select>
+      <button type="submit">Find CVEs</button>
+    </form>
+    <div class="inventory-list" id="inventory-list" aria-label="Starter inventory"></div>
+  </section>
+
   <section class="metric-grid" aria-label="Vulnerability summary">
     <div class="metric"><div class="metric-label">Assets</div><div class="metric-value" id="metric-assets">—</div></div>
     <div class="metric"><div class="metric-label">Vulnerable</div><div class="metric-value" id="metric-vulnerable">—</div></div>
@@ -94,7 +122,7 @@
   </section>
 
   <section class="toolbar" aria-label="CVE filters">
-    <input id="search" type="search" placeholder="Search CVE, asset, vendor, product or version…">
+    <input id="search" type="search" placeholder="Filter loaded CVEs…">
     <select id="severity">
       <option value="All">All severities</option>
       <option value="CRITICAL">Critical</option>
