@@ -1,0 +1,45 @@
+name: Fetch security news
+
+on:
+  schedule:
+    # Every 4 hours. Cron is UTC. Adjust freely -- e.g. "0 */3 * * *" for
+    # every 3 hours, or "0 6,12,18 * * *" for three fixed times a day.
+    - cron: "0 */4 * * *"
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-news
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch latest news
+        run: python scripts/fetch_news.py
+
+      - name: Commit updated news.json
+        run: |
+          git config user.name "news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/news.json
+          if git diff --cached --quiet; then
+            echo "No new articles -- nothing to commit."
+          else
+            git commit -m "chore: refresh security news feed"
+            git push
+          fi

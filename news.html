@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Threat Intel Feed — Akash Sunoj</title>
+<meta name="description" content="Cybersecurity news aggregated automatically every few hours from vetted security RSS feeds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">AKASH<span>/</span>SUNOJ</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#certifications">Certifications</a></li>
+      <li><a href="news.html" class="active">News</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
+  </div>
+</nav>
+
+<header class="news-header">
+  <div class="wrap">
+    <span class="eyebrow">Live feed</span>
+    <h1 style="font-size:clamp(28px,4vw,40px); margin-top:10px;">Threat Intel Feed</h1>
+    <p style="max-width:60ch;">Cybersecurity news pulled automatically from vetted security outlets — no manual posting. A scheduled job re-checks every few hours and this page always shows the latest pull.</p>
+    <div class="sync-row" id="sync-row"><span class="dot"></span> Loading sync status…</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="filter-bar" id="filter-bar"></div>
+  <div class="article-list" id="article-list">
+    <p class="state-msg">Loading latest headlines…</p>
+  </div>
+
+  <div class="pipeline-note">
+    HOW THIS STAYS CURRENT — A GitHub Actions workflow runs on a schedule, pulls RSS feeds from
+    a curated list of security publishers, deduplicates against previously seen articles, and
+    commits the updated data/news.json back to this repo. This page fetches that file directly,
+    so there's no backend server and nothing to keep running. <a href="https://github.com/" target="_blank" rel="noopener">View the automation source →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; <span data-year></span> Akash Sunoj. Built as a static site, deployed via CI/CD.</div>
+    <div>
+      <a href="mailto:akashsunoj1@gmail.com">Email</a>
+      <a href="#" title="Add your LinkedIn URL">LinkedIn</a>
+      <a href="#" title="Add your GitHub URL">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="news-data.js"></script>
+<script src="news.js"></script>
+</body>
+</html>
