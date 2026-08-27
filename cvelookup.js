@@ -235,7 +235,7 @@ function render() {
 
   const body = document.getElementById('cve-body');
   if (!items.length) {
-    body.innerHTML = '<tr><td colspan="7" class="empty">No findings match the current filters.</td></tr>';
+    body.innerHTML = '<tr><td colspan="8" class="empty">No findings match the current filters.</td></tr>';
     return;
   }
 

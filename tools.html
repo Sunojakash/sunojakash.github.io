@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/AS-Monogram.png" type="image/png">
+<title>Security Tools — Akash Sunoj</title>
+<meta name="description" content="Security engineering tools and projects created by Akash Sunoj.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tools-page { padding: 56px 0 72px; }
+  .tools-header { max-width: 720px; padding-bottom: 34px; }
+  .tools-header h1 { font-size: clamp(32px, 5vw, 52px); margin: 14px 0 12px; }
+  .tools-header p { font-size: 17px; max-width: 62ch; }
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+  .tool-card { display: flex; flex-direction: column; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; min-height: 280px; }
+  .tool-card.featured { border-color: var(--accent-signal-dim); }
+  .tool-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+  .tool-type { color: var(--accent-network); font: 600 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+  .tool-status { border: 1px solid var(--border); color: var(--text-muted); padding: 4px 7px; font: 600 10px var(--font-mono); text-transform: uppercase; white-space: nowrap; }
+  .tool-status.private { color: var(--accent-signal); border-color: var(--accent-signal-dim); }
+  .tool-card h2 { font-size: 20px; margin-bottom: 10px; }
+  .tool-card p { font-size: 14px; }
+  .tool-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 20px; padding-top: 18px; }
+  .tool-tag { border: 1px solid var(--border); color: var(--text-secondary); padding: 4px 8px; font: 500 11px var(--font-mono); }
+  .tool-action { display: inline-flex; align-items: center; align-self: flex-start; border: 1px solid var(--border); color: var(--text-primary); padding: 9px 11px; font: 600 11px var(--font-mono); }
+  .tool-action:hover { border-color: var(--accent-network); color: var(--accent-network); text-decoration: none; }
+  .tool-action.disabled { color: var(--text-muted); border-style: dashed; cursor: default; }
+  .tool-note { margin-top: 26px; border: 1px dashed var(--border); border-radius: var(--radius-lg); padding: 18px 20px; color: var(--text-muted); font: 12px/1.7 var(--font-mono); }
+  .tool-note strong { color: var(--accent-signal); }
+  @media (max-width: 520px) { .tool-meta { align-items: flex-start; flex-direction: column; } }
+</style>
+</head>
+<body>
+<!-- Goatcounter.com Analytics Start -->
+<script data-goatcounter="https://akashsunoj.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- Goatcounter.com Analytics End -->
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">AKASH<span>/</span>SUNOJ</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="cvelookup.html">CVE Intel</a></li>
+      <li><a href="tools.html" class="active">Tools</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
+  </div>
+</nav>
+
+<main class="wrap tools-page">
+  <header class="tools-header">
+    <span class="eyebrow">Security engineering</span>
+    <h1>Tools and projects</h1>
+    <p>A selected view of security utilities I build for investigation, operations, and infrastructure work. Some projects remain private because their capabilities require controlled use.</p>
+  </header>
+
+  <section class="tool-grid" aria-label="Security tools and projects">
+    <article class="tool-card featured">
+      <div class="tool-meta"><span class="tool-type">Application security</span><span class="tool-status private">Private / not hosted</span></div>
+      <h2>WebApplicationFirewallTool</h2>
+      <p>A powerful WAF testing project for exploring rate-limit behavior and malicious-content detection. It is intentionally not hosted or offered as a public download.</p>
+      <div class="tool-tags"><span class="tool-tag">WAF testing</span><span class="tool-tag">Rate limits</span><span class="tool-tag">Detection engineering</span></div>
+      <span class="tool-action disabled" aria-disabled="true">Private demonstration only</span>
+    </article>
+
+    <article class="tool-card">
+      <div class="tool-meta"><span class="tool-type">Security operations</span><span class="tool-status private">Private repository</span></div>
+      <h2>waf-inventory-management</h2>
+      <p>An inventory and management project focused on organizing WAF estates, policy ownership, deployment context, and operational visibility.</p>
+      <div class="tool-tags"><span class="tool-tag">WAF operations</span><span class="tool-tag">Inventory</span><span class="tool-tag">Automation</span></div>
+      <a class="tool-action" href="https://github.com/Sunojakash/waf-inventory-management" target="_blank" rel="noopener">View project access →</a>
+    </article>
+
+    <article class="tool-card">
+      <div class="tool-meta"><span class="tool-type">Future project</span><span class="tool-status">Planned</span></div>
+      <h2>More security tooling</h2>
+      <p>Additional utilities will be listed here as they become ready for responsible sharing, with clear usage boundaries and project documentation.</p>
+      <div class="tool-tags"><span class="tool-tag">Cloud security</span><span class="tool-tag">Threat detection</span><span class="tool-tag">IaC</span></div>
+      <a class="tool-action" href="mailto:akashsunoj1@gmail.com?subject=Security%20tools%20access">Request project information →</a>
+    </article>
+  </section>
+
+  <aside class="tool-note"><strong>SHARING POLICY</strong> — Security-sensitive tools are not executed or hosted on this website. Public downloads will be added only for projects that are appropriate for controlled, documented distribution. Private repository access can be discussed directly.</aside>
+</main>
+
+<footer><div class="wrap"><div>&copy; <span data-year></span> Akash Sunoj. Built as a static site, deployed via CI/CD.</div><div><a href="mailto:akashsunoj1@gmail.com">Email</a><a href="https://www.linkedin.com/in/akash-sunoj-37465912b/">LinkedIn</a></div></div></footer>
+<script src="script.js"></script>
+</body>
+</html>

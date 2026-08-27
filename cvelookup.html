@@ -40,7 +40,7 @@
     .toolbar input { flex:1 1 280px; }
     .chips { display:flex; gap:7px; flex-wrap:wrap; }
     .chip { border:1px solid var(--border,#d8dde5); background:transparent; padding:8px 11px; font:600 11px "IBM Plex Mono",monospace; cursor:pointer; }
-    .chip.active { background:#111827; color:#fff; border-color:#111827; }
+    .chip.active { background:var(--accent-network); color:#06201c; border-color:var(--accent-network); }
     .table-wrap { overflow:auto; border:1px solid var(--border); background:var(--bg-elevated); }
     .cve-table { width:100%; border-collapse:collapse; min-width:1050px; }
     .cve-table th { text-align:left; font:700 10px "IBM Plex Mono",monospace; text-transform:uppercase; letter-spacing:.07em; padding:12px; border-bottom:1px solid var(--border,#d8dde5); white-space:nowrap; }
@@ -62,7 +62,7 @@
     .no-patch { background:#f3f4f6; color:#4b5563; }
     .cve-link { font:700 12px "IBM Plex Mono",monospace; }
     .empty { padding:42px 20px; text-align:center; opacity:.65; }
-    .detail { display:none; position:fixed; inset:0; background:rgba(0,0,0,.42); z-index:1000; padding:30px 18px; }
+    .detail { display:none; position:fixed; inset:0; background:rgba(0,0,0,.68); z-index:1000; padding:30px 18px; }
     .detail.open { display:flex; align-items:center; justify-content:center; }
     .detail-card { width:min(760px,100%); max-height:90vh; overflow:auto; background:var(--bg-elevated); border:1px solid var(--border); padding:24px; }
     .detail-top { display:flex; justify-content:space-between; gap:15px; position:relative; }
@@ -77,6 +77,7 @@
     .cve-page input, .cve-page select { background:var(--bg-elevated); color:var(--text-primary); border-color:var(--border); }
     .cve-page input::placeholder { color:var(--text-muted); }
     .cve-table td, .cve-table th, .detail-field { border-color:var(--border); }
+    .detail-card { box-shadow:0 18px 60px rgba(0,0,0,.35); }
     .detail-card h2, .detail-card .detail-field > div { color:var(--text-primary); }
     .detail-card .detail-field label { color:var(--text-secondary); opacity:1; }
     .detail-card .close { color:var(--text-primary); }
@@ -96,7 +97,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="cvelookup.html" class="active">CVE Intel</a></li>
-      <li><a href="workinprogress.html">Tools</a></li>
+      <li><a href="tools.html">Tools</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
   </div>
