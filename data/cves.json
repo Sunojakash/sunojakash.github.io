@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-09T05:00:20.304068+00:00",
+  "last_updated": "2026-09-09T11:43:35.134050+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-57825",
-      "asset_id": "CVE-2026-57825",
+      "cve_id": "CVE-2026-65181",
+      "asset_id": "CVE-2026-65181",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the opam package before 2.5.2 for OCaml, the sandbox protection mechanism can be bypassed because symlinks are mishandled during use of .install files.",
-      "last_modified": "2026-09-09T03:32:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57825"
+      "description": "Insufficient authorization of Data Source tables in Impala 2.7-4.5 allows a client with privileges to upload a file to remote storage and create a table to execute arbitrary Java code.\nUsers are recommended to upgrade to version 4.5.2, which fixes this issue.",
+      "last_modified": "2026-09-09T10:40:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65181"
     },
     {
-      "cve_id": "CVE-2026-19398",
-      "asset_id": "CVE-2026-19398",
+      "cve_id": "CVE-2026-57866",
+      "asset_id": "CVE-2026-57866",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds write in the SmiFlash SMM module of ASUS FA507NU and FA507NV BIOS allows a local\u00a0 administrator to cause a system crash (BSOD) or BIOS corruption via a crafted software SMI (SW SMI) request with an oversized length value.Refer to the '\u00a0\nSecurity Update for ASUS FA507NV / FA507NU BIOS\u00a0\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-09T03:29:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19398"
+      "description": "Server side request forgery in Apache Impala versions 4.4.x and 4.5.x.\u00a0 Authenticated Impala users with permissions to execute the\u00a0ai_generate_text() function can exfiltrate secrets provided by the credential providers configured in the `hadoop.security.credential.provider.path` property of `core-site.xml`. The secret's key must be known to the user.",
+      "last_modified": "2026-09-09T10:39:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57866"
     },
     {
-      "cve_id": "CVE-2026-75966",
-      "asset_id": "CVE-2026-75966",
+      "cve_id": "CVE-2026-79641",
+      "asset_id": "CVE-2026-79641",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Podlove Podcast Publisher plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'episode_contributor[..][..][comment]' Parameter in all versions up to, and including, 4.5.5 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The contributor comment is stored in a plugin-managed custom table, bypassing WordPress core's wp_kses_post filter, and the save_post hook fires without a nonce check, meaning any user who can edit posts can exploit this without further preconditions.",
-      "last_modified": "2026-09-09T03:28:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75966"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to elevation of privileges.",
+      "last_modified": "2026-09-09T10:39:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79641"
     },
     {
-      "cve_id": "CVE-2026-11363",
-      "asset_id": "CVE-2026-11363",
+      "cve_id": "CVE-2026-56207",
+      "asset_id": "CVE-2026-56207",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Ninja Forms \u2013 The Contact Form Builder That Grows With You plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 3.14.6 via deserialization of untrusted input . This makes it possible for authenticated attackers, with administrator-level access and above, to inject a PHP Object. No known POP chain is present in the vulnerable software, which means this vulnerability has no impact unless another plugin or theme containing a POP chain is installed on the site. If a POP chain is present via an additional plugin or theme installed on the target system, it may allow the attacker to perform actions like delete arbitrary files, retrieve sensitive data, or execute code depending on the POP chain present. The deserialization is triggered automatically during form import when WPN_Helper::build_nf_cache() invokes $action->get_settings() immediately after the crafted form is imported, requiring no further interaction beyond the import action itself.",
-      "last_modified": "2026-09-09T03:28:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11363"
+      "description": "Signature of Bearer token is not verified in last step of SAML2 authentication for Impala's hs2-http interface, allowing altering user name and acting as another user.\n\n\n\nThis issue affects Apache Impala: >=4.0.0.\n\n\n\nUsers are recommended to upgrade to version 4.5.2, which fixes this issue.",
+      "last_modified": "2026-09-09T10:36:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56207"
     },
     {
-      "cve_id": "CVE-2026-19944",
-      "asset_id": "CVE-2026-19944",
+      "cve_id": "CVE-2026-79727",
+      "asset_id": "CVE-2026-79727",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WP Crowdfunding plugin for WordPress is vulnerable to generic SQL Injection via 'wpneo_reward' Post Meta in all versions up to, and including, 2.2.1 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with shop manager-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. This is a second-order injection: a Shop Manager writes the malicious payload once via the WooCommerce REST products endpoint (POST/PUT /wp-json/wc/v3/products/{id}), and the injected query executes on every subsequent public page view that renders the campaign rewards sidebar.",
-      "last_modified": "2026-09-09T03:28:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19944"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Exposure of Sensitive System Information Due to Uncleared Debug Information vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to information exposure.",
+      "last_modified": "2026-09-09T10:35:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79727"
     },
     {
-      "cve_id": "CVE-2026-19800",
-      "asset_id": "CVE-2026-19800",
+      "cve_id": "CVE-2026-85978",
+      "asset_id": "CVE-2026-85978",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Mail Mint \u2013 Email Marketing, Newsletter, Email Automation & WooCommerce Emails plugin for WordPress is vulnerable to SQL Injection via the 'status' parameter in all versions up to, and including, 1.31.0 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. The $wpdb->prepare() call does not protect against this injection because the attacker-controlled $contact_filter_query fragment is concatenated into the SQL format string before prepare() executes \u2014 prepare() only processes %s/%d placeholders and cannot sanitize content already embedded in the format string. REST API JSON bodies are parsed from php://input and bypass WordPress's wp_magic_quotes(), meaning double-quote characters in status array values reach the SQL sink unescaped. This makes it possible for authenticated attackers, with administrator-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. The required 'mint_read_contacts' capability is a plugin-specific capability not assigned to any default WordPress role; it must be explicitly granted by an administrator, making this effectively an Administrator+ vulnerability.",
-      "last_modified": "2026-09-09T03:28:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19800"
+      "description": "An unauthenticated remote code execution vulnerability exists in the Policy Manager console of\u00a0Akana\u00a0API Platform. A path normalization discrepancy between the authentication filter and the servlet dispatcher allows a crafted request to bypass authentication and reach an endpoint that evaluates attacker-supplied script code without sandboxing, resulting in arbitrary code execution. Exploitation requires no authentication or user interaction.",
+      "last_modified": "2026-09-09T10:34:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85978"
     },
     {
-      "cve_id": "CVE-2026-19797",
-      "asset_id": "CVE-2026-19797",
+      "cve_id": "CVE-2026-54048",
+      "asset_id": "CVE-2026-54048",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The User Access Manager plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the 'tab_group_section' parameter in all versions up to, and including, 2.3.18 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.",
-      "last_modified": "2026-09-09T03:28:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19797"
+      "description": "Specifying tblproperties('avro.schema.url'=' http://...' ) or with a 'file:///' URI on a table in Impala 2.0.0 to 4.5.1 on all platforms allows an attacker to trigger a GET request to internal endpoints they may not have access to but that Impala does and the response my be exposed via parsing error messages.\nUsers are recommended to upgrade to version 4.5.2, which fixes this issue.",
+      "last_modified": "2026-09-09T10:34:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54048"
     },
     {
-      "cve_id": "CVE-2026-77187",
-      "asset_id": "CVE-2026-77187",
+      "cve_id": "CVE-2026-80239",
+      "asset_id": "CVE-2026-80239",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The My Calendar \u2013 Accessible Event Manager plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'before' and 'after' Shortcode Attributes in all versions up to, and including, 3.8.3 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
-      "last_modified": "2026-09-09T03:28:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77187"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Exposure of Sensitive System Information Due to Uncleared Debug Information vulnerability. An unauthenticated attacker with physical access could potentially exploit this vulnerability, leading to information exposure.",
+      "last_modified": "2026-09-09T10:31:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80239"
     },
     {
-      "cve_id": "CVE-2026-77186",
-      "asset_id": "CVE-2026-77186",
+      "cve_id": "CVE-2026-84197",
+      "asset_id": "CVE-2026-84197",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The My Calendar \u2013 Accessible Event Manager plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'fallback' Shortcode Attribute in all versions up to, and including, 3.8.3 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The bypass relies on hex-encoded shortcode attribute payloads (e.g. \\x3cscript\\x3e), which wp_kses_post cannot strip on save because they appear as literal backslash sequences rather than real HTML tags; WordPress core's shortcode_parse_atts() then calls stripcslashes() at render time, decoding the escapes into real angle brackets before they reach the unescaped sink.",
-      "last_modified": "2026-09-09T03:28:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77186"
+      "description": "In Eclipse Ditto's Node.js JavaScript client, all released versions of @eclipse-ditto/ditto-javascript-client-node from 2.0.0 to 3.9.0 and of its predecessor package @eclipse-ditto/ditto-javascript-client-node_1.0 from 1.0.0 to 2.1.0, the WebSocket transport hard-codes rejectUnauthorized: false when creating the underlying ws WebSocket. Certificate chain and hostname validation are therefore disabled for every wss:// connection, and no builder option, constructor argument or environment variable lets an application turn validation back on. An attacker in a position to intercept the connection can present an arbitrary certificate, complete the TLS handshake, read the credentials that the configured authentication provider sends in the Authorization header of the WebSocket upgrade request, and read, alter or inject Ditto Protocol messages for the lifetime of the connection. The Java client, the browser/DOM JavaScript client and the HTTP transport of the Node.js client are not affected.",
+      "last_modified": "2026-09-09T10:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84197"
     },
     {
-      "cve_id": "CVE-2026-84293",
-      "asset_id": "CVE-2026-84293",
+      "cve_id": "CVE-2025-15690",
+      "asset_id": "CVE-2025-15690",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Repeater Fields for Gravity Forms plugin for WordPress is vulnerable to Stored Cross-Site Scripting via Repeated Multi-Input Sub-Field Values in all versions up to, and including, 3.0.4 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability only affects multi-input sub-field types within a repeater (such as Name, Address, and Checkbox fields), as scalar single-input field values are escaped with esc_html() at the output stage in version 3.0.4.",
-      "last_modified": "2026-09-09T03:28:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84293"
+      "description": "The Content Mask WordPress plugin before 1.8.5.6 does not properly sanitise and escape content submitted with a post before outputting it in the pages it generates, allowing users with a role as low as Contributor to perform Stored Cross-Site Scripting attacks against any user viewing or previewing the affected page.\nThe Content Mask WordPress plugin before 1.8.5.6's option to restrict its use by role does not prevent this.",
+      "last_modified": "2026-09-09T10:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15690"
     },
     {
-      "cve_id": "CVE-2026-7804",
-      "asset_id": "CVE-2026-7804",
+      "cve_id": "CVE-2026-80440",
+      "asset_id": "CVE-2026-80440",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Product Filter for WooCommerce by WBW plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the 'wpf_fid' parameter in all versions up to, and including, 3.4.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link. Exploitation requires the crafted request to target a page where a filter using the vulnerable recalculation output is present.",
-      "last_modified": "2026-09-09T03:28:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7804"
+      "description": "The Hustle WordPress plugin before 7.8.14.2 does not prevent shortcodes in submitted form values from being executed when it substitutes those values into the message it returns after submission, because the guard it applies can be defeated by nesting, allowing unauthenticated users to run any shortcode registered on the site.",
+      "last_modified": "2026-09-09T10:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80440"
     },
     {
-      "cve_id": "CVE-2026-17553",
-      "asset_id": "CVE-2026-17553",
+      "cve_id": "CVE-2026-83537",
+      "asset_id": "CVE-2026-83537",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WP EasyCart plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.9.3. This is due to the ec_ajax_save_page_default_options() AJAX handler iterating over every $_POST key and passing it directly into update_option() without any allowlist, while gating the handler only on 'manage_options' OR the plugin's custom 'wpec_manager' capability. The plugin's built-in 'wpec_store_manager' role holds 'wpec_manager' but not 'manage_options', and the required nonce is emitted on frontend product/category templates that render for any user with 'wpec_manager'. This makes it possible for authenticated attackers, with Store Manager-level access and above, to elevate their privileges to administrator by updating arbitrary WordPress options such as default_role='administrator' and users_can_register='1', then self-registering a new account that is assigned the administrator role.",
-      "last_modified": "2026-09-09T03:28:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17553"
+      "description": "The WP Express Checkout WordPress plugin before 2.5.0 does not verify server-side that a payment was actually completed before marking an order as paid, allowing unauthenticated users to forge a completed order without paying.",
+      "last_modified": "2026-09-09T10:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83537"
     },
     {
-      "cve_id": "CVE-2026-81644",
-      "asset_id": "CVE-2026-81644",
+      "cve_id": "CVE-2026-80174",
+      "asset_id": "CVE-2026-80174",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "DoS vulnerability in the preview service module.\nImpact: Successful exploitation of this vulnerability may affect availability.",
-      "last_modified": "2026-09-09T03:25:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81644"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Insufficient Session Expiration vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to session theft.",
+      "last_modified": "2026-09-09T10:27:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80174"
     },
     {
-      "cve_id": "CVE-2026-49312",
-      "asset_id": "CVE-2026-49312",
+      "cve_id": "CVE-2026-80055",
+      "asset_id": "CVE-2026-80055",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Permission control vulnerability in the window module.\nImpact: Successful exploitation of this vulnerability may affect service confidentiality.",
-      "last_modified": "2026-09-09T03:23:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49312"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to script injection.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80055"
     },
     {
-      "cve_id": "CVE-2026-49310",
-      "asset_id": "CVE-2026-49310",
+      "cve_id": "CVE-2026-80177",
+      "asset_id": "CVE-2026-80177",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Permission control vulnerability in the event notification module.\nImpact: Successful exploitation of this vulnerability may affect service confidentiality.",
-      "last_modified": "2026-09-09T03:22:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49310"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to script injection.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80177"
     },
     {
-      "cve_id": "CVE-2026-49314",
-      "asset_id": "CVE-2026-49314",
+      "cve_id": "CVE-2026-80124",
+      "asset_id": "CVE-2026-80124",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OOB write vulnerability in the rendering and composition module.\nImpact: Successful exploitation of this vulnerability may affect availability.",
-      "last_modified": "2026-09-09T03:19:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49314"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Insertion of Sensitive Information into Log File vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to information exposure.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80124"
     },
     {
-      "cve_id": "CVE-2026-49311",
-      "asset_id": "CVE-2026-49311",
+      "cve_id": "CVE-2026-78494",
+      "asset_id": "CVE-2026-78494",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Permission control vulnerability in the event notification module.Impact: Successful exploitation of this vulnerability may affect availability.",
-      "last_modified": "2026-09-09T03:16:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49311"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Certificate Validation vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to unauthorized access.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78494"
     },
     {
-      "cve_id": "CVE-2026-58015",
-      "asset_id": "CVE-2026-58015",
+      "cve_id": "CVE-2026-80175",
+      "asset_id": "CVE-2026-80175",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. The D-Bus client-side implementation of the DBUS_COOKIE_SHA1 SASL authentication mechanism does not validate the cookie_context parameter received from the server. A malicious D-Bus server can supply a cookie_context containing path traversal sequences, causing the client to read an arbitrary file and exfiltrate sensitive data by verifying guessed file contents against a generated hash.",
-      "last_modified": "2026-09-09T03:05:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58015"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Insertion of Sensitive Information into Externally-Accessible File or Directory vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to information exposure.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80175"
     },
     {
-      "cve_id": "CVE-2026-58014",
-      "asset_id": "CVE-2026-58014",
+      "cve_id": "CVE-2026-80122",
+      "asset_id": "CVE-2026-80122",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. An off-by-one error can occur in the g_key_file_get_locale_string_list function in the gkeyfile.c file when loading a key file with an empty value. This flaw can cause an out-of-bounds access of 1 byte or a denial of service when the out-of-bounds access crosses a page boundary.",
-      "last_modified": "2026-09-09T03:05:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58014"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Certificate Validation vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to unauthorized access.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80122"
     },
     {
-      "cve_id": "CVE-2026-58013",
-      "asset_id": "CVE-2026-58013",
+      "cve_id": "CVE-2026-78491",
+      "asset_id": "CVE-2026-78491",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. A buffer over-read can occur in g_io_channel_read_line_backend() in the giochannel.c file when a custom line terminator with a length greater than one is set, causing memcmp to read past the GString buffer. This vulnerability can cause a minor information disclosure of 7 bytes or a denial of service when the buffer over-read crosses a page boundary.",
-      "last_modified": "2026-09-09T03:05:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58013"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Certificate Validation vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to unauthorized access.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78491"
     },
     {
-      "cve_id": "CVE-2026-58012",
-      "asset_id": "CVE-2026-58012",
+      "cve_id": "CVE-2026-79640",
+      "asset_id": "CVE-2026-79640",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. A buffer over-read can occur in the g_regex_replace function when used with the `G_REGEX_RAW` compile flag and case-change replacement escapes because the string_append function processes matched substrings using UTF-8 functions that assume valid UTF-8 input, even when the string is treated as raw bytes. This vulnerability can cause a minor information disclosure of 1-5 bytes and a denial of service when the buffer over-read crosses a page boundary.",
-      "last_modified": "2026-09-09T03:05:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58012"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to unauthorized access.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79640"
     },
     {
-      "cve_id": "CVE-2026-58011",
-      "asset_id": "CVE-2026-58011",
+      "cve_id": "CVE-2026-79967",
+      "asset_id": "CVE-2026-79967",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. An out-of-bounds read of only 2 bytes can occur in the g_date_time_get_ymd function in the glib/gdatetime.c file when an invalid GDateTime object produced by the g_date_time_add_full function is processed. This flaw can corrupt the date output and potentially cause logic errors that may lead to a denial of service.",
-      "last_modified": "2026-09-09T03:05:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58011"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Certificate Validation vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to protection mechanism bypass.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79967"
     },
     {
-      "cve_id": "CVE-2026-58010",
-      "asset_id": "CVE-2026-58010",
+      "cve_id": "CVE-2026-79974",
+      "asset_id": "CVE-2026-79974",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. An off-by-one error can occur in the gvs_tuple_is_normal function in the glib/gvariant-serialiser.c file when doing an alignment padding check because the bounds check uses > instead of >=, causing an out-of-bounds read of only 1 byte. This issue can cause a minor information disclosure of 1 byte and a denial of service when the out-of-bounds read crosses a page boundary.",
-      "last_modified": "2026-09-09T03:05:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58010"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Authentication vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to unauthorized access.",
+      "last_modified": "2026-09-09T10:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79974"
     },
     {
-      "cve_id": "CVE-2026-15588",
-      "asset_id": "CVE-2026-15588",
+      "cve_id": "CVE-2026-87795",
+      "asset_id": "CVE-2026-87795",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A denial-of-service and resource exhaustion vulnerability exists within the `GDBus` component of GLib. The `gdbusauth` authentication mechanism fails to enforce proper length limitations on data lines read from a client. An unauthenticated local or remote attacker can exploit this lack of input validation by sending excessively long streams of data, causing the application to consume massive amounts of system memory and CPU, potentially leading to a crash or system hang.",
-      "last_modified": "2026-09-09T03:05:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15588"
+      "description": "zstd-jni versions before 1.5.7-14 fail to validate offset and length parameters in the ZstdDictCompress constructor, allowing out-of-bounds memory reads. Attackers can supply untrusted offset or length values to read native heap memory into the compression dictionary, typically causing JVM crashes.",
+      "last_modified": "2026-09-09T10:07:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87795"
     },
     {
-      "cve_id": "CVE-2026-11814",
-      "asset_id": "CVE-2026-11814",
+      "cve_id": "CVE-2026-87794",
+      "asset_id": "CVE-2026-87794",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A command injection vulnerability in the listed NETGEAR models allows a network-adjacent attacker with the ability to intercept and modify local network traffic (attacker-in-the-middle) to compromise the confidentiality and integrity of the affected device. This issue is limited to certain region-specific SKUs.",
-      "last_modified": "2026-09-09T03:00:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11814"
+      "description": "bestzip versions 2.2.6 and 3.0.2 contain an argument injection vulnerability in the nativeZip function that allows attackers to inject arbitrary arguments to the Info-ZIP backend. Attackers can supply a malicious destination path combined with crafted source entries to execute arbitrary commands with Node.js process privileges. Fixed in 2.2.7 and 3.0.3.",
+      "last_modified": "2026-09-09T10:07:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87794"
     },
     {
-      "cve_id": "CVE-2026-11738",
-      "asset_id": "CVE-2026-11738",
+      "cve_id": "CVE-2026-86777",
+      "asset_id": "CVE-2026-86777",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient input validation vulnerability in the\u00a0listed NETGEAR models allows\u00a0authenticated administrators connected to the local network to make unauthorized modification to router software and functionality.",
-      "last_modified": "2026-09-09T02:59:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11738"
+      "description": "AlchemyCMS versions before 7.4.16 and 8.x before 8.3.6 fail to authorize access to the GET /api/nodes endpoint, allowing unauthenticated attackers to retrieve all navigation nodes. Attackers can access the endpoint without authentication to disclose restricted page names, URL paths, and internal URLs from all sites and languages.",
+      "last_modified": "2026-09-09T10:07:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86777"
     },
     {
-      "cve_id": "CVE-2026-9214",
-      "asset_id": "CVE-2026-9214",
+      "cve_id": "CVE-2026-86776",
+      "asset_id": "CVE-2026-86776",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient input validation vulnerability in the NETGEAR R7000 models\n allows\u00a0authenticated administrators connected to the local network to \nmake unauthorized modification to router software and functionality.",
-      "last_modified": "2026-09-09T02:59:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9214"
+      "description": "KeePass versions 2.35 through 2.61.1 fail to validate KDBX header field sizes before memory allocation in the ReadHeaderField function. Attackers can craft a malicious KDBX file declaring excessive header field lengths to trigger allocation of gigabytes of memory, causing the application to consume resources and terminate.",
+      "last_modified": "2026-09-09T10:07:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86776"
     },
     {
-      "cve_id": "CVE-2026-11739",
-      "asset_id": "CVE-2026-11739",
+      "cve_id": "CVE-2026-86547",
+      "asset_id": "CVE-2026-86547",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A command injection vulnerability in certain affected NETGEAR Nighthawk \ndevices allows a network-adjacent attacker with the ability to intercept\n and modify local network traffic (attacker in the middle) to compromise\n the confidentiality and integrity of the affected device.",
-      "last_modified": "2026-09-09T02:59:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11739"
+      "description": "mrubyc through 4.0.0 contains a null pointer dereference vulnerability in the op_enter() handler in src/vm.c when processing untrusted bytecode. Attackers can craft malicious .mrb bytecode files with OP_ENTER instructions at the top level to crash the embedding application and cause denial of service.",
+      "last_modified": "2026-09-09T10:07:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86547"
     },
     {
-      "cve_id": "CVE-2026-11737",
-      "asset_id": "CVE-2026-11737",
+      "cve_id": "CVE-2026-78377",
+      "asset_id": "CVE-2026-78377",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient input validation vulnerability in the\u00a0listed \nNETGEAR models allows\u00a0authenticated administrators connected to the \nlocal network to make unauthorized modification to the device software and \nfunctionality.",
-      "last_modified": "2026-09-09T02:59:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11737"
+      "description": "URL redirection to untrusted site ('open redirect') vulnerability in Yordam Informatics Technology Consulting, Training, and Electronic Systems Industry and Trade Inc. Library Information and Document Automation Program allows Phishing.\n\nThis issue affects Library Information and Document Automation Program: from v22.1 before v22.2.",
+      "last_modified": "2026-09-09T09:21:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78377"
     },
     {
-      "cve_id": "CVE-2026-11733",
-      "asset_id": "CVE-2026-11733",
+      "cve_id": "CVE-2026-19733",
+      "asset_id": "CVE-2026-19733",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A buffer overflow vulnerability in the listed NETGEAR models allows a device administrator to temporarily interrupt the normal operation of the affected device.",
-      "last_modified": "2026-09-09T02:59:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11733"
+      "description": "Server-Side request forgery (SSRF) vulnerability in Yordam Informatics Technology Consulting, Training, and Electronic Systems Industry and Trade Inc. Library Information and Document Automation Program allows Server Side Request Forgery.\n\nThis issue affects Library Information and Document Automation Program: before v22.2.",
+      "last_modified": "2026-09-09T09:19:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19733"
     },
     {
-      "cve_id": "CVE-2026-11734",
-      "asset_id": "CVE-2026-11734",
+      "cve_id": "CVE-2026-87572",
+      "asset_id": "CVE-2026-87572",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A buffer overflow vulnerability in the listed NETGEAR models allows an authenticated admin user to cause the affected device to become temporarily unavailable.",
-      "last_modified": "2026-09-09T02:58:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11734"
+      "description": "Injection in DevTools in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T09:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87572"
     },
     {
-      "cve_id": "CVE-2026-11736",
-      "asset_id": "CVE-2026-11736",
+      "cve_id": "CVE-2025-3271",
+      "asset_id": "CVE-2025-3271",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stack-based buffer overflow vulnerability affects certain NETGEAR models allowing an authenticated admin user to make unauthorized modification to router software and functionality.",
-      "last_modified": "2026-09-09T02:58:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11736"
+      "description": "Documentum Webtop versions prior to 16.7.1 software is vulnerable to an XSS",
+      "last_modified": "2026-09-09T09:14:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3271"
     },
     {
-      "cve_id": "CVE-2026-11735",
-      "asset_id": "CVE-2026-11735",
+      "cve_id": "CVE-2026-11838",
+      "asset_id": "CVE-2026-11838",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stack-based buffer overflow vulnerability affects the listed NETGEAR models allowing an authenticated admin user to make unauthorized modification to the router's software and functionality.",
-      "last_modified": "2026-09-09T02:58:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11735"
+      "description": "Missing authentication for critical function vulnerability in Yordam Informatics Technology Consulting, Training, and Electronic Systems Industry and Trade Inc. Library Reservation System allows Input Data Manipulation.\n\nThis issue affects Library Reservation System: before v22.2.",
+      "last_modified": "2026-09-09T09:14:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11838"
     },
     {
-      "cve_id": "CVE-2026-15141",
-      "asset_id": "CVE-2026-15141",
+      "cve_id": "CVE-2026-72694",
+      "asset_id": "CVE-2026-72694",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The web\ninterface of the affected\ndevice relies on the HTTP referrer header as part of\nrequest validation.\u00a0 Requests\u00a0containing empty Referer value, or omitting\nthe Referer header entirely, may be accepted and processed due to insufficient\nvalidation logic.\n\n\n\n\n\nSuccessful exploitation may allow an adjacent attacker with access to the web management\ninterface to obtain device configuration details and other sensitive\ninformation.",
-      "last_modified": "2026-09-09T02:55:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15141"
+      "description": "A flaw was found in MRTG. When the MRTG daemon is started as a root user and subsequently drops privileges, a local, low-privileged attacker can exploit a symbolic link (symlink) following vulnerability. By influencing or pre-placing a symlink in the process ID (PID) file path, the attacker can trick the root process into changing the ownership of an arbitrary existing file to the daemon user. This can lead to local privilege escalation, allowing unauthorized access to or modification of sensitive files.",
+      "last_modified": "2026-09-09T09:12:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72694"
     },
     {
-      "cve_id": "CVE-2026-20504",
-      "asset_id": "CVE-2026-20504",
+      "cve_id": "CVE-2026-87633",
+      "asset_id": "CVE-2026-87633",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Modem, there is a possible system crash due to a missing bounds check. This could lead to remote denial of service, if a UE has connected to a rogue base station controlled by the attacker, with no additional execution privileges needed. User interaction is not needed for exploitation. Patch ID: MOLY00755024; Issue ID: MSV-7865.",
-      "last_modified": "2026-09-09T02:55:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20504"
+      "description": "Use after free in Views in Google Chrome prior to 153.0.8010.36 allowed a local attacker to execute arbitrary code outside the sandbox via UI Interaction. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T09:00:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87633"
     },
     {
-      "cve_id": "CVE-2026-20503",
-      "asset_id": "CVE-2026-20503",
+      "cve_id": "CVE-2026-87517",
+      "asset_id": "CVE-2026-87517",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Modem, there is a possible system crash due to a missing bounds check. This could lead to remote denial of service, if a UE has connected to a rogue base station controlled by the attacker, with no additional execution privileges needed. User interaction is not needed for exploitation. Patch ID: MOLY01371002; Issue ID: MSV-9020.",
-      "last_modified": "2026-09-09T02:55:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20503"
+      "description": "Race condition in Mobile in Google Chrome on on iOS prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T09:00:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87517"
     },
     {
-      "cve_id": "CVE-2026-20502",
-      "asset_id": "CVE-2026-20502",
+      "cve_id": "CVE-2026-87650",
+      "asset_id": "CVE-2026-87650",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In vdec, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. Patch ID: ALPS11262030; Issue ID: MSV-9196.",
-      "last_modified": "2026-09-09T02:55:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20502"
+      "description": "Out of bounds read in WebGL in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T09:00:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87650"
     },
     {
-      "cve_id": "CVE-2026-20501",
-      "asset_id": "CVE-2026-20501",
+      "cve_id": "CVE-2026-87654",
+      "asset_id": "CVE-2026-87654",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In vdec, there is a possible out of bounds write due to a heap buffer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. Patch ID: ALPS11262030; Issue ID: MSV-9197.",
-      "last_modified": "2026-09-09T02:55:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20501"
+      "description": "Buffer overflow in ANGLE in Google Chrome on on Windows prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T09:00:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87654"
     },
     {
-      "cve_id": "CVE-2026-20500",
-      "asset_id": "CVE-2026-20500",
+      "cve_id": "CVE-2026-87639",
+      "asset_id": "CVE-2026-87639",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Modem, there is a possible system crash due to improper input validation. This could lead to local denial of service with User execution privileges needed. User interaction is needed for exploitation. Patch ID: MOLY01810811; Issue ID: MSV-9232.",
-      "last_modified": "2026-09-09T02:55:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20500"
+      "description": "Use after free in WebPackaging in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87639"
     },
     {
-      "cve_id": "CVE-2026-13709",
-      "asset_id": "CVE-2026-13709",
+      "cve_id": "CVE-2026-87587",
+      "asset_id": "CVE-2026-87587",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Graphina \u2013 Charts and Graphs For Elementor plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'iq_tree_tree_chart_template' Widget Setting in all versions up to, and including, 3.1.11 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
-      "last_modified": "2026-09-09T02:27:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13709"
+      "description": "Use after free in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87587"
     },
     {
-      "cve_id": "CVE-2026-15667",
-      "asset_id": "CVE-2026-15667",
+      "cve_id": "CVE-2026-87536",
+      "asset_id": "CVE-2026-87536",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Eventin \u2013 Event Calendar, Event Registration, Tickets & Booking (AI Powered) plugin for WordPress is vulnerable to Local File Inclusion in all versions up to, and including, 4.1.22 via the 'event_layout' parameter parameter. This makes it possible for authenticated attackers, with contributor-level access and above, to include and execute arbitrary .php files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where .php file types can be uploaded and included. The etn_manage_event capability is assigned to Contributors by default, meaning any Contributor-level user can set the malicious event_layout value via the REST API without any additional configuration.",
-      "last_modified": "2026-09-09T02:27:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15667"
+      "description": "Use after free in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87536"
     },
     {
-      "cve_id": "CVE-2026-15406",
-      "asset_id": "CVE-2026-15406",
+      "cve_id": "CVE-2026-87504",
+      "asset_id": "CVE-2026-87504",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Eventin \u2013 Event Calendar, Event Registration, Tickets & Booking (AI Powered) plugin for WordPress is vulnerable to Local File Inclusion in all versions up to, and including, 4.1.22 via the 'event_layout' parameter parameter. This makes it possible for authenticated attackers, with custom-level access and above, to include and execute arbitrary .php files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where .php file types can be uploaded and included.",
-      "last_modified": "2026-09-09T02:27:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15406"
+      "description": "Use after free in Core in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to execute arbitrary code outside the sandbox via a crafted Chrome extension. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87504"
     },
     {
-      "cve_id": "CVE-2026-76801",
-      "asset_id": "CVE-2026-76801",
+      "cve_id": "CVE-2026-87491",
+      "asset_id": "CVE-2026-87491",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The FireBox \u2013 WooCommerce Popup Builder, Exit Intent Popup, Email Optin & Cart Abandonment plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, 3.1.10 via the value function. This is due to a trivially bypassable regex blacklist in Executer::allowedToRun() that fails to block WordPress core functions such as wp_insert_user, update_option, and file_put_contents, combined with no sanitization of PHP condition rule values stored via the firebox_meta REST endpoint. This makes it possible for authenticated attackers, with author-level access and above, to execute code on the server. On sites upgraded from a version prior to 3.1.10, the Migrator::preserveCampaignRoleAccess() function automatically grants the edit_fireboxes and publish_fireboxes capabilities to the Author role, lowering the effective entry point to Author-level access.",
-      "last_modified": "2026-09-09T02:27:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76801"
+      "description": "Out of bounds write in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87491"
     },
     {
-      "cve_id": "CVE-2026-13359",
-      "asset_id": "CVE-2026-13359",
+      "cve_id": "CVE-2026-87657",
+      "asset_id": "CVE-2026-87657",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Contact Form to DB by BestWebSoft \u2013 Messages Database Plugin For WordPress plugin for WordPress is vulnerable to Stored Cross-Site Scripting via cntctfrm_contact_dropdown Parameter in all versions up to, and including, 1.7.5 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The injected payload executes in the context of an administrator's browser session when they visit the plugin's message manager page at /wp-admin/admin.php?page=cntctfrmtdb_manager, making it possible to compromise administrator-level sessions via a simple unauthenticated contact form submission.",
-      "last_modified": "2026-09-09T02:27:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13359"
+      "description": "Use after free in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to read memory inside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87657"
     },
     {
-      "cve_id": "CVE-2026-12956",
-      "asset_id": "CVE-2026-12956",
+      "cve_id": "CVE-2026-87766",
+      "asset_id": "CVE-2026-87766",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WP Event Solution (Eventin) plugin for WordPress is vulnerable to Missing Authorization in versions up to, and including, 4.1.22 via the create_item() handler for the /wp-json/eventin/v2/orders REST endpoint. The endpoint's create_item_permissions_check() function only verifies a wp_rest nonce (which is leaked to every visitor through the etn-public script's localized_data_obj on every frontend page) and accepts a user-supplied 'status' value in prepare_item_for_database() with no whitelist validation. This makes it possible for unauthenticated attackers to create etn-order posts with status='completed' that are counted as sold by etn_get_sold_tickets_by_event(); because the auto-cleanup wp_schedule_single_event() in create_item() only fires for status='pending' orders, the forged completed orders persist indefinitely and exhaust ticket inventory.",
-      "last_modified": "2026-09-09T02:27:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12956"
+      "description": "A flaw was found in bubblewrap. During sandbox setup, creating files or directories under the new root can follow a parent symlink onto the host via /oldroot, writing attacker-chosen paths outside the sandbox as the launching user. This happens before the sandboxed process starts. This issue is GHSA-pxhw-h44j-8pfx. It is fixed in bubblewrap 0.12.0.",
+      "last_modified": "2026-09-09T08:34:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87766"
     },
     {
-      "cve_id": "CVE-2026-87036",
-      "asset_id": "CVE-2026-87036",
+      "cve_id": "CVE-2026-79973",
+      "asset_id": "CVE-2026-79973",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:09:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87036"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Unsynchronized Access to Shared Data in a Multithreaded Context vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to denial of service.",
+      "last_modified": "2026-09-09T08:30:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79973"
     },
     {
-      "cve_id": "CVE-2026-87021",
-      "asset_id": "CVE-2026-87021",
+      "cve_id": "CVE-2026-87488",
+      "asset_id": "CVE-2026-87488",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an unauthorized code execution vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:09:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87021"
+      "description": "Use after free in WebGL in Google Chrome on on Android prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Critical)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87488"
     },
     {
-      "cve_id": "CVE-2026-87023",
-      "asset_id": "CVE-2026-87023",
+      "cve_id": "CVE-2026-87628",
+      "asset_id": "CVE-2026-87628",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed a path traversal vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:09:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87023"
+      "description": "Use after free in Cast in Google Chrome prior to 153.0.8010.36 allowed an adjacent attacker to potentially execute arbitrary code outside the sandbox via crafted network traffic. (Chromium security severity: Critical)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87628"
     },
     {
-      "cve_id": "CVE-2026-87084",
-      "asset_id": "CVE-2026-87084",
+      "cve_id": "CVE-2026-87585",
+      "asset_id": "CVE-2026-87585",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed a server-side request forgery vulnerability in Enforce.",
-      "last_modified": "2026-09-09T02:08:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87084"
+      "description": "Double free in PDFium in Google Chrome on on Windows prior to 153.0.8010.36 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted PDF file. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87585"
     },
     {
-      "cve_id": "CVE-2026-87048",
-      "asset_id": "CVE-2026-87048",
+      "cve_id": "CVE-2026-87444",
+      "asset_id": "CVE-2026-87444",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:08:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87048"
+      "description": "Memory corruption in Codecs in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87444"
     },
     {
-      "cve_id": "CVE-2026-87034",
-      "asset_id": "CVE-2026-87034",
+      "cve_id": "CVE-2026-87500",
+      "asset_id": "CVE-2026-87500",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed a SQL injection vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:08:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87034"
+      "description": "Improper validation of array index in ANGLE in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87500"
     },
     {
-      "cve_id": "CVE-2026-87073",
-      "asset_id": "CVE-2026-87073",
+      "cve_id": "CVE-2026-87542",
+      "asset_id": "CVE-2026-87542",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:08:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87073"
+      "description": "Use after free in Input in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87542"
     },
     {
-      "cve_id": "CVE-2026-87032",
-      "asset_id": "CVE-2026-87032",
+      "cve_id": "CVE-2026-87651",
+      "asset_id": "CVE-2026-87651",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an information disclosure vulnerability in Tanium Server.",
-      "last_modified": "2026-09-09T02:08:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87032"
+      "description": "Incorrect authorization in Paint in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to obtain cross-origin data via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87651"
     },
     {
-      "cve_id": "CVE-2026-87072",
-      "asset_id": "CVE-2026-87072",
+      "cve_id": "CVE-2026-87558",
+      "asset_id": "CVE-2026-87558",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:08:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87072"
+      "description": "Use after free in Payments in Google Chrome on on Mac prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87558"
     },
     {
-      "cve_id": "CVE-2026-87035",
-      "asset_id": "CVE-2026-87035",
+      "cve_id": "CVE-2026-87612",
+      "asset_id": "CVE-2026-87612",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an information disclosure vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:08:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87035"
+      "description": "Type confusion in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87612"
     },
     {
-      "cve_id": "CVE-2026-87033",
-      "asset_id": "CVE-2026-87033",
+      "cve_id": "CVE-2026-87478",
+      "asset_id": "CVE-2026-87478",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:08:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87033"
+      "description": "Observable discrepancy in Autofill in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to obtain sensitive information via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87478"
     },
     {
-      "cve_id": "CVE-2026-14892",
-      "asset_id": "CVE-2026-14892",
+      "cve_id": "CVE-2026-87453",
+      "asset_id": "CVE-2026-87453",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Tanium Server.",
-      "last_modified": "2026-09-09T02:07:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14892"
+      "description": "Confused deputy in BackgroundFetch in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to leak sensitive information via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87453"
     },
     {
-      "cve_id": "CVE-2026-87030",
-      "asset_id": "CVE-2026-87030",
+      "cve_id": "CVE-2026-87611",
+      "asset_id": "CVE-2026-87611",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed a path traversal vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:07:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87030"
+      "description": "Missing authorization in FileSystem in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to obtain cross-origin data via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87611"
     },
     {
-      "cve_id": "CVE-2026-87046",
-      "asset_id": "CVE-2026-87046",
+      "cve_id": "CVE-2026-87506",
+      "asset_id": "CVE-2026-87506",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:07:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87046"
+      "description": "Privilege elevation in WebUI in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87506"
     },
     {
-      "cve_id": "CVE-2026-87025",
-      "asset_id": "CVE-2026-87025",
+      "cve_id": "CVE-2026-87471",
+      "asset_id": "CVE-2026-87471",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:07:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87025"
+      "description": "Incorrect authorization in ServiceWorker in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to bypass site isolation via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87471"
     },
     {
-      "cve_id": "CVE-2026-87075",
-      "asset_id": "CVE-2026-87075",
+      "cve_id": "CVE-2026-87615",
+      "asset_id": "CVE-2026-87615",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:06:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87075"
+      "description": "Race condition in Payments in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to spoof UI elements via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87615"
     },
     {
-      "cve_id": "CVE-2026-87047",
-      "asset_id": "CVE-2026-87047",
+      "cve_id": "CVE-2026-87630",
+      "asset_id": "CVE-2026-87630",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:06:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87047"
+      "description": "Integer overflow in WebRTC in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to read memory inside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87630"
     },
     {
-      "cve_id": "CVE-2026-87019",
-      "asset_id": "CVE-2026-87019",
+      "cve_id": "CVE-2026-87623",
+      "asset_id": "CVE-2026-87623",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:06:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87019"
+      "description": "Observable discrepancy in DOM in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to obtain sensitive information via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87623"
     },
     {
-      "cve_id": "CVE-2026-14505",
-      "asset_id": "CVE-2026-14505",
+      "cve_id": "CVE-2026-12858",
+      "asset_id": "CVE-2026-12858",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed a path traversal vulnerability in Tanium Data Service.",
-      "last_modified": "2026-09-09T02:06:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14505"
+      "description": "Improper Privilege Management vulnerability in ESET AV Remover (standalone) allows Privilege Escalation via especially crafted RPC.",
+      "last_modified": "2026-09-09T08:29:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12858"
     },
     {
-      "cve_id": "CVE-2026-87037",
-      "asset_id": "CVE-2026-87037",
+      "cve_id": "CVE-2026-14989",
+      "asset_id": "CVE-2026-14989",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an improper access controls vulnerability in Comply.",
-      "last_modified": "2026-09-09T02:04:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87037"
+      "description": "The Cookie Banner for GDPR / CCPA \u2013 WPLP Cookie Consent plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'wpl_user_preference' parameter in all versions up to, and including, 4.4.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The consent-logging AJAX endpoint is registered for unauthenticated users and its required nonce (wpl_consent_logging_nonce) is publicly emitted via wp_localize_script on the frontend, meaning any unauthenticated site visitor can plant a payload without any prior authentication or privileged access.",
+      "last_modified": "2026-09-09T08:28:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14989"
     },
     {
-      "cve_id": "CVE-2026-87088",
-      "asset_id": "CVE-2026-87088",
+      "cve_id": "CVE-2026-14359",
+      "asset_id": "CVE-2026-14359",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tanium addressed an unauthorized code execution vulnerability in Enforce.",
-      "last_modified": "2026-09-09T02:00:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87088"
+      "description": "The YITH WooCommerce Waitlist Premium plugin for WordPress is vulnerable to Privilege Escalation in versions up to, and including, 3.35.0. This is due to the add_user_in_waiting_list() function registered on the wp_ajax_yith_wcwtl_add_user action being missing both a capability check and a nonce verification, and using parse_str() + extract() to import attacker-controlled variables from $_POST['params'] that are then passed to wp_create_user() and $user->set_role(). This makes it possible for authenticated attackers, with Subscriber-level access and above, to elevate their privileges to that of an administrator by creating a new user account and assigning it the administrator role.",
+      "last_modified": "2026-09-09T08:28:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14359"
     },
     {
-      "cve_id": "CVE-2026-87724",
-      "asset_id": "CVE-2026-87724",
+      "cve_id": "CVE-2026-80099",
+      "asset_id": "CVE-2026-80099",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tor before 0.4.9.12 interprets the CC_RESPONSE extension even when CC_REQUEST was not sent, which allows remote attackers to cause a denial of service (crash) because of corrupted congestion-control state. This is TROVE-2026-032.",
-      "last_modified": "2026-09-09T01:29:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87724"
+      "description": "Several Newfold plugins are vulnerable to Authentication Bypass. The vulnerability exists because the plugins bundle the wp-module-data module. In the module, the `authenticate()` method \u2014 registered on the `rest_authentication_errors` filter and therefore evaluated for every unauthenticated REST API request \u2014 performs an HMAC-style Bearer token comparison that degenerates when `HiiveConnection::get_auth_token()` returns `false`: PHP coerces `strrev(false)` to `strrev('')`, collapsing the secret salt to the publicly known constant `hash('sha256', '') = e3b0c44...`, while all remaining hash inputs (HTTP method, request URL, raw request body, and the `X-Timestamp` header) remain fully attacker-controlled. This makes it possible for unauthenticated attackers to compute a valid Bearer token entirely offline, pass the token equality check, and have `wp_set_current_user()` invoked against the first administrator returned by `get_users(['role' => 'administrator'])`, granting full administrator-level access and enabling arbitrary REST API operations such as creating new administrator accounts and achieving complete site takeover. Vulnerable versions are WP Plugin Crazy Domains (<= 2.5.2), WP Plugin Web (<= 2.3.4), WP Plugin Hostgator (<= 3.1.0), WP Plugin Bluehost (<= 4.17.1). The affected module is vulnerable in versions up to, and including, 2.9.4.",
+      "last_modified": "2026-09-09T08:28:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80099"
     },
     {
-      "cve_id": "CVE-2026-87083",
-      "asset_id": "CVE-2026-87083",
+      "cve_id": "CVE-2025-46808",
+      "asset_id": "CVE-2025-46808",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in tile-ai tilelang up to 0.1.14. This impacts the function KernelCache._load_kernel_from_disk of the file tilelang/cache/kernel_cache.py of the component Kernel Cache. Executing a manipulation can lead to deserialization. The attack may be performed from remote. This patch is called 11ec2397fe942e8b422d026af4a03d6e0a55ae6c. Applying a patch is advised to resolve this issue. Based on the release information, the fix has not been included in any official release yet.",
-      "last_modified": "2026-09-09T01:15:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87083"
+      "description": "An Insertion of Sensitive Information into Log File vulnerability in SUSE neuvector manager exposes sensitive information into the manager container\u2019s log\n\n\n\n\n\n\nThis issue affects neuvector: before 5.4.5.",
+      "last_modified": "2026-09-09T08:25:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-46808"
     },
     {
-      "cve_id": "CVE-2026-67390",
-      "asset_id": "CVE-2026-67390",
+      "cve_id": "CVE-2026-16272",
+      "asset_id": "CVE-2026-16272",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Buffer over-read in SQL Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-09-09T01:15:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67390"
+      "description": "Use of less trusted source vulnerability in PayTR Payment and Electronic Money Institution Inc. PayTR Virtual Pos iFrame API (v9x) WHMCS Module allows Exploitation of Trusted Identifiers.\n\nThis issue affects PayTR Virtual Pos iFrame API (v9x) WHMCS Module: from v9.0.0 before v9.0.3.",
+      "last_modified": "2026-09-09T08:17:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16272"
     },
     {
-      "cve_id": "CVE-2026-74239",
-      "asset_id": "CVE-2026-74239",
+      "cve_id": "CVE-2026-17523",
+      "asset_id": "CVE-2026-17523",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a path traversal vulnerability in the style archive importer on Windows deployments that allows authenticated non-super administrators with style permissions to write arbitrary files outside the intended extraction directory by using backslash-based traversal sequences in ZIP member names. Attackers can craft a malicious ZIP archive with backslash path separators that bypass forward-slash validation to write arbitrary bytes to any web-server-writable path, including the public web root, achieving persistent code execution as the web-server account.",
-      "last_modified": "2026-09-09T01:13:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74239"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncan: bcm: switch timer to HRTIMER_MODE_SOFT and remove hrtimer_tasklet\n\nThis patch switches the timer to HRTIMER_MODE_SOFT, which executed the\ntimer callback in softirq context and removes the hrtimer_tasklet.",
+      "last_modified": "2026-09-09T08:17:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17523"
     },
     {
-      "cve_id": "CVE-2026-73321",
-      "asset_id": "CVE-2026-73321",
+      "cve_id": "CVE-2026-79696",
+      "asset_id": "CVE-2026-79696",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains an uncontrolled recursion vulnerability in the BBCode parser that allows authenticated attackers to cause persistent denial of service by submitting a post with deeply nested BBCode tags. Attackers can craft a single malicious post with sufficient nesting depth to exceed PHP's stack limit, causing fatal errors that repeatedly terminate PHP-FPM workers for all visitors rendering the affected thread.",
-      "last_modified": "2026-09-09T01:12:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73321"
+      "description": "A Code Injection vulnerability in adk web in Google Cloud Agent Development Kit (ADK) for Python versions 2.0.0 through 2.6.0 on Python (OSS), Cloud Run, and GKE environments where pytest is installed allows an unauthenticated remote attacker to execute arbitrary code using a crafted test session replay.",
+      "last_modified": "2026-09-09T08:16:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79696"
     },
     {
-      "cve_id": "CVE-2026-73320",
-      "asset_id": "CVE-2026-73320",
+      "cve_id": "CVE-2026-87525",
+      "asset_id": "CVE-2026-87525",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains an unauthenticated information disclosure vulnerability that allows unauthenticated attackers to retrieve private unfurl records by supplying predictable auto-increment primary key IDs to the unfurl endpoint. Attackers can enumerate or predict result IDs and query the endpoint without any session, user, or visibility checks to obtain rendered preview HTML, original URLs, and query strings from private conversations and other restricted content.",
-      "last_modified": "2026-09-09T01:11:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73320"
+      "description": "Out of bounds read in Chromoting in Google Chrome on on Windows prior to 153.0.8010.36 allowed a local attacker to read memory outside the sandbox via a local program. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87525"
     },
     {
-      "cve_id": "CVE-2026-73319",
-      "asset_id": "CVE-2026-73319",
+      "cve_id": "CVE-2026-87578",
+      "asset_id": "CVE-2026-87578",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a cross-site scripting vulnerability in the dynamic redirect handler that allows unauthenticated attackers to execute arbitrary JavaScript in the board origin by crafting a malicious javascript: URI that bypasses host validation. Attackers can embed the board hostname in the URI authority component and use percent-encoded newlines to evade server-side filters, causing authenticated users who perform a Follow action to execute attacker-supplied JavaScript in their browser.",
-      "last_modified": "2026-09-09T01:11:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73319"
+      "description": "Use after free in Receiver in Google Chrome prior to 153.0.8010.36 allowed an adjacent attacker to execute arbitrary code outside the sandbox via crafted network traffic. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87578"
     },
     {
-      "cve_id": "CVE-2026-73318",
-      "asset_id": "CVE-2026-73318",
+      "cve_id": "CVE-2026-87524",
+      "asset_id": "CVE-2026-87524",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a missing authorization vulnerability in the force-agreement controller that allows any ACP administrator to access and submit force-agreement forms regardless of their assigned permissions. Attackers can bypass the option permission declared in the navigation configuration to update the global policy last-updated timestamp, forcing all users to re-agree to the privacy policy or terms of service.",
-      "last_modified": "2026-09-09T01:10:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73318"
+      "description": "Use after free in Core in Google Chrome on on Windows prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87524"
     },
     {
-      "cve_id": "CVE-2026-73317",
-      "asset_id": "CVE-2026-73317",
+      "cve_id": "CVE-2026-87569",
+      "asset_id": "CVE-2026-87569",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a missing authorization vulnerability in the ACP cache-rebuild dispatcher that allows limited administrators with only the rebuildCache permission to perform unauthorized approval queue actions by supplying an arbitrary job class and actor user ID in the POST body. Attackers can invoke the approval queue job under any user identity to approve queued user registrations without holding the required approval-queue or moderator permissions, causing the moderation log to attribute actions to an impersonated account.",
-      "last_modified": "2026-09-09T01:10:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73317"
+      "description": "Missing authorization in Views in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87569"
     },
     {
-      "cve_id": "CVE-2026-73316",
-      "asset_id": "CVE-2026-73316",
+      "cve_id": "CVE-2026-87554",
+      "asset_id": "CVE-2026-87554",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a payment replay vulnerability in the PayPal REST payment provider that allows attackers to process the same webhook payload multiple times by exploiting a missing duplicate transaction ID check. Attackers can replay a valid webhook payload to trigger duplicate payment events, resulting in repeated subscription activations and unauthorized account upgrades.",
-      "last_modified": "2026-09-09T01:09:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73316"
+      "description": "Race condition in Chromoting in Google Chrome on on Windows prior to 153.0.8010.36 allowed a local attacker to execute arbitrary code outside the sandbox via a local program. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87554"
     },
     {
-      "cve_id": "CVE-2026-73315",
-      "asset_id": "CVE-2026-73315",
+      "cve_id": "CVE-2026-87467",
+      "asset_id": "CVE-2026-87467",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a server-side request forgery vulnerability in the PayPal REST webhook handler that allows unauthenticated attackers to cause the server to make outbound HTTP requests to arbitrary destinations by supplying a crafted certificate URL in webhook headers without scheme, hostname, or allowlist validation. Attackers can submit a crafted POST to the PayPal webhook callback endpoint to reach internal network resources including cloud instance metadata services, potentially disclosing IAM credentials or enabling secondary internal service exploitation.",
-      "last_modified": "2026-09-09T01:09:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73315"
+      "description": "Race condition in Updater in Google Chrome on on Windows prior to 153.0.8010.36 allowed a local attacker to potentially execute arbitrary code outside the sandbox via a local program. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87467"
     },
     {
-      "cve_id": "CVE-2026-73314",
-      "asset_id": "CVE-2026-73314",
+      "cve_id": "CVE-2026-87492",
+      "asset_id": "CVE-2026-87492",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a signature verification logic error in the PayPal REST webhook handler that allows unauthenticated attackers to bypass payment signature validation by submitting a webhook request with an unsupported auth_algo header value. When the algorithm cannot be mapped to a supported hash function, the verification function incorrectly returns true instead of failing, causing the caller to treat the fabricated request as verified and process the payment event without a valid PayPal signature.",
-      "last_modified": "2026-09-09T01:08:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73314"
+      "description": "Incorrect authorization in DevTools in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87492"
     },
     {
-      "cve_id": "CVE-2026-73313",
-      "asset_id": "CVE-2026-73313",
+      "cve_id": "CVE-2026-87514",
+      "asset_id": "CVE-2026-87514",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a multi-factor authentication bypass vulnerability in the passkey TFA provider that allows an authenticated attacker to complete login as another user by submitting their own registered passkey credential during the WebAuthn assertion step. The passkey verification path performs a global credential lookup without validating that the matched credential belongs to the user whose login is pending, enabling an attacker who knows a target account's password to sign the challenge with their own passkey and bypass multi-factor authentication on both public forum and ACP login paths.",
-      "last_modified": "2026-09-09T01:08:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73313"
+      "description": "Use after free in Views in Google Chrome prior to 153.0.8010.36 allowed a local attacker to execute arbitrary code outside the sandbox via a local program. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87514"
     },
     {
-      "cve_id": "CVE-2026-73312",
-      "asset_id": "CVE-2026-73312",
+      "cve_id": "CVE-2026-87596",
+      "asset_id": "CVE-2026-87596",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains a refresh token replay vulnerability that allows attackers to reuse a refresh token multiple times by exploiting the failure to mark tokens as consumed when the parent access token has expired. Attackers can repeatedly submit the same refresh token to generate additional independent token pairs, achieving persistent unauthorized access for the token's full lifetime.",
-      "last_modified": "2026-09-09T01:07:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73312"
+      "description": "Out of bounds read in ANGLE in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87596"
     },
     {
-      "cve_id": "CVE-2026-73311",
-      "asset_id": "CVE-2026-73311",
+      "cve_id": "CVE-2026-87604",
+      "asset_id": "CVE-2026-87604",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains an OAuth2 authorization code reuse vulnerability that allows attackers to obtain unauthorized token pairs by submitting a previously used authorization code. Attackers can exploit the failure to invalidate or mark authorization codes as consumed after initial token issuance to receive an independent token pair for the same user and scopes, bypassing the single-use guarantee of the OAuth2 authorization code flow.",
-      "last_modified": "2026-09-09T01:03:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73311"
+      "description": "Out of bounds read in ANGLE in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87604"
     },
     {
-      "cve_id": "CVE-2026-73310",
-      "asset_id": "CVE-2026-73310",
+      "cve_id": "CVE-2026-87647",
+      "asset_id": "CVE-2026-87647",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains an authorization flaw in the OAuth2 token endpoint that allows attackers controlling any allowlisted redirect URI to bypass redirect URI binding by submitting a different allowlisted URI than the one recorded at authorization time. Attackers can exchange an intercepted authorization code using a mismatched redirect URI to steal OAuth2 tokens from intercepted authorization flows.",
-      "last_modified": "2026-09-09T01:02:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73310"
+      "description": "Uninitialized resource in GPU in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87647"
     },
     {
-      "cve_id": "CVE-2026-73309",
-      "asset_id": "CVE-2026-73309",
+      "cve_id": "CVE-2026-87646",
+      "asset_id": "CVE-2026-87646",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "XenForo before 2.3.13 contains an authentication bypass vulnerability in the OAuth2 token endpoint that allows unauthenticated attackers to obtain valid token pairs by submitting empty values for client_secret and code_verifier parameters. Attackers can exploit PHP truthy evaluation logic, which treats empty strings as false and skips client secret validation and PKCE code verifier validation, to exchange a valid authorization code for a token pair without proving client identity or holding the PKCE commitment.",
-      "last_modified": "2026-09-09T01:01:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73309"
+      "description": "Use after free in Web Authentication in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87646"
     },
     {
-      "cve_id": "CVE-2026-17084",
-      "asset_id": "CVE-2026-17084",
+      "cve_id": "CVE-2026-87460",
+      "asset_id": "CVE-2026-87460",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The \"stringprep\" module didn't process characters from RFC 3454 tables \nB.2 or B.3 correctly: the latest Unicode codepoint attributes were used \ninstead of the specified Unicode 3.2.0. This behavior would cause \nmismatches when processing domain names using IDNA 2003 (the \"idna\" \ncodec) and the in_table_b2() function of the \"stringprep\" module. This \nonly affects domain names containing characters that were not previously\n registered or had their Unicode attributes such as case-folding \nbehavior updated since Unicode 3.2.0.",
-      "last_modified": "2026-09-09T00:36:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17084"
+      "description": "Use after free in Platform in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87460"
     },
     {
-      "cve_id": "CVE-2026-69906",
-      "asset_id": "CVE-2026-69906",
+      "cve_id": "CVE-2026-87552",
+      "asset_id": "CVE-2026-87552",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based buffer overflow in Windows Secure Kernel Mode allows an authorized attacker to elevate privileges locally.",
-      "last_modified": "2026-09-09T00:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69906"
+      "description": "Missing authorization in TrustedWebActivities in Google Chrome on on Android prior to 153.0.8010.36 allowed a local attacker to obtain sensitive information via a co-installed app. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87552"
     },
     {
-      "cve_id": "CVE-2026-70145",
-      "asset_id": "CVE-2026-70145",
+      "cve_id": "CVE-2026-87564",
+      "asset_id": "CVE-2026-87564",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in Microsoft Windows Search Component allows an authorized attacker to disclose information locally.",
-      "last_modified": "2026-09-09T00:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-70145"
+      "description": "Type confusion in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to read memory inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87564"
     },
     {
-      "cve_id": "CVE-2026-87593",
-      "asset_id": "CVE-2026-87593",
+      "cve_id": "CVE-2026-87456",
+      "asset_id": "CVE-2026-87456",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Information leak in Editing in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to obtain sensitive information via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87593"
+      "description": "Uninitialized resource in Media in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87456"
     },
     {
-      "cve_id": "CVE-2026-87430",
-      "asset_id": "CVE-2026-87430",
+      "cve_id": "CVE-2026-87653",
+      "asset_id": "CVE-2026-87653",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Buffer overflow in WebRTC in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87430"
+      "description": "UI misrepresentation in FullScreen in Google Chrome on on Windows prior to 153.0.8010.36 allowed a remote attacker to spoof UI elements via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-09-09T08:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87653"
     },
     {
-      "cve_id": "CVE-2026-87544",
-      "asset_id": "CVE-2026-87544",
+      "cve_id": "CVE-2026-7861",
+      "asset_id": "CVE-2026-7861",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in Extensions in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to bypass system access restrictions into a privileged page via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87544"
+      "description": "Deserialization of untrusted data vulnerability in Next4Biz Information Technologies Inc. CSM (Customer Service Management) allows Code Injection.\n\nThis issue affects CSM (Customer Service Management): before 8.0.3.",
+      "last_modified": "2026-09-09T08:11:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7861"
     },
     {
-      "cve_id": "CVE-2026-87601",
-      "asset_id": "CVE-2026-87601",
+      "cve_id": "CVE-2026-79636",
+      "asset_id": "CVE-2026-79636",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Race condition in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87601"
+      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Validation of Certificate with Host Mismatch vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to unauthorized access.",
+      "last_modified": "2026-09-09T08:03:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79636"
     },
     {
-      "cve_id": "CVE-2026-87602",
-      "asset_id": "CVE-2026-87602",
+      "cve_id": "CVE-2026-87499",
+      "asset_id": "CVE-2026-87499",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out of bounds read in ANGLE in Google Chrome on on Windows prior to 153.0.8010.36 allowed a remote attacker to potentially read memory outside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87602"
+      "description": "Incorrect authorization in Network in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to bypass site isolation via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87499"
     },
     {
-      "cve_id": "CVE-2026-87437",
-      "asset_id": "CVE-2026-87437",
+      "cve_id": "CVE-2026-87607",
+      "asset_id": "CVE-2026-87607",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Information leak in Frames in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to leak sensitive information via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87437"
+      "description": "Use after free in Device in Google Chrome on on Mac prior to 153.0.8010.36 allowed a remote attacker to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87607"
     },
     {
-      "cve_id": "CVE-2026-87608",
-      "asset_id": "CVE-2026-87608",
+      "cve_id": "CVE-2026-87581",
+      "asset_id": "CVE-2026-87581",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper certificate validation in FedCM in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87608"
+      "description": "Use after free in Payments in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87581"
     },
     {
-      "cve_id": "CVE-2026-87551",
-      "asset_id": "CVE-2026-87551",
+      "cve_id": "CVE-2026-87465",
+      "asset_id": "CVE-2026-87465",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper certificate validation in CORS in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87551"
+      "description": "Incorrect authorization in Downloads in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to spoof UI elements via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87465"
     },
     {
-      "cve_id": "CVE-2026-87477",
-      "asset_id": "CVE-2026-87477",
+      "cve_id": "CVE-2026-87442",
+      "asset_id": "CVE-2026-87442",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Information leak in Core in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to leak sensitive information via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87477"
+      "description": "Confused deputy in Prerender in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially bypass web origin policy via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87442"
     },
     {
-      "cve_id": "CVE-2026-87571",
-      "asset_id": "CVE-2026-87571",
+      "cve_id": "CVE-2026-87457",
+      "asset_id": "CVE-2026-87457",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper certificate validation in Loader in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87571"
+      "description": "Race condition in Updater in Google Chrome on on Windows prior to 153.0.8010.36 allowed a local attacker to execute arbitrary code outside the sandbox via a local program. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87457"
     },
     {
-      "cve_id": "CVE-2026-87575",
-      "asset_id": "CVE-2026-87575",
+      "cve_id": "CVE-2026-87503",
+      "asset_id": "CVE-2026-87503",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in Loader in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87575"
+      "description": "Inappropriate implementation in Downloads in Google Chrome on on Android prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87503"
     },
     {
-      "cve_id": "CVE-2026-87489",
-      "asset_id": "CVE-2026-87489",
+      "cve_id": "CVE-2026-87537",
+      "asset_id": "CVE-2026-87537",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Memory corruption in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted Chrome extension. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87489"
+      "description": "Missing authorization in Extensions in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via crafted network traffic. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87537"
     },
     {
-      "cve_id": "CVE-2026-87469",
-      "asset_id": "CVE-2026-87469",
+      "cve_id": "CVE-2026-87652",
+      "asset_id": "CVE-2026-87652",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper input validation in Extensions in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to bypass web origin policy into a privileged page via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87469"
+      "description": "Incorrect authorization in PushAPI in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to bypass web origin policy via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87652"
     },
     {
-      "cve_id": "CVE-2026-87631",
-      "asset_id": "CVE-2026-87631",
+      "cve_id": "CVE-2026-87582",
+      "asset_id": "CVE-2026-87582",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing authorization in DOM in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to potentially leak sensitive information via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-09T00:10:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87631"
+      "description": "Confused deputy in DataTransfer in Google Chrome prior to 153.0.8010.36 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "last_modified": "2026-09-09T08:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87582"
     }
   ]
 }
