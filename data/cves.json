@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-13T16:33:38.026456+00:00",
+  "last_updated": "2026-09-13T21:02:07.407114+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-90565",
-      "asset_id": "CVE-2026-90565",
+      "cve_id": "CVE-2026-37008",
+      "asset_id": "CVE-2026-37008",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in Rizwan17 inventory-management-system up to bfe78a330d01bb26b9daec5dc9ecd5c77900e03f. Affected is an unknown function of the file dashboard.php. Performing a manipulation of the argument userid results in improper access controls. It is possible to initiate the attack remotely. The exploit has been released to the public and may be used for attacks. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T15:30:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90565"
+      "description": "CrewAI before fb2323b offers a Python blocklist approach that operates at the wrong level of abstraction, a different vulnerability than CVE-2026-2275. Import-time blocking of module names does not address the availability of Python's complete object graph. For example, calling ctypes.CDLL(None) loads the C library without relying in any import statements. In other words, a within-process sandbox cannot merely account for the import system and instead must account for the complete runtime of the Python interpreter.",
+      "last_modified": "2026-09-13T20:42:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-37008"
     },
     {
-      "cve_id": "CVE-2026-90564",
-      "asset_id": "CVE-2026-90564",
+      "cve_id": "CVE-2026-90651",
+      "asset_id": "CVE-2026-90651",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in quequnlong shiyi-blog 1.0.0-1.2.1. This impacts the function SysChatMsgMapper.getChatMsgList of the file blog-web/src/views/chat/index.vue of the component chat sendMsg Endpoint. Such manipulation of the argument chat_msg leads to cross site scripting. The attack may be performed from remote. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T15:15:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90564"
+      "description": "Socket Firewall (socketdev/socket-registry-firewall) in registry mode before 2.0.0 does not verify upstream TLS certificates by default. When the api_ssl_verify and upstream_ssl_verify configuration keys are omitted from socket.yml, the generated configuration sets SOCKET_API_SSL_VERIFY='false' and UPSTREAM_SSL_VERIFY='false', and the OpenResty/Lua HTTP client used for outbound requests accepts any certificate, including self-signed and otherwise untrusted certificates, without validating the chain. An attacker positioned to intercept traffic between Socket Firewall and the Socket API or an upstream package registry can present a crafted certificate and modify responses in transit, including substituting malicious package content or altering the allow/block decisions the firewall enforces. Setting api_ssl_verify: true and upstream_ssl_verify: true enables verification; however, in versions before 1.1.334, the generated nginx configuration did not emit lua_ssl_trusted_certificate, and thus verification could not be used successfully without manually patching the generated configuration. Version 2.0.0 changes the default for both settings to true.",
+      "last_modified": "2026-09-13T20:30:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90651"
     },
     {
-      "cve_id": "CVE-2026-90678",
-      "asset_id": "CVE-2026-90678",
+      "cve_id": "CVE-2026-90593",
+      "asset_id": "CVE-2026-90593",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue was discovered in HAProxy 3.3.0 through 3.4.4 and in 3.5-dev1 through 3.5-dev5. Exploitation requires an HTTP/3 frontend: HAProxy must be built with QUIC support and configured with a QUIC bind listener, and the affected traffic must reach a backend over HTTP/1.1 using chunked transfer coding on a reused connection. Under those conditions, when an HTTP/3 request carries no Content-Length header, the HTTP/3 multiplexer credits the length declared in a DATA frame header to the stream endpoint's known-input-payload estimate at the moment the frame header is decoded, before the payload has been received, and that declared length is emitted verbatim as the HTTP/1.1 chunk size. A remote unauthenticated client that declares more payload than it delivers and then ends the stream causes HAProxy to announce a chunk larger than the bytes it writes and to return the connection to the idle pool in a desynchronized state. The result is potential HTTP request smuggling on reused backend connections: an attacker can place a request past a frontend rule such as a path-based http-request deny, so that the smuggled request is never seen by HAProxy's HTTP analysis, and can cause concurrent clients' requests, including their request lines and Authorization headers, to be consumed as the attacker's request body and lost. Exploitation is not deterministic; it depends on a race with backend connection pooling, succeeding in a majority of but not all trials during testing, and can be retried freely. The mechanism was introduced in 3.3-dev10; releases 3.2.x and earlier are unaffected.",
-      "last_modified": "2026-09-13T15:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90678"
+      "description": "A vulnerability was determined in embedded-graphics up to 0.8.2. This affects the function ImageRaw::draw_sub_image of the file src/image/image_raw.rs. Executing a manipulation of the argument width can lead to integer overflow. The attack may be launched remotely. The project was informed of the problem early through an issue report but has not responded yet.",
+      "last_modified": "2026-09-13T20:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90593"
     },
     {
-      "cve_id": "CVE-2026-90563",
-      "asset_id": "CVE-2026-90563",
+      "cve_id": "CVE-2026-36989",
+      "asset_id": "CVE-2026-36989",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in maliangnansheng bbs-springboot 3.0.0. This affects the function utils.toToc of the file ArticleController.java. This manipulation causes cross site scripting. The attack is possible to be carried out remotely.",
-      "last_modified": "2026-09-13T15:00:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90563"
+      "description": "A SQL Injection vulnerability exists in LuxSoft LuxCal through 5.3.4L via rssfeed.php and common/retrieve.php.",
+      "last_modified": "2026-09-13T20:21:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-36989"
     },
     {
-      "cve_id": "CVE-2026-90529",
-      "asset_id": "CVE-2026-90529",
+      "cve_id": "CVE-2026-90584",
+      "asset_id": "CVE-2026-90584",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been found in DataEase up to 2.10.25/2.10.26. Affected by this issue is the function buildTooltip of the file core/core-frontend/src/views/chart/components/js/panel/charts/map/symbolic-map.ts of the component Symbolic Map. Such manipulation of the argument canvasViewInfo[*].customAttr.tooltip.backgroundColor leads to cross site scripting. The attack may be performed from remote. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T14:45:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90529"
+      "description": "A weakness has been identified in TooTallNate Java-WebSocket up to 1.6.1. The impacted element is the function processFrameContinuousAndNonFin of the file Draft_6455.java of the component Fragmentation Handler. Executing a manipulation can lead to allocation of resources. The attack may be performed from remote. The exploit has been made available to the public and could be used for attacks. The pull request to fix this issue awaits acceptance.",
+      "last_modified": "2026-09-13T20:15:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90584"
     },
     {
-      "cve_id": "CVE-2026-90528",
-      "asset_id": "CVE-2026-90528",
+      "cve_id": "CVE-2026-69333",
+      "asset_id": "CVE-2026-69333",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw has been found in TDuckApp tduck-platform up to 5.3. Affected by this vulnerability is an unknown functionality of the file tduck-front/src/views/form/write/index.vue of the component Form Write View. This manipulation of the argument submitShowCustomPageContent causes cross site scripting. The attack is possible to be carried out remotely. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T14:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90528"
+      "description": "Use after free in Windows Win32K allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:12:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69333"
     },
     {
-      "cve_id": "CVE-2026-89739",
-      "asset_id": "CVE-2026-89739",
+      "cve_id": "CVE-2026-69339",
+      "asset_id": "CVE-2026-69339",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: dwc3: gadget: Fix use-after-free in dwc3_gadget_free_endpoints due to race condition\n\nIn dwc3_gadget_init_endpoint, &dep->nostream_work is bound with\ndwc3_nostream_work, and dwc3_gadget_endpoint_stream_event can queue\nthis delayed work on system_percpu_wq when a DEPEVT_STREAM_NOSTREAM\nevent is received.\n\nIf we remove the gadget, dwc3_gadget_free_endpoints makes cleanup and\nthe memory allocated for dep with kzalloc() is released by kfree(dep),\nwhile the delayed work mentioned above may still be pending or\nrunning. The sequence of operations that may lead to a UAF bug is as\nfollows:\n\nCPU0                                      CPU1\n\n                                          | dwc3_thread_interrupt\n                                          | dwc3_endpoint_interrupt\n                                          | dwc3_gadget_endpoint_stream_event\n                                          | queue_delayed_work(system_percpu_wq,\n                                          |                    &dep->nostream_work)\ndwc3_gadget_free_endpoints                |\ndwc3_free_trb_pool(dep)                   |\nlist_del(&dep->endpoint.ep_list)          |\ndwc3_debugfs_remove_endpoint_dir(dep)     |\nkfree(dep)                                |\n// dep is freed                           |\n                                          | dwc3_nostream_work\n                                          | // use dep (use-after-free)\n\nFix it by canceling the delayed work before kfree(dep) in\ndwc3_gadget_free_endpoints.",
-      "last_modified": "2026-09-13T14:30:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89739"
+      "description": "Exposure of sensitive system information to an unauthorized control sphere in Windows MIDI Service Module allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-09-13T20:12:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69339"
     },
     {
-      "cve_id": "CVE-2026-90527",
-      "asset_id": "CVE-2026-90527",
+      "cve_id": "CVE-2026-69338",
+      "asset_id": "CVE-2026-69338",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was detected in quequnlong shiyi-blog up to 1.2.1. Affected is an unknown function of the file blog-admin/src/views/message/message/index.vue of the component Add Message API. The manipulation of the argument body.content results in cross site scripting. The attack can be executed remotely. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T14:15:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90527"
+      "description": "Use after free in Remote Desktop Gateway Service allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-09-13T20:12:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69338"
     },
     {
-      "cve_id": "CVE-2026-90775",
-      "asset_id": "CVE-2026-90775",
+      "cve_id": "CVE-2026-69347",
+      "asset_id": "CVE-2026-69347",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "PostGIS address_standardizer through 3.7.0 fails to validate the Weight parameter from caller-supplied rules tables before using it as an array index. Attackers can craft malicious rule rows with out-of-range Weight values to trigger out-of-bounds reads in the load_value array, causing the PostgreSQL backend process to crash and terminate all cluster sessions.",
-      "last_modified": "2026-09-13T14:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90775"
+      "description": "Heap-based buffer overflow in Windows Fast FAT Driver allows an unauthorized attacker to execute code locally.",
+      "last_modified": "2026-09-13T20:12:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69347"
     },
     {
-      "cve_id": "CVE-2026-90616",
-      "asset_id": "CVE-2026-90616",
+      "cve_id": "CVE-2026-69368",
+      "asset_id": "CVE-2026-69368",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Flatpak before 1.18.1, a malicious sandboxed app can obtain arbitrary read and write access to files on the host, which can be escalated to arbitrary code execution on the host, a different vulnerability than CVE-2026-76925. Flatpak creates a few app data directories (e.g., /var/cache, /var/data, /var/config, and /var/tmp) in every sandbox on every app launch where, in some cases, components of the path are attacker-controlled. Missing symlink protection can redirect the directories. Some of these directories are bind-mounted by Flatpak by passing the path (e.g., /home/user/.var/app/APP_ID/cache/tmp), which contains attacker-controlled directories (tmp) to bwrap --bind SRC DST. bwrap passes the path on to the kernel, which then follows symlinks. A malicious symlink can point to arbitrary locations on the host and it will become mounted inside the sandbox.",
-      "last_modified": "2026-09-13T14:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90616"
+      "description": "Heap-based buffer overflow in Windows Overlay Filter allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:12:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69368"
     },
     {
-      "cve_id": "CVE-2026-79300",
-      "asset_id": "CVE-2026-79300",
+      "cve_id": "CVE-2026-69457",
+      "asset_id": "CVE-2026-69457",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SEP sesam before 5.2.0.24 mishandles User Authorization with MFA. If AD authentication is configured and MFA is enforced, an attacker can create a second OTP access capability. SEP sesam and Active Directory handle username capitalization differently, which may allow multiple SEP sesam user accounts to be created for the same Active Directory (AD) account. Active Directory treats usernames as case-insensitive, while SEP sesam distinguishes between different letter casing. As a result, the same AD user can be represented by multiple SEP sesam user accounts that differ only in username capitalization. When Active Directory authentication is configured and multi-factor authentication (MFA) is enforced, this behavior may allow an additional OTP Authenticator to be registered for the same AD account, reducing the effectiveness of MFA protection.",
-      "last_modified": "2026-09-13T14:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79300"
+      "description": "Out-of-bounds read in Windows USB Driver allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-09-13T20:12:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69457"
     },
     {
-      "cve_id": "CVE-2026-90526",
-      "asset_id": "CVE-2026-90526",
+      "cve_id": "CVE-2026-69423",
+      "asset_id": "CVE-2026-69423",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in SourceCodester School Registration and Fee System 1.0. This impacts an unknown function of the file /bilal/save_class.php. The manipulation of the argument Category leads to sql injection. Remote exploitation of the attack is possible. The exploit has been disclosed publicly and may be used.",
-      "last_modified": "2026-09-13T14:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90526"
+      "description": "Heap-based buffer overflow in Windows USB Video Driver allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-09-13T20:11:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69423"
     },
     {
-      "cve_id": "CVE-2026-90771",
-      "asset_id": "CVE-2026-90771",
+      "cve_id": "CVE-2026-69527",
+      "asset_id": "CVE-2026-69527",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "joi before versions 17.13.8 and 18.2.9 contains a prototype pollution vulnerability in the messages compilation function that accepts __proto__ as an error code. Attackers can supply __proto__ keys in custom messages to replace the returned object's prototype, breaking downstream code relying on Object.prototype methods.",
-      "last_modified": "2026-09-13T13:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90771"
+      "description": "Out-of-bounds read in Windows USB Mass Storage Class Driver allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-09-13T20:11:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69527"
     },
     {
-      "cve_id": "CVE-2026-90525",
-      "asset_id": "CVE-2026-90525",
+      "cve_id": "CVE-2026-69582",
+      "asset_id": "CVE-2026-69582",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in itsourcecode Sales and Inventory System 1.0. This affects an unknown function of the file /pages/cust_pos_trans.php. Executing a manipulation of the argument firstname can lead to sql injection. The attack may be launched remotely. The exploit has been made available to the public and could be used for attacks.",
-      "last_modified": "2026-09-13T13:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90525"
+      "description": "Buffer over-read in Windows Volume Manager Extension Driver allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69582"
     },
     {
-      "cve_id": "CVE-2026-90524",
-      "asset_id": "CVE-2026-90524",
+      "cve_id": "CVE-2026-69608",
+      "asset_id": "CVE-2026-69608",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in jaychouchannel Tourism-Management-System up to 229956e20dbd4a80eeff14535e44d3099502af09. The impacted element is an unknown function of the component Update Endpoint. Performing a manipulation results in missing authentication. The attack may be initiated remotely. The exploit has been released to the public and may be used for attacks. This product uses a rolling release model to deliver continuous updates. As a result, specific version information for affected or updated releases is not available. The patch is named 84d8ec384f669df3985293dab293bb7b477efa64. It is suggested to install a patch to address this issue.",
-      "last_modified": "2026-09-13T13:30:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90524"
+      "description": "Integer overflow or wraparound in Microsoft Windows Search Component allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69608"
     },
     {
-      "cve_id": "CVE-2026-90779",
-      "asset_id": "CVE-2026-90779",
+      "cve_id": "CVE-2026-69832",
+      "asset_id": "CVE-2026-69832",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SIPp through 3.7.7 contains a stack buffer overflow vulnerability in createAuthHeader() when processing SIP authentication challenges with oversized algorithm parameters. A malicious SIP server can send a crafted 401 or 407 challenge to corrupt the stack and crash the client process.",
-      "last_modified": "2026-09-13T13:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90779"
+      "description": "Exposure of sensitive system information to an unauthorized control sphere in Windows Win32K allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-09-13T20:11:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69832"
     },
     {
-      "cve_id": "CVE-2026-90523",
-      "asset_id": "CVE-2026-90523",
+      "cve_id": "CVE-2026-69758",
+      "asset_id": "CVE-2026-69758",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in jaychouchannel Tourism-Management-System up to 229956e20dbd4a80eeff14535e44d3099502af09. The affected element is an unknown function of the file travel/src/main/java/com/controller/UsersController.java of the component User Register Endpoint. Such manipulation of the argument UsersEntity leads to improper privilege management. The attack can be launched remotely. The exploit is publicly available and might be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The name of the patch is 84d8ec384f669df3985293dab293bb7b477efa64. Applying a patch is advised to resolve this issue.",
-      "last_modified": "2026-09-13T13:15:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90523"
+      "description": "Heap-based buffer overflow in Windows Universal Disk Format File System Driver (UDFS) allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69758"
     },
     {
-      "cve_id": "CVE-2026-90560",
-      "asset_id": "CVE-2026-90560",
+      "cve_id": "CVE-2026-71330",
+      "asset_id": "CVE-2026-71330",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "zstd-jni versions 1.2.0 through 1.5.7-13 contain an out-of-bounds read vulnerability in the ZstdDictDecompress constructor because offset and length arguments are never validated against the dictionary array bounds. Attackers can supply arbitrary offset or length values to read memory past the end of the supplied array, potentially causing JVM termination.",
-      "last_modified": "2026-09-13T13:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90560"
+      "description": "Exposure of sensitive system information to an unauthorized control sphere in Windows Services for NFS ONCRPC XDR Driver allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-09-13T20:11:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71330"
     },
     {
-      "cve_id": "CVE-2026-90522",
-      "asset_id": "CVE-2026-90522",
+      "cve_id": "CVE-2026-71333",
+      "asset_id": "CVE-2026-71333",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in jaychouchannel Tourism-Management-System up to d984d172dceca907f8b447efbdb06dc233f7938d. Impacted is the function resetPass of the file UsersController.java of the component Password Recovery. This manipulation causes weak password recovery. The attack can be initiated remotely. The exploit has been publicly disclosed and may be utilized. Continious delivery with rolling releases is used by this product. Therefore, no version details of affected nor updated releases are available. Patch name: 9cb6215ac871f99a90cde763cf003e95ff282283. It is recommended to apply a patch to fix this issue.",
-      "last_modified": "2026-09-13T13:00:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90522"
+      "description": "Use after free in Windows Remote Access Connection Manager allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71333"
     },
     {
-      "cve_id": "CVE-2026-80087",
-      "asset_id": "CVE-2026-80087",
+      "cve_id": "CVE-2026-69383",
+      "asset_id": "CVE-2026-69383",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based buffer overflow in Microsoft Office allows an unauthorized attacker to disclose information over a network.",
-      "last_modified": "2026-09-13T13:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80087"
+      "description": "External control of file name or path in Windows Shell allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69383"
     },
     {
-      "cve_id": "CVE-2026-90521",
-      "asset_id": "CVE-2026-90521",
+      "cve_id": "CVE-2026-69394",
+      "asset_id": "CVE-2026-69394",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in jaychouchannel Tourism-Management-System up to 8122bf020d91199eddfff3ee02d1632a70a9a132. This issue affects some unknown processing of the file MenpiaodingdanController.java of the component CRUD. The manipulation of the argument ID results in authorization bypass. It is possible to launch the attack remotely. The exploit has been made public and could be used. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available. The patch is identified as d44ec3aa0bd2a72c8800e3befb0a9a96a6491b86. It is best practice to apply a patch to resolve this issue.",
-      "last_modified": "2026-09-13T12:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90521"
+      "description": "Heap-based buffer overflow in Windows Audio Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69394"
     },
     {
-      "cve_id": "CVE-2026-90647",
-      "asset_id": "CVE-2026-90647",
+      "cve_id": "CVE-2026-69443",
+      "asset_id": "CVE-2026-69443",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ASE/Kalkitech ASE2000 V2 Communication Test Set 2.35 through 2.37 on Windows contains an improper certificate validation vulnerability in the IEC 60870-5-104 TLS client (Task Mode). This allows a network-positioned attacker to bypass certificate validation via a certificate with multiple simultaneous faults, enabling a Man-in-the-Middle attack on protected communications.",
-      "last_modified": "2026-09-13T12:45:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90647"
+      "description": "Out-of-bounds read in Windows Device Health Attestation (DHA) allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-09-13T20:11:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69443"
     },
     {
-      "cve_id": "CVE-2026-90648",
-      "asset_id": "CVE-2026-90648",
+      "cve_id": "CVE-2026-69469",
+      "asset_id": "CVE-2026-69469",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "wasm2c in WebAssembly wabt through 1.0.41 allows sandbox escape in some situations that primarily involve 32-bit platforms, aka a \"table flip\" attack. It does not check the return value of calloc() in wasm_rt_allocate_funcref_table() (wasm2c/wasm-rt-impl-tableops.inc). When the funcref table allocation fails, table->data is left NULL while table->size keeps the guest-declared element count; thus, bounds checks still pass and table element accesses resolve to absolute memory addresses (i * sizeof(wasm_rt_funcref_t)). This gives arbitrary read and write of host process memory and - via table.get, table.set, and call_indirect - arbitrary code execution, defeating the isolation that wasm2c exists to provide (a full sandbox escape). wasm2c is used as an in-process sandboxing boundary by RLBox and WasmBoxC, including in Firefox, which compiles the Graphite, Hunspell, Ogg, Expat, and Woff2 libraries via wasm2c to contain untrusted font, media, and XML input. Therefore, sandboxing in these applications is potentially affected. Exploitation requires the funcref table allocation to fail, for example under an address-space limit (RLIMIT_AS), on 32-bit hosts, with vm.overcommit_memory=2, or under memory pressure. On 64-bit Linux with default overcommit the allocation succeeds and the defect is not triggered. The wasm2c memory allocator aborts on calloc failure in the same runtime; the table allocator lacks this abort behavior. This was introduced in commit ab9e0b55 (PR #813).",
-      "last_modified": "2026-09-13T12:30:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90648"
+      "description": "Integer overflow or wraparound in Windows USB Audio Class driver (usbaudio.sys) allows an unauthorized attacker to elevate privileges with a physical attack.",
+      "last_modified": "2026-09-13T20:11:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69469"
     },
     {
-      "cve_id": "CVE-2026-90679",
-      "asset_id": "CVE-2026-90679",
+      "cve_id": "CVE-2026-69501",
+      "asset_id": "CVE-2026-69501",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Forgejo 13.0.0 through 16.0.4, when \"[federation] ENABLED = true\" is set, has a spoofing issue that affects identity integrity but does not allow account takeover or content modification. It does not verify that the HTTP Signature on an incoming ActivityPub activity was produced by the key belonging to the actor named in the activity body. The signature verification in routers/api/v1/activitypub/reqsignature.go validates the request signature, but the inbox activity handlers subsequently read the acting identity from the attacker-controlled JSON body without binding it to the verified signing key. Additionally, the signed Digest header is not recomputed against the received request body. A remote attacker who hosts a single valid ActivityPub actor and keypair can therefore submit signature-valid activities attributed to any actor identity they name.",
-      "last_modified": "2026-09-13T12:30:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90679"
+      "description": "Untrusted pointer dereference in Windows Secure Kernel Mode allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69501"
     },
     {
-      "cve_id": "CVE-2026-90520",
-      "asset_id": "CVE-2026-90520",
+      "cve_id": "CVE-2026-69518",
+      "asset_id": "CVE-2026-69518",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been found in jaychouchannel Tourism-Management-System up to 84d8ec384f669df3985293dab293bb7b477efa64. This vulnerability affects unknown code of the file AuthorizationInterceptor.java of the component Authorization Interceptor. The manipulation leads to improper authorization. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The identifier of the patch is d984d172dceca907f8b447efbdb06dc233f7938d. Applying a patch is the recommended action to fix this issue.",
-      "last_modified": "2026-09-13T12:30:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90520"
+      "description": "Heap-based buffer overflow in Windows Remote Desktop allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:11:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69518"
     },
     {
-      "cve_id": "CVE-2026-90783",
-      "asset_id": "CVE-2026-90783",
+      "cve_id": "CVE-2026-69544",
+      "asset_id": "CVE-2026-69544",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MKVToolNix through 101.0 contains a heap buffer overflow in the bundled avilib library's ODML superindex parser due to integer wraparound in 32-bit arithmetic. Attackers can craft a malicious AVI file with oversized entry counts that cause an undersized heap allocation, allowing a heap buffer overflow when the file is parsed with mkvmerge.",
-      "last_modified": "2026-09-13T12:22:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90783"
+      "description": "Heap-based buffer overflow in Windows SMB Client allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69544"
     },
     {
-      "cve_id": "CVE-2026-90782",
-      "asset_id": "CVE-2026-90782",
+      "cve_id": "CVE-2026-69548",
+      "asset_id": "CVE-2026-69548",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "S2OPC through 1.7.3 contains a null pointer dereference in msg_subscription_publish_bs__alloc_notification_message_items() where a failed allocation for DataChangeNotification is overwritten by a successful allocation for EventNotificationList. Attackers can trigger heap allocation failures on sessions with both data-change and event notifications to cause the server process to terminate.",
-      "last_modified": "2026-09-13T12:22:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90782"
+      "description": "Heap-based buffer overflow in Windows RNDIS allows an unauthorized attacker to disclose information with a physical attack.",
+      "last_modified": "2026-09-13T20:11:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69548"
     },
     {
-      "cve_id": "CVE-2026-90781",
-      "asset_id": "CVE-2026-90781",
+      "cve_id": "CVE-2026-69583",
+      "asset_id": "CVE-2026-69583",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "alsa-lib through 1.2.16.1 contains a stack buffer overflow in the __snd_ctl_ascii_elem_id_parse() function that writes one byte past a 64-byte buffer when parsing a name= field with 64 or more characters. Attackers can supply a long control-element identifier string through saved state files or command-line arguments to overwrite adjacent stack memory and crash the calling process.",
-      "last_modified": "2026-09-13T12:22:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90781"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69583"
     },
     {
-      "cve_id": "CVE-2026-90519",
-      "asset_id": "CVE-2026-90519",
+      "cve_id": "CVE-2026-69589",
+      "asset_id": "CVE-2026-69589",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in PHPGurukul Bank Locker Management System 1.0. Affected is an unknown function of the file /blms/banker/add-locker-form.php. This manipulation of the argument addressproof causes unrestricted upload. Remote exploitation of the attack is possible. The exploit has been made available to the public and could be used for attacks.",
-      "last_modified": "2026-09-13T12:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90519"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69589"
     },
     {
-      "cve_id": "CVE-2026-90668",
-      "asset_id": "CVE-2026-90668",
+      "cve_id": "CVE-2026-69580",
+      "asset_id": "CVE-2026-69580",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The webserver in UnrealIRCd 6.0.5 through 6.2.6 before 6.2.7 does not limit the number of HTTP request headers, which allows remote attackers to cause a denial of service (memory consumption and unresponsive server) via an HTTP request with an unlimited number of headers, if a websocket or JSON-RPC listener is enabled (disabled by default).",
-      "last_modified": "2026-09-13T12:15:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90668"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69580"
     },
     {
-      "cve_id": "CVE-2026-18122",
-      "asset_id": "CVE-2026-18122",
+      "cve_id": "CVE-2026-69576",
+      "asset_id": "CVE-2026-69576",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS 9.2.0 to 9.5.2 Express REST API list endpoint exposes restricted Express entries via Missing Authorization; the Concrete CMS REST API's Express entry collection endpoint disabled the per-entry view permission check. An OAuth token with read scope for an Express entity could enumerate entries that its user context lacked permission to view, disclosing each entry's public identifier, URL, label, dates, and any attribute or associated-entry data requested via the includes parameter.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 6.0 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N. Thanks riodrwn for reporting.",
-      "last_modified": "2026-09-13T12:15:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18122"
+      "description": "Use after free in Graphic Fonts allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69576"
     },
     {
-      "cve_id": "CVE-2026-62105",
-      "asset_id": "CVE-2026-62105",
+      "cve_id": "CVE-2026-69604",
+      "asset_id": "CVE-2026-69604",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Unauthenticated PHP Object Injection in ThemeREX Addons < 2.45.0 versions.",
-      "last_modified": "2026-09-13T12:15:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62105"
+      "description": "Heap-based buffer overflow in Windows Audio Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69604"
     },
     {
-      "cve_id": "CVE-2026-90518",
-      "asset_id": "CVE-2026-90518",
+      "cve_id": "CVE-2026-69603",
+      "asset_id": "CVE-2026-69603",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in PHPGurukul Bank Locker Management System 1.0. This impacts an unknown function of the file sidebar.php. The manipulation of the argument UserType results in improper access controls. The attack may be launched remotely. The exploit has been released to the public and may be used for attacks.",
-      "last_modified": "2026-09-13T12:00:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90518"
+      "description": "Heap-based buffer overflow in Windows Hyper-V allows an authorized attacker to execute code locally.",
+      "last_modified": "2026-09-13T20:11:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69603"
     },
     {
-      "cve_id": "CVE-2026-89562",
-      "asset_id": "CVE-2026-89562",
+      "cve_id": "CVE-2026-72981",
+      "asset_id": "CVE-2026-72981",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nip6_gre: fix hardware header length for NBMA tunnels\n\nip6gre_tnl_link_config_route() accumulates the lower device's hardware\nheader length into dev->hard_header_len whenever header_ops is set. This\nis incorrect for both users of header_ops.\n\nip6gretap and ip6erspan have a fixed Ethernet hardware header length.\nFor an NBMA ip6gre tunnel, ip6gre_header() creates only the GRE header,\nthe optional FOU or GUE header, and the outer IPv6 header. The lower\ndevice header is headroom needed later, not part of the tunnel device's\nhardware header.\n\nKeep the lower device header in needed_headroom. Set hard_header_len to\nthe tunnel header length only for ARPHRD_IP6GRE devices with header_ops,\nand leave the fixed Ethernet header length unchanged for tap and erspan\ndevices.",
-      "last_modified": "2026-09-13T12:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89562"
+      "description": "Use after free in IP Helper allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:11:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72981"
     },
     {
-      "cve_id": "CVE-2026-77773",
-      "asset_id": "CVE-2026-77773",
+      "cve_id": "CVE-2026-77889",
+      "asset_id": "CVE-2026-77889",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Contact Form to Chat Apps | Click to Chat to Order  WordPress plugin before 2.15.8 does not perform any capability, nonce or session check on one of its public AJAX actions, allowing unauthenticated users to read the submitted entries of any form created with a supported third-party form Contact Form to Chat Apps | Click to Chat to Order  WordPress plugin before 2.15.8.",
-      "last_modified": "2026-09-13T12:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77773"
+      "description": "Access of resource using incompatible type ('type confusion') in Windows DHCP Server allows an unauthorized attacker to deny service over a network.",
+      "last_modified": "2026-09-13T20:11:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77889"
     },
     {
-      "cve_id": "CVE-2026-80071",
-      "asset_id": "CVE-2026-80071",
+      "cve_id": "CVE-2026-36453",
+      "asset_id": "CVE-2026-36453",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The User Registration & Membership  WordPress plugin before 5.2.8 does not properly restrict who may author a membership plan or validate the plan a user attaches to their own account, allowing authenticated users with Author-level access and above to assign themselves an arbitrary role and escalate their privileges to Administrator.",
-      "last_modified": "2026-09-13T12:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80071"
+      "description": "Rhymix before 2.1.31 allows insecure direct object reference, aka RVE-2026-1. Arbitrary files can be accessed via extra variables.",
+      "last_modified": "2026-09-13T20:11:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-36453"
     },
     {
-      "cve_id": "CVE-2026-86406",
-      "asset_id": "CVE-2026-86406",
+      "cve_id": "CVE-2026-83986",
+      "asset_id": "CVE-2026-83986",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The User Registration & Membership  WordPress plugin before 5.2.8 does not check the capability of the user making a membership purchase, and does not validate the payment method or the plan submitted with it, allowing any authenticated user such as a subscriber to be granted the WordPress role attached to a paid plan without paying for it. Where the site owner has mapped a plan to a privileged role, this leads to privilege escalation up to administrator.",
-      "last_modified": "2026-09-13T12:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86406"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83986"
     },
     {
-      "cve_id": "CVE-2026-86407",
-      "asset_id": "CVE-2026-86407",
+      "cve_id": "CVE-2026-83988",
+      "asset_id": "CVE-2026-83988",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The User Registration & Membership  WordPress plugin before 5.2.8 does not verify that the visitor requesting its membership confirmation page owns the account named in the request, nor that any registration or purchase has taken place, allowing unauthenticated users to retrieve another user's email address, profile fields, role and membership order details. Exploitation requires the site owner to have added a user smart tag to that page's configurable message, which the shipped default does not contain.",
-      "last_modified": "2026-09-13T12:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86407"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:11:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83988"
     },
     {
-      "cve_id": "CVE-2026-88912",
-      "asset_id": "CVE-2026-88912",
+      "cve_id": "CVE-2026-83974",
+      "asset_id": "CVE-2026-83974",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The rtMedia for WordPress, BuddyPress and bbPress WordPress plugin before 4.7.12 does not check ownership before changing the privacy level of an activity and its attached media, relying only on a nonce shared with every logged-in user, allowing users with a subscriber-level account or above to make another user's private activity public or hide it.",
-      "last_modified": "2026-09-13T12:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88912"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:10:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83974"
     },
     {
-      "cve_id": "CVE-2026-89080",
-      "asset_id": "CVE-2026-89080",
+      "cve_id": "CVE-2026-83991",
+      "asset_id": "CVE-2026-83991",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Really Simple Security  WordPress plugin before 9.8.1 does not prevent an unauthenticated request from resetting an account's completed email two-factor enrolment, allowing an attacker who already knows the account's password to bypass the second factor and obtain that user's session, up to administrator.",
-      "last_modified": "2026-09-13T12:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89080"
+      "description": "Missing authentication for critical function in Windows Cloud Files Mini Filter Driver allows an authorized attacker to perform tampering locally.",
+      "last_modified": "2026-09-13T20:09:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83991"
     },
     {
-      "cve_id": "CVE-2026-62112",
-      "asset_id": "CVE-2026-62112",
+      "cve_id": "CVE-2026-83996",
+      "asset_id": "CVE-2026-83996",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Editor SQL Injection in Amelia <= 2.4.9 versions.",
-      "last_modified": "2026-09-13T11:45:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62112"
+      "description": "Heap-based buffer overflow in Windows Error Reporting allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:09:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83996"
     },
     {
-      "cve_id": "CVE-2026-90517",
-      "asset_id": "CVE-2026-90517",
+      "cve_id": "CVE-2026-83998",
+      "asset_id": "CVE-2026-83998",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in PHPGurukul Bank Locker Management System 1.0. This affects an unknown function of the file /blms/view-assign-locker.php. The manipulation of the argument ltid leads to authorization bypass. The attack may be initiated remotely. The exploit is publicly available and might be used.",
-      "last_modified": "2026-09-13T11:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90517"
+      "description": "Heap-based buffer overflow in Remote Desktop Client allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:09:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83998"
     },
     {
-      "cve_id": "CVE-2026-90780",
-      "asset_id": "CVE-2026-90780",
+      "cve_id": "CVE-2026-83999",
+      "asset_id": "CVE-2026-83999",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SIPp through 3.7.7 contains a buffer overflow vulnerability in the get_header() function in src/sip_parser.cpp when processing SIP messages with header content exceeding 20,490 bytes. Unauthenticated remote attackers can send crafted SIP messages with oversized headers to overflow the static buffer and crash the process.",
-      "last_modified": "2026-09-13T11:42:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90780"
+      "description": "Improper link resolution before file access ('link following') in Windows Resilient File System (ReFS) Deduplication Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:09:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83999"
     },
     {
-      "cve_id": "CVE-2026-90778",
-      "asset_id": "CVE-2026-90778",
+      "cve_id": "CVE-2026-62762",
+      "asset_id": "CVE-2026-62762",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SIPp through 3.7.7 contains a buffer overflow vulnerability in get_peer_tag() function when processing SIP To headers with tag parameters of 2049 bytes or more. Unauthenticated remote attackers can send crafted SIP messages with oversized tag parameters to overflow the static buffer and crash the process.",
-      "last_modified": "2026-09-13T11:42:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90778"
+      "description": "Null pointer dereference in Active Directory Domain Services allows an authorized attacker to deny service over a network.",
+      "last_modified": "2026-09-13T20:09:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62762"
     },
     {
-      "cve_id": "CVE-2026-90777",
-      "asset_id": "CVE-2026-90777",
+      "cve_id": "CVE-2026-62813",
+      "asset_id": "CVE-2026-62813",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ESPnet before 202609 deserializes pretrained model checkpoints using torch.load with weights_only=False, allowing arbitrary code execution from attacker-supplied files. Attackers can craft malicious checkpoint files that execute code during deserialization when loaded through the initialization or fine-tuning path.",
-      "last_modified": "2026-09-13T11:42:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90777"
+      "description": "Use after free in Active Directory Domain Services allows an authorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:09:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62813"
     },
     {
-      "cve_id": "CVE-2026-90776",
-      "asset_id": "CVE-2026-90776",
+      "cve_id": "CVE-2026-68839",
+      "asset_id": "CVE-2026-68839",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Nodemailer versions 9.1.0 through 10.0.4 contain a quadratic time complexity vulnerability in the addressparser component when parsing email addresses with RFC 5322 comments. Attackers can craft malicious email headers with comment-separated atoms to consume excessive CPU and block the Node.js event loop for several seconds, causing denial of service.",
-      "last_modified": "2026-09-13T11:42:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90776"
+      "description": "Heap-based buffer overflow in Windows USB Mass Storage Class Driver allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:09:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68839"
     },
     {
-      "cve_id": "CVE-2026-90516",
-      "asset_id": "CVE-2026-90516",
+      "cve_id": "CVE-2026-68848",
+      "asset_id": "CVE-2026-68848",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in SourceCodester School Registration and Fee System 1.0. The affected element is an unknown function of the file /bilal/normal/pay_report.php. Performing a manipulation of the argument period results in sql injection. The attack can be initiated remotely. The exploit has been made public and could be used.",
-      "last_modified": "2026-09-13T11:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90516"
+      "description": "Heap-based buffer overflow in Windows Print Spooler Components allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:09:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68848"
     },
     {
-      "cve_id": "CVE-2026-88995",
-      "asset_id": "CVE-2026-88995",
+      "cve_id": "CVE-2026-68874",
+      "asset_id": "CVE-2026-68874",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Bookit \u2014 Booking & Appointment Calendar WordPress plugin before 2.6.0.1 does not properly restrict the data returned by an availability-check request, allowing unauthenticated users to retrieve other customers' appointment details, including free-text booking comments and contact information.",
-      "last_modified": "2026-09-13T11:16:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88995"
+      "description": "Out-of-bounds read in Windows Program Compatibility Assistant Service allows an authorized attacker to disclose information over a network.",
+      "last_modified": "2026-09-13T20:09:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68874"
     },
     {
-      "cve_id": "CVE-2026-88764",
-      "asset_id": "CVE-2026-88764",
+      "cve_id": "CVE-2026-68885",
+      "asset_id": "CVE-2026-68885",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Simple Membership WordPress plugin before 4.7.8 does not validate that the membership level supplied in a PayPal payment notification matches the level configured for the paid payment button, allowing members to pay for a lower-priced membership while being granted a higher, more privileged membership level.",
-      "last_modified": "2026-09-13T11:16:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88764"
+      "description": "Heap-based buffer overflow in Microsoft Standard XPS allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:09:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68885"
     },
     {
-      "cve_id": "CVE-2026-80072",
-      "asset_id": "CVE-2026-80072",
+      "cve_id": "CVE-2026-69275",
+      "asset_id": "CVE-2026-69275",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The User Registration & Membership  WordPress plugin before 5.2.8 does not validate the destination of a post-login redirect before redirecting, allowing unauthenticated attackers to redirect visitors to an arbitrary external URL, which can be abused for phishing.",
-      "last_modified": "2026-09-13T11:16:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80072"
+      "description": "Use after free in Kernel Streaming WOW Thunk Service Driver allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:09:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69275"
     },
     {
-      "cve_id": "CVE-2026-90515",
-      "asset_id": "CVE-2026-90515",
+      "cve_id": "CVE-2026-69295",
+      "asset_id": "CVE-2026-69295",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in SourceCodester School Registration and Fee System 1.0. The impacted element is an unknown function of the file /bilal/normal/delete_stud.php. Executing a manipulation of the argument selector[] can lead to sql injection. The attack can be launched remotely. The exploit has been publicly disclosed and may be utilized.",
-      "last_modified": "2026-09-13T11:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90515"
+      "description": "Out-of-bounds read in Windows USB Driver allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69295"
     },
     {
-      "cve_id": "CVE-2026-89448",
-      "asset_id": "CVE-2026-89448",
+      "cve_id": "CVE-2026-69324",
+      "asset_id": "CVE-2026-69324",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\niommu/vt-d: Force requesting ACS when tboot is enabled\n\nCurrently the conditions of requesting ACS in detect_intel_iommu()\ndon't include tboot, leading to a possible misconfiguration with ACS\ndisabled (e.g. due to user opts) while iommu is later forced on by\ntboot_force_iommu().\n\nFix it by checking tboot in detect_intel_iommu().",
-      "last_modified": "2026-09-13T11:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89448"
+      "description": "Access of resource using incompatible type ('type confusion') in Windows Performance Monitor allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69324"
     },
     {
-      "cve_id": "CVE-2026-90514",
-      "asset_id": "CVE-2026-90514",
+      "cve_id": "CVE-2026-69358",
+      "asset_id": "CVE-2026-69358",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been found in SourceCodester School Registration and Fee System 1.0. Impacted is an unknown function of the file /bilal/normal/save_stud.php. Such manipulation of the argument Status leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used.",
-      "last_modified": "2026-09-13T11:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90514"
+      "description": "Use of uninitialized resource in Remote Desktop Client allows an authorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:08:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69358"
     },
     {
-      "cve_id": "CVE-2026-90774",
-      "asset_id": "CVE-2026-90774",
+      "cve_id": "CVE-2026-69369",
+      "asset_id": "CVE-2026-69369",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "rustypaste before 0.18.1 validates the destination path before applying the optional custom filename HTTP header, allowing attackers to bypass directory-escape checks. Attackers can supply path traversal sequences in the filename header to write files outside the configured upload directory to arbitrary locations.",
-      "last_modified": "2026-09-13T10:45:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90774"
+      "description": "Out-of-bounds read in Windows DNS allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-09-13T20:08:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69369"
     },
     {
-      "cve_id": "CVE-2026-90773",
-      "asset_id": "CVE-2026-90773",
+      "cve_id": "CVE-2026-69403",
+      "asset_id": "CVE-2026-69403",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "procs through 0.14.12 fails to sanitize escape sequences in process command lines before displaying them in the Command column. Local attackers can execute processes with malicious ANSI or OSC escape sequences in their command line arguments, which are written unmodified to other users' terminals for interpretation by terminal emulators.",
-      "last_modified": "2026-09-13T10:45:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90773"
+      "description": "Missing authorization in Windows SMB Server allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-09-13T20:08:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69403"
     },
     {
-      "cve_id": "CVE-2026-90772",
-      "asset_id": "CVE-2026-90772",
+      "cve_id": "CVE-2026-69373",
+      "asset_id": "CVE-2026-69373",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Amundsen frontend through 4.3.0 renders table, dashboard, and feature descriptions with dangerouslySetInnerHTML without HTML sanitization in ResourceListItem components. Attackers can inject malicious markup like img elements with onerror handlers into descriptions via the metadata service or Elasticsearch, executing JavaScript in every user's browser that views search results.",
-      "last_modified": "2026-09-13T10:45:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90772"
+      "description": "Integer overflow or wraparound in Windows Overlay Filter allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69373"
     },
     {
-      "cve_id": "CVE-2026-90770",
-      "asset_id": "CVE-2026-90770",
+      "cve_id": "CVE-2026-69374",
+      "asset_id": "CVE-2026-69374",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Spug through 3.4.0 contains a remote code execution vulnerability in the ping_check function that interpolates user-supplied monitor addresses directly into shell commands without validation. Authenticated users with monitor permissions can inject shell metacharacters via the /monitor/run_test/ endpoint to execute arbitrary commands as the Spug process user.",
-      "last_modified": "2026-09-13T10:45:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90770"
+      "description": "Allocation of resources without limits or throttling in Windows SMB Server allows an authorized attacker to deny service over a network.",
+      "last_modified": "2026-09-13T20:08:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69374"
     },
     {
-      "cve_id": "CVE-2026-90769",
-      "asset_id": "CVE-2026-90769",
+      "cve_id": "CVE-2026-69385",
+      "asset_id": "CVE-2026-69385",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Open Notebook before 1.11.0 fails to validate the URL parameter in POST /api/sources endpoint, allowing authenticated users to perform server-side requests to internal services. Attackers can supply arbitrary URLs to read cloud metadata, internal network services, and localhost-bound services through the application server's direct HTTP requests.",
-      "last_modified": "2026-09-13T10:45:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90769"
+      "description": "Concurrent execution using shared resource with improper synchronization ('race condition') in Windows TCP/IP allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69385"
     },
     {
-      "cve_id": "CVE-2026-90768",
-      "asset_id": "CVE-2026-90768",
+      "cve_id": "CVE-2026-69386",
+      "asset_id": "CVE-2026-69386",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "CAPEv2 through commit 471ee4b fails to validate task ownership in REST API endpoints, allowing authenticated users to read and delete analyses submitted by other users. Attackers can enumerate all tasks in the system and delete arbitrary analyses by sending requests to task view and delete endpoints without ownership verification.",
-      "last_modified": "2026-09-13T10:45:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90768"
+      "description": "Heap-based buffer overflow in Microsoft Windows Media Foundation allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:08:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69386"
     },
     {
-      "cve_id": "CVE-2026-90767",
-      "asset_id": "CVE-2026-90767",
+      "cve_id": "CVE-2026-69388",
+      "asset_id": "CVE-2026-69388",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Froxlor before 2.3.12 fails to properly validate multi-line SSH public keys in the SshKeys::add() endpoint, allowing customers to inject arbitrary lines into authorized_keys files. Attackers can inject malicious SSH key entries with option directives to gain persistent unauthorized access that survives key deletion and SSH access revocation.",
-      "last_modified": "2026-09-13T10:45:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90767"
+      "description": "Use after free in Windows Bluetooth Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69388"
     },
     {
-      "cve_id": "CVE-2026-90562",
-      "asset_id": "CVE-2026-90562",
+      "cve_id": "CVE-2026-69393",
+      "asset_id": "CVE-2026-69393",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "LangBot before 4.10.11 generates password recovery keys with only 24 bits of entropy and applies no rate limiting to the unauthenticated reset-password endpoint. Remote attackers knowing the administrator email can exhaust the keyspace through concurrent requests to reset the admin password and gain account access.",
-      "last_modified": "2026-09-13T10:45:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90562"
+      "description": "Out-of-bounds read in Windows Spaceport.sys allows an authorized attacker to disclose information over a network.",
+      "last_modified": "2026-09-13T20:08:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69393"
     },
     {
-      "cve_id": "CVE-2026-90561",
-      "asset_id": "CVE-2026-90561",
+      "cve_id": "CVE-2026-69407",
+      "asset_id": "CVE-2026-69407",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Strapi versions 4.x through 4.26.2 and 5.x before 5.48.1 contain a stored cross-site scripting vulnerability in the content manager WYSIWYG preview component that fails to strip script tags from rich text. An Author-role user can store malicious script tags in rich text fields that execute in an Editor or Super Admin's session when the preview pane is expanded, enabling account takeover.",
-      "last_modified": "2026-09-13T10:45:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90561"
+      "description": "Integer overflow or wraparound in Volume Manager Driver allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69407"
     },
     {
-      "cve_id": "CVE-2026-90513",
-      "asset_id": "CVE-2026-90513",
+      "cve_id": "CVE-2026-69449",
+      "asset_id": "CVE-2026-69449",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw has been found in simalexan api-lambda-send-email-ses up to bda6869aa81371d1e872242e74fe7d953edb818d. This issue affects the function SES.sendEmail of the file template.yml of the component API Gateway Endpoint. This manipulation of the argument toEmails/ccEmails/replyToEmails/subject/message causes missing authentication. It is possible to initiate the attack remotely. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T10:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90513"
+      "description": "Heap-based buffer overflow in Windows BitLocker allows an authorized attacker to execute code locally.",
+      "last_modified": "2026-09-13T20:08:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69449"
     },
     {
-      "cve_id": "CVE-2026-90511",
-      "asset_id": "CVE-2026-90511",
+      "cve_id": "CVE-2026-69453",
+      "asset_id": "CVE-2026-69453",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was detected in GongShengyue OnlineBooks up to dfc5eacc08d3b0396c266049548618f6fb9587ea. This vulnerability affects unknown code of the file src/cn/ylcto/book/servlet/BooksServlet.java of the component listSplit Interface. The manipulation of the argument column results in sql injection. The attack may be performed from remote. The exploit is now public and may be used. This product utilizes a rolling release system for continuous delivery, and as such, version information for affected or updated releases is not disclosed.",
-      "last_modified": "2026-09-13T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90511"
+      "description": "Missing authorization in Microsoft Windows Search Component allows an authorized attacker to perform tampering locally.",
+      "last_modified": "2026-09-13T20:08:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69453"
     },
     {
-      "cve_id": "CVE-2026-90510",
-      "asset_id": "CVE-2026-90510",
+      "cve_id": "CVE-2026-69538",
+      "asset_id": "CVE-2026-69538",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in dromara orion-visor up to 2.5.7. This affects the function HostKeyServiceImpl.encryptKey of the file orion-visor-modules/orion-visor-module-asset/orion-visor-module-asset-service/src/main/java/org/dromara/visor/module/asset/service/impl/HostKeyServiceImpl.java. The manipulation leads to use of hard-coded cryptographic key\r . The attack is possible to be carried out remotely. The exploit has been disclosed publicly and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90510"
+      "description": "Out-of-bounds read in Windows Spaceport.sys allows an authorized attacker to execute code locally.",
+      "last_modified": "2026-09-13T20:08:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69538"
     },
     {
-      "cve_id": "CVE-2026-89551",
-      "asset_id": "CVE-2026-89551",
+      "cve_id": "CVE-2026-69630",
+      "asset_id": "CVE-2026-69630",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nSUNRPC: xdr_buf_trim: clamp buf->len to avoid underflow\n\nxdr_buf_trim() trims `len` bytes from the tail of an xdr_buf by\nwalking the tail, pages, and head iovecs.  Each per-section step\nuses min_t() so it never removes more bytes than that section\nholds, but the final accounting at the fix_len label subtracts the\ntotal bytes actually consumed from buf->len without any clamp:\n\n    fix_len:\n            buf->len -= (len - trim);\n\nWhen the caller has set buf->len to a value smaller than the sum\nof the iov_lens, (len - trim) can exceed buf->len and the unsigned\nsubtraction wraps to near UINT_MAX.  gss_krb5_unwrap_v2() reaches\nxdr_buf_trim() in exactly that state:\n\n    buf->head[0].iov_len -= GSS_KRB5_TOK_HDR_LEN + headskip;\n    buf->len = len - (GSS_KRB5_TOK_HDR_LEN + headskip);\n    xdr_buf_trim(buf, ec + GSS_KRB5_TOK_HDR_LEN + tailskip);\n\nbuf->len is a small wire-derived value while the iov_lens are at\npage scale, so the per-section loops legitimately consume far more\nbytes than buf->len records.  The wrapped buf->len then propagates\nas the authoritative stream bound into every downstream XDR\ndecoder.\n\nFix by clamping the decrement so buf->len bottoms out at zero:\n\n    buf->len -= min_t(unsigned int, buf->len, len - trim);\n\nOn the normal path where the iov_lens sum to buf->len, (len - trim)\nis always <= buf->len and the result is identical to before.  No\ncallers change behavior outside the underflow case.",
-      "last_modified": "2026-09-13T10:00:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89551"
+      "description": "Out-of-bounds read in Windows Win32K allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69630"
     },
     {
-      "cve_id": "CVE-2026-90509",
-      "asset_id": "CVE-2026-90509",
+      "cve_id": "CVE-2026-69613",
+      "asset_id": "CVE-2026-69613",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in dromara orion-visor up to 2.5.7. Affected by this issue is the function ExposeApiAspect.beforeExposeApi of the file ExposeApiAspect.java. Executing a manipulation can lead to hard-coded credentials. The attack can be executed remotely. The exploit has been made available to the public and could be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-13T10:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90509"
+      "description": "Use after free in Windows Image Acquisition allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69613"
     },
     {
-      "cve_id": "CVE-2026-90508",
-      "asset_id": "CVE-2026-90508",
+      "cve_id": "CVE-2026-69682",
+      "asset_id": "CVE-2026-69682",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in Chengdu Qilu Technology Ludashi 6.1026.4715.714. Affected by this vulnerability is the function MessageNotifyCallback in the library ProtectFilter64.sys of the component Message Dispatch Handler. Performing a manipulation results in missing authorization. Attacking locally is a requirement. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-13T09:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90508"
+      "description": "Use after free in Windows Host Guardian Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69682"
     },
     {
-      "cve_id": "CVE-2026-90507",
-      "asset_id": "CVE-2026-90507",
+      "cve_id": "CVE-2026-69727",
+      "asset_id": "CVE-2026-69727",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in vvbbnn00 WARP-Clash-API up to c7bf2360073959861219b422e51ae86411051b46. Affected is the function get_surge_subscription of the file services/subscription.py of the component Subscription Handler. Such manipulation of the argument key leads to improper access controls. The attack may be launched remotely. The exploit is publicly available and might be used. This product operates on a rolling release basis, ensuring continuous delivery. Consequently, there are no version details for either affected or updated releases. The vendor was contacted early about this disclosure but did not respond in any way. This vulnerability only affects products that are no longer supported by the maintainer.",
-      "last_modified": "2026-09-13T09:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90507"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-09-13T20:08:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69727"
     },
     {
-      "cve_id": "CVE-2026-90506",
-      "asset_id": "CVE-2026-90506",
+      "cve_id": "CVE-2026-69731",
+      "asset_id": "CVE-2026-69731",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in vvbbnn00 WARP-Clash-API up to c7bf2360073959861219b422e51ae86411051b46. This impacts an unknown function of the component Save Account Job. This manipulation causes race condition. The attack may be initiated remotely. The attack's complexity is rated as high. The exploitability is said to be difficult. The exploit has been publicly disclosed and may be utilized. This product uses a rolling release model to deliver continuous updates. As a result, specific version information for affected or updated releases is not available. The vendor was contacted early about this disclosure but did not respond in any way. This vulnerability only affects products that are no longer supported by the maintainer.",
-      "last_modified": "2026-09-13T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90506"
+      "description": "Heap-based buffer overflow in HID class driver allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69731"
     },
     {
-      "cve_id": "CVE-2026-81003",
-      "asset_id": "CVE-2026-81003",
+      "cve_id": "CVE-2026-69911",
+      "asset_id": "CVE-2026-69911",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/iucv: filter frames in afiucv_hs_rcv() by ingress device\n\nafiucv_hs_rcv() selects a socket from iucv_sk_list by matching four 8-byte\nname fields in the transport header alone. No check is made against the\nnet_device the frame arrived on.\n\nThis can cause a frame arriving on any netdev to be delivered to an AF_IUCV\nsocket. Three problems follow.\n\nFirst, a frame arriving over HiperSockets can be delivered to a socket\nbound to the classic z/VM IUCV transport, which has iucv->hs_dev == NULL.\niucv_sock_bind() takes the classic path whenever the requested userid\nmatches iucv_userid, even on a guest that also has a HiperSockets device\ncarrying the same identifier. The child socket created by\nafiucv_hs_callback_syn() for such a match inherits hs_dev = NULL and\ntransport = AF_IUCV_TRANS_HIPER, so the first send() on it returns -ENODEV.\nThe socket delivered to accept() is unusable.\n\nSecond, a frame arriving on one netdev can be delivered to a socket bound\nto a different IQD device. Which can lead to\n- Accept-queue exhaustion (DoS)\n- Attacker-controlled peer identity in the child socket\n- Data injection into existing sockets\n- Fabric noise on the IQD fabric, where bogus replies are sent\n- killing established connections\n\nThird, all AF_IUCV sockets live in init_net, as iucv_sock_alloc() calls\nsk_alloc(&init_net, ...). But even frames arriving on netdev devices in a\nnamespace can be delivered to an IUCV socket. So a process in an\nunprivileged user and network namespace holding only the CAP_NET_RAW\ncapability valid within that namespace can send a raw ETH_P_AF_IUCV frame\non its own lo device and have it matched against init_net sockets.\n\nFix all three by skipping any socket whose hs_dev does not match the\ningress device. A classic z/VM IUCV socket has hs_dev == NULL; the ingress\ndev is never NULL, so classic sockets are skipped automatically. An unbound\nHIPER socket also has hs_dev == NULL and is skipped. A bound HIPER socket\nis only reachable from the exact IQD device it was bound to. Because hs_dev\nis always a device in init_net (iucv_sock_bind() scans\nfor_each_netdev_rcu(&init_net, ...) exclusively), a frame whose ingress\ndevice belongs to another namespace never matches any socket.\n\nNote that AF_IUCV over HiperSockets provides no per-connection\nauthentication: no sequence numbers, no TLS, no nonce. The four name fields\nidentifying a connection are exchanged in plaintext on the shared\nHiperSockets segment (VCHID). Any host on the same HiperSockets segment\ncould spoof any frame type against an existing connection. That is a\nprotocol-level property unchanged by this patch. The fix reduces the attack\nsurface to peers present on the same HiperSockets segment.",
-      "last_modified": "2026-09-13T09:00:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81003"
+      "description": "Use after free in Microsoft Windows Search Component allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69911"
     },
     {
-      "cve_id": "CVE-2026-90505",
-      "asset_id": "CVE-2026-90505",
+      "cve_id": "CVE-2026-69829",
+      "asset_id": "CVE-2026-69829",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in vvbbnn00 WARP-Clash-API up to c7bf2360073959861219b422e51ae86411051b46. This affects the function doUpdateLicenseKey. The manipulation results in race condition. The attack can be launched remotely. The attack requires a high level of complexity. The exploitability is reported as difficult. The exploit has been made public and could be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The vendor was contacted early about this disclosure but did not respond in any way. This vulnerability only affects products that are no longer supported by the maintainer.",
-      "last_modified": "2026-09-13T09:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90505"
+      "description": "Heap-based buffer overflow in Windows Shell allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:08:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69829"
     },
     {
-      "cve_id": "CVE-2026-90448",
-      "asset_id": "CVE-2026-90448",
+      "cve_id": "CVE-2026-70568",
+      "asset_id": "CVE-2026-70568",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A deployment mode intended to expose only read access to stored data proxies a set of application programming interface routes without restricting which request methods are allowed. One such route accepts a request that creates or overwrites a stored record, including an attacker-chosen identifier, using the application's own elevated backend credentials. This allows an authenticated user on a deployment intended to be read-only to forge or overwrite stored records that should not be modifiable in that deployment mode.",
-      "last_modified": "2026-09-13T08:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90448"
+      "description": "Heap-based buffer overflow in Windows Defender Firewall Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-70568"
     },
     {
-      "cve_id": "CVE-2026-90504",
-      "asset_id": "CVE-2026-90504",
+      "cve_id": "CVE-2026-69323",
+      "asset_id": "CVE-2026-69323",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been found in vvbbnn00 WARP-Clash-API up to c7bf2360073959861219b422e51ae86411051b46. The impacted element is the function authorized. The manipulation of the argument SECRET_KEY leads to missing authentication. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. Continious delivery with rolling releases is used by this product. Therefore, no version details of affected nor updated releases are available. The vendor was contacted early about this disclosure but did not respond in any way. This vulnerability only affects products that are no longer supported by the maintainer.",
-      "last_modified": "2026-09-13T08:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90504"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69323"
     },
     {
-      "cve_id": "CVE-2026-81005",
-      "asset_id": "CVE-2026-81005",
+      "cve_id": "CVE-2026-69352",
+      "asset_id": "CVE-2026-69352",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipmi: si: Fix NULL pointer dereference after failed registration\n\ntry_smi_init() allocates new_smi->si_sm and later calls\nipmi_register_smi_mod(), which maps to ipmi_add_smi().\n\nDuring ipmi_add_smi(), the upper IPMI message handler obtains the\ninitial BMC device information through __bmc_get_device_id(). This can\nfail if the BMC does not return a successful response to the Get Device\nID command.\n\nWhen the BMC returns a nonzero completion code, the device-id helper\nretries the command and eventually returns -EIO if the device ID still\ncannot be fetched.\n\nOn this failure path, ipmi_add_smi() logs \"Unable to get the device id\"\nand goes to out_err_started, where it invokes the lower driver's\nshutdown callback. try_smi_init() then logs the returned registration\nfailure:\n\n ipmi_si IPI0001:00: IPMI message handler: Unable to get the device id: -5\n ipmi_si IPI0001:00: Unable to register device: error -5\n\nFor ipmi_si, the shutdown callback is shutdown_smi(), which cleans up\nthe SI state machine data, frees smi_info->si_sm, and sets\nsmi_info->si_sm and smi_info->intf to NULL.\n\nHowever, intf->in_shutdown is not set on this failed-registration\nrollback path. Therefore, the asynchronous redo_bmc_reg work item can\nstill retry BMC device-id probing after the lower driver has already\ncleared its SI state machine data. In the observed case, that retry path\nreached start_next_msg(), which passed the NULL smi_info->si_sm pointer\nto the selected KCS state machine handler:\n\nBUG: unable to handle kernel NULL pointer dereference at 0000000000000000\nWorkqueue: events redo_bmc_reg [ipmi_msghandler]\nRIP: start_kcs_transaction+0x2c/0x190 [ipmi_si]\nCall Trace:\n start_next_msg+0x50/0x80 [ipmi_si]\n check_start_timer_thread.part.9+0x3b/0x50 [ipmi_si]\n sender+0x69/0x80 [ipmi_si]\n i_ipmi_request+0x2ac/0x9d0 [ipmi_msghandler]\n __get_device_id.isra.29+0xaa/0x180 [ipmi_msghandler]\n __bmc_get_device_id+0xef/0x950 [ipmi_msghandler]\n redo_bmc_reg+0x52/0x60 [ipmi_msghandler]\n process_one_work+0x1a7/0x360\n\nSet intf->in_shutdown on the out_err_started path before invoking the\nlower driver's shutdown callback. This prevents later redo_bmc_reg\nretries from using an interface whose lower driver state has been\ncleaned up, and applies the same shutdown state to other IPMI interfaces\nas well.",
-      "last_modified": "2026-09-13T08:30:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81005"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69352"
     },
     {
-      "cve_id": "CVE-2026-90503",
-      "asset_id": "CVE-2026-90503",
+      "cve_id": "CVE-2026-69910",
+      "asset_id": "CVE-2026-69910",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw has been found in Chengdu Qilu Technology Ludashi 6.1026.4715.714. The affected element is the function sub_11008 in the library ComputerZ_x64.sys. Executing a manipulation of the argument PhysicalAddress can lead to information disclosure. The attack needs to be launched locally. The exploit has been published and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-13T08:30:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90503"
+      "description": "Stack-based buffer overflow in Windows Hyper-V allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:08:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69910"
     },
     {
-      "cve_id": "CVE-2026-90460",
-      "asset_id": "CVE-2026-90460",
+      "cve_id": "CVE-2026-69499",
+      "asset_id": "CVE-2026-69499",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue was discovered in OpenStack Keystone before 29.0.3. Tokens obtained via delegated authentication methods (EC2 credentials, application credentials, OAuth1 access tokens, and trusts) are not blocked from creating, modifying, or deleting credentials via the /v3/credentials API. EC2-derived tokens can additionally read credential blobs, exposing TOTP MFA seeds and other secrets. Also, PATCH /v3/credentials does not validate the requested post-update project_id, allowing any delegated token to move a credential to an unauthorized project. All Keystone deployments using delegated authentication are affected.",
-      "last_modified": "2026-09-13T08:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90460"
+      "description": "Integer overflow or wraparound in Windows Imaging Component allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:08:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69499"
     },
     {
-      "cve_id": "CVE-2026-90445",
-      "asset_id": "CVE-2026-90445",
+      "cve_id": "CVE-2026-69906",
+      "asset_id": "CVE-2026-69906",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An interface that accepts file uploads from authenticated users extracts the contents of uploaded archives without validating that extracted file paths remain within the intended destination directory. This allows an authenticated attacker to craft an archive whose entries traverse outside the destination directory, causing the extraction process to write files to arbitrary locations with the privileges of that process. This could allow an attacker to inject fabricated records into the system's stored data or tamper with application configuration.",
-      "last_modified": "2026-09-13T08:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90445"
+      "description": "Heap-based buffer overflow in Windows Secure Kernel Mode allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:08:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69906"
     },
     {
-      "cve_id": "CVE-2026-90457",
-      "asset_id": "CVE-2026-90457",
+      "cve_id": "CVE-2026-78446",
+      "asset_id": "CVE-2026-78446",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The administrative password is hashed using a comparatively weak, fast algorithm for the credential store backing one authentication path, and the file containing that hash is written with permissions allowing it to be read by any local user. This is inconsistent with a separate, stronger hashing algorithm used for the same password on another authentication path. A party able to read this file, including a local user or a party with access to a configuration backup, could feasibly recover the underlying password through offline computation, compromising the administrative credential across every path that accepts it.",
-      "last_modified": "2026-09-13T08:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90457"
+      "description": "Use after free in Windows Distributed File System (DFS) allows an authorized attacker to deny service over a network.",
+      "last_modified": "2026-09-13T20:07:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78446"
     },
     {
-      "cve_id": "CVE-2026-16482",
-      "asset_id": "CVE-2026-16482",
+      "cve_id": "CVE-2026-78447",
+      "asset_id": "CVE-2026-78447",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The rtMedia for WordPress, BuddyPress and bbPress plugin for WordPress is vulnerable to time-based blind SQL Injection via the 'compare' parameter in all versions up to, and including, 4.7.11 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. This is exploitable on any public page containing an rtMedia shortcode (e.g., [rtmedia_gallery]) when the rtmedia_shortcode GET parameter is set, because RTMediaQuery::query() merges $_REQUEST into the internal query while only validating top-level array keys, allowing the nested 'compare' subvalue to reach the vulnerable sink without authentication.",
-      "last_modified": "2026-09-13T08:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16482"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:07:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78447"
     },
     {
-      "cve_id": "CVE-2026-90474",
-      "asset_id": "CVE-2026-90474",
+      "cve_id": "CVE-2026-78451",
+      "asset_id": "CVE-2026-78451",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MCPHub before 1.0.32 contains an authentication bypass vulnerability in its embedded OAuth 2.0 authorization server where client authentication is disabled by default and PKCE enforcement is optional. Attackers who obtain an authorization code through interception can redeem it for access tokens without providing a client secret or PKCE verifier, gaining access to victim accounts and their privileges.",
-      "last_modified": "2026-09-13T08:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90474"
+      "description": "Untrusted pointer dereference in Microsoft Windows SCSI Class System File allows an unauthorized attacker to elevate privileges with a physical attack.",
+      "last_modified": "2026-09-13T20:07:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78451"
     },
     {
-      "cve_id": "CVE-2026-90502",
-      "asset_id": "CVE-2026-90502",
+      "cve_id": "CVE-2026-78453",
+      "asset_id": "CVE-2026-78453",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was detected in stilleshan ServerStatus 1.0/2.0. Impacted is an unknown function of the file server/src/main.cpp of the component Stats Generation. Performing a manipulation of the argument custom results in cross site scripting. It is possible to initiate the attack remotely. The exploit is now public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-13T08:15:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90502"
+      "description": "Integer underflow (wrap or wraparound) in Microsoft Windows SCSI Class System File allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-09-13T20:07:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78453"
     },
     {
-      "cve_id": "CVE-2026-90443",
-      "asset_id": "CVE-2026-90443",
+      "cve_id": "CVE-2026-83973",
+      "asset_id": "CVE-2026-83973",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A web interface reflects a portion of the request URL into a script context and a hyperlink attribute without adequate encoding, and does not require authentication to reach. This allows an unauthenticated network attacker to craft a link that, when visited by a user, executes arbitrary script in the context of the affected application and can redirect the user's browser to an arbitrary external site. Successful exploitation could allow an attacker to act with the compromised user's session privileges within the application.",
-      "last_modified": "2026-09-13T08:00:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90443"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:07:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83973"
     },
     {
-      "cve_id": "CVE-2026-90444",
-      "asset_id": "CVE-2026-90444",
+      "cve_id": "CVE-2026-83982",
+      "asset_id": "CVE-2026-83982",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A file-transfer interface that requires valid credentials accepts attacker-controlled filenames without restricting shell metacharacters. An automated process later constructs and runs a system command using the uploaded file's name, allowing an authenticated attacker to embed and execute arbitrary operating system commands with the privileges of that process. This allows an attacker to read and modify ingested log data, and could provide a foothold for further movement within the internal network.",
-      "last_modified": "2026-09-13T08:00:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90444"
+      "description": "Heap-based buffer overflow in Windows Biometric Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-13T20:07:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83982"
     },
     {
-      "cve_id": "CVE-2026-30754",
-      "asset_id": "CVE-2026-30754",
+      "cve_id": "CVE-2026-83997",
+      "asset_id": "CVE-2026-83997",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A memory corruption vulnerability exists in FFmpeg before 8.1. The RTP encoding process. In the nal_send function in libavformat/rtpenc_h264_hevc.c, a negative size parameter (size=-3) is passed to memcpy when transmitting H.264/HEVC streams via RTP using a crafted input file. This was detected using AddressSanitizer.",
-      "last_modified": "2026-09-13T08:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-30754"
+      "description": "Use after free in Windows Message Queuing allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-09-13T20:07:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83997"
     },
     {
-      "cve_id": "CVE-2026-90501",
-      "asset_id": "CVE-2026-90501",
+      "cve_id": "CVE-2026-85384",
+      "asset_id": "CVE-2026-85384",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in lenve vhr 1.0-SNAPSHOT. This issue affects the function HrInfoController.updateHr of the file HrMapper.xml. Such manipulation of the argument Password leads to improper privilege management. The attack may be performed from remote. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-13T08:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90501"
+      "description": "A stack-based buffer overflow vulnerability exists in the httpd component of RE210 AC750 due to improper bounds checking in the splitString function when processing an uploaded configuration file. An authenticated attacker on the local network can upload a crafted configuration file to trigger the overflow, leading to remote code execution.\n\n\n\n\n\nSuccessful exploitation may allow unauthorized access to sensitive information, modification of device configuration and network behavior, or disruption of device availability.",
+      "last_modified": "2026-09-13T20:07:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85384"
     },
     {
-      "cve_id": "CVE-2026-81007",
-      "asset_id": "CVE-2026-81007",
+      "cve_id": "CVE-2026-75863",
+      "asset_id": "CVE-2026-75863",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipmi: ipmb: validate write message length\n\nipmb_write() read message fields before validating the length byte.\n\nA zero or short write can read uninitialized stack bytes.\n\nA length smaller than the SMBus header underflows the block write length.\n\nRequire a non-empty buffer and the minimum IPMB request length.\n\nAlso require the length byte plus payload before parsing the message.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81007"
+      "description": "Photoshop Desktop is affected by an Integer Overflow or Wraparound vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
+      "last_modified": "2026-09-13T20:07:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75863"
     },
     {
-      "cve_id": "CVE-2026-90449",
-      "asset_id": "CVE-2026-90449",
+      "cve_id": "CVE-2026-82006",
+      "asset_id": "CVE-2026-82006",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When a particular authentication mode is configured, the reverse proxy forwards requests for a bundled third-party administrative interface directly to that interface without applying the gateway's own authentication requirement first. All access control for this administrative interface, which manages the credential store used to gate every other service in the deployment, is delegated entirely to that third-party interface's own login mechanism. Any authentication weakness in that bundled interface would compromise the credential store protecting the rest of the deployment.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90449"
+      "description": "Photoshop Desktop is affected by a Heap-based Buffer Overflow vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
+      "last_modified": "2026-09-13T20:07:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82006"
     },
     {
-      "cve_id": "CVE-2026-90450",
-      "asset_id": "CVE-2026-90450",
+      "cve_id": "CVE-2026-82007",
+      "asset_id": "CVE-2026-82007",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The application's role-authorization lookup defaults to granting access when a request handler's name is not present in its table of role requirements, rather than defaulting to deny. Any request handler that is not explicitly registered in this table is reachable by any authenticated user regardless of their assigned role, and any newly added handler is fail-open by default until explicitly added to the table.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90450"
+      "description": "Photoshop Desktop is affected by an Integer Overflow or Wraparound vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
+      "last_modified": "2026-09-13T20:07:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82007"
     },
     {
-      "cve_id": "CVE-2026-90452",
-      "asset_id": "CVE-2026-90452",
+      "cve_id": "CVE-2026-82005",
+      "asset_id": "CVE-2026-82005",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Requests from the reverse proxy to the identity-provider service for token discovery, introspection, and credential exchange do not verify the identity provider's server certificate. An attacker positioned on the network path between the proxy and the identity provider could impersonate the identity provider and issue forged authentication tokens accepted by the deployment.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90452"
+      "description": "Photoshop Desktop is affected by an out-of-bounds write vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
+      "last_modified": "2026-09-13T20:07:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82005"
     },
     {
-      "cve_id": "CVE-2026-90453",
-      "asset_id": "CVE-2026-90453",
+      "cve_id": "CVE-2026-76199",
+      "asset_id": "CVE-2026-76199",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A file-upload handler redirects the authenticated client's browser to a URL taken directly from that same request's Referer header, without validating it against the application's own origin. This allows an authenticated attacker to craft a request that causes another user's browser to be redirected to an arbitrary external destination after completing an upload.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90453"
+      "description": "Photoshop Desktop is affected by an Uncontrolled Search Path Element vulnerability that could result in arbitrary code execution in the context of the current user. An attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue requires user interaction in that a victim must open a malicious file. Scope is changed.",
+      "last_modified": "2026-09-13T20:07:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76199"
     },
     {
-      "cve_id": "CVE-2026-90454",
-      "asset_id": "CVE-2026-90454",
+      "cve_id": "CVE-2026-75862",
+      "asset_id": "CVE-2026-75862",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A deployment mode intended to expose only read access to a bundled packet-analysis component's interface denies a list of write-capable routes by pattern, but the pattern omits routes that modify tags attached to stored session records, and the proxy configuration otherwise permits the request method those routes use. This allows an authenticated user on a deployment intended to be read-only to add or remove tags on stored session records.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90454"
+      "description": "Photoshop Desktop is affected by an Integer Overflow or Wraparound vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
+      "last_modified": "2026-09-13T20:07:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75862"
     },
     {
-      "cve_id": "CVE-2026-90455",
-      "asset_id": "CVE-2026-90455",
+      "cve_id": "CVE-2026-75631",
+      "asset_id": "CVE-2026-75631",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A prior update that raised a bundled HTTP client library to a version remediating known vulnerabilities was later reverted, reintroducing the earlier, vulnerable version into a log-processing component. The only code path in that component using the library issues a request to a single fixed, trusted vendor URL at initialization and does not process attacker-controlled input through the library, limiting practical exploitability of the reintroduced version in this context.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90455"
+      "description": "Photoshop Desktop is affected by an out-of-bounds write vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
+      "last_modified": "2026-09-13T20:07:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75631"
     },
     {
-      "cve_id": "CVE-2026-90456",
-      "asset_id": "CVE-2026-90456",
+      "cve_id": "CVE-2026-75771",
+      "asset_id": "CVE-2026-75771",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An example environment-configuration file for a bundled inventory-management component ships with a fixed, publicly-known administrative password. A deployment that copies this example file into active configuration without running the setup routine that regenerates credentials will expose that component's administrative interface to anyone aware of the default value.",
-      "last_modified": "2026-09-13T07:45:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90456"
+      "description": "Photoshop Desktop is affected by an Integer Overflow or Wraparound vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
+      "last_modified": "2026-09-13T20:07:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75771"
     },
     {
-      "cve_id": "CVE-2026-80088",
-      "asset_id": "CVE-2026-80088",
+      "cve_id": "CVE-2026-78545",
+      "asset_id": "CVE-2026-78545",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in Microsoft Office Word allows an unauthorized attacker to disclose information over a network.",
-      "last_modified": "2026-09-13T07:45:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80088"
+      "description": "The Okta Access Gateway does not sanitize the application label field before including it in the generated nginx configuration file. The unsanitized value is interpolated into an nginx server block directive, resulting in execution of injected directives.",
+      "last_modified": "2026-09-13T20:07:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78545"
     },
     {
-      "cve_id": "CVE-2026-90500",
-      "asset_id": "CVE-2026-90500",
+      "cve_id": "CVE-2026-78550",
+      "asset_id": "CVE-2026-78550",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in lenve vhr 1.0-SNAPSHOT. This vulnerability affects the function FastDFSUtils.upload of the file /hr/userface of the component Avatar Upload. This manipulation of the argument File causes unrestricted upload. The attack is possible to be carried out remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-13T07:45:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90500"
+      "description": "The Okta Access Gateway management console passes user-supplied input to eval() without sanitization during an authenticated administrator SSH session. As a result, the unsanitized input is executed directly, leading to code execution with the privileges of the management console.",
+      "last_modified": "2026-09-13T20:07:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78550"
     },
     {
-      "cve_id": "CVE-2026-90554",
-      "asset_id": "CVE-2026-90554",
+      "cve_id": "CVE-2026-78623",
+      "asset_id": "CVE-2026-78623",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "vLLM versions >=0.10.2 and <0.28.0 do not apply any audio decode-size or duration limit when extracting audio from video input for NanoNemotronVL models. In nano_nemotron_vl.py, _extract_audio_from_videos calls load_audio_pyav(BytesIO(video_bytes)) without the max_duration_s or max_decode_bytes parameters, so neither VLLM_MAX_AUDIO_DECODE_DURATION_S nor VLLM_MAX_AUDIO_DECODE_BYTES is enforced (unlike the direct audio upload path in AudioMediaIO). When a NanoNemotronVL model is served with use_audio_in_video=True, an attacker who supplies a small, highly compressed video as multimodal input can force the server to allocate gigabytes of memory during audio decoding, resulting in a denial of service. Fixed in vLLM 0.28.0.",
-      "last_modified": "2026-09-13T07:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90554"
+      "description": "The Okta Access Gateway does not sanitize SAML assertion values before interpolating them into database queries in the advanced mode datastore configuration. The unsanitized values are substituted directly into the query string prior to preparation, resulting in unintended SQL execution against the configured backend database.",
+      "last_modified": "2026-09-13T20:07:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78623"
     },
     {
-      "cve_id": "CVE-2026-90446",
-      "asset_id": "CVE-2026-90446",
+      "cve_id": "CVE-2026-78552",
+      "asset_id": "CVE-2026-78552",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An application programming interface endpoint accepts a user-supplied value and interpolates it directly into the path of a backend request to the underlying search and analytics data store, without restricting its contents. This allows an authenticated attacker to substitute an arbitrary backend path, causing the application's own elevated service credentials to be used against unintended internal endpoints. This could allow an attacker to enumerate or read internal configuration and administrative data from the backend data store that would otherwise be restricted.",
-      "last_modified": "2026-09-13T07:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90446"
+      "description": "The Okta Access Gateway does not apply its Lua directive restriction to the application-level custom configuration field. The field is interpolated directly into the nginx server block without inspection, resulting in execution of injected directives.",
+      "last_modified": "2026-09-13T20:07:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78552"
     },
     {
-      "cve_id": "CVE-2026-90447",
-      "asset_id": "CVE-2026-90447",
+      "cve_id": "CVE-2026-85485",
+      "asset_id": "CVE-2026-85485",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A routing rule selects between two different authentication mechanisms for the same downstream service based on the value of a client-supplied request header, rather than on any property the client cannot control. An authenticated user in possession of a shared service credential can set this header to route around the primary role-based authorization check and reach the alternate path's fixed, elevated role instead. This allows a low-privileged authenticated attacker who knows the shared credential to perform actions reserved for a higher-privileged role.",
-      "last_modified": "2026-09-13T07:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90447"
+      "description": "HTML::FormHandler versions before 0.410002 for Perl render some error messages into HTML without escaping.\n\nThe Table form layout and the Bootstrap 2 and 3 wrappers splice each error string straight into the surrounding markup. Version 0.410000, the fix for CVE-2026-19872, escaped the equivalent values in the other layouts and wrappers, and 0.410002 extended that to these three.\n\nError messages that contain attacker-influenced content such as rejected field values could embed JavaScript in rendered pages.",
+      "last_modified": "2026-09-13T20:07:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85485"
     },
     {
-      "cve_id": "CVE-2026-90451",
-      "asset_id": "CVE-2026-90451",
+      "cve_id": "CVE-2026-85630",
+      "asset_id": "CVE-2026-85630",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An example environment-configuration file ships with a fixed, publicly-known secret value used to sign authentication cookies for a bundled packet-analysis component. A deployment that copies this example file into active configuration without running the setup routine that regenerates the value will use the known default, allowing an attacker aware of the default to forge valid authentication cookies for that component.",
-      "last_modified": "2026-09-13T07:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90451"
+      "description": "HTML::FormHandler versions before 0.410002 for Perl render field attributes into HTML without escaping using the process_attrs method.\n\nAny application with fields or field labels where some attributes are built from data rather than literals allows attacker-influenced text in an attribute value that can override the field attributes or embed JavaScript in rendered pages.\n\nFor example, the RadioGroup widget uses the process_attrs method via the render_option and wrap_radio methods.",
+      "last_modified": "2026-09-13T20:07:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85630"
     }
   ]
 }
