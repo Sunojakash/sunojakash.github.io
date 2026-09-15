@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-14T21:57:21.624141+00:00",
+  "last_updated": "2026-09-15T05:09:21.097389+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-90788",
-      "asset_id": "CVE-2026-90788",
+      "cve_id": "CVE-2026-25687",
+      "asset_id": "CVE-2026-25687",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in magicblack MacCMS10 2026.1000.4055. Affected by this vulnerability is an unknown functionality of the file /admin1.php/admin/template/index/path/.%40template%40default%40html%40label.html of the component Template Handler. Performing a manipulation results in os command injection. The attack may be initiated remotely. The exploit has been released to the public and may be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-14T14:00:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90788"
+      "description": "A race condition in the ZPA tunnel handler of affected versions of Zscaler Client Connector (ZCC) allows a heap corruption, resulting in a denial of service (client crash) and potentially arbitrary code execution in the context of the ZCC process.",
+      "last_modified": "2026-09-15T04:30:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25687"
     },
     {
-      "cve_id": "CVE-2026-82439",
-      "asset_id": "CVE-2026-82439",
+      "cve_id": "CVE-2026-90809",
+      "asset_id": "CVE-2026-90809",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Description\n\nThe DRPC server kept a map from function name to request queue and created an entry the first time a\nfunction name was seen. No code path ever removed an entry: request cleanup removed the request from its\nqueue, and the shutdown path drained queues, but the queue object and its map entry remained for the life of\nthe process.\n\nFunction names come from the client and are not constrained to functions any topology has registered, so the\nnumber of retained entries is bounded only by the number of distinct names an attacker chooses to send, and\neach retained entry holds the name itself. `drpc.authorizer` is unset by default, so no credentials are\nrequired to reach the endpoint.\n\nThe retained state is permanent rather than a transient load spike, so the effect accumulates until the DRPC\nserver exhausts its heap.\n\nMitigation\n\nUpgrade to 3.1.0, where a function's queue is removed once nothing is waiting in it.\n\nUsers who cannot upgrade immediately should configure `drpc.authorizer` so that only trusted principals can\nreach the DRPC endpoints, and should ensure the DRPC ports are not reachable from untrusted networks.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
-      "last_modified": "2026-09-14T14:00:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82439"
+      "description": "A vulnerability was identified in HKUDS nanobot up to 0.2.1. The affected element is the function ExecTool._guard_command/ExecTool._spawn of the file nanobot/agent/tools/shell.py of the component ExecTool. Such manipulation leads to argument injection. It is possible to launch the attack remotely. The name of the patch is af582246f141311d574551b7571a517bcc3df750. It is best practice to apply a patch to resolve this issue.",
+      "last_modified": "2026-09-15T04:30:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90809"
     },
     {
-      "cve_id": "CVE-2025-45480",
-      "asset_id": "CVE-2025-45480",
+      "cve_id": "CVE-2026-86900",
+      "asset_id": "CVE-2026-86900",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Floodlight 71fe8a7 allows disruption of host communication via link spoofing. A port is misclassified as a non-boundary.",
-      "last_modified": "2026-09-14T14:00:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-45480"
+      "description": "An out-of-bounds read issue was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27. Mounting a maliciously crafted exFAT volume may cause unexpected system termination or kernel memory disclosure.",
+      "last_modified": "2026-09-15T04:30:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86900"
     },
     {
-      "cve_id": "CVE-2026-82232",
-      "asset_id": "CVE-2026-82232",
+      "cve_id": "CVE-2026-86924",
+      "asset_id": "CVE-2026-86924",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Apache Syncope.\n\n\n\nAn administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized sort clauses for Task search.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
-      "last_modified": "2026-09-14T14:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82232"
+      "description": "A memory corruption issue was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Tahoe 26.7. Connecting a malicious accessory may cause unexpected system termination.",
+      "last_modified": "2026-09-15T04:30:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86924"
     },
     {
-      "cve_id": "CVE-2026-10556",
-      "asset_id": "CVE-2026-10556",
+      "cve_id": "CVE-2026-86909",
+      "asset_id": "CVE-2026-86909",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mattermost versions 11.9.x <= 11.9.0, 11.8.x <= 11.8.4, 11.7.x <= 11.7.7, 10.11.x <= 10.11.22 fail to validate null entries in Microsoft Graph webhook notification payloads, which allows an unauthenticated attacker to crash the Microsoft Calendar plugin process and deny calendar integration service to all users on the instance via a crafted {{POST}} request to the public webhook endpoint.. Mattermost Advisory ID: MMSA-2026-00693",
-      "last_modified": "2026-09-14T14:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10556"
+      "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27. An app may be able to bypass Gatekeeper checks.",
+      "last_modified": "2026-09-15T04:30:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86909"
     },
     {
-      "cve_id": "CVE-2026-78330",
-      "asset_id": "CVE-2026-78330",
+      "cve_id": "CVE-2026-90879",
+      "asset_id": "CVE-2026-90879",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect privilege assignment vulnerability in Apache Syncope.\n\nWhen the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can obtain admin privileges after completing a successful authentication and obtaining a valid low-privileges JWT.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
-      "last_modified": "2026-09-14T14:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78330"
+      "description": "A vulnerability was identified in zyx0814 FilePress up to 3.0.1. This vulnerability affects unknown code of the file dzz/publish/search.php of the component Publish Module. Such manipulation of the argument orderby/order leads to sql injection. The attack can be launched remotely. The exploit is publicly available and might be used. The project was informed of the problem early through an issue report but has not responded yet.",
+      "last_modified": "2026-09-15T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90879"
     },
     {
-      "cve_id": "CVE-2026-78318",
-      "asset_id": "CVE-2026-78318",
+      "cve_id": "CVE-2026-65414",
+      "asset_id": "CVE-2026-65414",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Syncope.\n\n\n\nThe notification message, as optionally shown by Console's and Enduser's login pages can be instructed to display HTML tags with unsafe JS inline, via malicious HTTP link generation.\n\n\n\nThis issue affects Apache Syncope: from 4.0.4 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
-      "last_modified": "2026-09-14T14:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78318"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. A remote attacker may be able to cause unexpected app termination or arbitrary code execution.",
+      "last_modified": "2026-09-15T04:18:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65414"
     },
     {
-      "cve_id": "CVE-2026-77883",
-      "asset_id": "CVE-2026-77883",
+      "cve_id": "CVE-2026-60163",
+      "asset_id": "CVE-2026-60163",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Exposure of sensitive information through data queries vulnerability in Apache Syncope.\n\nAn administrator with adequate entitlements for Derived Schemas can create a malicious JEXL expression which allows any administrator with sufficient entitlements for User read to access LinkedAccount's (if present) or Manager's (if defined) sensitive information, possibly including hashed credentials.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
-      "last_modified": "2026-09-14T14:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77883"
+      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Group Replication Plugin).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.10, 9.7.0-9.7.1; MySQL Cluster: 8.0.0-8.0.47, 8.4.0-8.4.10 and  9.7.0-9.7.1. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where MySQL Server, MySQL Cluster executes to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in takeover of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 8.4 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-15T04:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60163"
     },
     {
-      "cve_id": "CVE-2026-48273",
-      "asset_id": "CVE-2026-48273",
+      "cve_id": "CVE-2026-43692",
+      "asset_id": "CVE-2026-43692",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ColdFusion is affected by an Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
-      "last_modified": "2026-09-14T13:59:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48273"
+      "description": "A validation issue was addressed with improved input sanitization. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. A remote user may cause an unexpected app termination or arbitrary code execution.",
+      "last_modified": "2026-09-15T04:18:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43692"
     },
     {
-      "cve_id": "CVE-2026-82920",
-      "asset_id": "CVE-2026-82920",
+      "cve_id": "CVE-2026-90878",
+      "asset_id": "CVE-2026-90878",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mattermost versions 11.9.x <= 11.9.0, 11.8.x <= 11.8.4, 11.7.x <= 11.7.7 fail to enforce authorization boundaries on the access control policy update endpoint which allows a channel or team administrator to detach a system-assigned ABAC parent policy via a crafted PUT /api/v4/access_control_policies request with an empty imports list.. Mattermost Advisory ID: MMSA-2026-00724",
-      "last_modified": "2026-09-14T13:59:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82920"
+      "description": "A vulnerability was determined in vllm-project vLLM up to 0.27.1. This affects an unknown part of the file /v1/chat/completions of the component Jinja Template Rendering. This manipulation of the argument chat_template causes resource consumption. The attack can be initiated remotely. The exploit has been publicly disclosed and may be utilized. The pull request to fix this issue awaits acceptance.",
+      "last_modified": "2026-09-15T04:15:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90878"
     },
     {
-      "cve_id": "CVE-2026-82441",
-      "asset_id": "CVE-2026-82441",
+      "cve_id": "CVE-2026-86895",
+      "asset_id": "CVE-2026-86895",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Description\n\nA submitted topology carries two lists of blobstore keys, `dependency_jars` and `dependency_artifacts`,\nwhich the client fills in after uploading the corresponding blobs. Nimbus performed no validation of their\ncontents on the submission path, yet acts on them in two places.\n\nDuring cleanup of a finished topology, Nimbus deletes the keys named in those lists, and the deletion is\nperformed as the Nimbus subject, for which the blobstore short-circuits its ACL check. A submitter who\nlisted a key belonging to another topology, such as its `-stormjar.jar`, could therefore cause\nthat blob to be deleted when their own topology was cleaned up.\n\nSeparately, on acquiring leadership a Nimbus compares the dependency keys of all active topologies against\nthe blobstore contents and surrenders leadership if any is missing. A single key that does not exist, on a\nsingle active topology, therefore causes every Nimbus to acquire leadership, surrender it and requeue\nindefinitely, leaving the cluster without a leader and unable to schedule, clean up or accept submissions.\n\nMitigation\n\nUpgrade to 3.1.0, where a submission is refused unless every entry in both lists is a dependency blob key\nand exists in the blobstore.\n\nNote that this validates new submissions only; a topology stored by an affected version with an invalid list\nis unaffected by the upgrade. An operator whose cluster is failing to retain a leader should inspect the\nNimbus log for the dependency keys reported as missing and remove or resubmit the topology naming them.\n\nUsers who cannot upgrade immediately should restrict topology submission to trusted principals.\n\nCredit\n\nThis issue was discovered by rzo1 while investigating an unrelated blobstore defect.",
-      "last_modified": "2026-09-14T13:58:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82441"
+      "description": "An information disclosure issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, tvOS 27, visionOS 27, watchOS 27. A local app may be able to read a persistent account identifier.",
+      "last_modified": "2026-09-15T04:15:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86895"
     },
     {
-      "cve_id": "CVE-2026-90941",
-      "asset_id": "CVE-2026-90941",
+      "cve_id": "CVE-2026-90877",
+      "asset_id": "CVE-2026-90877",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "novel-plus through 5.3.3 contains an authorization bypass vulnerability in the BookController download endpoint that allows authenticated backend accounts to export complete book text including paid chapters. Attackers can supply a bookId and bookName to retrieve all chapter content without VIP or purchase verification, bypassing the permission checks and data-scope limits enforced elsewhere in the admin interface.",
-      "last_modified": "2026-09-14T13:58:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90941"
+      "description": "A vulnerability was found in SourceCodester Online Faculty Clearance System 1.0. Affected by this issue is some unknown functionality of the file /update_requirement_status.php. The manipulation of the argument haydi results in sql injection. It is possible to launch the attack remotely. The exploit has been made public and could be used.",
+      "last_modified": "2026-09-15T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90877"
     },
     {
-      "cve_id": "CVE-2026-90940",
-      "asset_id": "CVE-2026-90940",
+      "cve_id": "CVE-2025-24890",
+      "asset_id": "CVE-2025-24890",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "novel-plus through 5.3.3 contains an insecure default cache-management password in the CacheController.refreshCache endpoint that allows anonymous attackers to invalidate portal caches by supplying the hardcoded default value in the URL path. Attackers can trigger unauthorized cache invalidation by accessing the cache/refresh endpoint with the known default password, forcing unnecessary database queries to repopulate the cache.",
-      "last_modified": "2026-09-14T13:58:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90940"
+      "description": "gitoxide is an implementation of git written in Rust. Prior to 0.13.3, the gix-sec crate on Windows incorrectly treats repositories controlled by another user as trusted when an administrator runs a dependent program with an unfiltered elevated token. In gix-sec/src/identity.rs, gix_sec::identity::is_path_owned_by_current_user obtains folder_owner and token_owner, but its administrator-specific IsWellKnownSid and CheckTokenMembership checks examine the running token rather than confirming the directory owner. This bypasses safe.directory-style protection for repositories owned and configured by a limited user, allowing repository configuration or hooks to execute commands with the administrator's privileges when an affected operation is performed. Exploitation requires Windows, an elevated administrator, a program that relies on gix-sec trust results, and interaction with a repository controlled by another user. An unelevated UAC process is not affected, and cloning is not affected because repository configuration and hooks are not copied. This issue is fixed in version 0.13.3.",
+      "last_modified": "2026-09-15T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24890"
     },
     {
-      "cve_id": "CVE-2026-90939",
-      "asset_id": "CVE-2026-90939",
+      "cve_id": "CVE-2026-84609",
+      "asset_id": "CVE-2026-84609",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "novel-plus through 5.3.3 contains an information disclosure vulnerability in the /sys/user/list endpoint that lacks proper permission annotations. Authenticated attackers can retrieve password hashes and personal data including email addresses and phone numbers for users within their data scope, enabling offline hash cracking and account takeover.",
-      "last_modified": "2026-09-14T13:58:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90939"
+      "description": "A permissions issue was addressed with improved path validation. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to modify protected system files.",
+      "last_modified": "2026-09-15T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84609"
     },
     {
-      "cve_id": "CVE-2026-84179",
-      "asset_id": "CVE-2026-84179",
+      "cve_id": "CVE-2026-86894",
+      "asset_id": "CVE-2026-86894",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Description\n\n  getTopologyPageInfo merged the Nimbus daemon configuration with the topology's own configuration and returned the result without redaction in the topology_conf field of TopologyPageInfo. The Storm UI copied that value verbatim into the configuration field of GET /api/v1/topology/{id} and of the corresponding metrics endpoint.\n\n  Where the cluster is configured with them, the merged map includes storm.zookeeper.auth.payload, which Storm's own documentation directs operators to keep in storm-cluster-auth.yaml under permissions that deny access from workers, together with the keystore and truststore passwords for the Thrift, Netty and ZooKeeper TLS configuration, and any plugin key whose name denotes a secret.\n\n  getTopologyPageInfo is a topology read-only operation. Under SimpleACLAuthorizer a principal listed in topology.readonly.users or topology.readonly.groups could therefore read daemon credentials that the dedicated cluster configuration API, getNimbusConf, redacts and that is gated on nimbus.users instead. The sibling operations that exist to serve configuration were masked; the topology page, which merges in strictly more daemon state, was not.\n\n  Mitigation\n\n  Upgrade to 3.1.0, where credential-bearing values are masked before any configuration is served over the Nimbus API.\n\n  Users who cannot upgrade immediately should remove any principal that is not trusted with cluster credentials from topology.readonly.users, topology.readonly.groups, topology.users and topology.groups, and should rotate the ZooKeeper authentication payload and any TLS keystore or truststore passwords that were reachable through the topology page.\n\n  Credit\nWanxin Yin (yaklang.io)\u00a0reported this issue to the Apache Security Team.",
-      "last_modified": "2026-09-14T13:57:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84179"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-09-15T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86894"
     },
     {
-      "cve_id": "CVE-2026-86348",
-      "asset_id": "CVE-2026-86348",
+      "cve_id": "CVE-2026-84511",
+      "asset_id": "CVE-2026-84511",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mattermost versions <=11.9 11.0.9 11.4.8 11.7.7 10.22.11.0 fail to recover from handler panics, which allows an authenticated user to crash the plugin via a post-action request with an unexpected field type.. Mattermost Advisory ID: MMSA-2026-00701",
-      "last_modified": "2026-09-14T13:52:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86348"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted asset catalog may lead to unexpected process termination.",
+      "last_modified": "2026-09-15T03:45:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84511"
     },
     {
-      "cve_id": "CVE-2026-86349",
-      "asset_id": "CVE-2026-86349",
+      "cve_id": "CVE-2026-90876",
+      "asset_id": "CVE-2026-90876",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mattermost versions 11.9.x <= 11.9.0, 11.8.x <= 11.8.4, 11.7.x <= 11.7.8, 10.11.x <= 10.11.22 fail to limit the nesting depth in the server-side Markdown parser which allows an authenticated attacker to cause a denial of service (CPU resource exhaustion) via a crafted post containing deeply nested blockquotes or list items.. Mattermost Advisory ID: MMSA-2026-00707",
-      "last_modified": "2026-09-14T13:51:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86349"
+      "description": "A vulnerability has been found in SourceCodester Online Faculty Clearance System 1.0. Affected by this vulnerability is an unknown functionality of the file /delete_requirement.php. The manipulation of the argument ID leads to sql injection. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used.",
+      "last_modified": "2026-09-15T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90876"
     },
     {
-      "cve_id": "CVE-2026-90787",
-      "asset_id": "CVE-2026-90787",
+      "cve_id": "CVE-2026-84521",
+      "asset_id": "CVE-2026-84521",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in Soarkey StudentManagement up to e08f7f1d5015af407aa4cca0ada3dea189b4937e. Affected is the function RegisterServlet.doPost of the file code/WebContent/register.html of the component Registration Workflow. Such manipulation of the argument level leads to improper privilege management. The attack can be launched remotely. The exploit is publicly available and might be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-09-14T13:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90787"
+      "description": "A use after free issue was addressed with improved memory management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, visionOS 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84521"
     },
     {
-      "cve_id": "CVE-2026-81392",
-      "asset_id": "CVE-2026-81392",
+      "cve_id": "CVE-2026-84560",
+      "asset_id": "CVE-2026-84560",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to disclose information locally.",
-      "last_modified": "2026-09-14T13:45:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81392"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. An app may gain unauthorized access to Bluetooth.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84560"
     },
     {
-      "cve_id": "CVE-2026-90955",
-      "asset_id": "CVE-2026-90955",
+      "cve_id": "CVE-2026-86910",
+      "asset_id": "CVE-2026-86910",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Affected versions of MISP\u2019s interactive CLI shell do not reliably preserve the identity of the impersonated MISP user across audit logging.\n\n\nThe shell is designed to run actions as a supplied MISP user ID. However, the legacy SysLogLogable behavior stored that identity in behavior-instance state that could be overwritten when another model lazily attached the shared behavior. Consequently, subsequent CLI writes could lose the intended user attribution and be logged incorrectly. The commit also notes that CLI-originated records lacked a CLI marker, making them appear similar to ordinary web actions by that user.\n\n\n\nVersion affected: \u22642.5.45",
-      "last_modified": "2026-09-14T13:45:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90955"
+      "description": "A permissions issue was addressed with improved path validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An application may be able to access restricted files.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86910"
     },
     {
-      "cve_id": "CVE-2024-21400",
-      "asset_id": "CVE-2024-21400",
+      "cve_id": "CVE-2026-86879",
+      "asset_id": "CVE-2026-86879",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Microsoft Azure Kubernetes Service Confidential Container Elevation of Privilege Vulnerability",
-      "last_modified": "2026-09-14T13:44:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-21400"
+      "description": "A denial-of-service issue was addressed with improved input validation. This issue is fixed in iOS 27 and iPadOS 27. A remote attacker may be able to cause a denial-of-service.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86879"
     },
     {
-      "cve_id": "CVE-2026-83948",
-      "asset_id": "CVE-2026-83948",
+      "cve_id": "CVE-2026-86881",
+      "asset_id": "CVE-2026-86881",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of special elements used in a command ('command injection') in Microsoft Azure CLI allows an authorized attacker to execute code over a network.",
-      "last_modified": "2026-09-14T13:31:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83948"
+      "description": "A certificate validation issue was addressed with improved certificate validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An attacker with a compromised intermediate certificate authority may be able to issue certificates with arbitrary extended key usages.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86881"
     },
     {
-      "cve_id": "CVE-2026-90786",
-      "asset_id": "CVE-2026-90786",
+      "cve_id": "CVE-2026-86897",
+      "asset_id": "CVE-2026-86897",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in Dvidelabs flatcc up to 0.6.3. This impacts the function align_order_members of the file src/compiler/semantics.c of the component Duplicate Symbol Handler. This manipulation causes reachable assertion. The attack can be initiated remotely. The exploit has been publicly disclosed and may be utilized. Patch name: 8b19ba4e992ebcad7f5970704d1afc5507fa5205. To fix this issue, it is recommended to deploy a patch.",
-      "last_modified": "2026-09-14T13:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90786"
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in Safari 27, iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86897"
     },
     {
-      "cve_id": "CVE-2023-46273",
-      "asset_id": "CVE-2023-46273",
+      "cve_id": "CVE-2026-86878",
+      "asset_id": "CVE-2026-86878",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Bonjour Gateway in Extreme Networks IQ Engine before 10.6r1a, and through 10.6r4 before 10.6r5, has an ah_bgd buffer overflow via ah_event_send.",
-      "last_modified": "2026-09-14T13:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46273"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in iOS 27 and iPadOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86878"
     },
     {
-      "cve_id": "CVE-2026-82764",
-      "asset_id": "CVE-2026-82764",
+      "cve_id": "CVE-2026-86911",
+      "asset_id": "CVE-2026-86911",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Cross-site request forgery vulnerability exists in multiple Contec products. If a user views a specially crafted page while logged in to the affected product, unintended operations may be performed.",
-      "last_modified": "2026-09-14T13:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82764"
+      "description": "This issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27. A malicious app may be able to bypass clickjacking protections for secure prompts.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86911"
     },
     {
-      "cve_id": "CVE-2026-13417",
-      "asset_id": "CVE-2026-13417",
+      "cve_id": "CVE-2026-84584",
+      "asset_id": "CVE-2026-84584",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mattermost versions 11.9.x <= 11.9.0, 11.8.x <= 11.8.4, 11.7.x <= 11.7.7, 10.11.x <= 10.11.22 fail to validate the type of `fields.properties` on block creation which allows an authenticated user with editor access to a board to crash the Boards plugin worker and trigger a denial of service via a child block whose `fields.properties` is a non-object value. Mattermost Advisory ID: MMSA-2026-00710",
-      "last_modified": "2026-09-14T13:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13417"
+      "description": "This issue was addressed with improved handling of symlinks. This issue is fixed in macOS Golden Gate 27. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84584"
     },
     {
-      "cve_id": "CVE-2026-73191",
-      "asset_id": "CVE-2026-73191",
+      "cve_id": "CVE-2026-86917",
+      "asset_id": "CVE-2026-86917",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Syncope.\n\n\n\n\n\nWhen the Syncope SRA is configured for CAS authentication, the target Apereo CAS instance's URL is calculated by unconditionally looking at client-supplied forwarded HTTP headers.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
-      "last_modified": "2026-09-14T13:24:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73191"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to gain root privileges.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86917"
     },
     {
-      "cve_id": "CVE-2026-7208",
-      "asset_id": "CVE-2026-7208",
+      "cve_id": "CVE-2026-86901",
+      "asset_id": "CVE-2026-86901",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Yealink SIP-T33G firmware versions 124.86.x.x prior to 124.87.0.0 contain a race condition vulnerability that allows authenticated attackers to interrupt active diagnostic processes by concurrently deleting output files written to predictable paths under the diagnostic directory. Attackers can trigger a diagnostic operation such as traceroute or ping and simultaneously invoke the file deletion endpoint to terminate the running process, leaving the system in an inconsistent state.",
-      "last_modified": "2026-09-14T13:24:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7208"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27. Mounting a maliciously crafted exFAT volume may cause unexpected system termination or kernel memory disclosure.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86901"
     },
     {
-      "cve_id": "CVE-2026-73195",
-      "asset_id": "CVE-2026-73195",
+      "cve_id": "CVE-2026-86902",
+      "asset_id": "CVE-2026-86902",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Encoding or Escaping of Output vulnerability in Apache Syncope.\n\n\n\nAuthenticated users can store a spreadsheet formula payload in one of their own plain attributes. When such users are included in a CSV export and the generated CSV file is opened by a spreadsheet application, the formula may be executed.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
-      "last_modified": "2026-09-14T13:23:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73195"
+      "description": "A parsing issue in the handling of directory paths was addressed with improved path validation. This issue is fixed in macOS Golden Gate 27, macOS Sonoma 14.8.8. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86902"
     },
     {
-      "cve_id": "CVE-2026-73236",
-      "asset_id": "CVE-2026-73236",
+      "cve_id": "CVE-2026-84636",
+      "asset_id": "CVE-2026-84636",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect Authorization vulnerability in Apache Syncope.\n\n\n\nDelegated administration security checks are based on Realm hierarchy and enforced via prefix matches.\nDue to incorrect implementation, two sibling Realms whose names\u00a0begin with the same string cannot be correctly distinguished, resulting in incorrect authorization.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
-      "last_modified": "2026-09-14T13:23:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73236"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84636"
     },
     {
-      "cve_id": "CVE-2026-90961",
-      "asset_id": "CVE-2026-90961",
+      "cve_id": "CVE-2026-86870",
+      "asset_id": "CVE-2026-86870",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The LdapAuth and LinOTPAuth authentication plugins in MISP contain an authentication bypass vulnerability. Both LdapAuthenticate and LinOTPAuthenticate replace CakePHP's FormAuthenticate class but fail to replicate its _checkFields() input validation guard. As a result, the email and password fields extracted from the login request are passed to downstream authentication logic without verifying that they are non-empty strings.\n\nIn the LDAP authenticator, an empty or null password is forwarded to ldap_bind(). Per RFC 4513 section 5.1.2, a bind request with a valid DN and an empty password constitutes an unauthenticated bind, which many LDAP directory servers accept as successful. An attacker who knows any valid user email address in the directory can therefore authenticate as that user without possessing a password. Additionally, non-string values (null, false, arrays) are either coerced to empty strings by ldap_bind(), raise TypeErrors, or are misinterpreted as find conditions in _findUser(), all of which can lead to unintended authentication outcomes.\n\nIn the LinOTP authenticator, the same missing guard allows non-string credentials to be concatenated into the LinOTP verification request, and in the mixed-authentication branch an empty password is accepted against a stored hash of the empty string.\n\nA secondary issue in the LDAP authenticator is that newly created user accounts (auto-provisioned on first LDAP login) were assigned an empty password. Because the save path skips validation, the empty string is hashed and stored. If the user later ceases to be found in LDAP and the mixed-authentication fallback is used, the stored hash of the empty string verifies against an empty password, again permitting unauthenticated access.\n\nThe vulnerability requires that the affected plugin (LdapAuth or LinOTPAuth) is enabled on the MISP instance and that the attacker knows at least one valid email address registered in the directory or MISP user store. No prior authentication is required. Successful exploitation grants the attacker the full privileges of the impersonated user, which may include administrative access to threat intelligence data.\n\n\nVersion affected: \u22642.5.45",
-      "last_modified": "2026-09-14T13:22:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90961"
+      "description": "A heap buffer overflow was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27, watchOS 27. Processing a maliciously crafted file may lead to unexpected app termination.",
+      "last_modified": "2026-09-15T03:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86870"
     },
     {
-      "cve_id": "CVE-2026-90949",
-      "asset_id": "CVE-2026-90949",
+      "cve_id": "CVE-2026-90858",
+      "asset_id": "CVE-2026-90858",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GIMP's PSP (Paint Shop Pro) file loader. When processing a compressed selection channel, a heap-based buffer overflow can occur due to a mismatch between the allocated buffer size and the amount of data decompressed. A remote attacker could exploit this vulnerability by crafting a malicious PSP file. Opening this file in GIMP could lead to a crash or arbitrary code execution.",
-      "last_modified": "2026-09-14T13:20:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90949"
+      "description": "A flaw has been found in subhajitkhan online-clinic-management-system up to e9ee77a8827a1446220fa07ee693dc4d9a29a578. Affected by this vulnerability is the function session_start of the file adminappview.php. Executing a manipulation of the argument adminmail can lead to authorization bypass. The attack may be launched remotely. The exploit has been published and may be used. This product operates on a rolling release basis, ensuring continuous delivery. Consequently, there are no version details for either affected or updated releases. The project was informed of the problem early through an issue report but has not responded yet.",
+      "last_modified": "2026-09-15T03:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90858"
     },
     {
-      "cve_id": "CVE-2026-90948",
-      "asset_id": "CVE-2026-90948",
+      "cve_id": "CVE-2026-72709",
+      "asset_id": "CVE-2026-72709",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GIMP's ICO file loader. When processing an ICO file containing an embedded PNG image, an integer overflow can occur during the calculation of the required buffer size. This leads to an undersized buffer being allocated, causing a heap-based buffer overflow when the decoded pixel data is written. A remote attacker could exploit this by crafting a malicious ICO file, which, when opened, could lead to arbitrary code execution or a crash.",
-      "last_modified": "2026-09-14T13:20:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90948"
+      "description": "SPIP before version 4.4.18 contains a missing authorization vulnerability in sensitive actions under ecrire/action/ that allows unauthenticated attackers to invoke privileged actions by supplying only a valid CSRF nonce without any server-side permission check. Attackers can bypass template-level authorization guards through direct HTTP requests to invoke actions such as editer_auteur, enabling arbitrary account password rewrites including administrator accounts and resulting in full account takeover.",
+      "last_modified": "2026-09-15T03:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72709"
     },
     {
-      "cve_id": "CVE-2026-9277",
-      "asset_id": "CVE-2026-9277",
+      "cve_id": "CVE-2026-2015",
+      "asset_id": "CVE-2026-2015",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "shell-quote's `quote()` function did not validate object-token inputs against the operator model used by `parse()`. The `.op` field was backslash-escaped character by character using `/(.)/g`, which in JavaScript does not match line terminators (\\n, \\r, U+2028, U+2029). A line terminator in `.op` therefore passed through unescaped into the output; POSIX shells treat a literal newline as a command separator, so any content after it would execute as a second command. The vulnerable code path is reachable in two ways: (1) direct construction of `{ op: '...\\n...' }` from external input, and (2) via `parse(cmd, envFn)` when `envFn` returns object tokens whose `.op` is attacker-influenced. Both are documented API surface. Fixed by replacing the per-character escape with strict shape validation: `.op` must match the parser's control-operator allowlist; `{ op: 'glob', pattern }` validates `pattern` and forbids line terminators; `{ comment }` validates `comment` and forbids line terminators; any other object shape throws `TypeError`.",
-      "last_modified": "2026-09-14T13:19:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9277"
+      "description": "A weakness has been identified in Portabilis i-Educar up to 2.10. Affected is an unknown function of the file FinalStatusImportService.php of the component Final Status Import. Executing a manipulation of the argument school_id can lead to improper authorization. The attack can be executed remotely. The exploit has been made available to the public and could be used for attacks. Upgrading to version 2.11.0 is able to address this issue. Upgrading the affected component is advised. The vendor explains, that \"[t]he reported attack vector was tested against the corrected code, and the previously described behavior could no longer be reproduced\".",
+      "last_modified": "2026-09-15T03:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2015"
     },
     {
-      "cve_id": "CVE-2026-90457",
-      "asset_id": "CVE-2026-90457",
+      "cve_id": "CVE-2025-8539",
+      "asset_id": "CVE-2025-8539",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The administrative password is hashed using a comparatively weak, fast algorithm for the credential store backing one authentication path, and the file containing that hash is written with permissions allowing it to be read by any local user. This is inconsistent with a separate, stronger hashing algorithm used for the same password on another authentication path. A party able to read this file, including a local user or a party with access to a configuration backup, could feasibly recover the underlying password through offline computation, compromising the administrative credential across every path that accepts it.",
-      "last_modified": "2026-09-14T13:19:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90457"
+      "description": "A weakness has been identified in Portabilis i-Educar 2.10. This affects an unknown function of the file /intranet/public_distrito_cad.php. This manipulation of the argument nome causes cross site scripting. The attack is possible to be carried out remotely. The exploit has been made available to the public and could be used for attacks. Upgrading to version 2.12 mitigates this issue. It is recommended to upgrade the affected component. The vendor explains, that \"[t]he reported attack vector was tested against the corrected version, and the previously described XSS behavior could no longer be reproduced\".",
+      "last_modified": "2026-09-15T03:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8539"
     },
     {
-      "cve_id": "CVE-2026-90456",
-      "asset_id": "CVE-2026-90456",
+      "cve_id": "CVE-2025-8538",
+      "asset_id": "CVE-2025-8538",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An example environment-configuration file for a bundled inventory-management component ships with a fixed, publicly-known administrative password. A deployment that copies this example file into active configuration without running the setup routine that regenerates credentials will expose that component's administrative interface to anyone aware of the default value.",
-      "last_modified": "2026-09-14T13:19:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90456"
+      "description": "A security flaw has been discovered in Portabilis i-Educar 2.10. The impacted element is an unknown function of the file /usuarios/tipos/novo. The manipulation of the argument name/description results in cross site scripting. The attack can be executed remotely. The exploit has been released to the public and may be used for attacks. Upgrading to version 2.12 is sufficient to resolve this issue. Upgrading the affected component is recommended. The vendor explains, that \"[t]he reported attack vector was tested against the corrected version, and the previously described XSS behavior could no longer be reproduced\".",
+      "last_modified": "2026-09-15T03:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8538"
     },
     {
-      "cve_id": "CVE-2026-90455",
-      "asset_id": "CVE-2026-90455",
+      "cve_id": "CVE-2026-90857",
+      "asset_id": "CVE-2026-90857",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A prior update that raised a bundled HTTP client library to a version remediating known vulnerabilities was later reverted, reintroducing the earlier, vulnerable version into a log-processing component. The only code path in that component using the library issues a request to a single fixed, trusted vendor URL at initialization and does not process attacker-controlled input through the library, limiting practical exploitability of the reintroduced version in this context.",
-      "last_modified": "2026-09-14T13:19:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90455"
+      "description": "A vulnerability was detected in SourceCodester College Notes Gallery Management System 1.0. Affected is an unknown function of the file /dashboard/userprofile.php of the component Profile Upload. Performing a manipulation of the argument image results in unrestricted upload. The attack may be initiated remotely. The exploit is now public and may be used.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90857"
     },
     {
-      "cve_id": "CVE-2026-90454",
-      "asset_id": "CVE-2026-90454",
+      "cve_id": "CVE-2026-86890",
+      "asset_id": "CVE-2026-86890",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A deployment mode intended to expose only read access to a bundled packet-analysis component's interface denies a list of write-capable routes by pattern, but the pattern omits routes that modify tags attached to stored session records, and the proxy configuration otherwise permits the request method those routes use. This allows an authenticated user on a deployment intended to be read-only to add or remove tags on stored session records.",
-      "last_modified": "2026-09-14T13:19:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90454"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27. An attacker with physical access to a locked device may be able to view sensitive user information.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86890"
     },
     {
-      "cve_id": "CVE-2026-90453",
-      "asset_id": "CVE-2026-90453",
+      "cve_id": "CVE-2026-86886",
+      "asset_id": "CVE-2026-86886",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A file-upload handler redirects the authenticated client's browser to a URL taken directly from that same request's Referer header, without validating it against the application's own origin. This allows an authenticated attacker to craft a request that causes another user's browser to be redirected to an arbitrary external destination after completing an upload.",
-      "last_modified": "2026-09-14T13:19:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90453"
+      "description": "A path traversal issue was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, watchOS 27. An app may be able to modify protected system files.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86886"
     },
     {
-      "cve_id": "CVE-2026-90452",
-      "asset_id": "CVE-2026-90452",
+      "cve_id": "CVE-2026-86887",
+      "asset_id": "CVE-2026-86887",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Requests from the reverse proxy to the identity-provider service for token discovery, introspection, and credential exchange do not verify the identity provider's server certificate. An attacker positioned on the network path between the proxy and the identity provider could impersonate the identity provider and issue forged authentication tokens accepted by the deployment.",
-      "last_modified": "2026-09-14T13:19:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90452"
+      "description": "A privacy issue was addressed by removing sensitive data. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, visionOS 27. An app may be able to bypass certain Privacy preferences.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86887"
     },
     {
-      "cve_id": "CVE-2026-90451",
-      "asset_id": "CVE-2026-90451",
+      "cve_id": "CVE-2026-86891",
+      "asset_id": "CVE-2026-86891",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An example environment-configuration file ships with a fixed, publicly-known secret value used to sign authentication cookies for a bundled packet-analysis component. A deployment that copies this example file into active configuration without running the setup routine that regenerates the value will use the known default, allowing an attacker aware of the default to forge valid authentication cookies for that component.",
-      "last_modified": "2026-09-14T13:19:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90451"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, watchOS 27. An app may be able to access Bluetooth device information.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86891"
     },
     {
-      "cve_id": "CVE-2026-90445",
-      "asset_id": "CVE-2026-90445",
+      "cve_id": "CVE-2026-86884",
+      "asset_id": "CVE-2026-86884",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An interface that accepts file uploads from authenticated users extracts the contents of uploaded archives without validating that extracted file paths remain within the intended destination directory. This allows an authenticated attacker to craft an archive whose entries traverse outside the destination directory, causing the extraction process to write files to arbitrary locations with the privileges of that process. This could allow an attacker to inject fabricated records into the system's stored data or tamper with application configuration.",
-      "last_modified": "2026-09-14T13:19:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90445"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, watchOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86884"
     },
     {
-      "cve_id": "CVE-2026-90444",
-      "asset_id": "CVE-2026-90444",
+      "cve_id": "CVE-2026-86892",
+      "asset_id": "CVE-2026-86892",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A file-transfer interface that requires valid credentials accepts attacker-controlled filenames without restricting shell metacharacters. An automated process later constructs and runs a system command using the uploaded file's name, allowing an authenticated attacker to embed and execute arbitrary operating system commands with the privileges of that process. This allows an attacker to read and modify ingested log data, and could provide a foothold for further movement within the internal network.",
-      "last_modified": "2026-09-14T13:19:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90444"
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, visionOS 27. An app may be able to cause a denial-of-service.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86892"
     },
     {
-      "cve_id": "CVE-2026-90443",
-      "asset_id": "CVE-2026-90443",
+      "cve_id": "CVE-2026-86888",
+      "asset_id": "CVE-2026-86888",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A web interface reflects a portion of the request URL into a script context and a hyperlink attribute without adequate encoding, and does not require authentication to reach. This allows an unauthenticated network attacker to craft a link that, when visited by a user, executes arbitrary script in the context of the affected application and can redirect the user's browser to an arbitrary external site. Successful exploitation could allow an attacker to act with the compromised user's session privileges within the application.",
-      "last_modified": "2026-09-14T13:19:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90443"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. A local app may be able to read a persistent account identifier.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86888"
     },
     {
-      "cve_id": "CVE-2026-89172",
-      "asset_id": "CVE-2026-89172",
+      "cve_id": "CVE-2026-86889",
+      "asset_id": "CVE-2026-86889",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper protection of physical side channels vulnerability in Microchip AN1044, Microchip AN953, and Microchip SW300052.\n\nThis issue affects AN1044: through A; AN953: through A; SW300052: through 2.6.",
-      "last_modified": "2026-09-14T13:19:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89172"
+      "description": "A certificate validation issue was addressed with improved certificate validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An attacker in a privileged network position may be able to intercept network traffic.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86889"
     },
     {
-      "cve_id": "CVE-2026-89050",
-      "asset_id": "CVE-2026-89050",
+      "cve_id": "CVE-2026-86903",
+      "asset_id": "CVE-2026-86903",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Quads Ads Manager for Google AdSense WordPress plugin before 3.0.5 does not verify payment completion with the configured payment gateway before marking an ad-selling order as paid, allowing users who can place an order to obtain a paid ad placement without payment.",
-      "last_modified": "2026-09-14T13:19:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89050"
+      "description": "An out-of-bounds read was addressed with improved input validation. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to disclose kernel memory.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86903"
     },
     {
-      "cve_id": "CVE-2026-88802",
-      "asset_id": "CVE-2026-88802",
+      "cve_id": "CVE-2026-86893",
+      "asset_id": "CVE-2026-86893",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The MDJM Event Management WordPress plugin before 1.7.8.5 and the Mobile Events Manager WordPress plugin through 1.4.8.3 do not check a capability, a nonce or the type of the record before permanently deleting the post identified in a request to their playlist entry removal, allowing unauthenticated attackers to destroy arbitrary posts, pages and media attachments, bypassing the trash.",
-      "last_modified": "2026-09-14T13:19:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88802"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in iOS 27 and iPadOS 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to read device name.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86893"
     },
     {
-      "cve_id": "CVE-2026-88793",
-      "asset_id": "CVE-2026-88793",
+      "cve_id": "CVE-2026-86885",
+      "asset_id": "CVE-2026-86885",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The YouTube Embed WordPress plugin from 10.0 to 10.3 does not perform any authorisation check on one of its AJAX actions, relying only on a nonce it prints on every front-end page, and does not escape the stored data before rendering it, allowing unauthenticated attackers to store arbitrary web scripts which will execute in the session of any user viewing the affected content, including an administrator.",
-      "last_modified": "2026-09-14T13:19:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88793"
+      "description": "An input validation issue was addressed with improved input validation. This issue is fixed in iOS 27 and iPadOS 27. An attacker in radio range may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86885"
     },
     {
-      "cve_id": "CVE-2026-87795",
-      "asset_id": "CVE-2026-87795",
+      "cve_id": "CVE-2026-86898",
+      "asset_id": "CVE-2026-86898",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "zstd-jni versions before 1.5.7-14 fail to validate offset and length parameters in the ZstdDictCompress constructor, allowing out-of-bounds memory reads. Attackers can supply untrusted offset or length values to read native heap memory into the compression dictionary, typically causing JVM crashes.",
-      "last_modified": "2026-09-14T13:19:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87795"
+      "description": "A logic issue was addressed with improved state management. This issue is fixed in Safari 27, iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. Opening a maliciously crafted webarchive file may lead to universal cross-site scripting.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86898"
     },
     {
-      "cve_id": "CVE-2026-87734",
-      "asset_id": "CVE-2026-87734",
+      "cve_id": "CVE-2026-86882",
+      "asset_id": "CVE-2026-86882",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue was discovered in the utcp package before 0.0.6 for OCaml. Out-of-order segment reassembly allows remote denial of service.",
-      "last_modified": "2026-09-14T13:19:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87734"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted image may lead to unexpected process termination.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86882"
     },
     {
-      "cve_id": "CVE-2026-87719",
-      "asset_id": "CVE-2026-87719",
+      "cve_id": "CVE-2026-86904",
+      "asset_id": "CVE-2026-86904",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab EE affecting all versions from 18.3 before 19.1.8, 19.2 before 19.2.6, and 19.3 before 19.3.2 that under certain conditions could allow an authenticated user with Duo Chat access to obtain Advanced Search instance configurations and sensitive credentials using a specially crafted GraphQL subscription argument to bypass serialization and perform server object lookup.",
-      "last_modified": "2026-09-14T13:18:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87719"
+      "description": "A privacy issue was addressed with improved state management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, watchOS 27. An app may be able to track users across apps and websites without permission.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86904"
     },
     {
-      "cve_id": "CVE-2026-87656",
-      "asset_id": "CVE-2026-87656",
+      "cve_id": "CVE-2026-84596",
+      "asset_id": "CVE-2026-84596",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper state validation in Safebrowsing in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87656"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted font may result in the disclosure of process memory.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84596"
     },
     {
-      "cve_id": "CVE-2026-87627",
-      "asset_id": "CVE-2026-87627",
+      "cve_id": "CVE-2026-86905",
+      "asset_id": "CVE-2026-86905",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Interpretation conflict in Safebrowsing in Google Chrome on on Mac prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted file. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87627"
+      "description": "This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. An app may be able to delete credentials stored in Keychain.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86905"
     },
     {
-      "cve_id": "CVE-2026-87608",
-      "asset_id": "CVE-2026-87608",
+      "cve_id": "CVE-2026-84607",
+      "asset_id": "CVE-2026-84607",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper certificate validation in FedCM in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87608"
+      "description": "A race condition was addressed with improved state management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. A sandboxed app may be able to execute arbitrary code with kernel privileges.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84607"
     },
     {
-      "cve_id": "CVE-2026-87595",
-      "asset_id": "CVE-2026-87595",
+      "cve_id": "CVE-2026-86883",
+      "asset_id": "CVE-2026-86883",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Server-side request forgery in Mobile in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87595"
+      "description": "A privacy issue was addressed with improved handling of files. This issue is fixed in iOS 27 and iPadOS 27, visionOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T03:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86883"
     },
     {
-      "cve_id": "CVE-2026-87575",
-      "asset_id": "CVE-2026-87575",
+      "cve_id": "CVE-2026-84624",
+      "asset_id": "CVE-2026-84624",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in Loader in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87575"
+      "description": "A permissions issue was addressed with improved path validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, visionOS 27. A sandboxed app may be able to access restricted files.",
+      "last_modified": "2026-09-15T03:00:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84624"
     },
     {
-      "cve_id": "CVE-2026-87571",
-      "asset_id": "CVE-2026-87571",
+      "cve_id": "CVE-2026-86869",
+      "asset_id": "CVE-2026-86869",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper certificate validation in Loader in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87571"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, macOS Golden Gate 27. Processing a maliciously crafted image may lead to unexpected app termination.",
+      "last_modified": "2026-09-15T03:00:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86869"
     },
     {
-      "cve_id": "CVE-2026-87551",
-      "asset_id": "CVE-2026-87551",
+      "cve_id": "CVE-2026-84603",
+      "asset_id": "CVE-2026-84603",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper certificate validation in CORS in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87551"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in iOS 27 and iPadOS 27, visionOS 27, watchOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T03:00:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84603"
     },
     {
-      "cve_id": "CVE-2026-87546",
-      "asset_id": "CVE-2026-87546",
+      "cve_id": "CVE-2026-84568",
+      "asset_id": "CVE-2026-84568",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect type conversion or cast in Safebrowsing in Google Chrome on on Mac prior to 153.0.8010.36 allowed a remote attacker to bypass system access restrictions via a crafted file. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87546"
+      "description": "A path traversal issue was addressed with improved path validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An attacker with control of a network directory server may be able to execute arbitrary code with root privileges.",
+      "last_modified": "2026-09-15T03:00:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84568"
     },
     {
-      "cve_id": "CVE-2026-87544",
-      "asset_id": "CVE-2026-87544",
+      "cve_id": "CVE-2026-84600",
+      "asset_id": "CVE-2026-84600",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in Extensions in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to bypass system access restrictions into a privileged page via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87544"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. A malicious shortcut may be able to send messages without user confirmation.",
+      "last_modified": "2026-09-15T03:00:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84600"
     },
     {
-      "cve_id": "CVE-2026-87511",
-      "asset_id": "CVE-2026-87511",
+      "cve_id": "CVE-2026-84562",
+      "asset_id": "CVE-2026-84562",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing authorization in DevTools in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to obtain cross-origin data via a crafted Chrome extension. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87511"
+      "description": "A race condition was addressed with additional validation. This issue is fixed in macOS Tahoe 26.6. An app may be able to access protected user data.",
+      "last_modified": "2026-09-15T03:00:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84562"
     },
     {
-      "cve_id": "CVE-2026-87473",
-      "asset_id": "CVE-2026-87473",
+      "cve_id": "CVE-2026-86876",
+      "asset_id": "CVE-2026-86876",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in FileHandling in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87473"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, visionOS 27, watchOS 27. A sandboxed process may be able to circumvent sandbox restrictions.",
+      "last_modified": "2026-09-15T03:00:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86876"
     },
     {
-      "cve_id": "CVE-2026-87469",
-      "asset_id": "CVE-2026-87469",
+      "cve_id": "CVE-2026-90856",
+      "asset_id": "CVE-2026-90856",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper input validation in Extensions in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to bypass web origin policy into a privileged page via crafted network traffic. (Chromium security severity: Low)",
-      "last_modified": "2026-09-14T13:18:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87469"
+      "description": "A security vulnerability has been detected in SourceCodester College Notes Gallery Management System 1.0. This impacts an unknown function of the file signup.php of the component Registration Flow. Such manipulation of the argument role leads to improper privilege management. The attack can be launched remotely. The exploit has been disclosed publicly and may be used.",
+      "last_modified": "2026-09-15T03:00:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90856"
     },
     {
-      "cve_id": "CVE-2026-86077",
-      "asset_id": "CVE-2026-86077",
+      "cve_id": "CVE-2026-79300",
+      "asset_id": "CVE-2026-79300",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "n8n is an open source workflow automation platform. Prior to 2.37.7 and 2.38.2, the /chat WebSocket route accepted a resumeToken and resumed a paused execution without checking that the target node supported chat messages. An anonymous form submitter who received that token could reuse it on the chat route to release a Send-and-Wait, non-chat HITL, or Wait approval gate. The affected authorization logic is packages/cli/src/chat/chat-execution-manager.ts, where canResumeOverChat did not gate the resume target. This issue is fixed in versions 2.37.7 and 2.38.2.",
-      "last_modified": "2026-09-14T13:18:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86077"
+      "description": "SEP sesam before 5.2.0.24 mishandles User Authorization with MFA. If AD authentication is configured and MFA is enforced, an attacker can create a second OTP access capability. SEP sesam and Active Directory handle username capitalization differently, which may allow multiple SEP sesam user accounts to be created for the same Active Directory (AD) account. Active Directory treats usernames as case-insensitive, while SEP sesam distinguishes between different letter casing. As a result, the same AD user can be represented by multiple SEP sesam user accounts that differ only in username capitalization. When Active Directory authentication is configured and multi-factor authentication (MFA) is enforced, this behavior may allow an additional OTP Authenticator to be registered for the same AD account, reducing the effectiveness of MFA protection.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79300"
     },
     {
-      "cve_id": "CVE-2026-85129",
-      "asset_id": "CVE-2026-85129",
+      "cve_id": "CVE-2026-90647",
+      "asset_id": "CVE-2026-90647",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Hoo Companion WordPress plugin 1.0.2 does not have any authorisation or validation checks in one of its import features, and does not sanitise the data submitted to it before storing it as the active theme's settings, allowing unauthenticated attackers to inject arbitrary web scripts which will execute for anyone viewing the site, including administrators. The same request destroys the site's existing theme settings.",
-      "last_modified": "2026-09-14T13:18:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85129"
+      "description": "ASE/Kalkitech ASE2000 V2 Communication Test Set 2.35 through 2.37 on Windows contains an improper certificate validation vulnerability in the IEC 60870-5-104 TLS client (Task Mode). This allows a network-positioned attacker to bypass certificate validation via a certificate with multiple simultaneous faults, enabling a Man-in-the-Middle attack on protected communications.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90647"
     },
     {
-      "cve_id": "CVE-2026-82791",
-      "asset_id": "CVE-2026-82791",
+      "cve_id": "CVE-2026-84576",
+      "asset_id": "CVE-2026-84576",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of special elements used in an OS command ('OS Command Injection') issue exists in Contec CAN 2.0B Communication Wireless LAN / USB Converter Unit. If this vulnerability is exploited, an arbitrary OS command may be executed by an attacker who can log in to the product.",
-      "last_modified": "2026-09-14T13:18:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82791"
+      "description": "This issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84576"
     },
     {
-      "cve_id": "CVE-2026-82790",
-      "asset_id": "CVE-2026-82790",
+      "cve_id": "CVE-2026-84583",
+      "asset_id": "CVE-2026-84583",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Cross-site scripting vulnerability exists in PC-HELPER Wireless I/O DIO-0404RY-LWF and PC-HELPER Wireless I/O DIO-0404RY-LWF-US. If this vulnerability is exploited, an arbitrary script may be executed on a logged-in user's web browser.",
-      "last_modified": "2026-09-14T13:18:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82790"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. A local app may be able to read a persistent account identifier.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84583"
     },
     {
-      "cve_id": "CVE-2026-81918",
-      "asset_id": "CVE-2026-81918",
+      "cve_id": "CVE-2026-84628",
+      "asset_id": "CVE-2026-84628",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS below 9.5.3 is vulnerable to Stored XSS via the Date Format field in the Page Attribute Display block. A user with edit_page_contents permissions could store a payload which executes in the browser of any visitor who viewed a page where the block was configured to display a date-type attribute.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 4.8 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Oriol Ortiz for reporting.",
-      "last_modified": "2026-09-14T13:18:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81918"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. A sandboxed app may be able to access the System Keychain.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84628"
     },
     {
-      "cve_id": "CVE-2026-81917",
-      "asset_id": "CVE-2026-81917",
+      "cve_id": "CVE-2026-84629",
+      "asset_id": "CVE-2026-84629",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS below 9.5.3 does not apply HTML output escaping to the file description and tags fields when rendering the Document Library block, so a user with permission to edit file properties could store a script payload that executed in the browser of any visitor to a page displaying the block with the description or tags column enabled, including unauthenticated visitors. Successful exploitation could allow theft of session data or actions performed in the visitor's context. The block controller returned the description and tags values without the h() escaping already applied to the title column, and the block view template wrote the returned value directly into the results table\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 5.1 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:L/VI:L/VA:N/SC:H/SI:H/SA:N. Thanks Nguyen Manh Thuan for reporting.",
-      "last_modified": "2026-09-14T13:18:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81917"
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in iOS 27 and iPadOS 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to fingerprint the user.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84629"
     },
     {
-      "cve_id": "CVE-2026-81916",
-      "asset_id": "CVE-2026-81916",
+      "cve_id": "CVE-2026-84625",
+      "asset_id": "CVE-2026-84625",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS before 9.5.3 evaluated the authorization check for an Express entry submission against the entity of the posted form rather than the entity identified by the dashboard route. As a result, a user permitted to add entries to one Express object could create entries in a different Express object outside their authorization scope, potentially polluting protected datasets, triggering workflows, or injecting content into administrative processes. The dashboard submit route resolved the mutated entity from the attacker-controlled route ID while the permission check validated the independently posted form's entity, and the submission proceeded because the two entities were never compared.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 5.1 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Yonatan Drori from Tenzai\u00a0for reporting.",
-      "last_modified": "2026-09-14T13:18:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81916"
+      "description": "A permissions issue was addressed with additional sandbox restrictions. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27, watchOS 27. An app may be able to fingerprint the user.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84625"
     },
     {
-      "cve_id": "CVE-2026-81915",
-      "asset_id": "CVE-2026-81915",
+      "cve_id": "CVE-2026-84618",
+      "asset_id": "CVE-2026-84618",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS below 9.5.3 does not perform an object-level authorization check when a Page Type was updated. The Types::submit() dashboard controller loaded and saved the Page Type identified by a user-supplied ptID without calling canEditPageType(), so a signed-in dashboard user permitted to edit one Page Type could modify the configuration of Page Types outside their assigned authorization boundary. The update_page_type token was validated but is action- and user-scoped rather than object-scoped, so it did not constrain which Page Type could be targeted.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 5.1 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Andrew Gonzalez for reporting.",
-      "last_modified": "2026-09-14T13:18:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81915"
+      "description": "A permissions issue was addressed with improved validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84618"
     },
     {
-      "cve_id": "CVE-2026-81907",
-      "asset_id": "CVE-2026-81907",
+      "cve_id": "CVE-2026-84622",
+      "asset_id": "CVE-2026-84622",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS 9.5.2 and below is vulnerable to Cross-Site Request Forgery (CSRF) in the Express \"Clear Entries\" function (POST /index.php/dashboard/system/express/entities/delete_entries) because the controller records but does not enforce a failed CSRF token check, allowing the destructive operation to proceed when the token is missing or invalid. A remote unauthenticated attacker can force an authenticated administrator who visits an attacker-controlled page to permanently delete all entries belonging to an attacker-selected Express entity on a web application to which the administrator is currently authenticated. Because the default Contact Express object ships with a fixed entity UUID, the target identifier can be obtained without dashboard access.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 6.1 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N. Thanks Pratik Zanjurne for reporting.",
-      "last_modified": "2026-09-14T13:18:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81907"
+      "description": "A memory initialization issue was addressed with improved memory handling. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app with root privileges may be able to read uninitialized kernel memory.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84622"
     },
     {
-      "cve_id": "CVE-2026-81648",
-      "asset_id": "CVE-2026-81648",
+      "cve_id": "CVE-2026-84623",
+      "asset_id": "CVE-2026-84623",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The CryptoPayment Gateway WordPress plugin from 1.2.1 to 1.2.2 does not apply an authorization check on one of its AJAX endpoints, allowing unauthenticated users to invoke administrative operations, including deleting arbitrary files on the server, overwriting the payment gateway configuration and recovering stored wallet credentials in cleartext.",
-      "last_modified": "2026-09-14T13:18:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81648"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27. An app may be able to fingerprint the device.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84623"
     },
     {
-      "cve_id": "CVE-2026-80175",
-      "asset_id": "CVE-2026-80175",
+      "cve_id": "CVE-2026-84619",
+      "asset_id": "CVE-2026-84619",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Insertion of Sensitive Information into Externally-Accessible File or Directory vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to information exposure.",
-      "last_modified": "2026-09-14T13:18:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80175"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to cause unexpected system termination or write kernel memory.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84619"
     },
     {
-      "cve_id": "CVE-2026-80124",
-      "asset_id": "CVE-2026-80124",
+      "cve_id": "CVE-2026-84615",
+      "asset_id": "CVE-2026-84615",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Insertion of Sensitive Information into Log File vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to information exposure.",
-      "last_modified": "2026-09-14T13:18:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80124"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, tvOS 27, visionOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84615"
     },
     {
-      "cve_id": "CVE-2026-79516",
-      "asset_id": "CVE-2026-79516",
+      "cve_id": "CVE-2026-84616",
+      "asset_id": "CVE-2026-84616",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds read in the stbsp_vsnprintf function (stb_sprintf.h) of nothings stb commit 31c1ad3 allows attackers to cause a Denial of Service (DoS) via sending a crafted input.",
-      "last_modified": "2026-09-14T13:18:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79516"
+      "description": "A type confusion issue was addressed with improved memory handling. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84616"
     },
     {
-      "cve_id": "CVE-2026-78491",
-      "asset_id": "CVE-2026-78491",
+      "cve_id": "CVE-2026-84620",
+      "asset_id": "CVE-2026-84620",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dell SCG 5.0 Appliance versions prior to 5.36.00.16 and Dell SCG 5.0 Application versions prior to 5.36.00.00, contains an Improper Certificate Validation vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to unauthorized access.",
-      "last_modified": "2026-09-14T13:18:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78491"
+      "description": "An integer overflow was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted 3D model may lead to memory corruption.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84620"
     },
     {
-      "cve_id": "CVE-2026-75308",
-      "asset_id": "CVE-2026-75308",
+      "cve_id": "CVE-2026-84621",
+      "asset_id": "CVE-2026-84621",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "yshopmall <=3.3 is vulnerable to Cross Site Scripting (XSS). The file upload endpoint /api/upload of the system lacks file type validation. Attackers can upload files of any type, including HTML, JSP, and other executable files.",
-      "last_modified": "2026-09-14T13:18:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75308"
+      "description": "An authorization issue was addressed with improved access control. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84621"
     },
     {
-      "cve_id": "CVE-2026-74933",
-      "asset_id": "CVE-2026-74933",
+      "cve_id": "CVE-2026-84617",
+      "asset_id": "CVE-2026-84617",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The GenieWords WordPress plugin from 1.5.27 to 1.5.34 does not have authorisation checks on some of its REST API and AJAX actions, and decodes stored values before printing them, allowing unauthenticated users to overwrite its configuration and inject arbitrary web scripts that execute on every front-end page.",
-      "last_modified": "2026-09-14T13:18:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74933"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84617"
     },
     {
-      "cve_id": "CVE-2026-71801",
-      "asset_id": "CVE-2026-71801",
+      "cve_id": "CVE-2026-84626",
+      "asset_id": "CVE-2026-84626",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue was discovered in s-pms SPMS-Server through v1.0. The application contains a hardcoded default access token secret within its core configuration file, which is not overridden or removed in the production environment profile. A remote, unauthenticated attacker can locally forge valid administrative session tokens to completely bypass the authentication mechanism gaining full unauthorized access to protected backend APIs.",
-      "last_modified": "2026-09-14T13:18:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71801"
+      "description": "An information disclosure issue was addressed with improved state management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to identify what other apps a user has installed.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84626"
     },
     {
-      "cve_id": "CVE-2026-71616",
-      "asset_id": "CVE-2026-71616",
+      "cve_id": "CVE-2026-84563",
+      "asset_id": "CVE-2026-84563",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in GPAC c2dee3aff638cd96f9617ac5b17dc2868cd90ef3 allows an attacker to cause a denial of service via the function gf_route_media_complete_object(). Fixed in 3c4e6c5b3e0c6fa9b16d55599701a08354538fab.",
-      "last_modified": "2026-09-14T13:18:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71616"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84563"
     },
     {
-      "cve_id": "CVE-2026-71614",
-      "asset_id": "CVE-2026-71614",
+      "cve_id": "CVE-2026-84631",
+      "asset_id": "CVE-2026-84631",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in GPAC c2dee3aff638cd96f9617ac5b17dc2868cd90ef3 allows an attacker to execute arbitrary code via the src/media_tools/dvb_mpe.c, descriptorTime_slice_fec_identifier() and gf_m2ts_ipdatagram_reader() components. Fixed in 0e4093392e1f847c90d20e031e893cd942fef938.",
-      "last_modified": "2026-09-14T13:18:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71614"
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in macOS Golden Gate 27. An app may be able to gain root privileges.",
+      "last_modified": "2026-09-15T02:45:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84631"
     },
     {
-      "cve_id": "CVE-2026-68535",
-      "asset_id": "CVE-2026-68535",
+      "cve_id": "CVE-2026-90855",
+      "asset_id": "CVE-2026-90855",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS Area API's block-create endpoint in versions 9.2.0 to 9.5.2 did not invoke the block type controller's validate() method on submitted data, which, for file-referencing blocks such as hero_image and gallery, is where the referenced file is authorized against the user's file-manager visibility. As a result, an authenticated user holding the block-add scope could store, and cause the page to render, a reference to a file that the file-manager authorization policy would otherwise reject, disclosing that file's URL and preview to the editor and to visitors of the affected page. Under public file storage, the URL and thumbnail are exposed directly; under private storage, the disclosure is limited by the permission-checked download URL.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 5.1 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N. Thanks riodrwn for reporting.",
-      "last_modified": "2026-09-14T13:18:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68535"
+      "description": "A weakness has been identified in SourceCodester/katojkalemba Online Food Ordering System 1.0. This affects an unknown function of the file /web/order.php. This manipulation of the argument ID causes sql injection. The attack can be initiated remotely. The exploit has been made available to the public and could be used for attacks.",
+      "last_modified": "2026-09-15T02:45:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90855"
     },
     {
-      "cve_id": "CVE-2026-68526",
-      "asset_id": "CVE-2026-68526",
+      "cve_id": "CVE-2026-90854",
+      "asset_id": "CVE-2026-90854",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Concrete CMS before 9.5.3 did not validate an anti-CSRF token in the Calendar event duplicate dialog controller (concrete/controllers/dialog/event/duplicate.php) submit() action, which duplicated a calendar event after checking only canAccess() and the per-resource canAddCalendarEvent() permission, so a crafted cross-site request could cause an authenticated user with add-event permission to create duplicate CalendarEvents and CalendarEventVersions records under their own authority.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 5.3 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N.\u00a0Thanks Winston Crooker\u00a0for reporting.",
-      "last_modified": "2026-09-14T13:18:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68526"
+      "description": "A security flaw has been discovered in SourceCodester/katojkalemba Online Food Ordering System 1.0. The impacted element is an unknown function of the file /web/category-foods.php. The manipulation of the argument ID results in sql injection. It is possible to launch the attack remotely. The exploit has been released to the public and may be used for attacks.",
+      "last_modified": "2026-09-15T02:30:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90854"
     },
     {
-      "cve_id": "CVE-2026-54369",
-      "asset_id": "CVE-2026-54369",
+      "cve_id": "CVE-2026-84577",
+      "asset_id": "CVE-2026-84577",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "acl before version 2.4.0 contains a symlink traversal vulnerability in the libacl pathname-based functions acl_get_file(), acl_set_file(), acl_extended_file(), and acl_delete_def_file() that allows local attackers to escalate privileges by replacing any pathname component with a symbolic link. Attackers who control any component of a pathname processed by a privileged caller can redirect ACL read or write operations to arbitrary files or directories, enabling unauthorized manipulation of access control lists and local privilege escalation.",
-      "last_modified": "2026-09-14T13:18:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54369"
+      "description": "An access issue was addressed with additional sandbox restrictions. This issue is fixed in macOS Golden Gate 27, macOS Tahoe 26.7. An app may be able to bypass sandbox restrictions.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84577"
     },
     {
-      "cve_id": "CVE-2026-53937",
-      "asset_id": "CVE-2026-53937",
+      "cve_id": "CVE-2026-84598",
+      "asset_id": "CVE-2026-84598",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MCP Kotlin SDK is the Kotlin Multiplatform software development kit for the Model Context Protocol. In versions 0.7.0 through 0.12.0, `ReadBuffer.append` in `kotlin-sdk-core/src/commonMain/kotlin/io/modelcontextprotocol/kotlin/sdk/shared/ReadBuffer.kt` writes every chunk of bytes received from the stdio transport into a `kotlinx.io.Buffer` with no size cap. Frames are extracted from that buffer only when a `\\n` (0x0a) byte is observed. A peer that streams bytes without ever sending a newline causes the internal buffer to grow indefinitely until the JVM (or the surrounding host process) is OOM-killed. The leak is amplified by `StdioServerTransport` and `StdioClientTransport`, which both queue raw chunks through a `kotlinx.coroutines.channels.Channel<ByteArray>(Channel.UNLIMITED)` and then call `readBuffer.append(chunk)` without backpressure or size guard. This is a remote-pre-auth denial of service whenever an SDK stdio server's stdin is fed by an untrusted or attacker-controlled producer (for example: a host program that exec's the MCP server as a subprocess and pipes through bytes received from a network peer, or a sidecar wrapper that proxies bytes from an HTTP endpoint to the stdio transport). Version 0.13.0 fixes the issue.",
-      "last_modified": "2026-09-14T13:18:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53937"
+      "description": "A path traversal issue was addressed with improved path validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27. An attacker with physical access to a trust-paired device may be able to read and write arbitrary files.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84598"
     },
     {
-      "cve_id": "CVE-2026-53638",
-      "asset_id": "CVE-2026-53638",
+      "cve_id": "CVE-2026-84593",
+      "asset_id": "CVE-2026-84593",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Sylius is an Open Source eCommerce Framework on Symfony. Starting in version 2.0.0 and prior to version 2.0.18, 2.1.15, and 2.2.6, an authorization bypass vulnerability exists in the shop account API. The `PATCH /api/v2/shop/account/orders/{tokenValue}/payments/{paymentId}` endpoint, used by an authenticated shop customer to change the payment method of an order that has been placed but not yet paid (state `STATE_NEW`), does not validate that the chosen payment method is enabled for the order's channel. The equivalent checkout endpoint (`PATCH /api/v2/shop/orders/{tokenValue}/payments/{paymentId}`) correctly rejects out-of-channel payment methods with `HTTP 422`; the account endpoint silently accepts them and returns `HTTP 200`. An authenticated customer can therefore assign any globally enabled payment method to their own placed order, including methods that the store operator has explicitly excluded from that channel. The issue is fixed in versions: 2.0.18, 2.1.15, 2.2.6 and above. As a workaround, decorate the `Sylius\\Bundle\\ApiBundle\\Changer\\PaymentMethodChangerInterface` service in the application.",
-      "last_modified": "2026-09-14T13:18:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53638"
+      "description": "A use after free issue was addressed with improved memory management. This issue is fixed in iOS 27 and iPadOS 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84593"
     },
     {
-      "cve_id": "CVE-2026-53196",
-      "asset_id": "CVE-2026-53196",
+      "cve_id": "CVE-2026-84585",
+      "asset_id": "CVE-2026-84585",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nUSB: serial: io_ti: fix heap overflow in get_manuf_info()\n\nget_manuf_info() reads le16_to_cpu(rom_desc->Size) bytes from the\ndevice I2C EEPROM into a buffer allocated with kmalloc_obj(), which\nis sizeof(struct edge_ti_manuf_descriptor) = 10 bytes.\n\nThe Size field comes from the device and is only validated (in\ncheck_i2c_image()) to make sure the descriptor fits within\nTI_MAX_I2C_SIZE (16384 bytes), not against the destination buffer size.\nA malicious USB device can therefore set Size to any value up to 16377,\ncausing a heap overflow of up to 16367 bytes when plugged into a host\nrunning this driver.\n\nvalid_csum() is called after read_rom() and also iterates\nbuffer[0..Size-1], compounding the out-of-bounds access.\n\nFix by rejecting descriptors with unexpected length before calling\nread_rom().\n\n[ johan: amend commit message; also check for short descriptors ]",
-      "last_modified": "2026-09-14T13:18:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53196"
+      "description": "A permissions issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27. An app may be able to access local network devices without user consent.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84585"
     },
     {
-      "cve_id": "CVE-2026-53091",
-      "asset_id": "CVE-2026-53091",
+      "cve_id": "CVE-2026-84589",
+      "asset_id": "CVE-2026-84589",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: pull headers in qdisc_pkt_len_segs_init()\n\nMost ndo_start_xmit() methods expects headers of gso packets\nto be already in skb->head.\n\nnet/core/tso.c users are particularly at risk, because tso_build_hdr()\ndoes a memcpy(hdr, skb->data, hdr_len);\n\nqdisc_pkt_len_segs_init() already does a dissection of gso packets.\n\nUse pskb_may_pull() instead of skb_header_pointer() to make\nsure drivers do not have to reimplement this.\n\nSome malicious packets could be fed, detect them so that we can\ndrop them sooner with a new SKB_DROP_REASON_SKB_BAD_GSO drop_reason.",
-      "last_modified": "2026-09-14T13:18:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53091"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in macOS Golden Gate 27. An app may be able to modify Privacy preferences.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84589"
     },
     {
-      "cve_id": "CVE-2026-52482",
-      "asset_id": "CVE-2026-52482",
+      "cve_id": "CVE-2026-84588",
+      "asset_id": "CVE-2026-84588",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in SJRC F11 SJ-GPS-PRO firmware build 2019-09-17 allows a remote attacker to obtain sensitive information via the inetd service spawns /app/sh_for_telnet",
-      "last_modified": "2026-09-14T13:18:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-52482"
+      "description": "A memory corruption issue was addressed by removing the vulnerable code. This issue is fixed in macOS Golden Gate 27. Mounting a maliciously crafted disk image may cause unexpected system termination or corrupt kernel memory.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84588"
     },
     {
-      "cve_id": "CVE-2026-44185",
-      "asset_id": "CVE-2026-44185",
+      "cve_id": "CVE-2026-84587",
+      "asset_id": "CVE-2026-84587",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Buffer Over-read vulnerability in Apache HTTP Server via outbound OCSP requests to an attacker controlled OCSP server\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.\n\nUsers are recommended to upgrade to version 2.4.68, which fixes the issue.",
-      "last_modified": "2026-09-14T13:18:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44185"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access protected user data.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84587"
     },
     {
-      "cve_id": "CVE-2026-42536",
-      "asset_id": "CVE-2026-42536",
+      "cve_id": "CVE-2026-84601",
+      "asset_id": "CVE-2026-84601",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based Buffer Overflow vulnerability in Apache HTTP Server with\u00a0mod_xml2enc, xml2StartParse, and untrusted content\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.\n\nUsers are recommended to upgrade to version 2.4.68, which fixes the issue.",
-      "last_modified": "2026-09-14T13:18:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42536"
+      "description": "A permissions issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27. An app may be able to bypass Apple Intelligence security prompts.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84601"
     },
     {
-      "cve_id": "CVE-2026-42499",
-      "asset_id": "CVE-2026-42499",
+      "cve_id": "CVE-2026-84586",
+      "asset_id": "CVE-2026-84586",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pathological inputs could cause DoS through consumePhrase when parsing an email address according to RFC 5322.",
-      "last_modified": "2026-09-14T13:18:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42499"
+      "description": "An information disclosure issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, watchOS 27. A malicious application may be able to leak sensitive user information.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84586"
     },
     {
-      "cve_id": "CVE-2026-39821",
-      "asset_id": "CVE-2026-39821",
+      "cve_id": "CVE-2026-84574",
+      "asset_id": "CVE-2026-84574",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The ToASCII and ToUnicode functions incorrectly accept Punycode-encoded labels that decode to an ASCII-only label. For example, ToUnicode(\"xn--example-.com\") incorrectly returns the name \"example.com\" rather than an error. This behavior can lead to privilege escalation in programs using the idna package. For example, a program which performs privilege checks on the ASCII hostname may reject \"example.com\" but permit \"xn--example-.com\". If that program subsequently converts the ASCII hostname to Unicode, it will inadvertently permits access to the Unicode name \"example.com\".",
-      "last_modified": "2026-09-14T13:18:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-39821"
+      "description": "A permissions issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to bypass Privacy preferences.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84574"
     },
     {
-      "cve_id": "CVE-2026-39820",
-      "asset_id": "CVE-2026-39820",
+      "cve_id": "CVE-2026-84554",
+      "asset_id": "CVE-2026-84554",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Well-crafted inputs reaching ParseAddress, ParseAddressList, and ParseDate were able to trigger excessive CPU exhaustion and memory allocations.",
-      "last_modified": "2026-09-14T13:18:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-39820"
+      "description": "An integer overflow was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An attacker in a privileged network position may be able to cause a denial-of-service.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84554"
     },
     {
-      "cve_id": "CVE-2026-38998",
-      "asset_id": "CVE-2026-38998",
+      "cve_id": "CVE-2026-84581",
+      "asset_id": "CVE-2026-84581",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A use-after-free in the SocketDescriptor::tcpReadHandler1 function (liveMedia/RTPInterface.cpp) of LIVE555 Streaming Media (version 2026.02.26) allows attackers to cause a Denial of Service (DoS) via sending a series of crafted RTSP and HTTP requests to the server.",
-      "last_modified": "2026-09-14T13:18:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38998"
+      "description": "A buffer overflow was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Mounting a maliciously crafted disk image may cause unexpected system termination or corrupt kernel memory.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84581"
     },
     {
-      "cve_id": "CVE-2026-34355",
-      "asset_id": "CVE-2026-34355",
+      "cve_id": "CVE-2026-84606",
+      "asset_id": "CVE-2026-84606",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A buffer overflow in mod_proxy_html in Apache HTTP Server 2.4.67 and earlier allows an attack by an untrusted backend.\nUsers are recommended to upgrade to version 2.4.68, which fixes this issue.",
-      "last_modified": "2026-09-14T13:18:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34355"
+      "description": "A privacy issue was addressed with improved handling of identifiers. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. An app may be able to identify a user across reinstalls.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84606"
     },
     {
-      "cve_id": "CVE-2026-33814",
-      "asset_id": "CVE-2026-33814",
+      "cve_id": "CVE-2026-84578",
+      "asset_id": "CVE-2026-84578",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When processing HTTP/2 SETTINGS frames, transport will enter an infinite loop of writing CONTINUATION frames if it receives a SETTINGS_MAX_FRAME_SIZE with a value of 0.",
-      "last_modified": "2026-09-14T13:18:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33814"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84578"
     },
     {
-      "cve_id": "CVE-2026-33811",
-      "asset_id": "CVE-2026-33811",
+      "cve_id": "CVE-2026-84580",
+      "asset_id": "CVE-2026-84580",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When using LookupCNAME with the cgo DNS resolver, a very long CNAME response can trigger a double-free of C memory and a crash.",
-      "last_modified": "2026-09-14T13:18:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33811"
+      "description": "The issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84580"
     },
     {
-      "cve_id": "CVE-2026-33810",
-      "asset_id": "CVE-2026-33810",
+      "cve_id": "CVE-2026-84514",
+      "asset_id": "CVE-2026-84514",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When verifying a certificate chain containing excluded DNS constraints, these constraints are not correctly applied to wildcard DNS SANs which use a different case than the constraint. This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.",
-      "last_modified": "2026-09-14T13:18:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33810"
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to modify protected parts of the file system.",
+      "last_modified": "2026-09-15T02:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84514"
     }
   ]
 }
