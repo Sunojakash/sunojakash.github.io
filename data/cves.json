@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-17T11:57:53.574621+00:00",
+  "last_updated": "2026-09-17T17:12:00.013121+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-66269",
-      "asset_id": "CVE-2026-66269",
+      "cve_id": "CVE-2026-28326",
+      "asset_id": "CVE-2026-28326",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Protection mechanism bypass.",
-      "last_modified": "2026-09-17T10:36:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66269"
+      "description": "SolarWinds Access Rights Manager was reported to be affected by an unauthenticated remote code execution vulnerability. The issue stems from a hardcoded static key.",
+      "last_modified": "2026-09-17T16:30:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28326"
     },
     {
-      "cve_id": "CVE-2026-92611",
-      "asset_id": "CVE-2026-92611",
+      "cve_id": "CVE-2026-93296",
+      "asset_id": "CVE-2026-93296",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Eclipse Ankaios versions 0.6.0 to before 1.0.4, `LogRule::matches` in the agent control-interface authorizer stops at the first wildcard pattern in a single rule instead of evaluating later entries, which can cause deny `LogRule` entries to be skipped and allow unauthorized access to another workload's logs.",
-      "last_modified": "2026-09-17T10:34:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92611"
+      "description": "MISP contains a stored cross-site scripting (XSS) vulnerability in the Overmind theme's statistics views. The event General card (event_general.ctp) and the server/feed preview card (preview_general.ctp) constructed donut chart legend labels by directly concatenating object name or category keys into an innerHTML string without HTML-encoding. Because MISP object names (e.g., attribute names, event names, or server/feed identifiers) are user-controllable by any authenticated user with sufficient permissions to create or modify such objects, an attacker could craft a name containing malicious markup (for example, a script tag or event-handler attribute). When any other user viewed the affected Overmind dashboard, the injected markup would be interpreted as live HTML/JavaScript in the victim's browser, executing in the context of the MISP application origin. This could allow session hijacking, data exfiltration, or arbitrary actions performed on behalf of the victim. The vulnerability requires the attacker to have low-level authenticated access to create or rename an object whose name is rendered in the legend, and the victim to view the Overmind event or server preview page. No special browser conditions or race conditions are required.",
+      "last_modified": "2026-09-17T16:29:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93296"
     },
     {
-      "cve_id": "CVE-2026-81235",
-      "asset_id": "CVE-2026-81235",
+      "cve_id": "CVE-2026-93292",
+      "asset_id": "CVE-2026-93292",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dell Wyse Management Suite, versions prior to 2605.0.3.683, contain a Missing Cryptographic Step vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Information tampering.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81235"
+      "description": "SigNoz versions from 0.88.0 before 0.142.1 contain a SQL injection vulnerability in trace-funnel analytics endpoints that interpolate service_name and span_name fields into ClickHouse string literals without escaping. Authenticated attackers can inject SQL through funnel step definitions to execute arbitrary queries and read results in HTTP responses.",
+      "last_modified": "2026-09-17T16:26:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93292"
     },
     {
-      "cve_id": "CVE-2026-81238",
-      "asset_id": "CVE-2026-81238",
+      "cve_id": "CVE-2026-93295",
+      "asset_id": "CVE-2026-93295",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dell Wyse Management Suite, versions prior to 2605.0.3.683, contain a Missing Authentication for Critical Function vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81238"
+      "description": "MISP contains a vulnerability in its background job dispatch mechanism that allows remote code execution as the web user. Background job arguments are passed directly as the argv of the CakePHP console process. CakePHP's ShellDispatcher::_parsePaths() scans the entire argv for path switches (-app, --app, -working, --working, -root, --root, -webroot, --webroot) and uses the following element as the application root. The events/contact endpoint passes user-controlled fields (message and person) into job arguments without validation. An attacker who can submit the contact form can set the person field to a reserved switch (e.g., -app) and the message field to a phar:// URI pointing to a malicious archive. The CakePHP bootstrap then includes Config/core.php from within that archive, executing attacker-controlled PHP code with the privileges of the web user. The vulnerability requires the ability to submit the events/contact form (or any other endpoint that forwards user input into background job arguments). No special timing or race condition is required; the attack is deterministic once the crafted parameters are accepted. The impact is full remote code execution in the context of the MISP web server process, allowing data exfiltration, persistence, and lateral movement within the host.",
+      "last_modified": "2026-09-17T16:25:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93295"
     },
     {
-      "cve_id": "CVE-2026-0159",
-      "asset_id": "CVE-2026-0159",
+      "cve_id": "CVE-2026-85716",
+      "asset_id": "CVE-2026-85716",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Cellular Modem, there is a possible out-of-bounds write due to a missing bounds check. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0159"
+      "description": "The AsyncHttpClient (AHC) library allows Java applications to easily execute HTTP requests and asynchronously process HTTP responses. From 3.0.8 until 3.0.12, processScramAuthenticationInfo and processAuthenticationInfo compute the SCRAM ServerSignature or Digest rspauth verification result but log a mismatch and still deliver the response as authenticated. On a non-TLS or compromised transport, a peer that has not proved knowledge of the shared secret can therefore be accepted as the server. The fix rejects a present invalid value and computes Digest rspauth from the Authorization parameters actually sent, but verification remains unenforced when the value is absent, the sent parameters cannot be recovered, or Digest uses qop=auth-int. This issue is fixed in version 3.0.12.",
+      "last_modified": "2026-09-17T16:23:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85716"
     },
     {
-      "cve_id": "CVE-2026-0170",
-      "asset_id": "CVE-2026-0170",
+      "cve_id": "CVE-2026-93014",
+      "asset_id": "CVE-2026-93014",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Vp9DecodeFrameTag of vp9hwd_headers.cc, there is a possible out-of-bounds write due to a missing bounds check. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0170"
+      "description": "RosarioSIS versions before 12.9 fail to validate the filename request parameter in Users and Students modules, allowing authenticated users to unlink allow-listed files via path traversal. Attackers can use parent-directory sequences to escape upload directories and delete CSS, XML, JSON resources and other users' documents throughout the installation.",
+      "last_modified": "2026-09-17T16:18:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93014"
     },
     {
-      "cve_id": "CVE-2026-0171",
-      "asset_id": "CVE-2026-0171",
+      "cve_id": "CVE-2026-92987",
+      "asset_id": "CVE-2026-92987",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible out-of-bounds write due to a logic error in the code. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0171"
+      "description": "roxmltree through 0.21.1 performs quadratic-time attribute and namespace validation during XML parsing without limits on attribute count. Attackers can craft XML documents with tens of thousands of attributes on a single element to consume excessive CPU time and cause denial of service.",
+      "last_modified": "2026-09-17T16:18:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92987"
     },
     {
-      "cve_id": "CVE-2026-0183",
-      "asset_id": "CVE-2026-0183",
+      "cve_id": "CVE-2026-92985",
+      "asset_id": "CVE-2026-92985",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In CPM, there is a possible information disclosure due to a confused deputy. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0183"
+      "description": "SiYuan versions before 3.8.4 fail to escape bookmark labels imported from notebook files when rendering them in the dock tree. Attackers can craft malicious .sy notebook files with unescaped HTML in bookmark attributes that execute scripts in the Electron renderer with access to child_process for command execution.",
+      "last_modified": "2026-09-17T16:18:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92985"
     },
     {
-      "cve_id": "CVE-2026-0186",
-      "asset_id": "CVE-2026-0186",
+      "cve_id": "CVE-2026-92973",
+      "asset_id": "CVE-2026-92973",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In ac_init_one_sswrp of init.c, there is a possible escalation of privilege due to a logic error in the code. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0186"
+      "description": "ansi2html versions 1.7.0a0 through 1.9.3 contain a cross-site scripting vulnerability in OSC 8 hyperlink handling that fails to validate or escape URL targets. Attackers controlling ANSI text input can inject javascript: schemes or terminate href attributes to execute arbitrary scripts in the context of pages displaying converted output.",
+      "last_modified": "2026-09-17T16:18:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92973"
     },
     {
-      "cve_id": "CVE-2026-0199",
-      "asset_id": "CVE-2026-0199",
+      "cve_id": "CVE-2026-92962",
+      "asset_id": "CVE-2026-92962",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In gf_ta_test_set_config of gf_ta_test.c, there is a possible out-of-bounds write due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0199"
+      "description": "vm2 is a sandbox for running untrusted JavaScript. In vm2 versions up to and including 3.11.3, the defaultSandboxPrepareStackTrace function in lib/setup-sandbox.js builds its output array using prototype-walking index assignment (lines[lines.length] = value) rather than a prototype-bypassing define-property primitive. Because this bridge-internal array is allocated in the sandbox realm, code inside the sandbox can install an accessor on Array.prototype for the relevant index; the accessor is then invoked whenever the sandbox reads error.stack (or otherwise triggers Error.prepareStackTrace), allowing sandbox code to observe and intercept each stack-trace line written by the bridge. The same pattern is used in the error-handling (catch) branch. The values written are formatted strings only, so the practical impact is limited to an information side channel and a violation of vm2's bridge-container defense invariant rather than a sandbox escape; the vendor rates the issue Low. The issue is fixed in vm2 3.11.4, which installs each entry as an own data property via Reflect.defineProperty.",
+      "last_modified": "2026-09-17T16:18:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92962"
     },
     {
-      "cve_id": "CVE-2026-0200",
-      "asset_id": "CVE-2026-0200",
+      "cve_id": "CVE-2026-92952",
+      "asset_id": "CVE-2026-92952",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Cellular Modem, there is a possible out-of-bounds write due to a heap buffer overflow. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0200"
+      "description": "vm2 versions 3.11.4 through 3.11.6 incompletely filter Node.js registered internal symbols across the sandbox boundary. The extraction filters in lib/setup-sandbox.js and the cross-realm symbol checks and write traps in lib/bridge.js use a fixed list of known dangerous registered symbols that omits nodejs.stream.disturbed and nodejs.stream.errored, which are exposed on host WebStream prototypes on newer Node.js releases (validated on Node.js v25.8.0). When the embedder exposes a host WebStream object and the host stream/web module to the sandbox, sandbox code can obtain the real host symbols via Object.getOwnPropertySymbols(streamWeb.ReadableStream.prototype) and use them as write keys on host stream objects, corrupting host-visible stream state \u2014 for example making stream.Readable.isDisturbed() return false for an already-consumed stream. This can bypass host logic that relies on Node's public stream-state helpers to enforce one-shot body consumption, reject errored streams, or decide whether a stream is safe to hand to another component. It is not a host code-execution primitive in the reported proof of vulnerability. This is an incomplete fix for the earlier nodejs.* symbol filtering issue. Fixed in vm2 3.11.7.",
+      "last_modified": "2026-09-17T16:18:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92952"
     },
     {
-      "cve_id": "CVE-2026-55302",
-      "asset_id": "CVE-2026-55302",
+      "cve_id": "CVE-2026-92947",
+      "asset_id": "CVE-2026-92947",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55302"
+      "description": "vm2 before 3.11.7 exposes Node's shared Buffer pool to sandboxed code, allowing disclosure of host memory used by Buffer.from, Buffer.concat, and related allocations. Sandboxed code can read and write to host-realm buffers by acquiring ArrayBuffers from small allocations, leading to sensitive data exposure and potential denial-of-service.",
+      "last_modified": "2026-09-17T16:18:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92947"
     },
     {
-      "cve_id": "CVE-2026-55343",
-      "asset_id": "CVE-2026-55343",
+      "cve_id": "CVE-2026-92941",
+      "asset_id": "CVE-2026-92941",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In decodeAmr of ImsMediaAudioPlayer.cpp, there is a possible out-of-bounds write due to a missing bounds check. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55343"
+      "description": "vm2 versions from 3.11.3 before 3.11.7 expose the host tls module to NodeVM sandbox code, allowing attackers to call tls.setDefaultCACertificates() and replace process-wide certificate authorities. Attackers with access to allowed tls and url builtins can use URLSearchParams to create host-realm arrays and manipulate the TLS trust store, enabling subsequent host HTTPS clients to accept attacker-controlled certificates.",
+      "last_modified": "2026-09-17T16:18:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92941"
     },
     {
-      "cve_id": "CVE-2026-56915",
-      "asset_id": "CVE-2026-56915",
+      "cve_id": "CVE-2026-92936",
+      "asset_id": "CVE-2026-92936",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In bigo_worker_thread of bigo.c, there is a possible escalation of privilege due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56915"
+      "description": "vm2 versions 3.11.0 through 3.11.6 leak absolute host filesystem paths to sandboxed code through error stack formatting. Attacker-supplied code can force the host-realm source transformer to throw a SyntaxError (for example by calling eval with malformed source) and then read the error's .stack property; the bridge forwards the .stack read to the host-realm formatter, bypassing the sandbox-side host-path redaction introduced for GHSA-v27g-jcqj-v8rw. The returned stack string discloses absolute paths from vm2, Node.js internals, and the embedding application's own source tree, along with host function names. Default new VM() and new NodeVM() configurations are affected without any special options, and the issue persists when string eval is disabled because the host-side transformer throws before eval is handled. The impact is information disclosure only; no code execution results. Fixed in vm2 3.11.7.",
+      "last_modified": "2026-09-17T16:18:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92936"
     },
     {
-      "cve_id": "CVE-2026-56972",
-      "asset_id": "CVE-2026-56972",
+      "cve_id": "CVE-2026-92879",
+      "asset_id": "CVE-2026-92879",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible out-of-bounds write due to an incorrect bounds check. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56972"
+      "description": "A security flaw has been discovered in vgmstream up to r2117. This issue affects the function parse_mus of the file src/meta/mus_acm.c. The manipulation results in resource consumption. The attack may be launched remotely. The patch is identified as ae37662ad626254ddd96ad69ac263792d7a92024. Applying a patch is advised to resolve this issue.",
+      "last_modified": "2026-09-17T16:18:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92879"
     },
     {
-      "cve_id": "CVE-2026-76698",
-      "asset_id": "CVE-2026-76698",
+      "cve_id": "CVE-2026-92795",
+      "asset_id": "CVE-2026-92795",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A command injection vulnerability exists in the web-based management interface of HPE Networking EdgeConnect SD-WAN Gateways. An authenticated remote attacker with limited access privileges could exploit this vulnerability through specially crafted input. Successful exploitation, under certain conditions, could result in the execution of arbitrary commands with elevated privileges or a denial-of-service condition on the affected appliance.",
-      "last_modified": "2026-09-17T10:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76698"
+      "description": "Coze Studio through 0.5.1 fails to restrict the server URL supplied when registering plugin tools, allowing authenticated users to make the backend fetch internal services. Attackers can construct plugin requests to access cloud metadata endpoints and internal services reachable only from the backend network, reading responses containing sensitive information.",
+      "last_modified": "2026-09-17T16:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92795"
     },
     {
-      "cve_id": "CVE-2026-92893",
-      "asset_id": "CVE-2026-92893",
+      "cve_id": "CVE-2026-92790",
+      "asset_id": "CVE-2026-92790",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the foreman_ansible plugin's Ansible inventory API. The controller builds its host query using an unscoped Host.where call that does not enforce the search filter associated with the caller's view_hosts permission. An authenticated user whose host visibility is restricted by a permission filter can supply arbitrary host IDs within their organization and receive the full Ansible inventory for those hosts, including parameter values marked as hidden.",
-      "last_modified": "2026-09-17T10:28:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92893"
+      "description": "Higress before 2.2.4 panics when processing a Cookie header segment without an equals sign, causing the plugin wrapper to recover and return a continue action that bypasses AI token rate limiting. Unauthenticated attackers can craft a malformed Cookie header to skip rate limit checks and exceed thresholds intended to restrict costly model backend calls.",
+      "last_modified": "2026-09-17T16:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92790"
     },
     {
-      "cve_id": "CVE-2026-0187",
-      "asset_id": "CVE-2026-0187",
+      "cve_id": "CVE-2026-92785",
+      "asset_id": "CVE-2026-92785",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In gsa_sw_pk_hash_compare of image-auth-srv.c, there is a possible escalation of privilege due to a logic error in the code. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0187"
+      "description": "Angel through 3.3.0 deserializes untrusted setAlgoMetrics payload using Kryo without class registration or allowlist validation. Unauthenticated network attackers can instantiate arbitrary classes or exhaust coordinator memory by sending crafted serialized objects to the master RPC endpoint.",
+      "last_modified": "2026-09-17T16:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92785"
     },
     {
-      "cve_id": "CVE-2026-0189",
-      "asset_id": "CVE-2026-0189",
+      "cve_id": "CVE-2026-92780",
+      "asset_id": "CVE-2026-92780",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In ac_init_policy of init.c, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0189"
+      "description": "KnowStreaming through 3.4.1 fails to enforce role-based access control on REST API endpoints, allowing any authenticated user to access protected functionality. Attackers can call identity-management endpoints to create administrator accounts or grant themselves administrative privileges without proper authorization.",
+      "last_modified": "2026-09-17T16:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92780"
     },
     {
-      "cve_id": "CVE-2026-0194",
-      "asset_id": "CVE-2026-0194",
+      "cve_id": "CVE-2026-92774",
+      "asset_id": "CVE-2026-92774",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible permission bypass due to an integer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0194"
+      "description": "Wiki.js through 2.5.314 omits page tags from authorization checks in multiple GraphQL resolvers, allowing tag-based access restrictions to be bypassed. Attackers can query the list, tree, tags, searchTags, and links resolvers to retrieve restricted page metadata including titles, descriptions, paths, and tag information without proper authorization.",
+      "last_modified": "2026-09-17T16:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92774"
     },
     {
-      "cve_id": "CVE-2026-55301",
-      "asset_id": "CVE-2026-55301",
+      "cve_id": "CVE-2026-92765",
+      "asset_id": "CVE-2026-92765",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Wave6VpuDecFlush of wave6.c, there is a possible out-of-bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55301"
+      "description": "ArcherySec through 2.0.6 fails to validate organization ownership in the WebScanVulnList endpoint, allowing authenticated users to read vulnerability findings from other organizations. Attackers can supply arbitrary scan identifiers to retrieve complete web vulnerability data including titles, severities, statuses, and analyst notes from other tenants.",
+      "last_modified": "2026-09-17T16:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92765"
     },
     {
-      "cve_id": "CVE-2026-55306",
-      "asset_id": "CVE-2026-55306",
+      "cve_id": "CVE-2026-92760",
+      "asset_id": "CVE-2026-92760",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Cellular Modem, there is a possible denial of service due to improper input validation. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55306"
+      "description": "Shlink through 5.1.6 fails to enforce API key role restrictions when issuing Mercure subscription tokens, allowing restricted keys to subscribe to all topics. Attackers with author-only or domain-only keys can access the mercure-info endpoint to receive visit data including referrer, user agent, geolocation, and full short URL objects for URLs outside their authorization boundary.",
+      "last_modified": "2026-09-17T16:18:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92760"
     },
     {
-      "cve_id": "CVE-2026-55351",
-      "asset_id": "CVE-2026-55351",
+      "cve_id": "CVE-2026-92615",
+      "asset_id": "CVE-2026-92615",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In VPU, there is a possible out-of-bounds write due to an integer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55351"
+      "description": "A flaw was found in flightctl. The configureRepoHTTPSClient() function in the device-render worker builds a per-repository tls.Config (which may include InsecureSkipVerify, a custom CA bundle, or tenant-supplied mTLS client certificates) and installs it into go-git's process-global client.Protocols map via gitclient.InstallProtocol(\"https\", ...). Because the worker renders devices for multiple organizations concurrently from a shared goroutine pool, whichever tenant's repository configuration is written last wins for all in-flight git.Clone calls. \nThis race condition can cause one tenant's TLS settings, including InsecureSkipVerify or mTLS client credentials, to leak into another tenant's git operations.",
+      "last_modified": "2026-09-17T16:18:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92615"
     },
     {
-      "cve_id": "CVE-2026-55359",
-      "asset_id": "CVE-2026-55359",
+      "cve_id": "CVE-2026-92358",
+      "asset_id": "CVE-2026-92358",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55359"
+      "description": "A flaw was found in the first broker login flow of Keycloak. When a user confirms an account-linking request from a different browser, a temporary proof is created to validate the link. However, this proof is not properly cleared after the link is established or when the user later manually removes the link. An attacker who controls the external identity can exploit this leftover proof to silently re-establish the link and gain unauthorized access to the victims account without any further confirmation.",
+      "last_modified": "2026-09-17T16:18:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92358"
     },
     {
-      "cve_id": "CVE-2026-56923",
-      "asset_id": "CVE-2026-56923",
+      "cve_id": "CVE-2026-91992",
+      "asset_id": "CVE-2026-91992",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In handle_unmap_req of tipc_virtio_dev.c, there is a possible memory corruption due to a race condition. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56923"
+      "description": "Tornado before 6.5.7 contains a credential leak vulnerability in CurlAsyncHTTPClient where pycurl handles are reused across requests without proper state clearing. Attackers can obtain sensitive credentials by issuing requests through the same client instance, allowing TLS certificates or proxy authentication to persist across unintended requests.",
+      "last_modified": "2026-09-17T16:18:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91992"
     },
     {
-      "cve_id": "CVE-2026-56942",
-      "asset_id": "CVE-2026-56942",
+      "cve_id": "CVE-2026-91987",
+      "asset_id": "CVE-2026-91987",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In ReadTileInfo of vp9hwd_headers.cc, there is a possible out-of-bounds write due to a missing bounds check. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56942"
+      "description": "atomic-agents-stack before 1.1.0 contains a cost-guardrail bypass in the _estimate_batch_cost function that returns zero cost for unknown models not in the pricing table. Attackers can configure deployments with unknown model identifiers to bypass daily cost caps and exceed budget limits in parallel batch operations.",
+      "last_modified": "2026-09-17T16:18:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91987"
     },
     {
-      "cve_id": "CVE-2026-56967",
-      "asset_id": "CVE-2026-56967",
+      "cve_id": "CVE-2026-91982",
+      "asset_id": "CVE-2026-91982",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Cellular Modem, there is a possible out-of-bounds write due to a heap buffer overflow. This could lead to remote (proximal/adjacent) code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56967"
+      "description": "Vikunja before 2.6.0 continues to expose the raw TOTP shared secret after enrollment through the GET /api/v1/user/settings/totp and /api/v1/user/settings/totp/qrcode endpoints without re-authentication. Attackers with a valid access token can read the secret, import it into their own authenticator, and generate valid codes indefinitely to defeat the second factor and enable account takeover.",
+      "last_modified": "2026-09-17T16:18:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91982"
     },
     {
-      "cve_id": "CVE-2026-56974",
-      "asset_id": "CVE-2026-56974",
+      "cve_id": "CVE-2026-91967",
+      "asset_id": "CVE-2026-91967",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Start of AudioRtpPayloadEncoderNode.cpp, there is a possible out-of-bounds write due to improper input validation. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56974"
+      "description": "AVideo through 29.0 contains a blind server-side request forgery vulnerability in the getHeaderContentTypeFromURL function that issues get_headers() calls guarded only by format validation. Authenticated users with canUpload permission can store attacker-chosen URLs as video links, triggering vulnerable function execution on every video watch page render to probe internal hosts using content-type oracles and timing-based detection.",
+      "last_modified": "2026-09-17T16:18:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91967"
     },
     {
-      "cve_id": "CVE-2026-56978",
-      "asset_id": "CVE-2026-56978",
+      "cve_id": "CVE-2026-87742",
+      "asset_id": "CVE-2026-87742",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In get_global_config_item_addr of gc.c, there is a possible out-of-bounds read due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56978"
+      "description": "A flaw was found in quarkus-websockets-next. This vulnerability allows a remote attacker to cause a Denial of Service (DoS) by streaming messages over a single connection faster than the application can process them. Due to unbounded message buffering and a lack of read backpressure, this rapidly exhausts heap space, leading to a java.lang.OutOfMemoryError that crashes the Java Virtual Machine (JVM).",
+      "last_modified": "2026-09-17T16:18:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87742"
     },
     {
-      "cve_id": "CVE-2026-56982",
-      "asset_id": "CVE-2026-56982",
+      "cve_id": "CVE-2026-87286",
+      "asset_id": "CVE-2026-87286",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In VPU, there is a possible permission bypass due to a missing permission check. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:15:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56982"
+      "description": "Vulnerability in the Oracle GraalVM product of Oracle Java SE (component: Compiler).   The supported version that is affected is Oracle GraalVM: 25.0.4.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle GraalVM.  Successful attacks of this vulnerability can result in takeover of Oracle GraalVM. CVSS 3.1 Base Score 8.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87286"
     },
     {
-      "cve_id": "CVE-2026-92894",
-      "asset_id": "CVE-2026-92894",
+      "cve_id": "CVE-2026-87285",
+      "asset_id": "CVE-2026-87285",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the foreman_ansible plugin's Ansible override values API. The destroy action resolves the target LookupValue record by ID without verifying it belongs to an AnsibleVariable the caller is authorized to edit. An authenticated user with the edit_ansible_variables permission can delete any LookupValue by ID, including override values for Ansible variables outside their permission filter scope and override values belonging to Puppet smart class parameters.",
-      "last_modified": "2026-09-17T10:08:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92894"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle VM VirtualBox executes to compromise Oracle VM VirtualBox.  While the vulnerability is in Oracle VM VirtualBox, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle VM VirtualBox. CVSS 3.1 Base Score 6.0 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H).",
+      "last_modified": "2026-09-17T16:18:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87285"
     },
     {
-      "cve_id": "CVE-2026-55323",
-      "asset_id": "CVE-2026-55323",
+      "cve_id": "CVE-2026-87284",
+      "asset_id": "CVE-2026-87284",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In gf_base_update_finger_base of gf_base.c, there is a possible out-of-bounds write due to a heap buffer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55323"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle VM VirtualBox executes to compromise Oracle VM VirtualBox.  While the vulnerability is in Oracle VM VirtualBox, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in unauthorized ability to cause a partial denial of service (partial DOS) of Oracle VM VirtualBox. CVSS 3.1 Base Score 3.2 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:L).",
+      "last_modified": "2026-09-17T16:18:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87284"
     },
     {
-      "cve_id": "CVE-2026-55331",
-      "asset_id": "CVE-2026-55331",
+      "cve_id": "CVE-2026-87283",
+      "asset_id": "CVE-2026-87283",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In IP Multimedia Subsystem, there is a possible out-of-bounds write due to an incorrect bounds check. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55331"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle VM VirtualBox executes to compromise Oracle VM VirtualBox.  While the vulnerability is in Oracle VM VirtualBox, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle VM VirtualBox. CVSS 3.1 Base Score 6.0 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H).",
+      "last_modified": "2026-09-17T16:18:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87283"
     },
     {
-      "cve_id": "CVE-2026-55332",
-      "asset_id": "CVE-2026-55332",
+      "cve_id": "CVE-2026-87282",
+      "asset_id": "CVE-2026-87282",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible out-of-bounds write due to improper input validation. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55332"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle VM VirtualBox executes to compromise Oracle VM VirtualBox.  While the vulnerability is in Oracle VM VirtualBox, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle VM VirtualBox. CVSS 3.1 Base Score 6.0 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H).",
+      "last_modified": "2026-09-17T16:18:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87282"
     },
     {
-      "cve_id": "CVE-2026-55365",
-      "asset_id": "CVE-2026-55365",
+      "cve_id": "CVE-2026-87280",
+      "asset_id": "CVE-2026-87280",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple functions of remap.c, there is a possible out-of-bounds write due to an incorrect bounds check. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55365"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle VM VirtualBox executes to compromise Oracle VM VirtualBox.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle VM VirtualBox. CVSS 3.1 Base Score 4.2 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-09-17T16:18:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87280"
     },
     {
-      "cve_id": "CVE-2026-55366",
-      "asset_id": "CVE-2026-55366",
+      "cve_id": "CVE-2026-87279",
+      "asset_id": "CVE-2026-87279",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In IP Multimedia Subsystem, there is a possible authentication bypass due to a logic error in the code. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55366"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle VM VirtualBox executes to compromise Oracle VM VirtualBox.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle VM VirtualBox as well as  unauthorized update, insert or delete access to some of Oracle VM VirtualBox accessible data. CVSS 3.1 Base Score 6.1 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H).",
+      "last_modified": "2026-09-17T16:18:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87279"
     },
     {
-      "cve_id": "CVE-2026-56879",
-      "asset_id": "CVE-2026-56879",
+      "cve_id": "CVE-2026-87276",
+      "asset_id": "CVE-2026-87276",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In gmc_mb_msg_handler of gmc_mba.c, there is a possible memory corruption due to a confused deputy. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56879"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Oracle VM VirtualBox executes to compromise Oracle VM VirtualBox.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle VM VirtualBox, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in takeover of Oracle VM VirtualBox. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87276"
     },
     {
-      "cve_id": "CVE-2026-56881",
-      "asset_id": "CVE-2026-56881",
+      "cve_id": "CVE-2026-87076",
+      "asset_id": "CVE-2026-87076",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In enable_segment of remap.c, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56881"
+      "description": "Tanium addressed an information disclosure vulnerability in Discover.",
+      "last_modified": "2026-09-17T16:18:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87076"
     },
     {
-      "cve_id": "CVE-2026-56992",
-      "asset_id": "CVE-2026-56992",
+      "cve_id": "CVE-2026-87024",
+      "asset_id": "CVE-2026-87024",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple files, there is a possible permission bypass due to a confused deputy. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56992"
+      "description": "Tanium addressed a SQL injection vulnerability in Asset.",
+      "last_modified": "2026-09-17T16:18:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87024"
     },
     {
-      "cve_id": "CVE-2026-58691",
-      "asset_id": "CVE-2026-58691",
+      "cve_id": "CVE-2026-86902",
+      "asset_id": "CVE-2026-86902",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In FsmReleaseKey of fsm.c, there is a possible permission bypass due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T10:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58691"
+      "description": "A parsing issue in the handling of directory paths was addressed with improved path validation. This issue is fixed in macOS Golden Gate 27, macOS Sonoma 14.8.8. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-17T16:18:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86902"
     },
     {
-      "cve_id": "CVE-2026-56882",
-      "asset_id": "CVE-2026-56882",
+      "cve_id": "CVE-2026-86900",
+      "asset_id": "CVE-2026-86900",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Cellular Modem, there is a possible information disclosure due to a logic error in the code. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:45:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56882"
+      "description": "An out-of-bounds read issue was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27. Mounting a maliciously crafted exFAT volume may cause unexpected system termination or kernel memory disclosure.",
+      "last_modified": "2026-09-17T16:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86900"
     },
     {
-      "cve_id": "CVE-2026-56888",
-      "asset_id": "CVE-2026-56888",
+      "cve_id": "CVE-2026-86898",
+      "asset_id": "CVE-2026-86898",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible permission bypass due to side channel information disclosure. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:45:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56888"
+      "description": "A logic issue was addressed with improved state management. This issue is fixed in Safari 27, iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. Opening a maliciously crafted webarchive file may lead to universal cross-site scripting.",
+      "last_modified": "2026-09-17T16:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86898"
     },
     {
-      "cve_id": "CVE-2026-56889",
-      "asset_id": "CVE-2026-56889",
+      "cve_id": "CVE-2026-86888",
+      "asset_id": "CVE-2026-86888",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible permission bypass due to an integer overflow. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:45:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56889"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. A local app may be able to read a persistent account identifier.",
+      "last_modified": "2026-09-17T16:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86888"
     },
     {
-      "cve_id": "CVE-2026-56907",
-      "asset_id": "CVE-2026-56907",
+      "cve_id": "CVE-2026-86886",
+      "asset_id": "CVE-2026-86886",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In VPU, there is a possible shared memory overwrite due to improper input validation. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:45:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56907"
+      "description": "A path traversal issue was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, watchOS 27. An app may be able to modify protected system files.",
+      "last_modified": "2026-09-17T16:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86886"
     },
     {
-      "cve_id": "CVE-2026-56920",
-      "asset_id": "CVE-2026-56920",
+      "cve_id": "CVE-2026-86869",
+      "asset_id": "CVE-2026-86869",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In s_decode_vui_param of fw_hevc_dec_header.c, there is a possible out-of-bounds write due to a logic error in the code. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:45:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56920"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, macOS Golden Gate 27. Processing a maliciously crafted image may lead to unexpected app termination.",
+      "last_modified": "2026-09-17T16:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86869"
     },
     {
-      "cve_id": "CVE-2026-78427",
-      "asset_id": "CVE-2026-78427",
+      "cve_id": "CVE-2026-86865",
+      "asset_id": "CVE-2026-86865",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The NeuVector admission webhook silently excludes containers from policy evaluation when their image path matches one of three hardcoded service mesh sidecar images. Since the image path is entirely controlled by the workload author, any user capable of deploying workloads can evade admission deny rules simply by naming their image path after one of these sidecar images.",
-      "last_modified": "2026-09-17T09:33:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78427"
+      "description": "Tanium addressed a SQL injection vulnerability in Asset.",
+      "last_modified": "2026-09-17T16:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86865"
     },
     {
-      "cve_id": "CVE-2026-78425",
-      "asset_id": "CVE-2026-78425",
+      "cve_id": "CVE-2026-86864",
+      "asset_id": "CVE-2026-86864",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Authorised users of outside applications behind the same corporate identity provider (IdP), for example, a wiki, a ticketing system, an expenses tool, or anything they legitimately hold an account on can log into their system via SAML SSO. The IdP issues an assertion to them. If that assertion is presented to NeuVector, NeuVector accepts it because the only thing distinguishing \"an assertion for NeuVector\" from \"an assertion for the wiki\" is the element, and the `NotInAudience` warning that reports the mismatch is never read.",
-      "last_modified": "2026-09-17T09:32:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78425"
+      "description": "pgAdmin 4's Backup tool appended the client-supplied 'database' field from the /backup/job/<sid>/object request to the pg_dump argument vector as a bare trailing positional argument, without validation. Because pg_dump parses its options with getopt_long, which permutes arguments, a value beginning with a dash was interpreted as an option rather than as a database name. A value such as --file=/absolute/path therefore overrode the storage-confined --file that pgAdmin had constructed earlier, causing pg_dump to write its output anywhere the pgAdmin process could write, outside the user's File Manager storage directory. This yields arbitrary file creation and overwrite as the operating-system account running pgAdmin, which can destroy pgAdmin's own configuration database and, depending on the target chosen, be escalated further.\n\nThe same field additionally permitted connection-string injection. libpq expands a database name containing an equals sign into a full connection string, and keywords embedded there override the --host and --port that pgAdmin passes, so a value such as 'host=attacker.example port=5432 dbname=x' redirected pg_dump to a server of the attacker's choosing. Because pgAdmin exports the decrypted stored database password in the PGPASSWORD environment variable before executing the utility, the redirected connection carries that credential to the attacker-nominated endpoint. Both behaviours are reachable by any authenticated user holding the tools_backup permission, which is granted to the default User role.\n\nThe fix stops passing the database name through the argument vector altogether and supplies it in the PGDATABASE environment variable, which libpq treats as a literal database name and never expands as a connection string. This matches the approach already used by the Import/Export tool. Regression tests assert that the database name is absent from the constructed argument vector and that PGDATABASE carries the exact requested value.\n\nThis issue affects pgAdmin 4: from the introduction of the trailing positional database argument in the Backup tool before 9.18.",
+      "last_modified": "2026-09-17T16:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86864"
     },
     {
-      "cve_id": "CVE-2026-56932",
-      "asset_id": "CVE-2026-56932",
+      "cve_id": "CVE-2026-86863",
+      "asset_id": "CVE-2026-86863",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Trusted Execution Environment, there is a possible memory corruption due to improper input validation. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56932"
+      "description": "pgAdmin 4's Webserver authentication source is intended to accept an identity asserted by the web server or reverse proxy in front of pgAdmin, delivered through the WSGI/CGI environment. WebserverAuthentication.get_user() read config.WEBSERVER_REMOTE_USER from request.environ and, when that returned nothing, fell back to reading the same name directly from the inbound HTTP request headers via request.headers.get(). An inbound HTTP header is written by whoever sends the request, so any client able to reach pgAdmin could supply that header itself and be authenticated as any username it named, including an existing Administrator, without presenting a password or any other credential. The environment lookup could also be satisfied by a client-supplied header whenever WEBSERVER_REMOTE_USER was configured to an HTTP_-prefixed or hyphenated name such as HTTP_X_FORWARDED_USER or X-Forwarded-User, since WSGI servers place inbound headers into the environment under exactly those names. Deployments are affected only when 'webserver' is enabled in AUTHENTICATION_SOURCES.\n\nThe fix distinguishes a genuine CGI/WSGI variable from a header-derived one and implicitly trusts only the former. A header-asserted identity is now accepted only when the operator explicitly opts in via WEBSERVER_REMOTE_USER_FROM_HEADER, the request arrives from a peer listed in WEBSERVER_TRUSTED_PROXIES, and, when configured, a shared secret supplied in WEBSERVER_SHARED_SECRET_HEADER matches WEBSERVER_SHARED_SECRET under a constant-time comparison. The trusted-peer check deliberately reads the real socket peer address rather than request.remote_addr, because ProxyFix rewrites the latter from the client-controlled X-Forwarded-For header and would otherwise allow an attacker to claim to be the trusted proxy. As defence in depth, login() now refuses any account whose auth_source is not 'webserver', so a misconfigured trust gate cannot be used to assume an internal or LDAP account.\n\nThis issue affects pgAdmin 4: from 6.2 before 9.18.",
+      "last_modified": "2026-09-17T16:18:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86863"
     },
     {
-      "cve_id": "CVE-2026-56950",
-      "asset_id": "CVE-2026-56950",
+      "cve_id": "CVE-2026-86320",
+      "asset_id": "CVE-2026-86320",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In validate_ns_buf of mbu_class.rs, there is a possible information disclosure due to improper input validation. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56950"
+      "description": "A flaw was found in flatpak-builder where Git hooks are not disabled when applying patch sources with use-git-am: true. An attacker who can provide a malicious source containing a Git post-applypatch hook can cause the hook to execute on the host during the build process, resulting in arbitrary code execution with the privileges of the user running flatpak-builder.",
+      "last_modified": "2026-09-17T16:18:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86320"
     },
     {
-      "cve_id": "CVE-2026-56958",
-      "asset_id": "CVE-2026-56958",
+      "cve_id": "CVE-2026-86000",
+      "asset_id": "CVE-2026-86000",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In gf_algo_get_cached_dump_data of gf_algo.c, there is a possible out-of-bounds read due to a missing bounds check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56958"
+      "description": "Soup Sieve is a CSS selector library designed to be used with Beautiful Soup 4. Prior to 2.9, the selector parser in src/soupsieve/css_parser.py defines IDENTIFIER with adjacent quantified groups over overlapping character classes, and VALUE embeds IDENTIFIER for attribute selectors. When an attacker-controlled selector contains a long identifier or unquoted attribute-value run followed by input that makes the overall match fail, the regular expression engine explores quadratically many splits between the overlapping groups. User-controlled selectors can reach this path through soupsieve.compile(), soupsieve.select(), or BeautifulSoup.select(), while applications using only hard-coded selectors are unaffected. The resulting CPU consumption can hold the Python GIL, exhaust application workers, and stall a service; successful plain identifier matches are linear, and the issue does not cause memory corruption or code execution. The issue is fixed in version 2.9.",
+      "last_modified": "2026-09-17T16:18:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86000"
     },
     {
-      "cve_id": "CVE-2026-56960",
-      "asset_id": "CVE-2026-56960",
+      "cve_id": "CVE-2026-85715",
+      "asset_id": "CVE-2026-85715",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible use-after-free due to a logic error in the code. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56960"
+      "description": "ExifReader is a JavaScript Exif information parser. Prior to 4.41.1, ExifReader parses attacker-controlled HEIC or AVIF ISO-BMFF files in getItems() within src/image-header-iso-bmff-iloc.js and trusts iloc itemCount and extentCount values while allocating an extent object for every nested-loop iteration. When offsetSize, lengthSize, baseOffsetSize, and indexSize are zero, the extent fields consume no input bytes and the buffer offset does not advance, but the parser can still allocate up to itemCount multiplied by extentCount objects without an allocation budget. A small malicious iloc box can therefore cause hundreds of megabytes of heap growth or exhaust system memory, terminating a Node.js process and denying service to web, desktop, or mobile applications that parse untrusted images. The zero field widths are valid ISO-BMFF values indicating absent fields, so the vulnerable parser must bound work rather than relying on offset advancement. The issue is fixed in version 4.41.1.",
+      "last_modified": "2026-09-17T16:18:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85715"
     },
     {
-      "cve_id": "CVE-2026-56964",
-      "asset_id": "CVE-2026-56964",
+      "cve_id": "CVE-2026-84636",
+      "asset_id": "CVE-2026-84636",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible use-after-free due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56964"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-17T16:18:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84636"
     },
     {
-      "cve_id": "CVE-2026-57006",
-      "asset_id": "CVE-2026-57006",
+      "cve_id": "CVE-2026-84623",
+      "asset_id": "CVE-2026-84623",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In acfw_ffa.c, there is a possible secret read due to a logic error in the code. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57006"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27. An app may be able to fingerprint the device.",
+      "last_modified": "2026-09-17T16:18:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84623"
     },
     {
-      "cve_id": "CVE-2026-57012",
-      "asset_id": "CVE-2026-57012",
+      "cve_id": "CVE-2026-84622",
+      "asset_id": "CVE-2026-84622",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Setup Wizard, there is a possible remote package install due to a missing permission check. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57012"
+      "description": "A memory initialization issue was addressed with improved memory handling. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app with root privileges may be able to read uninitialized kernel memory.",
+      "last_modified": "2026-09-17T16:18:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84622"
     },
     {
-      "cve_id": "CVE-2026-78426",
-      "asset_id": "CVE-2026-78426",
+      "cve_id": "CVE-2026-84618",
+      "asset_id": "CVE-2026-84618",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The NeuVector JWT verifier accepts noncanonical Base64URL encodings of the same RSA signature field. An attacker holding a valid JWT that has not expired, but was logged out of NeuVector, can continue using the non-expired token with equivalent spelling of the RSA signature field until the token validity expires.",
-      "last_modified": "2026-09-17T09:28:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78426"
+      "description": "A permissions issue was addressed with improved validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-17T16:18:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84618"
     },
     {
-      "cve_id": "CVE-2026-78428",
-      "asset_id": "CVE-2026-78428",
+      "cve_id": "CVE-2026-84616",
+      "asset_id": "CVE-2026-84616",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "For users authenticated through SAML or OpenID Connect (OIDC), this vulnerability can result in one user receiving another user's authenticated session when multiple SSO login attempts occur concurrently",
-      "last_modified": "2026-09-17T09:19:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78428"
+      "description": "A type confusion issue was addressed with improved memory handling. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-17T16:18:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84616"
     },
     {
-      "cve_id": "CVE-2026-15030",
-      "asset_id": "CVE-2026-15030",
+      "cve_id": "CVE-2026-84602",
+      "asset_id": "CVE-2026-84602",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds Read in ASUS System Control Interface v3, ASUS System Control Interface, and ASUS Business Manager allows a local administrator to read memory regions beyond the intended firmware boundary by supplying a crafted IOCTL request that bypasses the validation.\nRefer to the '\u00a0Security Update for ASUS System Control Interface\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T09:16:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15030"
+      "description": "A type confusion issue was addressed with improved checks. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-17T16:18:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84602"
     },
     {
-      "cve_id": "CVE-2026-15029",
-      "asset_id": "CVE-2026-15029",
+      "cve_id": "CVE-2026-84587",
+      "asset_id": "CVE-2026-84587",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Untrusted Pointer Dereference in ASUS System Control Interface v3, ASUS System Control Interface, and ASUS Business Manager allows a local administrator to perform arbitrary physical memory read and write operations via crafted IOCTL requests to the driver, bypassing OS-enforced memory protections.\nRefer to the '\u00a0\nSecurity Update for ASUS System Control Interface\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T09:16:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15029"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access protected user data.",
+      "last_modified": "2026-09-17T16:18:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84587"
     },
     {
-      "cve_id": "CVE-2026-56979",
-      "asset_id": "CVE-2026-56979",
+      "cve_id": "CVE-2026-84578",
+      "asset_id": "CVE-2026-84578",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:15:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56979"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-09-17T16:18:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84578"
     },
     {
-      "cve_id": "CVE-2026-80274",
-      "asset_id": "CVE-2026-80274",
+      "cve_id": "CVE-2026-84573",
+      "asset_id": "CVE-2026-84573",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "If a BIND resolver sends a query for a DNSSEC-signed authoritative zone, and the authoritative server replies with a valid wildcard answer and signed NSEC3 proof, followed by an unsigned NSEC at the same owner name, it will trigger an unexpected program exit.\nThis issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20.27, 9.21.0 through 9.21.25, 9.11.3-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.27-S1.",
-      "last_modified": "2026-09-17T09:15:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80274"
+      "description": "This issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-17T16:18:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84573"
     },
     {
-      "cve_id": "CVE-2026-56986",
-      "asset_id": "CVE-2026-56986",
+      "cve_id": "CVE-2026-84570",
+      "asset_id": "CVE-2026-84570",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple files, there is a possible out-of-bounds read due to type confusion. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56986"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to bypass Gatekeeper checks.",
+      "last_modified": "2026-09-17T16:18:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84570"
     },
     {
-      "cve_id": "CVE-2026-56988",
-      "asset_id": "CVE-2026-56988",
+      "cve_id": "CVE-2026-84567",
+      "asset_id": "CVE-2026-84567",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple functions of bluetooth_cco.cc, there is a possible use-after-free due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56988"
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-09-17T16:18:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84567"
     },
     {
-      "cve_id": "CVE-2026-57008",
-      "asset_id": "CVE-2026-57008",
+      "cve_id": "CVE-2026-84566",
+      "asset_id": "CVE-2026-84566",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Modem, there is a possible information disclosure due to improper input validation. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57008"
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. A local attacker may be able to cause unexpected system termination or corrupt kernel memory.",
+      "last_modified": "2026-09-17T16:18:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84566"
     },
     {
-      "cve_id": "CVE-2026-57014",
-      "asset_id": "CVE-2026-57014",
+      "cve_id": "CVE-2026-84564",
+      "asset_id": "CVE-2026-84564",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In phNxpNciHal_ext_process_nfc_init_rsp of phNxpNciHal_ext.cc, there is a possible out-of-bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57014"
+      "description": "An uninitialized memory issue was addressed with improved memory initialization. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted image may result in disclosure of process memory.",
+      "last_modified": "2026-09-17T16:18:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84564"
     },
     {
-      "cve_id": "CVE-2026-57035",
-      "asset_id": "CVE-2026-57035",
+      "cve_id": "CVE-2026-84531",
+      "asset_id": "CVE-2026-84531",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible out-of-bounds write due to a missing bounds check. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57035"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27. Processing maliciously crafted NTLM input may lead to unexpected app termination.",
+      "last_modified": "2026-09-17T16:18:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84531"
     },
     {
-      "cve_id": "CVE-2026-57042",
-      "asset_id": "CVE-2026-57042",
+      "cve_id": "CVE-2026-84527",
+      "asset_id": "CVE-2026-84527",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple functions of DreamPickerReceiver.kt, there is a possible permission bypass due to a confused deputy. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57042"
+      "description": "A logging issue was addressed with improved data redaction. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-17T16:18:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84527"
     },
     {
-      "cve_id": "CVE-2026-58678",
-      "asset_id": "CVE-2026-58678",
+      "cve_id": "CVE-2026-84509",
+      "asset_id": "CVE-2026-84509",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Bootloader, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58678"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Connecting to a malicious SMB server may lead to unexpected system termination.",
+      "last_modified": "2026-09-17T16:18:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84509"
     },
     {
-      "cve_id": "CVE-2026-58679",
-      "asset_id": "CVE-2026-58679",
+      "cve_id": "CVE-2026-84507",
+      "asset_id": "CVE-2026-84507",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In gf_ta_test_set_config of gf_ta_test.c, there is a possible heap buffer overflow due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58679"
+      "description": "A race condition was addressed with improved state handling. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination or corrupt kernel memory.",
+      "last_modified": "2026-09-17T16:18:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84507"
     },
     {
-      "cve_id": "CVE-2026-58695",
-      "asset_id": "CVE-2026-58695",
+      "cve_id": "CVE-2026-83210",
+      "asset_id": "CVE-2026-83210",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In gmc_phy_lp3_exit_restore_registers of phy_power.c, there is a possible escalation of privilege due to a missing bounds check. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58695"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows low privileged attacker with network access via SQL to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in takeover of Siebel CRM Deployment. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83210"
     },
     {
-      "cve_id": "CVE-2026-58698",
-      "asset_id": "CVE-2026-58698",
+      "cve_id": "CVE-2026-83209",
+      "asset_id": "CVE-2026-83209",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In ap_pmic_poll_msg_handler of ap_pmic_ipc.c, there is a possible permission bypass due to a confused deputy. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58698"
+      "description": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM (component: Workflow).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Development.  Successful attacks of this vulnerability can result in takeover of Siebel CRM Development. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83209"
     },
     {
-      "cve_id": "CVE-2026-58716",
-      "asset_id": "CVE-2026-58716",
+      "cve_id": "CVE-2026-83208",
+      "asset_id": "CVE-2026-83208",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible time-of-check to time-of-use due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58716"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Migration).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows low privileged attacker with network access via SQL to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in takeover of Siebel CRM Deployment. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83208"
     },
     {
-      "cve_id": "CVE-2026-58721",
-      "asset_id": "CVE-2026-58721",
+      "cve_id": "CVE-2026-83207",
+      "asset_id": "CVE-2026-83207",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible information disclosure due to uninitialized memory use. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58721"
+      "description": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM (component: Integration - Scripting).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Development.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Siebel CRM Development as well as  unauthorized update, insert or delete access to some of Siebel CRM Development accessible data and  unauthorized read access to a subset of Siebel CRM Development accessible data. CVSS 3.1 Base Score 7.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H).",
+      "last_modified": "2026-09-17T16:18:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83207"
     },
     {
-      "cve_id": "CVE-2026-58734",
-      "asset_id": "CVE-2026-58734",
+      "cve_id": "CVE-2026-83206",
+      "asset_id": "CVE-2026-83206",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In google_mba_recv_msg of google_mba_poll.c, there is a possible out-of-bounds write due to a race condition. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T09:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58734"
+      "description": "Vulnerability in the Oracle Banking Corporate Lending Process Management product of Oracle Financial Services Applications (component: Base).  Supported versions that are affected are 14.5.0.0.0-14.9.0.0.0. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Banking Corporate Lending Process Management.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Oracle Banking Corporate Lending Process Management. CVSS 3.1 Base Score 7.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83206"
     },
     {
-      "cve_id": "CVE-2026-75811",
-      "asset_id": "CVE-2026-75811",
+      "cve_id": "CVE-2026-83205",
+      "asset_id": "CVE-2026-83205",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Restriction of Software Interfaces to Hardware Features in ASUS\u00a0Armoury Crate allows a local user to modify hardware configuration settings and potentially cause hardware damage by bypassing driver authentication and accessing critical model-specific registers.Refer to the '\nSecurity Update for Armoury Crate App' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:48:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75811"
+      "description": "Vulnerability in the Oracle Applications Framework product of Oracle E-Business Suite (component: Personalization).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Applications Framework.  Successful attacks of this vulnerability can result in takeover of Oracle Applications Framework. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83205"
     },
     {
-      "cve_id": "CVE-2026-75810",
-      "asset_id": "CVE-2026-75810",
+      "cve_id": "CVE-2026-83204",
+      "asset_id": "CVE-2026-83204",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Exposed Dangerous Method or Function in ASUS\u00a0Armoury Crate allow a local user to cause a brief system stall by bypassing driver authentication and sending requests to trigger system management interrupts (SMIs). Repeatedly triggering SMI may lead to a denial-of-service (DoS) condition.Refer to the '\nSecurity Update for Armoury Crate App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:48:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75810"
+      "description": "Vulnerability in the Oracle Sourcing product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Sourcing.  Successful attacks of this vulnerability can result in takeover of Oracle Sourcing. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83204"
     },
     {
-      "cve_id": "CVE-2026-75809",
-      "asset_id": "CVE-2026-75809",
+      "cve_id": "CVE-2026-83203",
+      "asset_id": "CVE-2026-83203",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Exposed IOCTL with insufficient access control in ASUS\u00a0Armoury Crate allows a local user to disclosure information and disabling device functionality by bypassing driver authentication and using IOCTLs to read from and write to PCIe configuration space.Refer to the '\nSecurity Update for Armoury Crate App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:47:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75809"
+      "description": "Vulnerability in the Siebel CRM End User product of Oracle Siebel CRM (component: Open UI).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM End User.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM End User accessible data as well as  unauthorized update, insert or delete access to some of Siebel CRM End User accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Siebel CRM End User. CVSS 3.1 Base Score 8.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L).",
+      "last_modified": "2026-09-17T16:18:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83203"
     },
     {
-      "cve_id": "CVE-2026-75808",
-      "asset_id": "CVE-2026-75808",
+      "cve_id": "CVE-2026-83200",
+      "asset_id": "CVE-2026-83200",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Allocation of Resources Without Limits or Throttling in ASUS\u00a0Armoury Crate allows a local user to cause a denial-of-service condition through system memory exhaustion by bypassing driver authentication and allocating an unrestricted amount of memory.Refer to the '\nSecurity Update for Armoury Crate App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:47:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75808"
+      "description": "Vulnerability in the Oracle Process Manufacturing Intelligence product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via Oracle Net to compromise Oracle Process Manufacturing Intelligence.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Process Manufacturing Intelligence accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-09-17T16:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83200"
     },
     {
-      "cve_id": "CVE-2026-75754",
-      "asset_id": "CVE-2026-75754",
+      "cve_id": "CVE-2026-83199",
+      "asset_id": "CVE-2026-83199",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authentication for Critical Function, Server-Side Request Forgery (SSRF), and Use of Hard-coded Credentials in ASUS Control Center\u00a0allow an unauthorized user to obtain the encryption key via an HTTP request, causing a local service to enable SSH on port 2222. The attacker can then log in with the hardcode credentials\u00a0to obtain a root shell, enabling direct reading, writing, and deletion of data on ASUS Control Center, as well as remote control of all servers, PCs, and workstations within the company.\nRefer to the 'Security Update for ASUS Control Center' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:47:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75754"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in takeover of Siebel CRM Deployment. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83199"
     },
     {
-      "cve_id": "CVE-2026-19397",
-      "asset_id": "CVE-2026-19397",
+      "cve_id": "CVE-2026-83188",
+      "asset_id": "CVE-2026-83188",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing authentication for a critical function in ASUS Control Center Express Agent allows an unauthenticated nearby user to control the host via a direct connection to the agent when the host has an active login session.\nRefer to the '\u00a0\nSecurity Update for ASUS Control Center Express Agent\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:46:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19397"
+      "description": "Vulnerability in the Oracle Depot Repair product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle Depot Repair.  Successful attacks of this vulnerability can result in takeover of Oracle Depot Repair. CVSS 3.1 Base Score 7.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83188"
     },
     {
-      "cve_id": "CVE-2026-18023",
-      "asset_id": "CVE-2026-18023",
+      "cve_id": "CVE-2026-83187",
+      "asset_id": "CVE-2026-83187",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Sensitive Information in Resource Not Removed Before Reuse in ASUS Armoury Crate driver allows a local user to disclose sensitive information from uninitialized memory via a crafted IOCTL request that bypasses the driver's security verification mechanism.\nRefer to the '\nSecurity Update for Armoury Crate App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:46:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18023"
+      "description": "Vulnerability in the Oracle Common Applications Calendar product of Oracle E-Business Suite (component: Applications Calendar).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Common Applications Calendar.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Common Applications Calendar accessible data as well as  unauthorized read access to a subset of Oracle Common Applications Calendar accessible data. CVSS 3.1 Base Score 7.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N).",
+      "last_modified": "2026-09-17T16:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83187"
     },
     {
-      "cve_id": "CVE-2026-16006",
-      "asset_id": "CVE-2026-16006",
+      "cve_id": "CVE-2026-83186",
+      "asset_id": "CVE-2026-83186",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Exposure of Sensitive System Information to an Unauthorized Control Sphere in\u00a0Armoury Crate driver allows a local user to obtain kernel virtual addresses via a crafted IOCTL request by bypassing the driver's verification, potentially providing further insight into the kernel memory layout.Refer to the '\nSecurity Update for Armoury Crate App\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:45:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16006"
+      "description": "Vulnerability in the Oracle Common Applications Calendar product of Oracle E-Business Suite (component: Applications Calendar).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Common Applications Calendar.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Common Applications Calendar accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Common Applications Calendar. CVSS 3.1 Base Score 7.1 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L).",
+      "last_modified": "2026-09-17T16:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83186"
     },
     {
-      "cve_id": "CVE-2026-16005",
-      "asset_id": "CVE-2026-16005",
+      "cve_id": "CVE-2026-83185",
+      "asset_id": "CVE-2026-83185",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Release of Invalid Pointer or Reference in Armoury Crate driver allows a local user to free arbitrary memory via a crafted IOCTL request by bypassing the driver's verification, which can corrupt data structures and cause a system crash (BSOD).Refer to the '\nSecurity Update for Armoury Crate App\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:45:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16005"
+      "description": "Vulnerability in the Oracle Common Applications product of Oracle E-Business Suite (component: CRM User Management Framework).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Common Applications.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Common Applications accessible data as well as  unauthorized access to critical data or complete access to all Oracle Common Applications accessible data. CVSS 3.1 Base Score 7.3 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-17T16:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83185"
     },
     {
-      "cve_id": "CVE-2026-55318",
-      "asset_id": "CVE-2026-55318",
+      "cve_id": "CVE-2026-83184",
+      "asset_id": "CVE-2026-83184",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible use-after-free due to a race condition. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T08:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55318"
+      "description": "Vulnerability in the Oracle Application Object Library product of Oracle E-Business Suite (component: Core).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Application Object Library.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Application Object Library accessible data as well as  unauthorized access to critical data or complete access to all Oracle Application Object Library accessible data. CVSS 3.1 Base Score 7.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-17T16:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83184"
     },
     {
-      "cve_id": "CVE-2026-56892",
-      "asset_id": "CVE-2026-56892",
+      "cve_id": "CVE-2026-83182",
+      "asset_id": "CVE-2026-83182",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In ReadDataElement of common.c, there is a possible information disclosure due to an incorrect bounds check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T08:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56892"
+      "description": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM (component: Configuration Tools).  Supported versions that are affected are 17.0-26.7. Difficult to exploit vulnerability allows low privileged attacker with network access via SQL to compromise Siebel CRM Development.  Successful attacks of this vulnerability can result in takeover of Siebel CRM Development. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83182"
     },
     {
-      "cve_id": "CVE-2026-56922",
-      "asset_id": "CVE-2026-56922",
+      "cve_id": "CVE-2026-83181",
+      "asset_id": "CVE-2026-83181",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In CPM, there is a possible permission bypass due to a confused deputy. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T08:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56922"
+      "description": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM (component: Workspaces).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM Development.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Development accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Siebel CRM Development. CVSS 3.1 Base Score 8.2 (Confidentiality and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L).",
+      "last_modified": "2026-09-17T16:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83181"
     },
     {
-      "cve_id": "CVE-2026-56945",
-      "asset_id": "CVE-2026-56945",
+      "cve_id": "CVE-2026-83180",
+      "asset_id": "CVE-2026-83180",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In VPU, there is a possible out-of-bounds write due to a confused deputy. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T08:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56945"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in takeover of Siebel CRM Deployment. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83180"
     },
     {
-      "cve_id": "CVE-2026-56970",
-      "asset_id": "CVE-2026-56970",
+      "cve_id": "CVE-2026-83179",
+      "asset_id": "CVE-2026-83179",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible permission bypass due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-09-17T08:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56970"
+      "description": "Vulnerability in the Oracle Common Applications Calendar product of Oracle E-Business Suite (component: Applications Calendar).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Common Applications Calendar.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Common Applications Calendar accessible data as well as  unauthorized access to critical data or complete access to all Oracle Common Applications Calendar accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Common Applications Calendar. CVSS 3.1 Base Score 7.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:L).",
+      "last_modified": "2026-09-17T16:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83179"
     },
     {
-      "cve_id": "CVE-2026-16004",
-      "asset_id": "CVE-2026-16004",
+      "cve_id": "CVE-2026-83178",
+      "asset_id": "CVE-2026-83178",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Exposed IOCTL with Insufficient Access Control in Armoury Crate driver allows a local user to read and write arbitrary PCI/PCIe configuration space via crafted IOCTL requests by bypassing the driver's verification.\nRefer to the '\nSecurity Update for Armoury Crate App' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:45:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16004"
+      "description": "Vulnerability in the Oracle Application Object Library product of Oracle E-Business Suite (component: Core).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle Application Object Library.  While the vulnerability is in Oracle Application Object Library, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Application Object Library. CVSS 3.1 Base Score 8.0 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83178"
     },
     {
-      "cve_id": "CVE-2026-16003",
-      "asset_id": "CVE-2026-16003",
+      "cve_id": "CVE-2026-83166",
+      "asset_id": "CVE-2026-83166",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Exposed IOCTL with Insufficient Access Control in Armoury Crate driver allows a local user to add an arbitrary process identifier to the driver's whitelist via a crafted IOCTL request by bypassing the driver's verification.Refer to the '\nSecurity Update for Armoury Crate App\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:44:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16003"
+      "description": "Vulnerability in the Oracle Customer Interaction History product of Oracle E-Business Suite (component: Outcome-Result).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Customer Interaction History.  While the vulnerability is in Oracle Customer Interaction History, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Customer Interaction History accessible data. CVSS 3.1 Base Score 7.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N).",
+      "last_modified": "2026-09-17T16:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83166"
     },
     {
-      "cve_id": "CVE-2026-13585",
-      "asset_id": "CVE-2026-13585",
+      "cve_id": "CVE-2026-83165",
+      "asset_id": "CVE-2026-83165",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Allocation of Resources Without Limits and Throttling and Sensitive Information in Resource Not Removed Before Reuse in the ASUS System Control Interface driver and ASUS Business Manager allow a local administrator to disclose sensitive information via crafted IOCTL requests, which, in severe cases, may lead to a Denial of Service (DoS) on the system.\nRefer to the '\u00a0\nSecurity Update for ASUS System Control Interface\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:43:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13585"
+      "description": "Vulnerability in the Oracle Customer Interaction History product of Oracle E-Business Suite (component: User Interface).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Customer Interaction History.  Successful attacks of this vulnerability can result in takeover of Oracle Customer Interaction History. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83165"
     },
     {
-      "cve_id": "CVE-2026-12962",
-      "asset_id": "CVE-2026-12962",
+      "cve_id": "CVE-2026-83164",
+      "asset_id": "CVE-2026-83164",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A Permissive Cross-domain Security Policy with Untrusted Domains in Armoury Crate allows a remote user to obtain a local user's NTLM hash by convincing the user to visit a crafted web page that sends a request containing a UNC path to the application's local service endpoint.Refer to the '\nSecurity Update for Armoury Crate App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:41:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12962"
+      "description": "Vulnerability in the Oracle Customer Interaction History product of Oracle E-Business Suite (component: Outcome-Result).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Customer Interaction History.  Successful attacks of this vulnerability can result in takeover of Oracle Customer Interaction History. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83164"
     },
     {
-      "cve_id": "CVE-2026-12960",
-      "asset_id": "CVE-2026-12960",
+      "cve_id": "CVE-2026-83163",
+      "asset_id": "CVE-2026-83163",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An Improper Export of Android Application Components vulnerability in ASUS Router App allows a third-party application on the same device to send a crafted Intent that causes ASUS Router App to open an specified URL.\nRefer to the '\nSecurity Update for ASUS Router Android App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:41:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12960"
+      "description": "Vulnerability in the Oracle Application Object Library product of Oracle E-Business Suite (component: Attachments / File Upload).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Application Object Library.  Successful attacks of this vulnerability can result in takeover of Oracle Application Object Library. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83163"
     },
     {
-      "cve_id": "CVE-2026-8921",
-      "asset_id": "CVE-2026-8921",
+      "cve_id": "CVE-2026-83162",
+      "asset_id": "CVE-2026-83162",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "External Control of File Name or Path vulnerability in ASUS Business Manager allows a local user to execute arbitrary code with SYSTEM privileges via a tampered IPC message.\nRefer to the '\nSecurity Update for ASUS Business Manager\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:36:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8921"
+      "description": "Vulnerability in the Oracle Application Object Library product of Oracle E-Business Suite (component: Core).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTPS to compromise Oracle Application Object Library.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Application Object Library accessible data as well as  unauthorized access to critical data or complete access to all Oracle Application Object Library accessible data. CVSS 3.1 Base Score 7.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-17T16:18:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83162"
     },
     {
-      "cve_id": "CVE-2026-8919",
-      "asset_id": "CVE-2026-8919",
+      "cve_id": "CVE-2026-83161",
+      "asset_id": "CVE-2026-83161",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Permissive Cross-domain Security Policy with Untrusted Domains in ASUS GameSDK allows a remote user to obtain a local user\u2019s NTLM hash by convincing the user to visit a crafted web page that sends a request containing a UNC path to the application\u2019s local service endpoint. This can result in information disclosure or data tampering, may cause GameSDK to become unavailable, and may also enable access to the victim\u2019s information on other services.\nRefer to the '\u00a0Security Update for ASUS GameSDK\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:35:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8919"
+      "description": "Vulnerability in the Oracle Project Intelligence product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Project Intelligence.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Project Intelligence accessible data as well as  unauthorized read access to a subset of Oracle Project Intelligence accessible data. CVSS 3.1 Base Score 7.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N).",
+      "last_modified": "2026-09-17T16:18:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83161"
     },
     {
-      "cve_id": "CVE-2026-8918",
-      "asset_id": "CVE-2026-8918",
+      "cve_id": "CVE-2026-83160",
+      "asset_id": "CVE-2026-83160",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A permissive list of allowed inputs in ASUS Armoury Crate allows a local administrator to perform arbitrary memory read/write operations or cause a system crash (BSOD) by bypassing the validation mechanism.Refer to the '\nSecurity Update for Armoury Crate App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:35:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8918"
+      "description": "Vulnerability in the RDBMS component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.3. Easily exploitable vulnerability allows low privileged attacker having Create Table privilege with network access via Oracle Net to compromise RDBMS.  Successful attacks of this vulnerability can result in takeover of RDBMS. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83160"
     },
     {
-      "cve_id": "CVE-2026-8917",
-      "asset_id": "CVE-2026-8917",
+      "cve_id": "CVE-2026-83159",
+      "asset_id": "CVE-2026-83159",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Untrusted Pointer Dereference in ASUS GPU Tweak III, GPUTweakII, AI Suite3, and VGAdll: An IOCTL vulnerability allows a local attacker to write a specific value to an arbitrary memory address, potentially leading to privilege escalation.\nRefer to the '\u00a0\nSecurity Update for ASUS GPU Tweak III, GPU Tweak II, AI Suite 3, and Armoury Crate Security Bulletin\u00a0\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:34:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8917"
+      "description": "Vulnerability in the Applications DBA product of Oracle E-Business Suite (component: ADPatch).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where Applications DBA executes to compromise Applications DBA.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Applications DBA. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83159"
     },
     {
-      "cve_id": "CVE-2026-8070",
-      "asset_id": "CVE-2026-8070",
+      "cve_id": "CVE-2026-83158",
+      "asset_id": "CVE-2026-83158",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect permission assignment for a critical resource in Armoury Crate allows a local user to bypass the driver\u2019s validation mechanism, resulting in unauthorized read and write access to physical memory.Refer to the '\u00a0\nSecurity Update for Armoury Crate App\u00a0\u00a0\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:33:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8070"
+      "description": "Vulnerability in the Oracle Applications Manager product of Oracle E-Business Suite (component: Command Line - RapidClone).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Applications Manager executes to compromise Oracle Applications Manager.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Applications Manager accessible data as well as  unauthorized access to critical data or complete access to all Oracle Applications Manager accessible data. CVSS 3.1 Base Score 7.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-17T16:18:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83158"
     },
     {
-      "cve_id": "CVE-2026-6737",
-      "asset_id": "CVE-2026-6737",
+      "cve_id": "CVE-2026-83157",
+      "asset_id": "CVE-2026-83157",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An Exposed IOCTL with Insufficient Access Control vulnerability in AsusPTPFilter allows a local user to bypass driver security mechanisms and obtain restricted touchpad information or render the touchpad unusable\u00a0via crafted IOCTL requests.Refer to the '\nSecurity Update for ASUS Precision Touchpad\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:33:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-6737"
+      "description": "Vulnerability in the Oracle Applications Manager product of Oracle E-Business Suite (component: Command Line - RapidClone).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle Applications Manager.  While the vulnerability is in Oracle Applications Manager, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Applications Manager. CVSS 3.1 Base Score 8.0 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83157"
     },
     {
-      "cve_id": "CVE-2026-3508",
-      "asset_id": "CVE-2026-3508",
+      "cve_id": "CVE-2026-83156",
+      "asset_id": "CVE-2026-83156",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An Out-of-bounds Read vulnerability in the IOCTL handler in ASUS System Control Interface allows a local user to cause system crash (BSOD) via a read size that exceeds the buffer size.Refer to the '\nSecurity Update for MyASUS\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:32:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3508"
+      "description": "Vulnerability in the Oracle XML Developers Kit component of Oracle Database Server.  Supported versions that are affected are 19.3-19.32, 21.3-21.23 and  23.4.0-23.26.3. Difficult to exploit vulnerability allows low privileged attacker having XDKC privilege with network access via Oracle Net to compromise Oracle XML Developers Kit.  Successful attacks of this vulnerability can result in takeover of Oracle XML Developers Kit. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-17T16:18:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83156"
     },
     {
-      "cve_id": "CVE-2026-1880",
-      "asset_id": "CVE-2026-1880",
+      "cve_id": "CVE-2026-83155",
+      "asset_id": "CVE-2026-83155",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An Incorrect Permission Assignment for Critical Resource vulnerability in the ASUS DriverHub update process allows privilege escalation due to improper protection of required execution resources during the validation phase, permitting a local user to make unprivileged modifications. This allows the altered resource to pass system checks and be executed with elevated privileges upon a user-initiated update.\nRefer to the 'Security Update for ASUS DriverHub' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-09-17T08:31:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1880"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.7. Easily exploitable vulnerability allows low privileged attacker with access to the physical communication segment attached to the hardware where the Siebel CRM Deployment executes to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Deployment accessible data and unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Siebel CRM Deployment. CVSS 3.1 Base Score 7.3 (Confidentiality and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H).",
+      "last_modified": "2026-09-17T16:18:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83155"
     }
   ]
 }
