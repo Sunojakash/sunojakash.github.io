@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-18T11:38:18.016836+00:00",
+  "last_updated": "2026-09-18T16:38:02.309365+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2025-20311",
-      "asset_id": "CVE-2025-20311",
+      "cve_id": "CVE-2025-33147",
+      "asset_id": "CVE-2025-33147",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability in the handling of certain Ethernet frames in Cisco IOS XE Software for Catalyst 9000 Series Switches could allow an unauthenticated, adjacent attacker to cause an egress port to become blocked and drop all outbound traffic.\r\n\r This vulnerability is due to improper handling of crafted Ethernet frames. An attacker could exploit this vulnerability by sending crafted Ethernet frames through an affected switch. A successful exploit could allow the attacker to cause the egress port to which the crafted frame is forwarded to start dropping all frames, resulting in a denial of service (DoS) condition.",
-      "last_modified": "2026-09-18T10:39:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-20311"
+      "description": "IBM Cognos Analytics 12.1.0 through 12.1.3 FP1, and 12.0.4 through 12.0.4 FP2 could allow an attacker on a shared network to obtain sensitive information caused by insecure network communication.",
+      "last_modified": "2026-09-18T15:40:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-33147"
     },
     {
-      "cve_id": "CVE-2026-89792",
-      "asset_id": "CVE-2026-89792",
+      "cve_id": "CVE-2025-33141",
+      "asset_id": "CVE-2025-33141",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: prevent out-of-bounds reads in share config responses\n\nValidate IPC share configuration payload sizes before consuming\nvariable-length fields. Bound veto list parsing and account for\nthe separator byte when deriving the path length.",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89792"
+      "description": "IBM QRadar 7.5.0 through 7.5.0 UP15 Interim Fix 006 could allow an authenticated user to obtain sensitive information from backup files due to incorrect permissions assignment.",
+      "last_modified": "2026-09-18T15:39:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-33141"
     },
     {
-      "cve_id": "CVE-2026-89793",
-      "asset_id": "CVE-2026-89793",
+      "cve_id": "CVE-2023-4738",
+      "asset_id": "CVE-2023-4738",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nublk: clear VM_MAYWRITE on read-only ublk char device mmap\n\nublk_ch_mmap() rejects mmap requests with VM_WRITE set, but never\nclears VM_MAYWRITE on the resulting read-only mapping. This allows\na userspace daemon to mmap the per-queue command buffer PROT_READ,\nthen upgrade it to PROT_WRITE via mprotect(), since VM_MAYWRITE was\nnever cleared.\n\nThe command buffer holds struct ublksrv_io_desc entries that are\nkernel-written ABI; a writable mapping lets an unprivileged daemon\nprocess corrupt fields such as addr, op_flags, nr_sectors, and\nstart_sector.\n\nSame bug class as the drm/panthor and drm/vc4 VM_MAYWRITE fixes, and\nthe 2026-08-13 ptp/vmclock fix (a5edadbae57e).\n\nVerified via mprotect() PoC: before the fix, a PROT_READ mapping can\nbe upgraded to PROT_READ|PROT_WRITE and a write into the command\nbuffer corrupts io_desc fields (confirmed under KASAN). After the\nfix, mprotect() returns -EACCES.",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89793"
+      "description": "Heap-based Buffer Overflow in GitHub repository vim/vim prior to 9.0.1848.",
+      "last_modified": "2026-09-18T15:39:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4738"
     },
     {
-      "cve_id": "CVE-2026-89794",
-      "asset_id": "CVE-2026-89794",
+      "cve_id": "CVE-2023-4734",
+      "asset_id": "CVE-2023-4734",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: zero pipe read compound padding\n\nCompound response handling extends the last response iov to an eight-byte\nboundary.\n\nsmb2_read_pipe() allocates only the payload size, so the alignment padding\ncan expose up to seven bytes of uninitialized kernel heap memory.\n\nAllocate the aligned size and clear the unused tail before pinning the\nresponse buffer.",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89794"
+      "description": "Integer Overflow or Wraparound in GitHub repository vim/vim prior to 9.0.1846.",
+      "last_modified": "2026-09-18T15:39:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4734"
     },
     {
-      "cve_id": "CVE-2026-89799",
-      "asset_id": "CVE-2026-89799",
+      "cve_id": "CVE-2026-63635",
+      "asset_id": "CVE-2026-63635",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Disable preemption in bpf_get_stackid\n\nThe get_perf_callchain call needs disabled preemption plus we need\nit disabled as long as we access its returned trace entries buffer.\n\nNote the bpf_get_stackid_pe function is executed already with\npreemption disabled.",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89799"
+      "description": "OpenImageIO is a toolset for reading, writing, and manipulating image files of any image file format relevant to VFX / animation. Prior to 3.0.21.0, 3.1.16.0, and 3.2.0.3-beta1, A crafted psd with an invalid color_mode bypasses normal validation when oiio:rawcolor or psd:rawdata is enabled. psdinput::setup() then uses the attacker-controlled value to index fixed color-mode tables, causing a global out-of-bounds read and potentially a bogus allocation, resulting in denial of service. The affected implementation is identified by src/psd.imageio/psdinput.cpp, PSDInput::validate_header(), PSDInput::setup(), oiio:RawColor, psd:RawData, color_mode, and mode_channel_count, which define the relevant source path, functions, state, and trigger. This issue is fixed in versions 3.0.21.0, 3.1.16.0, and 3.2.0.3-beta1.",
+      "last_modified": "2026-09-18T15:39:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63635"
     },
     {
-      "cve_id": "CVE-2026-89812",
-      "asset_id": "CVE-2026-89812",
+      "cve_id": "CVE-2026-3438",
+      "asset_id": "CVE-2026-3438",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: force complete the MES ring fences on reset\n\nThe MES scheduler ring has no drm scheduler (no_scheduler = true), so it is\nskipped by the force-completion loop in amdgpu_device_pre_asic_reset(). It uses\na polling fence whose hw value lives in wb (GTT) memory and survives a MODE1\nreset, while fence_drv.sync_seq keeps advancing for every packet.\n\nWhen the reset is triggered because MES itself stopped responding, the\ntimed-out packets advance sync_seq past the last hw fence value MES wrote.\nAfter resume the first MES submission polls forever on a seq that is never\nwritten back, failing the resume and wedging the box on a second reset:\n\n  amdgpu: MES ring buffer is full.\n  amdgpu: *ERROR* ring gfx_0.0.0 test failed (-110)\n  amdgpu: resume of IP block <gfx_v11_0> failed -110\n  amdgpu: GPU reset end with ret = -110\n\nForce complete the MES scheduler ring fences together with the scheduler rings\nso their hw fence is realigned to sync_seq.\n\nv2: cover all XCCs (one scheduler ring each), not just mes.ring[0].",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89812"
+      "description": "A reflected cross-site scripting vulnerability exists in Sonatype Nexus Repository versions 3.0.0 through 3.90.2 that allows unauthenticated remote attackers to execute arbitrary JavaScript in a victim's browser through a specially crafted URL. Exploitation requires user interaction.",
+      "last_modified": "2026-09-18T15:38:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3438"
     },
     {
-      "cve_id": "CVE-2026-89817",
-      "asset_id": "CVE-2026-89817",
+      "cve_id": "CVE-2025-15399",
+      "asset_id": "CVE-2025-15399",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/gud: NUL-terminate TV mode names read from the device\n\ngud_connector_add_tv_mode() reads a buffer of fixed-size mode names from\nthe USB device and passes pointers into it to\ndrm_mode_create_tv_properties_legacy(), which calls strlen() on each one.\nNothing guarantees the device NUL-terminates a name, so strlen() can run\npast the end of a slot and, for the last mode, past the end of the\nallocation.\n\nTerminate each name at the end of its slot before use.",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89817"
+      "description": "IBM Common Licensing Agent 9.0, Agent 9.0.0.1, Agent 9.0.0.2, ART 9.0, ART 9.0.0.1, and ART 9.0.0.2 is vulnerable to cross-site request forgery which could allow an attacker to execute malicious and unauthorized actions transmitted from a user that the website trusts.",
+      "last_modified": "2026-09-18T15:38:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15399"
     },
     {
-      "cve_id": "CVE-2026-92773",
-      "asset_id": "CVE-2026-92773",
+      "cve_id": "CVE-2023-4733",
+      "asset_id": "CVE-2023-4733",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Trigger.dev before 4.6.0 fails to verify that an authenticated user controls a GitHub App installation before binding it to their organization. Attackers can claim another user's GitHub App installation by replaying state cookies and supplying sequential installation identifiers, gaining unauthorized access to the victim's repositories.",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92773"
+      "description": "Use After Free in GitHub repository vim/vim prior to 9.0.1840.",
+      "last_modified": "2026-09-18T15:38:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4733"
     },
     {
-      "cve_id": "CVE-2026-92579",
-      "asset_id": "CVE-2026-92579",
+      "cve_id": "CVE-2023-1175",
+      "asset_id": "CVE-2023-1175",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In AVideo through 29.0, the autoCSRFGuard() function maintains a hardcoded allowlist of exempt basenames tested without directory context, allowing plugin files matching core filenames to inherit CSRF exemptions. The LoginWordPress plugin file login.json.php inherits an exemption and unconditionally logs out authenticated users on cross-site POST requests before validating credentials.",
-      "last_modified": "2026-09-18T10:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92579"
+      "description": "Incorrect Calculation of Buffer Size in GitHub repository vim/vim prior to 9.0.1378.",
+      "last_modified": "2026-09-18T15:37:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1175"
     },
     {
-      "cve_id": "CVE-2026-89791",
-      "asset_id": "CVE-2026-89791",
+      "cve_id": "CVE-2026-63422",
+      "asset_id": "CVE-2026-63422",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nperf: Fix use-after-free when perf mmap() revival races with the last munmap()\n\nperf_mmap_close() drops rb->mmap_count *without* holding\nevent->mmap_mutex (the refcount_dec_and_test() right before the\nrefcount_dec_and_mutex_lock() of event->mmap_count). A concurrent\nperf_mmap_rb() can slot its entire \"revival\" path into that window\n(perf_mmap holds event->mmap_mutex for its whole duration, including\nrb_alloc):\n\n  munmap side (perf_mmap_close)          mmap side (perf_mmap_rb)\n  -----------------------------------    --------------------------------\n  rb->mmap_count 1 -> 0   (no lock)      (holds event->mmap_mutex)\n                                         inc_not_zero(rb->mmap_count) fails\n                                         ring_buffer_attach(event, NULL)\n                                         rb_alloc() + attach new rb\n                                         refcount_set(&event->mmap_count, 1)\n  lock; event->mmap_count 1 -> 0\n  ring_buffer_attach(event, NULL)\n  ring_buffer_put() -> frees the *new* rb\n\nThe revival's refcount_set(&event->mmap_count, 1) is an invisible\n1 -> 1 write: the close frees the just-revived buffer although the\nother process still has it mapped -- a page-level use-after-free\nallowing local privilege escalation to root by any unprivileged user\n(default kernel.perf_event_paranoid=2).\n\nSwap the order of the two counter updates: event->mmap_count is\ndropped first via refcount_dec_and_mutex_lock(), so its 1 -> 0\ntransition and the ring_buffer_attach() stay serialized with\nperf_mmap(). rb->mmap_count == 0 then implies every event using the\nbuffer is detached already, so the result of the rb->mmap_count drop\ncan gate the remaining teardown directly and detach_rest is no longer\nneeded.\n\nAn earlier fix for this race from Kyle Zeng and David Lee takes\nevent->mmap_mutex around both counter updates [0]; here the not-last\nclose stays lockless.",
-      "last_modified": "2026-09-18T10:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89791"
+      "description": "OpenImageIO is a toolset for reading, writing, and manipulating image files of any image file format relevant to VFX / animation. Prior to 3.0.21.0, 3.1.16.0, and 3.2.0.3-beta1, A valid tiled openexr image whose width is not a multiple of its tile width can trigger an overflow when a caller reads a partial edge-tile rectangle. openexrinput::read_native_tiles() copies each row into the caller buffer using the padded whole-tile scanline_stride rather than user_scanline_bytes for the requested rectangle, resulting in a heap out-of-bounds write and memory corruption. The affected implementation is identified by src/openexr.imageio/exrinput.cpp, OpenEXRInput::read_native_tiles(), partial edge tile, user_scanline_bytes, and scanline_stride, which define the relevant source path, functions, state, and trigger. This issue is fixed in versions 3.0.21.0, 3.1.16.0, and 3.2.0.3-beta1.",
+      "last_modified": "2026-09-18T15:37:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63422"
     },
     {
-      "cve_id": "CVE-2026-89800",
-      "asset_id": "CVE-2026-89800",
+      "cve_id": "CVE-2023-1170",
+      "asset_id": "CVE-2023-1170",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/nouveau/uvmm: clear the dirty flag when unwinding an OP_UNMAP_SPARSE\n\nA successful OP_UNMAP_SPARSE marks its region dirty with\nnouveau_uvma_region_dirty() and defers the teardown to\nnouveau_uvmm_bind_job_cleanup(); it does not remove the region from\nuvmm->region_mt.\n\nIf a later op in the job fails, the unwind path never clears reg->dirty\n(set in one place, cleared nowhere) and sets op->reg = NULL, so cleanup\nskips the teardown. The region is left in the tree with dirty set and its\ncompletion never signalled. Later binds over that range then fail\npermanently -- -ENOENT or -EINVAL from the dirty checks, or an unkillable\nwait_for_completion() in bind_validate_region() -- for the lifetime of\nthe uvmm.\n\nClear reg->dirty when the unwind reverts the sparse unmap, restoring the\nregion to the state it was found in.",
-      "last_modified": "2026-09-18T10:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89800"
+      "description": "Heap-based Buffer Overflow in GitHub repository vim/vim prior to 9.0.1376.",
+      "last_modified": "2026-09-18T15:37:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1170"
     },
     {
-      "cve_id": "CVE-2026-89801",
-      "asset_id": "CVE-2026-89801",
+      "cve_id": "CVE-2026-5189",
+      "asset_id": "CVE-2026-5189",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/nouveau/uvmm: fix premature region free on failed OP_UNMAP_SPARSE\n\nIn nouveau_uvmm_bind_job_submit()'s OP_UNMAP_SPARSE arm, op->reg is set\nfrom nouveau_uvma_region_find(), which only looks the region up and takes\nno reference; a region's sole reference is its membership in\nuvmm->region_mt. Two failure paths leave op->reg set: the -ENOENT check\nwhen the region is busy, and the drm_gpuvm_sm_unmap_ops_create() failure.\nThe sibling nouveau_uvmm_sm_unmap_prepare() failure just below clears\nop->reg; these two do not.\n\nunwind_continue steps back one op, so the failing op is skipped by the\nunwind loop and its op->reg stays set. nouveau_uvmm_bind_job_cleanup()\nthen enters its if (op->reg) branch and calls nouveau_uvma_region_remove()\nand nouveau_uvma_region_put() on it, dropping the tree's sole reference\nand freeing a region this job never created. The comment above the\ncleanup loop documents the broken invariant: op->reg must be NULL on\nsubmit failure.\n\nThis frees a live region on an unrelated failure, reachable single-job\nwhen drm_gpuvm_sm_unmap_ops_create() returns -ENOMEM; if another job owns\nthe same region, its cleanup then removes and puts the freed region, a\nuse-after-free. Clear op->reg on both failure paths.",
-      "last_modified": "2026-09-18T10:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89801"
+      "description": "CWE-798: Use of Hard-coded Credentials in Sonatype Nexus Repository Manager versions 3.0.0 through 3.70.5 allows an unauthenticated attacker with network access to gain unauthorized read/write access to the internal database and execute arbitrary OS commands as the Nexus process user. Exploitation requires the non-default nexus.orient.binaryListenerEnabled=true configuration to be enabled.",
+      "last_modified": "2026-09-18T15:37:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5189"
     },
     {
-      "cve_id": "CVE-2026-89802",
-      "asset_id": "CVE-2026-89802",
+      "cve_id": "CVE-2026-63420",
+      "asset_id": "CVE-2026-63420",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/nouveau/uvmm: fix NULL deref unwinding an OP_MAP_SPARSE op\n\nEach bind_job_op is zeroed by kzalloc_obj() in bind_job_op_from_uop(),\nand the OP_MAP_SPARSE case in nouveau_uvmm_bind_job_submit() only creates\na region, so op->ops stays NULL for a successfully processed sparse map.\n\nIf a later op in the same job fails, the reverse unwind loop revisits that\nop and calls drm_gpuva_ops_free(&uvmm->base, op->ops) unconditionally.\ndrm_gpuva_ops_free() dereferences its argument right away\n(list_for_each_entry_safe on &ops->list), so a NULL op->ops oopses. The\npath is reachable by any render-node fd holder, since NOUVEAU_VM_BIND is\nDRM_RENDER_ALLOW.\n\nGuard the free with IS_ERR_OR_NULL(), as nouveau_uvmm_bind_job_cleanup()\nalready does for the identical free.",
-      "last_modified": "2026-09-18T10:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89802"
+      "description": "OpenImageIO is a toolset for reading, writing, and manipulating image files of any image file format relevant to VFX / animation. Prior to 3.0.21.0, 3.1.16.0, and 3.2.0.3-beta1, An indexed psd with transparency metadata creates fewer stored channel_buffers than the spec.nchannels value advertised by the rawcolor path. when oiio:rawcolor or psd:rawdata is enabled, psdinput::read_native_scanline() passes spec.nchannels to psdinput::interleave_row(), which indexes beyond channel_buffers, resulting in a heap out-of-bounds read and process crash. The affected implementation is identified by src/psd.imageio/psdinput.cpp, PSDInput::read_native_scanline(), PSDInput::interleave_row(), oiio:RawColor, psd:RawData, channel_buffers, and spec.nchannels, which define the relevant source path, functions, state, and trigger. This issue is fixed in versions 3.0.21.0, 3.1.16.0, and 3.2.0.3-beta1.",
+      "last_modified": "2026-09-18T15:36:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63420"
     },
     {
-      "cve_id": "CVE-2026-73434",
-      "asset_id": "CVE-2026-73434",
+      "cve_id": "CVE-2026-59181",
+      "asset_id": "CVE-2026-59181",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GStreamer gst-plugins-good (avidemux). In gst_avi_demux_riff_parse_vprp(), the number of available gst_riff_vprp_video_field_desc entries is calculated by dividing the remaining buffer size by the attacker-controlled vprp->fields value, rather than by sizeof(gst_riff_vprp_video_field_desc). This can cause the parser to treat more field descriptors as available than fit in the input buffer, resulting in out-of-bounds reads. Processing a crafted AVI via playbin/decodebin can crash the application (denial of service). Fixed upstream in gst-plugins-good 1.28.6 (GStreamer-SA-2026-0072).",
-      "last_modified": "2026-09-18T10:09:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73434"
+      "description": "OpenImageIO is a toolset for reading, writing, and manipulating image files of any image file format relevant to VFX / animation. Prior to 3.0.20.0, 3.1.15.0, and 3.2.0.3-beta1, A crafted cineon file can supply a numberofelements value greater than the format maximum of eight. cineoninput::open() uses that unchecked value as the loop bound while filling the fixed strings[8] array, writing pointers beyond the stack buffer and into adjacent state, resulting in memory corruption and denial of service. The affected implementation is identified by src/cineon.imageio/cineoninput.cpp, CineonInput::open(), numberOfElements, and strings[8], which define the relevant source path, functions, state, and trigger. This issue is fixed in versions 3.0.20.0, 3.1.15.0, and 3.2.0.3-beta1.",
+      "last_modified": "2026-09-18T15:35:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59181"
     },
     {
-      "cve_id": "CVE-2026-73433",
-      "asset_id": "CVE-2026-73433",
+      "cve_id": "CVE-2026-23926",
+      "asset_id": "CVE-2026-23926",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GStreamer gst-plugins-good (avidemux). When parsing FUJIFILM metadata in an AVI strd chunk, gst_avi_demux_parse_strd() decrements a remaining-length counter by fixed offsets (98 and 10 bytes) without verifying sufficient data remains. For crafted strd payloads of exactly 106 or 107 bytes, the counter underflows to a very large unsigned value, causing subsequent null-terminated string scanning to read far beyond the allocated heap buffer. Date-format normalization may also write beyond the buffer end. Confirmed impacts include heap out-of-bounds read, out-of-bounds write, heap information disclosure (adjacent data appearing in parsed metadata), and application crash/denial of service. The avidemux element is auto-plugged by playbin, decodebin, and gst-discoverer, so opening or previewing a crafted AVI is sufficient to trigger the issue. Fixed upstream in gst-plugins-good 1.28.6 (GStreamer-SA-2026-0072).",
-      "last_modified": "2026-09-18T10:09:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73433"
+      "description": "An authenticated (non-super) administrator can create a maintenance period with a JavaScript payload that is executed by any user that opens tooltip for that maintenance period in the Host navigator widget. This can allow the attacker to perform unauthorized actions depending on which user opens the tooltip.",
+      "last_modified": "2026-09-18T15:35:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-23926"
     },
     {
-      "cve_id": "CVE-2026-93561",
-      "asset_id": "CVE-2026-93561",
+      "cve_id": "CVE-2026-59156",
+      "asset_id": "CVE-2026-59156",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Memcache binary codec signed/unsigned type mismatch causes frame desynchronization and response smuggling",
-      "last_modified": "2026-09-18T10:02:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93561"
+      "description": "OpenImageIO is a toolset for reading, writing, and manipulating image files of any image file format relevant to VFX / animation. Prior to 3.0.20.0, 3.1.15.0, and 3.2.0.3-beta1, A crafted fits stream containing consecutive 2880-byte header blocks without the mandatory end keyword makes fitsinput::read_fits_header() call itself without a depth bound. repeated recursive parsing exhausts the application stack, resulting in denial of service. The affected implementation is identified by src/fits.imageio/fitsinput.cpp, FitsInput::read_fits_header(), END keyword, and 2880-byte FITS header blocks, which define the relevant source path, functions, state, and trigger. This issue is fixed in versions 3.0.20.0, 3.1.15.0, and 3.2.0.3-beta1.",
+      "last_modified": "2026-09-18T15:34:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59156"
     },
     {
-      "cve_id": "CVE-2026-89808",
-      "asset_id": "CVE-2026-89808",
+      "cve_id": "CVE-2026-59956",
+      "asset_id": "CVE-2026-59956",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdkfd: Fix the case that vm range is hole at svm_migrate_copy_to_vram\n\nWhen migration vm range is hole at cpu side(MIGRATE_PFN_MIGRATE set +\nMIGRATE_PFN_VALID unset) driver still allocates device pages. There is no\ndma map of src pages and migration. j is 0 and svm_migrate_copy_memory_gart()\nwill return an uninitialized r. That can trigger out_free_vram_pages to drop\nall VRAM just set up.\n\nInitialize r and only call the last svm_migrate_copy_memory_gart if j > 0.\n\nCurrent code postponed the last page to the final copy. This patch flushes on\nthe last page when reach to the end of current drm_buddy_block; avoids another\nsvm_migrate_copy_memory_gart.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89808"
+      "description": "OpenImageIO is a toolset for reading, writing, and manipulating image files of any image file format relevant to VFX / animation. Prior to 3.0.20.0, 3.1.15.0, and 3.2.0.3-beta1, An uncompressed 16-bit iff image with a z-buffer makes iffinput::readimg() allocate a temporary scanline from m_header.rgba_count but copy from it using m_header.pixel_bytes(), whose stride also includes z-buffer bytes. the oversized memcpy reads beyond the temporary heap buffer and copies adjacent memory into the output image, resulting in a crash or disclosure of adjacent heap data. The affected implementation is identified by src/iff.imageio/iffinput.cpp, IffInput::readimg(), m_header.rgba_count, and m_header.pixel_bytes(), which define the relevant source path, functions, state, and trigger. This issue is fixed in versions 3.0.20.0, 3.1.15.0, and 3.2.0.3-beta1.",
+      "last_modified": "2026-09-18T15:33:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59956"
     },
     {
-      "cve_id": "CVE-2026-89810",
-      "asset_id": "CVE-2026-89810",
+      "cve_id": "CVE-2026-84574",
+      "asset_id": "CVE-2026-84574",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdkfd: Fix error path at svm_migrate_copy_to_ram\n\nIf page migration from device to sys ram fails for some reasons driver needs\nrelease and unlock allocated system pages. To do that driver should use page\nphysical address, or pfn, then get struct page*. Current driver uses dma\naddress(for adev) that is not correct with IOMMU enabled, or even in general.\n\nThe patch releases and unlocks allocated system pages based on where migration\nfailed by struct page* of sys ram pages. Also dma_unmap correspodent system\nram pages at error path.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89810"
+      "description": "A permissions issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to bypass Privacy preferences.",
+      "last_modified": "2026-09-18T15:30:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84574"
     },
     {
-      "cve_id": "CVE-2026-89823",
-      "asset_id": "CVE-2026-89823",
+      "cve_id": "CVE-2026-83254",
+      "asset_id": "CVE-2026-83254",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm: fix race between partial drm_dev_register() failure and ioctl\n\nIf drm_dev_register() fails after registering a minor (e.g. render minor\nregistered, primary minor fails), userspace could have opened the first\nminor and entered a drm_dev_enter() critical section. Since the\nunplugged flag was never set, the ioctl proceeds while the error path\ntears down device resources.\n\nFix this by introducing drm_dev_synchronize_unplug(), which sets the\nunplugged flag and waits for the SRCU barrier, ensuring all in-flight\ndrm_dev_enter() critical sections complete before cleanup proceeds; call\nit on the error path of drm_dev_register().",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89823"
+      "description": "Vulnerability in the Oracle Commerce Guided Search / Oracle Commerce Experience Manager product of Oracle Commerce (component: Forge).   The supported version that is affected is 11.4.0. Difficult to exploit vulnerability allows unauthenticated attacker with network access via TCP to compromise Oracle Commerce Guided Search / Oracle Commerce Experience Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Commerce Guided Search / Oracle Commerce Experience Manager. CVSS 3.1 Base Score 8.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83254"
     },
     {
-      "cve_id": "CVE-2026-89833",
-      "asset_id": "CVE-2026-89833",
+      "cve_id": "CVE-2026-83335",
+      "asset_id": "CVE-2026-83335",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix to avoid potential deadloop in f2fs_fsync_node_pages()\n\nThere is potential deadloop in race condition:\n\nThread A\t\t\t\tThread B\n- fsync\n - f2fs_do_sync_file\n  - f2fs_fsync_node_pages\n   - last_fsync_dnode\n    - folio_get(last_folio)\n\t\t\t\t\t- f2fs_setattr\n\t\t\t\t\t - f2fs_truncate\n\t\t\t\t\t  - f2fs_truncate_blocks\n\t\t\t\t\t   - f2fs_do_truncate_blocks\n\t\t\t\t\t    - f2fs_truncate_inode_blocks\n\t\t\t\t\t     - truncate_dnode\n\t\t\t\t\t      - truncate_node\n\t\t\t\t\t       - invalidate_mapping_pages\n\t\t\t\t\t        - folio->mapping = NULL\n   - is_node_folio alwasy return false\n   - atomic && !marked is always true,\n     then goto retry",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89833"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Analytics Server).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83335"
     },
     {
-      "cve_id": "CVE-2026-89836",
-      "asset_id": "CVE-2026-89836",
+      "cve_id": "CVE-2026-83337",
+      "asset_id": "CVE-2026-83337",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix folio_nr_pages() race after put in large folio invalidate\n\nOur v6.18 based Android system is continuely suffering livelock and bad\npage stat as shown in[1] which related to broken xarray slot status. By\ninvestigating big folio operations within f2fs, we find below races and\nfix it by get the nr_pages before drop the refcount and folio_lock.\n\nf2fs_get_read_data_folio() calls f2fs_folio_put() before\nfolio_nr_pages() when invalidating a large folio from the page cache.\nThat unlocks the folio and drops the caller reference, leaving a window\nwhere a concurrent truncate or folio split can shrink the compound folio\nor free it before the invalidate range is computed. An undersized range\nthen leaves split sub-folios in mapping->i_pages, which can later\ninteract badly with truncate and reclaim (stale xarray entries and bad\npage state when folio->mapping no longer matches the mapping being\ntruncated).\n\n[1]\nPID: 2594     TASK: ffffff8169b81580  CPU: 7    COMMAND: \"Thread-3\"\n #0 [ffffffc08ef2b8a0] xas_load at ffffffe52d1f42a4\n #1 [ffffffc08ef2b900] find_get_entries at ffffffe52c185798\n #2 [ffffffc08ef2bb60] truncate_inode_pages_range at ffffffe52c19e83c\n #3 [ffffffc08ef2bbc0] truncate_inode_pages_final at ffffffe52c19ec2c\n #4 [ffffffc08ef2bc20] f2fs_evict_inode at ffffffe52c4c8400\n #5 [ffffffc08ef2bcc0] evict at ffffffe52c2de9f4\n #6 [ffffffc08ef2bd00] iput at ffffffe52c2db1b4\n #7 [ffffffc08ef2bd30] dentry_unlink_inode at ffffffe52c2d7204\n #8 [ffffffc08ef2bd50] __dentry_kill at ffffffe52c2d3dcc\n #9 [ffffffc08ef2bd80] dput at ffffffe52c2d3c3c\n #10 [ffffffc08ef2bda0] __fput at ffffffe52c2b0a7c\n #11 [ffffffc08ef2bde0] ____fput at ffffffe52c2b1034\n #12 [ffffffc08ef2bdf0] task_work_run at ffffffe52beea200\n #13 [ffffffc08ef2be20] exit_to_user_mode_loop at ffffffe52bfbc17c\n #14 [ffffffc08ef2be80] el0_svc at ffffffe52d1f8e54\n #15 [ffffffc08ef2beb0] el0t_64_sync_handler at ffffffe52d1f8d10",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89836"
+      "description": "Vulnerability in the Oracle Middleware Common Libraries and Tools product of Oracle Fusion Middleware (component: Remote Diagnostic Agent).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Middleware Common Libraries and Tools executes to compromise Oracle Middleware Common Libraries and Tools.  Successful attacks of this vulnerability can result in takeover of Oracle Middleware Common Libraries and Tools. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83337"
     },
     {
-      "cve_id": "CVE-2026-89843",
-      "asset_id": "CVE-2026-89843",
+      "cve_id": "CVE-2026-83342",
+      "asset_id": "CVE-2026-83342",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Zero-init bsg stack buffers to avoid info leak\n\nSeveral bsg handlers stage their request/reply in an uninitialized 256-byte\non-stack buffer (uint8_t bsg[DMA_POOL_SIZE]) and fill it via\nsg_copy_to_buffer(), which only copies as many bytes as the user-supplied\nrequest payload. When the request is shorter than the structure, the\nremainder of the buffer is left holding stale stack data.\n\nqla2x00_read_fru_status() and qla2x00_read_i2c() then copy the full\nstructure back to the reply payload with sg_copy_from_buffer(), leaking the\nuninitialized stack bytes to user space. The write/update paths do not copy\nthe buffer back, but can feed uninitialized fields to the device.\n\nZero the stack buffer at declaration in all five handlers, mirroring the\nheap kzalloc() approach, so short requests can no longer expose stale\nmemory.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89843"
+      "description": "Vulnerability in the Oracle Utilities Network Management System product of Oracle Utilities Applications (component: System Wide).  Supported versions that are affected are 2.4.0.1.0-2.4.0.1.33, 2.5.0.1.0-2.5.0.1.19, 2.5.0.2.0-2.5.0.2.13, 2.6.0.1.0-2.6.0.12B, 2.6.0.2.0-2.6.0.2.10A and  25.12.0.0.0-25.12.0.0.3. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Utilities Network Management System executes to compromise Oracle Utilities Network Management System.  Successful attacks of this vulnerability can result in takeover of Oracle Utilities Network Management System. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83342"
     },
     {
-      "cve_id": "CVE-2026-89844",
-      "asset_id": "CVE-2026-89844",
+      "cve_id": "CVE-2026-83349",
+      "asset_id": "CVE-2026-83349",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Hold vport_slock for host map update in report ID acquisition\n\nqla24xx_report_id_acquisition() format-1 handling drops vport_slock after\ntaking the vport reference and then calls qla_update_host_map() without\nthe lock. That reaches qla_update_vp_map(), which mutates the ha->host_map\nbtree via btree_insert32()/btree_update32()/btree_remove32() and is\ndocumented to require vport_slock to be held by the caller. Running it\nunlocked can race concurrent host_map updates and corrupt the btree.\n\nThe format-2 path in the same function already wraps its host_map update\n(SET_AL_PA) in vport_slock; the format-1 path is the lone outlier.\n\nHold vport_slock across the format-1 qla_update_host_map() call to honor\nthe documented locking contract. The vref_count taken in the loop keeps\nthe vport valid, so this only adds the missing host_map serialization.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89844"
+      "description": "Vulnerability in the Oracle Net Services component of Oracle Database Server.  Supported versions that are affected are 19.3-19.32, 21.3-21.23 and  23.4.0-23.26.3. Easily exploitable vulnerability allows unauthenticated attacker with network access via Oracle Net to compromise Oracle Net Services.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle Net Services. CVSS 3.1 Base Score 7.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83349"
     },
     {
-      "cve_id": "CVE-2026-89884",
-      "asset_id": "CVE-2026-89884",
+      "cve_id": "CVE-2026-87129",
+      "asset_id": "CVE-2026-87129",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: platform: mtk-mdp3: fix NULL deref on failed SCP lookup\n\nAdd the missing sanity check after looking up the SCP to avoid\ndereferencing a NULL-pointer in case its driver has not yet been bound.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89884"
+      "description": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Data Relationship Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Hyperion Data Relationship Management accessible data as well as  unauthorized access to critical data or complete access to all Oracle Hyperion Data Relationship Management accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87129"
     },
     {
-      "cve_id": "CVE-2026-89887",
-      "asset_id": "CVE-2026-89887",
+      "cve_id": "CVE-2026-87183",
+      "asset_id": "CVE-2026-87183",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: i2c: ov7740: fix use-after-destroy in remove\n\nThe ov7740_remove() function had a severe teardown order bug where it\ndestroyed the driver's mutex before freeing the V4L2 control handler\nwhich relies on that mutex, leading to a use-after-destroy kernel panic.\nFurthermore, the driver explicitly called v4l2_ctrl_handler_free() and\nmutex_destroy() sequentially, but then called ov7740_free_controls()\nwhich invokes both of them a second time, resulting in a double-free.\n\nThis patch fixes the issue by unregistering the subdevice first, and\nrelying exclusively on ov7740_free_controls() to safely tear down the\nmutex and control handler in the correct order.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89887"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle Hyperion Financial Management executes to compromise Oracle Hyperion Financial Management.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Hyperion Financial Management, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in takeover of Oracle Hyperion Financial Management. CVSS 3.1 Base Score 7.7 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87183"
     },
     {
-      "cve_id": "CVE-2026-89889",
-      "asset_id": "CVE-2026-89889",
+      "cve_id": "CVE-2026-87186",
+      "asset_id": "CVE-2026-87186",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: i2c: imx415: Release runtime PM reference on VBLANK error\n\nThe VBLANK path returned immediately when programming VMAX failed after\npm_runtime_get_if_in_use() had taken a runtime PM reference. Break out of\nthe switch instead so the common pm_runtime_put() path is used.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89889"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the Oracle Hyperion Financial Management executes to compromise Oracle Hyperion Financial Management.  While the vulnerability is in Oracle Hyperion Financial Management, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Hyperion Financial Management. CVSS 3.1 Base Score 9.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87186"
     },
     {
-      "cve_id": "CVE-2025-56566",
-      "asset_id": "CVE-2025-56566",
+      "cve_id": "CVE-2026-87211",
+      "asset_id": "CVE-2026-87211",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MikroTik firmware 7.19.4 stores sensitive authentication credentials and network state in cleartext within non-volatile storage. An attacker with physical access to the device can extract this material from an SPI flash dump, without authenticating to the device and without knowledge of the administrative password.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-56566"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Hyperion Financial Management accessible data. CVSS 3.1 Base Score 7.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-09-18T15:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87211"
     },
     {
-      "cve_id": "CVE-2026-87966",
-      "asset_id": "CVE-2026-87966",
+      "cve_id": "CVE-2026-81921",
+      "asset_id": "CVE-2026-81921",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Easy Appointments WordPress plugin before 4.0.2.2 does not perform an ownership or authorization check on its unauthenticated appointment-reservation endpoint before updating an existing appointment identified by a request-supplied id, allowing unauthenticated attackers to overwrite, and through a follow-on cleanup delete, arbitrary appointments.",
-      "last_modified": "2026-09-18T10:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87966"
+      "description": "Concrete CMS 8.5.3 through 9.5.2 enabled the OAuth 2.0 refresh-token grant using the unmodified upstream League grant, which issued new access tokens from a valid refresh token without re-checking the associated account's active status. A user who obtained a refresh token while active could therefore continue to mint valid access tokens after being deactivated or suspended (uIsActive=0), so deactivating an account did not revoke its API access.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 2.3 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:L/VA:L/SC:L/SI:L/SA:L. Thanks sh4d0byss for reporting.",
+      "last_modified": "2026-09-18T15:29:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81921"
     },
     {
-      "cve_id": "CVE-2026-92976",
-      "asset_id": "CVE-2026-92976",
+      "cve_id": "CVE-2026-75883",
+      "asset_id": "CVE-2026-75883",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stored Cross-Site Scripting (XSS) vulnerability in the profile management functionality of T-Systems\u2019 TAO 2.0 suite. An authenticated user could inject malicious HTML or JavaScript content into the fields containing their personal data. The content entered is stored and displayed without being properly sanitised when another user, including administrative staff, views the affected profile. Successful exploitation could allow JavaScript code to be executed in the victim\u2019s browser, access to information available within the session, or the performance of actions using the victim\u2019s permissions.",
-      "last_modified": "2026-09-18T09:57:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92976"
+      "description": "The code in pppd that formats a response to a PEAP Request packet in peap_response() copies an entire TLS record of up to 16384 bytes into the fixed global buffer outpacket_buf\n without checking the available space and without implementing outgoing \nPEAP fragmentation. Thus a pppd process connecting to a server which \nrequests PEAP authentication can be induced to corrupt global static \ndata following the outpacket_buf array, most likely causing incorrect behavior or a crash.",
+      "last_modified": "2026-09-18T15:29:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75883"
     },
     {
-      "cve_id": "CVE-2026-89818",
-      "asset_id": "CVE-2026-89818",
+      "cve_id": "CVE-2026-81922",
+      "asset_id": "CVE-2026-81922",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu/vcn: fix integer overflow in dec_msg buffer count check\n\nIf the supplied msg[2] (num_buffers) is 0x3FFFFFFF, the expression\n6 + num_buffers * 4 wraps to 2 and the bounds check passes, letting\nthe parser loop far past the end of the message BO. Triggering it\nadditionally requires a ~4GiB mapping so that msg[1] survives the\nearlier \"header does not fit in BO\" check.\n\nRewrite the test in division form, which is overflow-free by\nconstruction. Also update the message to reflect that msg is invalid.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89818"
+      "description": "Concrete CMS before 9.5.3 did not enforce a per-page authorization check when reordering pages from the sitemap. In the sitemap Explore dashboard controller, the send_to_top and send_to_bottom reorder tasks ran after only a generic sitemap-access check; the controller loaded the page named by the attacker-controlled cNodeID parameter and changed its display order without verifying that the current user held move or arrange permission on that specific page. Because of this, an authenticated user who could reach the sitemap but had no edit or arrange rights on a given page could still move that page and alter the site's global navigation order.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 2.1 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Andrew Gonzalez for reporting.",
+      "last_modified": "2026-09-18T15:28:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81922"
     },
     {
-      "cve_id": "CVE-2026-89828",
-      "asset_id": "CVE-2026-89828",
+      "cve_id": "CVE-2026-81923",
+      "asset_id": "CVE-2026-81923",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: Fix init ordering in amdgpu_vram_mgr_init()\n\ndrmm_cgroup_register_region() is called before INIT_LIST_HEAD() and\ngpu_buddy_init() in amdgpu_vram_mgr_init(). If it fails, the function\nreturns early and bypasses those initializations.\n\nSince adev->mman.initialized is set to true before amdgpu_vram_mgr_init()\nis called, a failure triggers amdgpu_ttm_fini(), which calls\namdgpu_vram_mgr_fini(), which then:\n\n - Calls list_for_each_entry_safe() on reservations_pending and\n   reserved_pages, whose list_head::next pointers are zero-initialized\n   (NULL). The loop does not recognize them as empty and dereferences NULL.\n\n - Calls gpu_buddy_fini(), which iterates free_trees[] unconditionally\n   via for_each_free_tree(). Since mm->free_trees is NULL\n   (never allocated), this dereferences NULL.\n\nBoth result in a kernel panic on the module load error path.\n\nFix by moving drmm_cgroup_register_region() to after the list and buddy\nallocator are fully initialized, so the teardown path is safe to run.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89828"
+      "description": "In Concrete CMS before 9.5.3, the SEO Bulk Update Meta Tags editor did not check per-page edit permissions before saving. The saveRecord() action validated the per-page CSRF token but never called canEditPageProperties() for the target page, so a user who was granted access to the bulk SEO tool and could view (but not edit) a given page was able to change that page's meta title, meta description, and URL handle outside their edit scope, tampering with the presentation and live URLs of otherwise protected content.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 2.1 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Andrew Gonzalez for reporting.",
+      "last_modified": "2026-09-18T15:28:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81923"
     },
     {
-      "cve_id": "CVE-2026-89829",
-      "asset_id": "CVE-2026-89829",
+      "cve_id": "CVE-2026-81920",
+      "asset_id": "CVE-2026-81920",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix to pass folio->index to f2fs_sanity_check_node_footer()\n\nOtherwise in f2fs_sanity_check_node_footer(), it will check the\nsame nid incorrectly.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89829"
+      "description": "Concrete CMS below 9.5.3 was vulnerable to Cross-Site Request Forgery in the dashboard SEO Excluded Words page. The reset() controller action cleared the administrator-configured reserved-word list (concrete.seo.exclude_words) but did not validate the anti-CSRF token that the reset modal emitted, and it did not restrict the request to the POST method. A remote attacker who lured an authenticated user with SEO access to a crafted page could revert the reserved-word list to its default and silently alter future URL-slug generation for pages, files, topics, and other objects created through the Text urlify service, undoing the site's configured SEO slug policy.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 2.3 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks riodrwn for reporting.",
+      "last_modified": "2026-09-18T15:27:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81920"
     },
     {
-      "cve_id": "CVE-2026-89830",
-      "asset_id": "CVE-2026-89830",
+      "cve_id": "CVE-2026-23927",
+      "asset_id": "CVE-2026-23927",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix valid block count leak on data block allocation failure\n\nIn __allocate_data_block(), when allocating a new data block\n(dn->data_blkaddr == NULL_ADDR), inc_valid_block_count() is\ncalled first to increment total_valid_block_count and i_blocks.\nIf the subsequent f2fs_allocate_data_block() fails, the function\nreturns the error directly without rolling back the\nalready-incremented block counts, causing a permanent leak.\n\nFix this by calling dec_valid_block_count() to undo the\nincrement before returning the error. The condition\nold_blkaddr == NULL_ADDR precisely identifies the case where\ninc_valid_block_count() was called.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89830"
+      "description": "A user able to connect to Agent 2 can inject an Oracle TNS connection string via the 'service' parameter. This can lead to Agent 2 connecting to an attacker-controlled server and leaking Oracle database credentials if they are saved in a named session.",
+      "last_modified": "2026-09-18T15:26:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-23927"
     },
     {
-      "cve_id": "CVE-2026-89834",
-      "asset_id": "CVE-2026-89834",
+      "cve_id": "CVE-2026-81919",
+      "asset_id": "CVE-2026-81919",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix to migrate all curseg types during free_segment_range\n\nIn free_segment_range(), the curseg evacuation loop only iterates up to\nNR_CURSEG_PERSIST_TYPE (0..5), missing non-persistent in-memory curseg\ntypes such as CURSEG_COLD_DATA_PINNED and CURSEG_ALL_DATA_ATGC.\n\nEven though these in-memory curseg types are not saved in the on-disk\ncheckpoint header, they still occupy active physical segments at runtime.\nIf an active in-memory curseg happens to be allocated within the segment\nrange being truncated during filesystem shrink, failing to evacuate it\nwill cause subsequent writes to the curseg attempting out-of-bounds I/O\non the truncated storage range.\n\nFix this by expanding the curseg evacuation loop upper bound to\nNR_CURSEG_TYPE to ensure all active curseg types are safely migrated\nout of the target range.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89834"
+      "description": "Concrete CMS below 9.5.3 did not validate an anti-CSRF token on the block-arrangement backend endpoint (the arrange() action of Concrete\\Controller\\Backend\\Page\\ArrangeBlocks). The action enforced page-edit authorization but performed no token check, and its route accepted any HTTP method, so an attacker could induce a signed-in content editor into loading an attacker-controlled page that auto-submitted a cross-site request and reordered or moved blocks in the draft version of a page the victim was permitted to edit. The default null cookie SameSite configuration let the victim's session cookie accompany the forged request.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 2.3 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Yonatan Drori from Tenzai for reporting.",
+      "last_modified": "2026-09-18T15:26:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81919"
     },
     {
-      "cve_id": "CVE-2026-89835",
-      "asset_id": "CVE-2026-89835",
+      "cve_id": "CVE-2026-81916",
+      "asset_id": "CVE-2026-81916",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: avoid NULL checkpoint thread access in sysfs\n\ncheckpoint_merge can be enabled even when no checkpoint merge thread is\nrunning. A read-only mount is one case: f2fs does not start\nf2fs_issue_ckpt there, but ckpt_thread_ioprio is still writable through\nsysfs.\n\nThe ckpt_thread_ioprio store path updates the saved ioprio value and,\nwhen checkpoint_merge is enabled, calls set_task_ioprio() for the\ncheckpoint thread. If cprc->f2fs_issue_ckpt is NULL, that dereferences a\nNULL task pointer.\n\nProtect ckpt_thread_ioprio sysfs writes with s_umount as well, so the\ncheckpoint thread cannot disappear under the store path while updating\nits ioprio.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89835"
+      "description": "Concrete CMS before 9.5.3 evaluated the authorization check for an Express entry submission against the entity of the posted form rather than the entity identified by the dashboard route. As a result, a user permitted to add entries to one Express object could create entries in a different Express object outside their authorization scope, potentially polluting protected datasets, triggering workflows, or injecting content into administrative processes. The dashboard submit route resolved the mutated entity from the attacker-controlled route ID while the permission check validated the independently posted form's entity, and the submission proceeded because the two entities were never compared.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 5.1 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Yonatan Drori from Tenzai\u00a0for reporting.",
+      "last_modified": "2026-09-18T15:23:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81916"
     },
     {
-      "cve_id": "CVE-2026-89837",
-      "asset_id": "CVE-2026-89837",
+      "cve_id": "CVE-2025-14754",
+      "asset_id": "CVE-2025-14754",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix dentry folio leak in find_in_level\n\nfind_in_level() gets a dentry folio with f2fs_find_data_folio() before\ncalling find_in_block().  If find_in_block() returns an error, the\nfunction stores the error in res_folio and breaks out of the loop without\ndropping the dentry folio.\n\nThis leaks the folio reference on the find_in_block() error path.  Drop\nthe dentry folio before returning the error to the caller.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89837"
+      "description": "IBM Cloud Pak for Data 5.1.2 could allow an authenticated user to execute arbitrary commands with elevated privileges on the system due to improper validation of user supplied input.",
+      "last_modified": "2026-09-18T15:20:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14754"
     },
     {
-      "cve_id": "CVE-2026-89847",
-      "asset_id": "CVE-2026-89847",
+      "cve_id": "CVE-2026-75031",
+      "asset_id": "CVE-2026-75031",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Avoid double completion in async IOCB timeout\n\nqla2x00_async_iocb_timeout() tries to abort a timed-out async IOCB. When\nqla24xx_async_abort_cmd() fails, both the SRB_LOGIN_CMD path and the\nSRB_CTRL_VP/default path scan outstanding_cmds[] for the SRB and then\ncall sp->done(sp, QLA_FUNCTION_TIMEOUT) unconditionally, without checking\nwhether the SRB was actually found and removed.\n\nIf the response ISR completes the same handle first, it removes the SRB\nunder qp_lock_ptr and runs sp->done() -> complete(sp->comp). The\nsubmitter qla24xx_control_vp() wakes from wait_for_completion(), clears\nsp->comp, drops its reference and returns, reclaiming the on-stack\ncompletion. The timer reference keeps the SRB alive across the timeout\nhandler, but not the submitter's stack. The timeout then issues a second\nsp->done() -> qla_ctrlvp_sp_done(), which evaluates \"if (sp->comp)\ncomplete(sp->comp)\"; with the pointer loaded before the submitter's NULL\nstore, complete() writes into the freed stack frame, a use-after-free.\n\nTrack whether this path removed the SRB from outstanding_cmds and only\ncall sp->done() when it did, so the command is completed exactly once by\nwhichever path owns it. This mirrors the sp_found guard already used in\nqla24xx_abort_iocb_timeout().",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89847"
+      "description": "In the interchange/interchange project, a critical remote code execution (RCE) vulnerability was found in the \n\u201cquick question\u201d admin feature. In default installations arbitrary Perl \ncode can be injected and executed server-side by unauthenticated users. \nThe Perl code normally runs within a Safe container which limits the \nscope of what it can do, unless the non-default AllowGlobal directive is\n configured for the catalog being accessed.CTOR]",
+      "last_modified": "2026-09-18T15:20:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75031"
     },
     {
-      "cve_id": "CVE-2026-89848",
-      "asset_id": "CVE-2026-89848",
+      "cve_id": "CVE-2025-14753",
+      "asset_id": "CVE-2025-14753",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Quiesce response IRQ before freeing request queue\n\nqla2xxx_delete_qpair() deletes the request queue before the response\nqueue. qla25xx_delete_req_que() frees the request queue memory\n(kfree(req) in qla25xx_free_req_que()), but the response-queue MSI-X is\nonly released later, in qla25xx_free_rsp_que(). In that window the\nresponse interrupt can still fire, qla2xxx_msix_rsp_q() queues\nqpair->q_work, and qla_do_work() -> qla24xx_process_response_queue()\ndereferences the now-freed rsp->req (LOGINOUT/CT/ELS entries and the\nstatus path), a use-after-free.\n\nThe cancel_work_sync() added for the qpair teardown lives in the\nresponse free path, which runs after the request queue is already freed,\nso it does not protect rsp->req.\n\nRelease the response-queue interrupt and flush qpair->q_work before\ndeleting the request queue, so no late completion can reach the freed\nrequest queue. Clearing have_irq makes the subsequent\nqla25xx_free_rsp_que() skip its free_irq(), and the firmware\nqueue-delete order (request then response) is preserved; the\nrequest-delete mailbox completes on the default vector and is unaffected\nby dropping the qpair response interrupt early.",
-      "last_modified": "2026-09-18T09:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89848"
+      "description": "IBM Cloud Pak for Data 5.1.2 could allow a remote attacker to traverse directories on the system. An attacker could send a specially crafted URL request containing \"dot dot\" sequences (/../) to view arbitrary files on the system.",
+      "last_modified": "2026-09-18T15:20:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14753"
     },
     {
-      "cve_id": "CVE-2026-85544",
-      "asset_id": "CVE-2026-85544",
+      "cve_id": "CVE-2026-81946",
+      "asset_id": "CVE-2026-81946",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Some Hikvision intercom products utilize an immutable factory value which should be obtained from local network or physical interaction with the device within their main card, which may allow attackers to forge a legitimate main card, thereby gaining the permission to issue cards.",
-      "last_modified": "2026-09-18T09:39:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85544"
+      "description": "PLANET IGS-5225-8P2T4S industrial managed switch V1 and V2 firmware versions before 1.2412b260707 and 2.2412b260519 use MD5-based password hashing, a cryptographic algorithm with known weaknesses. An attacker who obtains the device configuration file can recover the privileged-mode access password.",
+      "last_modified": "2026-09-18T15:19:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81946"
     },
     {
-      "cve_id": "CVE-2026-87743",
-      "asset_id": "CVE-2026-87743",
+      "cve_id": "CVE-2026-69568",
+      "asset_id": "CVE-2026-69568",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Quarkus HTTP security. An unauthenticated attacker can exploit a discrepancy in how paths are normalized between the security matcher and HTTP request dispatchers. This allows the attacker to craft a URL that the security matcher considers public, but which is then routed to a protected endpoint, leading to an authorization bypass and potential unauthorized access to sensitive information.",
-      "last_modified": "2026-09-18T09:38:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87743"
+      "description": "Out-of-bounds read in Windows Storage Spaces Controller allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-09-18T15:19:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69568"
     },
     {
-      "cve_id": "CVE-2026-15579",
-      "asset_id": "CVE-2026-15579",
+      "cve_id": "CVE-2026-81945",
+      "asset_id": "CVE-2026-81945",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds write vulnerability exists in some of the Ethernet switches because of improper validation of the username field length during Web login processing. This may allow a remote attacker to submit a specially crafted overly long input, triggering a buffer overflow that can cause the authentication process to crash and result in a Denial of Service (DoS) attack.",
-      "last_modified": "2026-09-18T09:32:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15579"
+      "description": "PLANET IGS-5225-8P2T4S industrial managed switch V1 and V2 firmware versions bfore 1.2412b260707 and 2.2412b260519 contain a stack-based buffer overflow in the web server. Insufficient bounds checking on data copied into a stack buffer allows a remote administrator to cause a denial of service or potentially execute arbitrary code on the underlying operating system.",
+      "last_modified": "2026-09-18T15:19:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81945"
     },
     {
-      "cve_id": "CVE-2026-89796",
-      "asset_id": "CVE-2026-89796",
+      "cve_id": "CVE-2026-23928",
+      "asset_id": "CVE-2026-23928",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmm/damon/core: avoid infinite kdamond_merge_regions() internal loop\n\nPatch series \"mm/damon: unurgent fixes for infinite loop, NULL de-ref and\nraces\", v1.1.\n\nSashiko found a few issues in DAMON that could cause infinite loop, NULL\ndereference and monitoring results degradation.  The first two sounds\nscary but the infinite loop happens only under unreasonable user setup. \nThe NULL dereference is only in a unit test.  Monitoring results\ndegradation is trivial since it is only best-effort, and those happens\nfrom only unlikely races.  Still those are bugs that better to fix if\npossible.  Fix those.\n\n\nThis patch (of 6):\n\nDue to online parameter update like events, the number of DAMON regions\ncould be higher than the user-set upper limit.  kdamond_merge_regions()\nrepeats merge regions until the number meets the limit, while doubling the\nmerge threshold up to the theoretical maximum threshold.  It is tried only\nup to the theoretical maximum threshold because even the aggressive\nmerging can fail from reducing the number of regions under the\nuser-defined upper limit.  For example, there could be many user-defined\nnon-contiguous regions that cannot be merged.\n\nThe threshold based loop break condition is evaluated by comparing the\nthreshold for the next merging try against the theoretical maximum\nthreshold.  If max_thres is larger than UINT_MAX / 2, doubling the\nthreshold could make it overflow, and bypass the loop break condition.  In\nthe case, if the number of regions cannot be reduced under the upper limit\nlike explained above, the loop will run infinitely.\n\nPrevent the case by doing the break condition check before doubling the\nthreshold.  Also, prevent the threshold exceeding the maximum threshold,\nas it could overflow and apply the wrong merge threshold.\n\nThis issue is unlikely to occur in real world, since having the max_thres\nhigher than UINT_MAX / 2 require unrealistically large aggregation\nintervals compared to the sampling interval.  Also, it requires an\nunrealistically large number of uncontiguous regions setup.  Nonetheless,\nthe consequence is bad and the fix is simple.\n\nThe issue was discovered [1] by Sashiko.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89796"
+      "description": "The Item history widget (in Zabbix 7.0+) or the Plain text widget (in Zabbix 6.0) can execute injected JavaScript when HTML display is enabled. This can allow an attacker to perform unauthorized actions depending on which user opens a dashboard containing these widgets. The malicious JavaScript would have to come from a monitored host controlled by the attacker. Note: the Item history widget is a replacement for the Plain text widget since Zabbix 7.0.",
+      "last_modified": "2026-09-18T15:19:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-23928"
     },
     {
-      "cve_id": "CVE-2026-89803",
-      "asset_id": "CVE-2026-89803",
+      "cve_id": "CVE-2026-81917",
+      "asset_id": "CVE-2026-81917",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/nouveau: unsubscribe the channel-kill event before the fence context\n\nnouveau_channel_del() tears the fence context down first and only drops\nthe channel-kill subscription later, in the middle of the nvif object\nteardown:\n\n\tif (chan->fence)\n\t\tnouveau_fence(chan->cli->drm)->context_del(chan);\n\t...\n\tnvif_object_dtor(&chan->vram);\n\tnvif_event_dtor(&chan->kill);\n\nThe subscribed handler is nouveau_channel_killed(), which calls\nnouveau_channel_kill() and from there nouveau_fence_context_kill() on\nchan->fence. A kill event delivered in that window takes fctx->lock and\nwalks fctx->pending on a fence context that context_del() has already\nfreed.\n\nNothing reaches this below Fermi today, because the subscription is\ngated on FERMI_CHANNEL_GPFIFO and nothing kills a channel there. On\nFermi and newer the window is real but narrow, since a kill has to land\nexactly while the channel is being destroyed. That is reason enough on\nits own, which is why this carries a Fixes: tag. The last patch in this\nseries subscribes Tesla channels as well; nothing kills those today, so\nit does not widen the exposure now, but it is the groundwork for a\nrecovery path that would, and the ordering is better fixed before that\nlands than alongside it.\n\nDrop the subscription before anything it depends on is torn down.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89803"
+      "description": "Concrete CMS below 9.5.3 does not apply HTML output escaping to the file description and tags fields when rendering the Document Library block, so a user with permission to edit file properties could store a script payload that executed in the browser of any visitor to a page displaying the block with the description or tags column enabled, including unauthenticated visitors. Successful exploitation could allow theft of session data or actions performed in the visitor's context. The block controller returned the description and tags values without the h() escaping already applied to the title column, and the block view template wrote the returned value directly into the results table\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 5.1 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:L/VI:L/VA:N/SC:H/SI:H/SA:N. Thanks Nguyen Manh Thuan for reporting.",
+      "last_modified": "2026-09-18T15:18:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81917"
     },
     {
-      "cve_id": "CVE-2026-89805",
-      "asset_id": "CVE-2026-89805",
+      "cve_id": "CVE-2026-69574",
+      "asset_id": "CVE-2026-69574",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/pagemap: Fix folio allocation fallback and use-after-put\n\ndrm_pagemap_migrate_populate_ram_pfn() had two issues when populating\nRAM PFNs with higher-order folios:\n\n1. The higher-order vma_alloc_folio()/folio_alloc() calls did not pass\n   __GFP_NOWARN, so a THP allocation failure under memory pressure\n   would spam the kernel log, and there was no fallback path despite a\n   TODO comment stating one was needed. Add __GFP_NOWARN to the\n   higher-order allocation and, on failure, fall back to order-0\n   allocations for the entire range originally covered by the failed\n   higher-order allocation, leaving MIGRATE_PFN_COMPOUND unset for\n   those PFNs.\n\n2. In the free_pages error path, order was computed via\n   folio_order(page_folio(page)) *after* put_page(page) had already\n   dropped the reference, resulting in a use-after-free/put when that\n   was the last reference on the page. Compute order before releasing\n   the page.\n\nIntroducing the fallback in 1. also requires the source page array\nhanded to ->copy_to_ram() to be built differently. Both callers only\npopulated the entry at the head of each source folio, relying on the\ncopy callback to derive the rest of the folio from the order recorded\nin the matching drm_pagemap_addr. Once the destination has been demoted\nto order-0 folios the drm_pagemap_addr entries are per-page, so a source\npage is needed for every one of them; leaving them NULL makes the copy\ncallback stop after the first page and the remainder of the range is\nnever copied.\n\nThe source folio is only split later, by migrate_vma_pages() /\nmigrate_device_pages(), so its order cannot be used to detect the\ndemotion - test the destination for MIGRATE_PFN_COMPOUND instead. Factor\nthe array population out into drm_pagemap_migrate_populate_src_pages()\nand use it from both drm_pagemap_evict_to_ram() and\n__drm_pagemap_migrate_to_ram().",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89805"
+      "description": "Use after free in Windows Device Association Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-18T15:18:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69574"
     },
     {
-      "cve_id": "CVE-2026-89807",
-      "asset_id": "CVE-2026-89807",
+      "cve_id": "CVE-2026-81944",
+      "asset_id": "CVE-2026-81944",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdkfd: guard against NULL restore_mqd in CRIU queue restore\n\nBoth create_queue_cpsch() and create_queue_nocpsch() unconditionally\ncall mqd_mgr->restore_mqd() when a CRIU restore is in progress\n(qd != NULL), with no NULL guard. On any system where restore_mqd is\nnot implemented for the given queue type, a user holding\nCAP_CHECKPOINT_RESTORE can trigger a kernel NULL pointer dereference\nand panic the machine by issuing KFD_IOC_CRIU_OP_RESTORE with a\ncrafted queue restore object. Note that checkpoint_mqd is likewise\nunimplemented on GFX12, so no legitimate CRIU image can reach this\npath \u2014 only a hand-crafted restore payload.\n\nAdd a NULL guard for restore_mqd immediately after mqd_mgr is\nresolved, unwinding via the existing error labels and returning\n-EOPNOTSUPP if the callback is not implemented. This mirrors the\nexisting checkpoint_mqd guard in checkpoint_mqd().",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89807"
+      "description": "PLANET IGS-5225-8P2T4S industrial managed switch V1 and V2 firmware versions before 1.2412b260707 and 2.2412b260519 contain a stack-based buffer overflow in the web server. Insufficient bounds checking on data copied into a stack buffer allows a remote authenticated attacker to cause a denial of service or potentially execute arbitrary code on the underlying operating system.",
+      "last_modified": "2026-09-18T15:18:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81944"
     },
     {
-      "cve_id": "CVE-2026-89811",
-      "asset_id": "CVE-2026-89811",
+      "cve_id": "CVE-2026-81943",
+      "asset_id": "CVE-2026-81943",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdkfd: Add TLB flush after MES queue eviction/suspension\n\nMES (Micro Engine Scheduler) does not perform heavy-weight TLB\ninvalidation after unmapping queues, unlike HWS which does this\nautomatically. This causes a race condition where in-flight DMA\ndescriptors can access memory that has been unmapped, leading to page\nfaults and GPU queue hangs during SVM page migration.\n\nThe issue manifests as KFDSVMRangeTest.MultiThreadMigrationTest\nfailures on gfx1151 (Strix Point) with XNACK mode 1 enabled - the GPU\ncompute queue hangs with packets submitted but never consumed.\n\nAdd kfd_flush_tlb() calls after MES queue removal in two locations:\n- evict_process_queues_cpsch(): after all queues removed during eviction\n- suspend_queues(): after debug/criu queue suspension (with mem_fence barrier)\n\nThis ensures all in-flight memory accesses from unmapped queues are\nflushed before memory is freed or migrated.\n\n(cherry picked from commit f5c4f88e0f9c45a8fb9dfac0c1df726c95e41b77)",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89811"
+      "description": "PLANET IGS-5225-8P2T4S industrial managed switch V1 and V2 firmware versions before 1.2412b260707 and 2.2412b260519 contain active debug functionality in the embedded software. An attacker with privileged access to the device can enable this debug mode to execute arbitrary code on the underlying operating system and gain root-level access.",
+      "last_modified": "2026-09-18T15:17:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81943"
     },
     {
-      "cve_id": "CVE-2026-89849",
-      "asset_id": "CVE-2026-89849",
+      "cve_id": "CVE-2026-69585",
+      "asset_id": "CVE-2026-69585",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Reject non-SCSI SRB on status IOCB fast path\n\nqla2x00_status_entry() filters out non-TYPE_SRB entries and the\nSRB_NVME_CMD, SRB_BIDI_CMD and SRB_TM_CMD types, then falls through to a\nSCSI fast path that assumes the command is an SRB_SCSI_CMD. The first\nthing on that path, qla_chk_edif_rx_sa_delete_pending(), and the\nsubsequent handling both evaluate GET_CMD_SP(sp), i.e. sp->u.scmd.cmd.\n\nThe srb u union overlays the SCSI command pointer with other command\nlayouts (bsg_job, iocb_cmd). If firmware delivers an unexpected\nSTATUS_TYPE IOCB for a non-SCSI handle, sp->u.scmd.cmd can read as a\nnon-NULL garbage pointer, bypassing the NULL checks in\nqla_chk_edif_rx_sa_delete_pending() and at the cp == NULL test, and\nleading to a wild pointer dereference.\n\nReject any SRB whose type is not SRB_SCSI_CMD before entering the fast\npath. The outstanding_cmds slot is left untouched so a genuinely\nnon-SCSI command still completes through its proper handler.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89849"
+      "description": "Incorrect type conversion or cast in Microsoft Windows Search Component allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-09-18T15:17:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69585"
     },
     {
-      "cve_id": "CVE-2026-89850",
-      "asset_id": "CVE-2026-89850",
+      "cve_id": "CVE-2026-88622",
+      "asset_id": "CVE-2026-88622",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Don't query firmware state while chip is down\n\nqla2x00_fw_state_show() initializes rval to QLA_FUNCTION_FAILED and jumps\nto the out: label when the chip is down or EEH is busy. The out: block\nthen re-issued qla2x00_get_firmware_state() because rval != QLA_SUCCESS,\ndefeating the chip-down/EEH-busy guards and issuing a mailbox command\n(outside optrom_mutex) during ISP reset or PCI error recovery, which can\nhang the adapter. It also turned a normal in-lock mailbox failure into a\nsecond unsynchronized mailbox attempt.\n\nMake the out: fallback only mark the firmware state as unknown. The\nmailbox is now issued at most once, inside optrom_mutex, and only when\nthe chip is up and not EEH-busy.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89850"
+      "description": "NUUO Network Video Recorder 2.0.0 is vulnerable to Command Injection in handle_import_privilege.php.",
+      "last_modified": "2026-09-18T15:17:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88622"
     },
     {
-      "cve_id": "CVE-2026-89856",
-      "asset_id": "CVE-2026-89856",
+      "cve_id": "CVE-2026-87886",
+      "asset_id": "CVE-2026-87886",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Clamp MSI-X derived queue counts to avoid truncation\n\nha->msix_count is u16, but ha->max_req_queues, ha->max_rsp_queues and\nha->max_qpairs are u8. Deriving the queue count as\n\"ha->max_req_queues = ha->msix_count - 1\" therefore truncates: a board\n(or a misconfigured/malicious hot-plugged device) advertising 257 MSI-X\nvectors yields msix_count - 1 == 256, which truncates to 0. An MSI-X\ncount of 1 zeroes it as well, and in target mode the subsequent\n\"ha->max_req_queues--\" then underflows 0 to 255.\n\nWhen the count is 0, qla2x00_alloc_queues() calls\nkzalloc_objs(struct req_que *, 0), which returns ZERO_SIZE_PTR. That is\nnot NULL, so the allocation check passes and the following\n\"ha->req_q_map[0] = req\" dereferences ZERO_SIZE_PTR, corrupting memory\nor crashing the kernel.\n\nAdd qla_calc_queue_count() to clamp the derived value into\n[1, QLA_MAX_QUEUES - 1] so it always fits in u8 and is never zero, and\nuse it at all three derivation sites (qla25xx_iospace_config(),\nqla83xx_iospace_config() and qla24xx_enable_msix()). Also guard the\ntarget-mode decrement so it cannot reintroduce a zero (which would in\nturn underflow max_qpairs).",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89856"
+      "description": "Local privilege escalation due to insecure file permissions. The following products are affected: Acronis Backup plugin for cPanel & WHM (Linux) before build 1.9.3.1021, Acronis Backup extension for Plesk (Linux) before build 1.8.11.638, Acronis Backup plugin for DirectAdmin (Linux) before build 1.2.3.238.",
+      "last_modified": "2026-09-18T15:17:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87886"
     },
     {
-      "cve_id": "CVE-2026-89857",
-      "asset_id": "CVE-2026-89857",
+      "cve_id": "CVE-2026-87267",
+      "asset_id": "CVE-2026-87267",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Hold qpair lock when sending NVMe LS reject\n\nqla_nvme_ls_reject_iocb() allocates from and advances the request ring\nthrough __qla2x00_alloc_iocbs() (which assumes the hardware_lock is\nheld) and qla2x00_start_iocbs() (which advances the ring and rings the\nrequest-in doorbell), but takes no lock itself. Two of its callers\ninvoke it without the producer lock held:\n\n - qla_nvme_xmt_ls_rsp(), the NVMe-FC .xmt_ls_rsp transport callback, on\n   its error path, and\n\n - qla2xxx_process_purls_pkt(), run from the purex work/DPC context.\n\nBoth use ha->base_qpair, whose qp_lock_ptr is hardware_lock, so they can\nrun concurrently with normal I/O submission on the base ring and corrupt\nthe ring producer state, leading to duplicated or dropped commands. The\nthird caller, qla2xxx_process_purls_iocb(), runs inside\nqla24xx_process_response_queue() with the qpair lock already held and is\nsafe; that is also why the lock cannot be taken inside the helper itself\n(it would recursively re-acquire hardware_lock on the response path).\n\nTake qp_lock_ptr around the two unlocked callers and document the helper\nas caller-locked. Both run in process context, so spin_lock_irqsave() is\nused and nothing in the locked region sleeps.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89857"
+      "description": "Vulnerability in the Oracle VM VirtualBox product of Oracle Virtualization (component: Core).   The supported version that is affected is 7.2.16. Difficult to exploit vulnerability allows low privileged attacker with network access via RDP to compromise Oracle VM VirtualBox.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle VM VirtualBox. CVSS 3.1 Base Score 5.3 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-09-18T15:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87267"
     },
     {
-      "cve_id": "CVE-2026-89861",
-      "asset_id": "CVE-2026-89861",
+      "cve_id": "CVE-2026-87265",
+      "asset_id": "CVE-2026-87265",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Hold vport reference in qla24xx_report_id_acquisition()\n\nIn the format 1 path, the virtual port is located on ha->vp_list while\nholding vport_slock, but the lock is dropped before vp is used:\nqla_update_host_map() is called and VP_IDX_ACQUIRED/REGISTER_FC4_NEEDED/\nREGISTER_FDMI_NEEDED are set on vp. No reference is taken across that\nwindow, so a concurrent qla24xx_deallocate_vp_id() can tear the vport\ndown and free it, leading to a use-after-free.\n\nTake a vport reference (vref_count) under vport_slock when the matching\nvp is found, and drop it after the last use of\nvp. qla24xx_deallocate_vp_id() waits for vref_count to reach zero before\nunlinking and freeing the vport, so the pointer stays valid. This\nmatches the reference idiom already used by the other ha->vp_list\ntraversals.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89861"
+      "description": "Vulnerability in the Oracle Purchasing product of Oracle E-Business Suite (component: Other issue).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Purchasing.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Purchasing accessible data as well as  unauthorized access to critical data or complete access to all Oracle Purchasing accessible data. CVSS 3.1 Base Score 8.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-18T15:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87265"
     },
     {
-      "cve_id": "CVE-2026-89873",
-      "asset_id": "CVE-2026-89873",
+      "cve_id": "CVE-2026-53266",
+      "asset_id": "CVE-2026-53266",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: v4l2-ctrls: validate HEVC EXT SPS RPS counts\n\nThe HEVC SPS control carries the short-term and long-term RPS counts\nthat decoder drivers use to walk the matching EXT SPS dynamic arrays.\nReject SPS values that exceed the HEVC limits of 64 short-term sets and\n32 long-term references so drivers cannot later index beyond those\ncontrols.\n\nAlso reject EXT SPS ST RPS entries whose negative or positive picture\ncounts exceed the 16-entry arrays, or whose combined delta-POC count\nexceeds the HEVC DPB maximum.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89873"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: bridge: make ebt_snat ARP rewrite writable\n\nThe ebtables SNAT target keeps the Ethernet source address rewrite\nbehind skb_ensure_writable(skb, 0).  This is intentional: at the bridge\nebtables hooks the Ethernet header is addressed through\nskb_mac_header()/eth_hdr(), while skb->data points at the Ethernet\npayload.  Asking skb_ensure_writable() for ETH_HLEN bytes would check\nthe payload, not the Ethernet header, and would reintroduce the small\npacket regression fixed by commit 63137bc5882a.\n\nHowever, the optional ARP sender hardware address rewrite is different.\nIt writes through skb_store_bits() at an offset relative to skb->data:\n\n        skb_store_bits(skb, sizeof(struct arphdr), info->mac, ETH_ALEN)\n\nskb_header_pointer() only safely reads the ARP header; it does not make\nthe later sender hardware address range writable.  If that range is\nstill held in a nonlinear skb fragment backed by a splice-imported file\npage, skb_store_bits() maps the frag page and copies the new MAC address\ndirectly into it.\n\nEnsure the ARP SHA range is writable before reading the ARP header and\nbefore calling skb_store_bits().",
+      "last_modified": "2026-09-18T15:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53266"
     },
     {
-      "cve_id": "CVE-2026-89893",
-      "asset_id": "CVE-2026-89893",
+      "cve_id": "CVE-2025-39964",
+      "asset_id": "CVE-2025-39964",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: cx23885: cancel NetUP CI work before teardown\n\nnetup_ci_exit() frees a netup_ci_state while its work item,\nnetup_read_ci_status(), may still be pending or running on the system\nworkqueue. The worker obtains the state with container_of() and\ndereferences it, so it must not outlive the state.\n\nnetup_ci_init() queues the initial status read, and CI GPIO interrupts\nsubsequently queue the same work from netup_ci_slot_status(). During\nremove, cx23885_finidev() calls free_irq() before the CI device is\nunregistered. free_irq() prevents further IRQ handlers from running,\nbut does not drain work queued previously, so the worker can run after\nnetup_ci_exit() frees the state.\n\nCall cancel_work_sync() before dvb_ca_en50221_release() and kfree().\n\nThis issue was found by an in-house static analysis tool.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89893"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncrypto: af_alg - Disallow concurrent writes in af_alg_sendmsg\n\nIssuing two writes to the same af_alg socket is bogus as the\ndata will be interleaved in an unpredictable fashion.  Furthermore,\nconcurrent writes may create inconsistencies in the internal\nsocket state.\n\nDisallow this by adding a new ctx->write field that indiciates\nexclusive ownership for writing.",
+      "last_modified": "2026-09-18T15:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-39964"
     },
     {
-      "cve_id": "CVE-2026-89895",
-      "asset_id": "CVE-2026-89895",
+      "cve_id": "CVE-2026-42503",
+      "asset_id": "CVE-2026-42503",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: cobalt: Avoid freeing ALSA private data twice\n\nsnd_cobalt_card_create() stores cobsc in sc->private_data and installs\nsnd_cobalt_card_private_free() as sc->private_free. From that point,\nsnd_card_free(sc) releases cobsc through the ALSA card cleanup path.\n\nIf cobalt_alsa_init() fails after snd_cobalt_card_create(), the\nerr_exit_free path calls snd_card_free(sc) and then kfree(cobsc). That\nsecond free releases the same object again.\n\nRemove the explicit kfree(cobsc) and leave ownership with the ALSA card.\n\nThis issue was found by a static analysis checker and confirmed by\nmanual source review.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89895"
+      "description": "gopls by default communicates via pipe. However, -port and -listen flags are supported as means of debugging.\nIf -listen is given a value without an explicit host (e.g. :8080), or -port is used, gopls will listen on 0.0.0.0.\u00a0\nAs a result, users might\u00a0inadvertently cause gopls to bind 0.0.0.0.\nThis can allow a\u00a0malicious party on the same network to execute code arbitrarily via gopls.",
+      "last_modified": "2026-09-18T15:16:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42503"
     },
     {
-      "cve_id": "CVE-2026-89897",
-      "asset_id": "CVE-2026-89897",
+      "cve_id": "CVE-2026-81927",
+      "asset_id": "CVE-2026-81927",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: cec: Serialize exclusive follower delivery\n\ncec_receive_notify() reads the exclusive follower pointer without the\nadapter lock. Serialize the no-follower check and message delivery\nagainst mode changes and release.",
-      "last_modified": "2026-09-18T09:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89897"
+      "description": "Concrete CMS before 9.5.3 contained a stored cross-site scripting vulnerability in SVG file handling. When SVG processing was set to the non-default \"Reject files containing potentially harmful elements\" mode (concrete.file_manager.images.svg_sanitization.action = reject), uploaded SVGs were checked only against a small built-in blocklist covering the script element and on* event-handler attributes; the broader enshrined/svg-sanitize pass still ran, but its result was discarded, so vectors it would have stripped, such as a javascript: URI in an xlink:href, were stored unmodified and executed when the file was opened directly. A user able to upload files could thereby run arbitrary JavaScript in the browser of any user who viewed the file. The default sanitize mode was not affected.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 1.8 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Oriol Ortiz for reporting.",
+      "last_modified": "2026-09-18T15:15:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81927"
     },
     {
-      "cve_id": "CVE-2026-81736",
-      "asset_id": "CVE-2026-81736",
+      "cve_id": "CVE-2026-93531",
+      "asset_id": "CVE-2026-93531",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "If a BIND resolver has cached a tree of SVCB/HTTPS AliasMode records, and is then queried for the root of that tree, the resolver will spend disproportionate CPU time constructing the response.\nThis issue affects BIND 9 versions 9.18.0 through 9.18.50, 9.20.0 through 9.20.27, 9.21.0 through 9.21.25, 9.18.11-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.27-S1.",
-      "last_modified": "2026-09-18T09:30:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81736"
+      "description": "A weakness has been identified in gedelumbung HospitalManagement up to c2d45543789a3887067d3915f69d44cfc2cf76a8. This vulnerability affects unknown code. This manipulation causes cross-site request forgery. The attack may be initiated remotely. The exploit has been made available to the public and could be used for attacks. This product uses a rolling release model to deliver continuous updates. As a result, specific version information for affected or updated releases is not available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "last_modified": "2026-09-18T15:15:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93531"
     },
     {
-      "cve_id": "CVE-2026-87915",
-      "asset_id": "CVE-2026-87915",
+      "cve_id": "CVE-2026-83339",
+      "asset_id": "CVE-2026-83339",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Popup Maker \u2013 Boost Sales, Conversions, Optins, Subscribers with the Ultimate WP Popup Builder plugin for WordPress is vulnerable to Stored Cross-Site Scripting via values[Name] Parameter in all versions up to, and including, 1.24.0 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The wp_kses sanitization applied on output is insufficient in this context because HTML entities within allowed attribute values survive normalization intact and are later evaluated by the jQuery(link.attr('href')) sink in wp-admin/js/common.js when a contextual help tab anchor is clicked.",
-      "last_modified": "2026-09-18T09:28:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87915"
+      "description": "Vulnerability in the Oracle WebCenter Enterprise Capture product of Oracle Fusion Middleware (component: Client Bundle).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebCenter Enterprise Capture.  Successful attacks of this vulnerability can result in takeover of Oracle WebCenter Enterprise Capture. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83339"
     },
     {
-      "cve_id": "CVE-2026-15797",
-      "asset_id": "CVE-2026-15797",
+      "cve_id": "CVE-2026-83340",
+      "asset_id": "CVE-2026-83340",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Popup Maker \u2013 Boost Sales, Conversions, Optins, Subscribers with the Ultimate WP Popup Builder plugin for WordPress is vulnerable to Stored Cross-Site Scripting via post_title in all versions up to, and including, 1.24.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This requires the attacker to create a post with an HTML entity-encoded payload in the title, which bypasses sanitize_text_field on save and is later decoded and executed by the browser when rendered by the Select2 component.",
-      "last_modified": "2026-09-18T09:28:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15797"
+      "description": "Vulnerability in the Oracle Identity Manager product of Oracle Fusion Middleware (component: Security).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Identity Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Identity Manager. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83340"
     },
     {
-      "cve_id": "CVE-2026-90884",
-      "asset_id": "CVE-2026-90884",
+      "cve_id": "CVE-2026-83344",
+      "asset_id": "CVE-2026-83344",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WP Recipe Maker plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'notes' parameter in all versions up to, and including, 10.8.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with Contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
-      "last_modified": "2026-09-18T09:28:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90884"
+      "description": "Vulnerability in the Oracle Identity Manager Connector product of Oracle Fusion Middleware (component: Database Application Table).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle Identity Manager Connector.  Successful attacks of this vulnerability can result in takeover of Oracle Identity Manager Connector. CVSS 3.1 Base Score 7.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83344"
     },
     {
-      "cve_id": "CVE-2026-18405",
-      "asset_id": "CVE-2026-18405",
+      "cve_id": "CVE-2026-83353",
+      "asset_id": "CVE-2026-83353",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Jeg Kit for Elementor \u2013 Powerful Addons for Elementor, Widgets & Templates for WordPress plugin for WordPress is vulnerable to Stored Cross-Site Scripting via Comment Content in all versions up to, and including, 3.2.16 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Successful exploitation requires that the targeted post also renders a legitimate Jeg Kit Countdown widget, which causes the countdown frontend script to be enqueued and to initialize on any matching DOM element \u2014 including forged widget markup stored in comments.",
-      "last_modified": "2026-09-18T09:28:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18405"
+      "description": "Vulnerability in the Oracle WebCenter Content product of Oracle Fusion Middleware (component: Content Server).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle WebCenter Content executes to compromise Oracle WebCenter Content.  Successful attacks of this vulnerability can result in takeover of Oracle WebCenter Content. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83353"
     },
     {
-      "cve_id": "CVE-2026-89058",
-      "asset_id": "CVE-2026-89058",
+      "cve_id": "CVE-2026-83415",
+      "asset_id": "CVE-2026-83415",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in RESTEasy's CorsFilter, which, when configured to allow all origins (\"*\"), reflects the request's Origin header back in the Access-Control-Allow-Origin response together with Access-Control-Allow-Credentials: true. This permissive cross-origin policy allows a malicious website to make credentialed cross-origin requests and read authenticated responses from a victim's session, resulting in a loss of confidentiality.",
-      "last_modified": "2026-09-18T09:19:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89058"
+      "description": "Vulnerability in the Oracle Coherence product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Coherence.  Successful attacks of this vulnerability can result in takeover of Oracle Coherence. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83415"
     },
     {
-      "cve_id": "CVE-2026-75157",
-      "asset_id": "CVE-2026-75157",
+      "cve_id": "CVE-2026-83429",
+      "asset_id": "CVE-2026-83429",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Apache Airflow's asset queued-events DELETE endpoints checked the caller's Dag-axis permission with `READ` instead of `EDIT`. Any authenticated user who could read a Dag could therefore delete that Dag's queued asset events, silently suppressing asset-triggered scheduling for it \u2014 a state-changing action gated on a read-only permission. Deployments are affected whenever asset-triggered scheduling is in use and Dag read access is granted more widely than Dag edit access, which is the normal RBAC arrangement; no special configuration is required. Upgrade to apache-airflow 3.3.2 or later.",
-      "last_modified": "2026-09-18T09:16:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75157"
+      "description": "Vulnerability in the Oracle Demand Signal Repository product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Demand Signal Repository.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Demand Signal Repository accessible data as well as  unauthorized access to critical data or complete access to all Oracle Demand Signal Repository accessible data. CVSS 3.1 Base Score 8.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83429"
     },
     {
-      "cve_id": "CVE-2025-10072",
-      "asset_id": "CVE-2025-10072",
+      "cve_id": "CVE-2026-83462",
+      "asset_id": "CVE-2026-83462",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in Portabilis i-Educar up to 2.10. This issue affects some unknown processing of the file /matricula/[ID_STUDENT]/enturmar/. Performing a manipulation results in improper access controls. It is possible to initiate the attack remotely. The exploit has been made public and could be used. Upgrading to version 2.11.0 is capable of addressing this issue. It is suggested to upgrade the affected component. The vendor confirms: \"The reported attack vector was tested against the corrected code, and the previously described improper access control behavior could no longer be reproduced.\"",
-      "last_modified": "2026-09-18T09:16:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-10072"
+      "description": "Vulnerability in the Oracle Mobile Application Server product of Oracle E-Business Suite (component: MWA Terminal Server).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via TCP to compromise Oracle Mobile Application Server.  Successful attacks of this vulnerability can result in takeover of Oracle Mobile Application Server. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83462"
     },
     {
-      "cve_id": "CVE-2026-89813",
-      "asset_id": "CVE-2026-89813",
+      "cve_id": "CVE-2026-87138",
+      "asset_id": "CVE-2026-87138",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: force complete the KIQ ring fences on reset\n\nLike the MES scheduler ring, the KIQ ring sets no_scheduler = true and uses a\npolling fence, so it is skipped by the force-completion loop in\namdgpu_device_pre_asic_reset(). Its hw fence value lives in wb (GTT) memory and\nsurvives a MODE1 reset while fence_drv.sync_seq keeps advancing, so after a\nreset the first KIQ submission can poll forever on a seq that is never written\nback.\n\nForce complete the KIQ ring fences too so their hw fence is realigned to\nsync_seq.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89813"
+      "description": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via SOAP to compromise Oracle Hyperion Data Relationship Management.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle Hyperion Data Relationship Management. CVSS 3.1 Base Score 7.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87138"
     },
     {
-      "cve_id": "CVE-2026-89814",
-      "asset_id": "CVE-2026-89814",
+      "cve_id": "CVE-2026-87148",
+      "asset_id": "CVE-2026-87148",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: clamp the isolation index for rings outside a partition\n\nadev->isolation[] has one slot per partition, but a ring that is not\nassigned to one keeps AMDGPU_XCP_NO_PARTITION, which is ~0, so indexing\nthe array with it is out of bounds. SDMA submissions hit this on both\nthe isolation enforcement and the VM flush path and trip UBSAN.\n\nFall back to the first slot the way the cleaner shader path already\ndoes, and stop taking the address before the ring type check that makes\nit relevant.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89814"
+      "description": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Data Relationship Management.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle Hyperion Data Relationship Management. CVSS 3.1 Base Score 7.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87148"
     },
     {
-      "cve_id": "CVE-2026-89819",
-      "asset_id": "CVE-2026-89819",
+      "cve_id": "CVE-2026-87170",
+      "asset_id": "CVE-2026-87170",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/display: validate plane degamma LUT size for private color prop\n\nUnlike the CRTC degamma path, which is guarded by\namdgpu_dm_verify_lut_sizes(), the per-plane degamma LUT size was never\nvalidated before use. __set_dm_plane_degamma() passed the user-supplied\nsize straight into __is_lut_linear() and, for a non-linear LUT, into\n__set_input_tf() -> __drm_lut_to_dc_gamma(), the latter always iterating\nMAX_COLOR_LUT_ENTRIES entries regardless of the actual LUT size.\n\nA malformed AMD_PLANE_DEGAMMA_LUT blob (e.g. a single entry) could thus\ntrigger a divide-by-zero in __is_lut_linear() or an out-of-bounds read in\n__drm_lut_to_dc_gamma(). Reject any plane degamma LUT whose size does not\nmatch MAX_COLOR_LUT_ENTRIES, mirroring the invariant the code already\nasserts a few lines below (and which the CRTC path enforces).\n\nThe AMD_PLANE_DEGAMMA_LUT property is only exposed on builds with\nAMD_PRIVATE_COLOR defined.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89819"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Hyperion Financial Management accessible data as well as  unauthorized access to critical data or complete access to all Oracle Hyperion Financial Management accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87170"
     },
     {
-      "cve_id": "CVE-2026-89820",
-      "asset_id": "CVE-2026-89820",
+      "cve_id": "CVE-2026-87173",
+      "asset_id": "CVE-2026-87173",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/display: fix dc_lock leak on GPU reset error paths\n\nOn GPU reset, dm_suspend() takes dc_lock and leaves it for dm_resume()\nto drop. If amdgpu_dm_commit_zero_streams() or dm_dmub_hw_init() fails,\nthe function returns with the lock still held. The matching resume path\nis then skipped, so every later dc_lock take hangs.\n\nRelease the cached DC state and unlock before returning the error.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89820"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via TCP to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Hyperion Financial Management accessible data as well as  unauthorized access to critical data or complete access to all Oracle Hyperion Financial Management accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87173"
     },
     {
-      "cve_id": "CVE-2026-89821",
-      "asset_id": "CVE-2026-89821",
+      "cve_id": "CVE-2026-87175",
+      "asset_id": "CVE-2026-87175",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/display: avoid divide-by-zero in __is_lut_linear()\n\n__is_lut_linear() computes the expected value of each entry with\n\n\texpected = i * MAX_DRM_LUT_VALUE / (size - 1);\n\nIf it is ever called with a single-entry LUT, size - 1 is zero and the\nkernel takes a divide error (#DE). A LUT with fewer than two entries\ncannot describe a linear mapping anyway, so return false early instead\nof dividing by zero.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89821"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via TCP to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Hyperion Financial Management accessible data as well as  unauthorized access to critical data or complete access to all Oracle Hyperion Financial Management accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87175"
     },
     {
-      "cve_id": "CVE-2026-89822",
-      "asset_id": "CVE-2026-89822",
+      "cve_id": "CVE-2026-87176",
+      "asset_id": "CVE-2026-87176",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/i915: Guard against NULL driver_data in i915_pci_probe()\n\npci_match_device() can return the dummy pci_device_id_any entry\nwhen a device is force-bound via sysfs driver_override, in which\ncase ->driver_data is unset (NULL). i915_pci_probe() casts it to\nstruct intel_device_info * unconditionally and dereferences\nintel_info->require_force_probe, causing a NULL-ptr-deref.\n\n(cherry picked from commit 2727922084672cc274ecea726ea00363c2893731)",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89822"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via TCP to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Hyperion Financial Management accessible data as well as  unauthorized access to critical data or complete access to all Oracle Hyperion Financial Management accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87176"
     },
     {
-      "cve_id": "CVE-2026-89825",
-      "asset_id": "CVE-2026-89825",
+      "cve_id": "CVE-2026-87182",
+      "asset_id": "CVE-2026-87182",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/panthor: fix firmware control interface bounds checks\n\npanthor_init_cs_iface() and panthor_init_csg_iface() validate firmware\ncontrol interface offsets with 32-bit arithmetic and the size of the host\nwrapper structures. The offsets are derived from firmware-provided strides,\nso the arithmetic can wrap before the bounds check, and the host wrapper\nsize is not the size of the firmware control interface being mapped.\n\nUse 64-bit arithmetic for the computed offsets and validate against the\nactual firmware control interface structure sizes with subtraction-based\nbounds checks. Also validate that the shared section is large enough for\nthe global control interface before using it.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89825"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Hyperion Financial Management executes to compromise Oracle Hyperion Financial Management.  While the vulnerability is in Oracle Hyperion Financial Management, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Hyperion Financial Management. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87182"
     },
     {
-      "cve_id": "CVE-2026-89826",
-      "asset_id": "CVE-2026-89826",
+      "cve_id": "CVE-2026-87184",
+      "asset_id": "CVE-2026-87184",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/panthor: harden firmware build-info bounds checks\n\npanthor_fw_read_build_info() checks whether the metadata range fits in the\nfirmware image with hdr.meta_start + hdr.meta_size. Both fields are u32, so\nthe addition can wrap and let an out-of-bounds range pass validation.\n\nThe function also reads the \"git_sha: \" prefix without first checking that\nthe metadata is long enough, and meta_size == 0 can underflow the NULL\nterminator index.\n\nUse subtraction-based bounds checking and reject metadata that is too short\nto contain the expected prefix and trailing NULL byte.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89826"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via SQL to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in takeover of Oracle Hyperion Financial Management. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87184"
     },
     {
-      "cve_id": "CVE-2026-89827",
-      "asset_id": "CVE-2026-89827",
+      "cve_id": "CVE-2026-87188",
+      "asset_id": "CVE-2026-87188",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: avoid force-completing uninitialized UVD rings\n\nuvd_v7_0_sw_init() does not initialize the UVD decode ring for an\nSR-IOV VF. However, amdgpu_uvd_resume() unconditionally force-completes\nthe decode ring when restoring its fence sequence.\n\nSkip fence completion when the fence driver is not initialized.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89827"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in takeover of Oracle Hyperion Financial Management. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87188"
     },
     {
-      "cve_id": "CVE-2026-89853",
-      "asset_id": "CVE-2026-89853",
+      "cve_id": "CVE-2026-87190",
+      "asset_id": "CVE-2026-87190",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix FCE trace use-after-free during firmware dump\n\nqla2x00_free_fce_trace() freed and cleared ha->fce while holding only\nfce_mutex. The firmware-dump consumers qla27xx_fwdt_entry_t264() and\nqla25xx_copy_fce() read ha->fce (NULL check followed by a copy of the\nbuffer) under hardware_lock and never take fce_mutex. A debugfs FCE\ndisable could therefore free the DMA buffer between a dump's NULL check\nand its copy, resulting in a use-after-free.\n\nUnpublish ha->fce under hardware_lock, then release the lock and free\nthe DMA buffer (dma_free_coherent() may sleep). A concurrent dump either\ncompletes its check and copy with the buffer still valid, or observes\nha->fce == NULL and skips it.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89853"
+      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Hyperion Financial Management.  Successful attacks of this vulnerability can result in takeover of Oracle Hyperion Financial Management. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87190"
     },
     {
-      "cve_id": "CVE-2026-89855",
-      "asset_id": "CVE-2026-89855",
+      "cve_id": "CVE-2026-93382",
+      "asset_id": "CVE-2026-93382",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Serialize flash version read in reset handler\n\nThe \"update cache versions without reset\" sysfs reset operation (0x20261)\ncalls get_flash_version(), which reads hardware flash registers, without\nholding ha->optrom_mutex. The VPD update path serializes the same call\nunder optrom_mutex, so this reset path can interleave its flash register\naccesses with a concurrent VPD or optrom flash operation and corrupt the\nreads.\n\nHold ha->optrom_mutex across the get_flash_version() call to match the\nVPD update path.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89855"
+      "description": "Use after free in PDFium in Google Chrome prior to 153.0.8010.52 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-09-18T15:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93382"
     },
     {
-      "cve_id": "CVE-2026-89862",
-      "asset_id": "CVE-2026-89862",
+      "cve_id": "CVE-2026-81897",
+      "asset_id": "CVE-2026-81897",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix BSG job leak on validate flash image error path\n\nqla28xx_validate_flash_image() returns QLA_SUCCESS (0) unconditionally,\ntelling the FC BSG transport (fc_bsg_host_dispatch()) that the driver\nowns and will complete the request. But bsg_job_done() is guarded by \"if\n(!rval)\", so on the error path (rval == -EINVAL) neither the driver nor\nthe transport completes the job. The request dangles until it times out,\nleaking block layer resources.\n\nCommit c2c68225b145 (\"scsi: qla2xxx: Fix bsg_done() causing double\nfree\") added the \"if (!rval)\" guard to a batch of BSG handlers. That is\ncorrect for handlers that also return the error code (the transport then\ncompletes the job once via fail_host_msg), but this function returns\nQLA_SUCCESS unconditionally, so the guard turned a correct single\ncompletion into a leak.\n\nAlways call bsg_job_done(): bsg_reply->result is DID_OK and the error is\nreported in vendor_rsp[0], and since the function returns 0 the\ntransport will not complete the job a second time.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89862"
+      "description": "In Concrete CMS below CMS 9.5.3, the save_control action in the Express entities forms dashboard controller did not validate the anti-CSRF token. By causing an authenticated administrator to submit a forged cross-site request, a remote attacker without credentials could write attacker-controlled headline and body values to an existing Express form Text control. Those values were emitted without output encoding by the Express form Text element, so the injected markup executed as persistent JavaScript for any administrator who later opened the affected entry, resulting in stored cross-site scripting.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 7.7 with vector CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N. Thanks Yonatan Drori from Tenzai for reporting.",
+      "last_modified": "2026-09-18T15:14:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81897"
     },
     {
-      "cve_id": "CVE-2025-43936",
-      "asset_id": "CVE-2025-43936",
+      "cve_id": "CVE-2026-81942",
+      "asset_id": "CVE-2026-81942",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dell ObjectScale, versions prior to ObjectScale 4.4.0.0, contains an Improper Authentication vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43936"
+      "description": "PLANET IGS-5225-8P2T4S industrial managed switch V1 and V2 firmware versions before 1.2412b260707 and 2.2412b260519 contain an OS command injection vulnerability in the web server. User-supplied input is passed to system() without sufficient filtering, allowing a remote authenticated attacker to execute arbitrary commands on the underlying operating system and escalate privileges to root.",
+      "last_modified": "2026-09-18T15:13:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81942"
     },
     {
-      "cve_id": "CVE-2026-61595",
-      "asset_id": "CVE-2026-61595",
+      "cve_id": "CVE-2026-81896",
+      "asset_id": "CVE-2026-81896",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "djust provides Phoenix LiveView-style reactive server-side rendering for Django with Rust-powered performance. Prior to version 1.0.7, `djust.tenants` isolation was enforced only on the HTTP path. The current tenant was stored in `threading.local()` and set exclusively by the HTTP-only `TenantMiddleware`, so on the live (WebSocket/SSE) path `get_current_tenant()` was always `None` during mount and every event handler \u2014 and the tenant-aware `QuerySet` manager failed OPEN (returned the unfiltered queryset, ignoring `STRICT_MODE`), disclosing every tenant's rows to whoever held the socket. `threading.local` was additionally shared across connections on the `sync_to_async` executor thread. This issue is fixed in djust 1.0.7. Tenant storage moved to a `contextvars.ContextVar` (per async task); the resolved tenant is bound around WS/SSE mount and every dispatch; both managers scope the base queryset once and fail CLOSED (`.none()` under the default `STRICT_MODE`); and system check S006 warns when `STRICT_MODE=False`. No known workarounds are available on the live path.",
-      "last_modified": "2026-09-18T09:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61595"
+      "description": "Concrete CMS before 9.5.3 does not apply HTML entity encoding to user-defined Form block question labels when rendering them as column headers in the Dashboard Form Submissions report (concrete/single_pages/dashboard/reports/forms/legacy.php). a rogue editor could store markup or script in a label that then executes in the browser of any administrator who opens the submissions report for the affected form, producing stored cross-site scripting in the Dashboard.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 8.4 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N. Thanks Yonatan Drori from Tenzai for reporting.",
+      "last_modified": "2026-09-18T15:11:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81896"
     },
     {
-      "cve_id": "CVE-2026-89832",
-      "asset_id": "CVE-2026-89832",
+      "cve_id": "CVE-2026-84572",
+      "asset_id": "CVE-2026-84572",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix to clear dirty flag on folio in error path\n\nIf node block is corrupted due to chksum mismatch or inconsistent\nfooter info, it needs to drop clear flag of node folio, in order\nto persist inconsistent node data to storage.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89832"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to cause unexpected system termination or read kernel memory.",
+      "last_modified": "2026-09-18T15:10:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84572"
     },
     {
-      "cve_id": "CVE-2026-89838",
-      "asset_id": "CVE-2026-89838",
+      "cve_id": "CVE-2026-81895",
+      "asset_id": "CVE-2026-81895",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: limit recovery filename logging to stored length\n\nF2FS stores recovery filenames as a length plus a fixed-size i_name\nbuffer.  The buffer is not NUL-terminated, but recover_inode() and\nrecover_dentry() print it with %s.\n\nFor a 255-byte filename, recovery logging can read past i_name into the\nfollowing raw inode fields.\n\nPrint the name with a precision bounded by i_namelen and F2FS_NAME_LEN.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89838"
+      "description": "In Concrete CMS before 9.5.3, the Document Library block stored the file-set identifiers submitted through fsID[] without validating them as integers, and when the block was configured with setMode set to any it concatenated each stored identifier directly into the file-set filter query instead of casting it or binding it as a parameter. An authenticated user permitted to add or edit a Document Library block could therefore persist SQL syntax in the block configuration (btDocumentLibrary.setIds), and that stored expression was executed every time the published page containing the block was rendered, producing stored, time-based blind SQL injection.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 8.5 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N. Thanks Habib Allah for reporting.",
+      "last_modified": "2026-09-18T15:10:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81895"
     },
     {
-      "cve_id": "CVE-2026-89839",
-      "asset_id": "CVE-2026-89839",
+      "cve_id": "CVE-2026-60115",
+      "asset_id": "CVE-2026-60115",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: use the mount idmap for the owner check in f2fs_xattr_advise_set()\n\nf2fs_xattr_advise_set() calls inode_owner_or_capable() with &nop_mnt_idmap\nbefore allowing the \"system.advise\" xattr to be set, instead of the idmap\nthat the VFS passes to the ->set() handler.\n\nf2fs supports idmapped mounts, so on such a mount this checks the caller's\nfsuid against the unmapped on-disk owner rather than the mapped owner: the\nactual owner can be wrongly denied with -EPERM and an unrelated caller\nwrongly allowed.  Pass the handler's idmap instead.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89839"
+      "description": "This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.",
+      "last_modified": "2026-09-18T15:10:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60115"
     },
     {
-      "cve_id": "CVE-2026-89840",
-      "asset_id": "CVE-2026-89840",
+      "cve_id": "CVE-2026-86902",
+      "asset_id": "CVE-2026-86902",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: validate MOVE_RANGE destination size\n\nF2FS_IOC_MOVE_RANGE checks the source range, but not the destination end\nbefore updating i_size. A source hole can expose this: __clone_blkaddrs()\nskips NULL_ADDR entries and returns success, so the caller can still extend\nthe destination inode with unchecked pos_out + len.\n\nReject destination overflow and use inode_newsize_ok() before extending\nthe destination inode.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89840"
+      "description": "A parsing issue in the handling of directory paths was addressed with improved path validation. This issue is fixed in macOS Golden Gate 27, macOS Sonoma 14.8.8. An app may be able to access sensitive user data.",
+      "last_modified": "2026-09-18T15:09:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86902"
     },
     {
-      "cve_id": "CVE-2026-89841",
-      "asset_id": "CVE-2026-89841",
+      "cve_id": "CVE-2026-86900",
+      "asset_id": "CVE-2026-86900",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: only redirty pinned folios in redirty_blocks\n\nredirty_blocks() pins folios with read_cache_folio() and then walks the\nsame range again with filemap_lock_folio() to redirty them and drop the\nreferences it took.\n\nCommit 5951fee46bef (\"f2fs: Use a folio in redirty_blocks()\") changed\nthe second pass to a do/while loop. If read_cache_folio() fails before\nanything is pinned, page_idx does not advance but the cleanup loop still\nruns once.\n\nIf readahead has already populated the failed folio in page cache, that\nextra iteration finds it and folio_put_refs(folio, 2) drops one\nreference too many. Later drop_caches or reclaim can then report\n\"BUG: Bad page state\".\n\nOnly redirty the range that was pinned successfully.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89841"
+      "description": "An out-of-bounds read issue was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27. Mounting a maliciously crafted exFAT volume may cause unexpected system termination or kernel memory disclosure.",
+      "last_modified": "2026-09-18T15:08:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86900"
     },
     {
-      "cve_id": "CVE-2026-89842",
-      "asset_id": "CVE-2026-89842",
+      "cve_id": "CVE-2025-53837",
+      "asset_id": "CVE-2025-53837",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Skip NVMe LS reject IOCB when FW not started\n\nqla_nvme_xmt_ls_rsp() bails out to the out: label when firmware is not\nstarted (!ha->flags.fw_started), but the out: path unconditionally calls\nqla_nvme_ls_reject_iocb(), which ends in qla2x00_start_iocbs() and an\nunconditional doorbell write to the request queue in-pointer register.\nThis rings the firmware doorbell and queues an IOCB that stopped or\nresetting firmware cannot consume, and touches MMIO during the reset/EEH\nwindow where fw_started is also clear.\n\nOnly emit the LS reject IOCB (and ring the doorbell) when fw_started is\nset; otherwise just clean up and return. The post-allocation failure\ncases (SRB alloc / qla2x00_start_sp() failure) run with firmware started\nand still send the reject. Apply the same guard to the reject emission\nin qla2xxx_process_purls_pkt().",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89842"
+      "description": "XWiki Rendering is a generic rendering system that converts textual input in a given syntax (wiki syntax, HTML, etc) into another syntax (XHTML, etc). Prior to versions 14.10.2 and 15.0 RC1, any user who can edit their own user profile or any other document can execute arbitrary script macros including Groovy and Python macros that allow remote code execution including unrestricted read and write access to all wiki contents. The reason is that rendering output is included as content of HTML macros without further escaping and it is thus possible to close the HTML macro and inject script macros that are executed with programming rights. This has been patched in XWiki 14.10.2 and 15.0 RC1 by making sure that rendering output cannot close the surrounding HTML macro. A possible workaround is available. It is, in principle, possible to add escaping to all places where rendering output is used in wiki documents, but at the moment there is no list of them.",
+      "last_modified": "2026-09-18T15:07:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-53837"
     },
     {
-      "cve_id": "CVE-2026-89846",
-      "asset_id": "CVE-2026-89846",
+      "cve_id": "CVE-2026-66046",
+      "asset_id": "CVE-2026-66046",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Bound rsp_info_len to avoid OOB sense-data read\n\nIn qla2x00_status_entry(), the FWI2 status path advances sense_data and\nshrinks par_sense_len by rsp_info_len:\n\n\tif (IS_FWI2_CAPABLE(ha)) {\n\t\tsense_data += rsp_info_len;\n\t\tpar_sense_len -= rsp_info_len;\n\t}\n\nrsp_info_len is a 32-bit value taken directly from the target's FCP\nresponse (sf.rsp_data_len), while par_sense_len is the IOCB data area\nsize (28 bytes for 24xx, 60 bytes for 29xx). A hostile or buggy target\nreporting an rsp_info_len larger than par_sense_len makes the unsigned\nsubtraction underflow to a huge value and advances sense_data out of\nbounds.\n\nThe underflowed par_sense_len then defeats the cap in\nqla2x00_handle_sense():\n\n\tif (sense_len > par_sense_len)\n\t\tsense_len = par_sense_len;\n\tmemcpy(cp->sense_buffer, sense_data, sense_len);\n\nso the memcpy reads up to SCSI_SENSE_BUFFERSIZE bytes from the\nout-of-bounds sense_data pointer, leaking adjacent response-ring/heap\nmemory into the command's sense buffer.\n\nClamp rsp_info_len to par_sense_len before the subtraction so\npar_sense_len can never underflow and sense_data stays within the IOCB\ndata area. The fix sits before the comp_status switch, covering both\nqla2x00_handle_sense() call sites.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89846"
+      "description": "Expat through 2.8.3 contains a denial of service vulnerability caused by quadratic algorithmic complexity in the storeAtts() function in xmlparse.c, where processing N specified attributes with non-normalized values triggers an O(N^2) linear scan of elementType->defaultAtts to determine CDATA status. A remote unauthenticated attacker can supply a single well-formed XML document of a few megabytes to an application parsing untrusted XML to cause excessive CPU consumption, resulting in denial of service without requiring authentication, external entity resolution, or non-default parser options.",
+      "last_modified": "2026-09-18T15:07:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66046"
     },
     {
-      "cve_id": "CVE-2026-89891",
-      "asset_id": "CVE-2026-89891",
+      "cve_id": "CVE-2026-86898",
+      "asset_id": "CVE-2026-86898",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: em28xx: fix use-after-free of dev_next->devlist on disconnect\n\nWhen a device with has_dual_ts=1 is probed and the is_audio_only path\nis taken, both dev and dev->dev_next are added to the global\nem28xx_devlist via em28xx_init_extension(). However, during disconnect,\nem28xx_close_extension(dev) only calls list_del(&dev->devlist), leaving\ndev->dev_next->devlist still linked in the global list. When dev_next is\nsubsequently freed via kref_put(), its devlist entry becomes a dangling\npointer in em28xx_devlist. The next device probe that calls\nem28xx_init_extension() triggers a list corruption BUG when list_add_tail\ndetects the freed node.\n\nThis bug was exposed by commit a368ecde8a50 (\"USB: core: Fix duplicate\nendpoint bug by clearing reserved bits in the descriptor\") which clears\nreserved bits in bEndpointAddress during endpoint parsing. This causes\nfuzzed endpoint addresses like 0xf3 to be normalized to 0x83, which\nem28xx interprets as a vendor audio endpoint, enabling the\nis_audio_only + has_dual_ts code path that was previously unreachable\nwith such descriptors.\n\nFix this by removing dev->dev_next->devlist from the global list in\nem28xx_close_extension() before the device is freed.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89891"
+      "description": "A logic issue was addressed with improved state management. This issue is fixed in Safari 27, iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. Opening a maliciously crafted webarchive file may lead to universal cross-site scripting.",
+      "last_modified": "2026-09-18T15:07:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86898"
     },
     {
-      "cve_id": "CVE-2026-89898",
-      "asset_id": "CVE-2026-89898",
+      "cve_id": "CVE-2026-93690",
+      "asset_id": "CVE-2026-93690",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: cec: extron-da-hd-4k-plus: add sanity check\n\nAdd check to prevent overflowing msg.msg[] in case the incoming data\nis malformed.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89898"
+      "description": "uri-js through 4.4.1 contains a denial of service vulnerability in the removeDotSegments function that loops infinitely when a path segment begins with Unicode line or paragraph separators. Attackers can trigger this by calling removeDotSegments directly or through normalize/resolve functions with IRI handling enabled, causing the Node.js event loop to block indefinitely until heap exhaustion.",
+      "last_modified": "2026-09-18T15:06:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93690"
     },
     {
-      "cve_id": "CVE-2026-89915",
-      "asset_id": "CVE-2026-89915",
+      "cve_id": "CVE-2026-93689",
+      "asset_id": "CVE-2026-93689",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nKVM: arm64: Remove VM-wide VNCR mapping counter\n\nThe global VNCR mapping counter is used to decide whether an L1\nprovided VNCR page is mapped in L0 on any CPU at the point of\ndealing with a TLB invalidation. It is incremented when a mapping\nis made in the fixmap, and decremented when unmapped.\n\nAs it turns out, this tracking has several flaws:\n\n- we are trying to invalidate TLBs, and the mapping is only an\n  opportunistic consequence of the TLB. Checking this counter to\n  decide whether a TLB needs to be invalidated may result in missed\n  invalidations.\n\n- an L1 vcpu invalidating its own TLB (a very likely case) will not\n  succeed in invalidating the VNCR pseudo TLB because that page is\n  not mapped in L0 at this stage.\n\nGiven that this tracking fails at delivering the minimum guarantees\nthat are required and is only a performance optimisation, remove it\ncompletely.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89915"
+      "description": "WinFsp through 2.2.26215 contains a null pointer dereference vulnerability in the kernel driver's Fast I/O device control handler that fails to validate the volume context before use. An unprivileged local user can trigger a denial of service by opening the WinFsp control device and issuing FSP_IOCTL_TRANSACT requests, causing a system crash.",
+      "last_modified": "2026-09-18T15:06:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93689"
     },
     {
-      "cve_id": "CVE-2026-89937",
-      "asset_id": "CVE-2026-89937",
+      "cve_id": "CVE-2026-93688",
+      "asset_id": "CVE-2026-93688",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\niio: chemical: sgp30: Handle IAQ thread creation failure\n\nkthread_run() can fail and return an error pointer, but sgp_probe() stores\nit and returns success, so the device is registered without its IAQ thread\nand sgp_remove() later passes the error pointer to kthread_stop(). Return\nthe error from probe instead.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89937"
+      "description": "SGLang through 0.5.19 in prefill/decode disaggregation mode with Mooncake KV transfer backend fails to validate bootstrap_room values, allowing unbounded transfer state allocation. Unauthenticated attackers can reach the decode engine's POST /generate endpoint and submit arbitrary bootstrap_room values to exhaust prefill process memory until out-of-memory termination.",
+      "last_modified": "2026-09-18T15:06:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93688"
     },
     {
-      "cve_id": "CVE-2026-89943",
-      "asset_id": "CVE-2026-89943",
+      "cve_id": "CVE-2026-93687",
+      "asset_id": "CVE-2026-93687",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: loongson: Fix error handling in ACPI property parsing\n\nIn loongson_card_parse_acpi(), the return value of\ndevice_property_read_string() for the `codec-dai-name` property was\nignored. If the property is missing or invalid, an uninitialized pointer\nwould be used later, potentially leading to undefined behavior.\n\nFix this by checking the return value and propagating the error\nappropriately.",
-      "last_modified": "2026-09-18T09:00:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89943"
+      "description": "braces through 3.0.3 contains a stack overflow vulnerability in the recursive AST walkers that lack depth guards. Attackers can supply deeply nested brace patterns under the character limit to exhaust the call stack and terminate the Node.js process with an uncaught RangeError.",
+      "last_modified": "2026-09-18T15:06:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93687"
     },
     {
-      "cve_id": "CVE-2026-89864",
-      "asset_id": "CVE-2026-89864",
+      "cve_id": "CVE-2026-81918",
+      "asset_id": "CVE-2026-81918",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Bound i2c->length in I2C bsg handlers\n\nstruct qla_i2c_access carries a 16-bit length field alongside a fixed\n64-byte buffer:\n\n\tstruct qla_i2c_access {\n\t\tuint16_t device, offset, option, length;\n\t\tuint8_t  buffer[0x40];\n\t} __packed;\n\nqla2x00_write_i2c() and qla2x00_read_i2c() use the user-supplied\ni2c->length without any bounds check. i2c is overlaid on a 256-byte\non-stack buffer and sfp is a 256-byte DMA-pool buffer, so a length up to\n65535 overruns both:\n\n  - write: memcpy(sfp, i2c->buffer, i2c->length) over-reads the stack and\n    over-writes the sfp heap buffer, and qla2x00_write_sfp() then DMAs\n    i2c->length bytes out of the 256-byte buffer.\n  - read: qla2x00_read_sfp() DMAs i2c->length bytes into the 256-byte sfp,\n    then memcpy(i2c->buffer, sfp, i2c->length) overflows the 64-byte\n    buffer inside the on-stack array.\n\nA caller holding CAP_SYS_RAWIO can use this to corrupt the heap and the\nkernel stack. Reject requests whose length exceeds the buffer before any\ncopy or DMA transfer in both handlers.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89864"
+      "description": "Concrete CMS below 9.5.3 is vulnerable to Stored XSS via the Date Format field in the Page Attribute Display block. A user with edit_page_contents permissions could store a payload which executes in the browser of any visitor who viewed a page where the block was configured to display a date-type attribute.\u00a0The Concrete CMS security team gave this vulnerability a CVSS v4.0 score of 4.8 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N. Thanks Oriol Ortiz for reporting.",
+      "last_modified": "2026-09-18T15:05:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81918"
     },
     {
-      "cve_id": "CVE-2026-89872",
-      "asset_id": "CVE-2026-89872",
+      "cve_id": "CVE-2026-71403",
+      "asset_id": "CVE-2026-71403",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: v4l2-fwnode: Fix fwnode leak in v4l2_fwnode_parse_link\n\nIn v4l2_fwnode_parse_link(), the remote endpoint fwnode reference is\nacquired using fwnode_graph_get_remote_endpoint(). This reference is\nproperly released in the error paths, but it is leaked on the success\npath.\n\nAdd the missing fwnode_handle_put() before returning 0 to prevent the\nreference leak.\n\n[Sakari Ailus: Fix subject prefix and coding style a little.]",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89872"
+      "description": "A flaw was found in Rancher Manager. The /v3/users update path did not enforce immutability of a User resource's `username` and `principalIds` fields. A user holding the `update` verb on `users.management.cattle.io` could inject a foreign identity provider principal into any account, so that the next login by the owner of that principal was bound to the victim's account and inherited its role bindings.\n\n\nThis issue affects Rancher: before 2.15.1.",
+      "last_modified": "2026-09-18T15:03:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71403"
     },
     {
-      "cve_id": "CVE-2026-89885",
-      "asset_id": "CVE-2026-89885",
+      "cve_id": "CVE-2026-86886",
+      "asset_id": "CVE-2026-86886",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: platform: mtk-mdp3: Fix SCP device refcounting\n\nmdp_probe() first tries to get the SCP handle with scp_get(). When that\nfails, it falls back to looking up the SCP platform device with\n__get_pdev_by_id() and then reads its driver data.\n\nThe fallback lookup returns the platform device with a reference, just\nlike scp_get() does. However, the fallback path currently drops that\nreference immediately after platform_get_drvdata(). The driver later\nstill calls scp_put(mdp->scp) unconditionally from the probe error path\nand from mdp_video_device_release(), which drops the SCP device\nreference again.\n\nKeep the fallback reference until the existing scp_put() call, so that\nthe fallback path follows the same ownership rules as the scp_get()\npath.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89885"
+      "description": "A path traversal issue was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, watchOS 27. An app may be able to modify protected system files.",
+      "last_modified": "2026-09-18T15:01:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86886"
     },
     {
-      "cve_id": "CVE-2026-89886",
-      "asset_id": "CVE-2026-89886",
+      "cve_id": "CVE-2026-7006",
+      "asset_id": "CVE-2026-7006",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: intel/ipu6: fix async notifier cleanup leak on parse error\n\nisys_notifier_init() calls v4l2_async_nf_init() and then adds fwnode\nremote subdevs in a loop with v4l2_async_nf_add_fwnode_remote(). If an\nendpoint parse or add fails partway through the loop, it jumps to\nerr_parse and returns without calling v4l2_async_nf_cleanup(), leaking\nevery v4l2_async_connection already added to the notifier's waiting\nlist.\n\nThe register-failure path just below already cleans up correctly, and\nthe caller only tears the notifier down (isys_notifier_cleanup()) once\nisys_notifier_init() has returned success. Clean up the notifier on the\nparse error path too.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89886"
+      "description": "Sublime Text for Windows through Build 4192 (Sublime Text 4) and Build 3207 (Sublime Text 3) contains a local privilege escalation vulnerability that allows unprivileged local attackers to execute arbitrary code with elevated privileges by abusing the update staging mechanism. Attackers can place a malicious DLL in the user-writable staging directory under %LOCALAPPDATA%, mark it read-only to bypass cleanup, and have the elevated installer copy it into the protected installation directory, causing the DLL to execute in the context of any higher-privileged user who subsequently launches the application.",
+      "last_modified": "2026-09-18T15:01:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7006"
     },
     {
-      "cve_id": "CVE-2026-89888",
-      "asset_id": "CVE-2026-89888",
+      "cve_id": "CVE-2026-83306",
+      "asset_id": "CVE-2026-83306",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: i2c: ov02a10: fix endpoint parsing use-after-free\n\nThe ov02a10_check_hwcfg() function calls fwnode_handle_put(ep)\nimmediately after allocating and parsing the endpoint. However, it\nsubsequently calls fwnode_property_read_u32() using the same 'ep'\nhandle, leading to a potential use-after-free.\n\nAdditionally, reading the optional 'ovti,mipi-clock-voltage' property\nused to overwrite the 'ret' variable. If the property was missing,\n'ret' would become negative, and this failure code would be incorrectly\nreturned at the end of the function, causing probe to fail entirely.\n\nFix the use-after-free by moving fwnode_property_read_u32() before\nthe endpoint is parsed and freed. Avoid the error leak by not\nassigning the result of fwnode_property_read_u32() to 'ret'.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89888"
+      "description": "Vulnerability in the Oracle JDeveloper product of Oracle Fusion Middleware (component: Resource Catalog Services).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle JDeveloper.  Successful attacks of this vulnerability can result in takeover of Oracle JDeveloper. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83306"
     },
     {
-      "cve_id": "CVE-2026-89890",
-      "asset_id": "CVE-2026-89890",
+      "cve_id": "CVE-2026-83322",
+      "asset_id": "CVE-2026-83322",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: go7007: defer the ALSA v4l2 put until card release\n\ngo7007_snd_init() already takes a v4l2_device reference for the ALSA\nside, but go7007_snd_remove() drops it immediately after calling\nsnd_card_free_when_closed().\n\nThat is too early when a userspace process still has the capture PCM open.\nThe ALSA card and its PCM callbacks remain alive until the last file is\nclosed, so the release path can still reach struct go7007 through\npcm->private_data and call go7007_snd_hw_free() after the V4L2 release path\nhas freed the object.\n\nMove the matching v4l2_device_put() to the ALSA card private_free callback\nso the existing ALSA reference covers the whole deferred card lifetime.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89890"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Platform Security).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 7.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83322"
     },
     {
-      "cve_id": "CVE-2026-89892",
-      "asset_id": "CVE-2026-89892",
+      "cve_id": "CVE-2026-83325",
+      "asset_id": "CVE-2026-83325",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: em28xx: defer audio-only extension registration\n\nThe audio-only path registers extensions while probing the primary device.\nFor a dual-TS board, this happens before dev_next is created. The duplicate\ndevice inherits is_audio_only and is then independently inserted into\nem28xx_devlist.\n\nThe list is intended to contain only primary devices: extension operations\nreach the secondary device through dev_next. The independently linked\nsecondary can be freed during disconnect while its list node remains\nreachable, resulting in a use-after-free.\n\nDefer audio-only extension registration to the module-request work item. It\nruns only after probing has completed construction of the optional\nsecondary device, so only the primary is registered and extension callbacks\nreach the secondary through dev_next.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89892"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Platform Security).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 7.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83325"
     },
     {
-      "cve_id": "CVE-2026-89911",
-      "asset_id": "CVE-2026-89911",
+      "cve_id": "CVE-2026-83327",
+      "asset_id": "CVE-2026-83327",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nKVM: arm64: Correctly cap TLBI Range to the architural limit\n\nTLB Invalidation by Range has a fairly powerful way of encoding pretty\nlarge ranges in a small number of bits. This range can be based on an\narbitrary VA, which means it is pretty easy for a guest to generate an\noverflow should the hypervisor be naive enough to add the range to the\nbase...\n\nMake sure the range is capped to the limit dictated by the address bit\nthat determines the VA range. For an IPA invalidation, this is further\ncorrected down the line to ignore the upper range.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89911"
+      "description": "Vulnerability in the Oracle Applications Framework product of Oracle E-Business Suite (component: Personalization).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via SOAP to compromise Oracle Applications Framework.  Successful attacks of this vulnerability can result in takeover of Oracle Applications Framework. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83327"
     },
     {
-      "cve_id": "CVE-2026-89929",
-      "asset_id": "CVE-2026-89929",
+      "cve_id": "CVE-2026-83331",
+      "asset_id": "CVE-2026-83331",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nKVM: nVM: Ensure INVVPID is emulated on the correct physical CPU\n\nWhen emulating INVVPID, KVM executes INVVPID on the physical CPU using\nvpid02 (instead of the L1 assigned VPID), after doing some validations\non the operands. However, it is possible that the physical CPU KVM\nexecutes INVVPID on is different from the CPU L2 is running on.\n\nFor example, in the following scenario:\n- L2 runs on CPU #1 and exits to L1 (vmx->nested.vmcs02.cpu=1)\n- L1 migrates to CPU #2 and executes INVVPID\n- KVM executes INVVPID on CPU #2\n- L1 migrates back to CPU #1 and runs L2 (vmx->nested.vmcs02.cpu=1)\n\nThe TLB entries on CPU #1 are never invalidated, because INVVPID was\nexecuted on CPU #2, and vmcs02 never ran on a different pCPU (i.e.\nvmx_vcpu_load_vmcs() will *not* request KVM_REQ_TLB_FLUSH).\n\nEnsure that INVVPID is being executed on the same pCPU that L2 last ran\non, and if not, fallback to clearing last_vpid=0 to trigger a full VPID\nflush on the next nested VM-Enter (as KVM will detect L1 using a\ndifferent VPID for L2). If L2 ends up running on a different pCPU, KVM\nwill flush the TLB anyway through vmx_vcpu_load_vmcs().",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89929"
+      "description": "Vulnerability in the Oracle Applications Framework product of Oracle E-Business Suite (component: Personalization).  Supported versions that are affected are 12.2.9-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Applications Framework.  Successful attacks of this vulnerability can result in takeover of Oracle Applications Framework. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83331"
     },
     {
-      "cve_id": "CVE-2026-89936",
-      "asset_id": "CVE-2026-89936",
+      "cve_id": "CVE-2026-83338",
+      "asset_id": "CVE-2026-83338",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\niio: dac: m62332: Fix regulator reference count imbalance\n\nm62332_set_value() enables the Vcc regulator on every write of a\nnon-zero value and disables it on every write of zero, without tracking\nthe channel's current state. Because the regulator is reference counted,\nchanging a channel directly from one non-zero value to another enables\nit more than once, while a later write of zero disables it only once.\nThe reference count never returns to zero and the regulator is left\nenabled indefinitely.\n\nOnly enable the regulator on the transition from zero to non-zero, and\nonly disable it on the transition from non-zero to zero, using the\npreviously stored channel value to detect the edge. Balance the\nregulator on the I2C error path so the reference count stays consistent\nif the write fails.",
-      "last_modified": "2026-09-18T08:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89936"
+      "description": "Vulnerability in the Oracle Applications Manager product of Oracle E-Business Suite (component: Oracle Diagnostics Interfaces).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Applications Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Applications Manager. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83338"
     },
     {
-      "cve_id": "CVE-2026-92603",
-      "asset_id": "CVE-2026-92603",
+      "cve_id": "CVE-2026-83351",
+      "asset_id": "CVE-2026-83351",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ContiNew Admin through 4.1.0 contains an authorization bypass vulnerability in the personal message delete endpoint that allows authenticated users to delete other users' messages and announcements. Attackers can supply arbitrary message identifiers in the IdsReq parameter to remove any message row and purge all recipients' read receipts without ownership validation.",
-      "last_modified": "2026-09-18T08:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92603"
+      "description": "Vulnerability in the RDBMS component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.3. Difficult to exploit vulnerability allows unauthenticated attacker with network access via Oracle Net to compromise RDBMS.  Successful attacks of this vulnerability can result in takeover of RDBMS. CVSS 3.1 Base Score 8.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-09-18T15:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83351"
     }
   ]
 }
