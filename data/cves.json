@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-26T11:41:03.264909+00:00",
+  "last_updated": "2026-09-26T16:35:06.937962+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-56725",
-      "asset_id": "CVE-2026-56725",
+      "cve_id": "CVE-2026-7273",
+      "asset_id": "CVE-2026-7273",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.0.2, summary An unauthenticated request to POST /api/v1/import/otrs/import_check blocks a Zammad request worker for roughly two minutes. The import_check and import_status actions are missing the setup_done_response guard that other actions in the same controller carry, so they execute on fully set-up production instances. The action enters a retry loop against a blank OTRS endpoint, sleeping for 30 s + 45 s between attempts. Impact An unauthenticated remote attacker denies service to a production Zammad instance. Each request costs almost nothing and forces ~115 seconds of server-side blocking. A few requests per second saturate the Puma worker pool. The condition persists as long as the traffic continues. No account, valid import configuration, or target knowledge beyond the hostname is needed. CSRF token is trivially obtained from any prior GET response. This issue is fixed in version 7.0.2.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56725"
+      "description": "A stack-based buffer overflow vulnerability in the CGI program of Zyxel GS1900-48HPv2 firmware versions through\u00a02.90(ABTQ.1)C0 could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+      "last_modified": "2026-09-26T15:30:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7273"
     },
     {
-      "cve_id": "CVE-2026-56728",
-      "asset_id": "CVE-2026-56728",
+      "cve_id": "CVE-2025-51457",
+      "asset_id": "CVE-2025-51457",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.0.2, a broken access control vulnerability exists in Zammad's GraphQL API. An authenticated user can access taskbar item data belonging to another user by crafting a request with the target user's taskbar identifier. The taskbar feature stores transient state for active user sessions, including auto-saved ticket drafts. Under certain conditions, the authorization check for taskbar item access is not enforced, allowing a user to read another user's taskbar item data. This vulnerability is fixed in 7.0.2.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56728"
+      "description": "D-Link DAP-2610 up to 2.06B08r099 contains an authenticated command injection vulnerability within the web interface at the /index.xgi endpoint. An attacker with authenticated access can exploit some parameters to execute arbitrary system commands.",
+      "last_modified": "2026-09-26T15:30:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-51457"
     },
     {
-      "cve_id": "CVE-2026-61525",
-      "asset_id": "CVE-2026-61525",
+      "cve_id": "CVE-2026-87902",
+      "asset_id": "CVE-2026-87902",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. In 7.0.2 and 7.1.0, zammad's session management for websocket and long-polling connections is susceptible to a path traversal attack. Session identifiers supplied by the client are insufficiently validated before being used to construct internal file paths. When the file-based session store is active (the default configuration), an authenticated attacker can manipulate the session identifier to reference locations outside the intended storage directory, leading to the deletion of arbitrary files and directories on the server. Exploitation requires only a low-privilege authenticated session and a single crafted request. Instances configured to use the Redis-based session store are not affected. This issue is fixed in versions 7.0.3 and 7.1.1.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61525"
+      "description": "An unauthenticated attacker can make `get_page_template()` page-template resolution include a chosen readable local `.php` file outside the active theme directories. If relevant pre-conditions for both the server and the active theme are met, this can lead to RCE.",
+      "last_modified": "2026-09-26T15:15:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87902"
     },
     {
-      "cve_id": "CVE-2026-65828",
-      "asset_id": "CVE-2026-65828",
+      "cve_id": "CVE-2026-97161",
+      "asset_id": "CVE-2026-97161",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, the legacy destroy_form action on AttachmentsController deletes UploadCache Store records based solely on a user-supplied form_id without verifying that the requesting user owns those records. An authenticated attacker who learns another user's pending-upload UUID can silently remove temporary file uploads before the victim submits their ticket or article. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65828"
+      "description": "Joomla Extension - lomart.fr - Various path traversal / file access vectors in UP plugin extension 5.0.0-5.2.0, 6.0.0-6.0.29",
+      "last_modified": "2026-09-26T14:35:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97161"
     },
     {
-      "cve_id": "CVE-2026-84462",
-      "asset_id": "CVE-2026-84462",
+      "cve_id": "CVE-2026-97163",
+      "asset_id": "CVE-2026-97163",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, a security filter that protects Zammad's AI Agent configuration can be bypassed by entering specially crafted text into one of an AI Agent's fields. An administrator with permission to create or edit AI Agents could exploit this to run arbitrary commands on the server that hosts Zammad, potentially reading, modifying, or destroying all data stored on that server. No interaction from other users is needed; the malicious code runs automatically the next time the affected AI Agent processes a ticket. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84462"
+      "description": "Joomla Extension - lomart.fr - Unauthenticated remote code installation in UP plugin extension 5.0.0-5.2.0, 6.0.0-6.0.29",
+      "last_modified": "2026-09-26T14:33:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97163"
     },
     {
-      "cve_id": "CVE-2026-100192",
-      "asset_id": "CVE-2026-100192",
+      "cve_id": "CVE-2026-97162",
+      "asset_id": "CVE-2026-97162",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "X-SpringBoot through 6.0 exposes appKey and appSecret credentials in the GET /application/manager/select endpoint without authentication or field filtering. Unauthenticated attackers can retrieve these credentials and use them to send arbitrary SMS messages through any tenant's SMS provider, enabling SMS bombing and impersonation attacks.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100192"
+      "description": "Joomla Extension - lomart.fr - Various SQL injection vectors in UP plugin extension 5.0.0-5.2.0, 6.0.0-6.0.29",
+      "last_modified": "2026-09-26T14:33:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97162"
     },
     {
-      "cve_id": "CVE-2026-97060",
-      "asset_id": "CVE-2026-97060",
+      "cve_id": "CVE-2026-97160",
+      "asset_id": "CVE-2026-97160",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "X-SpringBoot through 6.0 lacks object-level authorization in user management endpoints, allowing sub-administrators to modify or delete users without ownership verification. Attackers with user-management permissions can reset passwords for any account including the super administrator, rebind roles, or delete users via POST /sys/user/update and POST /sys/user/delete endpoints.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97060"
+      "description": "Joomla Extension - lomart.fr - Authenticated, privileged PHP command injection in UP plugin extension 5.0.0-5.2.0, 6.0.0-6.0.29",
+      "last_modified": "2026-09-26T14:30:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97160"
     },
     {
-      "cve_id": "CVE-2026-97063",
-      "asset_id": "CVE-2026-97063",
+      "cve_id": "CVE-2026-78902",
+      "asset_id": "CVE-2026-78902",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "X-SpringBoot through 6.0 returns login verification codes in HTTP responses from unauthenticated endpoints GET /sys/mobile/code and GET /sys/email/code without sending them to account owners. Attackers can request codes using known mobile numbers or email addresses, read them from responses, and authenticate as victims via POST /sys/emailOrMobileLogin/login to hijack accounts.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97063"
+      "description": "Cross Site Scripting vulnerability in Netgate pfSense 26.03.1-RELEASE allows an attacker to execute arbitrary code via the pfBlockerNG package",
+      "last_modified": "2026-09-26T14:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78902"
     },
     {
-      "cve_id": "CVE-2026-97064",
-      "asset_id": "CVE-2026-97064",
+      "cve_id": "CVE-2026-97222",
+      "asset_id": "CVE-2026-97222",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "X-SpringBoot through 6.0 ships with a hardcoded static master login verification code 172839 enabled by default in the database seed. Unauthenticated attackers can authenticate as any user by submitting the public master code to the emailOrMobileLogin endpoint with a known email or mobile number.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97064"
+      "description": "A heap use-after-free flaw was found in Gnumeric. When a user opens a crafted Gnumeric workbook containing a malformed SheetObjectComponent element, the XML parser can dereference a freed sheet-object component, causing Gnumeric to crash.",
+      "last_modified": "2026-09-26T14:15:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97222"
     },
     {
-      "cve_id": "CVE-2026-63205",
-      "asset_id": "CVE-2026-63205",
+      "cve_id": "CVE-2026-94131",
+      "asset_id": "CVE-2026-94131",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, when creating or updating an email signature, Zammad processes inline images referenced in the signature body. If a signature body contains an HTML img tag pointing to any existing attachment, the system copies that attachment into a new signature-owned record, without checking whether the user has permission to access the original attachment. The newly created copy is then downloadable by the same channel-admin user, because attachment access is determined by the copy's owner (the signature), not the original object (e.g., a ticket or knowledge-base article). This allows a user with any of the admin.channel_email, admin.channel_google, admin.channel_microsoft365, or admin.channel_microsoft_graph permissions to read attachments they would otherwise be denied access to, such as ticket attachments belonging to groups they are not a member of. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63205"
+      "description": "Joomla Extension - acymailing.com - Unauthenticated arbitrary file deletion in AcyMailing Enterprise extension < 11.1.0 - A subscriber could store a path in a file-type custom field and have AcyMailing delete that file when the field was cleared, including files outside the upload folder such as configuration.php.",
+      "last_modified": "2026-09-26T14:14:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94131"
     },
     {
-      "cve_id": "CVE-2026-100303",
-      "asset_id": "CVE-2026-100303",
+      "cve_id": "CVE-2026-94132",
+      "asset_id": "CVE-2026-94132",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form through 6.0 lacks authorization checks on FormThemeController write endpoints for global form themes and categories. Authenticated non-admin users can add, modify, or delete themes and theme categories affecting forms owned by other users.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100303"
+      "description": "Joomla Extension - acymailing.com - Remote Code Execution vulnerability in mailbox action feature in AcyMailing Enterprise extension < 11.1.0 - MIME parts of incoming emails were saved to media/com_acym/upload/ with no extension check, so anyone who could email the monitored mailbox could write a PHP file into the web root.",
+      "last_modified": "2026-09-26T14:09:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94132"
     },
     {
-      "cve_id": "CVE-2026-93682",
-      "asset_id": "CVE-2026-93682",
+      "cve_id": "CVE-2026-94130",
+      "asset_id": "CVE-2026-94130",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When the HTTP stream wrapper follows a redirect and the response carries a Location header with an empty value, the redirect code reads one byte past the end of the heap buffer holding the location. The value of that out-of-bounds byte decides which redirect target is built, so a malicious server controls whether the client is sent to the host root or to the current directory.",
-      "last_modified": "2026-09-26T10:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93682"
+      "description": "Joomla Extension - joomlaboat.com - Unauthenticated SQL injection in YouTube Gallery extension < 5.7.3 - An SQL injection vulnerability in video search functionality and sorting allowed attackers to inject SQL commands in read queries.",
+      "last_modified": "2026-09-26T13:41:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94130"
     },
     {
-      "cve_id": "CVE-2026-91765",
-      "asset_id": "CVE-2026-91765",
+      "cve_id": "CVE-2026-94367",
+      "asset_id": "CVE-2026-94367",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "cleanup_xml_node() in the SOAP XML parser recurses once per XML nesting level with no depth limit. An unauthenticated attacker can post a SOAP request containing tens of thousands of nested elements to any SoapServer endpoint, exhaust the stack and crash the process. The same unbounded recursion exists in the SOAP value decoder and in the WSDL node search helper.",
-      "last_modified": "2026-09-26T10:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91765"
+      "description": "OpenEye Apex Network Video Recorder (NVR) firmware 3.2.9.376 contains an OS command injection vulnerability in recbackup. An authenticated administrator can supply crafted backup-area configuration input that is passed to a shell command, allowing commands to execute with the privileges of the nvr user. The underlying design has been present since at least firmware 2.2.3.4.\n\nThis vulnerability is resolved in OpenEye Apex version 3.4.3.",
+      "last_modified": "2026-09-26T13:30:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94367"
     },
     {
-      "cve_id": "CVE-2026-32746",
-      "asset_id": "CVE-2026-32746",
+      "cve_id": "CVE-2026-100187",
+      "asset_id": "CVE-2026-100187",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "telnetd in GNU inetutils through 2.7 allows an out-of-bounds write in the LINEMODE SLC (Set Local Characters) suboption handler because add_slc does not check whether the buffer is full.",
-      "last_modified": "2026-09-26T10:00:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32746"
+      "description": "The Onion module in AIL Framework contained a performance shortcut in its URL extraction logic that accepted URLs as valid .onion targets based solely on a length check (exactly 69 characters) and a suffix check (ending in \".onion\"), without performing proper hostname parsing or onion-domain validation. An unauthenticated attacker who could publish or control web content crawled by the framework could embed a crafted URL containing an IP address or non-onion hostname with a path ending in \".onion\" that satisfied the length and suffix conditions. Such a URL would be extracted, its domain naively sliced from the string, and queued as a legitimate onion crawler task. This allowed unauthenticated content publishers to inject arbitrary non-onion targets into the crawler's task queue, influencing crawler behavior and potentially directing it toward unintended network resources. The vulnerability required no authentication, no user interaction, and only the ability to place crafted content in a location the framework would crawl. The security impact is a loss of integrity in the crawler's target selection: the framework processes and acts upon URLs that do not correspond to legitimate .onion services.",
+      "last_modified": "2026-09-26T13:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100187"
     },
     {
-      "cve_id": "CVE-2026-84460",
-      "asset_id": "CVE-2026-84460",
+      "cve_id": "CVE-2026-100521",
+      "asset_id": "CVE-2026-100521",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, any authenticated user can call the REST endpoint for getting a tag list and receive the tag names for the given ticket, regardless of whether they have access to that ticket. Tags are an internal categorization feature and may contain sensitive labels. Ticket IDs are sequential integers, making bulk enumeration straightforward. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84460"
+      "description": "Cotonti through 1.0.0 contains a reflected cross-site scripting vulnerability in the search plugin highlight parameter that performs no HTML or JavaScript escaping. Attackers can craft malicious links with injected JavaScript in the highlight parameter that executes in the browser of any visitor who opens the link, including administrators.",
+      "last_modified": "2026-09-26T13:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100521"
     },
     {
-      "cve_id": "CVE-2026-63216",
-      "asset_id": "CVE-2026-63216",
+      "cve_id": "CVE-2026-92957",
+      "asset_id": "CVE-2026-92957",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, unsanitized option labels are rendered in the configuration dialogs of AI Agents within Zammad's admin UI. When rendering the list of selected options, the option label is output as raw HTML without escaping. An attacker who can control an option label, for example by setting a malicious string as a user or organization name used in a relation attribute, or by supplying a crafted custom attribute option value, can inject arbitrary HTML and JavaScript. The payload executes in the browser of any admin or agent who opens the affected object attribute configuration view. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63216"
+      "description": "vm2 through 3.11.6 does not normalize `node:`-prefixed builtin specifiers when evaluating user-supplied negative (deny) entries in a NodeVM wildcard require policy. Although NodeVM strips the `node:` prefix during require() resolution, negative wildcard entries are matched by exact string comparison against the canonical builtin names, so a policy such as `new NodeVM({ require: { builtin: ['*', '-node:child_process'] } })` fails to deny the canonical `child_process` module. Sandboxed code can therefore obtain the host `child_process` builtin via `require('child_process')` or `require('node:child_process')`, gaining references to process-spawning APIs such as execSync and spawn, which is equivalent to host command-execution capability for untrusted sandbox code. Fixed in vm2 3.11.7.",
+      "last_modified": "2026-09-26T13:30:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92957"
     },
     {
-      "cve_id": "CVE-2026-84464",
-      "asset_id": "CVE-2026-84464",
+      "cve_id": "CVE-2026-92954",
+      "asset_id": "CVE-2026-92954",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, zammad's External Data Source feature, used to look up records from an external system, did not properly verify whether a user was allowed to see a specific ticket, user, group, or organization before including its details in a request to that external system. An authenticated user, including one with only basic customer access, could exploit this by referencing another record's ID, and thereby view details of tickets, customer accounts, teams, or organizations that did not belong to them. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84464"
+      "description": "vm2 is a sandbox library for running untrusted JavaScript in Node.js. In versions >= 3.10.0 and <= 3.11.7, Promises returned from the host realm into the sandbox are not marked as handled at the bridge boundary; only Promises created inside the sandbox are wrapped with a rejection-swallowing handler (lib/setup-sandbox.js), and the bridge only installs host-side rejection sanitizers when sandbox code calls .then/.catch/.finally. As a result, code running in the sandbox can invoke a host function that returns a rejected Promise (for example events.once() exposed via the NodeVM events builtin, or any embedder-provided Promise-returning API) and simply ignore the return value, leaving the host Promise unhandled so that Node.js's default unhandled-rejection behavior terminates the host process. This is an incomplete fix of GHSA-hw58-p9xv-2mjh. The issue is fixed in version 3.11.8.",
+      "last_modified": "2026-09-26T13:30:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92954"
     },
     {
-      "cve_id": "CVE-2026-84465",
-      "asset_id": "CVE-2026-84465",
+      "cve_id": "CVE-2026-81945",
+      "asset_id": "CVE-2026-81945",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, when Zammad checks the digital signature on an incoming S/MIME-signed email, it does not verify that the signing certificate is genuinely trusted, it only checks whether a certificate with a matching name is already stored in the system. An attacker can create their own certificate using the name of a real, previously trusted sender and use it to send a forged email. Zammad will display that email with the same \"validly signed\" indicator as a genuine message from the real sender, even though the attacker never had access to that sender's actual certificate or private key. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84465"
+      "description": "PLANET IGS-5225-8P2T4S industrial managed switch V1 and V2 firmware versions before 1.2412b260707 and 2.2412b260519 contain a stack-based buffer overflow in the web server. Insufficient bounds checking on data copied into a stack buffer allows a remote administrator to cause a denial of service or potentially execute arbitrary code on the underlying operating system.",
+      "last_modified": "2026-09-26T13:29:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81945"
     },
     {
-      "cve_id": "CVE-2026-63207",
-      "asset_id": "CVE-2026-63207",
+      "cve_id": "CVE-2026-77929",
+      "asset_id": "CVE-2026-77929",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. In 7.0.3 and 7.1.1, an authenticated administrator can obtain stored integration credentials in cleartext through the integration administration API. Certain responses do not consistently mask sensitive fields, so configured secrets can be returned in plain text instead of the expected masked placeholder. Both the LDAP and Exchange integrations are affected. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63207"
+      "description": "ClipBucket v5 before 5.5.3-#182 contains a file upload vulnerability that allows authenticated users to achieve remote code execution by uploading a PHP file with valid image magic bytes through the photo upload endpoint. The FileUpload::manageFile() function in fileupload.class.php fails to update the file extension after MIME validation, allowing an attacker-controlled .php extension to persist on disk and execute as PHP via PHP-FPM when the uploaded file is retrieved.",
+      "last_modified": "2026-09-26T13:29:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77929"
     },
     {
-      "cve_id": "CVE-2026-84461",
-      "asset_id": "CVE-2026-84461",
+      "cve_id": "CVE-2026-100629",
+      "asset_id": "CVE-2026-100629",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, the two-factor login step let an attacker try unlimited password guesses for any account without triggering Zammad's normal lockout or rate limiting. The response also revealed whether a guess was correct, even before two-factor authentication was checked. This made it possible to brute-force weak or reused passwords. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84461"
+      "description": "Capgo (capgo.app backend) before 12.127.5 contains an authorization flaw in the PATCH /private/role_bindings/:binding_id endpoint. The handler verifies that the newly assigned role's priority rank does not exceed the caller's own rank, but \u2014 unlike the DELETE handler \u2014 it never checks the rank of the role currently bound to the target binding. An authenticated user holding the org_admin role (rank 90) can therefore change an org_super_admin binding (rank 95) to a lower-privileged role such as org_member (rank 75). Because the prevent_last_super_admin_binding_delete database trigger fires only BEFORE DELETE and not on UPDATE, an org_admin can demote every org_super_admin, leaving the organization with no super administrator. The issue is fixed in 12.127.5.",
+      "last_modified": "2026-09-26T13:29:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100629"
     },
     {
-      "cve_id": "CVE-2026-61855",
-      "asset_id": "CVE-2026-61855",
+      "cve_id": "CVE-2026-100582",
+      "asset_id": "CVE-2026-100582",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. In 7.0.3 and 7.1.1, under certain conditions, Zammad's verification of inbound PGP-signed email can mark a message as carrying a valid (\"Good\") PGP signature from a registered sender key, even though the displayed message content is not actually covered by that signature. As a result, the inbound article may be stored with a successful signature status that does not reflect the authenticity of the shown content. This can mislead agents who rely on the signature indicator when assessing the trustworthiness of incoming mail. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61855"
+      "description": "OpenClaw channel plugins (@openclaw/msteams, @openclaw/feishu, @openclaw/matrix, and @openclaw/googlechat) before 2026.8.1 do not enforce the configured channel read allowlist for caller-supplied explicit read targets in message, reaction, pin, member, and related metadata read actions. A lower-trust sender or a steered agent with access to a channel read action can therefore retrieve content or metadata from channels or rooms excluded by the operator's read policy; the practical impact depends on the permissions held by the connected bot account. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T13:29:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100582"
     },
     {
-      "cve_id": "CVE-2026-63204",
-      "asset_id": "CVE-2026-63204",
+      "cve_id": "CVE-2026-100626",
+      "asset_id": "CVE-2026-100626",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, an authenticated user with agent permissions can supply an arbitrary AI analytics run identifier to the ticket summarize endpoint and receive the AI provider error message stored for that run, even if the run belongs to a ticket the agent is not authorized to access. The disclosure is limited to the provider error string; ticket content is not exposed. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63204"
+      "description": "capgo through 12.128.2 contains an insecure direct object reference vulnerability in the PUT /app/:appId endpoint that accepts attacker-controlled icon storage paths. Authenticated users can supply arbitrary paths in the private images bucket and obtain service-role-signed URLs valid for 7 days to read cross-tenant objects including user avatars, organization logos, and app icons without authorization.",
+      "last_modified": "2026-09-26T13:27:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100626"
     },
     {
-      "cve_id": "CVE-2026-63006",
-      "asset_id": "CVE-2026-63006",
+      "cve_id": "CVE-2026-100720",
+      "asset_id": "CVE-2026-100720",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, attacker-controlled HTML in inbound emails or tickets could bypass the image URL sanitizer using path traversal sequences. When an authenticated agent views the content, the browser resolves the URL to a protected API endpoint and sends the request with the agent's session cookie, enabling side effects such as forced logout without any user interaction. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63006"
+      "description": "Froxlor 2.0.0 through 2.3.10 is vulnerable to stored cross-site scripting. When a customer (the lowest-privileged authenticated role) uploads an SSL certificate for one of their own domains, the Certificates API add()/update() methods parse it with openssl_x509_parse() and store the issuer organization (issuer['O']) value verbatim without sanitization. Froxlor's table-listing renderer then emits scalar cells through Twig's `raw` filter, disabling HTML auto-escaping, so when an administrator or reseller opens Domains > SSL certificates the attacker-supplied issuer value executes as script in the privileged user's session. This crosses a privilege boundary from customer to admin and can result in full administrator account takeover; because a Froxlor admin controls webserver, DNS, and PHP configuration applied by a cron job running as root, the issue can be further escalated to command execution as root on the managed server. The issue is fixed in Froxlor 2.3.12.",
+      "last_modified": "2026-09-26T13:24:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100720"
     },
     {
-      "cve_id": "CVE-2026-63208",
-      "asset_id": "CVE-2026-63208",
+      "cve_id": "CVE-2026-100719",
+      "asset_id": "CVE-2026-100719",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, when a Microsoft Graph request fails, Zammad logs the error including the authentication token used to access the mailbox. The system attempts to hide this token in the log, but the masking is incomplete: for the token format Microsoft uses (JWT), only the first part is hidden, while the remaining parts remain readable in plain text. A Zammad admin with Microsoft Graph channel access can view these logs and see the partial token, which may reveal sensitive claims such as the account scope, tenant, or timing, and could assist in reconstructing the full token while it is still valid. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63208"
+      "description": "Froxlor versions before 2.3.12 contain a credential disclosure vulnerability in the DirProtections.listing API command that returns htpasswd password hashes. Authenticated API users can retrieve bcrypt password hashes for protected-directory users, enabling offline cracking attempts and exposure of reused credentials.",
+      "last_modified": "2026-09-26T13:24:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100719"
     },
     {
-      "cve_id": "CVE-2026-49469",
-      "asset_id": "CVE-2026-49469",
+      "cve_id": "CVE-2026-100718",
+      "asset_id": "CVE-2026-100718",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 0.70 until 10.0.26 and 11.0.8, an authenticated hotliner or technician can submit crafted criteria through the user import feature to bypass the configured default LDAP filter. This allows access to LDAP objects that the default filter was intended to exclude. This issue is fixed in versions 11.0.8 and 10.0.26.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49469"
+      "description": "Froxlor through 2.3.10 does not enforce the mail.allow_external_domains policy in the EmailSender.add API command. When an administrator has enabled the allowed-sender feature but disabled external allowed-sender domains (mail.enable_allow_sender = 1, mail.allow_external_domains = 0), an authenticated customer with API access can still use EmailSender.add to register an arbitrary external sender address for their mailbox, which is stored despite the policy. This creates a bypass between the UI/administrator configuration and the API, and \u2014 where the generated mail configuration consumes the allowed-sender table \u2014 allows a customer to authorize sender identities outside their hosted domains, facilitating sender spoofing. Fixed in 2.3.12.",
+      "last_modified": "2026-09-26T13:24:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100718"
     },
     {
-      "cve_id": "CVE-2026-53627",
-      "asset_id": "CVE-2026-53627",
+      "cve_id": "CVE-2026-100717",
+      "asset_id": "CVE-2026-100717",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 11.0.0 until 11.0.8, a low-privileged authenticated user can use the new API (v2) to perform update operations that the same user is normally forbidden to perform through the user interface. The API update flow does not consistently enforce the applicable authorization checks. This issue is fixed in version 11.0.8.",
-      "last_modified": "2026-09-26T10:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53627"
+      "description": "froxlor is a server administration panel. In versions 2.3.10 and earlier, Validate::validateUrl rejects carriage return and line feed characters only in the path, query and fragment components returned by parse_url, and never inspects the userinfo (user:pass@) components. This is an incomplete fix for GHSA-c3p2. An authenticated low-privilege customer with subdomain-create rights (no admin or change_serversettings privilege required) can supply a subdomain redirect URL that carries a CR/LF payload in the userinfo portion (e.g. http://user%0areturn 200 \"pwned\";%0a@evil.com/). The value passes validation, survives IDNA encoding, and is written verbatim into the generated nginx or Apache vhost configuration, allowing the attacker to break out of the emitted directive and inject arbitrary web-server configuration lines. froxlor regenerates and reloads the web-server configuration as root, so the injected directives take effect server-wide and can hijack responses or read local files. The issue is fixed in version 2.3.12.",
+      "last_modified": "2026-09-26T13:24:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100717"
     },
     {
-      "cve_id": "CVE-2026-79319",
-      "asset_id": "CVE-2026-79319",
+      "cve_id": "CVE-2026-100716",
+      "asset_id": "CVE-2026-100716",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Stencil core 4.43.5 is vulnerable to Incorrect Access Control.",
-      "last_modified": "2026-09-26T09:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79319"
+      "description": "Froxlor is a server administration panel. In versions 2.3.10 and earlier, the customer data-export (DataDump) cron fails to validate intermediate path components of the export destination: Froxlor\\FileDir::makeCorrectDir() contains an off-by-one in its path-component walk that skips the first segment below the customer home directory, and the guard in ExportCron.php checks only the final component with is_link(). An authenticated customer whose account has the export feature enabled can schedule an export into a genuine subdirectory of their own webspace, then replace an intermediate path component with a symlink before the root-owned cron runs. The cron's `chown -R` then recursively changes ownership of the linked directory tree \u2014 for example /etc \u2014 to the customer's UID, yielding host root and cross-tenant compromise. Exploitation is deterministic and requires no race. This is an incomplete fix of GHSA-75h4-... The issue is fixed in Froxlor 2.3.12.",
+      "last_modified": "2026-09-26T13:24:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100716"
     },
     {
-      "cve_id": "CVE-2026-98163",
-      "asset_id": "CVE-2026-98163",
+      "cve_id": "CVE-2026-100715",
+      "asset_id": "CVE-2026-100715",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncgroup: Avoid iteration of dying tasks with zero refcount\n\nThe commit 260fbcb92bbea (\"cgroup: Move dying_tasks cleanup from\ncgroup_task_release() to cgroup_task_free()\") extended the lifetime of\ntasks on the dying_tasks list.\nThe iterators have provision to go through dying_tasks because of\ndying threadgroup leaders or explicit CSS_TASK_ITER_WITH_DEAD, however,\nit was expected that such tasks can obtain a new reference (that is\npossible before cgroup_task_release()/put_task_struct_rcu_user()).\nThe tasks after cgroup_task_release() and before cgroup_task_free()\nare subject to race when they may or may not have ->usage count > 0.\n\nThe race window is between css_task_iter_next() invocations\nwhen css_set_lock is released and we may arrive at a new ->task_pos.\nThe iterator should not attempt to resurrect tasks whose ->usage count\ndropped to zero. (When that happens, __put_task_struct_rcu_cb() is\nalready imminent and the returned task_struct would could be used\nafter free.)\n\nAs for the fix, we cannot simply check the signal->live count of a task\non the dying list because that won't distinguish regular zombies waiting\nto be reaped from RCU remnant tasks that are going to be free'd.\nTherefore add an extra check to rule out ->usage==0 tasks from any\niteration.\n\nThe repeat: loop in css_task_iter_advance() doesn't consider ->usage\ncount, so add a new loop to css_task_iter_next() to skip de-used tasks\non the dying_list.\n\nRough illustration of the possible race\n\n  R (reader of cgroup.procs)         T (thread)                       L (group leader)\n  ---------------------------------  -------------------------------- --------------------------------\n                                                                      L exits, signal->live > 0\n                                                                      cgroup_task_dead(L)\n                                                                        css_set_skip_task_iters() // skips only cset->tasks\n                                                                        list_add_tail(&L->cg_list, &cset->dying_tasks)\n  css_task_iter_next()\n    take css_set_lock\n    css_task_iter_advance()\n      leader && signal->live != 0\n      => it->task_pos = &L->cg_list\n    release css_set_lock\n                                     T exits\n                                     --signal->live == 0\n\t\t\t\t     cgroup_task_dead(T) // css_set_lock\n                                     release_task(T)\n                                       cgroup_task_release(T)\n                                       release_task(L) // zap_leader\n                                         cgroup_task_release(L)\n                                         put_task_struct_rcu_user(L)\n                                         ...RCU...\n                                         put_task_struct(L)\n                                           L->usage = 0\n                                           /* L still on dying_tasks */\n                                           ...RCU...\n                                           __put_task_struct(L)\n  css_task_iter_next() // another iteration\n    take css_set_lock\n    it->task_pos = &L->cg_list\n    get_task_struct(L)\n      => addition on 0\n    drop css_set_lock\n                                           cgroup_task_free(L)\n                                             css_set_skip_task_iters() // dying skip comes too late\n                                           free_task(L)\n  cgroup_procs_show()\n    task_pid_vnr(L)",
-      "last_modified": "2026-09-26T09:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98163"
+      "description": "Froxlor through 2.3.10 is vulnerable to arbitrary file deletion via symlink following in the FTP data deletion cron task. Cron task 8 (deleteFtpData), queued when an FTP account is deleted, calls FileDir::makeCorrectDir() without the $fixed_homedir argument, so the symlink component walk is skipped, and then executes 'rm -rf' as root on the resulting path with string-level guards only. Because makeCorrectDir() appends a trailing slash, GNU rm dereferences a symlink used either as an intermediate path component or as the final component. An authenticated customer who can write to the FTP home directory can plant a symlink between task insertion and cron execution, causing the root cron job to recursively delete arbitrary directory trees, resulting in cross-tenant data destruction and host denial of service. This issue is fixed in Froxlor 2.3.12.",
+      "last_modified": "2026-09-26T13:24:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100715"
     },
     {
-      "cve_id": "CVE-2026-45801",
-      "asset_id": "CVE-2026-45801",
+      "cve_id": "CVE-2026-100714",
+      "asset_id": "CVE-2026-100714",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 0.72 until 10.0.26 and 11.0.8, an authenticated user without the required permission can enable debug mode. The affected user-setting update does not enforce the privilege boundary intended to restrict debug-mode activation. This issue is fixed in versions 11.0.8 and 10.0.26.",
-      "last_modified": "2026-09-26T09:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45801"
+      "description": "Froxlor before 2.3.12 does not restrict or escape the system.letsencryptchallengepath setting: unlike sibling settings hardened in GHSA-33mp, the field has no string_regexp or required_otp guard, and its value is concatenated unescaped into the acme.sh command line built in lib/Froxlor/Cron/Http/LetsEncrypt/AcmeSh.php and executed by the root cron via FileDir::safe_exec. Because safe_exec only blacklists shell metacharacters such as ; | & > < \\ $ ~ ?, spaces and quotes survive and the value is word-split into additional acme.sh arguments. An administrator, or any actor able to write settings (for example through the settings-import API), can therefore inject acme.sh options such as --renew-hook, --pre-hook or --post-hook to obtain arbitrary command execution as root at the next Let's Encrypt cron run, or use --config-home/--cert-home for arbitrary file writes. Versions up to and including 2.3.10 are affected; the issue is fixed in 2.3.12.",
+      "last_modified": "2026-09-26T13:24:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100714"
     },
     {
-      "cve_id": "CVE-2026-53628",
-      "asset_id": "CVE-2026-53628",
+      "cve_id": "CVE-2026-100713",
+      "asset_id": "CVE-2026-100713",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 0.84 until 10.0.26 and 11.0.8, an administrator holding the Update auth and sync or Update auth, sync and 2FA right can change the authentication method and disable two-factor authentication for user accounts outside the administrator's entity scope. The affected user-account administration flow did not consistently enforce the target user's entity-scoped update permission. This issue is fixed in versions 11.0.8 and 10.0.26.",
-      "last_modified": "2026-09-26T09:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53628"
+      "description": "Froxlor 2.3.10 and earlier contain a time-of-check time-of-use (TOCTOU) race condition in the SSH key synchronization cron (lib/Froxlor/Cron/System/SshKeys.php, SshKeys::generateFiles). The containment/symlink validation performed by FileDir::makeCorrectDir()/makeCorrectFile() is done only at check time; the live filesystem path is re-resolved as root at write time (file_put_contents with FILE_APPEND|LOCK_EX, followed by chmod/chown/chgrp), with a database round-trip and file reads in between, and no path or file-descriptor pinning (no O_NOFOLLOW or openat2(RESOLVE_NO_SYMLINKS)). On installations where the non-default setting system.allow_customer_shell=1 grants customers local shell access, a customer can atomically swap their ~/.ssh directory for a symlink after the check and before the write, causing the root-run cron to append the customer's public key to /root/.ssh/authorized_keys and to chown /root/.ssh to the customer, resulting in full root compromise of the panel host. The cron re-runs on every interval, allowing unlimited attempts. This is a residual race that bypasses the check-time fix introduced for GHSA-mq5v-... . The issue is fixed in Froxlor 2.3.12.",
+      "last_modified": "2026-09-26T13:24:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100713"
     },
     {
-      "cve_id": "CVE-2026-55217",
-      "asset_id": "CVE-2026-55217",
+      "cve_id": "CVE-2026-100712",
+      "asset_id": "CVE-2026-100712",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 0.85 until 10.0.26 and 11.0.8, a low-privileged authenticated user can create, update, or delete knowledge base comments and translations without the required authorization for the affected content. This issue is fixed in versions 11.0.8 and 10.0.26.",
-      "last_modified": "2026-09-26T09:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55217"
+      "description": "froxlor through 2.3.10 disables a user's two-factor authentication immediately upon an unauthenticated-triggerable GET request to the 2FA management page (e.g. /customer_index.php?page=2fa&action=delete), with no confirmation, re-authentication, or CSRF token. The global CSRF middleware only covers POST/PUT/PATCH/DELETE requests, and the session cookie is set to SameSite=Lax, so a cross-site top-level navigation (link click or redirect) carries the victim's session and silently clears type_2fa/data_2fa. Both the customer and admin 2FA handlers are affected. An attacker who lures a logged-in panel user into following a crafted link reduces that account to password-only authentication, which can be chained with a compromised password for account takeover. Fixed in 2.3.12.",
+      "last_modified": "2026-09-26T13:24:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100712"
     },
     {
-      "cve_id": "CVE-2026-49470",
-      "asset_id": "CVE-2026-49470",
+      "cve_id": "CVE-2026-100711",
+      "asset_id": "CVE-2026-100711",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 11.0.0 until 11.0.8, the time-based one-time password verification endpoint does not limit failed submissions per user. An attacker who has obtained a user's primary authentication credentials can repeatedly submit TOTP values against the MFA verification flow, making brute-force compromise of the second factor and subsequent account takeover possible. This issue is fixed in version 11.0.8.",
-      "last_modified": "2026-09-26T09:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49470"
+      "description": "froxlor versions before 2.3.12 fail to invalidate existing panel sessions, API keys, and 2FA trust cookies when a user password is changed. Attackers holding hijacked sessions, valid API keys, or 2FA trust tokens retain full account access after password rotation, bypassing incident response actions.",
+      "last_modified": "2026-09-26T13:24:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100711"
     },
     {
-      "cve_id": "CVE-2026-6103",
-      "asset_id": "CVE-2026-6103",
+      "cve_id": "CVE-2026-100710",
+      "asset_id": "CVE-2026-100710",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "phar_tar_number() parses the octal size field of a TAR header into a uint32_t with no overflow check. The field is 11 octal digits wide and holds values up to 0x1FFFFFFFF, so a size above 0xFFFFFFFF silently wraps. The parser then skips the wrong number of data blocks and interprets attacker-controlled file content as the next TAR header, which lets a crafted archive inject entries that PharData reports and extracts as if they were genuine.",
-      "last_modified": "2026-09-26T09:45:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-6103"
+      "description": "Froxlor through 2.3.10 does not filter sensitive columns from API responses: Domains::get(), Domains::listing(), SubDomains::get(), and the admin branch of SubDomains::listing() perform a wildcard SELECT over the panel_domains table and return the row unmodified, including the panel_domains.dkim_privkey field. An authenticated, non-superadmin admin holding the delegated customers_see_all flag can therefore read the DKIM private signing keys of domains belonging to other tenants via Domains.get, Domains.listing, SubDomains.get, or SubDomains.listing, with a single listing call disclosing the key of every visible domain. The disclosed keys allow an attacker to sign email that passes DKIM verification and DMARC alignment for the affected domains. This is a follow-on to an incomplete fix that stripped password and data_2fa but not dkim_privkey. The issue is fixed in 2.3.12.",
+      "last_modified": "2026-09-26T13:24:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100710"
     },
     {
-      "cve_id": "CVE-2026-55214",
-      "asset_id": "CVE-2026-55214",
+      "cve_id": "CVE-2026-100709",
+      "asset_id": "CVE-2026-100709",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 11.0.6 until 11.0.8, an authenticated technician can store active markup in supplier website fields. Any user who opens the affected item's suppliers list triggers the stored cross-site scripting payload. This issue is fixed in version 11.0.8.",
-      "last_modified": "2026-09-26T09:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55214"
+      "description": "Froxlor through 2.3.10 stores only a numeric user ID in remembered-2FA tokens (panel_2fa_tokens) without recording the account namespace, and the remembered-token lookup during login is not constrained to the customer or administrator account type. Because customer and administrator IDs are allocated from separate namespaces, a remembered-2FA token legitimately issued to a customer with a given ID also matches an administrator with the same ID. An attacker who controls a customer account with a colliding ID, holds a valid remembered-2FA cookie for it, and already knows the target administrator's password can bypass the administrator's TOTP second factor and obtain an authenticated administrator session. This is a second-factor bypass only; it does not defeat password authentication. Fixed in 2.3.12.",
+      "last_modified": "2026-09-26T13:24:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100709"
     },
     {
-      "cve_id": "CVE-2026-47679",
-      "asset_id": "CVE-2026-47679",
+      "cve_id": "CVE-2026-100708",
+      "asset_id": "CVE-2026-100708",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 10.0.0 until 10.0.26 and 11.0.8, any logged-in GLPI user can exploit insufficient path validation in the profile-picture update flow to request deletion of an attacker-selected file hosted by the server. This issue is fixed in versions 11.0.8 and 10.0.26.",
-      "last_modified": "2026-09-26T09:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47679"
+      "description": "Froxlor before 2.3.13 returns the ssl_key_file column \u2014 which stores the raw PEM TLS private-key content \u2014 verbatim in the JSON responses of the Certificates.get and Certificates.listing API commands, because the results of the underlying domain_ssl_settings queries are passed through ApiCommand::response() without any field stripping or allowlist. A low-privileged authenticated customer API caller can retrieve the private keys of their own domains' certificates, including Let's Encrypt keys that Froxlor generates server-side and stores root-only (0600) and to which the customer otherwise has no filesystem access; reseller and customers_see_all admin accounts can dump the private keys of other principals through the same sink. Disclosed keys enable domain impersonation, passive decryption of captured TLS traffic, and active machine-in-the-middle attacks.",
+      "last_modified": "2026-09-26T13:24:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100708"
     },
     {
-      "cve_id": "CVE-2026-53610",
-      "asset_id": "CVE-2026-53610",
+      "cve_id": "CVE-2026-100707",
+      "asset_id": "CVE-2026-100707",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 11.0.0 until 11.0.8, an attacker can craft a URL for a dashboard that reflects attacker-controlled markup without sufficient output encoding. A user who opens the crafted URL triggers reflected cross-site scripting in the dashboard. This issue is fixed in version 11.0.8.",
-      "last_modified": "2026-09-26T09:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53610"
+      "description": "Kyverno before 1.19.1 contains a namespace isolation bypass in the apiCall context entry of namespaced Policy resources due to inconsistent path interpretation between validation and execution. A low-privilege tenant can use percent-encoded dot-segments in urlPath to bypass namespace checks and read resources from other namespaces using the Kyverno admission controller's ServiceAccount credentials.",
+      "last_modified": "2026-09-26T13:24:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100707"
     },
     {
-      "cve_id": "CVE-2026-53625",
-      "asset_id": "CVE-2026-53625",
+      "cve_id": "CVE-2026-100706",
+      "asset_id": "CVE-2026-100706",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 0.70 until 10.0.26 and 11.0.8, a technician can manipulate the authtype value through the API to change another user's authentication method. Under configurations using the legacy API REST interface or SSO logins, this can change a super-administrator's authentication method and enable account takeover. This issue is fixed in versions 11.0.8 and 10.0.26.",
-      "last_modified": "2026-09-26T09:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53625"
+      "description": "kyverno before 1.19.1 fails to properly validate URL-encoded path segments in Policy apiCall urlPath, allowing namespace tenants to bypass the per-namespace clamp and create objects in other namespaces as the admission-controller ServiceAccount. Attackers can exploit this by using percent-encoded directory traversal sequences to create MutatingWebhookConfiguration objects cluster-wide or PolicyException objects in the kyverno namespace, enabling privilege escalation to cluster admin.",
+      "last_modified": "2026-09-26T13:24:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100706"
     },
     {
-      "cve_id": "CVE-2026-48482",
-      "asset_id": "CVE-2026-48482",
+      "cve_id": "CVE-2026-100705",
+      "asset_id": "CVE-2026-100705",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 11.0.0 until 11.0.8, a form administrator can use Form import with a crafted illustration or scene identifier that traverses outside the intended custom-asset directory. The imported file can be written to an executable server location, allowing a malicious script to be invoked remotely. This issue is fixed in version 11.0.8.",
-      "last_modified": "2026-09-26T09:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48482"
+      "description": "Kyverno before 1.19.1 is vulnerable to server-side request forgery. The default egress blocklist (169.254.169.254, 169.254.169.253, metadata.google.internal, 127.0.0.0/8, ::1/128) and the scoped-token control were wired only into the new CEL http.Get/Post library and were never applied to the legacy apiCall service executor (pkg/engine/apicall/executor.go) or to the GlobalContextEntry external-API path, which handle every non-CEL context[].apiCall.service call. Because these paths use a plain net/http client with no egress filtering and no validation of the configured service URL, a ClusterPolicy or GlobalContextEntry author \u2014 or, where a deployed policy templates the service URL from the admission resource, a lower-privileged resource submitter \u2014 can cause Kyverno to issue GET/POST requests to an arbitrary host, including the cloud metadata endpoint, loopback, and any in-cluster service, reading cloud instance credentials and reaching internal endpoints with Kyverno's network position. The executor also unconditionally attaches Kyverno's projected ServiceAccount token to the attacker-chosen destination; the token is audience-scoped, limiting its replay value. Fixed in 1.19.1.",
+      "last_modified": "2026-09-26T13:23:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100705"
     },
     {
-      "cve_id": "CVE-2026-53626",
-      "asset_id": "CVE-2026-53626",
+      "cve_id": "CVE-2026-100704",
+      "asset_id": "CVE-2026-100704",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 11.0.5 until 11.0.8, under certain conditions, permission logic can grant access to a document without confirming that the document is linked to the targeted item. A user can use an unrelated item that the user is permitted to view to read a document linked to an inaccessible item. This issue is fixed in version 11.0.8.",
-      "last_modified": "2026-09-26T09:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53626"
+      "description": "Kyverno is a policy engine for Kubernetes. In versions 1.14.0 through 1.19.0, the ImageValidatingPolicy (policies.kyverno.io/v1beta1) evaluator never reads the spec.images and spec.allowedValues fields of a PolicyException. Any PolicyException whose policyRefs and matchConditions match a resource causes image signature verification to be skipped for the entire resource rather than only for the listed images or values, so an exception intended to exempt a single trusted image exempts every image on the matched resource(s). As a result, unsigned or untrusted images can be admitted to the cluster without signature verification. This differs from ValidatingPolicy, GeneratingPolicy, and MutatingPolicy, which treat the same field as a partial exemption. The issue is fixed in version 1.19.1.",
+      "last_modified": "2026-09-26T13:23:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100704"
     },
     {
-      "cve_id": "CVE-2026-100383",
-      "asset_id": "CVE-2026-100383",
+      "cve_id": "CVE-2026-100703",
+      "asset_id": "CVE-2026-100703",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Wikimedia Foundation Mediawiki - WikiLambda Extension allows Cross-Site Scripting (XSS).\n\nThis issue affects Mediawiki - WikiLambda Extension: 1.47.0-alpha. The issue has been remediated on the `master` branch.",
-      "last_modified": "2026-09-26T09:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100383"
+      "description": "Kyverno 1.16.0 through 1.19.0 registers the globalcontext.Lib CEL library in its policy environment without confining it to the policy's namespace, unlike the sibling libraries (resource.Lib, http.Lib, configMap loader) which are handed the policy namespace. A tenant who can create a namespaced policy (e.g. NamespacedValidatingPolicy, and likewise the namespaced mutating, deleting, generating, and image-validating policy kinds) in their own namespace can call globalContext.get(\"<entry>\", \"\") and receive the full cached contents of a cluster-scoped GlobalContextEntry, including data cached from namespaces the tenant has no RBAC permission to read. No admission validation rejects such calls. Fixed in 1.19.1.",
+      "last_modified": "2026-09-26T13:23:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100703"
     },
     {
-      "cve_id": "CVE-2026-53629",
-      "asset_id": "CVE-2026-53629",
+      "cve_id": "CVE-2026-100702",
+      "asset_id": "CVE-2026-100702",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GLPI is a free asset and IT management software package. From 9.4.0 until 10.0.26 and 11.0.8, an attacker with the READ right on logs can craft a URL for the history tab that injects attacker-controlled values into a database query. This permits SQL injection through the history tab endpoint. This issue is fixed in versions 11.0.8 and 10.0.26.",
-      "last_modified": "2026-09-26T09:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53629"
+      "description": "Nodemailer before 10.0.2 fails to properly flatten deeply nested arrays in recipient fields such as to, cc, and bcc, allowing attackers to cause stack exhaustion. Attackers can supply a deeply nested JSON recipient array that triggers recursive Array.toString() conversion, exhausting the call stack and terminating the Node.js process.",
+      "last_modified": "2026-09-26T13:23:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100702"
     },
     {
-      "cve_id": "CVE-2026-100304",
-      "asset_id": "CVE-2026-100304",
+      "cve_id": "CVE-2026-100701",
+      "asset_id": "CVE-2026-100701",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form 6.0 contains an information disclosure vulnerability in FormAuthUtils.hasPermission that fails open when a form does not exist, allowing authenticated users to access deleted form submissions. Attackers can read orphaned submission data including personal information by providing a known dataId to the GET /user/form/data/details endpoint after the form has been permanently deleted.",
-      "last_modified": "2026-09-26T09:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100304"
+      "description": "Nodemailer versions 5.0.0 through 10.0.1 use a process-global DNS cache that is keyed only by the DNS host, while each cache entry also stores the caller-specific TLS servername. When two direct TLS/SMTPS transports (secure: true) resolve the same non-IP host with different tls.servername values, the first transport's servername is returned on the cache hit and overwrites the second transport's explicitly configured value, so Nodemailer sends the wrong SNI value and validates the peer certificate against the wrong identity. In multi-tenant services or SNI-routed SMTP gateways, an attacker who can prime the cache can cause a victim transport to connect to the attacker's TLS virtual host and accept the attacker's certificate even with rejectUnauthorized: true, disclosing the victim's SMTP credentials. Fixed in 10.0.2.",
+      "last_modified": "2026-09-26T13:23:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100701"
     },
     {
-      "cve_id": "CVE-2026-100305",
-      "asset_id": "CVE-2026-100305",
+      "cve_id": "CVE-2026-100700",
+      "asset_id": "CVE-2026-100700",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form through 6.0 fails to enforce form fill-in restrictions on the authenticated submission endpoint POST /user/form/data/create. Authenticated attackers who know a form's key can submit unlimited entries to any form, bypassing publish status, time window, quota, and per-IP restrictions to falsify collected results.",
-      "last_modified": "2026-09-26T09:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100305"
+      "description": "nodemailer before 10.0.6 contains a denial of service vulnerability in the addressparser free-text fallback regex pattern that exhibits quadratic backtracking behavior. Attackers can supply crafted email header values with long whitespace-free runs to block the Node.js event loop for tens of seconds, causing service unavailability.",
+      "last_modified": "2026-09-26T13:23:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100700"
     },
     {
-      "cve_id": "CVE-2026-100306",
-      "asset_id": "CVE-2026-100306",
+      "cve_id": "CVE-2026-100699",
+      "asset_id": "CVE-2026-100699",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form through 6.0 fails to validate write passwords on submission endpoints, enforcing the check only on the front end. Remote unauthenticated attackers can submit form entries directly to public submission APIs without providing the password by using the form key from share links.",
-      "last_modified": "2026-09-26T09:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100306"
+      "description": "Nodemailer is a Node.js email-sending library. In versions >= 9.1.0 and < 10.0.9, the address parser (src/addressparser) mishandles addresses whose local-part is a quoted string and that are followed by RFC 5322 comments, allowing trailing comment-separated domain atoms to be retained in the normalized address. For example, the input \"user\"@example.com(x)evil.com is parsed to the address value 'user@example.com evil.com', which contains additional attacker-controlled domain text separated by a literal space. This parsed value is used without further strict recipient validation when the message envelope is built (envelope.to in src/mime-node), so a malformed/ambiguous recipient address can be accepted and placed in the SMTP envelope. Whether this results in delivery to an unintended recipient on real SMTP servers has not been confirmed. The issue is a variant of the RFC 5322 comment parsing problem addressed in GHSA-cc9r-2j5m-2m83, affecting the separate quoted-local-part code path. Version 10.0.9 contains a fix.",
+      "last_modified": "2026-09-26T13:23:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100699"
     },
     {
-      "cve_id": "CVE-2026-5267",
-      "asset_id": "CVE-2026-5267",
+      "cve_id": "CVE-2026-100698",
+      "asset_id": "CVE-2026-100698",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ciena Navigator Network\nControl Suite (NCS) contains an information exposure vulnerability in an\nevent-streaming API that does not properly enforce authentication. An\nunauthenticated attacker with network access to the affected service could\naccess the event stream and potentially obtain sensitive information.",
-      "last_modified": "2026-09-26T09:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5267"
+      "description": "Adminer 5.5.1 through 6.0.1 improperly parses the login 'server' string in the host_port() function in adminer/include/functions.inc.php. The port capture group requires pure digits anchored to the end of the string, so any server value with a non-digit tail fails the regex and falls back to returning the whole string as the host with an empty port. Because the privileged-port restriction in adminer/include/auth.inc.php inspects only the parsed port, the check is skipped, and the mysqli/mysqlnd client subsequently re-parses host:port from the host string and opens a TCP connection. A remote, unauthenticated attacker who can reach the Adminer login page can submit a crafted value such as 127.0.0.1:80/x to make the server initiate TCP connections to arbitrary internal hosts and privileged ports before credentials are validated, enabling server-side request forgery and blind internal port scanning (connection refused vs. handshake vs. timeout acts as a liveness oracle). This is a regression that re-opens the bypass fixed in 5.5.0 (GHSA-58cq-mgw2-38m5). Fixed in 6.0.2.",
+      "last_modified": "2026-09-26T13:23:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100698"
     },
     {
-      "cve_id": "CVE-2026-100372",
-      "asset_id": "CVE-2026-100372",
+      "cve_id": "CVE-2026-100697",
+      "asset_id": "CVE-2026-100697",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ClipBucket v5 before 5.5.3-#197 contains a path traversal vulnerability in the admin template editor that allows authenticated administrators to overwrite PHP files by supplying directory traversal sequences in the folder parameter. Attackers with manage_template_access permission can traverse outside the layout directory to modify executable PHP files and achieve remote code execution as the web server user.",
-      "last_modified": "2026-09-26T09:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100372"
+      "description": "Adminer 6.0.0 through 6.0.1, when the official ClickHouse driver plugin (plugins/drivers/clickhouse.php, rewritten in 6.0.0) is loaded, is vulnerable to pre-authentication server-side request forgery. An unauthenticated attacker can submit auth[driver]=clickhouse with auth[server] set to an arbitrary URL (for example http://127.0.0.1:18089), causing the Adminer server to issue an HTTP POST containing 'SELECT version()' to that host. In rootQuery(), if the target returns a status outside 200-299 (other than 401/403), the raw HTTP response body is assigned to the connection error and rendered on the login page, so the attacker receives the full response body of the internal service. This enables internal network/port reconnaissance and disclosure of sensitive information contained in internal error pages (stack traces, internal hostnames, file paths, configuration identifiers). Fixed in Adminer 6.0.2.",
+      "last_modified": "2026-09-26T13:23:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100697"
     },
     {
-      "cve_id": "CVE-2026-26831",
-      "asset_id": "CVE-2026-26831",
+      "cve_id": "CVE-2026-100696",
+      "asset_id": "CVE-2026-100696",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "textract through 2.5.0 is vulnerable to OS Command Injection via the file path parameter in multiple extractors. When processing files with malicious filenames, the filePath is passed directly to child_process.exec() in lib/extractors/doc.js, rtf.js, dxf.js, images.js, and lib/util.js with inadequate sanitization",
-      "last_modified": "2026-09-26T09:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-26831"
+      "description": "Adminer 4.16.0 through 6.0.1 contain a pre-authentication Server-Side Request Forgery (SSRF) vulnerability in the optional Elasticsearch driver (plugins/drivers/elastic.php), fixed in 6.0.2. Because adminer/include/auth.inc.php invokes Driver::connect() before the login result is validated, an unauthenticated attacker who submits crafted auth[server], auth[username], and auth[password] parameters can cause the Adminer server to issue an HTTP GET request (via get_url()/file_get_contents()) to an arbitrary reachable host and port. The driver validates only general server syntax and does not block loopback, private, link-local, or other reserved addresses; if no port is given it appends the default 9200, and Adminer's generic port check rejects ports below 1024. Selected JSON error fields from non-2xx Elasticsearch-style responses, as well as connection failures, are rendered on the login page, providing a port-scanning oracle and enabling internal network reconnaissance and service fingerprinting. Exploitation requires that the optional Elasticsearch driver be explicitly deployed (e.g., via the adminer/elastic.php template or an adminer_object() configuration; it is not loaded in a default build) and that PHP allow_url_fopen be enabled.",
+      "last_modified": "2026-09-26T13:23:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100696"
     },
     {
-      "cve_id": "CVE-2026-35616",
-      "asset_id": "CVE-2026-35616",
+      "cve_id": "CVE-2026-100695",
+      "asset_id": "CVE-2026-100695",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A improper access control vulnerability in Fortinet FortiClientEMS 7.4.5 through 7.4.6 may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
-      "last_modified": "2026-09-26T09:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35616"
+      "description": "Adminer before 6.0.2 contains a cross-site scripting vulnerability where the CONNECTION_ID() database result is interpolated into JavaScript without proper escaping, allowing a malicious database server to execute arbitrary JavaScript in the authenticated Adminer origin. In co-located deployments where the database has FILE privileges and can write to the webroot, attackers can use the XSS to submit authenticated SQL requests that write PHP files via INTO DUMPFILE, achieving remote code execution as the web server account.",
+      "last_modified": "2026-09-26T13:23:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100695"
     },
     {
-      "cve_id": "CVE-2026-100522",
-      "asset_id": "CVE-2026-100522",
+      "cve_id": "CVE-2026-100694",
+      "asset_id": "CVE-2026-100694",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Cotonti through 1.0.0 contains a reflected cross-site scripting vulnerability in message.php where the lng parameter is not properly escaped before output in the confirmation dialog. Unauthenticated attackers can craft malicious links with script payloads in the lng parameter to execute arbitrary JavaScript in victim browser sessions.",
-      "last_modified": "2026-09-26T09:00:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100522"
+      "description": "Hugo is a static site generator. In versions from v0.56.0 through v0.165.x, content files mapped to the text/org media type are rendered without escaping raw HTML: Org export blocks and @@html:...@@ snippets pass HTML through unescaped, resulting in cross-site scripting (XSS) in the generated site. An attacker who can supply or influence a content file under /content or the output of a content adapter can inject scripts that execute in the browsers of visitors to the affected pages. Only pages whose source file or content-adapter output declares the text/org media type are affected, and sites that fully trust all content sources are not impacted. Version v0.166.0 fixes the issue by introducing a security.allowContent allowlist that denies text/org by default; sites that intentionally author Org Mode content can opt back in with [security] allowContent = ['.*'].",
+      "last_modified": "2026-09-26T13:23:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100694"
     },
     {
-      "cve_id": "CVE-2026-100523",
-      "asset_id": "CVE-2026-100523",
+      "cve_id": "CVE-2026-100693",
+      "asset_id": "CVE-2026-100693",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Cotonti through 1.0.0 contains an open redirect vulnerability in message.php that base64-decodes the redirect parameter without domain validation. Unauthenticated attackers can craft malicious links with encoded external URLs to redirect users to arbitrary sites via meta refresh tags for phishing attacks.",
-      "last_modified": "2026-09-26T09:00:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100523"
+      "description": "Hugo versions from v0.162.0 before v0.166.0 contain a case-sensitive validation flaw in the security.http.urls IP-literal deny rule that allows attackers to bypass restrictions. Attackers can use mixed-case URL schemes in resources.GetRemote calls to fetch from restricted IP addresses like localhost.",
+      "last_modified": "2026-09-26T13:23:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100693"
     },
     {
-      "cve_id": "CVE-2026-100312",
-      "asset_id": "CVE-2026-100312",
+      "cve_id": "CVE-2026-100692",
+      "asset_id": "CVE-2026-100692",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. The impacted element is an unknown function of the file /updateguest.php. Performing a manipulation of the argument gname/editassid results in sql injection. It is possible to initiate the attack remotely. The exploit has been released to the public and may be used for attacks. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-26T08:45:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100312"
+      "description": "Hugo is a static site generator. In versions after v0.123.0 and before v0.166.0, Hugo's symlink confinement checks stopped at the mount root itself, so a theme or module checked into themes/ (or a vendored module) could contain a symlink at a mount root (for example themes/mytheme/assets -> /some/dir/outside). Files behind such a symlink were readable during a site build through resources.Get, resources.Match and similar functions, and could be published to public/ via static mounts, bypassing the rule that theme and module mount sources must be local paths. Modules fetched via Go modules are not affected because Go module zips cannot contain symlinks, and this is not an escalation for the main project, which may already mount absolute paths by configuration. Fixed in v0.166.0, where symlinked mount roots and symlinked directories between the mount root and the module directory are treated as non-existent for all modules. As a workaround, inspect themes/ and vendored modules for symlinks at mount roots before building, or replace symlinks with explicit mounts.",
+      "last_modified": "2026-09-26T13:23:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100692"
     },
     {
-      "cve_id": "CVE-2026-17545",
-      "asset_id": "CVE-2026-17545",
+      "cve_id": "CVE-2026-100691",
+      "asset_id": "CVE-2026-100691",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "On Windows, PHP's filesystem and stream APIs do not reject reserved device names such as CON, PRN, AUX, NUL, COM1 to COM9, LPT1 to LPT9, CONIN$ and CONOUT$ when they appear as a component of a path. An attacker-controlled filename therefore reaches CreateFileW() and opens a device instead of the regular file the application expected, which can block or hang the request and exhaust worker processes.",
-      "last_modified": "2026-09-26T08:45:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17545"
+      "description": "Hugo versions 0.75.0 through 0.165.x contain a stored cross-site scripting vulnerability: the syntax highlighter does not escape the `lineAnchors` option before passing it to Chroma, which writes the value verbatim into the `id` and `href` attributes of the generated line-number markup. A crafted `lineAnchors` value supplied as a Markdown code fence attribute (or passed to the `highlight` template function) results in unescaped HTML in the rendered page, allowing arbitrary JavaScript to execute in the browsers of visitors to the generated site. This affects sites that build and publish Markdown from untrusted contributors; Hugo's security model otherwise considers content trusted input. Fixed in 0.166.0, where the `lineAnchors` value is HTML-escaped before being passed to Chroma.",
+      "last_modified": "2026-09-26T13:23:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100691"
     },
     {
-      "cve_id": "CVE-2025-14181",
-      "asset_id": "CVE-2025-14181",
+      "cve_id": "CVE-2026-100690",
+      "asset_id": "CVE-2026-100690",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SOAP HTTP client guards its response buffer growth with a check that relies on signed integer overflow, which is undefined behaviour and is not guaranteed to trigger. When the check is optimised away, a malicious SOAP server can make the client allocate a buffer far smaller than the data it then writes into it, producing a heap buffer overflow.",
-      "last_modified": "2026-09-26T08:45:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14181"
+      "description": "Hugo versions from v0.161.0 through v0.165.0 run Node.js tools (css.PostCSS, css.TailwindCSS, js.Babel) under the Node.js permission model to restrict file system reads to the project directory and configured mounts. Because the Node.js permission model validates only the lexical path and follows symbolic links that point outside the allowed set, Hugo did not detect symlinks escaping the sandbox. An attacker who can contribute content to a Hugo project (for example via a pull request) can commit a symlink such as assets/css/x.css -> /etc/passwd together with a PostCSS plugin that reads it, allowing any file readable by the Hugo build process to be disclosed and potentially embedded in the published site. This affects builds using the default security configuration; projects that do not invoke Node.js tools are unaffected. Fixed in v0.166.0, which scans allowed paths and fails the build when a symbolic link resolves outside them.",
+      "last_modified": "2026-09-26T13:23:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100690"
     },
     {
-      "cve_id": "CVE-2026-91766",
-      "asset_id": "CVE-2026-91766",
+      "cve_id": "CVE-2026-100689",
+      "asset_id": "CVE-2026-100689",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When the http:// stream wrapper follows a redirect it forwards the user-supplied Authorization, Cookie and Proxy-Authorization headers unchanged, even when the redirect target is a different host, a different port, or a downgrade from HTTPS to HTTP. A server that can steer a redirect therefore receives credentials that were only meant for the original origin. This is the same class of issue that libcurl fixed in 7.58.0 ( CVE-2018-1000007 https://github.com/advisories/GHSA-g7x2-hrfp-pv5f ).",
-      "last_modified": "2026-09-26T08:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91766"
+      "description": "GitPython before 3.1.62 does not validate the `path` field read from an untrusted .gitmodules file when updating submodules. While a prior fix (GHSA-hmq2-w58f-27jc) added Submodule._validated_name() to constrain the `name` field, and GitPython's own containment guard Submodule._to_relative_path() is applied in add() and move(), Submodule.update() derives the absolute checkout location from the raw `path` value without that guard. A .gitmodules entry containing directory traversal components (e.g., path = ../../../tmp/escaped) can therefore cause directories to be created via os.makedirs() outside the repository working tree, populated from the submodule URL on the clone path, and removed via shutil.rmtree() when force_remove is used. Exploitation requires an application flow that updates submodules at a non-HEAD commit (such as a historical-commit API); the common clone-then-update flow re-derives the path from a canonical tree lookup and is not affected. The issue is fixed in GitPython 3.1.62.",
+      "last_modified": "2026-09-26T13:23:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100689"
     },
     {
-      "cve_id": "CVE-2026-100377",
-      "asset_id": "CVE-2026-100377",
+      "cve_id": "CVE-2026-100688",
+      "asset_id": "CVE-2026-100688",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Wikimedia Foundation Mediawiki - WikiLambda Extension allows Excavation.\n\nThis issue affects Mediawiki - WikiLambda Extension: 1.47.0-alpha. The issue has been remediated on the `master` branch.",
-      "last_modified": "2026-09-26T08:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100377"
+      "description": "Budibase server before 3.45.0 contains a cross-tenant information disclosure vulnerability in the GET /api/applications/:appId/appPackage endpoint that allows authenticated users to read another tenant's application metadata and source code. Attackers can supply a victim tenant's app id to retrieve sensitive application details including navigation structure, role names, internal screen URLs, JavaScript snippets, and user identifiers without authorization checks.",
+      "last_modified": "2026-09-26T13:23:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100688"
     },
     {
-      "cve_id": "CVE-2025-1218",
-      "asset_id": "CVE-2025-1218",
+      "cve_id": "CVE-2026-100687",
+      "asset_id": "CVE-2026-100687",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The mysqlnd wire protocol parser reads fields out of server packets before checking that the packet still holds enough bytes for them. A malicious or compromised MySQL server can send a truncated packet and make the client read past the end of the packet buffer, which is undefined behaviour and can crash the process.",
-      "last_modified": "2026-09-26T08:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1218"
+      "description": "Budibase Server before 3.45.0 fails to redact plaintext datasource credentials before broadcasting external table updates to the Builder collaboration websocket room. Attackers with Builder access can intercept unredacted datasource objects containing database passwords and API keys by observing table save or delete operations.",
+      "last_modified": "2026-09-26T13:23:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100687"
     },
     {
-      "cve_id": "CVE-2026-91767",
-      "asset_id": "CVE-2026-91767",
+      "cve_id": "CVE-2026-100686",
+      "asset_id": "CVE-2026-100686",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "php_openssl_matches_wildcard_name() in ext/openssl/xp_ssl.c underflows the length argument passed to memchr() when a TLS server certificate presents a wildcard name whose literal characters are together longer than the hostname being verified. A malicious server presenting such a certificate makes the PHP client read up to SIZE_MAX bytes past the end of a heap allocation. The path is reachable from any default client stream, because verify_peer_name is enabled by default.",
-      "last_modified": "2026-09-26T08:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91767"
+      "description": "Budibase versions before 3.45.0 fail to validate per-app authorization in the POST /api/global/groups/:groupId/apps endpoint, allowing builders to assign application roles across workspace boundaries. A builder of a single workspace can exploit missing per-app authorization checks to grant themselves admin roles in other workspaces by modifying user group role mappings.",
+      "last_modified": "2026-09-26T13:23:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100686"
     },
     {
-      "cve_id": "CVE-2026-91769",
-      "asset_id": "CVE-2026-91769",
+      "cve_id": "CVE-2026-100685",
+      "asset_id": "CVE-2026-100685",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "PHP's OpenSSL stream peer verification checks the certificate's subjectAltName entries first and, whenever no entry matches, falls back to the Common Name. RFC 6125 requires the CN to be ignored once the certificate presents any service identity, so a certificate carrying a non-matching DNS SAN was still accepted when its CN matched the requested peer_name. A certificate trusted by the client for one name can therefore be used to impersonate another.",
-      "last_modified": "2026-09-26T08:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91769"
+      "description": "Budibase before 3.45.0 fails to properly scope the GET /api/chat-links endpoint by workspace, allowing builders to enumerate chat identity link records across all workspaces in a tenant. Attackers with builder access to a single workspace can retrieve sensitive chat identity linking data including user IDs and external chat service identifiers from other workspaces they have no permission to access.",
+      "last_modified": "2026-09-26T13:23:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100685"
     },
     {
-      "cve_id": "CVE-2026-100381",
-      "asset_id": "CVE-2026-100381",
+      "cve_id": "CVE-2026-100684",
+      "asset_id": "CVE-2026-100684",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Wikimedia Foundation Mediawiki - UploadWizard Extension allows Cross-Site Scripting (XSS).\n\nThis issue affects Mediawiki - UploadWizard Extension: from * before 1.46.1, 1.45.5, 1.43.10.",
-      "last_modified": "2026-09-26T08:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100381"
+      "description": "Budibase versions 3.41.0 before 3.45.0 contain an authentication bypass in the OIDC/SSO login path of @budibase/server. In sso.authenticate, when no existing user matches the incoming SSO subject, the server looks up pending user invites by the IdP-asserted email address alone \u2014 without validating an invite code and without an email_verified check (the email_verified gate protects only the existing-account lookup). An attacker who can register at an IdP that the tenant trusts for OIDC and assert a victim's invited email address (even with email_verified=false) claims the pending invite and inherits all of its granted privileges, including builder and admin.global, with no admin exclusion. This results in takeover of the invited principal and, for admin invites, full tenant compromise (access to all apps, datasources including production credentials, and automations); the invite is consumed, denying onboarding to the legitimate invitee.",
+      "last_modified": "2026-09-26T13:23:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100684"
     },
     {
-      "cve_id": "CVE-2026-100503",
-      "asset_id": "CVE-2026-100503",
+      "cve_id": "CVE-2026-100683",
+      "asset_id": "CVE-2026-100683",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ghidra versions through 12.1.4 contain a heap use-after-free vulnerability in the decompiler's Funcdata::opInsertAfter function caused by stale INDIRECT effect-op references. Attackers can craft a malicious binary with a specific x86-64 sequence that triggers the vulnerability during decompilation, causing the decompile helper process to crash and denying service to analysts and automated analysis pipelines.",
-      "last_modified": "2026-09-26T08:30:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100503"
+      "description": "Budibase (@budibase/server) before 3.45.0 builds MySQL and MSSQL column-rename DDL in packages/backend-core/src/sql/sqlTable.ts by interpolating identifiers directly into a raw query string (backtick-quoted for MySQL, a single-quoted sp_rename literal for MSSQL) without applying the project's quoteMySqlIdentifier / quoteSqlServerIdentifier helpers. An attacker with DDL rights on a connected MySQL/MSSQL datasource can create a column whose name contains a backtick (MySQL) or single quote (MSSQL) plus additional SQL; Budibase's schema introspection stores the name verbatim, and when a Budibase builder later renames that column through the UI (POST /api/tables with _rename.old), the embedded quote character terminates the identifier and the injected SQL is executed. Because the MySQL connection is opened with multipleStatements: true, stacked statements run as Budibase's datasource user, allowing arbitrary reads, writes, or destructive operations on the connected database outside Budibase's row/table permission model. Fixed in 3.45.0.",
+      "last_modified": "2026-09-26T13:23:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100683"
     },
     {
-      "cve_id": "CVE-2026-86930",
-      "asset_id": "CVE-2026-86930",
+      "cve_id": "CVE-2026-100682",
+      "asset_id": "CVE-2026-100682",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds read vulnerability in FileMaker Server for Linux allowed an attacker uploading a specially crafted image file to a container field to disclose process memory during thumbnail generation in FileMaker WebDirect. This vulnerability is addressed in FileMaker Server version 26.0.3.",
-      "last_modified": "2026-09-26T08:15:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86930"
+      "description": "Budibase Server before 3.45.0 contains an arbitrary file write vulnerability in the PWA icon upload endpoint that extracts user-supplied ZIP archives without proper symlink validation. Attackers with BUILDER role can craft a malicious ZIP with leaf symlink entries followed by duplicate file entries to write arbitrary files as root, enabling remote code execution.",
+      "last_modified": "2026-09-26T13:23:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100682"
     },
     {
-      "cve_id": "CVE-2026-86934",
-      "asset_id": "CVE-2026-86934",
+      "cve_id": "CVE-2026-100681",
+      "asset_id": "CVE-2026-100681",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An authorization bypass vulnerability in the FileMaker Server Web Publishing Engine allowed requests containing an extended privilege header to bypass the disabled Custom Web Publishing with XML setting and access the XML Web Publishing interface. This vulnerability is addressed in FileMaker Server version 26.0.3.",
-      "last_modified": "2026-09-26T08:15:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86934"
+      "description": "Budibase before 3.45.0 contains an unauthenticated server-side request forgery and credential exfiltration vulnerability in the Microsoft Teams webhook endpoint that accepts forged Bot Framework activities with arbitrary serviceUrl values. Attackers can submit a crafted POST request to inject an attacker-controlled serviceUrl that is persisted and used for all subsequent bot replies, causing the server to send live Microsoft OAuth access tokens in Authorization headers to the attacker's host and enabling blind internal network access.",
+      "last_modified": "2026-09-26T13:23:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100681"
     },
     {
-      "cve_id": "CVE-2026-96525",
-      "asset_id": "CVE-2026-96525",
+      "cve_id": "CVE-2026-100680",
+      "asset_id": "CVE-2026-100680",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The MCP Server for WordPress  WordPress plugin before 1.8.2 does not perform an ownership or sufficient capability check on its workflow create, update and delete REST routes, allowing users with the Contributor role to modify, delete and create site-wide workflow configuration, including workflows created by administrators.",
-      "last_modified": "2026-09-26T08:15:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96525"
+      "description": "Budibase versions before 3.45.0 fail to disable external JSON reference resolution in the OpenAPI/Swagger import validator, allowing authenticated builders to read arbitrary local files. Attackers with builder access can embed file:// references in OpenAPI specifications submitted to the import endpoint to exfiltrate sensitive files including environment variables containing JWT secrets, API keys, and database credentials.",
+      "last_modified": "2026-09-26T13:23:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100680"
     },
     {
-      "cve_id": "CVE-2026-96526",
-      "asset_id": "CVE-2026-96526",
+      "cve_id": "CVE-2026-100679",
+      "asset_id": "CVE-2026-100679",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The MCP Server for WordPress  WordPress plugin before 1.8.2 does not perform an object-level authorization check on one of its workflow REST routes, allowing users with the Contributor role to disclose the title and publication status of any post, page or custom post type, including other users' private, draft, pending and scheduled content.",
-      "last_modified": "2026-09-26T08:15:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96526"
+      "description": "stoatchat before 0.15.5 fails to validate that MFA tickets belong to the authenticated user, allowing attackers to bypass MFA by using their own valid ticket with another user's session token. Attackers can obtain a ticket from their own account and use it with a victim's session token to disable TOTP, view recovery codes, or perform other sensitive operations without providing the victim's credentials.",
+      "last_modified": "2026-09-26T13:23:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100679"
     },
     {
-      "cve_id": "CVE-2026-100504",
-      "asset_id": "CVE-2026-100504",
+      "cve_id": "CVE-2026-100678",
+      "asset_id": "CVE-2026-100678",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ghidra versions through 12.1.4 contain a stack-based out-of-bounds write vulnerability in the decompiler's leftshift128 function when processing negative shift amounts from p-code. Attackers can craft malicious binaries with specific instruction sequences that trigger the overflow when decompiled, corrupting memory and potentially achieving code execution.",
-      "last_modified": "2026-09-26T08:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100504"
+      "description": "stoatchat before 0.15.5 fails to enforce account-level attempt limits on MFA login challenges, allowing attackers who know a password to guess TOTP codes with only IP-based rate limiting. Attackers can reuse MFA challenge tickets across multiple failed attempts and distribute guesses across IP addresses to bypass rate limiting and gain account access.",
+      "last_modified": "2026-09-26T13:23:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100678"
     },
     {
-      "cve_id": "CVE-2026-8051",
-      "asset_id": "CVE-2026-8051",
+      "cve_id": "CVE-2026-100677",
+      "asset_id": "CVE-2026-100677",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OS command injection in Ivanti Virtual Traffic Manager before version 22.9r4 allows a remote authenticated attacker with admin privileges to achieve remote code execution.",
-      "last_modified": "2026-09-26T08:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8051"
+      "description": "stoatchat before 0.15.5 contains an account enumeration vulnerability in the login endpoint that exposes source file locations in error responses. Unauthenticated attackers can distinguish between registered and unregistered email addresses by comparing error location fields returned from POST /api/auth/session/login requests.",
+      "last_modified": "2026-09-26T13:23:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100677"
     },
     {
-      "cve_id": "CVE-2026-88407",
-      "asset_id": "CVE-2026-88407",
+      "cve_id": "CVE-2026-100676",
+      "asset_id": "CVE-2026-100676",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds read in the node_token_count/relation_token_count component of FalkorDB (Redis module) v4.20.1 to v4.20.4 allows attackers to cause a Denial of Service (DoS) via a crafted input.",
-      "last_modified": "2026-09-26T08:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88407"
+      "description": "January, the media proxy/embed service of stoatchat (stoatchat/stoatchat), before version 0.15.5 improperly resolves SVG <image href> values as local filesystem paths when a fetched resource is served as image/svg+xml. An unauthenticated remote attacker who causes the service to proxy an attacker-hosted SVG (e.g. via the /proxy endpoint) can determine whether local files exist through observable response-time differences, and can cause supported local image files to be disclosed after re-encoding. Because each referenced file is read in full with no effective limit on the number or total volume of reads, a single request can also generate an unbounded amount of local filesystem I/O and memory pressure (the published proof of concept drives about 4.34 GB of reads), leading to denial of service. The issue is fixed in 0.15.5.",
+      "last_modified": "2026-09-26T13:23:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100676"
     },
     {
-      "cve_id": "CVE-2026-88410",
-      "asset_id": "CVE-2026-88410",
+      "cve_id": "CVE-2026-100675",
+      "asset_id": "CVE-2026-100675",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The graph.UDF in FalkorDB (Redis module) v4.20.1 to v4.20.4 is not registered as a write command, leading to unexpected behavior within the application.",
-      "last_modified": "2026-09-26T08:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88410"
+      "description": "stoatchat versions before 0.15.5 contain a denial of service vulnerability in the acknowledgement worker that processes mass mention messages. Authenticated users can send five crafted role-mention messages to terminate all acknowledgement workers, disabling push notifications and mention badges deployment-wide until the API process restarts.",
+      "last_modified": "2026-09-26T13:23:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100675"
     },
     {
-      "cve_id": "CVE-2026-79314",
-      "asset_id": "CVE-2026-79314",
+      "cve_id": "CVE-2026-100674",
+      "asset_id": "CVE-2026-100674",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A horizontal privilege escalation vulnerability exists in x-ui 0.3.2. An authenticated user can modify the inbound proxy configurations of other users, including remark, port, protocol, settings, enabled state, expiry time and traffic quota, by submitting a request referencing the target resource identifier. The update path fails to verify that the target resource belongs to the requesting session user, allowing unauthorized cross-user modification of data.",
-      "last_modified": "2026-09-26T08:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79314"
+      "description": "stoatchat before 0.15.5 fails to revalidate usernames after Unicode sanitization, allowing attackers to create usernames with forbidden characters by submitting Unicode letters that transform into rejected characters. Attackers can bypass character allowlists and length limits to create reserved-name lookalikes, embed special characters, and exceed the 32-character storage limit.",
+      "last_modified": "2026-09-26T13:23:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100674"
     },
     {
-      "cve_id": "CVE-2026-89237",
-      "asset_id": "CVE-2026-89237",
+      "cve_id": "CVE-2026-100673",
+      "asset_id": "CVE-2026-100673",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Bluff Post WordPress plugin through 1.1.1 does not sanitise and escape parameters before using them as identifiers in a SQL query, allowing unauthenticated attackers to append additional SQL and extract sensitive information from the database.",
-      "last_modified": "2026-09-26T08:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89237"
+      "description": "The Grav Data Manager plugin (getgrav/grav-plugin-datamanager) versions 1.0.1 through 1.4.4 render stored data entries in the item-detail view (admin/templates/partials/item.html.twig) without escaping, applying Twig's `raw` filter \u2014 in some cases after a striptags('<br>') call that PHP's strip_tags() bypasses by preserving allowed tags together with their attributes. An unauthenticated visitor who submits a front-end form whose submissions are saved to user/data can store an HTML payload that executes as JavaScript in the session and origin of an administrator who later opens that entry in the classic admin panel, running with that administrator's privileges and CSRF token. Execution occurs without further interaction for list values (such as checkbox or multi-select fields) and on hover for ordinary text fields. Sites using the Grav 2.0 Admin Next interface are not affected, because it renders the same data through a separate, correctly escaping code path. The issue is fixed in Data Manager 1.4.5.",
+      "last_modified": "2026-09-26T13:23:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100673"
     },
     {
-      "cve_id": "CVE-2026-11871",
-      "asset_id": "CVE-2026-11871",
+      "cve_id": "CVE-2026-100672",
+      "asset_id": "CVE-2026-100672",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Team Members  WordPress plugin through 9.2 does not perform any authorization or visibility check in an unauthenticated AJAX action that returns full team member records by ID, allowing unauthenticated attackers to enumerate and disclose details, including email addresses and phone numbers, of team members the administrator has not published publicly.",
-      "last_modified": "2026-09-26T08:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11871"
+      "description": "The Comments plugin (getgrav/grav-plugin-comments) for Grav CMS through version 1.2.10 registers an admin handler that returns comment data as JSON without any authentication check. The handler branches on isAdmin(), which only indicates that the admin service is registered on the current route rather than that the visitor is authenticated, and it echoes the JSON and calls exit() during the plugins stage, before the classic Admin plugin would render its login screen. On a site using the classic Admin plugin with Comments enabled (the default), an unauthenticated remote attacker can request /admin/comments/page:<n> (e.g. page:0.001) and retrieve every comment from the last 7 days, including each commenter's email address and the absolute server filesystem path of the data file. Sites running the Grav 2.0 Admin Next stack (admin2 + api) are not affected via this path. The issue is fixed in 1.2.11, which requires an authenticated user with admin.comments or admin.super and removes the absolute filePath from the response.",
+      "last_modified": "2026-09-26T13:23:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100672"
     },
     {
-      "cve_id": "CVE-2026-91768",
-      "asset_id": "CVE-2026-91768",
+      "cve_id": "CVE-2026-100671",
+      "asset_id": "CVE-2026-100671",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The IPv6 branch of the FastCGI client access check compares only the first 12 bytes of a 16-byte IPv6 address, so listen.allowed_clients matches on a /96 prefix instead of the exact address. An attacker who can source an address sharing the first 96 bits with an allowed one passes the check and reaches the FastCGI endpoint.",
-      "last_modified": "2026-09-26T08:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91768"
+      "description": "Grav is a flat-file CMS. In versions 2.0.19 through 2.0.24 \u2014 and in 2.0.0 through 2.0.18 and 1.7.x only where content Twig has been explicitly enabled \u2014 page content authored by a user holding only page-write permission is rendered through a Twig sandbox that allowlists get_cookie(), which returns any cookie sent with the current request, including the visitor's session cookie. Because the read occurs server-side via filter_input(INPUT_COOKIE, ...), the HttpOnly, Secure and SameSite attributes offer no protection. Grav then stores the finished post-Twig output in a page-content cache keyed only on page identity and the configuration checksum, with no session, user or request dimension and no bypass for authenticated visitors. A page published by a page-write user can therefore capture the session identifier of the next administrator who views it, after which the cached output serves that identifier to unauthenticated visitors, who can replay the cookie to authenticate as that administrator. Since 2.0.19, security.twig_content.process_enabled defaults to true and Security::applyTwigContentDefault() derives each page's process.twig flag from that gate, so content Twig runs on every page with no frontmatter or operator action. Fixed in 2.0.25; 1.7.x is outside the backport scope.",
+      "last_modified": "2026-09-26T13:23:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100671"
     },
     {
-      "cve_id": "CVE-2026-92842",
-      "asset_id": "CVE-2026-92842",
+      "cve_id": "CVE-2026-100670",
+      "asset_id": "CVE-2026-100670",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The convert.base64-encode, convert.quoted-printable-encode and convert.quoted-printable-decode stream filters accept a line-break-chars option whose length is tracked separately from the string itself. The filter constructors duplicate the value with pestrdup(), which stops at the first NUL byte, while keeping the original length. When the filter later emits a line break it copies the recorded length out of the truncated allocation, reading past its end and placing adjacent heap bytes into the filter output.",
-      "last_modified": "2026-09-26T08:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92842"
+      "description": "Grav CMS 2.0.14 through 2.0.24 contains a privilege escalation vulnerability in the group and account blueprints. The access map is gated by a `security@: admin.super` guard that is resolved by the field's exact path, so a submitted flat dot-notation key such as `access.admin.super` (instead of the nested `access[admin][super]`) matches no blueprint rule, survives BlueprintSchema::filterArray() and flattening, and is written by FlexObject::update() via setNestedProperty(), which splits on `.` and reconstructs the nested value. An authenticated backend operator using the flex accounts backend who holds admin.users but not admin.super can therefore grant admin.super to their own account or to a group they belong to and escalate to full super-admin, gaining control over configuration, plugin and theme installation, the file manager, and all accounts. Fixed in 2.0.25, which drops any dotted key whose ancestor path is disabled or marked validate.ignore.",
+      "last_modified": "2026-09-26T13:23:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100670"
     },
     {
-      "cve_id": "CVE-2026-88003",
-      "asset_id": "CVE-2026-88003",
+      "cve_id": "CVE-2026-100669",
+      "asset_id": "CVE-2026-100669",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "InvoicePlane is a self-hosted open source application for managing invoices, clients, and payments. Prior to 1.7.2, InvoicePlane fails to revoke administrative privileges after a role downgrade because Admin_Controller trusts the user_type snapshot stored in an existing session instead of revalidating ip_users.user_type. When one administrator downgrades another account, the target's active session continues to authorize administrative requests. The downgraded user can use Users::form() to set user_type back to 1, restoring the database role and making the privilege escalation persistent. This vulnerability is fixed in 1.7.2.",
-      "last_modified": "2026-09-26T08:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88003"
+      "description": "Grav before 2.0.25 ships web server configuration samples whose access-control deny rules are matched case-sensitively. In webserver-configs/web.config (IIS), every deny rule (user_sensitive_folders, user_accounts, user_data, user_error_redirect, user_pages, system, vendor, ignore_folders) sets ignoreCase=\"false\" on its URL Rewrite <match> element, overriding the IIS default of ignoreCase=\"true\"; because these are rewrite matches rather than <requestFiltering> elements, there is no case-insensitive fallback. On IIS running over case-insensitive NTFS, an unauthenticated remote attacker can vary the case of a folder name or file extension (for example GET /user/CONFIG/system.YAML) so that no deny rule matches and the IIS static file handler resolves and returns the underlying file, disclosing sensitive data such as configuration secrets or account password hashes. Whether a bypassed file is actually returned depends on MIME registration: .json is served by default, while .yaml/.yml return HTTP 404.3 on a stock IIS unless a YAML MIME mapping has been added. The same class of gap exists in the bundled webserver-configs/lighttpd.conf, whose user/(config|env), directory, script-extension, root-file and dotfile rules lack the (?i) modifier, though it is lower risk because lighttpd typically runs on case-sensitive filesystems. Deployments served by Apache (.htaccess), nginx, Caddy, or the PHP built-in server are not affected. The issue is fixed in 2.0.25; because the .htaccess installer heal does not touch web.config or lighttpd.conf, operators must re-copy the corrected sample files after upgrading.",
+      "last_modified": "2026-09-26T13:23:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100669"
     },
     {
-      "cve_id": "CVE-2026-57449",
-      "asset_id": "CVE-2026-57449",
+      "cve_id": "CVE-2026-100668",
+      "asset_id": "CVE-2026-100668",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Actual is a local-first personal finance tool. Prior to 26.7.0, Actual Sync Server's CORS proxy is intended to let authenticated users fetch resources only from repositories listed in the official plugin allowlist. When `ACTUAL_GITHUB_TOKEN` is configured, the proxy automatically attaches the server's GitHub token to GitHub requests. The GitHub API allowlist check uses a raw `startsWith()` prefix test for `/repos/{owner}/{repo}` without requiring a path boundary after the repository name. If an allowlisted public plugin repository is `https://github.com/acme/plugin`, the proxy also accepts GitHub API URLs. Those URLs are outside the allowlisted repository but still pass because their API path starts with `/repos/acme/plugin`. The proxy then forwards the request with the server's `ACTUAL_GITHUB_TOKEN`, allowing any authenticated Actual user to read private GitHub resources reachable by that token. Version 26.7.0 fixes the issue.",
-      "last_modified": "2026-09-26T08:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57449"
+      "description": "Grav 2.0.0 through 2.0.24 contain a Twig content sandbox escape. The `array` filter (and its identical function form) is on the sandbox allowlist but is registered without the needs_is_sandboxed guard that print_r, vardump, json_encode, yaml_encode and string carry, and its implementation calls toArray() \u2014 or falls back to an (array) cast \u2014 without consulting the sandbox method allowlist. Because the `grav` Twig global is the raw Pimple-based dependency injection container, a user who can author Twig in page content can evaluate `grav|array` to read the container's private $values array, including the un-redacted Config service; a second array cast returns the entire configuration tree, disclosing plugin credentials, SMTP and OAuth secrets, Redis passwords, proxy URLs and the security.* subtree that the sandbox's redaction is meant to hide. Because the payload is stored in page content, the disclosed configuration is rendered to anonymous visitors. Grav 1.7 is not affected as it has no Twig content sandbox. Fixed in Grav 2.0.25.",
+      "last_modified": "2026-09-26T13:23:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100668"
     },
     {
-      "cve_id": "CVE-2026-100311",
-      "asset_id": "CVE-2026-100311",
+      "cve_id": "CVE-2026-100667",
+      "asset_id": "CVE-2026-100667",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. The affected element is an unknown function of the file managevideos2.php of the component Faculty Video Management. Such manipulation of the argument V_Title/V_Url/V_Remarks leads to cross site scripting. The attack may be performed from remote. The exploit is publicly available and might be used. This product utilizes a rolling release system for continuous delivery, and as such, version information for affected or updated releases is not disclosed. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-26T08:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100311"
+      "description": "grav-plugin-login (the Grav CMS Login plugin) versions >= 3.8.7 and < 3.9.7 allow the two-factor authentication challenge to be bypassed for content gated by the authenticated() Twig function or the [authenticated] shortcode. On sites with 2FA enabled, Login::isAuthenticated() checked only the session flag indicating that the password step had succeeded, not the flag indicating that login had completed, so a session sitting at the 2FA code prompt was treated as fully authenticated. An attacker who knows a member's password but cannot answer that member's second factor can therefore read member-only content rendered by the no-argument authenticated() or group authenticated(null, 'group') forms and by [authenticated]; the inverse [guest] shortcode is likewise evaluated too early. Impact is limited to disclosure of that content: the attacker does not obtain a completed session, cannot access pages protected by an access: rule, and cannot act as the user. The authenticated('some.permission') form, which goes through UserObject::authorize(), is not affected. Fixed in grav-plugin-login 3.9.7.",
+      "last_modified": "2026-09-26T13:23:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100667"
     },
     {
-      "cve_id": "CVE-2026-19708",
-      "asset_id": "CVE-2026-19708",
+      "cve_id": "CVE-2026-100666",
+      "asset_id": "CVE-2026-100666",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The File Manager WordPress plugin before 8.0.5 does not prevent unauthenticated users from downloading its database backup archives, and in some cases writes them under a fixed filename, allowing unauthenticated attackers to retrieve a full database dump including every user's email address and password hash on servers that do not apply the directory's .htaccess file.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19708"
+      "description": "Netty's HttpServerCodec (io.netty:netty-codec-http) in versions 4.2.0.Final through 4.2.16.Final and in versions up to and including 4.1.136.Final pairs each outbound response with an inbound request by calling pollMethod() once per response, including for 1xx informational responses. If a client pipelines an HTTP/1.1 GET carrying an Expect: 100-continue header followed by a HEAD request, the 100 Continue response consumes the queued GET method, so the subsequent 200 OK for the GET is paired with HEAD and its body is dropped, while the following 200 OK for the HEAD request is written with a body. This desynchronizes HTTP parsing on the connection: the GET entity is never delivered and the HEAD response body is interpreted as the GET body, resulting in response splitting and unsafe connection reuse. Fixed in 4.2.17.Final and 4.1.137.Final.",
+      "last_modified": "2026-09-26T13:23:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100666"
     },
     {
-      "cve_id": "CVE-2026-84096",
-      "asset_id": "CVE-2026-84096",
+      "cve_id": "CVE-2026-100665",
+      "asset_id": "CVE-2026-100665",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The wp-review-slider-pro WordPress plugin before 12.7.12 does not perform a capability check on the AJAX handler that saves its review submission forms, and the nonce protecting it is generated for every visitor, allowing any authenticated user, such as a subscriber, to overwrite a live form with field values that are output without escaping on public pages, leading to Stored Cross-Site Scripting.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84096"
+      "description": "Netty versions from 4.2.11.Final before 4.2.18.Final contain an incomplete hostname verification fix in the QUIC certificate verification path when using a plain X509TrustManager. The BoringSSLCertificateVerifyCallback discards the SSLEngine for plain trust managers, preventing endpoint identification from running even when HTTPS verification is configured. Attackers on the network path can present a certificate chain for the wrong hostname that the plain trust manager accepts, bypassing hostname authentication for QUIC clients.",
+      "last_modified": "2026-09-26T13:23:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100665"
     },
     {
-      "cve_id": "CVE-2026-84097",
-      "asset_id": "CVE-2026-84097",
+      "cve_id": "CVE-2026-100664",
+      "asset_id": "CVE-2026-100664",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The wp-review-slider-pro WordPress plugin before 12.7.12 does not sanitize a value stored through one of its AJAX handlers, which lacks a capability check, before using it in a SQL statement, allowing any authenticated user, such as a subscriber, to perform SQL injection attacks whose results are then returned to unauthenticated visitors.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84097"
+      "description": "Netty's HTTP/3 codec (io.netty:netty-codec-http3) versions 4.2.2.Final through 4.2.17.Final builds the HTTP/3 :authority pseudo-header from the HTTP/1 Host header before considering the authority of an absolute-form HTTP/1 request-target. In HttpConversionUtil.toHttp3Headers(HttpMessage, boolean) \u2014 reached via Http3FrameToHttpObjectCodec(false) \u2014 a non-empty Host header takes precedence over the request-target authority, contrary to the HTTP/1.1 rule that a server receiving an absolute-form request-target must ignore the Host header. In a Netty-based HTTP/1-to-HTTP/3 gateway, proxy, or protocol bridge, a remote client can send a request such as \"GET https://trusted.example/admin HTTP/1.1\" with \"Host: attacker.example\", causing components that validate, authorize, or route on the RFC-defined request-target authority to reach a different decision than the upstream HTTP/3 peer, which receives :authority derived from the conflicting Host header. This authority confusion can affect virtual-host routing, allow-list checks, backend selection, cache keys, and URL generation. The advisory reports integrity impact only (no code execution, memory corruption, or availability impact). Fixed in 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100664"
     },
     {
-      "cve_id": "CVE-2026-85081",
-      "asset_id": "CVE-2026-85081",
+      "cve_id": "CVE-2026-100663",
+      "asset_id": "CVE-2026-100663",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The File Manager WordPress plugin before 8.0.5, FileOrganizer  WordPress plugin before 1.2.1, File Manager Pro  WordPress plugin before 2.1.3 do not correctly validate the origin of window messages received by the file browser they load on their admin screens, accepting any origin that is a leading string prefix of the site's own address, which allows an unauthenticated attacker to run arbitrary JavaScript in the session of a logged-in administrator who visits a page under their control.\n\nThe defect is in the file-manager library all three bundle, and every version below 2.1.70 carries it. Updating the bundled library closes it.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85081"
+      "description": "Netty's HTTP/3 codec (io.netty:netty-codec-http3) from 4.2.2.Final through 4.2.17.Final does not special-case HTTP/1 CONNECT authority-form request-targets when converting HTTP/1 messages to HTTP/3 in HttpConversionUtil.toHttp3Headers. The authority-form target (e.g., \"CONNECT trusted.example:443\") is parsed as a URI, so its host is emitted as :scheme, :path is set to \"/\", and the HTTP/1 Host header is used as :authority; if no Host header is present the CONNECT target is dropped. In a Netty-based HTTP/1-to-HTTP/3 proxy or gateway, a remote client can send a CONNECT request whose Host header names a different authority than the request-target, producing a malformed HTTP/3 CONNECT whose tunnel :authority is attacker-controlled. This can bypass tunnel allow-lists, egress policy, backend selection, or audit controls that validate the HTTP/1 CONNECT request-target before forwarding over HTTP/3. The issue is fixed in 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100663"
     },
     {
-      "cve_id": "CVE-2026-96524",
-      "asset_id": "CVE-2026-96524",
+      "cve_id": "CVE-2026-100662",
+      "asset_id": "CVE-2026-100662",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The MCP Server for WordPress  WordPress plugin before 1.8.2 does not correctly verify the WordPress REST API nonce for cookie-authenticated requests when a condition an attacker can influence is present, allowing unauthenticated attackers to perform administrator-only actions, including creating a new administrator account, by tricking a logged-in administrator into visiting a crafted page.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96524"
+      "description": "Netty's HTTP/3 codec (io.netty:netty-codec-http3) versions 4.2.0.Final through 4.2.17.Final contain an uncontrolled resource consumption vulnerability in the QPACK encoder-stream instruction decoder (QpackEncoderHandler, installed on the peer-initiated unidirectional QPACK encoder stream, type 0x02). The handler accepts an attacker-declared string-literal length of up to Integer.MAX_VALUE (~2 GiB) for the Name Length and Value Length fields of the \"Insert With Literal Name\" instruction (RFC 9204 \u00a74.3.3), with no per-instruction or per-literal length cap and no cumulation-size limit; the existing HTTP/3 limits (maxHeaderListSize, maxUnknownFramePayloadLength, DEFAULT_MAX_FIELD_SECTION_SIZE) are not applied to this handler. A remote, unauthenticated peer with an established HTTP/3 connection to a default Netty HTTP/3 server can declare a very large literal length and then trickle fewer bytes than declared, causing the ByteToMessageDecoder MERGE cumulator to retain and grow the per-connection buffer, and ultimately triggering a large byte-array allocation. This leads to unbounded per-connection heap growth and OutOfMemoryError, resulting in denial of service. Fixed in 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100662"
     },
     {
-      "cve_id": "CVE-2026-96531",
-      "asset_id": "CVE-2026-96531",
+      "cve_id": "CVE-2026-100661",
+      "asset_id": "CVE-2026-100661",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Optimole  WordPress plugin before 4.2.13 does not escape unrecognized attributes of its video-player block before rendering them onto the block's wrapper element, allowing users with the Author role and above to store an event-handler attribute that executes scripts in the browser of any user, such as an administrator, who views the post.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96531"
+      "description": "Netty's HTTP/3 codec (io.netty:netty-codec-http3) versions 4.2.0.Final through 4.2.17.Final contain a denial-of-service vulnerability in the QPACK prefixed-integer decoder (QpackUtil.decodePrefixedInteger), which does not bound the number of continuation bytes it will process. A remote, unauthenticated peer can open a QPACK unidirectional stream (type 0x02 encoder or 0x03 decoder) and send a first byte with all prefix bits set (e.g. 0xFF for a 7-bit prefix or 0x3F for a 5-bit prefix) followed by an endless run of 0x80 continuation bytes. The decoder returns -1 ('need more bytes'), so callers never consume the input, the ByteToMessageDecoder cumulator grows without bound, and each decode() invocation re-scans the whole accumulated buffer, yielding O(N^2) CPU cost. The result is unbounded per-connection heap growth (OutOfMemoryError) and event-loop CPU starvation, reachable in every configuration. Fixed in 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100661"
     },
     {
-      "cve_id": "CVE-2026-96532",
-      "asset_id": "CVE-2026-96532",
+      "cve_id": "CVE-2026-100660",
+      "asset_id": "CVE-2026-100660",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Testimonials Widget WordPress plugin through 4.0.4 does not perform a capability or ownership check when handling its front-end testimonial submission form, allowing unauthenticated users to modify or create arbitrary posts, including overwriting the title, content and author of any existing post.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96532"
+      "description": "Netty's HTTP/3 codec (io.netty:netty-codec-http3) from 4.2.0.Final through 4.2.17.Final retains unbounded per-stream QPACK encoder state. QpackEncoder stores a queue and a dynamic-table index tracker for every encoded field section that references the QPACK dynamic table, keyed by the peer-controlled QUIC stream ID, and these entries are released only when the remote decoder sends a Section Acknowledgment or Stream Cancellation instruction \u2014 not when the HTTP/3 stream completes. There is no limit on the number of tracked streams, field sections, or retained bytes. A remote, unauthenticated HTTP/3 client can advertise a non-zero QPACK dynamic-table capacity, acknowledge the table insertion so the server reuses a dynamically indexed response header, and then omit all mandatory Section Acknowledgments while issuing sequential requests over a single QUIC connection, bypassing concurrent-stream limits and causing unbounded heap growth until the server exhausts memory (denial of service). Fixed in 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100660"
     },
     {
-      "cve_id": "CVE-2026-96533",
-      "asset_id": "CVE-2026-96533",
+      "cve_id": "CVE-2026-100659",
+      "asset_id": "CVE-2026-100659",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Testimonials Widget WordPress plugin through 4.0.4 does not validate a user-supplied URL before fetching it server-side and storing the response as a public file, allowing unauthenticated users to make the server issue requests to internal services and read the responses.",
-      "last_modified": "2026-09-26T07:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96533"
+      "description": "Netty's HTTP/3 codec (io.netty:netty-codec-http3) in versions 4.2.0.Final through 4.2.17.Final does not enforce the RFC 9114 requirement that the :authority pseudo-header field and a literal host header field, when both present, carry the same value. A remote unauthenticated peer can send a single HEADERS frame containing both fields with differing, attacker-controlled values; the request is accepted and delivered to the application with two conflicting authorities, allowing routing, virtual-host, and access-control decisions to be bypassed when different components in the request path consult different fields. This issue is fixed in 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100659"
     },
     {
-      "cve_id": "CVE-2026-7411",
-      "asset_id": "CVE-2026-7411",
+      "cve_id": "CVE-2026-100658",
+      "asset_id": "CVE-2026-100658",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Eclipse BaSyx Java Server SDK versions prior to 2.0.0-milestone-10, inadequate path normalization in the Submodel HTTP API allows an unauthenticated remote attacker to perform a path traversal attack. By supplying a maliciously crafted fileName parameter during a file upload operation, an attacker can bypass intended storage boundaries and write arbitrary files to any location on the host filesystem accessible by the Java process. This can lead to Remote Code Execution (RCE) and complete system compromise.",
-      "last_modified": "2026-09-26T07:30:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7411"
+      "description": "Netty (io.netty:netty-codec-http) contains an unbounded per-connection queue in WebSocketServerExtensionHandler. The handler offers an entry to its per-channel validExtensions queue for every inbound HttpRequest, but polls an entry only when the application writes an HttpResponse, and the queue size is never bounded. A remote, unauthenticated peer can use HTTP/1.1 pipelining to send requests faster than the application produces responses \u2014 including plain non-upgrade HTTP requests to any path \u2014 causing the queue to grow without limit until the JVM exhausts heap memory and terminates with OutOfMemoryError. Because the affected handler is the base class of WebSocketServerCompressionHandler, any server that enables permessage-deflate is exposed on its plain HTTP port before any WebSocket upgrade completes and before any application-level authentication. Affected versions are 4.1.88.Final through 4.1.137.Final and 4.2.0.Final through 4.2.17.Final; the issue is fixed in 4.1.138.Final and 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100658"
     },
     {
-      "cve_id": "CVE-2026-22314",
-      "asset_id": "CVE-2026-22314",
+      "cve_id": "CVE-2026-100657",
+      "asset_id": "CVE-2026-100657",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Control of Generation of Code ('Code Injection') vulnerability in Mesalvo Meona Client Launcher Component, Mesalvo Meona Server Component enables code execution on other users' systems.\u00a0This issue affects Meona Client Launcher Component: through 19.06.2020 15:11:49; Meona Server Component: through 2025.04 5+323020.",
-      "last_modified": "2026-09-26T07:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22314"
+      "description": "Netty's STOMP codec (io.netty:netty-codec-stomp) contains a ByteBuf leak in StompSubframeDecoder. Once a frame's declared content-length has been fully read, the decoder allocates a chunk buffer from the channel allocator and parks it in an instance field while waiting for the single NUL byte that terminates the frame. If that byte never arrives, the buffer is never released: the replay Signal thrown by skipNullCharacter extends Error rather than Exception, so the decoder's catch(Exception) release path does not run, and StompSubframeDecoder overrides neither handlerRemoved0 nor channelInactive, so the buffer also survives channel teardown. A remote peer can leak one allocator buffer per connection by sending a complete, well-formed frame body and withholding its terminating NUL byte; with the default pooled allocator the memory is never returned to the pool or reclaimed by garbage collection, so the leak accumulates for the lifetime of the process and can lead to memory exhaustion. This affects versions up to and including 4.1.137.Final and versions 4.2.0.Final through 4.2.17.Final; it is fixed in 4.1.138.Final and 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100657"
     },
     {
-      "cve_id": "CVE-2026-0856",
-      "asset_id": "CVE-2026-0856",
+      "cve_id": "CVE-2026-100656",
+      "asset_id": "CVE-2026-100656",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Access Control vulnerability in Mesalvo MEONA (MEONA Client and MEONA Server) allows an authenticated MEONA user to access administrative functions of the MEONA Client (admin panel). The MEONA Server does not independently verify the role asserted by the MEONA Client. A user who holds a valid MEONA user account and is able to execute a modified copy of the MEONA Client on a device within the operating hospital's network can assert an administrator role and access administrative functions with regular user credentials.\nExploitation requires: (1) a valid MEONA user account issued by the operating hospital; (2) network access to the MEONA Server, which is operated exclusively within closed hospital networks without exposure to the public Internet (where a hospital permits remote access to that network at all, it is only through the hospital's own remote-access infrastructure (e.g. VPN) under the hospital's control); (3) the ability to modify MEONA Client binaries and to execute the modified copy on a device in that network. On managed devices with application control, as recommended in Mesalvo's hardening guidance (MSA-2026-001), this requires local administrator privileges on the device. Mesalvo is not aware of any exploitation outside the reported security test.\nThis issue affects MEONA Client and MEONA Server in versions 2024.10, 2025.04 and 2026.03. Mitigations are available with MEONA 2025.04.24 and 2026.03.02 (planned Q4 2026); see Mesalvo Security Advisory MSA-2026-001.",
-      "last_modified": "2026-09-26T07:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0856"
+      "description": "Netty (io.netty:netty-codec-http) contains an unbounded per-connection queue growth flaw in HttpServerCodec. The codec tracks the HTTP method of each still-unanswered pipelined request; the first 32 entries are bit-packed into a single long, but every additional entry is appended to methodOverflowQueue, an ArrayDeque with no size limit and no rejection path. A remote, unauthenticated attacker who pipelines HTTP/1.1 requests on a single connection while withholding reads on their own end (preventing responses from being flushed) can grow this queue without bound, causing unbounded heap growth and denial of service. Affected versions are 4.2.0.Final through 4.2.17.Final and all releases up to and including 4.1.137.Final; the issue is fixed in 4.2.18.Final and 4.1.138.Final.",
+      "last_modified": "2026-09-26T13:23:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100656"
     },
     {
-      "cve_id": "CVE-2026-0857",
-      "asset_id": "CVE-2026-0857",
+      "cve_id": "CVE-2026-100655",
+      "asset_id": "CVE-2026-100655",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use of a Password Hash With Insufficient Computational Effort in Mesalvo MEONA (MEONA Server and MEONA Client) for user accounts whose password was last set under a version before MEONA 2024.10. MEONA versions before 2024.10 protected stored passwords with SHA-1 (versions from October\u00a02015) or stored them without protection (earlier versions). Since MEONA 2024.10 (June 2024) Argon2 is the default method and every password that is set or changed is stored with Argon2; passwords last set under an earlier version keep the earlier method until they are changed. An administrator could in addition select the storage method per account. A MEONA super administrator can read the stored value of such accounts in the user administration of the MEONA Client or export it through administrative database functions. Only accounts managed locally in MEONA are affected; accounts authenticated through the operating hospital's directory service (Active Directory / Entra ID) have no password stored in MEONA. In typical installations end users authenticate through the directory service and local accounts are limited to emergency and technical accounts.\nExploitation requires super administrator permissions in MEONA (or direct access to the MEONA database) from within the operating hospital's network; MEONA is operated exclusively within closed hospital networks without exposure to the public Internet, and where a hospital permits remote access to that network at all, it is only through the hospital's own remote-access infrastructure (e.g. VPN) under the hospital's control. Installations in which every password has been set or changed under MEONA 2024.10 or later are not affected. Mesalvo is not aware of any exploitation outside the reported security test.\nThis issue affects MEONA Server and MEONA Client in versions 2024.10, 2025.04 and 2026.03 (for accounts with passwords last set under earlier versions). MEONA 2025.04.24 and 2026.03.02 (planned Q4 2026) remove the legacy storage methods, require every affected account to set a new Argon2-protected password at next logon, and no longer display stored credential values in the user administration. See Mesalvo Security Advisory MSA-2026-002.",
-      "last_modified": "2026-09-26T07:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0857"
+      "description": "Netty (io.netty:netty-codec-http) versions up to and including 4.1.137.Final and from 4.2.0.Final through 4.2.17.Final accept an unlimited number of concurrent remote-initiated SPDY streams: SpdySessionHandler defaults localConcurrentStreams to Integer.MAX_VALUE and exposes no API to change it. A remote peer that opens a SPDY connection and sends millions of SYN_STREAM frames with FLAG_FIN=0 causes the server to allocate unbounded heap and direct memory, eventually triggering a JVM OutOfMemoryError and crashing the service. Fixed in 4.1.138.Final and 4.2.18.Final.",
+      "last_modified": "2026-09-26T13:23:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100655"
     },
     {
-      "cve_id": "CVE-2026-25602",
-      "asset_id": "CVE-2026-25602",
+      "cve_id": "CVE-2026-100654",
+      "asset_id": "CVE-2026-100654",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient Verification of Data Authenticity in the feedback function of Mesalvo MEONA (MEONA Client and MEONA Server). The MEONA Client transmits the recipient address of a feedback report to the MEONA Server, and the server sends the report to the transmitted address instead of the address configured on the server. The feedback function is available only in the MEONA administration area, which requires one of the administrative roles ADMINISTRATOR, SUPERADMINISTRATOR or TYPIST (catalogue editing), or the PHARMACIST role holding the PHARMACY_ADMINISTRATOR right, assigned explicitly by the operating hospital's administrators. Such a user who modifies the client request can cause the MEONA Server to send a message with content of the user's choosing, from the sender address configured on the server, to a recipient of the user's choosing, within the limits permitted by the operator's\u00a0mail relay. The message can be used for social engineering because it appears to originate from an internal hospital system.\nExploitation requires a MEONA account with one of the administrative roles named above and access to the operating hospital's internal network; MEONA is operated exclusively within closed hospital networks without exposure to the public Internet, and where a hospital permits remote access to that network at all, it is only through the hospital's own remote-access infrastructure (e.g. VPN) under the hospital's control. The message contains only the recipient, subject and text entered by the user; no data of other users or patients is disclosed. Mesalvo is not aware of any exploitation outside the reported security test.\nThis issue affects MEONA Client and MEONA Server in versions 2024.10, 2025.04 (before 2025.04.24) and 2026.03 (before 2026.03.02). MEONA 2025.04.24 and 2026.03.02 (planned Q4 2026) enforce the configured recipient address on the server. Operators can restrict at their mail relay which recipients the MEONA sender address may reach.",
-      "last_modified": "2026-09-26T07:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25602"
+      "description": "vLLM before 0.29.0 accepts user-controlled stop_token_ids on the OpenAI-compatible POST /v1/completions and POST /v1/chat/completions endpoints but validates only that the values are integers, not that each token id is within the model vocabulary/logits range. When min_tokens > 0, the stop token ids are used as logits indices to suppress stop tokens, so an out-of-range id reaches a CUDA indexing operation (index_put_) and triggers a device-side assertion. An authenticated API user can send a single malformed completion request that returns 500 Internal Server Error and puts EngineCore into a fatal state, causing subsequent requests to fail until the service is restarted (denial of service).",
+      "last_modified": "2026-09-26T13:23:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100654"
     },
     {
-      "cve_id": "CVE-2026-88412",
-      "asset_id": "CVE-2026-88412",
+      "cve_id": "CVE-2026-100653",
+      "asset_id": "CVE-2026-100653",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An integer overflow in the _BulkInsert_ReadProperty component (/bulk_insert.c) of FalkorDB (Redis module) v4.20.1 allows attackers to cause a Denial of Service (DoS) via a crafted input.",
-      "last_modified": "2026-09-26T07:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88412"
+      "description": "vLLM is an inference and serving engine for large language models. In versions from 0.22.1 through 0.28.0, the operator-supplied model revision pin (--revision / --code-revision) is not propagated to several Hugging Face artifact loads for the FunAudioChat and Tarsier2 architectures: the WhisperFeatureExtractor and speech_tokenizer PreTrainedTokenizerFast loads in vllm/model_executor/models/funaudiochat.py and the Qwen2VLConfig.from_pretrained call used by Tarsier2ProcessingInfo in vllm/model_executor/models/qwen2_vl.py. As a result, deployments pinned to a reviewed revision still resolve these behavior-affecting processor, tokenizer, and config artifacts from the repository's default revision, so a later change to the upstream default branch can alter audio preprocessing, speech tokenizer behavior, or Tarsier2 configuration without any change to the operator's configured pin. This is a supply-chain integrity and reproducibility failure for pinned deployments; it is residual to the earlier fix tracked as GHSA-3ww4-5jv9-j5gm / CVE-2026-47155 and does not constitute remote code execution or a trust_remote_code=False bypass. The issue is fixed in version 0.28.0.",
+      "last_modified": "2026-09-26T13:23:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100653"
     },
     {
-      "cve_id": "CVE-2026-70125",
-      "asset_id": "CVE-2026-70125",
+      "cve_id": "CVE-2026-100652",
+      "asset_id": "CVE-2026-100652",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Microsoft Office Outlook Remote Code Execution Vulnerability",
-      "last_modified": "2026-09-26T07:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-70125"
+      "description": "vLLM versions 0.22.0 through 0.23.0 fail to validate stop_token_ids against vocabulary bounds in Rust HTTP and gRPC frontends, allowing out-of-vocabulary token IDs to reach MinTokensLogitsProcessor. Attackers can submit requests with min_tokens greater than zero and out-of-vocabulary stop_token_ids to trigger CUDA tensor indexing failures that leave EngineCore in a fatal state requiring service restart.",
+      "last_modified": "2026-09-26T13:23:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100652"
     },
     {
-      "cve_id": "CVE-2026-7256",
-      "asset_id": "CVE-2026-7256",
+      "cve_id": "CVE-2026-100651",
+      "asset_id": "CVE-2026-100651",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "** UNSUPPORTED WHEN ASSIGNED ** A command injection vulnerability in the CGI program of Zyxel WRE6505 v2 firmware version V1.00(ABDV.3)C0 could allow an adjacent attacker on the LAN to execute operating system (OS) commands on a vulnerable device by sending a crafted HTTP request.",
-      "last_modified": "2026-09-26T07:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7256"
+      "description": "vLLM before 0.29.0 fails to enforce decoder prompt-length validation on the disaggregated serving endpoint /inference/v1/generate. When the request contains a 'features' (multimodal) payload, vllm/entrypoints/serve/disagg/serving.py builds a multimodal EngineInput directly from the caller-supplied token_ids, and GenerateRequest.token_ids (vllm/entrypoints/serve/disagg/protocol.py) is not checked against model_config.max_model_len. For multimodal processors that report skip_prompt_length_check=True (for example Nemotron Parse, Whisper, and FireRedLID), InputProcessor._validate_prompt_len() returns immediately for both encoder and decoder prompts, so an overlong prompt becomes an EngineCoreRequest and reaches the worker input-batch copy into a fixed max_model_len-wide NumPy row. A client able to reach the endpoint on an affected model configuration can therefore submit an overlong token_ids list to trigger a worker failure and denial of service. Fixed in 0.29.0.",
+      "last_modified": "2026-09-26T13:23:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100651"
     },
     {
-      "cve_id": "CVE-2026-88388",
-      "asset_id": "CVE-2026-88388",
+      "cve_id": "CVE-2026-100650",
+      "asset_id": "CVE-2026-100650",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Espruino 2v29 (commit bffc6d0) contains a stack-based buffer overflow vulnerability in the JavaScript error stack-trace handling path on 64-bit builds. A remote attacker can supply JavaScript input that triggers an exception and reaches jslPrintTokenLineMarker(), which passes the address of a 4-byte int column variable to jsvGetLineAndCol() as a size_t pointer. jsvGetLineAndCol() performs an 8-byte write through the mismatched pointer, overwriting adjacent stack memory.",
-      "last_modified": "2026-09-26T07:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88388"
+      "description": "vLLM through 0.29.0 fetches and fully materializes remote or inline media before enforcing its documented media controls (the VLLM_MAX_AUDIO_CLIP_FILESIZE_MB compressed-audio size cap, default 25 MB, and the per-modality --limit-mm-per-prompt item limits). Across four ingress paths \u2014 the shared media-acquisition layer (HTTPConnection.get_bytes()/async_get_bytes()), the chat completions audio_url/base64 path, the batch speech runner, and the Rust frontend POST /tokenize route \u2014 the server reads the entire HTTP response body, base64-decodes the inline payload, or spawns one fetch/decode task per media part, and only then applies the limit (or, on some paths, never applies it). A remote attacker can therefore cause the API server or batch-runner process to allocate memory and consume outbound bandwidth proportional to an attacker-chosen body size or media item count before the request is rejected, resulting in pre-inference memory and bandwidth exhaustion (denial of service). The chat and batch surfaces require an API key when one is configured; the Rust frontend /tokenize route is unauthenticated by design. There is no code execution or data disclosure impact.",
+      "last_modified": "2026-09-26T13:23:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100650"
     },
     {
-      "cve_id": "CVE-2026-78806",
-      "asset_id": "CVE-2026-78806",
+      "cve_id": "CVE-2026-100649",
+      "asset_id": "CVE-2026-100649",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in Matter Standard Specification-Implementation gap v1.5.1 Matter Project Chip V1.5.1 allows a local attacker to obtain sensitive information via the PerformCommissioningStep function in the ChipDeviceController.cpp component",
-      "last_modified": "2026-09-26T06:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78806"
+      "description": "vLLM before 0.29.0 contains a resource-limit bypass vulnerability in PyNvVideoCodec decoder allocation where sampler subclass shadowing allows independent counter increments. Unauthenticated attackers can select different sampler subclasses in video requests to exceed configured decoder limits and exhaust unaccounted GPU memory.",
+      "last_modified": "2026-09-26T13:23:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100649"
     },
     {
-      "cve_id": "CVE-2026-88418",
-      "asset_id": "CVE-2026-88418",
+      "cve_id": "CVE-2026-100648",
+      "asset_id": "CVE-2026-100648",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "CMSimple 5.24 ships with CSRF protection disabled by default, which turns csrfProtection() into a no-op on every state-changing admin request, and it does not send the csrf_token hidden field in admin forms. Because administrator authentication is cookie-only and no CSRF token is enforced, an unauthenticated attacker can induce a logged-in administrator's browser to issue a forged content-save request with a text payload containing a scripting marker. The marker is stored verbatim into content/content.php; on every subsequent page view evaluate_cmsimple_scripting() (functions.php) executes the marker body with PHP eval() \u2014 for all visitors, including unauthenticated ones. This yields persistent remote code execution on the web server.",
-      "last_modified": "2026-09-26T06:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88418"
+      "description": "vllm before 0.29.0 fails to enforce VLLM_MAX_AUDIO_CLIP_FILESIZE_MB limit in multimodal chat audio decoding, allowing unauthenticated clients to bypass file size restrictions. Attackers can submit oversized audio files through chat endpoints to consume excessive memory and CPU resources during decoding.",
+      "last_modified": "2026-09-26T13:23:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100648"
     },
     {
-      "cve_id": "CVE-2026-88414",
-      "asset_id": "CVE-2026-88414",
+      "cve_id": "CVE-2026-100647",
+      "asset_id": "CVE-2026-100647",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MCMS 6.1.1 through 6.2.1 contains a SQL injection vulnerability in the PageAction.verify endpoint (GET /ms/mdiy/page/verify.do).",
-      "last_modified": "2026-09-26T06:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88414"
+      "description": "vLLM versions before 0.29.0 contain a denial-of-service vulnerability in the cache_salt parameter accepted on OpenAI-compatible and Anthropic API endpoints, which lacks maximum length validation and is processed on the single EngineCore scheduler thread. Unauthenticated attackers can send HTTP requests with multi-hundred-megabyte salt values that trigger expensive pickle serialization and SHA-256 hashing, stalling the scheduler thread and denying service to all concurrent requests.",
+      "last_modified": "2026-09-26T13:23:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100647"
     },
     {
-      "cve_id": "CVE-2026-18143",
-      "asset_id": "CVE-2026-18143",
+      "cve_id": "CVE-2026-100646",
+      "asset_id": "CVE-2026-100646",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Request a Quote for WooCommerce plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.9.2 via the `afrfq_submit_quote_via_popup()` function. This is due to missing file extension and MIME type validation in the popup upload handler, which uses the raw attacker-supplied filename directly as the destination for `move_uploaded_file()`. This makes it possible for unauthenticated attackers to upload executable files, such as PHP files, to a web-accessible temporary RFQ upload directory when a public quote rule with the multi-page popup flow is enabled.",
-      "last_modified": "2026-09-26T06:39:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18143"
+      "description": "SiYuan is a self-hosted personal knowledge management system. In versions up to and including 3.8.3, the kernel's authentication guards (CheckAuth in kernel/model/session.go and IsSessionOriginAllowed in kernel/util/net.go) fail open when the HTTP Origin header is absent, on the incorrect assumption that any browser-initiated cross-site request carries an Origin. Because browsers omit Origin on cross-site top-level GET navigations and no-cors GET subresource loads \u2014 and the session cookie is SameSite=Lax \u2014 a single cross-site GET issued from any attacker-controlled web page is granted RoleAdministrator, both on default installations with no access-authorization code and on password-protected instances with a live session. Combined with content-type sniffing on the /api/network/proxy endpoint, which allows attacker-controlled HTML to be served under SiYuan's own origin, this permits an unauthenticated remote attacker to execute arbitrary script in the SiYuan origin (http://127.0.0.1:6806), invoke administrator APIs, and exfiltrate the persistent kernel API token. This issue is fixed in version 3.8.4.",
+      "last_modified": "2026-09-26T13:23:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100646"
     },
     {
-      "cve_id": "CVE-2026-86926",
-      "asset_id": "CVE-2026-86926",
+      "cve_id": "CVE-2026-100645",
+      "asset_id": "CVE-2026-100645",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A heap buffer overflow vulnerability in the FileMaker Server database engine block parsing routine allowed a maliciously crafted .fmp12 database file to cause memory corruption, potentially leading to arbitrary code execution. This vulnerability is addressed in FileMaker Server version 26.0.3.",
-      "last_modified": "2026-09-26T06:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86926"
+      "description": "SiYuan versions 3.7.0 before 3.8.4 contain a stored cross-site scripting vulnerability in gallery and kanban database renderers where field descriptions are not escaped in aria-label attributes. In the Electron desktop app with nodeIntegration enabled, attackers can inject JavaScript that calls Node.js child_process APIs to execute arbitrary commands with user privileges.",
+      "last_modified": "2026-09-26T13:23:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100645"
     },
     {
-      "cve_id": "CVE-2026-100544",
-      "asset_id": "CVE-2026-100544",
+      "cve_id": "CVE-2026-100644",
+      "asset_id": "CVE-2026-100644",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "openclaw's @openclaw/voice-call package before 2026.8.1 launches the configured agent for classic inbound voice calls without propagating the caller's identity or non-owner status. As a result, owner-only tool filtering can fail open and expose the agent's normal tool authority to a remote caller. A caller who is admitted by the configured inbound-call policy (open, pairing, or allowlist) on a deployment with inbound calling enabled can therefore drive tools intended for the trusted owner, potentially reading data, modifying files, executing commands, or controlling connected services depending on the agent's configuration. The issue is fixed in 2026.8.1.",
-      "last_modified": "2026-09-26T06:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100544"
+      "description": "SiYuan before v3.8.4 contains a SQL injection vulnerability in the graph query endpoint where the dailyNoteSavePath parameter is concatenated into SQL without escaping. Unauthenticated attackers on published sites with auth disabled can inject SQL via UNION SELECT to extract arbitrary database rows from all notebooks.",
+      "last_modified": "2026-09-26T13:23:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100644"
     },
     {
-      "cve_id": "CVE-2026-88756",
-      "asset_id": "CVE-2026-88756",
+      "cve_id": "CVE-2026-100643",
+      "asset_id": "CVE-2026-100643",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pagekit CMS <= 1.0.18 allows an unauthenticated attacker to perform SQL injection through the credentials array submitted to the public login endpoint (POST /user/authenticate).",
-      "last_modified": "2026-09-26T06:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88756"
+      "description": "SiYuan versions before v3.8.4 fail to properly escape four stored Attribute View values in textarea elements, allowing authenticated attackers to inject JavaScript by modifying field descriptions, template sources, select option descriptions, or footer calculation templates. Attackers can execute stored JavaScript when other users open affected database menus, and in the Electron desktop app with nodeIntegration enabled, this leads to command execution with SiYuan process privileges.",
+      "last_modified": "2026-09-26T13:23:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100643"
     }
   ]
 }
