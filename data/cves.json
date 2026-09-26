@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-25T21:44:56.161901+00:00",
+  "last_updated": "2026-09-26T05:18:01.166532+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-91766",
-      "asset_id": "CVE-2026-91766",
+      "cve_id": "CVE-2026-88367",
+      "asset_id": "CVE-2026-88367",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When the http:// stream wrapper follows a redirect it forwards the user-supplied Authorization, Cookie and Proxy-Authorization headers unchanged, even when the redirect target is a different host, a different port, or a downgrade from HTTPS to HTTP. A server that can steer a redirect therefore receives credentials that were only meant for the original origin. This is the same class of issue that libcurl fixed in 7.58.0 ( CVE-2018-1000007 https://github.com/advisories/GHSA-g7x2-hrfp-pv5f ).",
-      "last_modified": "2026-09-25T20:40:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91766"
+      "description": "NanoSVG 239e102ec contains an incorrect numeric conversion vulnerability in nsvg__curveDivs() during SVG stroke rasterization. A specially crafted SVG document containing an extremely large stroke-width can cause floating-point rounding to produce a zero subdivision angle. The subsequent arc division yields infinity, which is converted to int without range validation, resulting in undefined behavior and process termination, leading to denial of service.",
+      "last_modified": "2026-09-26T04:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88367"
     },
     {
-      "cve_id": "CVE-2026-57443",
-      "asset_id": "CVE-2026-57443",
+      "cve_id": "CVE-2026-88370",
+      "asset_id": "CVE-2026-88370",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SCBE-AETHERMOORE is a geometric AI governance and evaluation framework. Starting in version 4.0.2 and prior to version 4.2.1, the AetherBrowser API server (`scripts/aetherbrowser/api_server.py`) exposes the `POST /api/ops/check-email` endpoint without any authentication. Any remote attacker can call this endpoint and trigger execution of the `email_reader.py` subprocess, which connects to configured ProtonMail or Gmail accounts via IMAP and returns email metadata (sender, subject, body snippet) in the JSON response. The server binds to `0.0.0.0:8100` by default with CORS set to `allow_origins=[\"*\"]`, making it reachable from any network or browser origin. Version 4.2.1 patches the issue.",
-      "last_modified": "2026-09-25T20:37:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57443"
+      "description": "libconfini 1.16.4 contains a heap out-of-bounds write condition involving the bundled load_ini_buffer.h utility and strip_ini_cache(). The bundled utility allocates exactly ini_length bytes, while strip_ini_cache() unconditionally writes a NUL terminator at ini_source[ini_length], requiring an additional writable byte. Applications using the bundled allocation pattern can trigger deterministic heap memory corruption when processing any non-empty INI input, resulting in denial of service.",
+      "last_modified": "2026-09-26T04:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88370"
     },
     {
-      "cve_id": "CVE-2026-93394",
-      "asset_id": "CVE-2026-93394",
+      "cve_id": "CVE-2026-90481",
+      "asset_id": "CVE-2026-90481",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw in libmongoc's SCRAM authentication implementation caused the client to continue the authentication handshake and transmit the client proof even when a nonce mismatch was detected in the server's first message. An unauthorized party with a man-in-the-middle position could exploit this by injecting a crafted server-first-message containing a controlled salt and low iteration count, then capturing the resulting client proof to perform offline password cracking. This vulnerability is mitigated by TLS, which is standard in production deployments.",
-      "last_modified": "2026-09-25T20:33:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93394"
+      "description": "In PortSwigger Burp Suite DAST (formerly Burp Suite Enterprise Edition) before 2026.8, an authentication bypass can occur via an alternate path or channel.",
+      "last_modified": "2026-09-26T04:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90481"
     },
     {
-      "cve_id": "CVE-2026-91765",
-      "asset_id": "CVE-2026-91765",
+      "cve_id": "CVE-2026-51995",
+      "asset_id": "CVE-2026-51995",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "cleanup_xml_node() in the SOAP XML parser recurses once per XML nesting level with no depth limit. An unauthenticated attacker can post a SOAP request containing tens of thousands of nested elements to any SoapServer endpoint, exhaust the stack and crash the process. The same unbounded recursion exists in the SOAP value decoder and in the WSDL node search helper.",
-      "last_modified": "2026-09-25T20:33:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91765"
+      "description": "An issue in geelen mcp-remote 0.1.32 through 0.1.38 allows a remote attacker to obtain sensitive information via the src/lib/authorization-server-metadata.ts, src/lib/utils.ts components",
+      "last_modified": "2026-09-26T03:30:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51995"
     },
     {
-      "cve_id": "CVE-2026-93395",
-      "asset_id": "CVE-2026-93395",
+      "cve_id": "CVE-2026-51996",
+      "asset_id": "CVE-2026-51996",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A missing lower-bound validation in the bson_new_from_buffer() function of libbson allows an integer underflow when processing BSON data with a zero-length prefix. The function reads a 32-bit document length from the input buffer but does not verify that the value is at least 5 (the minimum valid BSON document size) before using it in an array index calculation. When the length field is zero, the expression used to check the document's null terminator wraps to UINT32_MAX, causing a heap out-of-bounds read that crashes the process. An unauthorized party who can supply crafted BSON input to an application using this API can cause a denial of service.",
-      "last_modified": "2026-09-25T20:32:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93395"
+      "description": "An issue in geelen mcp-remote 0.1.16 through 0.1.38 allows a remote attacker to execute arbitrary code via the src/lib/utils.ts and the getServerUrlHash function",
+      "last_modified": "2026-09-26T03:30:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51996"
     },
     {
-      "cve_id": "CVE-2026-55946",
-      "asset_id": "CVE-2026-55946",
+      "cve_id": "CVE-2026-51997",
+      "asset_id": "CVE-2026-51997",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of special elements used in a command ('command injection') in Microsoft Copilot allows an unauthorized attacker to disclose information over a network.",
-      "last_modified": "2026-09-25T20:32:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55946"
+      "description": "An issue in geelen mcp-remote 0.1.16 through 0.1.38 allows a remote attacker to execute arbitrary code via the open() functions",
+      "last_modified": "2026-09-26T03:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51997"
     },
     {
-      "cve_id": "CVE-2026-85511",
-      "asset_id": "CVE-2026-85511",
+      "cve_id": "CVE-2026-88358",
+      "asset_id": "CVE-2026-88358",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in EAP's Elytron. An EAP application whose security domain is backed by an Elytron token-realm with oauth2-introspection would allow parameter substitution due to missing URL encoding.",
-      "last_modified": "2026-09-25T20:27:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85511"
+      "description": "simdjson 4.6.1 contains a one-byte out-of-bounds read vulnerability in dom::parser::parse_unpadded(). A specially crafted truncated JSON document whose final structural token closes a nested array or object can cause json_iterator::walk_document() to access buf[len] after the input buffer has been exhausted. This results in a heap out-of-bounds read and may cause application termination, leading to denial of service.",
+      "last_modified": "2026-09-26T03:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88358"
     },
     {
-      "cve_id": "CVE-2026-100369",
-      "asset_id": "CVE-2026-100369",
+      "cve_id": "CVE-2026-88362",
+      "asset_id": "CVE-2026-88362",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "CliInvoke and its formerly named `AlastairLundy.CliInvoke` package are .NET libraries for invoking command-line programs and wrapping executable processes. `CliInvoke` versions 2.0.0 through 2.8.4, 2.9.0 through 2.9.3, 2.10.0 through 2.10.4, and 3.0.0-alpha.1 through 3.0.0-beta.1, as well as `AlastairLundy.CliInvoke` versions 2.0.0-alpha.1 through 2.0.0, contain an argument-injection vulnerability in `RunnerProcessFactory` on the 2.x line and `RunnerConfigurationFactory` on the 3.x line. These factories combine runner arguments, a caller-controlled target, and caller-controlled arguments into one `ProcessStartInfo.Arguments` string, allowing a double quote in the target or an argument to terminate an operating-system-level quoted region and inject unintended elements into the runner\u2019s argument vector, potentially resulting in arbitrary command execution when a shell runner is used. The vulnerability is patched in `CliInvoke` versions 2.8.5, 2.9.4, 2.10.5, and 3.0.0-beta.2, and in `AlastairLundy.CliInvoke` version 2.0.2. No complete workaround is available; users unable to upgrade can partially mitigate the issue by removing double quotes from targets and arguments, additionally removing shell metacharacters when using shell runners, or bypassing the vulnerable factory and constructing a `ProcessConfiguration` with an explicit `ArgumentList`.",
-      "last_modified": "2026-09-25T20:26:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100369"
+      "description": "MuJS e892c9fdb contains an incorrect numeric conversion vulnerability in jsR_isindex() in jsrun.c. A specially crafted JavaScript input containing an excessively large numeric array index can cause an out-of-range floating-point value to be converted to an integer without proper range validation. This results in undefined behavior and can cause process termination, leading to denial of service.",
+      "last_modified": "2026-09-26T03:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88362"
     },
     {
-      "cve_id": "CVE-2025-14181",
-      "asset_id": "CVE-2025-14181",
+      "cve_id": "CVE-2026-93806",
+      "asset_id": "CVE-2026-93806",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SOAP HTTP client guards its response buffer growth with a check that relies on signed integer overflow, which is undefined behaviour and is not guaranteed to trigger. When the check is optimised away, a malicious SOAP server can make the client allocate a buffer far smaller than the data it then writes into it, producing a heap buffer overflow.",
-      "last_modified": "2026-09-25T20:26:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14181"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: cfg80211: validate assoc response length before status and IE access\n\ncfg80211_rx_assoc_resp() initialises the status and response-IE fields\nof cfg80211_connect_resp_params from the management frame before\nproving that the frame is long enough for those offsets. S1G and\nregular association responses also have different IE offsets, but the\nS1G path only patched resp_ie after the unsafe initialiser had already\nrun.\n\nDefer resp_ie, resp_ie_len, and status to after the link-iteration\nloop. Use a bool to remember whether the frame is S1G, then validate\nthe appropriate minimum length and set all three fields in a single\nif/else block. Funnel short-frame and SME-reject cleanup through a\nshared free_bss label for the abandon paths.",
+      "last_modified": "2026-09-26T03:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93806"
     },
     {
-      "cve_id": "CVE-2026-100417",
-      "asset_id": "CVE-2026-100417",
+      "cve_id": "CVE-2026-93810",
+      "asset_id": "CVE-2026-93810",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "RustDesk before 1.5.0 on Windows fails to enforce the one-way file transfer option against peer clipboard file requests, allowing authenticated peers to read files from the host clipboard. Attackers can send FormatDataRequest and FileContentsRequest messages to retrieve copied files by guessing the FileGroupDescriptorW format identifier.",
-      "last_modified": "2026-09-25T20:25:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100417"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncachefiles: Fix double fput\n\nFix a double fput() in error handling in cachefiles_create_tmpfile().",
+      "last_modified": "2026-09-26T03:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93810"
     },
     {
-      "cve_id": "CVE-2026-17545",
-      "asset_id": "CVE-2026-17545",
+      "cve_id": "CVE-2026-88366",
+      "asset_id": "CVE-2026-88366",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "On Windows, PHP's filesystem and stream APIs do not reject reserved device names such as CON, PRN, AUX, NUL, COM1 to COM9, LPT1 to LPT9, CONIN$ and CONOUT$ when they appear as a component of a path. An attacker-controlled filename therefore reaches CreateFileW() and opens a device instead of the regular file the application expected, which can block or hang the request and exhaust worker processes.",
-      "last_modified": "2026-09-25T20:18:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17545"
+      "description": "NanoSVG commit 239e102ec contains an incorrect numeric conversion vulnerability in nsvg__pathArcTo() when parsing SVG arc commands. A specially crafted SVG document containing extreme arc radius values can cause intermediate arc calculations to produce a NaN delta angle. The function subsequently converts this NaN value to int without validating that it is finite and representable, resulting in undefined behavior and process termination, leading to denial of service.",
+      "last_modified": "2026-09-26T03:00:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88366"
     },
     {
-      "cve_id": "CVE-2026-88340",
-      "asset_id": "CVE-2026-88340",
+      "cve_id": "CVE-2026-88368",
+      "asset_id": "CVE-2026-88368",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An invalid pointer release vulnerability exists in YARA 4.5.8 during deserialization of compiled .yrc rule files. The vulnerability is caused by insufficient validation of external-variable pointers, which may lead to invalid free in yr_rules_destroy() or wild pointer access in yr_object_create(). An attacker can provide a specially crafted .yrc file that causes memory corruption and application crash.",
-      "last_modified": "2026-09-25T20:17:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88340"
+      "description": "NanoSVG commit 239e102ec contains an incorrect numeric conversion vulnerability in the rasterizer's nsvg__addActive() function. A specially crafted SVG document containing sufficiently large geometry coordinates can cause fixed-point-scaled edge coordinates to exceed the range representable by int. The rasterizer subsequently converts these values to int without range validation, resulting in undefined behavior and possible process termination, leading to denial of service.",
+      "last_modified": "2026-09-26T03:00:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88368"
     },
     {
-      "cve_id": "CVE-2026-87902",
-      "asset_id": "CVE-2026-87902",
+      "cve_id": "CVE-2026-88376",
+      "asset_id": "CVE-2026-88376",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An unauthenticated attacker can make `get_page_template()` page-template resolution include a chosen readable local `.php` file outside the active theme directories. If relevant pre-conditions for both the server and the active theme are met, this can lead to RCE.",
-      "last_modified": "2026-09-25T20:17:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87902"
+      "description": "Bento4 1.6.0.0 contains an integer underflow vulnerability in AP4_AvccAtom::Create() and AP4_HvccAtom::Create(). A specially crafted MP4 file containing an avcC or hvcC atom with a declared size smaller than the atom header size can cause the payload-size calculation to wrap to a large unsigned value. The resulting invalid buffer allocation and copy operations can cause application termination, leading to denial of service.",
+      "last_modified": "2026-09-26T03:00:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88376"
     },
     {
-      "cve_id": "CVE-2026-98056",
-      "asset_id": "CVE-2026-98056",
+      "cve_id": "CVE-2026-88377",
+      "asset_id": "CVE-2026-88377",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnvme: remove stale namespaces by NSID range during scan\n\nnvme_scan_ns_list() drops the stale namespaces in each gap in the\nreported NSID list one NSID at a time. Every iteration calls\nnvme_find_get_ns() to look the namespace up and removes it if it is\npresent. The loop runs once per NSID in the gap rather than once per\nnamespace actually present.\n\nNSIDs are 32-bit, so a target with a sparse NSID space can make a\nsingle gap spin the loop billions of times with nothing to remove.\n\n  watchdog: BUG: soft lockup - CPU#4 stuck for 26s!\n  Workqueue: nvme-wq nvme_scan_work [nvme_core]\n  RIP: 0010:__srcu_read_unlock+0xb/0x20\n  Call Trace:\n   nvme_find_get_ns+0x7d/0xb0 [nvme_core]\n   nvme_scan_ns_list+0xe8/0x280 [nvme_core]\n   nvme_scan_work+0x18a/0x280 [nvme_core]\n   process_one_work+0x197/0x380\n   worker_thread+0x2fe/0x410\n   kthread+0xe0/0x100\n\nRename nvme_remove_invalid_namespaces() to nvme_remove_nsid_range()\nand give it an open (start, end) NSID range. ctrl->namespaces is\nsorted by NSID, so the whole gap is dropped in a single walk that\nstops once end is reached. This bounds the work by the namespaces\nthat are present instead of by the size of the gap.",
-      "last_modified": "2026-09-25T20:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98056"
+      "description": "Bento4 1.6.0.0 contains an integer underflow vulnerability in the avcC and hvcC configuration atom parsers. A specially crafted MP4 file containing an atom with a declared size smaller than AP4_ATOM_HEADER_SIZE can cause AP4_AvccAtom::Create() or AP4_HvccAtom::Create() to underflow the payload-size calculation. The resulting oversized buffer operation can cause invalid or NULL pointers to be passed to the AP4_DataBuffer copy path, resulting in application termination and denial of service.",
+      "last_modified": "2026-09-26T03:00:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88377"
     },
     {
-      "cve_id": "CVE-2026-98069",
-      "asset_id": "CVE-2026-98069",
+      "cve_id": "CVE-2026-88385",
+      "asset_id": "CVE-2026-88385",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/rds: acquire the fastpath locks in rds_conn_shutdown()\n\nrds_conn_shutdown() quiesces the transmit and receive-refill paths by\nwaiting for RDS_IN_XMIT and RDS_RECV_REFILL to be sampled clear, and\nthen runs the transport shutdown and rds_conn_path_reset().  Sampling\nthe bits clear is not the same as owning them: the moment after the\nwait_event() returns, rds_send_xmit() can re-acquire RDS_IN_XMIT (or\nrds_ib_recv_refill() can re-acquire RDS_RECV_REFILL) and run\nconcurrently with the teardown.\n\nThe sender does recheck the connection state after taking the lock,\nbut that recheck is a classic store-buffering pattern: teardown writes\nthe state and reads the bit while the sender writes the bit and reads\nthe state.  acquire_in_xmit() is only an acquire operation, so on\nweakly ordered architectures both sides can miss each other's write,\nand the transmit path then runs while the transport zeroes its rings\n(e.g. rds_ib_ring_init()) and rds_send_path_reset() rewrites the\ntransmit state under it.\n\nOracle UEK fixed the same class of crashes - a 14-year tail of\nBUG_ON()s in rds_ib_sub_signaled(), unexpected op-codes and NULL\ndereferences in rds_ib_send_cqe_handler() during failover testing -\nby making the teardown path *acquire* the fastpath bit locks instead\nof testing them (\"rds: Make sure transmit path and connection\ntear-down does not run concurrently\").  Ownership of a single word is\ndecided by RMW atomicity, so no cross-variable ordering is needed.\n\nDo the same here: take both locks before calling the transport\nshutdown, hold them across rds_conn_path_reset(), and release them\nexplicitly with a wake-up afterwards.  Both are released with\nclear_bit_unlock(), so that the ring re-initialization done by the\ntransport shutdown and the transmit state rewritten by\nrds_send_path_reset() are ordered before either bit is seen clear by\nthe next acquire_in_xmit() or acquire_refill().\n\nThe fastpath users of these bits - rds_send_xmit() and\nrds_ib_recv_refill() - are trylock style and back off while teardown\nowns the locks, so no new lock dependency is introduced for them.\nrds_tcp_reset_callbacks() is different: since the previous patch it\nacquires RDS_IN_XMIT as well, and it blocks doing so, so its wait now\nspans the teardown instead of at most one send batch.  That waiter\nruns from rds_tcp_accept_one() on the single-threaded krdsd workqueue\nand holds rds_tcp_accept_lock and t_conn_path_lock while it waits, so\na duelling SYN accepted while its path is being torn down parks\naccept processing for the duration of the teardown - for TCP bounded\nby the (up to 5 s) drain loop in rds_tcp_conn_path_shutdown().  An IB\npath's drain in rds_ib_conn_path_shutdown() has no round cap, but no\nblocking waiter either: rds_tcp_reset_callbacks() is the only blocking\nacquirer of these bits and waits only on its own TCP path, and the\nfastpaths are trylock-and-back-off on both transports, so a long IB\ndrain lengthens only that path's own quiesce.  The\nwindow is narrow: the accept-side state check has to pass before the\nteardown moves the path to RDS_CONN_DISCONNECTING.\n\nBecause krdsd is a single global workqueue, everything else queued\nthere - accept processing for other connections and network\nnamespaces, and the flush_workqueue(rds_wq) in rds_tcp_listen_stop()\nduring namespace teardown - waits behind the parked accept worker for\nthat time.  It cannot deadlock, although the waits do point at each\nother: the teardown blocks until the bit's holder releases it, and\nthe holder may be that krdsd accept worker.  The holder finishes\nwithout needing anything the teardown owns: the sync cancels\nrds_tcp_reset_callbacks() issues target cp_send_w and cp_recv_w on\nthe path's ordered cp_wq, whose only execution slot is occupied by\nthe blocked cp_down_w itself, so they are pending at most and cancel\nwithout flushing - a reliance on cp_wq being ordered that is now\nnoted next to those cancels (on \n---truncated---",
-      "last_modified": "2026-09-25T20:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98069"
+      "description": "Mini-XML 4.0.5 contains a memory leak vulnerability in mxml_load_data() during malformed XML parsing. Specially crafted XML input can cause text nodes allocated by mxmlNewText() to become unlinked before a parse error transfers control to the cleanup path. These orphaned nodes are not released, resulting in a persistent memory leak on each parsing attempt. Repeated attacker-controlled requests can cause cumulative memory exhaustion and denial of service.",
+      "last_modified": "2026-09-26T03:00:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88385"
     },
     {
-      "cve_id": "CVE-2026-98070",
-      "asset_id": "CVE-2026-98070",
+      "cve_id": "CVE-2026-93206",
+      "asset_id": "CVE-2026-93206",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/rds: acquire RDS_IN_XMIT in rds_tcp_reset_callbacks()\n\nrds_tcp_reset_callbacks() quiesces the transmit path by setting the\npath state to RDS_CONN_RESETTING and then waiting for RDS_IN_XMIT to\nbe sampled clear before swapping the underlying socket and calling\nrds_send_path_reset().\n\nSampling the bit clear is not the same as owning it: rds_send_xmit()\ncan re-acquire RDS_IN_XMIT right after the wait_event() returns.  Its\nstate recheck after taking the lock is a store-buffering pattern (the\nresetter writes the state and reads the bit, the sender writes the\nbit and reads the state) and acquire_in_xmit() is only an acquire\noperation, so on weakly ordered architectures both sides can miss\neach other's write and the transmit path then runs concurrently with\nrds_send_path_reset() rewriting cp_xmit_* state - which is exactly\nwhat the comment above rds_send_path_reset() tells its callers to\nprevent.\n\nTake the lock instead, hold it across the socket swap and\nrds_send_path_reset(), and release it with a wake-up at the end.  The\nlock-ordering constraint documented above the wait still holds: the\nlock is acquired before lock_sock(), so a sender inside tcp_sendmsg()\ncan never be waited on while we hold the socket lock.\n\nTwo details of the old code go away with the same change:\n\n - t_sock is now read only after the lock is acquired.  The old code\n   cached it before waiting; the teardown in rds_conn_shutdown()\n   releases that socket and clears t_sock, so a pointer cached before\n   the wait can be stale by the time the accept path resumes.  Reading\n   it under RDS_IN_XMIT is what makes the exclusion complete once the\n   teardown owns the same lock, which the next patch arranges; until\n   then the teardown still only samples the bit, and the two paths\n   remain as exposed to each other as they are today.\n\n - The old !osock early path called rds_send_path_reset() with no\n   serialization at all.  It now runs under the lock like the normal\n   path.  The conditional RDS_CONN_RESETTING transition of the\n   previous patch happens before the socket check either way: a path\n   found without a socket is either still connecting (its reconnect\n   worker blocked on t_conn_path_lock) and legitimately goes\n   RESETTING -> UP on the new socket, or it has been torn down\n   meanwhile and is dropped.\n\nThe in-function comment describing the old wait-based quiesce is\nrewritten to describe the lock-based one, and the stale block comment\nabove the function (which still described a return value and an\nincomplete list of t_sock writers) is refreshed to name all four\nwriters - the connect, accept, teardown and swap paths - and what\nserializes each of them.",
-      "last_modified": "2026-09-25T20:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98070"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI/proc: Use file_ns_capable() when checking config space read access\n\nproc_bus_pci_read() decides how much of the config space is readable based\non capable(CAP_SYS_ADMIN), which checks the credentials of the task calling\nread(), not the credentials of the process that opened the file.\n\nThe sysfs equivalent, pci_read_config(), has checked the credentials of the\nopening process since commit de139a339395 (\"pci: check caps from sysfs file\nopen to read device dependent config space\"), so a privileged process can\nopen the config space file and pass the file descriptor to an unprivileged\nprocess (for example, a process running a KVM guest with an assigned\ndevice), which can then read the entire config space.  The check was\nsubsequently routed through the LSM framework in commit 47970b1b2aa6 (\"pci:\nuse security_capable() when checking capablities during config space read\")\nand converted to the dedicated helper in commit ab0fa82b2df9 (\"pci-sysfs:\nuse proper file capability helper function\").\n\nThus, the two interfaces check the same capability against different\ncredentials.  Checking the credentials of the task calling read() makes the\noutcome depend on who reads rather than who opened, so the restriction is\nbypassed whenever a more privileged process reads through the descriptor.\nChecking the credentials recorded in file->f_cred settles the decision at\nopen() time and ties it to the file, where it cannot change with the\ncaller.\n\nUse file_ns_capable() to check CAP_SYS_ADMIN against the credentials in\neffect when the file was opened, bringing the procfs interface in line with\nthe sysfs behaviour.\n\nAs a result, a file descriptor opened by a privileged process and passed to\nan unprivileged one now allows the entire config space to be read through\nprocfs, matching sysfs.",
+      "last_modified": "2026-09-26T02:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93206"
     },
     {
-      "cve_id": "CVE-2026-63208",
-      "asset_id": "CVE-2026-63208",
+      "cve_id": "CVE-2026-93225",
+      "asset_id": "CVE-2026-93225",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, when a Microsoft Graph request fails, Zammad logs the error including the authentication token used to access the mailbox. The system attempts to hide this token in the log, but the masking is incomplete: for the token format Microsoft uses (JWT), only the first part is hidden, while the remaining parts remain readable in plain text. A Zammad admin with Microsoft Graph channel access can view these logs and see the partial token, which may reveal sensitive claims such as the account scope, tenant, or timing, and could assist in reconstructing the full token while it is still valid. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-25T20:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63208"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nphy: fsl-imx8mq-usb: fix typec switch leak on probe error path\n\nIf probe fails after imx95_usb_phy_get_tca() succeeds, the typec\nswitch leaks because the only cleanup path was in .remove(), which\nnever runs on probe failure.\n\nUse devm_add_action_or_reset() so the switch is cleaned up on both\nprobe failure and driver removal. The imx95_usb_phy_put_tca() is no\nlonger needed, it will be removed in .remove() too.",
+      "last_modified": "2026-09-26T02:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93225"
     },
     {
-      "cve_id": "CVE-2026-68791",
-      "asset_id": "CVE-2026-68791",
+      "cve_id": "CVE-2026-97450",
+      "asset_id": "CVE-2026-97450",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in Azure Machine Learning allows an unauthorized attacker to disclose information over a network.",
-      "last_modified": "2026-09-25T20:13:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68791"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nACPICA: validate handler object type in two places\n\nACPICA: validate handler object type in acpi_ev_has_default_handler()\nand acpi_ev_find_region_handler().",
+      "last_modified": "2026-09-26T02:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97450"
     },
     {
-      "cve_id": "CVE-2026-100391",
-      "asset_id": "CVE-2026-100391",
+      "cve_id": "CVE-2026-97580",
+      "asset_id": "CVE-2026-97580",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MediaFlow Proxy through 2.4.9 contains a server-side request forgery vulnerability in the /proxy routes due to missing and incomplete destination validation in the d query parameter. Remote attackers can supply arbitrary internal URLs including loopback and cloud metadata endpoints to read full responses from the proxy server.",
-      "last_modified": "2026-09-25T20:13:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100391"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: rkvdec: bound HEVC tile loops and PPS id to the array capacity\n\ncompute_tiles_uniform() and compute_tiles_non_uniform() loop over\nnum_tile_columns_minus1 + 1 / num_tile_rows_minus1 + 1 entries, and\nassemble_hw_pps() writes one COLUMN_WIDTH / ROW_HEIGHT register per tile\nand indexes priv_tbl->param_set[] by pic_parameter_set_id, all taken from\nthe untrusted PPS. Use the bounded v4l2_hevc_pps_num_tile_columns() /\nv4l2_hevc_pps_num_tile_rows() helpers for the tile loops, and bail out of\nassemble_hw_pps() before indexing priv_tbl->param_set[] with an\nout-of-range pic_parameter_set_id, so the writes stay within the hardware\ntables.",
+      "last_modified": "2026-09-26T02:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97580"
     },
     {
-      "cve_id": "CVE-2026-100390",
-      "asset_id": "CVE-2026-100390",
+      "cve_id": "CVE-2026-15273",
+      "asset_id": "CVE-2026-15273",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zoraxy versions 3.2.3 through 3.3.4 fail to properly parse IPv6 addresses in the RemoteAddr field when setting forwarded headers. Unauthenticated attackers connecting over IPv6 can supply arbitrary X-Forwarded-For values to spoof their source IP and bypass authorization provider IP-based access controls.",
-      "last_modified": "2026-09-25T20:13:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100390"
+      "description": "The Automatic.css plugin for WordPress is vulnerable to Stored Cross-Site Scripting via REQUEST_URI in all version 4.0.0 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that will execute whenever an administrator accesses the Activity Log settings page.",
+      "last_modified": "2026-09-26T02:28:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15273"
     },
     {
-      "cve_id": "CVE-2026-100389",
-      "asset_id": "CVE-2026-100389",
+      "cve_id": "CVE-2026-100599",
+      "asset_id": "CVE-2026-100599",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GestSup versions before 3.2.61 contain a remote code execution vulnerability in the basic IMAP connector's attachment handling that fails to skip blocked file extensions. Unauthenticated attackers can send emails with PHP attachments to monitored mailboxes, which are written to the web-accessible upload/ticket directory and executed when accessed.",
-      "last_modified": "2026-09-25T20:13:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100389"
+      "description": "OpenClaw versions 2026.5.1 through 2026.7.0 fail to apply the configured exec approval path to Google Meet node commands. The googlemeet.chrome command accepts caller-supplied audio command arrays and executes them on a paired node without going through the normal system.run approval flow. In deployments with the Google Meet plugin enabled, a paired Chrome node, and the googlemeet.chrome node command allowed, a tool-enabled agent able to invoke that command can execute attacker-selected processes on the paired node, impacting files, credentials, browser profiles, and availability on that node. The issue is fixed in 2026.7.1; as a workaround, remove googlemeet.chrome from allowed node commands or disable the Google Meet plugin.",
+      "last_modified": "2026-09-26T02:19:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100599"
     },
     {
-      "cve_id": "CVE-2026-100388",
-      "asset_id": "CVE-2026-100388",
+      "cve_id": "CVE-2026-100598",
+      "asset_id": "CVE-2026-100598",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "RustDesk versions before 1.5.0 fail to properly validate file transfer permissions on incoming file clipboard messages in the Cliprdr message handler on Linux and macOS. Authenticated remote peers with disabled file transfer permissions can place files onto the host clipboard and retrieve copied files and contents from the process-wide clipboard cache.",
-      "last_modified": "2026-09-25T20:13:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100388"
+      "description": "OpenClaw (npm package openclaw) before 2026.7.1 incorrectly binds Signal approval reactions. In affected versions, a reaction intended to resolve a structured approval request could instead attach to ordinary outbound text when unrelated outbound messages and a pending approval are present in the same conversation. As a result, an approver's reaction to unrelated text could be interpreted as approving or denying a pending host action; the practical impact depends on the pending request, conversation timing, and the actions available to the OpenClaw process. The issue does not change the authority of correctly identified approvers. This is fixed in version 2026.7.1.",
+      "last_modified": "2026-09-26T02:19:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100598"
     },
     {
-      "cve_id": "CVE-2026-100387",
-      "asset_id": "CVE-2026-100387",
+      "cve_id": "CVE-2026-100597",
+      "asset_id": "CVE-2026-100597",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "pgPointcloud through 1.2.5 contains a heap out-of-bounds read vulnerability in dimensional patch WKB deserialization that allows authenticated database users to read adjacent heap memory. Attackers can supply crafted pcpatch values with attacker-controlled size fields to copy heap memory into stored patches for exfiltration or crash the PostgreSQL backend.",
-      "last_modified": "2026-09-25T20:13:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100387"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.7.1 is vulnerable to a time-of-check time-of-use race condition in OpenShell local mirror filesystem mutation operations. The remove, mkdir, and rename operations could act on a different filesystem target after OpenClaw completed its sandbox path-safety check, if the path is changed concurrently. An attacker able to win the race can cause a sandboxed operation to delete, create, or rename a host path outside the intended mirror root with the permissions of the OpenClaw process user. This does not require an operator to have granted host filesystem access outside the sandbox. The issue is fixed in 2026.7.1.",
+      "last_modified": "2026-09-26T02:19:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100597"
     },
     {
-      "cve_id": "CVE-2026-69399",
-      "asset_id": "CVE-2026-69399",
+      "cve_id": "CVE-2026-100596",
+      "asset_id": "CVE-2026-100596",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Azure Arc Elevation of Privilege Vulnerability",
-      "last_modified": "2026-09-25T20:12:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69399"
+      "description": "OpenClaw versions before 2026.7.1 fail to properly authorize non-owner users executing MCP configuration changes through /mcp set and /mcp unset commands. Attackers can persist arbitrary stdio MCP commands that execute with OpenClaw process privileges when configuration loads, compromising host confidentiality, integrity, and availability.",
+      "last_modified": "2026-09-26T02:19:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100596"
     },
     {
-      "cve_id": "CVE-2026-96879",
-      "asset_id": "CVE-2026-96879",
+      "cve_id": "CVE-2026-100595",
+      "asset_id": "CVE-2026-100595",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper removal of sensitive information before storage or transfer vulnerability in Wikimedia Foundation's Mediawiki - FlaggedRevs extension\u00a0through 1.46.0.",
-      "last_modified": "2026-09-25T20:10:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96879"
+      "description": "OpenClaw versions before 2026.7.1 contain an authorization bypass vulnerability in the diagnostics export command that allows non-owner channel senders to access owner-only host diagnostic bundles. Attackers can request and receive diagnostic details about the host, configuration, runtime, and connected services intended only for owners.",
+      "last_modified": "2026-09-26T02:19:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100595"
     },
     {
-      "cve_id": "CVE-2026-6103",
-      "asset_id": "CVE-2026-6103",
+      "cve_id": "CVE-2026-100594",
+      "asset_id": "CVE-2026-100594",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "phar_tar_number() parses the octal size field of a TAR header into a uint32_t with no overflow check. The field is 11 octal digits wide and holds values up to 0x1FFFFFFFF, so a size above 0xFFFFFFFF silently wraps. The parser then skips the wrong number of data blocks and interprets attacker-controlled file content as the next TAR header, which lets a crafted archive inject entries that PharData reports and extracts as if they were genuine.",
-      "last_modified": "2026-09-25T20:08:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-6103"
+      "description": "OpenClaw versions before 2026.7.1 contain an authorization bypass vulnerability in the /export-trajectory endpoint that allows non-owner senders to request and receive owner-only trajectory bundles. Attackers can access prompts, model messages, tool schemas, runtime events, and local path metadata from affected sessions by exploiting insufficient authorization checks.",
+      "last_modified": "2026-09-26T02:19:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100594"
     },
     {
-      "cve_id": "CVE-2026-70200",
-      "asset_id": "CVE-2026-70200",
+      "cve_id": "CVE-2026-100593",
+      "asset_id": "CVE-2026-100593",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper limitation of a pathname to a restricted directory ('path traversal') in Azure Logic Apps allows an unauthorized attacker to elevate privileges over a network.",
-      "last_modified": "2026-09-25T20:08:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-70200"
+      "description": "OpenClaw (npm package `openclaw`) before 2026.7.1 does not enforce the documented owner-only requirement for persistent `/activation` policy changes in group channels. An authorized non-owner channel sender can change whether the agent requires mention-based activation, causing the agent to respond more broadly in the group (exposing its responses to additional group traffic) or suppressing expected activation behavior until an owner restores the intended setting. The issue is fixed in version 2026.7.1.",
+      "last_modified": "2026-09-26T02:19:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100593"
     },
     {
-      "cve_id": "CVE-2026-9313",
-      "asset_id": "CVE-2026-9313",
+      "cve_id": "CVE-2026-100592",
+      "asset_id": "CVE-2026-100592",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.",
-      "last_modified": "2026-09-25T20:08:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9313"
+      "description": "OpenClaw is an agent gateway distributed via npm. In versions >= 2026.4.10 and < 2026.7.1, persistent memory dreaming mutations omit owner permission checks. An authorized but non-owner external-channel sender can issue the persistent '/dreaming on' and '/dreaming off' commands to enable or disable the Gateway's Memory Core dreaming behavior, disabling background memory processing or re-enabling durable memory promotion where the owner expected it to remain disabled; the practical confidentiality, integrity, and availability impact depends on stored conversation material and subsequent memory use. Read-only status and help commands remain governed by normal command policy. The issue is fixed in version 2026.7.1. As a workaround, disable dreaming commands in external channels or restrict channel command access to owners.",
+      "last_modified": "2026-09-26T02:19:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100592"
     },
     {
-      "cve_id": "CVE-2026-77903",
-      "asset_id": "CVE-2026-77903",
+      "cve_id": "CVE-2026-100591",
+      "asset_id": "CVE-2026-100591",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Authentication bypass by spoofing in Microsoft Dataverse allows an unauthorized attacker to elevate privileges over a network.",
-      "last_modified": "2026-09-25T20:05:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77903"
+      "description": "OpenClaw is an npm-distributed agent gateway. In versions before 2026.7.1, the global Active Memory toggle mutations could omit owner checks. An authorized non-owner external-channel sender could therefore persistently enable or disable Active Memory for the Gateway, disabling memory recall for future sessions or re-enabling global recall where the owner expected it to remain disabled. The issue is limited to persistent global on/off mutations; session-level controls and read-only status remain governed by existing command policy. The issue is fixed in version 2026.7.1. (Suggested title: \"OpenClaw before 2026.7.1 missing owner authorization check on Active Memory global toggles\".)",
+      "last_modified": "2026-09-26T02:19:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100591"
     },
     {
-      "cve_id": "CVE-2026-57864",
-      "asset_id": "CVE-2026-57864",
+      "cve_id": "CVE-2026-100590",
+      "asset_id": "CVE-2026-100590",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.",
-      "last_modified": "2026-09-25T20:05:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57864"
+      "description": "OpenClaw before 2026.7.1 contains an authorization bypass vulnerability in the /voice set command that allows non-owner external-channel senders to persist Gateway voice configuration. Attackers with command access can change the voice used by Talk responses for the configured provider, affecting configuration integrity without exposing credentials or granting additional host capabilities.",
+      "last_modified": "2026-09-26T02:19:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100590"
     },
     {
-      "cve_id": "CVE-2026-83944",
-      "asset_id": "CVE-2026-83944",
+      "cve_id": "CVE-2026-100589",
+      "asset_id": "CVE-2026-100589",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper access control in Azure Logic Apps allows an unauthorized attacker to elevate privileges over a network.",
-      "last_modified": "2026-09-25T20:02:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83944"
+      "description": "OpenClaw versions before 2026.7.1 contain a sandbox bypass vulnerability in the browser tool that allows sandboxed sessions to access paired node browser actions despite allowHostControl=false configuration. Attackers with control over sandboxed agent input can select a paired node and perform host browser operations, inspecting or manipulating the connected browser profile and its authenticated state.",
+      "last_modified": "2026-09-26T02:19:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100589"
     },
     {
-      "cve_id": "CVE-2026-93682",
-      "asset_id": "CVE-2026-93682",
+      "cve_id": "CVE-2026-100588",
+      "asset_id": "CVE-2026-100588",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When the HTTP stream wrapper follows a redirect and the response carries a Location header with an empty value, the redirect code reads one byte past the end of the heap buffer holding the location. The value of that out-of-bounds byte decides which redirect target is built, so a malicious server controls whether the client is sent to the host root or to the current directory.",
-      "last_modified": "2026-09-25T20:02:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93682"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.7.1 does not enforce the administrator scope requirement on browser control when it is reached through the node.invoke method, although direct browser.request access requires administrator scope. In Gateway deployments that honor caller identity and narrower operator scopes, a write-scoped caller with access to a connected browser-capable node can inspect pages, navigate tabs, or interact with browser-visible applications without the configured admin requirement; practical impact depends on the browser profile and signed-in state. Shared-secret token and password callers are considered fully trusted operators under OpenClaw's security model and are not affected. The issue is fixed in 2026.7.1.",
+      "last_modified": "2026-09-26T02:19:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100588"
     },
     {
-      "cve_id": "CVE-2026-57861",
-      "asset_id": "CVE-2026-57861",
+      "cve_id": "CVE-2026-100587",
+      "asset_id": "CVE-2026-100587",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.",
-      "last_modified": "2026-09-25T20:02:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57861"
+      "description": "OpenClaw versions before 2026.7.1 fail to properly validate owner authorization in the Codex computer-use installation command. Non-owner channel senders can install arbitrary plugins and execute MCP processes with OpenClaw user privileges, affecting host confidentiality, integrity, and availability.",
+      "last_modified": "2026-09-26T02:19:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100587"
     },
     {
-      "cve_id": "CVE-2026-53990",
-      "asset_id": "CVE-2026-53990",
+      "cve_id": "CVE-2026-100586",
+      "asset_id": "CVE-2026-100586",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.",
-      "last_modified": "2026-09-25T20:01:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53990"
+      "description": "OpenClaw Codex before 2026.7.1 fails to properly enforce owner authorization when creating native conversation bindings. Non-owner channel senders with command access can create bindings to the native Codex runtime and execute host-capable turns with access to files, tools, and processes.",
+      "last_modified": "2026-09-26T02:19:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100586"
     },
     {
-      "cve_id": "CVE-2026-85885",
-      "asset_id": "CVE-2026-85885",
+      "cve_id": "CVE-2026-100585",
+      "asset_id": "CVE-2026-100585",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of special elements used in a command ('command injection') in M365 Copilot allows an authorized attacker to elevate privileges over a network.",
-      "last_modified": "2026-09-25T20:00:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85885"
+      "description": "OpenClaw (npm package `openclaw`) before 2026.7.1 fails to enforce the owner-only authorization requirement for Claude Code permission prompts delivered through the MCP channel bridge. An authorized non-owner channel sender with channel command access can approve or deny a pending permission request intended for the owner, causing the requested action to proceed without owner consent. The practical impact depends on the pending action and the host capabilities requested by the Claude Code run. The issue is fixed in version 2026.7.1.",
+      "last_modified": "2026-09-26T02:19:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100585"
     },
     {
-      "cve_id": "CVE-2026-56728",
-      "asset_id": "CVE-2026-56728",
+      "cve_id": "CVE-2026-100584",
+      "asset_id": "CVE-2026-100584",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.0.2, a broken access control vulnerability exists in Zammad's GraphQL API. An authenticated user can access taskbar item data belonging to another user by crafting a request with the target user's taskbar identifier. The taskbar feature stores transient state for active user sessions, including auto-saved ticket drafts. Under certain conditions, the authorization check for taskbar item access is not enforced, allowing a user to read another user's taskbar item data. This vulnerability is fixed in 7.0.2.",
-      "last_modified": "2026-09-25T20:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56728"
+      "description": "OpenClaw is an npm-distributed agent runtime. In versions >= 2026.2.26 and < 2026.7.1, PowerShell command analysis on Windows hosts running in exec allowlist mode could approve an exact executable resolved from PATH but subsequently execute a same-named executable located in the workspace directory. If lower-trust content can place an executable with an approved basename into an agent-writable workspace and steer an approved PowerShell command that uses a bare executable name, OpenClaw may run the workspace file instead of the allowlisted path, executing arbitrary code with the privileges of the Gateway or node-host user. The issue does not require replacement of the approved executable itself. Version 2026.7.1 contains a fix; as a workaround, avoid bare executable names in approved PowerShell commands and keep executable files out of agent-writable workspaces.",
+      "last_modified": "2026-09-26T02:19:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100584"
     },
     {
-      "cve_id": "CVE-2026-97884",
-      "asset_id": "CVE-2026-97884",
+      "cve_id": "CVE-2026-100583",
+      "asset_id": "CVE-2026-100583",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was detected in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. This impacts an unknown function of the file updatestudent.php of the component Student Update Functionality. The manipulation of the argument eno results in sql injection. The attack can be launched remotely. The exploit is now public and may be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-09-25T20:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97884"
+      "description": "OpenClaw Discord versions before 2026.7.1 contain an authorization bypass vulnerability in guild metadata read actions that allows lower-trust senders to retrieve information excluded by channel allowlists. Attackers can bypass the configured Discord read-target policy to access guild metadata from servers or channels outside the operator's allowlist.",
+      "last_modified": "2026-09-26T02:19:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100583"
     },
     {
-      "cve_id": "CVE-2026-97063",
-      "asset_id": "CVE-2026-97063",
+      "cve_id": "CVE-2026-100582",
+      "asset_id": "CVE-2026-100582",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "X-SpringBoot through 6.0 returns login verification codes in HTTP responses from unauthenticated endpoints GET /sys/mobile/code and GET /sys/email/code without sending them to account owners. Attackers can request codes using known mobile numbers or email addresses, read them from responses, and authenticate as victims via POST /sys/emailOrMobileLogin/login to hijack accounts.",
-      "last_modified": "2026-09-25T20:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97063"
+      "description": "OpenClaw channel plugins (@openclaw/msteams, @openclaw/feishu, @openclaw/matrix, and @openclaw/googlechat) before 2026.8.1 do not enforce the configured channel read allowlist for caller-supplied explicit read targets in message, reaction, pin, member, and related metadata read actions. A lower-trust sender or a steered agent with access to a channel read action can therefore retrieve content or metadata from channels or rooms excluded by the operator's read policy; the practical impact depends on the permissions held by the connected bot account. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:19:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100582"
     },
     {
-      "cve_id": "CVE-2026-97895",
-      "asset_id": "CVE-2026-97895",
+      "cve_id": "CVE-2026-100581",
+      "asset_id": "CVE-2026-100581",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in krayin laravel-crm up to 2.2.5. This affects an unknown part of the file packages/Webkul/Admin/src/Http/Controllers/Settings/UserController.php of the component User Management. Executing a manipulation of the argument role_id can lead to improper privilege management. The attack can be executed remotely. The exploit has been publicly disclosed and may be utilized. Upgrading to version 2.2.6 is able to mitigate this issue. This patch is called 5469d70336fbb25e8e513683e82b32982ce8aa82. Upgrading the affected component is advised.",
-      "last_modified": "2026-09-25T20:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97895"
+      "description": "OpenClaw for iOS before 2026.8.11 stores Gateway credentials as cleartext JSON in App Group UserDefaults instead of the device Keychain. Attackers with access to unencrypted device backups or extracted App Group containers can recover valid Gateway tokens and passwords to authenticate with operator authority.",
+      "last_modified": "2026-09-26T02:19:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100581"
     },
     {
-      "cve_id": "CVE-2026-85917",
-      "asset_id": "CVE-2026-85917",
+      "cve_id": "CVE-2026-100580",
+      "asset_id": "CVE-2026-100580",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Server-side request forgery (ssrf) in Azure AI Foundry allows an unauthorized attacker to elevate privileges over a network.",
-      "last_modified": "2026-09-25T19:56:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85917"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.7.1 improperly handles case sensitivity in the model-facing cron tool: a mixed-case payload kind can pass the agent-facing shell-execution guard and later normalize into a command job. An actor able to steer a tool-enabled agent can therefore create a persistent cron job that executes attacker-selected commands with the privileges of the OpenClaw process user, resulting in access to host files and credentials and impact to scheduled service availability. The issue is limited to cron jobs created or edited through the model-facing cron tool; direct CLI and authorized Gateway scheduling surfaces are trusted operator controls. Fixed in 2026.7.1.",
+      "last_modified": "2026-09-26T02:19:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100580"
     },
     {
-      "cve_id": "CVE-2026-100368",
-      "asset_id": "CVE-2026-100368",
+      "cve_id": "CVE-2026-100579",
+      "asset_id": "CVE-2026-100579",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "CliInvoke is a .NET library for invoking command-line programs, and its `CliInvoke.Specializations` packages provide specialized wrappers for shells such as PowerShell and Windows Command Prompt. `CliInvoke.Specializations` versions 2.2.0 through 2.8.4, 2.9.0 through 2.9.3, 2.10.0 through 2.10.4, 3.0.0-alpha.1 through 3.0.0-alpha.4, and 3.0.0-alpha.8 through 3.0.0-alpha.10, as well as `AlastairLundy.CliInvoke.Specializations` versions 1.0.0-rc.1 through 1.6.1.1, contain an OS command injection vulnerability in their PowerShell and Cmd wrappers. The wrappers pass a caller-controlled target and arguments to `pwsh -Command` or `cmd /c` using a single `ProcessStartInfo.Arguments` string, allowing a double quote in untrusted input to break operating-system-level quoting and cause the shell to execute an additional command with the host process's privileges. The vulnerability is patched in `CliInvoke.Specializations` versions 2.8.5, 2.9.4, 2.10.5, and 3.0.0-beta.1, and in `AlastairLundy.CliInvoke.Specializations` version 2.0.2. No complete workaround is available; users unable to upgrade should reject or remove double quotes from target paths and arguments, additionally reject shell metacharacters in versions 2.2.0 through 2.9.2 and 3.0.0-alpha.1 through 3.0.0-alpha.4, or bypass the PowerShell and Cmd wrappers and invoke target processes directly when handling untrusted input.",
-      "last_modified": "2026-09-25T19:53:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100368"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.7.1 incorrectly trusts requester provenance in message.action. In identity-bearing Gateway deployments (authentication modes that honor caller identity and narrower operator scopes), a write-scoped caller can supply another sender's identifier to the channel authorization checks and invoke a channel action under that spoofed requester identity, reaching operations the channel adapter would have denied to the real caller. Practical impact depends on the enabled channel, the action, and the target account's permissions. Shared-secret token and password callers are full trusted operators under OpenClaw's security model and are out of scope. The issue is fixed in 2026.7.1; as a workaround, restrict message.action to administrators and disable sensitive channel actions that rely on requester identity.",
+      "last_modified": "2026-09-26T02:19:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100579"
     },
     {
-      "cve_id": "CVE-2026-69843",
-      "asset_id": "CVE-2026-69843",
+      "cve_id": "CVE-2026-100578",
+      "asset_id": "CVE-2026-100578",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Authentication bypass by spoofing in Microsoft Fabric allows an unauthorized attacker to elevate privileges over a network.",
-      "last_modified": "2026-09-25T19:53:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69843"
+      "description": "OpenClaw (npm package `openclaw`) before 2026.7.1 fails to restrict owner-only infrastructure tools exposed through the chat.send endpoint. In Gateway deployments using authentication modes that honor caller identity and narrower operator scopes, a write-scoped non-owner caller can start a chat turn whose tool inventory includes the `gateway` and `cron` tools, causing the agent to invoke owner-only configuration or scheduling operations, including persistent state changes. Practical impact depends on the tools selected by the model and the caller's ability to steer the turn. Shared-secret token and password callers are treated as fully trusted operators under OpenClaw's security model and are outside the scope of this issue. The issue is fixed in 2026.7.1; as a workaround, restrict chat.send to administrators in identity-bearing deployments and remove `gateway` and `cron` from affected agent tool policies.",
+      "last_modified": "2026-09-26T02:19:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100578"
     },
     {
-      "cve_id": "CVE-2026-83946",
-      "asset_id": "CVE-2026-83946",
+      "cve_id": "CVE-2026-100577",
+      "asset_id": "CVE-2026-100577",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of input during web page generation ('cross-site scripting') in Azure Portal allows an unauthorized attacker to perform spoofing over a network.",
-      "last_modified": "2026-09-25T19:51:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83946"
+      "description": "OpenClaw versions before 2026.8.1 fail to validate video asset URLs returned by providers, allowing server-side requests to private destinations. A malicious or compromised provider can return private or loopback URLs to cause the CLI to make requests to internal services accessible from the OpenClaw host.",
+      "last_modified": "2026-09-26T02:19:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100577"
     },
     {
-      "cve_id": "CVE-2026-97918",
-      "asset_id": "CVE-2026-97918",
+      "cve_id": "CVE-2026-100576",
+      "asset_id": "CVE-2026-100576",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing: Undo the registration when enabling the histogram trigger fails\n\nCommit 6f86bdeab633 (\"tracing: Fix bad hist from corrupting named_triggers\nlist\") described how a trigger that is registered but not on file->triggers\nends up freed while still on the global named_triggers list, and moved the\nregistration down so that hist_trigger_enable() follows it immediately. One\npath still gets there. hist_trigger_enable() adds the trigger and takes it\nstraight back out when the event cannot be enabled:\n\n\tlist_add_tail_rcu(&data->list, &file->triggers);\n\n\tupdate_cond_flag(file);\n\n\tif (trace_event_trigger_enable_disable(file, 1) < 0) {\n\t\tlist_del_rcu(&data->list);\n\t\tupdate_cond_flag(file);\n\t\tret--;\n\t}\n\nso the list walk in hist_unregister_trigger() matches nothing, test stays\nNULL, and the ->free() that would call del_named_trigger() is skipped.\nout_unreg falls through to out_free, which frees the trigger anyway:\n\n BUG: KASAN: slab-use-after-free in find_named_trigger+0xac/0xc0\n Read of size 8 at addr ffff8880091d3160 by task init/1\n  find_named_trigger+0xac/0xc0\n  hist_register_trigger+0xc1/0xa00\n  event_hist_trigger_parse+0x3146/0x6af0\n  event_trigger_write+0xce/0x160\n Freed by task 69:\n  kfree+0x154/0x420\n  trigger_kthread_fn+0xfd/0x160\n\nLeave the trigger where hist_unregister_trigger() can find it and let that\nundo the registration, which is the only code that knows all of what\ncmd_ops->init() took: the named list entry, the hist_pad reference, the\nreference on the trigger a named histogram is shared with, and the copied\ncmd_ops. It also pairs the failed trace_event_trigger_enable_disable(),\nwhose sm_ref and buffered event reference are otherwise left behind.\n\nSince ->free() releases trigger_data and, for a trigger that does not share\nits histogram, hist_data with it, out_unreg can no longer fall through to\nout_free. For a trigger that does share, hist_register_trigger() has\nalready destroyed the caller's hist_data, so the fall-through was reading\nfreed memory there as well.\n\nMove the enable_timestamps check in hist_unregister_trigger() above the\n->free() call for the same reason: hist_data does not outlive it once the\ntrigger being removed is the one that owns it.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97918"
+      "description": "OpenClaw versions before 2026.8.1 contain a server-side request forgery vulnerability in browser wait predicates that allows attackers to bypass SSRF protections by reaching blocked destinations. Attackers can use the wait --fn function against an existing browser session to request loopback or private destinations without navigation checks applied to other browser actions.",
+      "last_modified": "2026-09-26T02:19:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100576"
     },
     {
-      "cve_id": "CVE-2026-97920",
-      "asset_id": "CVE-2026-97920",
+      "cve_id": "CVE-2026-100575",
+      "asset_id": "CVE-2026-100575",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing: Keep the entry count when the histogram stats allocation fails\n\nprint_entries() uses n_entries both as the number of sort entries and as\nits own return value, so the -ENOMEM it stores when the stats allocation\nfails overwrites the count that the cleanup still needs:\n\n\tn_entries = tracing_map_sort_entries(map, ...);\n\tif (n_entries < 0)\n\t\treturn n_entries;\n\t...\n\t\t\tif (!stats) {\n\t\t\t\tn_entries = -ENOMEM;\n\t\t\t\tgoto out;\n\t\t\t}\n\t...\n out:\n\ttracing_map_destroy_sort_entries(sort_entries, n_entries);\n\ntracing_map_destroy_sort_entries() takes an unsigned int and loops up to\nit, so -ENOMEM arrives as 4294967284. It walks an array of at most\nmap->max_elts pointers and calls destroy_sort_entry(), which dereferences\nand frees, on whatever lies past the end.\n\nReading the hist file of a trigger with a .percent value, with that\nallocation forced to fail:\n\n  BUG: KASAN: vmalloc-out-of-bounds in tracing_map_destroy_sort_entries+0xa0/0xb0\n  Read of size 8 at addr ffffc90000045000 by task init/1\n   tracing_map_destroy_sort_entries+0xa0/0xb0\n   hist_show+0x6f7/0x1df0\n   seq_read_iter+0x2b8/0x1190\n   vfs_read+0x176/0xa40\n  The buggy address belongs to a 4-page vmalloc region starting at\n  ffffc90000041000 allocated at tracing_map_sort_entries+0x5c/0xd50\n\nA few pages further the fault is fatal. The registers at the oops confirm\nthe bound: the loop's end pointer less the array start, over the pointer\nsize, is 4294967284.\n\nReturn the error in a separate variable and leave n_entries holding the\ncount, the way tracing_map_sort_entries() does on its own error path.\n\nThe stats block is only entered for a value carrying .percent or .graph,\nwhich __create_val_field() has rejected since v6.3, so this cannot be\nreached in mainline as it stands. It becomes reachable again with\n\"tracing: hist: let values keep the percent and graph modifiers\", so it\nshould be applied first.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97920"
+      "description": "OpenClaw Slack versions before 2026.8.1 fail to properly enforce sender allowlists in multi-person direct messages. Disallowed participants can trigger Slack agents and access tools and data granted to those agents by bypassing configured sender policies.",
+      "last_modified": "2026-09-26T02:19:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100575"
     },
     {
-      "cve_id": "CVE-2026-97921",
-      "asset_id": "CVE-2026-97921",
+      "cve_id": "CVE-2026-100574",
+      "asset_id": "CVE-2026-100574",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing: Free histogram the field rejected for a bad modifier\n\nWriting a hist trigger whose value or variable carries a modifier that is\nnot allowed there leaks the fields that were built for it.\n\n__create_val_field() takes the field from parse_expr() and stores it in\nhist_data->fields[] only after the modifier checks have run:\n\n\thist_field = parse_expr(hist_data, file, field_str, flags, var_name,\n\t\t\t\t&n_subexprs);\n\t...\n\tif (hist_field->flags & HIST_FIELD_FL_VAR) {\n\t\tif (hist_field->flags & (...))\n\t\t\tgoto err;\n\t} else {\n\t\tif (hist_field->flags & (...))\n\t\t\tgoto err;\n\t}\n\n\thist_data->fields[val_idx] = hist_field;\n\nBoth checks jump past that store, and the err label returns without\nfreeing anything. The error unwinds to create_hist_data(), which calls\ndestroy_hist_data() -> destroy_hist_fields(), and that reaches a field\nonly by walking fields[]. A field that never got there is unreachable.\n\ncommit e0213434fe3e (\"tracing: Do not let histogram values have some\nmodifiers\") set ret to -EINVAL and fell through to the store, which left\nthe field owned by fields[] and freed along with the rest of hist_data.\nSplitting the check into a value case and a variable case replaced that\nfall-through with a goto that skips it.\n\nWith CONFIG_DEBUG_KMEMLEAK, 200 writes of\n\n  # echo 'hist:keys=prev_pid:vals=next_pid.log2' > \\\n\t events/sched/sched_switch/trigger\n\neach correctly rejected with -EINVAL, leave 332 unreferenced objects\n(63744 bytes) reported at create_hist_field(); 200 install and remove\ncycles of a valid trigger leave none. A '.log2' field is two\nallocations, since create_hist_field() puts the plain field in\noperands[0] of the log2 field, and both are reported.\n\nUse destroy_hist_field() rather than __destroy_hist_field() so that\noperands[0] is freed as well. It returns early for HIST_FIELD_FL_VAR_REF,\nwhich is what an operand owned by hist_data->var_refs[] needs; the\nrejected field itself is never a var ref, because a var ref never carries\na modifier flag.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97921"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.8.1 contains a server-side request forgery vulnerability in its trusted-host DNS checks. For fetches that use the trusted-host DNS recheck, a trusted hostname that resolves to an unspecified address (0.0.0.0 or ::) bypasses the SSRF destination validation. An attacker who can influence DNS for an allowed hostname can therefore cause a guarded fetch to reach a service bound only to loopback and disclose its response; the practical impact depends on the reachable service and the data it returns. Fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:19:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100574"
     },
     {
-      "cve_id": "CVE-2026-97922",
-      "asset_id": "CVE-2026-97922",
+      "cve_id": "CVE-2026-100573",
+      "asset_id": "CVE-2026-100573",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing: Free histogram var refs regardless of how often they are referenced\n\nUsing the same variable three or more times in one hist trigger leaks the\nvariable reference and its strings when the trigger is removed.\n\ncommit 656fe2ba85e8 (\"tracing: Use hist trigger's var_ref array to destroy\nvar_refs\") made a trigger's var_refs[] array the only owner of a var ref:\ndestroy_hist_field() returns early for HIST_FIELD_FL_VAR_REF, so the field\nexpressions never destroy one. One entry, freed once, no count needed.\n\ncommit 8bcebc77e85f (\"tracing: Fix histogram code when expression has same\nvar as value\") then made repeated references share one object and added a\ncount of them. Only the increment side exists, since those expressions\nstill return early and never drop a reference, so __destroy_hist_field()\nsees how many references were created rather than how many are left. It\nfrees when the decremented count is 0 or 1, so two references work and\nthree or more leak.\n\nSharing kept one array entry per object, and create_var_ref() searches and\nappends within a single trigger, so nothing outside it holds the object.\nRemoving a trigger whose variables are still referenced is already refused\nby check_var_refs() with -EBUSY. Drop the count and free unconditionally.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97922"
+      "description": "OpenClaw versions before 2026.8.1 contain a sandbox policy bypass vulnerability in the MCP loopback component that allows sandboxed coding-agent sessions to invoke tools explicitly denied by sandbox.tools.deny policy. Attackers can list and invoke denied tools to access data or perform actions the operator intended to exclude from the sandbox.",
+      "last_modified": "2026-09-26T02:19:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100573"
     },
     {
-      "cve_id": "CVE-2026-97926",
-      "asset_id": "CVE-2026-97926",
+      "cve_id": "CVE-2026-100572",
+      "asset_id": "CVE-2026-100572",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nufs: validate cylinder group metadata before caching it\n\nufs_read_cylinder() copies the cylinder group index and the rotor\npositions straight from the on-disk group and caches them without any\ncheck:\n\n\tucpi->c_cgx    = fs32_to_cpu(sb, ucg->cg_cgx);\n\tucpi->c_rotor  = fs32_to_cpu(sb, ucg->cg_rotor);\n\tucpi->c_frotor = fs32_to_cpu(sb, ucg->cg_frotor);\n\tucpi->c_irotor = fs32_to_cpu(sb, ucg->cg_irotor);\n\nThey are then used as indices during allocation and free:\n\n  - c_cgx indexes the cylinder summary array as\n    UFS_SB(sb)->fs_cs(ucpi->c_cgx), so a value past s_ncg writes a 32\n    bit count outside the s_csp allocation.\n\n  - c_frotor becomes a bitmap scan start, start = c_frotor >> 3, and\n    then length = ((s_fpg + 7) >> 3) - start. A start beyond the block\n    bitmap wraps the unsigned length to a huge value, so ubh_scanc()\n    walks far past the cylinder group buffers. c_irotor drives the\n    inode bitmap the same way.\n\nA crafted image can set any of these freely, turning an ordinary\nallocation into an out of bounds access.\n\nReject a cylinder group whose recorded index does not match the group\nbeing read, or whose rotors fall outside the group, before the metadata\nis cached. Valid filesystems keep cg_cgx equal to the group number and\nthe rotors within the group, so only malformed images are rejected.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97926"
+      "description": "OpenClaw versions >= 2026.3.25 and < 2026.8.1 apply invalid-token rate limiting for Synology Chat webhooks before authentication and key the limit on the raw proxy socket address. In deployments where OpenClaw sits behind a trusted reverse proxy or tunnel and multiple external clients share a single socket address, an unauthenticated sender can exhaust the shared invalid-token budget, causing subsequent legitimate Synology Chat webhook callbacks to be rejected until the rate-limit window expires. The attacker cannot obtain a valid token or read message data; the impact is temporary loss of channel availability. Fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:19:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100572"
     },
     {
-      "cve_id": "CVE-2026-97930",
-      "asset_id": "CVE-2026-97930",
+      "cve_id": "CVE-2026-100571",
+      "asset_id": "CVE-2026-100571",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nALSA: usbusx2y: fix in04_last array size mismatch with in04_buf\n\nThe in04_last array in struct usx2ydev is declared as char[24], but\nin04_buf is allocated as sizeof(struct us428_ctls) which is 21 bytes.\nIn i_usx2y_in04_int(), when ctl_snapshot_last == -2 (initialization\npath):\n\n    memcpy(usx2y->in04_last, usx2y->in04_buf, sizeof(usx2y->in04_last));\n\nThis copies 24 bytes from a 21-byte slab allocation, reading 3 bytes\npast the end of the source object.\n\nIntroduce a USX2Y_IN04_SIZE constant defined as sizeof(struct\nus428_ctls) and use it consistently for the in04_last array, the\nin04_buf allocation, the URB transfer length, and the comparison loop,\nreplacing the bare 24 and 21 literals throughout.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97930"
+      "description": "OpenClaw (npm package 'openclaw') versions >= 2026.6.6 and < 2026.8.1 apply the SMS webhook invalid-request rate limit before Twilio signature verification and identify clients only by the raw proxy socket address. In deployments where the SMS/Twilio webhook sits behind a trusted reverse proxy or tunnel so that multiple external clients share one socket address, an unauthenticated remote sender can exhaust the shared pre-authentication rate-limit budget with invalid requests, causing subsequent correctly signed Twilio callbacks to receive HTTP 429 responses. The result is temporary inbound SMS loss while the shared window remains exhausted; the attacker cannot forge a callback or access message data. Fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:19:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100571"
     },
     {
-      "cve_id": "CVE-2026-84461",
-      "asset_id": "CVE-2026-84461",
+      "cve_id": "CVE-2026-100570",
+      "asset_id": "CVE-2026-100570",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, the two-factor login step let an attacker try unlimited password guesses for any account without triggering Zammad's normal lockout or rate limiting. The response also revealed whether a guess was correct, even before two-factor authentication was checked. This made it possible to brute-force weak or reused passwords. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84461"
+      "description": "OpenClaw (npm package 'openclaw') versions >= 2026.3.28 and < 2026.8.1 allow an untrusted workspace .env file to set the CLOUDSDK_PYTHON_ARGS environment variable. When an operator starts OpenClaw in attacker-controlled workspace content and then runs the Gmail setup flow, that value is inherited when gcloud is launched, and the gcloud launcher passes it as arguments to the trusted Python interpreter. A crafted CLOUDSDK_PYTHON_ARGS value can therefore cause Python to execute attacker-supplied code with the OpenClaw host user's permissions, allowing credentials to be read, files to be modified, or other processes to be started. This issue is fixed in version 2026.8.1; as a workaround, run Gmail setup only from trusted workspaces and clear inherited CLOUDSDK_* variables beforehand.",
+      "last_modified": "2026-09-26T02:18:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100570"
     },
     {
-      "cve_id": "CVE-2026-63204",
-      "asset_id": "CVE-2026-63204",
+      "cve_id": "CVE-2026-100569",
+      "asset_id": "CVE-2026-100569",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, an authenticated user with agent permissions can supply an arbitrary AI analytics run identifier to the ticket summarize endpoint and receive the AI provider error message stored for that run, even if the run belongs to a ticket the agent is not authorized to access. The disclosure is limited to the provider error string; ticket content is not exposed. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-25T19:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63204"
+      "description": "OpenClaw is an npm-distributed application. In versions >= 2026.4.25 and < 2026.8.1, the workspace environment-variable filter did not block variables ending in `_ENDPOINT`, so an untrusted workspace `.env` file could set AZURE_SPEECH_ENDPOINT. Azure Speech preferred that value over the configured region, so when a synthesis or voice-list request was made, the attacker-selected endpoint received the operator's Azure Speech key in the request header, allowing the key to be reused against the operator's Azure Speech resource. Exploitation requires an operator to start OpenClaw in attacker-controlled workspace content with Azure Speech configured with a key and region and no trusted endpoint override set. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100569"
     },
     {
-      "cve_id": "CVE-2026-82355",
-      "asset_id": "CVE-2026-82355",
+      "cve_id": "CVE-2026-100568",
+      "asset_id": "CVE-2026-100568",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When a request to the Airflow core API carries both a session cookie and an explicit `Authorization: Bearer` token, Airflow resolves the caller from the cookie and ignores the bearer token, inverting the intended precedence of bearer over cookie. The request then executes -- and is recorded in the audit log -- as the cookie's principal rather than the identity the client explicitly presented.\n\nOnly Apache Airflow 3.3.0 and 3.3.1 are affected. Earlier releases do not contain the code path that caches the cookie-derived user, and are not vulnerable.\n\nExploiting this requires an attacker to first place a valid session cookie of their own into the victim's browser or client: for example by cookie tossing from a sibling subdomain, through cross-site scripting in a separate application sharing a parent domain, or via a shared workstation. Deployments that host the Airflow UI on a domain shared with other applications are therefore the most exposed; a deployment on a dedicated domain with no co-hosted applications is not reachable this way. The consequence is principal confusion and misattributed audit records rather than a direct privilege escalation.\n\nUsers of 3.3.0 or 3.3.1 should upgrade to Apache Airflow 3.3.2 or later, which resolves the caller from the explicitly supplied credential whenever one is present.",
-      "last_modified": "2026-09-25T19:43:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82355"
+      "description": "OpenClaw versions before 2026.8.1 fail to properly restrict access to operator command cron jobs, allowing model-visible agent callers to read and execute ownerless command jobs. Attackers can inspect stored environment variables and force-run disabled or unscheduled command jobs to access secrets and execute operator-authored commands.",
+      "last_modified": "2026-09-26T02:18:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100568"
     },
     {
-      "cve_id": "CVE-2026-96877",
-      "asset_id": "CVE-2026-96877",
+      "cve_id": "CVE-2026-100567",
+      "asset_id": "CVE-2026-100567",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Mediawiki - Cargo extension allows Reflected XSS.\n\nThis issue affects Mediawiki - Cargo extension: through 3.9.4.",
-      "last_modified": "2026-09-25T19:42:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96877"
+      "description": "OpenClaw is an agent gateway distributed as the npm package 'openclaw'. In versions >= 2026.4.5 and < 2026.8.1, the Gateway validated a single DNS resolution result for a configured remote Chrome DevTools Protocol (CDP) hostname, but the raw WebSocket and Playwright transports performed a later, independent DNS resolution, discarding the DNS pinning enforced at validation time. An attacker who controls an approved CDP hostname or its DNS answers can exploit this check-then-use gap via DNS rebinding to make the Gateway connect to a loopback, private, link-local, cloud metadata, or other SSRF-policy-denied address. The impact depends on the remote CDP configuration, DNS timing, and the services reachable from the Gateway host. The issue is fixed in 2026.8.1; as a mitigation, disable hostname-based remote CDP endpoints or restrict them to trusted, stable infrastructure.",
+      "last_modified": "2026-09-26T02:18:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100567"
     },
     {
-      "cve_id": "CVE-2026-96878",
-      "asset_id": "CVE-2026-96878",
+      "cve_id": "CVE-2026-100566",
+      "asset_id": "CVE-2026-100566",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Mediawiki - Cargo extension allows Reflected XSS.\n\nThis issue affects Mediawiki - Cargo extension: through 3.9.4.",
-      "last_modified": "2026-09-25T19:41:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96878"
+      "description": "OpenClaw LINE versions before 2026.8.1 contain an access control vulnerability where group allowlist mode silently inherits DM allowFrom values when groupAllowFrom is not explicitly configured. Attackers with group participation can trigger the agent despite configured group allowlist restrictions when DM access is broader than intended group access.",
+      "last_modified": "2026-09-26T02:18:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100566"
     },
     {
-      "cve_id": "CVE-2026-100208",
-      "asset_id": "CVE-2026-100208",
+      "cve_id": "CVE-2026-100564",
+      "asset_id": "CVE-2026-100564",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Integer overflow or wraparound in Microsoft Office Outlook allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-09-25T19:39:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100208"
+      "description": "OpenClaw versions before 2026.8.1 fail to neutralize spreadsheet formula characters in participant display names within attendance CSV exports. Attackers can inject formula-like cells that execute with spreadsheet user permissions when the export is opened in formula-enabled applications.",
+      "last_modified": "2026-09-26T02:18:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100564"
     },
     {
-      "cve_id": "CVE-2026-100373",
-      "asset_id": "CVE-2026-100373",
+      "cve_id": "CVE-2026-100563",
+      "asset_id": "CVE-2026-100563",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OpenMetadata through 2.0.2 contains a server-side request forgery vulnerability in the URLValidator.validateURL function that fails to properly resolve DNS hostnames and validate internal addresses. Users permitted to create or update EventSubscription can set webhook destinations to internal hosts, allowing the server to send requests to private networks and cloud metadata endpoints while returning HTTP status codes that enable blind SSRF probing.",
-      "last_modified": "2026-09-25T19:38:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100373"
+      "description": "OpenClaw (npm package `openclaw`) before 2026.8.1 does not neutralize leading characters that spreadsheet applications interpret as formulas when the Control UI exports session data to CSV. Although session labels were quoted as CSV text, a lower-trust participant who can influence a session label or the first user message can place a formula-like cell in the Usage export; if an operator opens that export in a spreadsheet application with formula evaluation enabled, the cell may be evaluated with the permissions of the spreadsheet user. OpenClaw itself does not evaluate the formula, and practical impact depends on the spreadsheet application's security settings. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100563"
     },
     {
-      "cve_id": "CVE-2026-100372",
-      "asset_id": "CVE-2026-100372",
+      "cve_id": "CVE-2026-100562",
+      "asset_id": "CVE-2026-100562",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ClipBucket v5 before 5.5.3-#197 contains a path traversal vulnerability in the admin template editor that allows authenticated administrators to overwrite PHP files by supplying directory traversal sequences in the folder parameter. Attackers with manage_template_access permission can traverse outside the layout directory to modify executable PHP files and achieve remote code execution as the web server user.",
-      "last_modified": "2026-09-25T19:38:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100372"
+      "description": "OpenClaw versions before 2026.8.1 contain an authorization bypass vulnerability in the sessions.create endpoint that allows operator.write callers to modify session configurations reserved for operator.admin scope. Attackers with write-scoped credentials can change existing session model, provider, thinking level, and auth-profile settings to redirect traffic and bypass administrative access controls.",
+      "last_modified": "2026-09-26T02:18:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100562"
     },
     {
-      "cve_id": "CVE-2026-100310",
-      "asset_id": "CVE-2026-100310",
+      "cve_id": "CVE-2026-100561",
+      "asset_id": "CVE-2026-100561",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GNU libextractor before 1.16 loads plugins from an untrusted search path specified by the LIBEXTRACTOR_PREFIX environment variable without proper privilege checks. A local attacker can exploit this by setting LIBEXTRACTOR_PREFIX to a directory containing a malicious plugin that executes arbitrary code with elevated privileges when loaded by a setuid or setgid program.",
-      "last_modified": "2026-09-25T19:38:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100310"
+      "description": "OpenClaw (npm package 'openclaw') versions >= 2026.3.22 and < 2026.8.1 contain an approval-bypass flaw in the exec approval policy: the policy could trust a command-running wrapper without inspecting the command carried in its arguments. After an operator allowlisted or permanently approved a benign wrapper invocation, a later agent turn could substitute an arbitrary inner command and execute it with the OpenClaw process's host privileges without a further approval prompt. Exploitation requires the relevant wrapper to resolve on the host and a prior operator decision allowing that wrapper. Transparent shell carriers and opaque utilities such as process monitors, tracers, namespace tools, and proxy wrappers were affected through related trust-resolution gaps. Fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100561"
     },
     {
-      "cve_id": "CVE-2026-62699",
-      "asset_id": "CVE-2026-62699",
+      "cve_id": "CVE-2026-100560",
+      "asset_id": "CVE-2026-100560",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Null pointer dereference in Windows Universal Disk Format File System Driver (UDFS) allows an authorized attacker to execute code locally.",
-      "last_modified": "2026-09-25T19:35:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62699"
+      "description": "OpenClaw versions before 2026.8.1 contain an authorization bypass vulnerability where Allow Always approvals for exact commands persist as path-only grants on macOS and Linux. Attackers can reuse the same executable with different arguments to execute commands without triggering new approval prompts, potentially accessing files or internal services.",
+      "last_modified": "2026-09-26T02:18:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100560"
     },
     {
-      "cve_id": "CVE-2026-96876",
-      "asset_id": "CVE-2026-96876",
+      "cve_id": "CVE-2026-100559",
+      "asset_id": "CVE-2026-100559",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Mediawiki - Cargo extension allows Reflected XSS.\n\nThis issue affects Mediawiki - Cargo extension: through 3.9.4.",
-      "last_modified": "2026-09-25T19:33:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96876"
+      "description": "OpenClaw versions before 2026.8.1 contain a command parser vulnerability where escaped newlines confuse exec allowlist parsing, allowing hidden commands to execute. Attackers can craft input with escaped newlines to bypass allowlist validation and execute additional commands without expected authorization prompts.",
+      "last_modified": "2026-09-26T02:18:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100559"
     },
     {
-      "cve_id": "CVE-2026-97931",
-      "asset_id": "CVE-2026-97931",
+      "cve_id": "CVE-2026-100558",
+      "asset_id": "CVE-2026-100558",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nALSA: us122l: Prevent write upgrades for read mappings\n\nThe hwdep mmap callback rejects read-buffer mappings that are initially\nwritable, but leaves VM_MAYWRITE set on mappings created with PROT_READ.\nA process that can open the hwdep node O_RDWR can later use mprotect() to\nmake the mapping writable.\n\nThe read allocation begins with struct usb_stream. Its read_size member is\nused by the fault handler to decide which pages belong to the read buffer.\nThe read VMA intentionally remains expandable because pcm_usb_stream uses\nmremap() after reading that size. Changing read_size first can therefore\nmap and access pages beyond the allocation. The same member is also\nconsumed by usb_stream_free(), where changing it can make\nfree_pages_exact() release pages outside the allocation.\n\nClear VM_MAYWRITE for read-buffer mappings after rejecting an initially\nwritable VMA. This keeps the separate output-buffer mapping writable while\npreventing later permission upgrades.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97931"
+      "description": "OpenClaw versions before 2026.8.1 contain a resource exhaustion vulnerability in the Gateway listener that allows unauthenticated clients to retain response sockets by sending WebSocket upgrade requests without matching connection semantics. Attackers can repeatedly send malformed upgrade requests to exhaust listener resources and cause denial of service without consuming the WebSocket pre-auth connection budget.",
+      "last_modified": "2026-09-26T02:18:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100558"
     },
     {
-      "cve_id": "CVE-2026-97948",
-      "asset_id": "CVE-2026-97948",
+      "cve_id": "CVE-2026-100557",
+      "asset_id": "CVE-2026-100557",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\npowerpc/eeh: Fix recursive locking on devices without EEH sensitive driver\n\nThe commit 1010b4c012b0 (\"powerpc/eeh: Make EEH driver device hotplug\nsafe\") refactored the EEH code such that the pci_rescan_remove_lock is\nheld at the beginning of eeh_handle_normal_event() and the\neeh_reset_device() is called with that lock being held. Looks like the\ncommit missed to remove the existing lock/unlock inside eeh_rmv_device()\nwhich is no longer necessary. This is causing the eehd to hang on the\nlock which it actually holds when that code path is taken.\n\n[<0>] 0xc00000011c78f870\n[<0>] __switch_to+0xfc/0x1a0\n[<0>] pci_lock_rescan_remove+0x30/0x44\n[<0>] eeh_rmv_device+0x290/0x2e0\n[<0>] eeh_pe_dev_traverse+0x80/0x130\n[<0>] eeh_reset_device+0xcc/0x23c\n[<0>] eeh_handle_normal_event+0x830/0xa80\n[<0>] eeh_event_handler+0xf8/0x190\n[<0>] kthread+0x194/0x1b0\n[<0>] start_kernel_thread+0x14/0x18\n\nThe issue is seen for cases where the errors are detected on the PHB\ndirectly AND|OR for devices where the driver error_detected() returns\nPCI_ERS_RESULT_NEED_RESET, and driver being not EEH sensitive(i.e no\nerror handlers like slot_reset(), resume() etc defined).",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97948"
+      "description": "OpenClaw versions before 2026.8.1 contain an authorization bypass vulnerability in skill tool dispatch that fails to carry the sender's owner status. Non-owner senders authorized to invoke skill commands can access owner-only tools and server credentials reserved for owners.",
+      "last_modified": "2026-09-26T02:18:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100557"
     },
     {
-      "cve_id": "CVE-2026-97957",
-      "asset_id": "CVE-2026-97957",
+      "cve_id": "CVE-2026-100556",
+      "asset_id": "CVE-2026-100556",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: hinic: fix mailbox segment buffer overflow\n\ncheck_mbox_seq_id_and_seg_len() validates that seq_id does not\nexceed SEQ_ID_MAX_VAL (42) and seg_len does not exceed\nMBOX_SEG_LEN (48).  However, this allows the last segment\n(seq_id=42) to carry a full 48-byte payload, writing to offset\n42*48=2016 for 48 bytes (ending at byte 2064).  The receive\nbuffer is only MBOX_MAX_BUF_SZ (2048) bytes, resulting in a\n16-byte heap buffer overflow.\n\nThe hinic3 driver already handles this correctly by defining\nMBOX_LAST_SEG_MAX_LEN and rejecting the last segment when it\nexceeds the remaining buffer space.  Apply the same fix to the\nhinic driver.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97957"
+      "description": "OpenClaw (npm package openclaw) versions >= 2026.5.2 and < 2026.8.1 contain an incorrect authorization vulnerability in WhatsApp group handling. A group sender who is admitted for ordinary messages but denied by commands.allowFrom or owner command authorization can issue the /new <model> command to reset the shared group session and persist a provider and model override. This allows a command-denied group member to select a provider and model already permitted by the operator for subsequent turns in the shared group session, potentially changing provider routing, cost, data flow, or availability. It does not allow adding a new provider or host command execution. The issue is fixed in version 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100556"
     },
     {
-      "cve_id": "CVE-2026-97961",
-      "asset_id": "CVE-2026-97961",
+      "cve_id": "CVE-2026-100555",
+      "asset_id": "CVE-2026-100555",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nperf/core: Allow list_del during perf_event_overflow()\n\nA PMU might use perf_sched_cb_inc() and perf_sched_cb_dec()\ninterface to get the PMU call back function pmu::sched_task\ninvoked at schedule in and schedule out. This is achieved\nby walking along the list anchored by sched_cb_list.\n\nThe following scenario might lead to a list corruption.\n\n   perf_pmu_sched_task()\n      for_each_list_entry(..., &sched_cb_list)\n      +--> __perf_pmu_sched_task()\n           +--> event->pmu->sched_task())\n                +--> PMU_push_sample()\n                     +--> perf_event_overflow()\n                          +--> __perf_event_overflow()\n                               +--> pmu->stop()\n                                    +--> perf_sched_cb_dec()\n                                         remove entry from sched_cb_list\n                                         while list node in use.\n\nThis happens when ioctl(fd, PERF_EVENT_IOC_REFRESH, xxx) has been\ninvoked and perf_event::event_limit hits zero.\n\nPrevent the list corruption and convert for_each_list_entry()\nto for_each_list_entry_safe().",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97961"
+      "description": "OpenClaw is an npm-distributed gateway application. In versions >= 2026.7.1 and < 2026.8.1, Synology Chat attachment delivery could lose DNS pinning: the Gateway validated a single DNS result for a supplied file URL but then passed the original hostname to the Synology NAS, where it could resolve to a different destination. When attachment delivery accepted a remotely influenced hostname, an attacker could use DNS rebinding to make the NAS fetch a private or otherwise policy-denied resource and return its contents to the addressed conversation (server-side request forgery). Practical impact depends on NAS routing, resolver behavior, and the response available at the private destination. The issue is fixed in 2026.8.1; as a workaround, disable remote URL attachment forwarding in Synology Chat.",
+      "last_modified": "2026-09-26T02:18:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100555"
     },
     {
-      "cve_id": "CVE-2026-97962",
-      "asset_id": "CVE-2026-97962",
+      "cve_id": "CVE-2026-100554",
+      "asset_id": "CVE-2026-100554",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/mlx5e: Move representor vnic reporter to eswitch devlink port\n\nThe representor vnic devlink health reporter is created and destroyed\nalong the representor netdev (un)load path, which is not serialized by\nthe devlink instance lock. Destroying the reporter from there triggers\na devl_assert_locked() splat on driver unbind:\n  WARNING: net/devlink/core.c:259 at devl_assert_locked+0x54/0x70, CPU#2: bash/3758\n  Modules linked in: mlx5_vdpa vringh vdpa mlx5_ib mlx5_fwctl mlx5_core ...\n  CPU: 2 UID: 0 PID: 3758 Comm: bash Tainted: G        W           6.19.0+ #1 PREEMPT\n  Tainted: [W]=WARN\n  Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), ...\n  RIP: 0010:devl_assert_locked+0x54/0x70\n  Call Trace:\n   <TASK>\n   devl_health_reporter_destroy+0x3a/0x1b0\n   mlx5e_vport_rep_unload+0x12d/0x2b0 [mlx5_core]\n   mlx5_eswitch_unregister_vport_reps+0x1b8/0x220 [mlx5_core]\n   ? __esw_offloads_unload_rep+0x190/0x190 [mlx5_core]\n   ? kernfs_remove_by_name_ns+0xc3/0xf0\n   device_release_driver_internal+0x3b2/0x560\n   unbind_store+0xce/0xf0\n\nMove the reporter's lifecycle to the eswitch devlink port (un)register\npaths, which are already serialized by the devlink instance lock, and\nstore the handle on mlx5_devlink_port. Use the port's mlx5_vport as the\nreporter priv since the diagnose callback only needs a device handle and\na vport number, and mlx5_vport carries both and is initialized before\nany representor driver probes.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97962"
+      "description": "OpenClaw (npm package 'openclaw') versions >= 2026.5.12 and < 2026.8.1 do not immediately invalidate Canvas HTTP authorization when a paired node is revoked. Node revocation invalidates the WebSocket client, but Canvas HTTP authorization continues to accept and renew the previously granted capability until WebSocket close cleanup completes. As a result, a revoked paired node can continue exercising its Canvas capability against the capability's configured routes during the close grace period. The issue is fixed in 2026.8.1; as a workaround, restart the Gateway after revoking a node that has Canvas access.",
+      "last_modified": "2026-09-26T02:18:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100554"
     },
     {
-      "cve_id": "CVE-2026-97971",
-      "asset_id": "CVE-2026-97971",
+      "cve_id": "CVE-2026-100553",
+      "asset_id": "CVE-2026-100553",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnstree: check listing permission before taking a namespace reference\n\nlegitimize_ns() takes a reference on the candidate namespace before\nmay_list_ns() has decided whether the caller may see it. The\n__free(ns_put) cleanup on the denied path can drop the last reference to a\nmount namespace while we still hold the rcu read lock, and put_mnt_ns()\nmay sleep there. This is the same problem commit 2ec2aff3c8e2 (\"ns: make\nsure reference are dropped outside of rcu lock\") fixed for the put_user()\npath. Neither ns_requested() nor may_list_ns() needs a reference, both\nonly look at the namespace type and at the caller's own namespaces, so do\nthe checks first and take the reference last.\n\nSplat:\n\n  Voluntary context switch within RCU read-side critical section!\n  WARNING: kernel/rcu/tree_plugin.h:332 at rcu_note_context_switch+0x238/0x2a0, CPU#5: a/3442\n  CPU: 5 UID: 1000 PID: 3442 Comm: a Not tainted 7.0.0-30-generic #30-Ubuntu PREEMPT(lazy)\n  RIP: 0010:rcu_note_context_switch+0x238/0x2a0\n  Call Trace:\n   <TASK>\n   __schedule+0xcf/0x650\n   schedule+0x27/0x90\n   schedule_preempt_disabled+0x15/0x30\n   __mutex_lock.constprop.0+0x550/0xaf0\n   __mutex_lock_slowpath+0x13/0x20\n   mutex_lock+0x3b/0x50\n   exp_funnel_lock+0xb2/0x260\n   synchronize_rcu_expedited+0xe7/0x220\n   namespace_unlock+0x26a/0x320\n   put_mnt_ns+0xd3/0x120\n   mntns_put+0xe/0x20\n   do_listns+0x13e/0x560\n   __do_sys_listns+0x126/0x2d0\n   __x64_sys_listns+0x20/0x30\n   x64_sys_call+0x2366/0x2390\n   do_syscall_64+0x105/0x5a0\n   entry_SYSCALL_64_after_hwframe+0x76/0x7e\n   </TASK>",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97971"
+      "description": "OpenClaw versions >= 2026.6.9 and < 2026.8.1 do not declare the native chatId parameter as a delivery target in the Feishu unpin feature, so unpin requests can bypass the shared same-provider cross-context target check. When tools.message.crossContext.allowWithinProvider is disabled, an admitted (authenticated) sender can remove a pin from another Feishu group that the sender and the configured account are otherwise permitted to access, bypassing the intended cross-context message mutation policy. Feishu membership and group authorization still apply, and the demonstrated impact is limited to message mutation (pin removal). The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100553"
     },
     {
-      "cve_id": "CVE-2026-97972",
-      "asset_id": "CVE-2026-97972",
+      "cve_id": "CVE-2026-100552",
+      "asset_id": "CVE-2026-100552",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: macb: put the \"mdio\" child node reference on success\n\nmacb_mii_init() holds the reference returned by of_get_child_by_name()\nfor macb_mdiobus_register() and drops it only on the error paths, so\nevery successful probe leaks a node reference. On a CM5, overlay\nremoval after four bind cycles reports\n\n  OF: ERROR: memory leak, expected refcount 1 instead of 5\n\nDrop the reference after registration, where __mdiobus_register() has\nalready taken its own for the lifetime of the bus.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97972"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.8.1 does not correctly enforce per-chat tool policies for Codex app-server runtime tools. A conversation-level tools.allow rule filtered OpenClaw tools but did not restrict the shell, process, file, and patch tools owned by the Codex runtime. When a lower-trust conversation was assigned to a Codex runtime and restricted with a per-chat tool allowlist, a participant able to trigger that agent could still reach native command and file tools, bypassing the configured allowlist. The practical impact depends on the runtime's host permissions and sandbox configuration. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100552"
     },
     {
-      "cve_id": "CVE-2026-97981",
-      "asset_id": "CVE-2026-97981",
+      "cve_id": "CVE-2026-100551",
+      "asset_id": "CVE-2026-100551",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ethernet: cortina: Count dropped frames as NAPI work\n\nThe RX loop only consumes budget when it successfully delivers a frame.\nError paths keep consuming descriptors without reducing the budget, so a\nstream of bad frames can process the entire receive ring in one poll.\n\nMove the budget accounting to a common end-of-frame path. This counts\neach completed frame as NAPI work whether it was delivered or dropped,\nmatching the behavior of the vendor driver.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97981"
+      "description": "OpenClaw for iOS versions >= 2026.7.1 and < 2026.8.11 do not enforce saved Gateway TLS pins in the Control UI. While native connections enforced the saved Gateway fingerprint, the authenticated Terminal and session Dashboard WebViews omitted it. If a user had accepted a Gateway fingerprint, an attacker able to redirect the same host and port and present a different certificate that is accepted by iOS system trust can serve a replacement Control UI page; opening the Terminal or a session Dashboard then allows that page to read the injected Gateway token or password. The stolen credential can grant operator access, including reading sensitive Gateway state and invoking host-capable tools. This issue is fixed in 2026.8.11.",
+      "last_modified": "2026-09-26T02:18:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100551"
     },
     {
-      "cve_id": "CVE-2026-97987",
-      "asset_id": "CVE-2026-97987",
+      "cve_id": "CVE-2026-100550",
+      "asset_id": "CVE-2026-100550",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio_input: reset device if input_register_device() fails\n\nProbe marks the device DRIVER_OK with virtio_device_ready() before\ncalling input_register_device(). If registration fails, the error path\ncleared vi->ready and called del_vqs() while the device was still live,\nso the device could keep DMA to queues that were already torn down.\n\nMatch remove/freeze: call virtio_reset_device() on that path before\ntearing down the virtqueues.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97987"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.8.1 contains an access-control bypass in the Microsoft Teams integration. When groupPolicy is set to allowlist, a missing or unsupported configured access group produces a denied group-resolution result that is not rejected by the final message-admission check, so a Teams member who is not on the allowlist can still trigger the configured agent despite the administrator's group boundary. The impact depends on the conversations, tools, and data available to that agent. The issue is fixed in version 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100550"
     },
     {
-      "cve_id": "CVE-2026-98017",
-      "asset_id": "CVE-2026-98017",
+      "cve_id": "CVE-2026-100549",
+      "asset_id": "CVE-2026-100549",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: defer qdisc freeing after failed creation\n\nAn RTM_NEWQDISC request can make clsact bind a populated shared ingress\nblock during ->init(), publishing an embedded mini_Qdisc to lockless\nreaders.  If the same request has an invalid TCA_RATE, estimator setup\nfails after ->init(); the unwind removes the pointer but synchronously\nfrees its containing qdisc while tc_run() may still hold it.\n\nRetire failed qdiscs through the same RCU helper as normal destruction.\nInline the synchronous free into the callback now that no direct callers\nremain.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98017"
+      "description": "OpenClaw versions before 2026.8.1 contain a path traversal vulnerability in QQBot voice attachment handling where filenames are decoded twice, allowing encoded traversal segments to reappear after sanitization. Attackers can supply crafted voice attachments that write files outside the intended staging directory to other process-writable locations.",
+      "last_modified": "2026-09-26T02:18:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100549"
     },
     {
-      "cve_id": "CVE-2026-98045",
-      "asset_id": "CVE-2026-98045",
+      "cve_id": "CVE-2026-100548",
+      "asset_id": "CVE-2026-100548",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Mark faultable stack helpers as sleepable\n\nThe faultable variants of bpf_get_stack() and bpf_get_task_stack() pass\nmay_fault=true into the common stack collection code. Resolving user-space\nbuild IDs may then call build_id_parse_file() and block on filesystem\nreads.\n\nNeither helper prototype sets might_sleep. Since prototype selection uses\nthe sleepability of the whole program, the verifier can still allow these\nhelpers from a non-sleepable region within that program, such as an\nexplicit RCU or preemption-disabled region. The task-stack helper can also\nbe called from a non-sleepable timer callback of a sleepable program.\n\nMark both faultable prototypes as sleepable. The existing helper context\ncheck then rejects these calls while continuing to allow them in genuinely\nsleepable contexts.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98045"
+      "description": "OpenClaw (npm package 'openclaw') versions >= 2026.3.28 and < 2026.8.1 contain a credential exposure issue in memory embedding failover. When remote embedding fallback is configured and the primary embedding provider fails, the request can be sent to a different fallback provider while still reusing the primary provider's configured API key, causing that credential to be transmitted as a bearer token to an unintended vendor. The practical impact depends on the configured providers, whether failover occurs, and the privileges attached to the primary provider key. The issue is fixed in 2026.8.1; as a workaround, disable cross-provider embedding fallback or configure each provider with separate, narrowly scoped credentials.",
+      "last_modified": "2026-09-26T02:18:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100548"
     },
     {
-      "cve_id": "CVE-2026-100072",
-      "asset_id": "CVE-2026-100072",
+      "cve_id": "CVE-2026-100547",
+      "asset_id": "CVE-2026-100547",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nACPI: platform: Use acpi_bus_get_primary_device()\n\nThe acpi_get_first_physical_node() usage in acpi_platform_fill_resource()\nand acpi_create_platform_device() is generally unsafe because in theory\nthe device returned by it may be freed at any time [1].\n\nIt is also inefficient because acpi_get_first_physical_node() is called\nmultiple times for the same argument which can be avoided.\n\nAddress these issues by using acpi_bus_get_primary_device() instead of\nacpi_get_first_physical_node() and adjusting the code to call it just\nonce at the beginning of and acpi_create_platform_device() and drop\nthe device reference acquired by it upon the return from that function.",
-      "last_modified": "2026-09-25T19:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100072"
+      "description": "OpenClaw is a coding agent distributed as the npm package `openclaw`. In affected versions (2026.7.1 through 2026.7.2), alternate but valid `file:` URL spellings supplied over the Agent Client Protocol (ACP) were treated as relative paths and were incorrectly classified as reads scoped to the session working directory. When an operator connected `openclaw acp client` to an untrusted or compromised ACP peer, that peer could request a read of a file outside the session working directory without the approval prompt normally required for that path, resulting in disclosure of local file contents. The demonstrated impact is limited to file confidentiality; mutating and command-capable tool classes are not affected. This issue is fixed in OpenClaw 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100547"
     },
     {
-      "cve_id": "CVE-2026-57590",
-      "asset_id": "CVE-2026-57590",
+      "cve_id": "CVE-2026-100546",
+      "asset_id": "CVE-2026-100546",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A missing authorization vulnerability exists in the Task Group APIs of Apache DolphinScheduler. The affected APIs do not properly verify whether the authenticated user has permission to access the project associated with the target Task Group.\n\n\n\nThis issue affects Apache DolphinScheduler: before 3.4.3.\n\n\n\nUsers are recommended to upgrade to version 3.4.3, which fixes the issue.",
-      "last_modified": "2026-09-25T19:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57590"
+      "description": "OpenClaw (npm package `openclaw`) versions >= 2026.7.2 and < 2026.9.2 contain a race condition in the Discord realtime voice transcript path. Concurrent control-classified voice transcripts could consume speaker context belonging to another participant after an asynchronous control check, causing a transcript to inherit another speaker's owner status. In Discord agent-proxy voice sessions using the affected realtime control path, an utterance from a non-owner participant could reach the downstream agent boundary marked as owner, so owner-sensitive behavior is applied to the wrong speaker. Exploitation depends on concurrent transcript timing and on the tools and commands available to the affected agent. The issue is fixed in 2026.9.2; as a workaround, disable Discord realtime voice for agents that distinguish owner and non-owner senders.",
+      "last_modified": "2026-09-26T02:18:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100546"
     },
     {
-      "cve_id": "CVE-2026-96875",
-      "asset_id": "CVE-2026-96875",
+      "cve_id": "CVE-2026-100545",
+      "asset_id": "CVE-2026-100545",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Mediawiki - Cargo extension allows Stored XSS.\n\n\nThis issue affects Mediawiki - Cargo extension: through 3.9.4.",
-      "last_modified": "2026-09-25T19:29:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96875"
+      "description": "OpenClaw (npm package `openclaw`) before 2026.8.1 incorrectly enforces sender tool policies during session-memory filename generation. In affected versions, filename generation created an embedded helper that retained tools which the originating sender's policy had removed. When session-memory filename generation was enabled for an agent reachable by lower-trust senders, model-mediated instructions could cause the helper to invoke tools outside that sender's effective policy; the demonstrated impact was the creation of persistent scheduled work. Exploitability depends on the model acting on the injected instruction and on which tools the helper exposes. The issue is fixed in 2026.8.1; as a workaround, disable session-memory filename generation for agents reachable by lower-trust senders.",
+      "last_modified": "2026-09-26T02:18:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100545"
     },
     {
-      "cve_id": "CVE-2026-75655",
-      "asset_id": "CVE-2026-75655",
+      "cve_id": "CVE-2026-100544",
+      "asset_id": "CVE-2026-100544",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Bridge is affected by an Uncontrolled Recursion vulnerability that could result in arbitrary code execution in the context of the current user. An attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
-      "last_modified": "2026-09-25T19:21:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75655"
+      "description": "openclaw's @openclaw/voice-call package before 2026.8.1 launches the configured agent for classic inbound voice calls without propagating the caller's identity or non-owner status. As a result, owner-only tool filtering can fail open and expose the agent's normal tool authority to a remote caller. A caller who is admitted by the configured inbound-call policy (open, pairing, or allowlist) on a deployment with inbound calling enabled can therefore drive tools intended for the trusted owner, potentially reading data, modifying files, executing commands, or controlling connected services depending on the agent's configuration. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100544"
     },
     {
-      "cve_id": "CVE-2026-75656",
-      "asset_id": "CVE-2026-75656",
+      "cve_id": "CVE-2026-100543",
+      "asset_id": "CVE-2026-100543",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Bridge is affected by an out-of-bounds read vulnerability that could lead to disclosure of sensitive memory. An attacker could leverage this vulnerability to disclose sensitive information. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
-      "last_modified": "2026-09-25T19:19:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75656"
+      "description": "OpenClaw (npm package openclaw) before 2026.8.1 could include deterministic hashes computed over the original, unredacted configuration in redacted configuration responses. When the Gateway password had low entropy and the remaining configuration values were reconstructable, these hashes acted as offline password verifiers: a caller able to obtain the redacted configuration (for example via config.get) could test password candidates offline without going through the rate-limited Gateway authentication path. Recovering the password could grant the documented shared-secret operator authority. Secret references were not affected in the same way. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100543"
     },
     {
-      "cve_id": "CVE-2026-91841",
-      "asset_id": "CVE-2026-91841",
+      "cve_id": "CVE-2026-100542",
+      "asset_id": "CVE-2026-100542",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in NetworkManager-vpnc, a VPN plugin for NetworkManager. A local unprivileged user can exploit this vulnerability by injecting a newline character into the CA-File path. This manipulation allows the user to execute arbitrary commands as the root user, leading to local privilege escalation.",
-      "last_modified": "2026-09-25T19:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91841"
+      "description": "OpenClaw (npm package 'openclaw') versions >= 2026.5.28 and < 2026.8.1 mishandle archive listings in the tar.bz2 skill installer: bounded command-output suffixes were treated as complete listings of the archive. A crafted .tar.bz2/.tbz2 skill archive can push prohibited entries out of both retained listings so that entry-count and size checks pass, and the archive is then extracted in full. If an operator approves installation of such a malicious or compromised skill archive, over-limit files or entry counts are persisted in the skill tools directory, consuming disk space or inodes. The issue bypasses OpenClaw's extraction budgets but does not by itself execute archive contents. Fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100542"
     },
     {
-      "cve_id": "CVE-2026-91840",
-      "asset_id": "CVE-2026-91840",
+      "cve_id": "CVE-2026-100541",
+      "asset_id": "CVE-2026-100541",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in NetworkManager-vpnc. This vulnerability allows a local unprivileged user to escalate privileges to root. By injecting a newline character into the VPN username field, an attacker can manipulate the vpnc configuration to execute an arbitrary program with root privileges when the malicious VPN connection is activated.",
-      "last_modified": "2026-09-25T19:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91840"
+      "description": "OpenClaw's Matrix integration (npm package @openclaw/matrix) versions >= 2026.2.2 and < 2026.8.1 lowercase complete Matrix user IDs \u2014 including historical localparts and the case-sensitive server-name portion \u2014 when deriving the OpenClaw authorization identity. As a result, distinct authenticated Matrix accounts can normalize to the same authorization identity. A Matrix participant controlling a colliding account identifier (a protocol-valid identifier that differs from the configured one only by characters OpenClaw case/Unicode folds; display-name matching is not required) can inherit allowlist, owner-command, exec-approval, or plugin-approval authority configured for another account. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100541"
     },
     {
-      "cve_id": "CVE-2026-91839",
-      "asset_id": "CVE-2026-91839",
+      "cve_id": "CVE-2026-100540",
+      "asset_id": "CVE-2026-100540",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in NetworkManager-fortisslvpn, the FortiSSLVPN plugin for NetworkManager. The nm-fortisslvpn-service improperly handles carriage-return/line-feed (CR/LF) characters in VPN connection profile credentials. A local unprivileged user can exploit this by crafting a malicious VPN profile to inject additional configuration directives. This can lead to arbitrary code execution with root privileges when the crafted VPN connection is activated.",
-      "last_modified": "2026-09-25T19:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91839"
+      "description": "OpenClaw Feishu before 2026.8.1 fails to validate whether a configured default account is disabled before selecting it for model tool operations. Attackers can exploit multi-account setups where a disabled default account retains credentials to read or modify Feishu resources through a revoked identity.",
+      "last_modified": "2026-09-26T02:18:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100540"
     },
     {
-      "cve_id": "CVE-2026-91838",
-      "asset_id": "CVE-2026-91838",
+      "cve_id": "CVE-2026-100539",
+      "asset_id": "CVE-2026-100539",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in NetworkManager-sstp, the SSTP VPN plugin for NetworkManager. A local unprivileged user can exploit this vulnerability by embedding special characters, known as shell metacharacters, into VPN connection profile fields such as CA certificate or proxy settings. These unescaped characters are then processed by the `pppd` daemon, which runs with root privileges, allowing the attacker to execute arbitrary commands with elevated permissions when a malicious VPN connection is activated.",
-      "last_modified": "2026-09-25T19:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91838"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.8.1 fails to revoke memory tool access when an operator hot-disables memory configuration. Existing memory_search and memory_get tool instances retain the enabled configuration captured at creation time because the execution-time resolver treats explicit disablement like an unavailable configuration snapshot and restores the stale authority. As a result, during an already-running agent turn the model can continue searching and reading durable memory after the operator revoked that access, for the remainder of that run. Exploitation requires memory to be disabled while a previously created memory tool remains active. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100539"
     },
     {
-      "cve_id": "CVE-2026-88835",
-      "asset_id": "CVE-2026-88835",
+      "cve_id": "CVE-2026-100538",
+      "asset_id": "CVE-2026-100538",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "BusyBox dpkg read_package_field() steps past a NUL terminator on malformed .deb packages, causing an out-of-bounds heap read.",
-      "last_modified": "2026-09-25T19:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88835"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.8.1 does not apply the originating sender's global or per-agent toolsBySender policy when handling outbound attachments. A sender that has been explicitly denied filesystem read tools can still cause a known local file to be read and returned via a final-response media directive or a message attachment, disclosing local file contents to an admitted requester whose agent turn did not include the read tool. Exploitation requires knowledge or derivation of a useful host path and a delivery flow that accepts local attachments. The issue is fixed in version 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100538"
     },
     {
-      "cve_id": "CVE-2026-84719",
-      "asset_id": "CVE-2026-84719",
+      "cve_id": "CVE-2026-100537",
+      "asset_id": "CVE-2026-100537",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the Ansible Automation Platform automation-controller. When a\nWorkflowJobTemplate is copied, the deep-copy permission sanitizer validates only the inventory,\nunified_job_template, and credentials of each cloned node and fails to check the instance_groups\n(and execution_environment and labels) that were preserved from the original. A user with\norganization workflow-admin permission but no role on the referenced instance groups can copy a\nworkflow, become its administrator, and launch jobs pinned to instance groups they are not\nauthorized to use \u2014 including the control-plane instance group \u2014 bypassing the InstanceGroup\nuse_role boundary and causing attacker-influenced automation to run in the control-plane\nexecution context.",
-      "last_modified": "2026-09-25T19:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84719"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.8.1 fails to apply the originating requester's effective tool policy during Active Memory automatic recall. In deployments that use Active Memory together with requester-specific tool rules, deterministic and hidden recall paths can retrieve durable memory and inject it into the agent's context even when toolsBySender explicitly denies that requester access to the memory tools (memory_search, memory_get). As a result, an admitted but denied sender can receive information derived from durable memory in the agent's response without directly invoking any memory tool. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100537"
     },
     {
-      "cve_id": "CVE-2026-84462",
-      "asset_id": "CVE-2026-84462",
+      "cve_id": "CVE-2026-100536",
+      "asset_id": "CVE-2026-100536",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, a security filter that protects Zammad's AI Agent configuration can be bypassed by entering specially crafted text into one of an AI Agent's fields. An administrator with permission to create or edit AI Agents could exploit this to run arbitrary commands on the server that hosts Zammad, potentially reading, modifying, or destroying all data stored on that server. No interaction from other users is needed; the malicious code runs automatically the next time the affected AI Agent processes a ticket. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-25T19:17:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84462"
+      "description": "OpenClaw versions before 2026.8.1 fail to validate all source fields in structured message attachments, allowing attackers to hide unvalidated host paths behind allowed attachment sources. Attackers can exploit this by providing multiple source fields to bypass sandbox path validation and cause Telegram delivery to read and send known host files that would otherwise be rejected.",
+      "last_modified": "2026-09-26T02:18:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100536"
     },
     {
-      "cve_id": "CVE-2026-71463",
-      "asset_id": "CVE-2026-71463",
+      "cve_id": "CVE-2026-100535",
+      "asset_id": "CVE-2026-100535",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Notification template Jinja AST whitelist only inspects\n              static Getattr nodes. Dynamic subscripts (job['job'+'_env'])\n              and {% if job.id > 100 %} conditional gating bypass both\n              the AST check and the test-render (stub has small job.id).\n              At runtime, the gated branch executes and exceptions write\n              full tracebacks into notification body, which is POSTed\n              to attacker-controlled webhook URL. Leaks install paths,\n              Python version, source line numbers.",
-      "last_modified": "2026-09-25T19:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71463"
+      "description": "OpenClaw (npm package 'openclaw') versions >= 2026.4.5 and < 2026.8.1 can lose the originating requester's restrictions and untrusted provenance when session-derived text is persisted to session memory. In deployments where session-memory capture and dreaming are enabled, a restricted external sender whose messages are admitted with limited tools can persist instructions that are later supplied to an unattended background (dreaming) agent holding broader file and command capabilities, allowing actions beyond the authority of the original turn and affecting files, commands, or services available to that agent. Exploitation requires the content to be captured, selected for later processing, and followed by the model. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100535"
     },
     {
-      "cve_id": "CVE-2026-65828",
-      "asset_id": "CVE-2026-65828",
+      "cve_id": "CVE-2026-100534",
+      "asset_id": "CVE-2026-100534",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, the legacy destroy_form action on AttachmentsController deletes UploadCache Store records based solely on a user-supplied form_id without verifying that the requesting user owns those records. An authenticated attacker who learns another user's pending-upload UUID can silently remove temporary file uploads before the victim submits their ticket or article. This issue is fixed in version 7.1.2.",
-      "last_modified": "2026-09-25T19:17:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65828"
+      "description": "OpenClaw versions before 2026.8.1 contain an authorization bypass vulnerability in webhook TaskFlow cancellation that allows attackers to cancel unrelated sessions. An attacker with a webhook route secret can supply an arbitrary child session key to cancel ACP or subagent work outside the route's configured authority.",
+      "last_modified": "2026-09-26T02:18:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100534"
     },
     {
-      "cve_id": "CVE-2026-56733",
-      "asset_id": "CVE-2026-56733",
+      "cve_id": "CVE-2026-100533",
+      "asset_id": "CVE-2026-100533",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.0.2 and 7.1.0, this issue concerns a lack of discursive validation within the authorization cascade. It has been determined that the system-level enforcement of access restrictions during the initialization of new identity objects exhibits a discrepancy: Under specific conditions, the granular restrictions of the access key being used are overridden by the latent authorization authority of the parent account. Consequently, this means that the intended separation of functional areas is nullified, resulting in an uncontrolled expansion of administrative discretion. Due to this potential integrity breach of the entire trust environment, an immediate evaluation of the authorization hierarchies is imperative. Impact An attacker can create new administrator accounts despite token restrictions. This grants full access to all system data (tickets, customers, configuration) and allows the attacker to take complete control of the Zammad instance. Abuse Scenario The vulnerability stems from a lack of synergy between the token-based authorization logic and the target system's functional authorization hierarchy, which allows for iterative escalation of the privileged access context. This issue is fixed in versions 7.0.2 and 7.1.0.",
-      "last_modified": "2026-09-25T19:17:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56733"
+      "description": "OpenClaw versions before 2026.8.1 contain a path traversal vulnerability in the tools.fs.workspaceOnly feature where Unicode filename fallback can normalize validated parent directory components. Admitted requesters can exploit canonically equivalent sibling directories to read files outside the configured workspace boundary.",
+      "last_modified": "2026-09-26T02:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100533"
     },
     {
-      "cve_id": "CVE-2026-51994",
-      "asset_id": "CVE-2026-51994",
+      "cve_id": "CVE-2026-100532",
+      "asset_id": "CVE-2026-100532",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "mcp-remote versions 0.1.32 through 0.1.38 are vulnerable to Server-Side Request Forgery (SSRF) via the resource_metadata URL extracted from a remote MCP server's WWW-Authenticate header",
-      "last_modified": "2026-09-25T19:17:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51994"
+      "description": "@openclaw/whatsapp (npm) before 2026.8.1 exposes the WhatsApp login tool through the generic channel-tool path without preserving the originating sender's owner status, so the owner-only tool boundary is not enforced. An admitted non-owner sender able to steer the tool can request a forced login and receive a new QR code for a configured account, disconnecting the Gateway's WhatsApp account and causing loss of availability; full account relinking additionally requires the attacker to scan the returned QR code with another phone. The issue affects the owner-only tool boundary rather than WhatsApp transport authentication. Fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100532"
     },
     {
-      "cve_id": "CVE-2026-100074",
-      "asset_id": "CVE-2026-100074",
+      "cve_id": "CVE-2026-100531",
+      "asset_id": "CVE-2026-100531",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Mark bpf_refcount field as unique\n\nBPF_REFCOUNT is not marked as a unique field, while it should be. Fix\nthis oversight.",
-      "last_modified": "2026-09-25T19:15:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100074"
+      "description": "The @openclaw/slack npm package before 2026.8.1 contains an authorization flaw in its Slack download-file handler: when a file lacks the share metadata used to prove it belongs to the requested conversation, the conversation-authorization check fails open. An authenticated caller restricted to a single conversation who knows or obtains a file identifier can therefore download file contents from outside that conversation's scope, disclosing data across configured conversation boundaries. The issue does not allow listing arbitrary Slack files and does not bypass Slack authentication itself. The issue is fixed in version 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100531"
     },
     {
-      "cve_id": "CVE-2026-100077",
-      "asset_id": "CVE-2026-100077",
+      "cve_id": "CVE-2026-100530",
+      "asset_id": "CVE-2026-100530",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/msm: Recover HW before retire hung submit\n\nDuring recovery, it is not safe to retire the hung submit before we\nrecover the GPU. Retiring the submit triggers BO free and that can\nresult in GPU pagefaults since the GPU may be actively accessing those\nBOs.\n\nTo fix this, retire the submits after gpu recovery is complete in\nrecover_worker().\n\nPatchwork: https://patchwork.freedesktop.org/patch/730655/",
-      "last_modified": "2026-09-25T19:15:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100077"
+      "description": "OpenClaw versions before 2026.8.1 fail to bind working directory context to reusable exec approvals, allowing approved commands to execute in different directories. Attackers with an allow-always approval can reuse it to run the same command against unreviewed files or repositories with materially different effects.",
+      "last_modified": "2026-09-26T02:18:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100530"
     },
     {
-      "cve_id": "CVE-2026-5267",
-      "asset_id": "CVE-2026-5267",
+      "cve_id": "CVE-2026-100529",
+      "asset_id": "CVE-2026-100529",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ciena Navigator Network\nControl Suite (NCS) contains an information exposure vulnerability in an\nevent-streaming API that does not properly enforce authentication. An\nunauthenticated attacker with network access to the affected service could\naccess the event stream and potentially obtain sensitive information.",
-      "last_modified": "2026-09-25T19:10:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5267"
+      "description": "OpenClaw versions before 2026.8.1 contain an authorization scope widening vulnerability in file-transfer allow-always approvals that allows attackers to reuse standing grants for unreviewed paths. Attackers can exploit glob metacharacter interpretation and node display name reuse to access sibling paths or different nodes beyond the operator's original approval scope.",
+      "last_modified": "2026-09-26T02:18:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100529"
     },
     {
-      "cve_id": "CVE-2026-75658",
-      "asset_id": "CVE-2026-75658",
+      "cve_id": "CVE-2026-100528",
+      "asset_id": "CVE-2026-100528",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Bridge is affected by an out-of-bounds write vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
-      "last_modified": "2026-09-25T19:06:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75658"
+      "description": "OpenClaw (npm package 'openclaw') before 2026.8.1 could send third-party provider credentials to the wrong endpoint. In affected versions, when a third-party provider uses an OpenAI-compatible API and the resolved model metadata lacks a concrete base URL, a pinned session that continues after a model configuration hot reload retains that provider's credential while the OpenAI SDK selects its own default endpoint. A resulting request could disclose the configured third-party provider credential to an unrelated provider endpoint and fail with a misleading authentication error. Operators who observed this condition should rotate the affected credential. The issue is fixed in 2026.8.1.",
+      "last_modified": "2026-09-26T02:18:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100528"
     },
     {
-      "cve_id": "CVE-2026-75663",
-      "asset_id": "CVE-2026-75663",
+      "cve_id": "CVE-2026-100527",
+      "asset_id": "CVE-2026-100527",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Bridge is affected by an out-of-bounds write vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
-      "last_modified": "2026-09-25T19:02:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75663"
+      "description": "OpenClaw before 2026.8.2 contains a denial of service vulnerability in the Browser extension relay that allows unauthenticated network sources to exhaust pending-authentication capacity. Attackers can hold every pending slot by maintaining silent WebSocket upgrades, preventing paired extensions from completing Browser Relay Authentication v2.",
+      "last_modified": "2026-09-26T02:18:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100527"
     },
     {
-      "cve_id": "CVE-2026-100230",
-      "asset_id": "CVE-2026-100230",
+      "cve_id": "CVE-2026-100526",
+      "asset_id": "CVE-2026-100526",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Input Leap (aka input-leap) through 3.0.3, when the non-default --enable-drag-drop option is used on Windows or macOS, mishandles the / versus \\ distinction and allows directory traversal, with resultant code execution if a file is written to a startup directory. This occurs via a DDRG message.",
-      "last_modified": "2026-09-25T19:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100230"
+      "description": "OpenClaw's Discord integration (npm package @openclaw/discord) before version 2026.9.3 could lose the sender-scoped media policy in the emoji and sticker upload actions before loading a local file. A sender permitted to invoke those actions could cause OpenClaw to read a host path that the same sender's configured media roots would otherwise reject, placing bytes from an out-of-policy local file into an outbound emoji or sticker upload. Exploitation requires access to the guild asset action and knowledge or derivation of a useful local path; the issue does not permit unrestricted filesystem browsing or code execution. The issue is fixed in @openclaw/discord 2026.9.3.",
+      "last_modified": "2026-09-26T02:18:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100526"
     },
     {
-      "cve_id": "CVE-2026-75665",
-      "asset_id": "CVE-2026-75665",
+      "cve_id": "CVE-2026-100525",
+      "asset_id": "CVE-2026-100525",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Bridge is affected by a Heap-based Buffer Overflow vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
-      "last_modified": "2026-09-25T18:50:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75665"
+      "description": "The OpenClaw Prometheus diagnostics plugin (@openclaw/diagnostics-prometheus) before version 2026.9.3 does not enforce the operator.read scope on its authenticated metrics endpoint. In deployments using an identity-bearing Gateway authentication mode such as trusted-proxy, a caller whose effective role has no read scope can retrieve the diagnostics document even though ordinary read methods reject the same identity, disclosing operational metrics to an authenticated profile intentionally limited below read access. Shared-secret Gateway callers already hold the documented full operator scope and are not affected. The issue is fixed in 2026.9.3; as a workaround, disable the Prometheus endpoint or ensure every identity that can reach it is intended to hold operator.read.",
+      "last_modified": "2026-09-26T02:18:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100525"
     },
     {
-      "cve_id": "CVE-2026-100306",
-      "asset_id": "CVE-2026-100306",
+      "cve_id": "CVE-2026-93213",
+      "asset_id": "CVE-2026-93213",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form through 6.0 fails to validate write passwords on submission endpoints, enforcing the check only on the front end. Remote unauthenticated attackers can submit form entries directly to public submission APIs without providing the password by using the form key from share links.",
-      "last_modified": "2026-09-25T18:47:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100306"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nof: fix out-of-bounds read in of_alias_scan() stem parser\n\nThe stem parser tests isdigit(*(end - 1)) before checking end > start\nand so reads one byte before the property name when the name is empty\nor all digits. Check the bound first.",
+      "last_modified": "2026-09-26T02:15:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93213"
     },
     {
-      "cve_id": "CVE-2026-100305",
-      "asset_id": "CVE-2026-100305",
+      "cve_id": "CVE-2026-93220",
+      "asset_id": "CVE-2026-93220",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form through 6.0 fails to enforce form fill-in restrictions on the authenticated submission endpoint POST /user/form/data/create. Authenticated attackers who know a form's key can submit unlimited entries to any form, bypassing publish status, time window, quota, and per-IP restrictions to falsify collected results.",
-      "last_modified": "2026-09-25T18:47:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100305"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsched_ext: Keep kick_sync waiting on the rq's own CPU\n\nkick_sync_wait_bal_cb() assumes it runs on the rq's CPU from the\n__schedule() tail: the snapshots it compares against live in that CPU's\npercpu area and the busy-wait runs with the rq lock dropped and IRQs\nenabled.\n\nHowever, dispatch can now drop the rq lock while the callback sits queued,\nand rq lock takers in that window (the sched class change paths, the scx\ntask iterator) flush pending balance callbacks on release, running the\ncallback on a foreign CPU. Such a run compares against unrelated snapshots\nand can deadlock when the executing CPU is itself a wait target.\n\nBail on a foreign CPU and leave the wait state alone. The wait only observes\nprogress that the resched kicks already guarantee and the rq's next wait\npicks up the stale cpus_to_sync bits.",
+      "last_modified": "2026-09-26T02:15:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93220"
     },
     {
-      "cve_id": "CVE-2026-100304",
-      "asset_id": "CVE-2026-100304",
+      "cve_id": "CVE-2026-93830",
+      "asset_id": "CVE-2026-93830",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form 6.0 contains an information disclosure vulnerability in FormAuthUtils.hasPermission that fails open when a form does not exist, allowing authenticated users to access deleted form submissions. Attackers can read orphaned submission data including personal information by providing a known dataId to the GET /user/form/data/details endpoint after the form has been permanently deleted.",
-      "last_modified": "2026-09-25T18:47:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100304"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: stmmac: xgmac2: disable RBUE in default RX interrupt mask\n\nEnabling the RX Buffer Unavailable (RBUE) interrupt is counterproductive\nand can trigger a MAC interrupt storm under heavy RX pressure. When the\nDMA runs out of RX descriptors it fires RBUE continuously until software\nrefills the ring.\n\nHowever, RBUE is redundant: the normal RX completion interrupt (RIE)\nalready triggers NAPI, which processes completed descriptors and refills\nthe ring, causing the DMA to resume. The RBUE handler itself only sets\nhandle_rx - the same outcome as RIE.\n\nOn Agilex5 under heavy RX pressure, the MAC interrupt (which includes\nRBUE) was observed firing 1,821,811,555 times against only 2,618,627\nactual RX completions - a ~695x ratio - confirming the severity of the\nstorm.\n\nRBUE does not provide OOM recovery. If page_pool is exhausted,\nstmmac_rx_refill() cannot advance the DMA tail pointer, the DMA stays\nsuspended, and RBUE fires again on the next NAPI completion - a storm\nwith no forward progress. This patch trades that storm for a clean\nstall with the same RX outcome. Proper OOM recovery is a pre-existing\ngap outside the scope of this fix.\n\nNote: as a consequence of disabling RBUE, the rx_buf_unav_irq ethtool\ncounter will always read 0 on XGMAC2 devices. This behaviour is already\ninconsistent across DWMAC core versions.\n\nRemove RBUE from XGMAC_DMA_INT_DEFAULT_EN and XGMAC_DMA_INT_DEFAULT_RX\nto prevent the interrupt storm while keeping normal RX handling intact.",
+      "last_modified": "2026-09-26T02:15:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93830"
     },
     {
-      "cve_id": "CVE-2026-100303",
-      "asset_id": "CVE-2026-100303",
+      "cve_id": "CVE-2026-97448",
+      "asset_id": "CVE-2026-97448",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TDuck survey form through 6.0 lacks authorization checks on FormThemeController write endpoints for global form themes and categories. Authenticated non-admin users can add, modify, or delete themes and theme categories affecting forms owned by other users.",
-      "last_modified": "2026-09-25T18:47:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100303"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nACPICA: Add validation for node in acpi_ns_build_normalized_path()\n\nAdd validation for node in acpi_ns_build_normalized_path()\nto prevent use-after-free vulnerabilities.",
+      "last_modified": "2026-09-26T02:15:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97448"
     },
     {
-      "cve_id": "CVE-2026-75676",
-      "asset_id": "CVE-2026-75676",
+      "cve_id": "CVE-2026-97451",
+      "asset_id": "CVE-2026-97451",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Bridge is affected by a Stack-based Buffer Overflow vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file.",
-      "last_modified": "2026-09-25T18:46:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75676"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nACPICA: Fix integer overflow in acpi_ex_opcode_3A_1T_1R() (mid_op)\n\nAdd overflow check for Index + Length to prevent integer overflow\nwhen calculating the truncation length. This prevents negative\nsize parameter being passed to memcpy().",
+      "last_modified": "2026-09-26T02:15:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97451"
     },
     {
-      "cve_id": "CVE-2026-100248",
-      "asset_id": "CVE-2026-100248",
+      "cve_id": "CVE-2026-93216",
+      "asset_id": "CVE-2026-93216",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Rattadan Cosmowarp smart contract before 56c6147 can have a comparison to an unintended value of current_admin.",
-      "last_modified": "2026-09-25T18:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100248"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmm/page_owner: use memcg_data snapshot to avoid TOCTOU in print_page_owner_memcg()\n\nprint_page_owner_memcg() reads page->memcg_data via READ_ONCE() at the\nstart to guard against tail pages and NULL data.  However, it later\nre-reads page->memcg_data locklessly in two places:\n\n1: page_memcg_check(page)\n\n2: PageMemcgKmem(page) (via folio_memcg_kmem(), which includes\n   VM_BUG_ON assertions for tail pages and MEMCG_DATA_OBJEXTS)\n\nIf the page is concurrently freed and reallocated as a THP tail page or\nslab page between these calls, the VM_BUG_ON assertions can trigger on\nCONFIG_DEBUG_VM=y builds, crashing the kernel.\n\nFix both TOCTOU issues by using the memcg_data snapshot throughout.",
+      "last_modified": "2026-09-26T02:00:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93216"
     }
   ]
 }
