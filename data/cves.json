@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-01T06:22:20.463909+00:00",
+  "last_updated": "2026-10-01T13:44:50.530214+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-88999",
-      "asset_id": "CVE-2026-88999",
+      "cve_id": "CVE-2026-69524",
+      "asset_id": "CVE-2026-69524",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Redux Framework plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 4.5.14 This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for authenticated attackers, with subscriber-level access and above, to delete arbitrary media library attachments, including administrator-owned files, from the affected site. This is exploitable by Subscribers when a Custom Fonts field is registered on the user profile page via Redux_Users::set_profile(), as doing so causes the required redux_custom_fonts nonce to be rendered into the Subscriber's wp-admin/profile.php page.",
-      "last_modified": "2026-10-01T05:30:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88999"
+      "description": "Use after free in Active Directory Domain Services allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-10-01T12:37:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69524"
     },
     {
-      "cve_id": "CVE-2026-85679",
-      "asset_id": "CVE-2026-85679",
+      "cve_id": "CVE-2026-103067",
+      "asset_id": "CVE-2026-103067",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Extendify plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'styles.blocks' Block Type Key in all versions up to, and including, 3.1.6 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This is possible because registerIncoming() is hooked on rest_request_before_callbacks and runs before WordPress evaluates the route's permission_callback, meaning any unauthenticated POST, PUT, or PATCH request to a /wp/v2/global-styles route can trigger the vulnerable code path.",
-      "last_modified": "2026-10-01T05:30:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85679"
+      "description": "Cross-Site Request Forgery (CSRF) vulnerability in Memberful Memberful - Membership Plugin memberful-wp allows Cross Site Request Forgery.This issue affects Memberful - Membership Plugin: from n/a through 1.81.0.",
+      "last_modified": "2026-10-01T12:21:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103067"
     },
     {
-      "cve_id": "CVE-2026-97959",
-      "asset_id": "CVE-2026-97959",
+      "cve_id": "CVE-2026-76844",
+      "asset_id": "CVE-2026-76844",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: cls_route: free emptied bucket on filter move\n\nroute4_change can move an existing filter to a different top-level\nbucket: route4_set_parms recomputes the handle from TCA_ROUTE4_TO/\nFROM/IIF, and the handle-mismatch check is gated on the 'new' flag, so\nfor an existing filter the new handle may differ from the old one and\nland in a different bucket. When this happens, the filter is unlinked\nfrom the old bucket, but the bucket itself is never freed once it goes\nempty. The stale empty bucket remains in head->table[], causing\nroute4_delete to report *last=false even after the last live filter is\ngone. That pins the empty tcf_proto and causes a leak.\n\nFix this by refcounting the filters linked to a bucket and freeing the\nbucket when the count drops to zero. The existing scan in route4_delete\ngoes away with it.\n\nThe count is updated at all sites that link or unlink a filter during add,\nchange and delete, and the bucket is dropped from head->table[] as soon as\nit reaches zero.\n\nConditions to recreate the bug:\n  CONFIG_NET_CLS_ROUTE4=y, CONFIG_NET_SCH_INGRESS=y, CONFIG_NET_CLS_ACT=y.\n\n  tc qdisc replace dev lo clsact\n  tc filter add dev lo ingress protocol ip pref 100 route from 1 to 1\n  tc filter change dev lo ingress protocol ip pref 100 handle 0x10001 \\\n    route from 1 to 2\n  tc filter del dev lo ingress protocol ip pref 100 handle 0x10002 \\\n    route from 1 to 2\n  tc filter show dev lo ingress | grep -c 'pref 100 route chain 0 '",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97959"
+      "description": "zlib 1.2.11 through 1.3.2 contains a heap buffer overflow: after an underlying write() fails, gz_write() returns without resetting strm.next_in, leaving it pointed at the caller's buffer. A later gz* write call then derives a position from the stale pointer and writes past a heap allocation; any write() failure reaches it, including EPIPE on a blocking descriptor, and in versions before 1.3.1.2 the failed write must be followed by a gzclearerr() call.",
+      "last_modified": "2026-10-01T12:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76844"
     },
     {
-      "cve_id": "CVE-2026-97961",
-      "asset_id": "CVE-2026-97961",
+      "cve_id": "CVE-2026-97495",
+      "asset_id": "CVE-2026-97495",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nperf/core: Allow list_del during perf_event_overflow()\n\nA PMU might use perf_sched_cb_inc() and perf_sched_cb_dec()\ninterface to get the PMU call back function pmu::sched_task\ninvoked at schedule in and schedule out. This is achieved\nby walking along the list anchored by sched_cb_list.\n\nThe following scenario might lead to a list corruption.\n\n   perf_pmu_sched_task()\n      for_each_list_entry(..., &sched_cb_list)\n      +--> __perf_pmu_sched_task()\n           +--> event->pmu->sched_task())\n                +--> PMU_push_sample()\n                     +--> perf_event_overflow()\n                          +--> __perf_event_overflow()\n                               +--> pmu->stop()\n                                    +--> perf_sched_cb_dec()\n                                         remove entry from sched_cb_list\n                                         while list node in use.\n\nThis happens when ioctl(fd, PERF_EVENT_IOC_REFRESH, xxx) has been\ninvoked and perf_event::event_limit hits zero.\n\nPrevent the list corruption and convert for_each_list_entry()\nto for_each_list_entry_safe().",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97961"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdkfd: Check bounds on allocate_doorbell\n\nallocated_doorbell has an option to set the doorbell id\nto a specific value (used by CRIU). This value was not\nbounds checked.\n\nCheck to confirm it's less than KFD_MAX_NUM_OF_QUEUES_PER_PROCESS.",
+      "last_modified": "2026-10-01T12:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97495"
     },
     {
-      "cve_id": "CVE-2026-97963",
-      "asset_id": "CVE-2026-97963",
+      "cve_id": "CVE-2026-97496",
+      "asset_id": "CVE-2026-97496",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: stmmac: initialize ptp_lock at probe time\n\npriv->ptp_lock is only initialized in stmmac_ptp_register(), which runs\nduring __stmmac_open(). However, the lock is also used while the\ninterface is down and has never been opened: tc_taprio_configure()\ninvokes the PTP gettime64() callback to compute the EST base time when\noffloading a TAPRIO schedule, and stmmac_get_time() takes\npriv->ptp_lock. Using an uninitialized rwlock is undefined behaviour.\nMove the rwlock_init() to __stmmac_dvr_probe(), together with the other\nprivate locks, so that ptp_lock is always valid regardless of the\ninterface state.",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97963"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdkfd: Fix OOB memory exposure in get_wave_state()\n\nThe get_wave_state() function for v9 trusts cp_hqd_cntl_stack_size and\ncp_hqd_cntl_stack_offset values read directly from the MQD, which are\nwritten by GPU microcode and fully attacker-controlled on the\nCRIU-restore path (via AMDKFD_IOC_RESTORE_PROCESS with H3).\n\nthis leads to an unbounded copy_to_user() that can leak adjacent\nGTT/kernel memory. If offset > size, integer underflow produces a ~4 GiB\nread length, if size is set to 1 MiB against a 4 KiB allocation, we leak\n1 MiB of adjacent kernel memory (other queues' MQDs, ring buffers, KASLR\npointers).\n\nFix by clamping both cp_hqd_cntl_stack_size to the actual allocated\nbuffer size (q->ctl_stack_size) and cp_hqd_cntl_stack_offset to the\nclamped size before performing arithmetic and copy_to_user().\n\nThis ensures we never read beyond the allocated kernel BO regardless of\nattacker-supplied MQD field values.",
+      "last_modified": "2026-10-01T12:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97496"
     },
     {
-      "cve_id": "CVE-2026-97964",
-      "asset_id": "CVE-2026-97964",
+      "cve_id": "CVE-2026-97525",
+      "asset_id": "CVE-2026-97525",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nppp_synctty: ensure a writeable skb header\n\nppp_sync_txmunge() checks headroom before prepending the address and\ncontrol bytes, but does not ensure that the skb header is writable.\nA received skb can reach this function through PPP channel bridging\nwithout passing through ppp_start_xmit(), which calls skb_cow_head().\n\nFor example, a PPPoE frame may share its buffer with a clone queued to\nan AF_PACKET socket. If it is bridged to a synchronous tty channel, the\naddress/control bytes can overwrite data still visible to that socket.\n\nUse skb_cow_head() to ensure both sufficient headroom and a writable\nheader.",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97964"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nx86/mm/pat: Allocate split page tables as kernel page tables\n\nA PTE is allocated directly without going through the standard page table\nallocation routines (such as pte_alloc_one_kernel()) when the CPA code\nsplits a large page (__split_large_page()).\n\nThis means the page table constructor is never called nor is the page table\nmarked as a kernel page table.\n\nThe former results in the folio associated with the page table not being\nmarked as a page table (__pagetable_ctor() is never called thus neither is\n__folio_set_pgtable()) nor are statistics updated to reflect\nit (lruvec_stat_add_folio() is never called).\n\nThe latter issue of failing to mark the page table as a kernel page\ntable (ptdesc_set_kernel() is never called) is far more problematic.\n\nSince commit:\n\n  5ba2f0a15564 (\"mm: introduce deferred freeing for kernel page tables\")\n\nkernel page table freeing has been batched and since the\nsubsequent commit:\n\n  e37d5a2d60a3 (\"iommu/sva: invalidate stale IOTLB entries for kernel address space\")\n\nIOTLB cache entries for kernel page tables have been invalidated upon\nbeing freed.\n\nSince split page tables are freed without this invalidation, the IOTLB\ncan contain stale entries for them.\n\nResolve the issue by using the ordinary PTE allocation API at split time.\n\nThis results in these kernel page tables invoking a page table constructor,\nand thus requires a page table destructor.\n\nDestructors are not always present, like for early allocated direct map\npage tables). Conditionally call pagetable_dtor_free() if the PG_table\nfolio flag for the ptdesc is set, otherwise we free the page table via\npagetable_free().\n\nRegardless of which path is taken page tables marked as kernel page tables,\nwhich now includes split page tables, take the correct route through\npagetable_free_kernel().\n\nThere is a user-visible side effect in that split page tables will appear\nin nr_page_table_pages in /proc/vmstat (as do other kernel page tables\nallocated after early boot), however this is a positive change.\n\nThis issue started being markedly problematic after commit:\n\n  5ba2f0a15564 (\"mm: introduce deferred freeing for kernel page tables\")\n\nso choose this as the Fixes target.\n\n[ dhansen: rephrase in imperative mood ]",
+      "last_modified": "2026-10-01T12:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97525"
     },
     {
-      "cve_id": "CVE-2026-97966",
-      "asset_id": "CVE-2026-97966",
+      "cve_id": "CVE-2026-103488",
+      "asset_id": "CVE-2026-103488",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nocteontx2-pf: reset HTB scheduler topology before freeing queues\n\nHTB offload programs NIX_AF_TLxX_TOPOLOGY on QoS-allocated scheduler\nqueues via otx2_qos_txschq_set_parent_topology(), but teardown freed\nthose queues without clearing TOPOLOGY.  The AF only restores PARENT and\nSCHEDULE on free, so PRIO_ANCHOR/RR_PRIO settings can survive in the\nshared scheduler pool and affect later allocations.\n\nAdd otx2_qos_reset_schq_topology() and otx2_qos_free_hw_schq() to zero\nTL4 through TL2 TOPOLOGY before each schq is returned to the AF during\nhierarchy teardown and cfg rollback.  Skip the aggregation level (TL1):\nit is a per-tx-link queue shared by the PF, default Tx hierarchy and VFs,\nand is not freed back to the AF by nix_txschq_free_one().",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97966"
+      "description": "In JetBrains YouTrack before 2026.2.19422 missing authorisation allowed authenticated users to add themselves to project teams and access restricted issues",
+      "last_modified": "2026-10-01T12:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103488"
     },
     {
-      "cve_id": "CVE-2026-97967",
-      "asset_id": "CVE-2026-97967",
+      "cve_id": "CVE-2026-103492",
+      "asset_id": "CVE-2026-103492",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nhwmon: (corsair-cpro) Remove debugfs entries when probe fails\n\nccp_debugfs_init() registers debugfs files whose private data is the devm\nallocated ccp.  If hwmon_device_register_with_info() fails right after it,\nccp_probe() returns without removing them: the HID core then frees ccp,\nand ccp_remove() is not called for a failed probe, so the files stay\nbehind.  Reading one of them dereferences the freed pointer.\n\nRemove the debugfs entries on that error path.  debugfs_remove_recursive()\nwaits for readers already inside the show callbacks, so ccp is no longer\nreachable through debugfs by the time probe returns.",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97967"
+      "description": "In JetBrains YouTrack before 2026.2.19422 doS attack was possible via crafted PSD attachments",
+      "last_modified": "2026-10-01T12:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103492"
     },
     {
-      "cve_id": "CVE-2026-97971",
-      "asset_id": "CVE-2026-97971",
+      "cve_id": "CVE-2025-6170",
+      "asset_id": "CVE-2025-6170",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnstree: check listing permission before taking a namespace reference\n\nlegitimize_ns() takes a reference on the candidate namespace before\nmay_list_ns() has decided whether the caller may see it. The\n__free(ns_put) cleanup on the denied path can drop the last reference to a\nmount namespace while we still hold the rcu read lock, and put_mnt_ns()\nmay sleep there. This is the same problem commit 2ec2aff3c8e2 (\"ns: make\nsure reference are dropped outside of rcu lock\") fixed for the put_user()\npath. Neither ns_requested() nor may_list_ns() needs a reference, both\nonly look at the namespace type and at the caller's own namespaces, so do\nthe checks first and take the reference last.\n\nSplat:\n\n  Voluntary context switch within RCU read-side critical section!\n  WARNING: kernel/rcu/tree_plugin.h:332 at rcu_note_context_switch+0x238/0x2a0, CPU#5: a/3442\n  CPU: 5 UID: 1000 PID: 3442 Comm: a Not tainted 7.0.0-30-generic #30-Ubuntu PREEMPT(lazy)\n  RIP: 0010:rcu_note_context_switch+0x238/0x2a0\n  Call Trace:\n   <TASK>\n   __schedule+0xcf/0x650\n   schedule+0x27/0x90\n   schedule_preempt_disabled+0x15/0x30\n   __mutex_lock.constprop.0+0x550/0xaf0\n   __mutex_lock_slowpath+0x13/0x20\n   mutex_lock+0x3b/0x50\n   exp_funnel_lock+0xb2/0x260\n   synchronize_rcu_expedited+0xe7/0x220\n   namespace_unlock+0x26a/0x320\n   put_mnt_ns+0xd3/0x120\n   mntns_put+0xe/0x20\n   do_listns+0x13e/0x560\n   __do_sys_listns+0x126/0x2d0\n   __x64_sys_listns+0x20/0x30\n   x64_sys_call+0x2366/0x2390\n   do_syscall_64+0x105/0x5a0\n   entry_SYSCALL_64_after_hwframe+0x76/0x7e\n   </TASK>",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97971"
+      "description": "A flaw was found in the interactive shell of the xmllint command-line tool, used for parsing XML files. When a user inputs an overly long command, the program does not check the input size properly, which can cause it to crash. This issue might allow attackers to run harmful code in rare configurations without modern protections.",
+      "last_modified": "2026-10-01T12:05:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6170"
     },
     {
-      "cve_id": "CVE-2026-97972",
-      "asset_id": "CVE-2026-97972",
+      "cve_id": "CVE-2026-16118",
+      "asset_id": "CVE-2026-16118",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: macb: put the \"mdio\" child node reference on success\n\nmacb_mii_init() holds the reference returned by of_get_child_by_name()\nfor macb_mdiobus_register() and drops it only on the error paths, so\nevery successful probe leaks a node reference. On a CM5, overlay\nremoval after four bind cycles reports\n\n  OF: ERROR: memory leak, expected refcount 1 instead of 5\n\nDrop the reference after registration, where __mdiobus_register() has\nalready taken its own for the lifetime of the bus.",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97972"
+      "description": "A flaw was found in xdgmime. A heap-based buffer overflow can be triggered in _xdg_mime_magic_parse_magic_line() in the xdgmimemagic.c file on little-endian systems when an attacker-controlled MIME magic file in a user-writable XDG data location (e.g., in the $XDG_DATA_HOME/mime/magic path) is parsed by an application performing MIME type detection (e.g., via g_content_type_guess()). When performing byte-swap, incorrect pointer arithmetic on the write side causes an out-of-bounds write of 2 bytes, resulting in an application crash or memory corruption.",
+      "last_modified": "2026-10-01T12:04:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16118"
     },
     {
-      "cve_id": "CVE-2026-97973",
-      "asset_id": "CVE-2026-97973",
+      "cve_id": "CVE-2026-97501",
+      "asset_id": "CVE-2026-97501",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: macb: destroy the phylink instance on the probe error path\n\nmacb_mii_init() creates a phylink instance on both of its success paths,\nbut the probe unwind frees the netdev without destroying it, so a failing\nmacb_alloc_tieoff() or register_netdev() leaks the instance.\n\nDestroy it at err_out_unregister_mdio, which is only reachable once\nmacb_mii_init() has succeeded, so bp->phylink is valid there.",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97973"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\npinctrl: mediatek: paris: bypass pinctrl GPIO layer in set GPIO direction\n\npinctrl_gpio_direction_input() / pinctrl_gpio_direction_output() take\nthe pinctrl mutex. This causes a gpiochip operations to need to sleep.\nWorse yet, the .can_sleep field in the gpiochip is not set. This causes\nthe shared GPIO proxy to trip over, as it uses gpiod_cansleep() to check\nwhether it can use a spinlock or needs a mutex. In this case, it ends\nup taking a spinlock, then calls pinctrl_gpio_direction_output(), which\ntakes a mutex. This causes a huge warning.\n\nWhile this class of Mediatek hardware does not have separate clear/set\nregisters, the pinctrl context has a spinlock that is taken whenever\na register read-modify-write is done. Also, once the GPIO function is\nselected / muxed in, further GPIO operations do not involve pinctrl\noperations or state. The GPIO direction and level values do not require\ntoggling the pinmux or any other pin config options.\n\nSwitch to directly calling mtk_pinmux_gpio_set_direction() in the GPIO\nset direction callbacks to avoid taking the pinctrl mutex. Drop the\n.gpio_set_direction field in mtk_pmxops to signal we are no longer using\nthe pinctrl GPIO layer for setting the direction.",
+      "last_modified": "2026-10-01T12:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97501"
     },
     {
-      "cve_id": "CVE-2026-97978",
-      "asset_id": "CVE-2026-97978",
+      "cve_id": "CVE-2026-97503",
+      "asset_id": "CVE-2026-97503",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\neth: ice: don't dereference pointers from TP_printk()\n\nAfter forwarding net-next during the v7.3 merge window we started\nseeing:\n\n  TRACE EVENT ERROR: Event ice_tx_dim_work has double dereference in TP_printk: REC->q_vector->tx.tx_ring->q_index\n  WARNING: kernel/trace/trace_events.c:420 at test_double_dereference.cold+0x39/0x4b\n\nthis is due to extra checks added in tracing subsystem in\ncommit b5cc230af5e5 (\"tracing: Warn when an event dereferences a pointer in TP_printk()\").\n\nPrinting happens long after the event was recorded, by which point\nthe pointers may be invalid (the ring or the dim instance).\nCopy the eight scalars into the event instead.",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97978"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ngenirq/proc: Size interrupt directory names for 10-digit interrupt numbers\n\n/proc/irq/<n>/ directory names are built in `char name[10]` buffers\nwith `sprintf(name, \"%u\", irq)`.\n\nTen-digit IRQ numbers already need 11 bytes including the trailing NUL, and\ncurrent sparse-IRQ configurations allow interrupt numbers in that range.\n\nSize the temporary name buffer for the current decimal form and switch\nto bounded formatting when creating or removing the proc entry.",
+      "last_modified": "2026-10-01T12:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97503"
     },
     {
-      "cve_id": "CVE-2026-97997",
-      "asset_id": "CVE-2026-97997",
+      "cve_id": "CVE-2026-97504",
+      "asset_id": "CVE-2026-97504",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio_ring: fix stale descriptor flags after a failed packed add\n\nIn a packed ring the AVAIL and USED bits sit in the descriptor itself,\nso writing them makes that descriptor available. Those bit combinations\nflip meaning on every round of the ring, tracked by a wrap counter, so\ninvalidating or validating a descriptor means inverting both bits.\n\nCommit 1ce9e6055fa0 (\"virtio_ring: introduce packed ring support\") has\nvirtqueue_add_packed() make every descriptor of a chain available as it\nmaps the chain, and write the head last. The device consumes the ring in\norder and stops at a head that is not available yet, so it never reaches\nthe rest.\n\nWhen vring_map_one_sg() fails partway, unmap_release unmaps the segments\nand restores avail_used_flags, but the descriptors it wrote to in the\nring stay marked with AVAIL and USED bits. The head is now the only\nentry that keeps the device from consuming these stale entries.\n\nFor example, the ring would look like this now.\n\n  Z - pre-previous command\n  A - previous command\n  B - aborted command\n  C - current command\n\n  [A1 DONE] [A2 DONE] <C1 EMPTY> [B2] [B3] [Z1 DONE]\n\nWhen the driver now attempts to issue the C command, the next add starts\nat the same head as B. If C spans less descriptors than B, there is no\nend marker because AVAIL and USED bits were still in place. And that\nmeans the device will start interpreting these stale entries (B2/B3) as\nanother command entry, which then blocks the queue.\n\nThis effect typically happens in swiotlb configurations under memory\npressure, because vring_map_one_sg() can then fail with larger I/O\nrequests which then leads to command abortions.\n\nThere are broadly 2 ways to avoid leaving those flags behind:\n\n  1) Defer those flags too until the chain is complete.\n  2) Rewrite those flags for the previous wrap counter.\n\nImplement the second option in both packed add paths. The first option\ntraverses the chain a second time on every successful add. The second\noption invalidates all added descriptors when any add fails.\n\nWith this patch applied, a packed virtqueue keeps completing requests\nafter a failed add.",
-      "last_modified": "2026-10-01T05:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97997"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwatchdog: lenovo_se10_wdt: Fix use-after-free and resource leak risk\n\nReview by sashiko.dev highlighted potential use after free and resource\nleak instances.\n\nSet se10_pdev to null to prevent use after free\n\nRemove DMI call back and instead directly call\nse10_create_platform_device. Handle error cases appropriately",
+      "last_modified": "2026-10-01T12:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97504"
     },
     {
-      "cve_id": "CVE-2026-102124",
-      "asset_id": "CVE-2026-102124",
+      "cve_id": "CVE-2026-97505",
+      "asset_id": "CVE-2026-97505",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A Kiteworks appliance setup interface did not enforce authentication once the appliance had completed initial configuration. An unauthenticated attacker with network access to the appliance could read and modify a limited set of setup records, including a contact name and email address captured during initial configuration.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102124"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI/sysfs: Add CAP_SYS_ADMIN check to __resource_resize_store()\n\nCurrently, the __resource_resize_store() allows writing to the\nresourceN_resize sysfs attribute to change a BAR's size without checking\nfor capabilities, currently relying only on the file access check.\n\nResizing a BAR modifies PCI device configuration and can disrupt active\ndrivers.  After the upcoming conversion to static attributes, it will also\ntrigger resource file updates via sysfs_update_groups().\n\nAdd a CAP_SYS_ADMIN check to prevent unprivileged users from performing BAR\nresize operations.",
+      "last_modified": "2026-10-01T12:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97505"
     },
     {
-      "cve_id": "CVE-2026-102123",
-      "asset_id": "CVE-2026-102123",
+      "cve_id": "CVE-2026-97530",
+      "asset_id": "CVE-2026-97530",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A Kiteworks appliance setup interface did not confine a user-supplied file path to its intended directory, which could allow an unauthenticated attacker to write a file to any location writable by the affected service account, potentially compromising the integrity of the appliance or rendering it unavailable until an operator intervenes. Exploitation requires network access to the affected interface, which is not reachable on a fully configured appliance in its default configuration; reaching it depends on either the transient window while an appliance is first being provisioned or a non-default appliance configuration.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102123"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix soft lockup polling continuation IOCB signature\n\nqla27xx_copy_multiple_pkt() and qla27xx_copy_fpin_pkt() poll\nrsp_q->ring_ptr->signature for RESPONSE_PROCESSED (0xDEADDEAD) to decide\nwhether the next continuation IOCB has arrived, spinning on cpu_relax()\nwithout advancing the ring or decrementing the entry count while it has\nnot. response_t::signature lives at byte offset 60, but a continuation\nIOCB (sts_cont_entry_t / struct sts_cont_entry_ext) carries raw FC frame\npayload at that offset (data[56..59]). A received frame whose payload\nbytes happen to equal 0xDEADDEAD is therefore misread as \"not yet\narrived\", and the loop spins forever in interrupt/DPC context, causing a\nCPU soft lockup.\n\nThe poll is also unnecessary: callers of qla27xx_copy_multiple_pkt()\n(PT_LS4_UNSOL and the NVMe purls path) already gate on\nqla_chk_cont_iocb_avail(), which guarantees all entry_count IOCBs are\npresent before copying begins. The sibling helper\n__qla_copy_purex_to_buffer() already drops the signature poll and relies\non the entry_type == STATUS_CONT_TYPE guard instead.\n\nRemove the signature busy-wait from both helpers, keeping the entry_type\nguard, and gate the FPIN path with qla_chk_cont_iocb_avail() so it defers\nand re-processes on the next interrupt once all continuation IOCBs have\narrived, mirroring the ELS_AUTH_ELS and PT_LS4_UNSOL arms. With this the\nsignature field is never read on a continuation IOCB, eliminating the\npayload-aliasing lockup.",
+      "last_modified": "2026-10-01T12:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97530"
     },
     {
-      "cve_id": "CVE-2026-102122",
-      "asset_id": "CVE-2026-102122",
+      "cve_id": "CVE-2026-97536",
+      "asset_id": "CVE-2026-97536",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks did not correctly enforce which roles a shared folder's manager was permitted to assign. In a default configuration, an authenticated user holding the Manager role on a folder could grant the Owner role to themselves or to other members of that folder.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102122"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix use-after-free of qpair work on queue teardown\n\nThe response queue MSI-X handler qla2xxx_msix_rsp_q() schedules\nqla_do_work() via queue_work(ha->wq, &qpair->q_work). qla_do_work()\ndereferences the qpair (vha, rsp) and takes qpair->qp_lock.\n\nDuring teardown, qla2xxx_delete_qpair() deletes the response queue, which\ncalls free_irq() in qla25xx_free_rsp_que(), and then frees the queue and\nthe qpair. free_irq() waits for running hardirq handlers but does not\ncancel work already placed on ha->wq. A still-pending q_work then runs\nqla_do_work() against the freed qpair and response queue, causing a\nuse-after-free. This is especially likely during full adapter teardown,\nwhere destroy_workqueue(ha->wq) forces pending work to run after the queue\npairs have been freed.\n\nFlush the work item with cancel_work_sync() in qla25xx_free_rsp_que()\nafter free_irq() has released the interrupt (so no new work can be\nqueued) and before the response queue and qpair memory are freed (so the\nflushed handler still sees valid memory). Guard on rsp->qpair and ha->wq\nto match the INIT_WORK() condition and avoid operating on an\nuninitialized work_struct.",
+      "last_modified": "2026-10-01T12:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97536"
     },
     {
-      "cve_id": "CVE-2026-102121",
-      "asset_id": "CVE-2026-102121",
+      "cve_id": "CVE-2026-47489",
+      "asset_id": "CVE-2026-47489",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A form-rendering interface in the Advanced Forms component is reachable without authentication so that published forms can be displayed to anonymous visitors, but it returned more data than the form itself required. Anyone who knew the web address of a published form could potentially retrieve the form owner's Kiteworks account profile, including personal details, along with parts of the deployment's configuration settings; no passwords, authentication tokens, or multi-factor secrets were exposed.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102121"
+      "description": "NVIDIA GPU Display Driver for Linux contains a vulnerability in the kernel mode layer where permissions on read-only memory might not be preserved. A successful exploit of this vulnerability might lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.",
+      "last_modified": "2026-10-01T12:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47489"
     },
     {
-      "cve_id": "CVE-2026-102118",
-      "asset_id": "CVE-2026-102118",
+      "cve_id": "CVE-2026-103754",
+      "asset_id": "CVE-2026-103754",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A local privilege escalation vulnerability in Kiteworks could have allowed an attacker with an existing shell under a low-privileged service account to escalate to root privileges on the appliance.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102118"
+      "description": "A flaw was found in ansible-runner. The unstream_dir() function, which receives and extracts a streamed zip archive on the worker side of the ansible-runner transmit/worker protocol, re-creates symbolic links from archive content without validating the link target and applies chmod() and utime() to an unsanitized filesystem path derived from the archive member name. A crafted archive processed by a worker that consumes attacker-influenced input can create files, create symbolic links, or change permissions outside the intended target directory, which can be leveraged toward code execution.",
+      "last_modified": "2026-10-01T11:57:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103754"
     },
     {
-      "cve_id": "CVE-2026-102115",
-      "asset_id": "CVE-2026-102115",
+      "cve_id": "CVE-2026-47508",
+      "asset_id": "CVE-2026-47508",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks Core did not correctly validate a parameter submitted to the password reset workflow. An unauthenticated attacker who knew the email address of a user with a locally stored password could potentially reset that account's password without access to the emailed reset link and then authenticate as that user, including where the account holds administrative privileges.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102115"
+      "description": "NVIDIA GPU Display Driver for Windows and Linux contains a vulnerability in the kernel mode layer, where a user could cause an incorrect conversion between numeric types. A successful exploit of this vulnerability might lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.",
+      "last_modified": "2026-10-01T11:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47508"
     },
     {
-      "cve_id": "CVE-2026-102114",
-      "asset_id": "CVE-2026-102114",
+      "cve_id": "CVE-2026-47601",
+      "asset_id": "CVE-2026-47601",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A command injection vulnerability in Kiteworks could allow a high-privileged authenticated administrator to execute arbitrary operating-system commands as root on the affected appliance node. Successful exploitation requires an administrative account with elevated privileges.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102114"
+      "description": "NVIDIA GPU Display Driver for Windows and Linux contains a vulnerability in the open-source kernel module DMA-BUF import path where an unprivileged local user could cause improper preservation of memory access permissions when importing a read-only buffer from another device's DMA-BUF exporter. A successful exploit of this vulnerability might lead to code execution, escalation of privileges, denial of service, information disclosure, and data tampering.",
+      "last_modified": "2026-10-01T11:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47601"
     },
     {
-      "cve_id": "CVE-2026-102113",
-      "asset_id": "CVE-2026-102113",
+      "cve_id": "CVE-2026-103336",
+      "asset_id": "CVE-2026-103336",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A privilege escalation vulnerability in Kiteworks could allow an attacker who has already obtained code execution as an unprivileged backend service account on the appliance to escalate to root. A privileged routine did not safely handle a filesystem path that the lower-privileged account could influence, allowing the attacker to cause a root-owned operation to run arbitrary commands with the highest privileges. Exploitation requires existing local access to that service account.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102113"
+      "description": "Insertion of Sensitive Information Into Sent Data vulnerability in Smackcoders Inc. WP Ultimate CSV Importer wp-ultimate-csv-importer allows Retrieve Embedded Sensitive Data.This issue affects WP Ultimate CSV Importer: from n/a through 9.1.",
+      "last_modified": "2026-10-01T11:43:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103336"
     },
     {
-      "cve_id": "CVE-2026-102112",
-      "asset_id": "CVE-2026-102112",
+      "cve_id": "CVE-2026-103680",
+      "asset_id": "CVE-2026-103680",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A privilege escalation vulnerability in Kiteworks could allow an attacker who has already obtained code execution as an unprivileged backend service account on the appliance to escalate to root and run arbitrary commands with the highest privileges. Exploitation requires existing local access to that service account.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102112"
+      "description": "A flaw was found in tnef. A heap-based buffer overflow can occur in the find_free_number() function when generating numbered backup suffixes for duplicate filenames. When numbered backups are enabled and file overwriting is disabled, an attacker can supply a specially crafted Transport Neutral Encapsulation Format (TNEF) file with an excessive number of colliding attachment filenames, causing the numeric counter to write past the allocated memory buffer. This issue may result in an application crash, leading to a Denial of Service (DoS), or potentially arbitrary code execution.",
+      "last_modified": "2026-10-01T11:34:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103680"
     },
     {
-      "cve_id": "CVE-2026-102111",
-      "asset_id": "CVE-2026-102111",
+      "cve_id": "CVE-2026-103679",
+      "asset_id": "CVE-2026-103679",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks did not enforce the maximum permitted value for a configurable security-policy setting. An authenticated administrator could set this value outside its intended range so that the associated control never activated, while the control continued to appear enabled in the administrative interface and audit log, allowing it to be silently rendered ineffective.",
-      "last_modified": "2026-10-01T05:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102111"
+      "description": "A flaw was found in tnef. A remote attacker could exploit this vulnerability by providing a specially crafted Transport Neutral Encapsulation Format (TNEF) file containing multiple message bodies. During extraction, improper memory management triggers a use-after-free and double-free condition, causing the application to crash and resulting in a Denial of Service (DoS).",
+      "last_modified": "2026-10-01T11:34:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103679"
     },
     {
-      "cve_id": "CVE-2026-103541",
-      "asset_id": "CVE-2026-103541",
+      "cve_id": "CVE-2026-103678",
+      "asset_id": "CVE-2026-103678",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was detected in formtools.org Form Tools up to 3.1.1. This issue affects the function Files::uploadFile of the file global/code/actions.php of the component Ajax Handler. The manipulation results in unrestricted upload. It is possible to launch the attack remotely. The exploit is now public and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-10-01T05:30:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103541"
+      "description": "A flaw was found in tnef. An attacker can exploit this vulnerability by providing a specially crafted file containing uncompressed Rich Text Format (RTF) data. Because the application fails to properly validate input buffer boundaries before copying data in get_rtf_data_from_buf(), reading beyond the allocated memory occurs. This flaw can cause the application to crash, leading to a Denial of Service (DoS), or leak sensitive memory contents into extracted output files.",
+      "last_modified": "2026-10-01T11:34:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103678"
     },
     {
-      "cve_id": "CVE-2026-67075",
-      "asset_id": "CVE-2026-67075",
+      "cve_id": "CVE-2026-103858",
+      "asset_id": "CVE-2026-103858",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "HCL Digital Experience is affected by improper input sanitation.\u00a0 This can result in HTML injection which could be leveraged in content spoofing from a trusted domain. Apply HCL Digital Experience 9.5 CF238 or later to address this.",
-      "last_modified": "2026-10-01T05:20:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67075"
+      "description": "MISP contains an incomplete authorization check in the discussion posting functionality. When a user submits a post to a thread or replies to an existing post, the application only verified whether the target thread was restricted to a single organization (org-only distribution). It did not enforce the full thread access control list, including sharing-group membership and event-level visibility.\n\nAs a result, an authenticated user who is outside the relevant sharing group or who does not have visibility on the associated event could:\n\n- Read the thread title and the content of the quoted post\n\n- Submit a new post into the discussion thread\n\nThis constitutes both an information disclosure (reading restricted thread and post content) and an integrity issue (injecting content into a thread the user is not authorized to participate in).\n\nAffected: <2.5.48",
+      "last_modified": "2026-10-01T11:31:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103858"
     },
     {
-      "cve_id": "CVE-2026-79403",
-      "asset_id": "CVE-2026-79403",
+      "cve_id": "CVE-2026-97513",
+      "asset_id": "CVE-2026-97513",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in Kilo Code before v7.4.1 allows a local attacker to execute arbitrary code via the permission/allow-everything endpoint",
-      "last_modified": "2026-10-01T05:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79403"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: chips-media: wave5: Release m2m_ctx after Instance Removed from List\n\nPossible use after free if IRQ thread manages to obtain spinlock between\nm2m_ctx release and wave5_release function removing stream instance from\nlist of active instances. The IRQ thread looks for the m2m_ctx which is\nfreed so null pointer dereference occurs.",
+      "last_modified": "2026-10-01T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97513"
     },
     {
-      "cve_id": "CVE-2026-100269",
-      "asset_id": "CVE-2026-100269",
+      "cve_id": "CVE-2026-97522",
+      "asset_id": "CVE-2026-97522",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In JetBrains YouTrack before 2026.2.19197 helpdesk project's Authorized Reporters list could be bypassed",
-      "last_modified": "2026-10-01T05:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100269"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmptcp: fix bad accounting in __mptcp_subflow_push_pending()\n\nIf __subflow_push_pending() errors out we should avoid updating the\ncopied byte counters, to avoid mismatch push call later on.",
+      "last_modified": "2026-10-01T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97522"
     },
     {
-      "cve_id": "CVE-2026-100273",
-      "asset_id": "CVE-2026-100273",
+      "cve_id": "CVE-2026-97528",
+      "asset_id": "CVE-2026-97528",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In JetBrains YouTrack before 2026.2.19197 authorisation bypass in the scripts debugger allowed arbitrary code execution",
-      "last_modified": "2026-10-01T05:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100273"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Unlink NVMe unsol ctx before freeing on LS reject error\n\nqla_nvme_xmt_ls_rsp() obtains uctx, which was linked into\nfcport->unsol_ctx_head by qla2xxx_process_purls_iocb() and is still linked\nwhen the NVMe transport calls back to transmit the LS response. On the\nerror (out:) path the function frees uctx with kfree() but never removes\nit from the list. This leaves a freed node in fcport->unsol_ctx_head: the\nnext list_add_tail() for that fcport writes through the freed node, and a\nsubsequent list_del() can corrupt the list or panic.\n\nUnlink uctx with list_del() before kfree() on the error path, matching the\nother free sites in qla_nvme_release_lsrsp_cmd_kref() and\nqla2xxx_process_purls_pkt(). qla2x00_rel_sp() in the failure path only\nreturns the SRB to its pool and does not invoke sp->put_fn, so the out:\npath is the sole free and uctx is always still linked there.",
+      "last_modified": "2026-10-01T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97528"
     },
     {
-      "cve_id": "CVE-2026-47500",
-      "asset_id": "CVE-2026-47500",
+      "cve_id": "CVE-2026-55176",
+      "asset_id": "CVE-2026-55176",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NVIDIA GPU Display Driver for Windows and Linux contains a vulnerability in the kernel mode layer where improper cleanup of reference counts during error paths could lead to a use-after-free condition. A successful exploit of this vulnerability might lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.",
-      "last_modified": "2026-10-01T05:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47500"
+      "description": "Soft Machine is a Virtual Machine\u2013based agentic development environment / Cloud OS. In versions 0.2.247 and prior, two authentication helpers in /app/server.js \u2014 verifyContainerAuth() and authenticateWorkspaceHttp() \u2014 accept the global CONTAINER_SHARED_SECRET as a bearer token without verifying which workspace the caller belongs to. Because that secret is set identically on every container in the Fly app and is reachable from the user-facing process environment inside each workspace, any tenant can use it to authenticate to any other tenant's workspace API. The result is cross-workspace read, write, and destructive-restore primitives reachable from any paying customer's shell. The existing per-workspace token check (workspaceTokenMatches) protects the user-facing per-workspace token path, but the shared-secret bearer path bypasses it entirely. At time of publication, there are no publicly known patches.",
+      "last_modified": "2026-10-01T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55176"
     },
     {
-      "cve_id": "CVE-2026-102110",
-      "asset_id": "CVE-2026-102110",
+      "cve_id": "CVE-2026-103500",
+      "asset_id": "CVE-2026-103500",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An endpoint used during initial appliance setup did not require authentication and did not correctly enforce its intended state precondition, so during the initial activation window an unauthenticated network attacker could repeatedly re-trigger the privileged activation process. This could disrupt setup and leave the appliance in an incompletely configured state. The issue is only reachable while an appliance is being activated for the first time and not yet fully configured.",
-      "last_modified": "2026-10-01T05:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102110"
+      "description": "An attacker could cause a heap buffer overflow by getting a user to open an email that is greater than or equal to 2GB in size. This vulnerability was fixed in Thunderbird 157, Thunderbird 140.17, and Thunderbird 153.4.",
+      "last_modified": "2026-10-01T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103500"
     },
     {
-      "cve_id": "CVE-2026-102109",
-      "asset_id": "CVE-2026-102109",
+      "cve_id": "CVE-2026-55224",
+      "asset_id": "CVE-2026-55224",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A SQL injection vulnerability existed in Kiteworks Secure Data Forms, where a value derived from the authenticated user's stored account data was incorporated into a database query without proper sanitization. An authenticated user could potentially influence that value to inject SQL. Exploitation requires an authenticated session and applies only to deployments where a specific optional feature is in use.",
-      "last_modified": "2026-10-01T05:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102109"
+      "description": "MineAdmin is a ready-to-use backend management system suitable for quickly building website backends, operation platforms, permission centers, internal management systems, CMS, CRM, OA, ERP and other business applications. Prior to version 3.2.0-alpha.2, the app-store plugin service concatenates unsanitized user-supplied identifier values directly into file system paths. An attacker can use path traversal sequences (e.g., ../) to read, install, or uninstall plugins from arbitrary directories, and potentially execute arbitrary composer commands. This issue has been patched in version 3.2.0-alpha.2.",
+      "last_modified": "2026-10-01T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55224"
     },
     {
-      "cve_id": "CVE-2026-102107",
-      "asset_id": "CVE-2026-102107",
+      "cve_id": "CVE-2026-96255",
+      "asset_id": "CVE-2026-96255",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks Core contains a business logic flaw in a Kiteworks file-request feature allowed an authenticated user to send a request that appeared to originate from another user, because the server did not verify that the requester was authorized to act as the specified account. This could be used to solicit files or information from a recipient under a trusted identity; exploitation requires the feature to be enabled for the attacker's profile and the targeted recipient to act on the request.",
-      "last_modified": "2026-10-01T05:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102107"
+      "description": "The Payments for Hubtel WordPress plugin before 1.0.2 does not prevent public access to a debug log in which it records payment requests, including the store's payment gateway API credentials in plain text, allowing unauthenticated attackers to obtain those credentials.",
+      "last_modified": "2026-10-01T11:17:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96255"
     },
     {
-      "cve_id": "CVE-2026-103540",
-      "asset_id": "CVE-2026-103540",
+      "cve_id": "CVE-2026-96200",
+      "asset_id": "CVE-2026-96200",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in formtools.org Form Tools up to 3.1.1. This vulnerability affects the function Clients::updateClientSettingsTab of the file global/code/Clients.class.php of the component Client Settings. The manipulation of the argument page_titles leads to improper neutralization of special elements used in a template engine. It is possible to initiate the attack remotely. The exploit has been disclosed publicly and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-10-01T05:15:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103540"
+      "description": "The Payments for Hubtel WordPress plugin before 1.0.2 does not verify that payment notifications received by its payment callback come from the payment provider, allowing unauthenticated attackers to mark arbitrary orders as paid without payment.",
+      "last_modified": "2026-10-01T11:17:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96200"
     },
     {
-      "cve_id": "CVE-2026-97983",
-      "asset_id": "CVE-2026-97983",
+      "cve_id": "CVE-2026-96173",
+      "asset_id": "CVE-2026-96173",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvduse: return compat ioctl results directly\n\nThe compat handler handles VDUSE_IOTLB_GET_FD and VDUSE_VQ_GET_INFO, but\nthen calls the native handler. Their different command sizes make native\ndispatch return -ENOIOCTLCMD.\n\nFor GET_FD, this overwrites receive_fd()'s return value after the\ndescriptor is installed, leaking one fd per call. Return handled compat\nresults directly and use native dispatch only for other commands.",
-      "last_modified": "2026-10-01T05:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97983"
+      "description": "The Payments for Hubtel WordPress plugin before 1.0.2 does not verify that the requester is authorized to view an order before redirecting a public payment-callback request, allowing unauthenticated attackers to obtain the order key of an arbitrary order and view its contents.",
+      "last_modified": "2026-10-01T11:17:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96173"
     },
     {
-      "cve_id": "CVE-2026-97990",
-      "asset_id": "CVE-2026-97990",
+      "cve_id": "CVE-2026-92412",
+      "asset_id": "CVE-2026-92412",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvdpa_sim_net: check TX pull result before RX copy\n\nvringh_iov_pull_iotlb() returns a signed byte count.  A failed TX pull is\ncurrently added to the unsigned byte counter and then passed as a size_t\nlength to receive_filter() and vringh_iov_push_iotlb().  A negative error\ncan therefore become a large length in the RX path.\n\nHandle non-positive pull results before every length use.  Count the TX\nerror and complete the consumed TX descriptor with zero bytes.\n\nI found this bug myself, though the patch was written with AI assistance.",
-      "last_modified": "2026-10-01T05:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97990"
+      "description": "The Five Star Restaurant Reviews WordPress plugin before 2.3.14 does not properly escape a user-supplied value before outputting it into an HTML tag, allowing unauthenticated attackers to inject arbitrary web script that runs in the browser of anyone tricked into submitting a crafted request, including a logged-in administrator.",
+      "last_modified": "2026-10-01T11:17:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92412"
     },
     {
-      "cve_id": "CVE-2026-100072",
-      "asset_id": "CVE-2026-100072",
+      "cve_id": "CVE-2026-90974",
+      "asset_id": "CVE-2026-90974",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nACPI: platform: Use acpi_bus_get_primary_device()\n\nThe acpi_get_first_physical_node() usage in acpi_platform_fill_resource()\nand acpi_create_platform_device() is generally unsafe because in theory\nthe device returned by it may be freed at any time [1].\n\nIt is also inefficient because acpi_get_first_physical_node() is called\nmultiple times for the same argument which can be avoided.\n\nAddress these issues by using acpi_bus_get_primary_device() instead of\nacpi_get_first_physical_node() and adjusting the code to call it just\nonce at the beginning of and acpi_create_platform_device() and drop\nthe device reference acquired by it upon the return from that function.",
-      "last_modified": "2026-10-01T05:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100072"
+      "description": "The WP Fusion Lite  WordPress plugin before 3.48.0 does not require authentication on a settings handler that runs during admin initialization, allowing unauthenticated users to overwrite the site's CRM integration endpoint and credentials, after which synced user data is delivered to an attacker-chosen host.",
+      "last_modified": "2026-10-01T11:17:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90974"
     },
     {
-      "cve_id": "CVE-2026-102090",
-      "asset_id": "CVE-2026-102090",
+      "cve_id": "CVE-2026-90972",
+      "asset_id": "CVE-2026-90972",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks Core before version 9.5.1 is vulnerable to Content Injection. A URL parameter in the PDF viewer was insufficiently validated, allowing an attacker-controlled document to be loaded and displayed under the trust of the legitimate application domain. This could increase the credibility of phishing attempts relying on malicious links embedded in the displayed content.",
-      "last_modified": "2026-10-01T05:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102090"
+      "description": "The WP Fusion Lite  WordPress plugin before 3.48.0 does not perform a capability check on two of its admin AJAX handlers, allowing any authenticated subscriber to read other users' email addresses and to trigger a cross-user CRM re-sync.",
+      "last_modified": "2026-10-01T11:17:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90972"
     },
     {
-      "cve_id": "CVE-2026-102091",
-      "asset_id": "CVE-2026-102091",
+      "cve_id": "CVE-2026-89296",
+      "asset_id": "CVE-2026-89296",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks Secure Data Forms before version 9.5.0 is vulnerable to Server-Side Request Forgery that could allow an unauthenticated, remote attacker to make the server issue arbitrary outbound network requests and read back the responses. This could potentially be used to reach internal-only services or other network-restricted resources.",
-      "last_modified": "2026-10-01T05:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102091"
+      "description": "The Pro Like Button WordPress plugin before 2.0 does not properly sanitize and escape a parameter before using it in a SQL query, allowing unauthenticated users to perform SQL injection attacks.",
+      "last_modified": "2026-10-01T11:17:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89296"
     },
     {
-      "cve_id": "CVE-2026-102092",
-      "asset_id": "CVE-2026-102092",
+      "cve_id": "CVE-2026-87973",
+      "asset_id": "CVE-2026-87973",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks Core before version 9.5.0 is vulnerable to Stored Cross-site Scripting (XSS) that could allow an authenticated user to store crafted content that executes arbitrary JavaScript in another user's authenticated session when they preview shared content. This could potentially lead to session compromise and account takeover.",
-      "last_modified": "2026-10-01T05:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102092"
+      "description": "The If-So Dynamic Content  WordPress plugin before 1.10.2 does not sanitize a conversion name before storing it, nor escape it when rendering the analytics page, allowing users with editor-level access to store JavaScript that executes in the session of a higher-privileged user who views that page.",
+      "last_modified": "2026-10-01T11:17:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87973"
     },
     {
-      "cve_id": "CVE-2026-102093",
-      "asset_id": "CVE-2026-102093",
+      "cve_id": "CVE-2026-87970",
+      "asset_id": "CVE-2026-87970",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks Core before version 9.5.0 is vulnerable to Improper Privilege Management and does not correctly enforce restrictions on role assignment, which could allow an authenticated administrative user with limited, non-Sysadmin role-management permissions to elevate another user to full system-administrator privileges beyond those the administrative user was authorized to grant.",
-      "last_modified": "2026-10-01T05:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102093"
+      "description": "The If-So Dynamic Content  WordPress plugin before 1.10.2 does not escape a request-supplied value before reflecting it in an unauthenticated AJAX response that is served as HTML, allowing attackers to execute arbitrary JavaScript in the browser of a visitor who opens a crafted link.",
+      "last_modified": "2026-10-01T11:17:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87970"
     },
     {
-      "cve_id": "CVE-2026-102096",
-      "asset_id": "CVE-2026-102096",
+      "cve_id": "CVE-2026-86610",
+      "asset_id": "CVE-2026-86610",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Kiteworks Core before version 9.5.0 is vulnerable to OS Command Injection that allows an authenticated administrator to upload a configuration package whose contents were not sufficiently validated before being processed. A crafted package could cause the underlying system to execute arbitrary operating-system commands, potentially with elevated privileges, on the affected appliance.",
-      "last_modified": "2026-10-01T05:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102096"
+      "description": "The Download Manager WordPress plugin before 3.3.71 does not sufficiently sanitise and escape a package setting before outputting it back in a page, which could allow users with the Author role and above to perform Stored Cross-Site Scripting attacks against any visitor who opens the package's download dialogue, including administrators. Only sites running PHP below 8.1 are affected, as the sanitisation applied when the setting is saved does not neutralise single quotes there.",
+      "last_modified": "2026-10-01T11:17:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86610"
     },
     {
-      "cve_id": "CVE-2026-103539",
-      "asset_id": "CVE-2026-103539",
+      "cve_id": "CVE-2026-81809",
+      "asset_id": "CVE-2026-81809",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in ZongXR SuperMarket 1.0.0.0. This affects the function startBuy of the file instant-buy/src/main/java/com/supermarket/instantbuy/controller/InstantBuyController.java of the component Instant Buy. Executing a manipulation of the argument Username can lead to missing authentication. The attack may be performed from remote. The exploit has been made available to the public and could be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-10-01T05:00:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103539"
+      "description": "The Paytm Payment Gateway WordPress plugin before 2.8.9 does not properly escape data taken from payment callbacks before using it in a SQL statement, and the integrity check on those callbacks can be forged when the gateway is enabled without credentials, allowing unauthenticated users to perform SQL injection attacks.",
+      "last_modified": "2026-10-01T11:17:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81809"
     },
     {
-      "cve_id": "CVE-2026-82824",
-      "asset_id": "CVE-2026-82824",
+      "cve_id": "CVE-2026-81739",
+      "asset_id": "CVE-2026-81739",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Hitachi Coding Software Suite contains a vulnerability related to Path Traversal vulnerability that allows an attacker to access, create, modify, or delete files.\n\n\nThis issue affects Hitachi Coding Software Suite: through 3.3.0.",
-      "last_modified": "2026-10-01T04:57:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82824"
+      "description": "The Paytm Payment Gateway WordPress plugin before 2.8.9 does not sanitize and escape data it stores from payment callbacks before outputting it in an admin page, and the integrity check on those callbacks can be forged when the gateway is enabled without credentials, allowing unauthenticated users to store scripts that will run in the session of a store administrator.",
+      "last_modified": "2026-10-01T11:17:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81739"
     },
     {
-      "cve_id": "CVE-2026-82825",
-      "asset_id": "CVE-2026-82825",
+      "cve_id": "CVE-2026-19253",
+      "asset_id": "CVE-2026-19253",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Hitachi Coding Software Suite contains a vulnerability related to Missing Authentication for Critical Function. This allows an unauthenticated attacker to invoke a critical API, potentially leading to unauthorized retrieval or alteration of sensitive information, or unauthorized manipulation.\n\n\nThis issue affects Hitachi Coding Software Suite: through 3.3.0.",
-      "last_modified": "2026-10-01T04:57:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82825"
+      "description": "The Cache Enabler WordPress plugin before 1.8.17 does not validate a URL before using it to build a filesystem path in its cache purge routine, and does not confine the resulting deletion to the cache directory, allowing unauthenticated users to delete arbitrary files and directories on sites where another installed Cache Enabler WordPress plugin before 1.8.17 or  passes a request-derived URL to its public cache-clearing hook.",
+      "last_modified": "2026-10-01T11:17:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19253"
     },
     {
-      "cve_id": "CVE-2026-82826",
-      "asset_id": "CVE-2026-82826",
+      "cve_id": "CVE-2026-101148",
+      "asset_id": "CVE-2026-101148",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Hitachi Coding Software Suite contains a vulnerability related to the Cleartext Transmission of Sensitive Information which allows an attacker to eavesdrop on with authentication credentials and sensitive data in transit.\n\n\nThis issue affects Hitachi Coding Software Suite: through 3.3.0.",
-      "last_modified": "2026-10-01T04:57:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82826"
+      "description": "The BackupSheep WordPress Backup Plugin WordPress plugin through 1.8 does not properly validate its integration key, treating an unset or blank key as valid, which allows unauthenticated attackers to create and download full site backups, including the database with user password hashes, and to delete arbitrary files on the server, leading to sensitive data disclosure and site takeover.\n\nThe BackupSheep WordPress Backup Plugin WordPress plugin through 1.8 has been closed on WordPress.org since July 2024 and no fixed version is available. Remove it from any site where it is installed.",
+      "last_modified": "2026-10-01T11:17:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101148"
     },
     {
-      "cve_id": "CVE-2026-82827",
-      "asset_id": "CVE-2026-82827",
+      "cve_id": "CVE-2026-101147",
+      "asset_id": "CVE-2026-101147",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Hitachi Coding Software Suite contains a vulnerability related to Use of Hard-coded Cryptographic Key. The Hardcoding of JWT signing secret key allows an attacker to generate unauthorized Bearer tokens and exploit administrative functions.\n\n\nThis issue affects Hitachi Coding Software Suite: through 3.3.0.",
-      "last_modified": "2026-10-01T04:57:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82827"
+      "description": "The Featured Image from URL (FIFU) WordPress plugin before 6.0.8, Featured Image from URL (FIFU) Premium WordPress plugin before 8.2.8 do not correctly enforce the REST API nonce, disabling the check for the whole request when a crafted URL is used, which could allow attackers to make a logged-in administrator perform any REST API action, such as creating a new administrator account, via a CSRF attack.",
+      "last_modified": "2026-10-01T11:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101147"
     },
     {
-      "cve_id": "CVE-2026-82828",
-      "asset_id": "CVE-2026-82828",
+      "cve_id": "CVE-2026-100823",
+      "asset_id": "CVE-2026-100823",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Hitachi Coding Software Suite contains an Incorrect Authorization vulnerability that allows an unprivileged user to perform administrator-level operations.\n\n\nThis issue affects Hitachi Coding Software Suite: through 3.3.0.",
-      "last_modified": "2026-10-01T04:57:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82828"
+      "description": "Spoofing issue in the Downloads component in Firefox for Android. This vulnerability was fixed in Firefox 157.",
+      "last_modified": "2026-10-01T11:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100823"
     },
     {
-      "cve_id": "CVE-2026-82829",
-      "asset_id": "CVE-2026-82829",
+      "cve_id": "CVE-2023-1989",
+      "asset_id": "CVE-2023-1989",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Hitachi Coding Software Suite contains a vulnerability related to Hidden Functionality vulnerability which allows an attacker to gain unauthorized access by exploiting hidden accounts or hard coded credentials.\n\n\nThis issue affects Hitachi Coding Software Suite: through 3.3.0.",
-      "last_modified": "2026-10-01T04:57:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82829"
+      "description": "A use-after-free flaw was found in btsdio_remove in drivers\\bluetooth\\btsdio.c in the Linux Kernel. A call to btsdio_remove with an unfinished job may cause a race problem which leads to a UAF on hdev devices.",
+      "last_modified": "2026-10-01T11:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1989"
     },
     {
-      "cve_id": "CVE-2026-93464",
-      "asset_id": "CVE-2026-93464",
+      "cve_id": "CVE-2026-103490",
+      "asset_id": "CVE-2026-103490",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stored cross-site scripting vulnerability via custom content descriptions exists in baserCMS. If this vulnerability is exploited, an arbitrary script may be executed in the user's web browser.",
-      "last_modified": "2026-10-01T04:54:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93464"
+      "description": "In JetBrains YouTrack before 2026.2.19422 privilege escalation was possible via user group links",
+      "last_modified": "2026-10-01T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103490"
     },
     {
-      "cve_id": "CVE-2026-93462",
-      "asset_id": "CVE-2026-93462",
+      "cve_id": "CVE-2026-103495",
+      "asset_id": "CVE-2026-103495",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A missing authentication for critical function vulnerability exists in baserCMS. If this vulnerability is exploited, a remote attacker may obtain sensitive information.",
-      "last_modified": "2026-10-01T04:54:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93462"
+      "description": "In JetBrains YouTrack before 2026.2.19422 missing authorisation allowed reloading of translation catalogs",
+      "last_modified": "2026-10-01T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103495"
     },
     {
-      "cve_id": "CVE-2026-93460",
-      "asset_id": "CVE-2026-93460",
+      "cve_id": "CVE-2026-94276",
+      "asset_id": "CVE-2026-94276",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stored cross-site scripting vulnerability via appended strings in email form fields exists in baserCMS. If this vulnerability is exploited, an arbitrary script may be executed in the user's web browser.",
-      "last_modified": "2026-10-01T04:53:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93460"
+      "description": "Improper Authentication vulnerability in Apache APISIX.\n\nOn a route using openid-connect plugin with remote introspection against an authorization server that serves multiple issuers, a token that introspects as active for one issuer may get\u00a0accepted on a route restricted to another.\u00a0This issue affects Apache APISIX: from 3.12.0 through 3.18.0.\n\nUsers are recommended to upgrade to version 3.19.0, which fixes the issue.",
+      "last_modified": "2026-10-01T11:02:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94276"
     },
     {
-      "cve_id": "CVE-2026-76147",
-      "asset_id": "CVE-2026-76147",
+      "cve_id": "CVE-2026-94269",
+      "asset_id": "CVE-2026-94269",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A path traversal (ZIP Slip) vulnerability caused by insufficient authorization and integrity verification in the agent upgrade feature of Genian NAC/ZTNA allows a remote attacker to execute arbitrary code",
-      "last_modified": "2026-10-01T04:53:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76147"
+      "description": "Use of Non-Canonical URL paths for authorization decisions vulnerability in Apache APISIX.\n\n\n\nIn some configurations where a permissive route overlaps a protected one, a crafted encoded path can reach an upstream endpoint that the matched route's policies were never meant to cover. A\u00a0request that should have been rejected is served instead, giving unauthenticated access to a protected upstream endpoint. This issue affects Apache APISIX: from 2.14.1 through 3.18.0.\n\n\n\nUsers are recommended to upgrade to version 3.19.0, which fixes the issue.",
+      "last_modified": "2026-10-01T11:02:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94269"
     },
     {
-      "cve_id": "CVE-2026-76146",
-      "asset_id": "CVE-2026-76146",
+      "cve_id": "CVE-2026-94250",
+      "asset_id": "CVE-2026-94250",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An OS command injection vulnerability in Genian SSL PNS allows an attacker who knows only the client access ID, without the password, to execute arbitrary commands remotely",
-      "last_modified": "2026-10-01T04:53:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76146"
+      "description": "Allocation of resources without limits or throttling vulnerability in batch-requests plugin in Apache APISIX.\n\n\n\nAn unauthenticated caller can drive a gateway worker into OOM via a route where the batch-requests plugin is used and the\u00a0batch endpoint is publicly exposed. This issue affects Apache APISIX: from 1.3.0 through 3.18.0.\n\n\n\nUsers are recommended to upgrade to version 3.19.0, which fixes the issue.",
+      "last_modified": "2026-10-01T11:01:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94250"
     },
     {
-      "cve_id": "CVE-2026-76145",
-      "asset_id": "CVE-2026-76145",
+      "cve_id": "CVE-2026-94220",
+      "asset_id": "CVE-2026-94220",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An improper privilege management vulnerability in Genian SSL PNS allows an attacker to escalate to super administrator privileges and force the creation of an OS account by manipulating the permission column during CSV bulk user registration",
-      "last_modified": "2026-10-01T04:53:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76145"
+      "description": "Cross-Site request forgery (CSRF) vulnerability in feishu-auth and dingtalk-auth plugins in Apache APISIX.\n\n\n\nAn attacker who can get a user to click a crafted link may cause that user's browser session on a protected route to be established under the attacker's identity instead of their own. Any work the user then performs in that session, including uploads, form submissions, and account bindings, lands in the attacker's account.\u00a0This issue affects Apache APISIX: from 3.17.0 through 3.18.0.\n\n\n\nUsers are recommended to upgrade to version 3.19.0, which fixes the issue.",
+      "last_modified": "2026-10-01T11:01:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94220"
     },
     {
-      "cve_id": "CVE-2026-76144",
-      "asset_id": "CVE-2026-76144",
+      "cve_id": "CVE-2026-94212",
+      "asset_id": "CVE-2026-94212",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An unrestricted file upload vulnerability caused by insufficient file extension and integrity verification in Genian SSL PNS allows an attacker to upload a dangerous file that is not an official patch",
-      "last_modified": "2026-10-01T04:53:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76144"
+      "description": "Improper verification of cryptographic signature vulnerability in Apache APISIX.\n\n\n\nAny unauthenticated attacker could impersonate any user on every route protected by the saml-auth plugin under default configuration.\u00a0This issue affects Apache APISIX: from 3.17.0 through 3.18.0.\n\n\n\nUsers are recommended to upgrade to version 3.19.0, which fixes the issue.",
+      "last_modified": "2026-10-01T11:01:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94212"
     },
     {
-      "cve_id": "CVE-2026-76143",
-      "asset_id": "CVE-2026-76143",
+      "cve_id": "CVE-2026-97532",
+      "asset_id": "CVE-2026-97532",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A missing authorization vulnerability in Genian SSL PNS allows an attacker to bypass multi-factor authentication by manipulating a login request parameter.",
-      "last_modified": "2026-10-01T04:53:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76143"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Null out freed pointers in qla2x00_mem_alloc() error path\n\nWhen qla2x00_mem_alloc() fails, qla2x00_probe_one() jumps to\nprobe_hw_failed and calls qla2x00_mem_free(). Several error labels in\nqla2x00_mem_alloc() freed adapter members (elsrej.c, purex_dma_pool,\nflt, sfp_data, loop_id_map, async_pd, sf_init_cb, ex_init_cb, npiv_info)\nbut left the pointers dangling. qla2x00_mem_free() then freed them a\nsecond time. Worse, for the dma_pool members it issued\ndma_pool_free(ha->s_dma_pool, ...) after s_dma_pool had already been\ndestroyed and set to NULL at fail_s_dma_pool, dereferencing a NULL pool.\n\nClear each freed pointer (and its DMA handle) in the error labels so the\nsubsequent qla2x00_mem_free() skips them.",
+      "last_modified": "2026-10-01T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97532"
     },
     {
-      "cve_id": "CVE-2026-76142",
-      "asset_id": "CVE-2026-76142",
+      "cve_id": "CVE-2026-97535",
+      "asset_id": "CVE-2026-97535",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient authentication and access control on the internal-only IPC SOAP endpoint of the Genian NAC/ZTNA policy server allows an unauthenticated attacker to invoke internal functions",
-      "last_modified": "2026-10-01T04:53:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76142"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Bound VP index against VP_CTRL IOCB bitmap size\n\nThe VP control IOCB selects its target virtual port by setting one bit\nin vp_idx_map, a fixed 16-byte (128-bit) array in both\nvp_ctrl_entry_24xx and vp_ctrl_entry_24xx_ext. qla25xx_ctrlvp_iocb()\ncomputes map = (vp_index - 1) / 8 and writes vce->vp_idx_map[map]\nwithout checking that map stays within the array.\n\nmax_npiv_vports is taken from firmware and only sanitized to a\nMIN_MULTI_ID_FABRIC-aligned boundary, so it can legitimately be 191 or\n255, and qla24xx_control_vp() only rejects vp_index >= max_npiv_vports.\nA vp_index above 128 therefore yields map >= 16 and an out-of-bounds\nwrite of up to 16 bytes past vp_idx_map, corrupting the trailing IOCB\nfields (or the adjacent request-ring slot on the 64-byte layout).\n\nReject a vp_index that cannot be represented in the IOCB bitmap in\nqla24xx_control_vp(), and add a defensive ARRAY_SIZE() guard in\nqla25xx_ctrlvp_iocb() before the write. Adapters that report the usual\n63 or 127 NPIV vports are unaffected.",
+      "last_modified": "2026-10-01T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97535"
     },
     {
-      "cve_id": "CVE-2026-84063",
-      "asset_id": "CVE-2026-84063",
+      "cve_id": "CVE-2026-97542",
+      "asset_id": "CVE-2026-97542",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "BurgerEditor 3.2.0 through 3.4.0 contains an issue with unrestricted upload of file with dangerous type. If this vulnerability is exploited, an arbitrary file may be uploaded by an attacker who can log in to the product, potentially allowing arbitrary PHP code to be executed.",
-      "last_modified": "2026-10-01T04:53:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84063"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nxfs: bail out on bitmap errors in xrep_agfl_fill\n\nLOLLM also points out that the xagb_bitmap_set call in xrep_agfl_fill\ncan fail, but we don't check the result of xagb_bitmap_walk, so we\nsilently drop the error and proceed with inconsistent incore data.\nThat shouldn't be allowed.",
+      "last_modified": "2026-10-01T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97542"
     },
     {
-      "cve_id": "CVE-2026-84062",
-      "asset_id": "CVE-2026-84062",
+      "cve_id": "CVE-2026-97543",
+      "asset_id": "CVE-2026-97543",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "BurgerEditor 3.0.0 through 3.4.0 contains an issue with authorization bypass through user-controlled key. If this vulnerability is exploited, the content of the page may be altered by an attacker who can log in to the product.",
-      "last_modified": "2026-10-01T04:52:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84062"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nxfs: destroy seen inode bitmap when we fail to add a dirpath\n\nLOLLM observes a memory leak in xchk_dirtree_create_path if we create\nthe directory path object but appending the name to the path fails.\nWhen this happens, we don't tear down the (empty) seen inode bitmap.\nThis is a pretty trivial error, but let's not leave logic bombs.\n\nDo the same for a similar bug in xrep_dirtree_create_adoption_path.",
+      "last_modified": "2026-10-01T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97543"
     },
     {
-      "cve_id": "CVE-2026-97968",
-      "asset_id": "CVE-2026-97968",
+      "cve_id": "CVE-2026-97557",
+      "asset_id": "CVE-2026-97557",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nhwmon: (corsair-cpro) Create debugfs entries after hwmon registration\n\nccp_debugfs_init() registers debugfs files whose private data is the devm\nallocated ccp.  It runs before hwmon_device_register_with_info(), so when\nthat registration fails, ccp_probe() returns with the files still in\nplace.  The HID core then frees ccp, and ccp_remove() is not called for a\nfailed probe, so nothing removes them later either.  Reading one of the\nfiles dereferences the freed pointer.\n\nCreate the debugfs entries only after the hwmon device has been\nregistered, so no failing path can leave them behind.\n\nThe two version queries stay where they are.  They send USB commands\nwithout holding ccp->mutex, which is only safe as long as nothing else\ncan call send_usb_cmd(); once the hwmon device is registered its\ncallbacks can do so concurrently.  Only the debugfs creation moves, and\nit is told which queries succeeded.",
-      "last_modified": "2026-10-01T04:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97968"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmb: client: avoid leaking refcount in cifs_queue_oplock_break()\n\ncifs_queue_oplock_break() unconditionally takes a reference on the\ntarget file before queueing cifs_oplock_break(). Only that work item\ndecreases the reference counter again.\n\nIf another oplock break arrives while that work is still queued,\nqueue_work() will return false and not queue this second work item. As a\nresult, we will never reach the point to drop the file reference again\nand are leaking this reference. This can be triggered when interacting\nwith a slow-responding server.\n\nAs a result, later unmount operations for this file system will fail with\n\n  BUG: Dentry ... still in use (1) [unmount of cifs cifs]\n  VFS: Busy inodes after unmount of cifs (cifs)\n  kernel BUG at fs/super.c:777!\n\nFix this by only incrementing the reference count if the work has been\nqueued successfully. Taking it after queue_work() is safe because all\nthree callers hold tcon->open_file_lock across the call and\n_cifsFileInfo_put() decrements under that same lock, so a worker that\nstarts the handler in the window cannot drop the reference before it has\nbeen taken.",
+      "last_modified": "2026-10-01T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97557"
     },
     {
-      "cve_id": "CVE-2026-79417",
-      "asset_id": "CVE-2026-79417",
+      "cve_id": "CVE-2026-97567",
+      "asset_id": "CVE-2026-97567",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Access Control in ArgusMonitor.sys in Argotronic eGbR ArgusMonitor 7.4.02 and earlier allows local, low-privileged users to bypass device handle access restrictions via a TOCTOU condition in IRP_MJ_CREATE and send a crafted IOCTL 0x9C4024A8 request, causing denial-of-service.",
-      "last_modified": "2026-10-01T04:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79417"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmptcp: prevent race between disconnect() and rtx\n\nSashiko noted that the two event can race, leading to inconsistent\nstatus. Prevent the race using the synchronous timer stop operation.",
+      "last_modified": "2026-10-01T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97567"
     },
     {
-      "cve_id": "CVE-2026-100759",
-      "asset_id": "CVE-2026-100759",
+      "cve_id": "CVE-2026-102125",
+      "asset_id": "CVE-2026-102125",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Uninitialized memory in the Storage: Quota Manager component. This vulnerability was fixed in Firefox ESR 153.4, Thunderbird 157, Thunderbird 140.17, Thunderbird 153.4, Firefox 157, Firefox ESR 115.42, and Firefox ESR 140.17.",
-      "last_modified": "2026-10-01T04:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100759"
+      "description": "The sandbox that isolates document conversion on a Kiteworks appliance did not fully confine the code running inside it. Code already executing within that sandbox could potentially escape its confinement and act with the privileges of the service account that runs the application, which could allow an attacker in that position to read or modify application data and configuration, or to disrupt the service on the affected appliance.",
+      "last_modified": "2026-10-01T11:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102125"
     },
     {
-      "cve_id": "CVE-2026-100771",
-      "asset_id": "CVE-2026-100771",
+      "cve_id": "CVE-2026-103491",
+      "asset_id": "CVE-2026-103491",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Undefined behavior in the DOM: Streams component. This vulnerability was fixed in Firefox ESR 153.4, Thunderbird 157, Thunderbird 140.17, Thunderbird 153.4, Firefox 157, Firefox ESR 115.42, and Firefox ESR 140.17.",
-      "last_modified": "2026-10-01T04:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100771"
+      "description": "In JetBrains YouTrack before 2026.2.19422 iDOR in the issue activities API allowed reading restricted issues",
+      "last_modified": "2026-10-01T11:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103491"
     },
     {
-      "cve_id": "CVE-2026-100775",
-      "asset_id": "CVE-2026-100775",
+      "cve_id": "CVE-2026-103494",
+      "asset_id": "CVE-2026-103494",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Sandbox escape in the Graphics component. This vulnerability was fixed in Firefox ESR 153.4, Thunderbird 157, Thunderbird 140.17, Thunderbird 153.4, Firefox 157, Firefox ESR 115.42, and Firefox ESR 140.17.",
-      "last_modified": "2026-10-01T04:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100775"
+      "description": "In JetBrains YouTrack before 2026.2.19422 privilege escalation was possible via user group membership changes",
+      "last_modified": "2026-10-01T11:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103494"
     },
     {
-      "cve_id": "CVE-2026-100810",
-      "asset_id": "CVE-2026-100810",
+      "cve_id": "CVE-2026-103496",
+      "asset_id": "CVE-2026-103496",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Other issue in the DevTools component. This vulnerability was fixed in Thunderbird 157 and Firefox 157.",
-      "last_modified": "2026-10-01T04:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100810"
+      "description": "In JetBrains YouTrack before 2026.2.19422 iDOR in inbox threads allowed reading other users' notifications",
+      "last_modified": "2026-10-01T11:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103496"
     },
     {
-      "cve_id": "CVE-2026-100828",
-      "asset_id": "CVE-2026-100828",
+      "cve_id": "CVE-2026-103497",
+      "asset_id": "CVE-2026-103497",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mitigation bypass in the Bookmarks & History component. This vulnerability was fixed in Firefox ESR 153.4, Thunderbird 157, Thunderbird 153.4, and Firefox 157.",
-      "last_modified": "2026-10-01T04:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100828"
+      "description": "In JetBrains YouTrack before 2026.2.19422 sSRF was possible via the GitHub VCS integration",
+      "last_modified": "2026-10-01T11:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103497"
     },
     {
-      "cve_id": "CVE-2026-78210",
-      "asset_id": "CVE-2026-78210",
+      "cve_id": "CVE-2026-32677",
+      "asset_id": "CVE-2026-32677",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In affected versions of Octopus Server, users with certain scoped permission sets could execute arbitrary scripts in an environment without possessing the required authorization.",
-      "last_modified": "2026-10-01T04:36:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78210"
+      "description": "Path traversal for some gaudi-container-runtime before version 1.24.0 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with an authenticated user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are present without special internal knowledge and requires passive user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+      "last_modified": "2026-10-01T10:59:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32677"
     },
     {
-      "cve_id": "CVE-2026-97977",
-      "asset_id": "CVE-2026-97977",
+      "cve_id": "CVE-2026-82806",
+      "asset_id": "CVE-2026-82806",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btusb: Fix UAF of btusb_data by rx_work\n\nbtusb_close() and btusb_flush() cancel data->rx_work with the\nasynchronous cancel_delayed_work(), so if btusb_rx_work() is already\nrunning on another CPU it keeps running after the cancel returns.\n\nbtusb_disconnect() calls hci_unregister_dev(), which invokes\nbtusb_close(), and then frees the btusb_data. A still running\nbtusb_rx_work() then dereferences the freed data:\n\n\twhile ((skb = skb_dequeue(&data->acl_q)))\n\t\tdata->recv_acl(data->hdev, skb);\n\nUse cancel_delayed_work_sync() instead. In btusb_close() the cancel also\nhas to happen after btusb_stop_traffic(), otherwise an URB completion\nracing with the cancel can requeue the work right after it has been\nwaited for.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97977"
+      "description": "Exposure of data element to wrong session vulnerability in Apache APISIX.\n\n\n\nThis issue affects Apache APISIX: from 2.3.0 before 3.7.0.\n\n\n\nUnder a supported authz-keycloak configuration, a request's authorization scope could persist into later requests on the same route, leading to unintended authorization expansion and inconsistent access-control decisions.\n\n\n\nUsers are recommended to upgrade to version 3.7.0 or higher, which fixes the issue.",
+      "last_modified": "2026-10-01T10:58:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82806"
     },
     {
-      "cve_id": "CVE-2026-97981",
-      "asset_id": "CVE-2026-97981",
+      "cve_id": "CVE-2026-78242",
+      "asset_id": "CVE-2026-78242",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ethernet: cortina: Count dropped frames as NAPI work\n\nThe RX loop only consumes budget when it successfully delivers a frame.\nError paths keep consuming descriptors without reducing the budget, so a\nstream of bad frames can process the entire receive ring in one poll.\n\nMove the budget accounting to a common end-of-frame path. This counts\neach completed frame as NAPI work whether it was delivered or dropped,\nmatching the behavior of the vendor driver.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97981"
+      "description": "Insertion of sensitive information into log file vulnerability in Apache APISIX.\n\n\n\nThis vulnerability can cause the unmasked header value to be written to the log sink under a certain response structure.\u00a0\n\n\n\nThis issue affects Apache APISIX: 3.17.0.\n\n\n\nUsers are recommended to upgrade to version 3.18.0, which fixes the issue.",
+      "last_modified": "2026-10-01T10:58:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78242"
     },
     {
-      "cve_id": "CVE-2026-97982",
-      "asset_id": "CVE-2026-97982",
+      "cve_id": "CVE-2026-88789",
+      "asset_id": "CVE-2026-88789",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ethernet: cortina: Fix budget accounting\n\nThe gmac_rx() function returns the remaining NAPI budget, but its\ncaller treats the return value as the number of packets received. An\nidle poll therefore reports a full budget and remains scheduled.\n\nReturn the number of received packets instead. Preserve the existing\nfree queue refill accounting by adding that count directly; continuing\nto subtract it from the budget would invert the refill behavior.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97982"
+      "description": "Improper Restriction of XML External Entity Reference in the XSLT support extension (camel-quarkus-support-xalan) in Apache Camel Quarkus from 3.2.0 before 3.33.3 and from 3.34.0 before 3.40.0 on all platforms allows an attacker who supplies the XML document being transformed to read local files or issue requests to internal network locations via an external entity declaration in that document.\n\nThe extension supplies its own Xalan-backed TransformerFactory to the xslt component and registers it as the JAXP default. Xalan-J 2.7.x predates JAXP 1.5 and does not honour javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD or ACCESS_EXTERNAL_STYLESHEET, so the external access restrictions Apache Camel applies to the TransformerFactory it creates were not in effect. On the xslt component path this affects message bodies that reach the transformer already as a javax.xml.transform.Source; bodies of other types are converted to a SAXSource by Apache Camel with external entities and external DTD loading disabled, and are not affected. Because the factory is also the JAXP default, other code in the application obtaining one through TransformerFactory.newInstance() loses the same restrictions without error.\n\nApplications are affected if they use any of camel-quarkus-xslt, camel-quarkus-xslt-saxon, camel-quarkus-tika or camel-quarkus-xmlsecurity, each of which brings the XSLT support extension onto the classpath. For all but camel-quarkus-xslt, the exposure is limited to the JAXP default factory, since those extensions do not perform XSLT transformations themselves.\n\nUsers are recommended to upgrade to version 3.33.3 or 3.40.0, which fixes this issue.",
+      "last_modified": "2026-10-01T10:51:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88789"
     },
     {
-      "cve_id": "CVE-2026-97986",
-      "asset_id": "CVE-2026-97986",
+      "cve_id": "CVE-2026-103353",
+      "asset_id": "CVE-2026-103353",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio_input: stop callbacks before unregistering input device\n\nvirtinput_remove() unregisters the input device before resetting the\nvirtio device. virtinput_recv_events() drops vi->lock around input_event(),\nso clearing vi->ready does not stop a callback that passed the entry check.\nIt can still use vi->idev, requeue buffers and kick the queue.\n\nReset first, as virtinput_freeze() already does. With the preceding core\nchange, reset waits for callbacks before input_unregister_device() can\nfree vi->idev. Recheck vi->ready after taking the lock again: keep draining\ncompleted events so an input packet is not truncated, but stop requeueing\nbuffers and kicking the queue.\n\nWith evdev attached, input_unregister_handle() currently waits for an RCU\ngrace period, which also waits out IRQ callbacks. This masks the lifetime\nbug on PCI and MMIO, but does not protect sleepable callbacks on other\ntransports.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97986"
+      "description": "Incorrect Behavior Order vulnerability in WP ManageNinja LLC FluentForm fluentform allows Removing Important Client Functionality.This issue affects FluentForm: from n/a through 6.2.14.",
+      "last_modified": "2026-10-01T10:48:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103353"
     },
     {
-      "cve_id": "CVE-2026-97987",
-      "asset_id": "CVE-2026-97987",
+      "cve_id": "CVE-2026-103489",
+      "asset_id": "CVE-2026-103489",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio_input: reset device if input_register_device() fails\n\nProbe marks the device DRIVER_OK with virtio_device_ready() before\ncalling input_register_device(). If registration fails, the error path\ncleared vi->ready and called del_vqs() while the device was still live,\nso the device could keep DMA to queues that were already torn down.\n\nMatch remove/freeze: call virtio_reset_device() on that path before\ntearing down the virtqueues.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97987"
+      "description": "In JetBrains YouTrack before 2026.2.19422 hTML injection in VCS command failure notifications was possible",
+      "last_modified": "2026-10-01T10:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103489"
     },
     {
-      "cve_id": "CVE-2026-97989",
-      "asset_id": "CVE-2026-97989",
+      "cve_id": "CVE-2026-103493",
+      "asset_id": "CVE-2026-103493",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvduse: validate virtqueue alignment\n\nvduse_validate_config() only checks the upper bound of vq_align. Invalid\nvalues can therefore reach vring_create_virtqueue_map(). The split-ring\nhelpers use align - 1 as a bit mask, so the alignment must be a non-zero\npower of two. A zero value makes vring_size() drop the descriptor and\navailable-ring part and vring_init() leave the used ring pointer NULL.\n\nThe VIRTIO spec requires the used ring to start at an address\naligned to at least 4 bytes. Reject values below VRING_USED_ALIGN_SIZE as\nwell as non-power-of-two values before they reach the virtio ring helpers.\n\nOpening a virtio-net device created with vq_align=0 triggered:\n\nBUG: KASAN: null-ptr-deref in virtqueue_kick_prepare_split+0xe3/0x100\nRead of size 2 at addr 0000000000000000 by task systemd-network/1062\n\nCall Trace (relevant frames):\n dump_stack_lvl\n print_report\n kasan_report\n __asan_load2\n virtqueue_kick_prepare_split+0xe3/0x100\n virtqueue_kick_prepare+0x40/0x60\n try_fill_recv+0x857/0x1250\n virtnet_open+0x189/0x460\n __dev_open+0x225/0x390\n __dev_change_flags+0x368/0x3b0\n netif_change_flags+0x56/0xc0\n do_setlink.isra.0+0x68c/0x1e30\n\nValidate the value before it reaches the virtio ring helpers.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97989"
+      "description": "In JetBrains YouTrack before 2026.2.19422 stored XSS via Mermaid and LaTeX content was possible",
+      "last_modified": "2026-10-01T10:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103493"
     },
     {
-      "cve_id": "CVE-2026-97992",
-      "asset_id": "CVE-2026-97992",
+      "cve_id": "CVE-2026-103758",
+      "asset_id": "CVE-2026-103758",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvhost-vdpa: protect config_ctx from being freed under the config callback\n\nvhost_vdpa_config_cb() loads v->config_ctx and signals it without taking\na reference and without holding any lock:\n\n\tstruct eventfd_ctx *config_ctx = v->config_ctx;\n\n\tif (config_ctx)\n\t\teventfd_signal(config_ctx);\n\nVHOST_VDPA_SET_CONFIG_CALL replaces that field and drops what is normally\nthe last reference to the old context:\n\n\tswap(ctx, v->config_ctx);\n\n\tif (ctx)\n\t\teventfd_ctx_put(ctx);\n\neventfd_ctx_put() drops the last kref and frees the context immediately,\nwith no RCU grace period, so a callback that has already loaded the\npointer goes on to dereference freed memory.  The two sides share no\nlock: the ioctl runs under vhost_dev.mutex, while the parent invokes the\ncallback from its own interrupt or workqueue context.\n\nThis is not the reopen refcount underflow fixed by commit f6bbf0010ba0\n(\"vhost-vdpa: fix use-after-free of v->config_ctx\"), which was about\nvhost_vdpa_config_put() leaving a stale pointer behind.  Here the pointer\nis maintained correctly and it is the read side that is unprotected.\n\nWith VDUSE as the parent this is reachable from userspace with access to\n/dev/vduse (root by default).  VDUSE_DEV_INJECT_CONFIG_IRQ queues\ndev->inject, and vduse_dev_irq_inject() runs the callback under VDUSE's\nown dev->irq_lock, which vhost does not hold.  vduse_dev_reset() does\nflush_work(&dev->inject), but VHOST_VDPA_SET_CONFIG_CALL never goes\nthrough reset, so an inject already in flight is not waited for.  A\nprocess that injects config interrupts on the VDUSE fd while another\nthread swaps the call fd on the vhost-vdpa fd hits it in seconds:\n\n  BUG: KASAN: slab-use-after-free in native_queued_spin_lock_slowpath\n  Read of size 4 at addr ffff888107d21808 by task kworker/u17:1/2993\n  Workqueue: vduse-irq vduse_dev_irq_inject\n  Call Trace:\n   native_queued_spin_lock_slowpath+0x97/0x5b0\n   _raw_spin_lock_irqsave+0xd4/0xe0\n   eventfd_signal_mask+0x69/0x120\n   vhost_vdpa_config_cb+0x34/0x50\n   vduse_dev_irq_inject+0x46/0x60\n   process_one_work+0x468/0x950\n\n  Allocated by task 2992:\n   do_eventfd+0x50/0x200\n   __x64_sys_eventfd2+0x2e/0x40\n\n  Freed by task 2992:\n   eventfd_ctx_put+0xb9/0xc0\n   vhost_vdpa_unlocked_ioctl+0x116c/0x2190\n\nAdd a spinlock covering every access to config_ctx, so the callback\neither signals a context that is still alive or observes NULL, and the\nput happens only once no callback can reach the old value.\n\nClearing the parent's callback before the put would not be enough: of the\nin-tree set_config_cb() implementations only VDUSE takes a lock, the rest\nstore the pointer unlocked, so that would not order against an in-flight\ninvocation.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97992"
+      "description": "Obot 0.21.1 through 0.24.1 contains an authorization bypass vulnerability that allows authenticated users to reach MCP servers because the checkUI deny list omits the /mcp-connect-composite/ route. Basic-role users with a composite MCP ID can proxy requests through mcpGateway.Proxy to invoke tools on MCP servers restricted by Access Control Rules.",
+      "last_modified": "2026-10-01T10:42:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103758"
     },
     {
-      "cve_id": "CVE-2026-100073",
-      "asset_id": "CVE-2026-100073",
+      "cve_id": "CVE-2026-103757",
+      "asset_id": "CVE-2026-103757",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\next4: fix transaction overflow during writeback\n\nCommit 95ad8ee45cdb (\"ext4: correct the reserved credits for extent\nconversion\") was correct to note that we need to reserve enough credits\nfor all extents possibly underlying a large folio. However it was too\neager to reduce the number of reserved credits. Extent conversion may\nnot only need to touch several leaf extent blocks, it may also need to\nsplit extents - for example a single large unwritten extent may need to\nbe split into many small written ones in case of sparse folio dirtying.\nThis can thus result not only in extent leaf modifications but also in a\nneed to allocate new extent tree nodes. As a result the reserved\ntransaction credits were not sufficient in some corner cases. Use\next4_meta_trans_blocks() for correct upper bound credit estimate.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100073"
+      "description": "Budibase through 3.41.0 contains a server-side request forgery vulnerability in AI table generation because the uploadUrl function in packages/server/src/utilities/fileUtils.ts uses raw node-fetch instead of fetchWithBlacklist. Authenticated builder users can send a prompt to POST /api/ai/tables that places an internal URL in an attachment column, causing the server to fetch it and return a presigned object-storage URL containing the response, such as cloud metadata credentials.",
+      "last_modified": "2026-10-01T10:42:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103757"
     },
     {
-      "cve_id": "CVE-2026-100075",
-      "asset_id": "CVE-2026-100075",
+      "cve_id": "CVE-2026-103292",
+      "asset_id": "CVE-2026-103292",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nRDMA/srpt: Fix srpt_alloc_rw_ctxs() unwind counters\n\nWhen srpt_alloc_rw_ctxs() fails partway through a multi-buffer indirect\ndescriptor, the unwind path destroys RDMA contexts but leaves stale\nn_rw_ctx and n_rdma values (and a dangling rw_ctxs pointer). Later\nsq_wr_avail accounting in srpt_queue_response() or srpt_write_pending()\ncan then subtract the wrong number of send queue credits.\n\nReset the counters and clear rw_ctxs after freeing the heap\nallocation before returning an error.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100075"
+      "description": "Ghost versions from 0.5.3 through versions prior to 6.50.0 fail to sanitize the data placed in the JSON-LD HTML tag emitted by the {{ghost_head}} helper. An authenticated user with limited privileges can inject unescaped content that is rendered as script in the published page, potentially leading to compromise of a staff user's admin session when that user views the affected page.",
+      "last_modified": "2026-10-01T10:42:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103292"
     },
     {
-      "cve_id": "CVE-2026-47516",
-      "asset_id": "CVE-2026-47516",
+      "cve_id": "CVE-2026-103291",
+      "asset_id": "CVE-2026-103291",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NVIDIA GPU Display Driver for Windows and Linux contains a vulnerability where an unprivileged user could cause a use-after-free. A successful exploit of this vulnerability might lead to code execution, escalation of privileges, data tampering, denial of service, and information disclosure.",
-      "last_modified": "2026-10-01T04:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47516"
+      "description": "Ghost versions from 3.20.2 before 6.51.0 contain a server-side request forgery vulnerability in image dimension refetching that allows authenticated staff users to trigger outbound HTTP requests to arbitrary URLs. Attackers can point image cards at attacker-controlled hosts or internal network endpoints to access metadata services and internal resources unavailable from the public internet.",
+      "last_modified": "2026-10-01T10:42:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103291"
     },
     {
-      "cve_id": "CVE-2026-103538",
-      "asset_id": "CVE-2026-103538",
+      "cve_id": "CVE-2026-103290",
+      "asset_id": "CVE-2026-103290",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in ZongXR SuperMarket 1.0.0.0. Affected by this issue is the function OrderController.deleteOrder of the file order/src/main/java/com/supermarket/order/controller/OrderController.java of the component Order Deletion Endpoint. Performing a manipulation of the argument orderId results in missing authentication. The attack is possible to be carried out remotely. The exploit has been released to the public and may be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-10-01T04:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103538"
+      "description": "Ghost versions 6.14.0 through versions prior to 6.27.0 contain a path traversal vulnerability in the ImageSize service. Insufficient input validation of user-supplied file paths may allow authenticated staff users to access local files outside the intended data storage directories on the server.",
+      "last_modified": "2026-10-01T10:42:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103290"
     },
     {
-      "cve_id": "CVE-2026-92966",
-      "asset_id": "CVE-2026-92966",
+      "cve_id": "CVE-2026-103289",
+      "asset_id": "CVE-2026-103289",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The The Appointment Booking Plugin \u2013 LatePoint | Calendar & Scheduling for WordPress plugin for WordPress is vulnerable to arbitrary shortcode execution in all versions up to, and including, 5.7.0. This is due to the software allowing users to execute an action that does not properly validate a value before running do_shortcode. This makes it possible for unauthenticated attackers to execute arbitrary shortcodes. The payload is planted during the unauthenticated booking flow and triggered when the Customer Cabinet block rendered by render_customer_dashboard() outputs the stored name into the content stream, where WordPress core's do_shortcode filter at priority 11 re-parses and executes it.",
-      "last_modified": "2026-10-01T04:27:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92966"
+      "description": "Ghost from 5.9.0 before 6.44.1 contains an input validation issue in the comments feature that allows authenticated members to access comments they are not authorized to view, resulting in disclosure of restricted comment data.",
+      "last_modified": "2026-10-01T10:42:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103289"
     },
     {
-      "cve_id": "CVE-2026-12241",
-      "asset_id": "CVE-2026-12241",
+      "cve_id": "CVE-2026-103288",
+      "asset_id": "CVE-2026-103288",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Advanced Woo Labels \u2013 Product Labels & Badges for WooCommerce plugin for WordPress is vulnerable to unauthorized modification of data due to an improperly secure capability check on the 'save_meta_boxes' function in all versions up to, and including, 2.51. This makes it possible for authenticated attackers, with Contributor-level access and above, to create AWS labels that are rendered without proper escaping. The vulnerability was partially patched in version 2.46.",
-      "last_modified": "2026-10-01T04:27:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12241"
+      "description": "Ghost, an open-source publishing platform, contains an input validation flaw in its comment like feature in versions from 5.9.0 before 6.44.1. An authenticated member can delete comment likes or dislikes belonging to other users that they are not authorized to delete, resulting in an authorization bypass and unauthorized modification of comment engagement data.",
+      "last_modified": "2026-10-01T10:42:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103288"
     },
     {
-      "cve_id": "CVE-2026-92548",
-      "asset_id": "CVE-2026-92548",
+      "cve_id": "CVE-2026-103287",
+      "asset_id": "CVE-2026-103287",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WP Popular Posts plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 7.4.2 via the 'context' parameter. This makes it possible for unauthenticated attackers to extract sensitive edit-context fields \u2014 including raw title, raw content body, password, meta, status, and guid \u2014 from non-public post objects such as wp_block synced patterns that WordPress core itself refuses to expose to unauthenticated callers. This is possible because the plugin's REST route is registered with a permission_callback of __return_true and passes the caller-supplied context parameter (e.g., context=edit) directly to WP_REST_Posts_Controller::prepare_item_for_response() without invoking get_item_permissions_check() or check_read_permission(), while the underlying query accepts an arbitrary post_type value without enforcing public or show_in_rest visibility flags.",
-      "last_modified": "2026-10-01T04:27:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92548"
+      "description": "Ghost versions 1.18.0 before 6.27.0 contain a server-side request forgery vulnerability in the webhooks feature that allows staff users to probe internal hosts. Attackers with staff privileges can craft webhook requests to access internal network resources from the Ghost server.",
+      "last_modified": "2026-10-01T10:42:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103287"
     },
     {
-      "cve_id": "CVE-2026-47515",
-      "asset_id": "CVE-2026-47515",
+      "cve_id": "CVE-2026-103286",
+      "asset_id": "CVE-2026-103286",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NVIDIA GPU Display Driver for Windows and Linux contains a vulnerability in the kernel mode layer, where a user could cause an out-of-bounds read via an unbounded string operation. A successful exploit of this vulnerability might lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.",
-      "last_modified": "2026-10-01T04:18:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47515"
+      "description": "Ghost versions from 2.21.0 before 6.56.0 contain a privilege escalation vulnerability in the notifications system that allows low-privilege staff users to escalate to higher-privilege staff roles. Attackers with low-privilege staff access can exploit the notifications system to gain elevated privileges without proper authorization checks.",
+      "last_modified": "2026-10-01T10:42:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103286"
     },
     {
-      "cve_id": "CVE-2026-100277",
-      "asset_id": "CVE-2026-100277",
+      "cve_id": "CVE-2026-103285",
+      "asset_id": "CVE-2026-103285",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In JetBrains YouTrack before 2026.2.19197 account takeover was possible by replaying a notification signature",
-      "last_modified": "2026-10-01T04:18:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100277"
+      "description": "Ghost versions from 5.19.0 before 6.57.1 contain a cross-site request forgery vulnerability in the post feedback functionality that allows attackers to submit feedback on behalf of logged-in users. Attackers can craft a malicious link to the feedback page that automatically submits feedback when visited by authenticated members without their knowledge or consent.",
+      "last_modified": "2026-10-01T10:42:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103285"
     },
     {
-      "cve_id": "CVE-2026-100256",
-      "asset_id": "CVE-2026-100256",
+      "cve_id": "CVE-2026-103284",
+      "asset_id": "CVE-2026-103284",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In JetBrains IntelliJ IDEA before 2026.2.3 rCE via Structural Search script constraints was possible in untrusted projects",
-      "last_modified": "2026-10-01T04:18:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100256"
+      "description": "Ghost versions from 5.125.1 before 6.57.1 contain an information disclosure vulnerability in the Admin Feedback endpoint that allows unauthorized staff users to access member data. Attackers with staff privileges can query the feedback endpoint to retrieve sensitive member information without proper authorization checks.",
+      "last_modified": "2026-10-01T10:42:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103284"
     },
     {
-      "cve_id": "CVE-2026-100255",
-      "asset_id": "CVE-2026-100255",
+      "cve_id": "CVE-2026-103283",
+      "asset_id": "CVE-2026-103283",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In JetBrains TeamCity before 2026.2, \n2026.1.4, \n2025.11.8 administrator account takeover was possible via password reset",
-      "last_modified": "2026-10-01T04:18:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100255"
+      "description": "Ghost versions 6.20.0 before 6.57.1 contain a session handling vulnerability that allows authenticated staff users to log in as any other staff user with only the password, bypassing two-factor authentication. Attackers with valid staff credentials can exploit improper session management to impersonate other staff members and gain unauthorized access to administrative functions.",
+      "last_modified": "2026-10-01T10:42:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103283"
     },
     {
-      "cve_id": "CVE-2026-100254",
-      "asset_id": "CVE-2026-100254",
+      "cve_id": "CVE-2026-103282",
+      "asset_id": "CVE-2026-103282",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In JetBrains TeamCity before 2026.2, \n2026.1.4, \n2025.11.8 authenticated users could execute commands on Windows servers via CRLF injection in Pipeline Git connection settings",
-      "last_modified": "2026-10-01T04:18:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100254"
+      "description": "Ghost versions 0.5.0 before 6.23.0 contain a concurrency issue in the staff invitation acceptance mechanism that allows multiple accounts to be created from a single invite token. Attackers can exploit this race condition by submitting concurrent requests with the same invitation token to create duplicate user accounts.",
+      "last_modified": "2026-10-01T10:42:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103282"
     },
     {
-      "cve_id": "CVE-2026-100253",
-      "asset_id": "CVE-2026-100253",
+      "cve_id": "CVE-2026-103281",
+      "asset_id": "CVE-2026-103281",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In JetBrains TeamCity before 2026.2, \n2026.1.4, \n2025.11.8 sandbox escape leading to code execution was possible via the versioned settings Kotlin DSL",
-      "last_modified": "2026-10-01T04:17:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100253"
+      "description": "Ghost (npm package 'ghost') versions from 3.23.0 up to, but not including, 6.23.0 expose API keys to users with low-privilege staff accounts. An authenticated low-privilege staff user can read API keys returned by the Admin API, which are intended to be available only to higher-privileged users.",
+      "last_modified": "2026-10-01T10:42:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103281"
     },
     {
-      "cve_id": "CVE-2026-97993",
-      "asset_id": "CVE-2026-97993",
+      "cve_id": "CVE-2026-103280",
+      "asset_id": "CVE-2026-103280",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvhost-vdpa: don't install the eventfd_ctx_fdget() error in config_ctx\n\nvhost_vdpa_set_config_call() swaps the eventfd_ctx_fdget() return value\ninto v->config_ctx before checking it, so on failure the field briefly\nholds an ERR_PTR:\n\n\tctx = fd == VHOST_FILE_UNBIND ? NULL : eventfd_ctx_fdget(fd);\n\tswap(ctx, v->config_ctx);\n\n\tif (!IS_ERR_OR_NULL(ctx))\n\t\teventfd_ctx_put(ctx);\n\n\tif (IS_ERR(v->config_ctx)) {\n\t\tlong ret = PTR_ERR(v->config_ctx);\n\n\t\tv->config_ctx = NULL;\n\t\treturn ret;\n\t}\n\nCommit 0bde59c1723a (\"vhost-vdpa: set v->config_ctx to NULL if\neventfd_ctx_fdget() fails\") added that clearing, and spelled out the\ninvariant the rest of the file relies on: \"we consider 'v->config_ctx'\nvalid if it is not NULL\".  The window between the swap and the clearing\nstill breaks it.  vhost_vdpa_config_cb() only tests for NULL, so a config\ninterrupt delivered inside the window hands the ERR_PTR to\neventfd_signal().\n\nCheck the fd before installing it instead.  That closes the window and\nmatches how vhost_vring_ioctl() handles the same failure for the vq call\nfd.\n\nIt also stops a rejected fd from tearing down a config interrupt that was\nworking: until now the swap replaced the live context and put it, so\nafter an EBADF the device silently stopped delivering config interrupts\nuntil userspace installed a new fd.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97993"
+      "description": "Ghost from version 0.8.0 before 6.23.0 contains an information disclosure vulnerability in its setup endpoint: the endpoint responds to unauthenticated requests with the site owner's email address, allowing any remote visitor to obtain it.",
+      "last_modified": "2026-10-01T10:42:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103280"
     },
     {
-      "cve_id": "CVE-2026-97994",
-      "asset_id": "CVE-2026-97994",
+      "cve_id": "CVE-2026-103279",
+      "asset_id": "CVE-2026-103279",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvhost/vdpa: reject VRING_NUM larger than device max\n\nvhost_vring_set_num() accepts any non-zero power-of-two queue size that\nfits in 16 bits. vhost-vdpa then passes that value to set_vq_num()\nwithout comparing it with get_vq_num_max().\n\nA process with access to /dev/vhost-vdpa-* can therefore configure a\nqueue larger than the device advertises. With vdpa_sim, the worker can\nwalk descriptors beyond the mapped descriptor ring. KASAN reports a\n16-byte out-of-bounds read, corresponding to one vring_desc, in the\nvringh IOTLB path:\n\n  BUG: KASAN: out-of-bounds in _copy_from_iter\n  Read of size 16\n  copy_from_iotlb\n  copydesc_iotlb\n  vringh_getdesc_iotlb\n  vdpasim_net_work\n\nCache get_vq_num_max() immediately after reset. Some backends derive\nit from writable queue-size state, so querying it after SET_NUM may\nreturn the current size instead of the device capability. Invalidate\nthe cached value before reset so a failed reset leaves SET_NUM\ndisabled.\n\nFor VHOST_SET_VRING_NUM, copy the complete vring state once and use\nthe same index and size for validation, vq->num, and set_vq_num().\nThis ensures that validation and use operate on the same copied values.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97994"
+      "description": "Ghost versions from 3.10.0 before 6.34.0 fail to fully invalidate all sessions after a password change. Attackers with a stolen session cookie can maintain access to user accounts even after the associated user changes their password.",
+      "last_modified": "2026-10-01T10:42:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103279"
     },
     {
-      "cve_id": "CVE-2026-97996",
-      "asset_id": "CVE-2026-97996",
+      "cve_id": "CVE-2026-103278",
+      "asset_id": "CVE-2026-103278",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio: fix use-after-free in unregister_virtio_device()\n\ndevice_unregister() is device_del() plus put_device(). When the caller\nholds no extra reference, that drops the last one and runs the release\ncallback, which for several transports frees the memory the embedded\nstruct virtio_device sits in. unregister_virtio_device() then calls\nvirtio_debug_device_exit(), which reads dev->debugfs_dir out of the freed\nobject.\n\nAffected transports are the ones whose release callback frees and whose\nremove path takes no reference: virtio_mmio, virtio_vdpa, virtio_uml,\nmlxbf-tmfifo and virtio_ccw. virtio_pci is unaffected because\nvirtio_pci_remove() brackets the call with get_device() and put_device().\n\nRemove the debugfs entries before the device can go away. They are only\naccessed through the protected debugfs interface, so\ndebugfs_remove_recursive() waits for in-progress file operations before\nreturning. Tearing them down while the device is still alive is therefore\nsafe.\n\nReproduced on User-Mode Linux with CONFIG_KASAN and CONFIG_VIRTIO_DEBUG\nby unbinding a virtio-uml device:\n\n  BUG: KASAN: slab-use-after-free in virtio_debug_device_exit+0x36/0x4d\n  Read of size 8 at addr 00000000616e0b10 by task init/1\n   __asan_report_load8_noabort\n   virtio_debug_device_exit+0x36/0x4d\n   unregister_virtio_device+0x48/0x75\n   virtio_uml_remove\n   platform_remove\n   device_release_driver_internal\n   unbind_store\n\n  Freed by task 1:\n   kfree\n   virtio_uml_release_dev\n   device_release\n   kobject_put\n   put_device\n   device_unregister\n\nWith this applied, the report is gone and unbind is clean.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97996"
+      "description": "Ghost versions 5.8.0 before 6.34.0 contain an input validation vulnerability in the admin iframe that allows attackers to take over staff user accounts. Attackers with content publishing privileges can craft malicious pages that, when visited by active staff users, enable account takeover through improper input validation.",
+      "last_modified": "2026-10-01T10:42:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103278"
     },
     {
-      "cve_id": "CVE-2026-100077",
-      "asset_id": "CVE-2026-100077",
+      "cve_id": "CVE-2026-103277",
+      "asset_id": "CVE-2026-103277",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/msm: Recover HW before retire hung submit\n\nDuring recovery, it is not safe to retire the hung submit before we\nrecover the GPU. Retiring the submit triggers BO free and that can\nresult in GPU pagefaults since the GPU may be actively accessing those\nBOs.\n\nTo fix this, retire the submits after gpu recovery is complete in\nrecover_worker().\n\nPatchwork: https://patchwork.freedesktop.org/patch/730655/",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100077"
+      "description": "Ghost versions from 2.5.0 before 6.34.0 contain an untrusted script execution vulnerability in the oEmbed preview feature that fails to sandbox externally hosted scripts. Attackers can craft malicious oEmbed content to execute scripts in the context of a staff user's admin session, potentially compromising administrative access.",
+      "last_modified": "2026-10-01T10:42:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103277"
     },
     {
-      "cve_id": "CVE-2026-84894",
-      "asset_id": "CVE-2026-84894",
+      "cve_id": "CVE-2026-103276",
+      "asset_id": "CVE-2026-103276",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In moxygen before commit 004123dd24c3, MoQSession::dataStreamReadLoop keeps using a stream read handle after reading a FIN, which invalidates the handle under proxygen's WebTransport API. A remote peer can trigger the stale use by opening a data stream that names an unknown track alias and carries the FIN in the same write.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84894"
+      "description": "Ghost versions before 6.20.0 contain a file extension filtering bypass vulnerability that allows unauthenticated attackers to read theme templates and metadata. Attackers can use URL encoding to bypass extension validation and access sensitive theme files.",
+      "last_modified": "2026-10-01T10:42:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103276"
     },
     {
-      "cve_id": "CVE-2026-91096",
-      "asset_id": "CVE-2026-91096",
+      "cve_id": "CVE-2026-103275",
+      "asset_id": "CVE-2026-103275",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In proxygen from v2024.10.28.00 until v2026.09.28.00, WebTransportImpl::terminateSessionStreams (WebTransportImpl::destroy in releases before v2025.08.18.00) failed to unregister read callbacks for streams that were no longer open before destroying them. The transport could then invoke a read callback that had been freed.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91096"
+      "description": "Ghost 5.42.2 before 6.58.0 contains an information disclosure vulnerability in the Admin API bulk post and page edit and delete endpoints, which accept filters on restricted fields such as authors.password, because of an incomplete fix for CVE-2026-70590. Staff-level attackers can infer other staff users' password hashes from which filters match and perform offline password-guessing attacks against them.",
+      "last_modified": "2026-10-01T10:42:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103275"
     },
     {
-      "cve_id": "CVE-2026-79536",
-      "asset_id": "CVE-2026-79536",
+      "cve_id": "CVE-2026-103274",
+      "asset_id": "CVE-2026-103274",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "bytebase dbhub v1.2.0 was discovered to contain a SQL injection vulnerability in the /utils/sql-parser.ts component. This vulnerability allows attackers to access sensitive databse information via a crafted SQL statement.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79536"
+      "description": "Ghost versions 5.3.0 before 6.58.0 fail to properly enforce access controls on comments in private mode. Unauthenticated visitors can read comments that should be restricted, bypassing privacy settings.",
+      "last_modified": "2026-10-01T10:42:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103274"
     },
     {
-      "cve_id": "CVE-2026-79537",
-      "asset_id": "CVE-2026-79537",
+      "cve_id": "CVE-2026-103273",
+      "asset_id": "CVE-2026-103273",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "metatool-ai MetaMCP through 2.4.22 contains an insecure direct object reference (IDOR) in the MCP transport session dispatch. The session store (getSession in session-lifetime-manager.ts) is keyed only by the client-supplied mcp-session-id header with no owner, namespace, or endpoint binding, and the per-endpoint authorization middleware validates only the URL endpoint's owner, never the session. An attacker who supplies another tenant's session id \" obtained without authentication from GET /metamcp/health/sessions, which discloses active session IDs and namespace UUIDs \" can list and execute the victim tenant's private MCP tools and exfiltrate their data using the victim's forwarded credentials.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79537"
+      "description": "Ghost versions 4.3.0 before 6.58.0 contain an authentication bypass vulnerability where lower-privilege staff users can use staff tokens to bypass post editing restrictions. Attackers with staff credentials can leverage tokens to edit posts beyond their assigned privilege level.",
+      "last_modified": "2026-10-01T10:42:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103273"
     },
     {
-      "cve_id": "CVE-2026-94953",
-      "asset_id": "CVE-2026-94953",
+      "cve_id": "CVE-2026-103272",
+      "asset_id": "CVE-2026-103272",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stack-based buffer overflow vulnerability exists in the web management interface of TOTOLINK N150RT (NTR150) firmware V3.4.0-B20201030. It is reachable through the route /boafrm/formAjaxSet using the topicurl=setting/setWiFiRepeaterConfig branch and the ApCliWEPKey field.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94953"
+      "description": "Ghost versions from 2.10.0 before 6.63.0 contain a staff enumeration vulnerability in the content API that allows unauthenticated attackers to leak user data. Attackers can observe discrepancies in API metadata responses to enumerate staff members and extract sensitive information without authentication.",
+      "last_modified": "2026-10-01T10:42:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103272"
     },
     {
-      "cve_id": "CVE-2026-93495",
-      "asset_id": "CVE-2026-93495",
+      "cve_id": "CVE-2026-103271",
+      "asset_id": "CVE-2026-103271",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper initialization in an ASUS certain motherboard allows an physically proximate user to read or write arbitrary memory by inserting a specially crafted device.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93495"
+      "description": "Ghost versions from 4.0.0 before 6.63.0 contain a content API vulnerability that allows unauthenticated visitors to access gated post content. Attackers can bypass content restrictions by directly querying the content API to retrieve restricted posts without authentication.",
+      "last_modified": "2026-10-01T10:42:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103271"
     },
     {
-      "cve_id": "CVE-2026-14157",
-      "asset_id": "CVE-2026-14157",
+      "cve_id": "CVE-2026-103269",
+      "asset_id": "CVE-2026-103269",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use of an Externally Controlled Format String in the ASUS Router modules allow a remote authenticated user to execute arbitrary commands via a crafted file uploaded through the web management interface.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14157"
+      "description": "Ghost versions 5.3.0 before 6.62.0 contain a missing authorization vulnerability that allows an authenticated site member to read the excerpts of posts they do not have access to (gated content).",
+      "last_modified": "2026-10-01T10:42:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103269"
     },
     {
-      "cve_id": "CVE-2026-13313",
-      "asset_id": "CVE-2026-13313",
+      "cve_id": "CVE-2026-103268",
+      "asset_id": "CVE-2026-103268",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An Active Debug Code vulnerability in certain ASUS router models allows a remote authenticated user, via a crafted HTTP request, to bypass security mechanisms and enable the Telnet service, thereby executing arbitrary commands with root privileges and potentially affecting other devices connected to the router.\nRefer to the ' Security Update for ASUS Router Firmware\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13313"
+      "description": "Ghost versions before 6.62.0 contain an authentication bypass vulnerability that allows suspended staff users to reactivate their accounts through self-service password reset. Attackers with suspended staff credentials can perform password reset operations to regain active account access and restore their original privileges.",
+      "last_modified": "2026-10-01T10:42:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103268"
     },
     {
-      "cve_id": "CVE-2026-103243",
-      "asset_id": "CVE-2026-103243",
+      "cve_id": "CVE-2026-103267",
+      "asset_id": "CVE-2026-103267",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "LightLLM through 1.2.0 fails to validate image_url and audio_url parameters in multimodal endpoints, allowing unauthenticated attackers to perform server-side request forgery. Attackers can supply arbitrary URLs to fetch internal resources, with vision model processing disclosing content or error responses revealing internal network topology.",
-      "last_modified": "2026-10-01T04:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103243"
+      "description": "Ghost versions before 6.62.0 contain an authentication bypass vulnerability in staff invite acceptance that allows users to specify any email address when creating their account. Attackers can accept leaked invite tokens with attacker-controlled email addresses, or legitimate recipients can register with unintended email providers.",
+      "last_modified": "2026-10-01T10:42:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103267"
     }
   ]
 }
