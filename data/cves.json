@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-02T05:59:58.366034+00:00",
+  "last_updated": "2026-10-02T12:59:50.433824+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-63622",
-      "asset_id": "CVE-2026-63622",
+      "cve_id": "CVE-2026-90440",
+      "asset_id": "CVE-2026-90440",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libvirt. A local attacker, specifically a process running as the confined `swtpm` user, could exploit a symlink-following vulnerability in the `virFileChownFiles()` function. By planting a symbolic link within the `swtpm` state directory, the attacker could trick the root-level libvirt daemon into changing the ownership of an arbitrary file to the `swtpm` user. This allows for privilege escalation from the `swtpm` sandbox to root-level file ownership control.",
-      "last_modified": "2026-10-02T04:28:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63622"
+      "description": "Uncaught exception, improper handling of exceptional conditions, improper resource shutdown vulnerability in Apache Thrift D thrift.server.nonblocking.TNonblockingServer.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:44:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90440"
     },
     {
-      "cve_id": "CVE-2026-18917",
-      "asset_id": "CVE-2026-18917",
+      "cve_id": "CVE-2026-87117",
+      "asset_id": "CVE-2026-87117",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libvirt. An unprivileged local user could exploit an integer overflow vulnerability in the NodeGetFreePages RPC handler. This flaw allows crafted values to bypass a size check, leading to an undersized memory buffer. Subsequently, real NUMA node data can overwrite this buffer. This heap buffer overflow can corrupt the root libvirt daemon's memory, potentially leading to a denial of service or local privilege escalation.",
-      "last_modified": "2026-10-02T04:28:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18917"
+      "description": "NULL pointer dereference vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:43:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87117"
     },
     {
-      "cve_id": "CVE-2026-10026",
-      "asset_id": "CVE-2026-10026",
+      "cve_id": "CVE-2026-86537",
+      "asset_id": "CVE-2026-86537",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The CTX Feed Pro plugin for WordPress is vulnerable to Code Injection in all versions up to, and including, 7.6.12. This is due to insufficient input validation on the 'Feed Config' field which is passed directly to the eval() function. This makes it possible for authenticated attackers, with Administrator-level access and above, to execute arbitrary PHP code on the server.",
-      "last_modified": "2026-10-02T04:27:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10026"
+      "description": "Uncaught exception, Loop with unreachable exit condition ('infinite loop'), Integer underflow (wrap or wraparound) vulnerability in Apache Thrift D language bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:40:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86537"
     },
     {
-      "cve_id": "CVE-2026-19660",
-      "asset_id": "CVE-2026-19660",
+      "cve_id": "CVE-2026-86536",
+      "asset_id": "CVE-2026-86536",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Divi Membership plugin for WordPress is vulnerable to Authentication Bypass in all versions up to, and including, 2.3.0. The `process_paypal_callback` function, hooked to the `init` action, accepts a base64-encoded `paypal_param` GET parameter with no IPN validation, no cryptographic signature check, no ownership verification, and no nonce, allowing it to trust an entirely attacker-controlled user ID value that is passed directly to `wp_set_current_user()` and `wp_set_auth_cookie()`. This makes it possible for unauthenticated attackers to log in as any existing WordPress user \u2014 including administrators \u2014 by supplying an arbitrary user ID in the `paypal_param` GET parameter, resulting in full site takeover. The vulnerability is further compounded by the fact that the PayPal gateway class is instantiated unconditionally regardless of whether PayPal is enabled or configured, ensuring the vulnerable hook is always registered on every front-end request.",
-      "last_modified": "2026-10-02T04:27:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19660"
+      "description": "Improperly controlled modification of object prototype attributes ('prototype pollution') vulnerability in Apache Thrift all JS bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0 and re-generate JS code, which fixes the issue.",
+      "last_modified": "2026-10-02T11:40:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86536"
     },
     {
-      "cve_id": "CVE-2026-11553",
-      "asset_id": "CVE-2026-11553",
+      "cve_id": "CVE-2026-104473",
+      "asset_id": "CVE-2026-104473",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in Tenda HG7, HG9 and HG10 300001138_en_xpon. This affects the function formPPPEdit of the file /boaform/formPPPEdit. The manipulation of the argument encodename results in stack-based buffer overflow. The attack can be launched remotely. The exploit has been made public and could be used.",
-      "last_modified": "2026-10-02T03:49:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11553"
+      "description": "YesWiki before 4.5.3 contains multiple reflected cross-site scripting vulnerabilities that allow remote attackers to inject JavaScript through unsanitized parameters such as incomingurl, id, file, tags, and template. Attackers can lure authenticated or unauthenticated users into opening crafted links to hijack sessions and trigger authenticated requests against backend functionality.",
+      "last_modified": "2026-10-02T11:38:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104473"
     },
     {
-      "cve_id": "CVE-2026-11499",
-      "asset_id": "CVE-2026-11499",
+      "cve_id": "CVE-2026-104472",
+      "asset_id": "CVE-2026-104472",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in Tenda HG7, HG9 and HG10 300001138_en_xpon. This affects the function formDOMAINBLK of the file /boaform/formDOMAINBLK. Executing a manipulation of the argument blkDomain can lead to stack-based buffer overflow. The attack may be performed from remote.",
-      "last_modified": "2026-10-02T03:48:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11499"
+      "description": "YesWiki before 4.6.7 contains a missing authorization vulnerability in the attachment download handler that allows unauthenticated attackers to bypass page read ACLs. Attackers can request the download handler with a known page tag and file parameter to retrieve confidential attachments from read-restricted pages.",
+      "last_modified": "2026-10-02T11:38:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104472"
     },
     {
-      "cve_id": "CVE-2026-11498",
-      "asset_id": "CVE-2026-11498",
+      "cve_id": "CVE-2026-104471",
+      "asset_id": "CVE-2026-104471",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in Tenda HG7, HG9 and HG10 300001138_en_xpon. Affected by this issue is the function asp_voip_OtherSet of the file /boaform/voip_other_set of the component Web Management Interface. Performing a manipulation of the argument funckey_transfer results in stack-based buffer overflow. The attack is possible to be carried out remotely.",
-      "last_modified": "2026-10-02T03:48:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11498"
+      "description": "YesWiki before 4.6.7 contains an unrestricted file upload vulnerability that allows authenticated admins to write remote files into the web-accessible files/ directory via Bazar CSV import preview. Attackers can import a CSV whose file or image field references a remote .php URL, which is saved without extension checks and executed as server-side code.",
+      "last_modified": "2026-10-02T11:38:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104471"
     },
     {
-      "cve_id": "CVE-2026-93367",
-      "asset_id": "CVE-2026-93367",
+      "cve_id": "CVE-2026-104470",
+      "asset_id": "CVE-2026-104470",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Visitors Traffic Real Time Statistics Pro plugin for WordPress is vulnerable to unauthenticated stored Cross-Site Scripting in all versions up to, and including, 11.22 via the page_title parameter of the ahcpro_track_visitor AJAX action. The action is registered for logged-out callers (wp_ajax_nopriv_ahcpro_track_visitor) and stores $_POST['page_title'] with NO sanitization, keeping it raw in the ahc_title_traffic.til_page_title column. When an administrator opens the plugin's dashboard, the 'Traffic by Title' DataTable renders that stored value as innerHTML without output escaping, executing arbitrary JavaScript. This makes it possible for unauthenticated attackers to inject web scripts that run in an administrator's session.",
-      "last_modified": "2026-10-02T03:38:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93367"
+      "description": "YesWiki before 4.6.7 contains a server-side request forgery vulnerability in the Bazar valeur action that allows page editors to make the server fetch arbitrary URLs. Attackers can supply loopback or internal URLs in the url parameter to probe internal services and inject unescaped remote HTML that executes scripts in viewers' browsers.",
+      "last_modified": "2026-10-02T11:38:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104470"
     },
     {
-      "cve_id": "CVE-2026-14378",
-      "asset_id": "CVE-2026-14378",
+      "cve_id": "CVE-2026-104469",
+      "asset_id": "CVE-2026-104469",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The DevKit Pro plugin for WordPress is vulnerable to Authentication Bypass Leading to Administrator Account Takeover in all versions up to, and including, 2.3.0 This is due to the `revert_switch` handler trusting the attacker-controlled `original_user_id` cookie as the privileged identity: `verify_nonce_and_capability()` incorrectly checks the `manage_options` capability on the user identified by the cookie rather than on the actual requester via `current_user_can()`, while the switch-back form and a valid session-bound nonce are emitted publicly via `wp_footer` to any visitor \u2014 including unauthenticated users \u2014 whenever that cookie is present. This makes it possible for unauthenticated attackers to set the `original_user_id` cookie to any administrator's user ID, collect the rendered nonce, and POST it back to the `revert_switch` handler, causing `wp_set_auth_cookie()` to be called with the administrator's ID and granting the attacker a full administrator-level authenticated session and complete site takeover.",
-      "last_modified": "2026-10-02T03:38:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14378"
+      "description": "YesWiki before 4.6.7 contains a session fixation vulnerability that allows attackers to hijack authenticated sessions because login does not regenerate the PHP session ID. Attackers who set or learn a victim's pre-authentication YesWiki-* session cookie can reuse it after login to access private content and perform actions with the victim's privileges.",
+      "last_modified": "2026-10-02T11:38:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104469"
     },
     {
-      "cve_id": "CVE-2026-93463",
-      "asset_id": "CVE-2026-93463",
+      "cve_id": "CVE-2026-104468",
+      "asset_id": "CVE-2026-104468",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A cross-site scripting vulnerability via script validation bypass exists in baserCMS. If this vulnerability is exploited, an arbitrary script may be executed in the user's web browser.",
-      "last_modified": "2026-10-02T03:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93463"
+      "description": "YesWiki before 4.6.7 contains an insufficient session expiration vulnerability that allows attackers to reuse old password reset links because tokens lack expiry timestamps. Attackers who obtain an unused reset URL from mailboxes, logs, backups, or browser history can submit a new password through checkEmailKey() and take over accounts.",
+      "last_modified": "2026-10-02T11:38:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104468"
     },
     {
-      "cve_id": "CVE-2024-1635",
-      "asset_id": "CVE-2024-1635",
+      "cve_id": "CVE-2026-104467",
+      "asset_id": "CVE-2026-104467",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in Undertow. This vulnerability impacts a server that supports the wildfly-http-client protocol. Whenever a malicious user opens and closes a connection with the HTTP port of the server and then closes the connection immediately, the server will end with both memory and open file limits exhausted at some point, depending on the amount of memory available. \r\n\r\nAt HTTP upgrade to remoting, the WriteTimeoutStreamSinkConduit leaks connections if RemotingConnection is closed by Remoting ServerConnectionOpenListener. Because the remoting connection originates in Undertow as part of the HTTP upgrade, there is an external layer to the remoting connection. This connection is unaware of the outermost layer when closing the connection during the connection opening procedure. Hence, the Undertow WriteTimeoutStreamSinkConduit is not notified of the closed connection in this scenario. Because WriteTimeoutStreamSinkConduit creates a timeout task, the whole dependency tree leaks via that task, which is added to XNIO WorkerThread. So, the workerThread points to the Undertow conduit, which contains the connections and causes the leak.",
-      "last_modified": "2026-10-02T03:00:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1635"
+      "description": "YesWiki before 4.6.7 contains an authorization bypass vulnerability in ApiService::isAuthorized() that allows unauthenticated attackers to call admin-only API routes when public API mode is enabled. Attackers can send requests to endpoints like api/ci/update_config and api/archives to overwrite configuration and list, download, or delete backup archives.",
+      "last_modified": "2026-10-02T11:38:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104467"
     },
     {
-      "cve_id": "CVE-2026-93207",
-      "asset_id": "CVE-2026-93207",
+      "cve_id": "CVE-2026-104466",
+      "asset_id": "CVE-2026-104466",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nSUNRPC: Zero rpc_gss_wire_cred at svcauth_gss_decode_credbody() entry\n\nsvcauth_gss_decode_credbody() writes the caller's\nrpc_gss_wire_cred field by field and assigns gc_ctx.len only on\nthe success tail.  The caller storage is svcdata->clcred, which\nlives in the per-svc_rqst gss_svc_data and is reused across\nrequests.  Early decode failures leave partially decoded state\nmixed with residue from the prior request.\n\nThe trailing body_len tightness check is the sharpest case:\nxdr_stream_decode_opaque_inline() has already written gc_ctx.data\nwith a borrowed inline pointer into the current request's XDR\npages, but gc_ctx.len retains its prior value.  Once the request\npages are released the pooled clcred carries a dangling pointer\npaired with a stale length.\n\nZero the caller's rpc_gss_wire_cred at function entry so that\nevery early-return path leaves a deterministic all-zero cred.\nOn the trailing tightness-check path, gc_ctx.len is now zero\ninstead of stale, which neuters length-driven consumers such as\ngss_svc_searchbyctx() that would otherwise walk the dangling\ndata pointer.",
-      "last_modified": "2026-10-02T03:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93207"
+      "description": "YesWiki before 4.6.7 contains a stored cross-site scripting vulnerability in formatters/wakka.php that allows users who can edit pages or post comments to inject event handlers by placing quotes in markdown image URLs. Attackers can store a crafted markdown image whose src breaks out of the attribute to add an onerror handler, executing JavaScript in viewers' browsers, including administrators.",
+      "last_modified": "2026-10-02T11:38:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104466"
     },
     {
-      "cve_id": "CVE-2026-104123",
-      "asset_id": "CVE-2026-104123",
+      "cve_id": "CVE-2026-104465",
+      "asset_id": "CVE-2026-104465",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was detected in SourceCodester Online Reviewer Management System 1.0. Affected by this vulnerability is an unknown functionality of the file /reviewer_0/admins/assessments/activities/btn_functions.php?action=activity. The manipulation of the argument Title results in sql injection. The attack may be launched remotely. The exploit is now public and may be used.",
-      "last_modified": "2026-10-02T02:45:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104123"
+      "description": "YesWiki before 4.6.7 contains a reflected cross-site scripting vulnerability that allows unauthenticated attackers to inject scripts via the field parameter of the mail handler. Attackers can craft links whose field value breaks out of the ajax-mail-form action attribute to execute JavaScript in victims' browsers.",
+      "last_modified": "2026-10-02T11:38:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104465"
     },
     {
-      "cve_id": "CVE-2026-21140",
-      "asset_id": "CVE-2026-21140",
+      "cve_id": "CVE-2026-104464",
+      "asset_id": "CVE-2026-104464",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper access control in ManagedProvisioning prior to SMR Sep-2026 Release 1 allows local attackers to install arbitrary applications.",
-      "last_modified": "2026-10-02T02:30:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21140"
+      "description": "YesWiki before 4.6.7 contains a server-side request forgery vulnerability that allows unauthenticated attackers to make server-side GET requests by supplying an unvalidated actor URL to the Bazar abonnements sync action. Attackers can target internal hosts or cloud metadata endpoints and chain attacker-controlled outbox first/next links, with fetched responses stored as readable Bazar entries.",
+      "last_modified": "2026-10-02T11:38:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104464"
     },
     {
-      "cve_id": "CVE-2026-5419",
-      "asset_id": "CVE-2026-5419",
+      "cve_id": "CVE-2026-104463",
+      "asset_id": "CVE-2026-104463",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. The PKCS#7 padding check, performed during decryption, was not constant-time. This timing side-channel could allow a remote attacker to potentially leak sensitive information about the padding bytes through observable timing differences. This vulnerability is a form of information disclosure.",
-      "last_modified": "2026-10-02T02:27:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5419"
+      "description": "YesWiki before 4.6.7 contains a server-side request forgery vulnerability that allows unauthenticated attackers to trigger server requests by sending signed Follow activities to the public forms actor inbox route. Attackers sign requests with their own keyId while supplying internal actor URLs in the body, reaching internal hosts or cloud metadata via blind GET and POST requests.",
+      "last_modified": "2026-10-02T11:38:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104463"
     },
     {
-      "cve_id": "CVE-2025-6170",
-      "asset_id": "CVE-2025-6170",
+      "cve_id": "CVE-2026-104462",
+      "asset_id": "CVE-2026-104462",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the interactive shell of the xmllint command-line tool, used for parsing XML files. When a user inputs an overly long command, the program does not check the input size properly, which can cause it to crash. This issue might allow attackers to run harmful code in rare configurations without modern protections.",
-      "last_modified": "2026-10-02T02:27:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6170"
+      "description": "YesWiki before 4.6.7 contains an SQL injection vulnerability in the Bazar nuagetag action, which concatenates the unescaped tags attribute into a raw SQL IN clause. Attackers with page-write access (unauthenticated on default installs) can embed a nuagetag tag ending in a backslash to break quote parity and inject a UNION subquery, exfiltrating password hashes and arbitrary table data.",
+      "last_modified": "2026-10-02T11:38:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104462"
     },
     {
-      "cve_id": "CVE-2026-102010",
-      "asset_id": "CVE-2026-102010",
+      "cve_id": "CVE-2026-104461",
+      "asset_id": "CVE-2026-104461",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.",
-      "last_modified": "2026-10-02T02:22:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102010"
+      "description": "YesWiki before 4.6.7 contains a stored cross-site scripting vulnerability in the Bazar FileField, which validates only the upload's file extension and never calls HtmlPurifierService::cleanFile, so SVG files are stored verbatim and served inline as image/svg+xml. Authenticated users can submit entries via POST /api/entries/{formId} with SVG files containing script that executes in the wiki origin when the file is opened, enabling administrator session or account compromise.",
+      "last_modified": "2026-10-02T11:38:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104461"
     },
     {
-      "cve_id": "CVE-2026-48864",
-      "asset_id": "CVE-2026-48864",
+      "cve_id": "CVE-2026-104460",
+      "asset_id": "CVE-2026-104460",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libsolv. This heap buffer overflow occurs during the decompression of attacker-controlled compressed data within `.solv` files due to insufficient input validation. An attacker can provide a specially crafted `.solv` file, which, when processed by a vulnerable application, can lead to out-of-bounds memory access. This could result in information disclosure, alteration of program execution, or a denial of service.",
-      "last_modified": "2026-10-02T02:20:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48864"
+      "description": "YesWiki before 4.6.7 contains a blind SQL injection vulnerability in the {{newtextsearch}} action because Bazar list option ids are concatenated into SQL REGEXP/LIKE clauses in actions/newtextsearch.php without escaping. Anonymous attackers can plant a malicious option id in an anonymously editable Bazar list and use search requests as a boolean oracle to read arbitrary database data, including admin password hashes from the yeswiki_users table.",
+      "last_modified": "2026-10-02T11:38:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104460"
     },
     {
-      "cve_id": "CVE-2026-42015",
-      "asset_id": "CVE-2026-42015",
+      "cve_id": "CVE-2026-104459",
+      "asset_id": "CVE-2026-104459",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. An off-by-one error exists in the PKCS#12 bag element bounds check. This vulnerability allows an remote attacker to write past the internal array of a PKCS#12 bag when appending to a bag that already contains 32 elements. This memory corruption could lead to a denial of service (DoS) or potentially other unspecified impacts.",
-      "last_modified": "2026-10-02T02:20:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42015"
+      "description": "YesWiki before 4.6.7 contains a server-side request forgery vulnerability in WebfingerService that allows unauthenticated attackers to trigger HTTPS requests to internal hosts. Attackers can POST a crafted actor_handle with a numeric host and port to the abonnements view to probe internal HTTPS services and ports.",
+      "last_modified": "2026-10-02T11:38:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104459"
     },
     {
-      "cve_id": "CVE-2026-42014",
-      "asset_id": "CVE-2026-42014",
+      "cve_id": "CVE-2026-104458",
+      "asset_id": "CVE-2026-104458",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GnuTLS. The `gnutls_pkcs11_token_set_pin` function, used for changing the Security Officer PIN, can lead to a use-after-free vulnerability. This occurs when an attacker attempts to change the PIN with a NULL old PIN for a token that lacks a protected authentication path.",
-      "last_modified": "2026-10-02T02:20:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42014"
+      "description": "YesWiki before 4.6.7 contains a server-side request forgery vulnerability in validateKeyIdUrl() that allows unauthenticated attackers to bypass the SSRF guard using 6to4, NAT64, or IPv4-compatible IPv6 addresses. Attackers can send a crafted Signature keyId to the public actor inbox route to reach cloud metadata, loopback services, or internal hosts.",
+      "last_modified": "2026-10-02T11:38:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104458"
     },
     {
-      "cve_id": "CVE-2026-42013",
-      "asset_id": "CVE-2026-42013",
+      "cve_id": "CVE-2026-104457",
+      "asset_id": "CVE-2026-104457",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. When validating certificates, an oversized Subject Alternative Name (SAN) could cause the validation process to incorrectly fall back to checking the Common Name (CN) field. This could allow a remote attacker to bypass proper certificate validation, potentially leading to spoofing or man-in-the-middle attacks.",
-      "last_modified": "2026-10-02T02:20:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42013"
+      "description": "YesWiki before 4.6.7 contains an SQL injection vulnerability in the Bazar filtertags action, which wraps unescaped filterN attribute tokens in quotes and concatenates them into a raw tags.value IN (...) clause. Unauthenticated attackers on default installs can save filtertags markup in a page with a trailing-backslash token that breaks quote parity under MySQL backslash escaping. This lets them inject a five-column UNION subquery to read arbitrary table data such as password hashes.",
+      "last_modified": "2026-10-02T11:38:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104457"
     },
     {
-      "cve_id": "CVE-2026-42012",
-      "asset_id": "CVE-2026-42012",
+      "cve_id": "CVE-2026-104456",
+      "asset_id": "CVE-2026-104456",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. A remote attacker could exploit this vulnerability by presenting a specially crafted certificate that contains Uniform Resource Identifier (URI) or Service (SRV) Subject Alternative Names (SANs). This could cause the certificate validation process to incorrectly fall back to checking DNS hostnames against the Common Name (CN), potentially allowing the attacker to spoof legitimate services or intercept sensitive information.",
-      "last_modified": "2026-10-02T02:20:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42012"
+      "description": "YesWiki before 4.6.7 contains a second-order SQL injection vulnerability in AclService::updateRequestWithACL, where a stored username is concatenated unescaped into a read-ACL LIKE clause. Attackers can self-register an account name containing a double-quote payload, then load non-admin ACL-filtered listings to read database contents and bypass read ACLs.",
+      "last_modified": "2026-10-02T11:38:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104456"
     },
     {
-      "cve_id": "CVE-2026-42011",
-      "asset_id": "CVE-2026-42011",
+      "cve_id": "CVE-2026-104455",
+      "asset_id": "CVE-2026-104455",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. This vulnerability occurs because permitted name constraints were incorrectly ignored when previous Certificate Authorities (CAs) only had excluded name constraints. A remote attacker could exploit this to bypass critical name constraint checks during certificate validation. This bypass could lead to the acceptance of invalid certificates, potentially enabling spoofing or man-in-the-middle attacks against affected systems.",
-      "last_modified": "2026-10-02T02:20:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42011"
+      "description": "YesWiki before 4.6.7 contains an access control bypass vulnerability that allows unauthenticated attackers to read restricted page content via the recentchangesrssplus RSS action. Attackers can request the xml method of a page hosting the action to retrieve 500-character body excerpts of every latest page, including read-restricted drafts and notes.",
+      "last_modified": "2026-10-02T11:38:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104455"
     },
     {
-      "cve_id": "CVE-2026-14164",
-      "asset_id": "CVE-2026-14164",
+      "cve_id": "CVE-2026-104454",
+      "asset_id": "CVE-2026-104454",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A double free issue has been identified in libarchive's RAR5 reader. During parsing of a specially crafted RAR5 archive, the filtered_buf pointer may remain stale after being freed during unpacking state reinitialization. Subsequent processing of another archive entry can trigger a second free of the same memory region, resulting in a double-free condition. Successful exploitation may cause applications using the vulnerable libarchive API to terminate unexpectedly, leading to a denial of service.",
-      "last_modified": "2026-10-02T02:19:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14164"
+      "description": "YesWiki before 4.6.7 contains an algorithmic-complexity denial of service in the wakka.php formatter due to an O(n^2) markdown-link regex. Unauthenticated attackers can submit a small crafted body of bracket characters to the page-edit preview endpoint to pin PHP-FPM workers and saturate the pool.",
+      "last_modified": "2026-10-02T11:38:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104454"
     },
     {
-      "cve_id": "CVE-2026-5260",
-      "asset_id": "CVE-2026-5260",
+      "cve_id": "CVE-2026-104453",
+      "asset_id": "CVE-2026-104453",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libgnutls. A remote attacker, by sending an extremely short premaster secret during an RSA key exchange to a server using an RSA key backed by a PKCS#11 token, could trigger a short heap overread. This memory corruption vulnerability could lead to information disclosure.",
-      "last_modified": "2026-10-02T02:19:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5260"
+      "description": "YesWiki before 4.6.7 contains a cross-site request forgery vulnerability in the admintag action that allows attackers to delete tag associations by luring administrators to crafted GET links. Attackers can supply a wide id range in the delete_tag parameter via top-level navigation, carrying the SameSite=Lax admin cookie, to bulk-delete tag triples.",
+      "last_modified": "2026-10-02T11:38:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104453"
     },
     {
-      "cve_id": "CVE-2026-3833",
-      "asset_id": "CVE-2026-3833",
+      "cve_id": "CVE-2026-104452",
+      "asset_id": "CVE-2026-104452",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. This vulnerability occurs because gnutls performs case-sensitive comparisons of `nameConstraints` labels, specifically for `dNSName` (DNS) or `rfc822Name` (email) constraints within `excludedSubtrees` or `permittedSubtrees`. A remote attacker can exploit this by crafting a leaf certificate with casing differences in the Subject Alternative Name (SAN), leading to a policy bypass where a certificate that should be rejected is instead accepted. This could result in unauthorized access or information disclosure.",
-      "last_modified": "2026-10-02T02:19:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3833"
+      "description": "YesWiki before 4.6.7 contains a cross-site request forgery vulnerability in the filemanager page handler, which deletes page attachments on GET requests without validating a CSRF token. Attackers can lure a logged-in page owner or administrator into a top-level GET navigation with do=del, erase, or emptytrash, deleting or permanently purging the page's attachments.",
+      "last_modified": "2026-10-02T11:38:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104452"
     },
     {
-      "cve_id": "CVE-2025-14512",
-      "asset_id": "CVE-2025-14512",
+      "cve_id": "CVE-2026-104451",
+      "asset_id": "CVE-2026-104451",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in glib. This vulnerability allows a heap buffer overflow and denial-of-service (DoS) via an integer overflow in GLib's GIO (GLib Input/Output) escape_byte_string() function when processing malicious file or remote filesystem attribute values.",
-      "last_modified": "2026-10-02T02:19:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14512"
+      "description": "YesWiki before 4.6.7 contains a cross-site request forgery vulnerability in RevisionsHandler that allows attackers to restore old page revisions through GET requests lacking CSRF token validation. Attackers can lure write-capable users into a top-level navigation with the restoreRevisionId parameter, silently overwriting current page content with stale or vandalized revisions.",
+      "last_modified": "2026-10-02T11:38:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104451"
     },
     {
-      "cve_id": "CVE-2025-10911",
-      "asset_id": "CVE-2025-10911",
+      "cve_id": "CVE-2026-104450",
+      "asset_id": "CVE-2026-104450",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A use-after-free vulnerability was found in libxslt while parsing xsl nodes that may lead to the dereference of expired pointers and application crash.",
-      "last_modified": "2026-10-02T02:19:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-10911"
+      "description": "YesWiki before 4.6.7 contains a missing authorization flaw in the pointimage action (tools/attach/actions/pointimage.php), which saves content to an attacker-chosen page with write ACL checks bypassed. Unauthenticated attackers can POST pagetag, title, and description fields to any page rendering {{pointimage}} to append raw HTML or JavaScript to any wiki page, including pages whose write ACL restricts editing, causing stored cross-site scripting in viewers' and administrators' browsers.",
+      "last_modified": "2026-10-02T11:38:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104450"
     },
     {
-      "cve_id": "CVE-2025-14087",
-      "asset_id": "CVE-2025-14087",
+      "cve_id": "CVE-2026-104449",
+      "asset_id": "CVE-2026-104449",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib (Gnome Lib). This vulnerability allows a remote attacker to cause heap corruption, leading to a denial of service or potential code execution via a buffer-underflow in the GVariant parser when processing maliciously crafted input strings.",
-      "last_modified": "2026-10-02T02:19:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14087"
+      "description": "YesWiki before 4.6.7 contains an access control vulnerability allowing unauthenticated attackers to overwrite any existing wiki page, including pages whose write ACL restricts editing, via the Bazar entry-creation flow. Attackers can submit a crafted entry with an attacker-controlled id_fiche matching an existing page, overwriting its body for mass defacement and content destruction.",
+      "last_modified": "2026-10-02T11:38:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104449"
     },
     {
-      "cve_id": "CVE-2023-52355",
-      "asset_id": "CVE-2023-52355",
+      "cve_id": "CVE-2026-104448",
+      "asset_id": "CVE-2026-104448",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-memory flaw was found in libtiff that could be triggered by passing a crafted tiff file to the TIFFRasterScanlineSize64() API. This flaw allows a remote attacker to cause a denial of service via a crafted input with a size smaller than 379 KB.",
-      "last_modified": "2026-10-02T02:19:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-52355"
+      "description": "YesWiki before 4.6.7 contains a cross-site request forgery vulnerability in the ajaxdeletepage handler, which permanently deletes a page on any GET request carrying a jsonp_callback parameter without checking a CSRF token. Attackers can lure a logged-in administrator or page owner to a crafted link to delete arbitrary pages along with their ACLs, links, triples, comments and referrers.",
+      "last_modified": "2026-10-02T11:38:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104448"
     },
     {
-      "cve_id": "CVE-2026-58015",
-      "asset_id": "CVE-2026-58015",
+      "cve_id": "CVE-2026-104447",
+      "asset_id": "CVE-2026-104447",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. The D-Bus client-side implementation of the DBUS_COOKIE_SHA1 SASL authentication mechanism does not validate the cookie_context parameter received from the server. A malicious D-Bus server can supply a cookie_context containing path traversal sequences, causing the client to read an arbitrary file and exfiltrate sensitive data by verifying guessed file contents against a generated hash.",
-      "last_modified": "2026-10-02T02:17:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58015"
+      "description": "YesWiki before 4.6.7 contains a cross-site request forgery vulnerability in the autoupdate UpdateAction that allows attackers to delete installed packages via unprotected GET requests. Attackers can lure a logged-in administrator to a crafted link with action=delete and a package parameter to remove extensions like bazar, breaking core site functionality.",
+      "last_modified": "2026-10-02T11:38:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104447"
     },
     {
-      "cve_id": "CVE-2026-58014",
-      "asset_id": "CVE-2026-58014",
+      "cve_id": "CVE-2026-104446",
+      "asset_id": "CVE-2026-104446",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. An off-by-one error can occur in the g_key_file_get_locale_string_list function in the gkeyfile.c file when loading a key file with an empty value. This flaw can cause an out-of-bounds access of 1 byte or a denial of service when the out-of-bounds access crosses a page boundary.",
-      "last_modified": "2026-10-02T02:17:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58014"
+      "description": "YesWiki before 4.6.7 contains an authentication bypass in the contact mail AJAX handler that allows unauthenticated attackers to send email through the wiki's SMTP server. Attackers can POST an XMLHttpRequest to the mail handler without field or type parameters, supplying arbitrary recipient, sender, subject and body for spam and phishing.",
+      "last_modified": "2026-10-02T11:38:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104446"
     },
     {
-      "cve_id": "CVE-2026-58013",
-      "asset_id": "CVE-2026-58013",
+      "cve_id": "CVE-2026-104445",
+      "asset_id": "CVE-2026-104445",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. A buffer over-read can occur in g_io_channel_read_line_backend() in the giochannel.c file when a custom line terminator with a length greater than one is set, causing memcmp to read past the GString buffer. This vulnerability can cause a minor information disclosure of 7 bytes or a denial of service when the buffer over-read crosses a page boundary.",
-      "last_modified": "2026-10-02T02:17:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58013"
+      "description": "YesWiki before 4.6.7 contains an authentication bypass vulnerability in the ActivityPub inbox that fails to bind the verified HTTP signature signer to the activity actor. Unauthenticated attackers with any ActivityPub keypair can send signed Delete or Update activities referencing a mirrored entry's sourceUrl to delete or overwrite other actors' federated entries.",
+      "last_modified": "2026-10-02T11:38:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104445"
     },
     {
-      "cve_id": "CVE-2026-58012",
-      "asset_id": "CVE-2026-58012",
+      "cve_id": "CVE-2026-104444",
+      "asset_id": "CVE-2026-104444",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. A buffer over-read can occur in the g_regex_replace function when used with the `G_REGEX_RAW` compile flag and case-change replacement escapes because the string_append function processes matched substrings using UTF-8 functions that assume valid UTF-8 input, even when the string is treated as raw bytes. This vulnerability can cause a minor information disclosure of 1-5 bytes and a denial of service when the buffer over-read crosses a page boundary.",
-      "last_modified": "2026-10-02T02:17:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58012"
+      "description": "YesWiki before 4.6.7 contains an authorization bypass vulnerability in the comments API editComment route that allows authenticated low-privilege users to overwrite arbitrary pages or comments by supplying their own page as the pagetag field. Attackers can send a POST request to the api/comments endpoint targeting a victim tag, bypassing per-page write ACLs to replace content and reparent existing pages or comments.",
+      "last_modified": "2026-10-02T11:38:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104444"
     },
     {
-      "cve_id": "CVE-2026-58011",
-      "asset_id": "CVE-2026-58011",
+      "cve_id": "CVE-2026-104443",
+      "asset_id": "CVE-2026-104443",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. An out-of-bounds read of only 2 bytes can occur in the g_date_time_get_ymd function in the glib/gdatetime.c file when an invalid GDateTime object produced by the g_date_time_add_full function is processed. This flaw can corrupt the date output and potentially cause logic errors that may lead to a denial of service.",
-      "last_modified": "2026-10-02T02:17:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58011"
+      "description": "YesWiki before 4.6.7 contains an empty-filter scope bypass in the triples delete API that allows any authenticated user to delete or forge arbitrary semantic triples regardless of ownership. Attackers can send an empty filter to the triples delete endpoint to remove the admins-group membership triple, emptying the admin group and causing a site-wide authorization lockout.",
+      "last_modified": "2026-10-02T11:38:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104443"
     },
     {
-      "cve_id": "CVE-2026-58010",
-      "asset_id": "CVE-2026-58010",
+      "cve_id": "CVE-2026-104442",
+      "asset_id": "CVE-2026-104442",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. An off-by-one error can occur in the gvs_tuple_is_normal function in the glib/gvariant-serialiser.c file when doing an alignment padding check because the bounds check uses > instead of >=, causing an out-of-bounds read of only 1 byte. This issue can cause a minor information disclosure of 1 byte and a denial of service when the out-of-bounds read crosses a page boundary.",
-      "last_modified": "2026-10-02T02:17:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58010"
+      "description": "YesWiki before 4.6.7 contains an unauthenticated server-side request forgery vulnerability that allows remote attackers to make the server fetch arbitrary URLs by supplying a syndication action through the render handler's content parameter. Attackers can target internal hosts and ports, read back fetched feed content in the rendered page, and cause feed enclosures to be downloaded into the files directory.",
+      "last_modified": "2026-10-02T11:38:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104442"
     },
     {
-      "cve_id": "CVE-2026-15588",
-      "asset_id": "CVE-2026-15588",
+      "cve_id": "CVE-2026-86535",
+      "asset_id": "CVE-2026-86535",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A denial-of-service and resource exhaustion vulnerability exists within the `GDBus` component of GLib. The `gdbusauth` authentication mechanism fails to enforce proper length limitations on data lines read from a client. An unauthenticated local or remote attacker can exploit this lack of input validation by sending excessively long streams of data, causing the application to consume massive amounts of system memory and CPU, potentially leading to a crash or system hang.",
-      "last_modified": "2026-10-02T02:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15588"
+      "description": "Loop with unreachable exit condition ('infinite loop'), Improperly controlled modification of object prototype attributes ('prototype pollution') vulnerability in Apache Thrift NodeJS bindings with TJSONProtocol.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:38:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86535"
     },
     {
-      "cve_id": "CVE-2026-16118",
-      "asset_id": "CVE-2026-16118",
+      "cve_id": "CVE-2026-104441",
+      "asset_id": "CVE-2026-104441",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in xdgmime. A heap-based buffer overflow can be triggered in _xdg_mime_magic_parse_magic_line() in the xdgmimemagic.c file on little-endian systems when an attacker-controlled MIME magic file in a user-writable XDG data location (e.g., in the $XDG_DATA_HOME/mime/magic path) is parsed by an application performing MIME type detection (e.g., via g_content_type_guess()). When performing byte-swap, incorrect pointer arithmetic on the write side causes an out-of-bounds write of 2 bytes, resulting in an application crash or memory corruption.",
-      "last_modified": "2026-10-02T02:17:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16118"
+      "description": "YesWiki before 4.6.7 contains an unauthenticated server-side request forgery vulnerability that allows remote attackers to make the server fetch arbitrary hosts and ports via the {{valeur}} action's url parameter. Attackers can submit the action through the content parameter of handlers/page/render.php to probe internal HTTP services and read back response content matching fiche markup.",
+      "last_modified": "2026-10-02T11:38:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104441"
     },
     {
-      "cve_id": "CVE-2026-104120",
-      "asset_id": "CVE-2026-104120",
+      "cve_id": "CVE-2026-104440",
+      "asset_id": "CVE-2026-104440",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in modelcontextprotocol mcp-server-fetch and mcp-server-everything up to 2026.6.4. Affected is the function fetch_url of the file mcp_server_fetch/server.py of the component Fetch Tool. The manipulation of the argument url/path leads to server-side request forgery. The attack may be initiated remotely. The exploit has been disclosed publicly and may be used. The pull request to fix this issue awaits acceptance.",
-      "last_modified": "2026-10-02T02:15:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104120"
+      "description": "YesWiki before 4.6.7 contains a blind server-side request forgery vulnerability that allows unauthenticated attackers to make arbitrary server-side requests via the idtypeannonce parameter of /api/entries/bazarlist. Because isValidURL() always returns true, attackers can supply internal URLs fetched by curl in loadURLContent() to probe internal networks and reach internal services or metadata endpoints.",
+      "last_modified": "2026-10-02T11:38:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104440"
     },
     {
-      "cve_id": "CVE-2026-58016",
-      "asset_id": "CVE-2026-58016",
+      "cve_id": "CVE-2026-104439",
+      "asset_id": "CVE-2026-104439",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GLib. A state confusion issue exists in g_dbus_node_info_new_for_xml() in the gio/gdbusintrospection.c file when processing malformed D-Bus introspection XML, specifically with a `node` element nested within other elements like `method`, `signal`, `property` or `arg`. This issue can cause an unsigned integer overflow and lead to an out-of-bounds read, resulting in a denial of service.",
-      "last_modified": "2026-10-02T02:07:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58016"
+      "description": "YesWiki before 4.6.7 contains a user enumeration vulnerability in LostPasswordAction.php that allows unauthenticated attackers to confirm registered email addresses through differing responses. Attackers can submit emails to the MotDePassePerdu recovery page without rate limiting to identify valid accounts for targeted phishing or password-spraying.",
+      "last_modified": "2026-10-02T11:38:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104439"
     },
     {
-      "cve_id": "CVE-2026-42010",
-      "asset_id": "CVE-2026-42010",
+      "cve_id": "CVE-2026-104438",
+      "asset_id": "CVE-2026-104438",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. Servers configured with RSA-PSK (Rivest\u2013Shamir\u2013Adleman \u2013 Pre-Shared Key) wrongfully matched usernames containing a NUL character with truncated usernames. A remote attacker could exploit this by sending a specially crafted username, leading to an authentication bypass. This vulnerability allows an attacker to gain unauthorized access by circumventing the authentication process.",
-      "last_modified": "2026-10-02T02:07:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42010"
+      "description": "YesWiki before 4.6.7 contains a missing authorization vulnerability in the listpagestag and includepages actions of the tags tool, which enumerate pages without applying read-ACL filtering. Unauthenticated or unprivileged attackers can embed these actions with a chosen tag or page name to disclose the names and body-derived titles of ACL-restricted pages.",
+      "last_modified": "2026-10-02T11:38:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104438"
     },
     {
-      "cve_id": "CVE-2026-42009",
-      "asset_id": "CVE-2026-42009",
+      "cve_id": "CVE-2026-104437",
+      "asset_id": "CVE-2026-104437",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. A remote attacker could exploit an issue in the Datagram Transport Layer Security (DTLS) packet reordering logic. The comparator function, responsible for ordering DTLS packets by sequence numbers, did not correctly handle packets with duplicate sequence numbers. This could lead to unstable packet ordering or undefined behavior, resulting in a denial of service.",
-      "last_modified": "2026-10-02T02:07:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42009"
+      "description": "Zebra before 4.4.0 contains a consensus divergence vulnerability in V5 transparent signature verification, computing a ZIP-244 digest for SIGHASH_SINGLE inputs lacking corresponding outputs instead of failing. Attackers can craft V5 transactions with fewer outputs than inputs that Zebra accepts and templates via getblocktemplate, producing blocks zcashd rejects.",
+      "last_modified": "2026-10-02T11:38:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104437"
     },
     {
-      "cve_id": "CVE-2026-33846",
-      "asset_id": "CVE-2026-33846",
+      "cve_id": "CVE-2026-104436",
+      "asset_id": "CVE-2026-104436",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A heap buffer overflow vulnerability exists in the DTLS handshake fragment reassembly logic of GnuTLS. The issue arises in merge_handshake_packet() where incoming handshake fragments are matched and merged based solely on handshake type, without validating that the message_length field remains consistent across all fragments of the same logical message. An attacker can exploit this by sending crafted DTLS fragments with conflicting message_length values, causing the implementation to allocate a buffer based on a smaller initial fragment and subsequently write beyond its bounds using larger, inconsistent fragments. Because the merge operation does not enforce proper bounds checking against the allocated buffer size, this results in an out-of-bounds write on the heap. The vulnerability is remotely exploitable without authentication via the DTLS handshake path and can lead to application crashes or potential memory corruption.",
-      "last_modified": "2026-10-02T02:06:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33846"
+      "description": "Zebra before 4.5.0 contains an uncontrolled resource consumption vulnerability that allows remote P2P peers to exhaust blocking-pool threads by sending oversized block locator vectors. Attackers can send getblocks or getheaders messages with up to 65,535 locator hashes, triggering per-hash chain lookups that degrade block validation, RPC, and mempool performance.",
+      "last_modified": "2026-10-02T11:38:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104436"
     },
     {
-      "cve_id": "CVE-2026-33845",
-      "asset_id": "CVE-2026-33845",
+      "cve_id": "CVE-2026-104435",
+      "asset_id": "CVE-2026-104435",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw in GnuTLS DTLS handshake parsing allows malformed fragments with zero length and non-zero offset, leading to an integer underflow during reassembly and resulting in an out-of-bounds read. This issue is remotely exploitable and may cause information disclosure or denial of service.",
-      "last_modified": "2026-10-02T02:06:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33845"
+      "description": "Zebra zebrad 4.4.0 and zebra-script 6.0.0 fail to enforce a ZIP-244 consensus rule, accepting V5 transparent inputs signed with SIGHASH_SINGLE that lack a corresponding output. Attackers can broadcast crafted V5 transactions with more inputs than outputs that Zebra accepts but zcashd rejects, causing a network consensus split.",
+      "last_modified": "2026-10-02T11:38:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104435"
     },
     {
-      "cve_id": "CVE-2026-12912",
-      "asset_id": "CVE-2026-12912",
+      "cve_id": "CVE-2026-104434",
+      "asset_id": "CVE-2026-104434",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libtiff. A remote attacker could exploit this vulnerability by providing a specially crafted PixarLog-compressed TIFF image. This issue occurs when decoding Pixarlog codec images with the PIXARLOGDATAFMT_8BITABGR output format and a specific stride value, leading to a heap-based buffer overflow. This could potentially result in arbitrary code execution or a denial of service (DoS).",
-      "last_modified": "2026-10-02T02:06:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12912"
+      "description": "ZcashFoundation Zebra zebra-rpc before 8.0.0 and zebrad before 4.5.0 contain a reachable assertion in the z_listunifiedreceivers RPC handler, which calls expect() on Sapling receiver parsing that fails for Unified Addresses carrying invalid Jubjub points. Authenticated RPC clients can submit such an address to abort the zebrad process, repeatably keeping the node offline.",
+      "last_modified": "2026-10-02T11:38:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104434"
     },
     {
-      "cve_id": "CVE-2026-10118",
-      "asset_id": "CVE-2026-10118",
+      "cve_id": "CVE-2026-104432",
+      "asset_id": "CVE-2026-104432",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Poppler's Splash backend. A remote attacker could exploit this vulnerability by crafting a malicious PDF file that, when rendered, triggers an integer overflow in the `tilingPatternFill` function. This overflow leads to an undersized heap memory allocation, allowing a subsequent out-of-bounds write. Successful exploitation could result in arbitrary code execution, information disclosure, or denial of service within the context of the application processing the PDF.",
-      "last_modified": "2026-10-02T02:06:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10118"
+      "description": "Zebra before 6.3.0 contains an improper exceptional condition check in ChainSync::obtain_tips that discards valid one-hash FindBlocks responses, falsely reporting close-to-tip status. Peers returning only the next block hash cause a zero-length sync sample, making the /ready endpoint return 200 OK while the node remains behind the tip.",
+      "last_modified": "2026-10-02T11:38:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104432"
     },
     {
-      "cve_id": "CVE-2026-4878",
-      "asset_id": "CVE-2026-4878",
+      "cve_id": "CVE-2026-104431",
+      "asset_id": "CVE-2026-104431",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libcap. A local unprivileged user can exploit a Time-of-check-to-time-of-use (TOCTOU) race condition in the `cap_set_file()` function. This allows an attacker with write access to a parent directory to redirect file capability updates to an attacker-controlled file. By doing so, capabilities can be injected into or stripped from unintended executables, leading to privilege escalation.",
-      "last_modified": "2026-10-02T02:05:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4878"
+      "description": "Zebra before 6.0.0 contains a denial of service vulnerability that allows unauthenticated peers to stall Tokio workers by submitting mempool transactions requiring expensive synchronous script verification. Attackers can send non-standard high-sigop P2SH transactions that reach CachedFfiTransaction::is_valid() before standardness checks, saturating the verifier buffer and rendering the node unresponsive.",
+      "last_modified": "2026-10-02T11:38:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104431"
     },
     {
-      "cve_id": "CVE-2026-4775",
-      "asset_id": "CVE-2026-4775",
+      "cve_id": "CVE-2026-104430",
+      "asset_id": "CVE-2026-104430",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the libtiff library. A remote attacker could exploit a signed integer overflow vulnerability in the putcontig8bitYCbCr44tile function by providing a specially crafted TIFF file. This flaw can lead to an out-of-bounds heap write due to incorrect memory pointer calculations, potentially causing a denial of service (application crash) or arbitrary code execution.",
-      "last_modified": "2026-10-02T02:05:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4775"
+      "description": "Zebra zebrad 4.5.0 and zebra-script 7.0.0 count P2SH redeem script signature operations in legacy mode rather than zcashd's accurate P2SH mode, overcounting CHECKMULTISIG preceded by OP_1 through OP_16 as 20 sigops and causing a consensus divergence. Remote attackers can broadcast P2SH spends using low-threshold multisig redeem scripts so that a block zcashd accepts exceeds Zebra's inflated MAX_BLOCK_SIGOPS count, causing Zebra nodes to reject it and stall off the chain.",
+      "last_modified": "2026-10-02T11:38:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104430"
     },
     {
-      "cve_id": "CVE-2026-56211",
-      "asset_id": "CVE-2026-56211",
+      "cve_id": "CVE-2026-104429",
+      "asset_id": "CVE-2026-104429",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A remote code execution vulnerability was found in libaom, the reference AV1 codec implementation. Insufficient bounds validation in the AV1 encoder's SVC (Scalable Video Coding) layer ID control allows an attacker to supply crafted video frame pixels that overlap with internal encoder layer context structures. In fork-based video processing services, an attacker can use this to hijack the cyclic refresh map pointer, brute-force the process base address via a crash oracle, and redirect control flow to achieve arbitrary command execution. Exploitation requires the target service to use libaom with SVC encoding enabled and accept attacker-supplied video frames.",
-      "last_modified": "2026-10-02T02:04:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56211"
+      "description": "Zebra (zebrad) 5.0.0 before 6.0.0-rc.0 does not apply its per-peer mempool admission cap to transactions received as direct P2P tx messages, because these are queued without the sending peer recorded as their source. A remote inbound peer can push many unique transactions to occupy a disproportionate share of mempool admission slots, crowding out honest peers' transaction relay.",
+      "last_modified": "2026-10-02T11:38:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104429"
     },
     {
-      "cve_id": "CVE-2026-56210",
-      "asset_id": "CVE-2026-56210",
+      "cve_id": "CVE-2026-104428",
+      "asset_id": "CVE-2026-104428",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A heap-buffer-overflow read vulnerability was found in libaom, the reference AV1 codec implementation. A missing bounds check in the SVC (Scalable Video Coding) layer ID control function allows setting a spatial_layer_id exceeding the configured number of layers. This causes an out-of-bounds heap read of approximately 40,728 bytes when computing a layer context array index. An attacker who can influence SVC encoder parameters in a network-facing service could exploit this for information disclosure (heap content leak) or denial of service (segmentation fault from hitting unmapped memory).",
-      "last_modified": "2026-10-02T02:04:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56210"
+      "description": "The getblock RPC method in zebra-rpc before 11.0.0, used by the Zcash Foundation's Zebra node, panics on verbosity 2 for a side-chain block because the block's -1 confirmations sentinel is converted to u32 with .expect(), aborting the process. Remote unauthenticated attackers, directly or through lightwalletd, can repeat this call to keep the node in a crash loop.",
+      "last_modified": "2026-10-02T11:38:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104428"
     },
     {
-      "cve_id": "CVE-2026-56209",
-      "asset_id": "CVE-2026-56209",
+      "cve_id": "CVE-2026-104427",
+      "asset_id": "CVE-2026-104427",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An arbitrary address write vulnerability was found in libaom, the reference AV1 codec implementation. A missing bounds check in the SVC (Scalable Video Coding) layer ID control function allows an attacker to inject an arbitrary pointer into the cyclic refresh map field via crafted image pixel values. The encoder then writes approximately 1,200 bytes at the attacker-controlled address. This is fully deterministic and does not require a separate information leak. An attacker who can supply frames to a network-facing libaom encoder with SVC enabled could exploit this for denial of service or potential code execution.",
-      "last_modified": "2026-10-02T02:04:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56209"
+      "description": "Zebra before 6.1.0 contains an incomplete cleanup vulnerability in the state write task that allows remote unauthenticated peers to stall node synchronization by poisoning parent_error_map. Attackers can deliver a coinbase-malleated block sharing a canonical block's hash before it propagates, causing the next canonical block to be rejected and stalling the node for roughly 2,000 blocks.",
+      "last_modified": "2026-10-02T11:38:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104427"
     },
     {
-      "cve_id": "CVE-2026-56208",
-      "asset_id": "CVE-2026-56208",
+      "cve_id": "CVE-2026-104426",
+      "asset_id": "CVE-2026-104426",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A heap buffer overflow vulnerability was found in libaom, the reference AV1 codec implementation. A flaw in the AV1 encoder's Look-Ahead Processing (LAP) mode causes the first-pass stats ring buffer wrap-around guard to be bypassed when g_lag_in_frames is set to 1 or higher. This results in a 232-byte out-of-bounds write on every encoded frame after the second, corrupting adjacent heap objects. An attacker who can influence encoder configuration in a transcoding service or WebRTC session could exploit this to cause a denial of service (process crash) or potentially achieve code execution.",
-      "last_modified": "2026-10-02T02:04:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56208"
+      "description": "Zebra before 6.1.0 contains an inefficient algorithmic complexity vulnerability in remaining_transaction_value that clones the entire block-level spent-UTXO map per transaction during contextual verification. Attackers can mine or seed the mempool with roughly 26,000 minimal single-input transactions in one block, stalling every validating node for over 52 seconds.",
+      "last_modified": "2026-10-02T11:38:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104426"
     },
     {
-      "cve_id": "CVE-2026-93228",
-      "asset_id": "CVE-2026-93228",
+      "cve_id": "CVE-2026-104425",
+      "asset_id": "CVE-2026-104425",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsvcrdma: Reject Write/Reply chunks with segcount 0\n\nA peer can send a Write or Reply chunk whose segcount field is zero.\nxdr_check_write_chunk() only rejects segcount > rc_maxpages, so zero\npasses the range check, and xdr_inline_decode(stream, 0) returns the\ncurrent (non-NULL) cursor without advancing. The function returns\ntrue and pcl_alloc_write() then links a struct svc_rdma_chunk with\nch_segcount == 0 onto rc_write_pcl or rc_reply_pcl.\n\nAn earlier patch in this series made pcl_for_each_segment() safe for\nch_segcount == 0, so this no longer drives the memory walk it used\nto. Rejecting the malformed frame at the decode boundary is still\nworthwhile as defense in depth: it keeps degenerate zero-segment\nchunks off the parsed chunk lists entirely, so any future consumer\nthat walks ch_segments directly cannot observe one, and it makes the\nzero-floor easy to backport to trees where the macro change is more\nintrusive. RFC 8166 has no meaning for a Write/Reply chunk that\ndescribes no remote buffer, so no legitimate client is affected.\n\nxdr_check_reply_chunk() funnels Reply chunks through\nxdr_check_write_chunk() and inherits the same rejection.\n\npcl_alloc_write() also links each chunk onto the parsed chunk list\nbefore filling its segment array. If a future change weakens the\nsegcount-0 rejection, an incomplete chunk is visible to consumers\nduring the fill loop. Reorder so that list_add_tail() follows the\nsegment fill loop, ensuring only fully-populated chunks appear on\nthe list.",
-      "last_modified": "2026-10-02T02:00:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93228"
+      "description": "ZcashFoundation Zebra before 6.1.0 contains a resource exhaustion vulnerability that allows unauthenticated peers to degrade block processing by pushing transactions with invalid Orchard proofs without being misbehavior-scored. Attackers can repeatedly push invalid proofs into the shared halo2 batch verifier, forcing honest block proofs onto the slow individual-verification path and slowing block processing roughly sevenfold.",
+      "last_modified": "2026-10-02T11:38:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104425"
     },
     {
-      "cve_id": "CVE-2026-104054",
-      "asset_id": "CVE-2026-104054",
+      "cve_id": "CVE-2026-104424",
+      "asset_id": "CVE-2026-104424",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in calcom cal.diy up to 6.2.0. This affects the function doesUserIdHaveAccessToBooking of the file BookingAccessService.ts of the component PBAC Permission Engine. Performing a manipulation results in missing authorization. The attack can be initiated remotely. The exploit has been released to the public and may be used for attacks. The pull request to fix this issue awaits acceptance.",
-      "last_modified": "2026-10-02T02:00:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104054"
+      "description": "Zebra before 6.1.0 contains an incorrect calculation vulnerability in its ZIP-317 block template selector that omits header and transaction-count size from the block budget. Attackers can place valid selectable transactions in a victim miner's mempool to shape templates into oversized blocks, causing rejection and wasted proof-of-work.",
+      "last_modified": "2026-10-02T11:38:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104424"
     },
     {
-      "cve_id": "CVE-2026-51853",
-      "asset_id": "CVE-2026-51853",
+      "cve_id": "CVE-2026-104423",
+      "asset_id": "CVE-2026-104423",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "agent-zero 1.7, 1.8, 1.9, and 1.10 is vulnerable to Directory Traversal in python/helpers/file_browser.py:FileBrowser.__init__. The FileBrowser class initializes with the host root directory as the workspace, allowing the agent to access any file on the system without restriction.",
-      "last_modified": "2026-10-02T01:30:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51853"
+      "description": "Zebra (zebrad) before 6.2.1 contains an asymmetric resource consumption vulnerability that allows unauthenticated peers to stall block verification by pushing V6 mempool transactions with invalid Halo2 proofs. Attackers can flood the shared unprioritized Halo2 verification queue with zero-fee transactions carrying zero-filled Orchard and Ironwood proofs, causing nodes to fall behind the chain tip.",
+      "last_modified": "2026-10-02T11:38:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104423"
     },
     {
-      "cve_id": "CVE-2026-104053",
-      "asset_id": "CVE-2026-104053",
+      "cve_id": "CVE-2026-104422",
+      "asset_id": "CVE-2026-104422",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in itsourcecode Pet Shop Management System 1.0. The impacted element is an unknown function of the file admin_reservefilter.php. Such manipulation of the argument filter leads to sql injection. It is possible to launch the attack remotely. The exploit is publicly available and might be used.",
-      "last_modified": "2026-10-02T01:15:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104053"
+      "description": "The block sync download path in Zebra (zebrad) before 6.3.0 reads a block's height from its unvalidated coinbase scriptSig and drops blocks that appear too far behind the tip before consensus validation, without penalizing the supplying peer. Because V5 transaction IDs exclude the scriptSig, a malicious peer can repeatedly serve a canonical block whose coinbase claims height 1 while keeping the requested hash, delaying the node's discovery of the newest block.",
+      "last_modified": "2026-10-02T11:38:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104422"
     },
     {
-      "cve_id": "CVE-2026-103764",
-      "asset_id": "CVE-2026-103764",
+      "cve_id": "CVE-2026-104421",
+      "asset_id": "CVE-2026-104421",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mooncake transfer engine before 0.3.13 contains an untrusted pointer dereference in ServerSession::readHeader that allows unauthenticated attackers to read and write arbitrary process memory via the TCP transport data port. Attackers can send a crafted SessionHeader with arbitrary addr and size values using READ or WRITE opcodes to disclose KV cache contents, prompts and secrets or corrupt memory toward code execution.",
-      "last_modified": "2026-10-02T01:15:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103764"
+      "description": "Zebra before 6.2.1 contains an incomplete cleanup vulnerability that allows unauthenticated peers to block downloading of valid blocks by leaving rejected hashes in SentHashes. Attackers can send a contextually invalid block sharing an honest block's header hash, causing Request::KnownBlock to skip the honest block and keep nodes behind the tip.",
+      "last_modified": "2026-10-02T11:38:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104421"
     },
     {
-      "cve_id": "CVE-2026-42356",
-      "asset_id": "CVE-2026-42356",
+      "cve_id": "CVE-2026-104420",
+      "asset_id": "CVE-2026-104420",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Deployment of wrong handler vulnerability in Apache HTTP Server allows the target of some internal redirects from CGI programs to also be treated as CGI and executed. The target must already be in a directory enabled for CGI and have no other extension understood by mod_mime.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.60 through 2.4.68.",
-      "last_modified": "2026-10-02T01:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42356"
+      "description": "Zebra before 6.3.0 contains a protection mechanism failure that allows unauthenticated peers to evade misbehavior scoring by supplying invalid gossiped blocks. The inbound cleanup step wrongly downcasts RouterError to VerifyBlockError and discards the score, so attackers can repeatedly force block download and Equihash verification without being banned.",
+      "last_modified": "2026-10-02T11:38:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104420"
     },
     {
-      "cve_id": "CVE-2026-56153",
-      "asset_id": "CVE-2026-56153",
+      "cve_id": "CVE-2026-104419",
+      "asset_id": "CVE-2026-104419",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds Write vulnerability in Apache HTTP Server's mod_charset_lite.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
-      "last_modified": "2026-10-02T01:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56153"
+      "description": "Zebra (zebrad) 4.5.0 before 6.3.0 discards which peer supplied the block hashes in FindBlocks responses, then assigns 100 misbehavior points, the ban threshold, to whichever peer serves a requested block more than 50,000 heights above the tip. A remote peer can return real far-ahead hashes to a syncing node so that honest peers get banned, eroding its peer set and raising eclipse risk.",
+      "last_modified": "2026-10-02T11:38:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104419"
     },
     {
-      "cve_id": "CVE-2026-104052",
-      "asset_id": "CVE-2026-104052",
+      "cve_id": "CVE-2026-104418",
+      "asset_id": "CVE-2026-104418",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in itsourcecode Pet Shop Management System 1.0. The affected element is an unknown function of the file admin_reject_completed.php. This manipulation of the argument ID causes sql injection. It is possible to initiate the attack remotely. The exploit has been publicly disclosed and may be utilized.",
-      "last_modified": "2026-10-02T01:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104052"
+      "description": "Ghost from 6.10.3 before 6.64.0 contains a remote code execution vulnerability that allows authenticated administrators to run code by abusing theme translation file loading. Attackers with administrator access can upload a crafted theme containing malicious translation files to execute arbitrary code on the Ghost server.",
+      "last_modified": "2026-10-02T11:38:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104418"
     },
     {
-      "cve_id": "CVE-2026-104480",
-      "asset_id": "CVE-2026-104480",
+      "cve_id": "CVE-2026-104417",
+      "asset_id": "CVE-2026-104417",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Discord libdave before 1.2.0 did not reject an MLS Welcome message when the resulting group roster contained an unrecognized participant. An attacker in control of the DAVE signaling path (the voice gateway, or an equivalent position able to add, alter, or withhold signaling messages to a client) could cause affected clients to accept an unauthorized member into the end-to-end encrypted media session, compromising the confidentiality and integrity of audio and video.",
-      "last_modified": "2026-10-02T00:57:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104480"
+      "description": "Ghost from 1.20.0 before 6.64.0 contains a path traversal vulnerability in theme translation file loading that allows authenticated administrators to read JSON files outside the active theme directory. Attackers can manipulate the locale setting to load JSON files elsewhere on the server, exposing server configuration secrets.",
+      "last_modified": "2026-10-02T11:37:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104417"
     },
     {
-      "cve_id": "CVE-2026-47600",
-      "asset_id": "CVE-2026-47600",
+      "cve_id": "CVE-2026-104416",
+      "asset_id": "CVE-2026-104416",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NVIDIA GPU Display Driver for Windows and Linux contains a vulnerability in the kernel mode layer where an error-handling path could operate on an improperly initialized resource. A successful exploit of this vulnerability might lead to code execution, escalation of privileges, denial of service, information disclosure, and data tampering.",
-      "last_modified": "2026-10-02T00:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47600"
+      "description": "Ghost from 4.39.0 before 6.64.0 contains an information disclosure vulnerability in the Admin API that allows staff users to view secret tokens of pending staff invites. Staff users with invite viewing permission can accept pending invites for higher-privileged roles to escalate their privileges.",
+      "last_modified": "2026-10-02T11:37:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104416"
     },
     {
-      "cve_id": "CVE-2026-103766",
-      "asset_id": "CVE-2026-103766",
+      "cve_id": "CVE-2026-104415",
+      "asset_id": "CVE-2026-104415",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ClipBucket v5 through 5.5.3-#197 contains an sql injection vulnerability that allows authenticated users with ad_manager_access permission to inject SQL via the delete parameter in admin_area/ads_manager.php. Attackers can supply time-based blind payloads concatenated into AdsManager::DeleteAd queries to extract user credentials and emails or modify and delete arbitrary records.",
-      "last_modified": "2026-10-02T00:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103766"
+      "description": "Ghost from 0.7.2 before 6.64.0 contains an information disclosure vulnerability in the Admin API that allows staff-level users to determine the relative ordering of other staff users' password hashes. Authenticated staff users can query the Admin API to infer hash ordering, though this does not directly reveal hashes or enable practical password recovery.",
+      "last_modified": "2026-10-02T11:37:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104415"
     },
     {
-      "cve_id": "CVE-2026-87910",
-      "asset_id": "CVE-2026-87910",
+      "cve_id": "CVE-2026-104414",
+      "asset_id": "CVE-2026-104414",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When tarfile extracts a link on a system that doesn't support links, it falls back to extracting a member from the archive. In this case, the filter function is run twice: once for the extracted member, and once with name set to the location of the link. For one of the calls, the return value was ignored. Instead, the member should be skipped if either call returns None.",
-      "last_modified": "2026-10-02T00:35:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87910"
+      "description": "Ghost from 2.5.0 before 6.64.0 contains a stored cross-site scripting vulnerability that allows attackers to inject untrusted scripts into post content via oEmbed photo responses. Attackers can host malicious oEmbed photo responses so that embedding their URL stores scripts that run in the Ghost editor, published site, and newsletter emails, compromising staff admin sessions.",
+      "last_modified": "2026-10-02T11:37:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104414"
     },
     {
-      "cve_id": "CVE-2026-103761",
-      "asset_id": "CVE-2026-103761",
+      "cve_id": "CVE-2026-104413",
+      "asset_id": "CVE-2026-104413",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mooncake transfer engine through 0.3.13.post1 contains a memory exhaustion vulnerability in TransferMetadata::receivePeerNotify that allows unauthenticated attackers to grow process memory without limit. Attackers can repeatedly send notify frames up to 1 MB to the handshake RPC port, filling the uncapped notifys vector until the out-of-memory killer terminates the engine.",
-      "last_modified": "2026-10-02T00:30:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103761"
+      "description": "Ghost from 5.94.0 before 6.64.0 contains a stored cross-site scripting vulnerability that allows staff users, including Contributors, to host arbitrary HTML by abusing bookmark card image fetching. Attackers can create bookmark cards that store non-image files from external websites as icons or thumbnails to compromise other staff users' admin sessions.",
+      "last_modified": "2026-10-02T11:37:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104413"
     },
     {
-      "cve_id": "CVE-2026-103765",
-      "asset_id": "CVE-2026-103765",
+      "cve_id": "CVE-2026-104412",
+      "asset_id": "CVE-2026-104412",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mooncake through 0.3.13.post1 contains a missing authentication vulnerability in the HTTP metadata server /metadata handler that allows unauthenticated attackers to read, overwrite, and delete transfer engine metadata keys. Attackers can poison segment descriptors such as tcp_data_port or re-create rpc_meta entries to redirect KV cache transfers to attacker-controlled listeners, or exhaust server memory.",
-      "last_modified": "2026-10-02T00:30:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103765"
+      "description": "Ghost 0.5.0 before 6.64.0 does not correctly restrict staff role assignment, allowing users with the Editor or Super Editor role to assign their own role to other staff despite lacking permission to do so. An authenticated Editor or Super Editor can promote Author and Contributor users to Editor or Super Editor.",
+      "last_modified": "2026-10-02T11:37:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104412"
     },
     {
-      "cve_id": "CVE-2026-103760",
-      "asset_id": "CVE-2026-103760",
+      "cve_id": "CVE-2026-104411",
+      "asset_id": "CVE-2026-104411",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mooncake transfer engine through 0.3.13.post1 contains a denial of service vulnerability that allows unauthenticated remote attackers to block the handshake daemon by never reading replies. Attackers can send a Metadata request to the handshake RPC port and stall SocketHandShakePlugin's single listener thread in writeFully(), breaking all subsequent handshakes, metadata fetches, notify and probe requests.",
-      "last_modified": "2026-10-02T00:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103760"
+      "description": "Ghost from 6.22.1 before 6.64.0 contains a stored cross-site scripting vulnerability that allows staff users to host scripts by uploading files served with extension-derived content types on the default local storage adapter. Attackers can upload script-bearing files to the site's domain to compromise other staff users' admin sessions.",
+      "last_modified": "2026-10-02T11:37:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104411"
     },
     {
-      "cve_id": "CVE-2026-103098",
-      "asset_id": "CVE-2026-103098",
+      "cve_id": "CVE-2026-104410",
+      "asset_id": "CVE-2026-104410",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Transmission of a sensitive key in the URL\nover an unencrypted HTTP connection.\u00a0 The\nrequest is sent over HTTP rather than HTTPS, meaning the key is transmitted in\nplaintext across the network. An attacker with the ability to monitor network\ntraffic could intercept the request and obtain the key",
-      "last_modified": "2026-10-02T00:15:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103098"
+      "description": "SiYuan before 3.8.5 contains an information disclosure vulnerability that allows publish readers to read password-protected and publish-disabled database rows via the /api/export/preview endpoint. Attackers can request an export preview of a public document embedding a database view to obtain protected rows' primary-key text and cell values.",
+      "last_modified": "2026-10-02T11:37:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104410"
     },
     {
-      "cve_id": "CVE-2026-103097",
-      "asset_id": "CVE-2026-103097",
+      "cve_id": "CVE-2026-103763",
+      "asset_id": "CVE-2026-103763",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An API key is\nhardcoded and retrievable from the application package. Since Android\napplications can be reverse engineered, embedding sensitive API credentials\ndirectly in the client application may allow unauthorized users to extract and\nmisuse the key.",
-      "last_modified": "2026-10-02T00:14:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103097"
+      "description": "SiYuan before v3.8.5 contains an information disclosure vulnerability that allows read-only publish readers to learn metadata of publish-excluded documents through the getNotebookInfo endpoint. Attackers, including anonymous visitors when no reader password is set, can query publish-visible notebooks to obtain document count, size and modification timestamps of hidden documents.",
+      "last_modified": "2026-10-02T11:37:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103763"
     },
     {
-      "cve_id": "CVE-2026-103096",
-      "asset_id": "CVE-2026-103096",
+      "cve_id": "CVE-2026-103762",
+      "asset_id": "CVE-2026-103762",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "API\nkey is hardcoded and retrievable from the application package. Since Android\napplications can be reverse engineered, embedding sensitive API credentials\ndirectly in the client application may allow unauthorized users to extract and\nmisuse the key.",
-      "last_modified": "2026-10-02T00:14:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103096"
+      "description": "SiYuan before v3.8.5 contains a missing authorization vulnerability in the getRefCreateSavePath, getShorthandSavePath, and getDocCreateSavePath endpoints that allows read-only publish visitors to learn unpublished notebook box IDs. Attackers with read-only or anonymous publish access can POST any open notebook ID to receive the global save-box ID and save-path template, revealing a hidden notebook's existence and creation time.",
+      "last_modified": "2026-10-02T11:37:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103762"
     },
     {
-      "cve_id": "CVE-2026-22314",
-      "asset_id": "CVE-2026-22314",
+      "cve_id": "CVE-2026-85088",
+      "asset_id": "CVE-2026-85088",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vendor disputed record. The reported behaviour is documented \nadministrative functionality restricted to dedicated administrative \npermissions assigned by the operating hospital; its use by a permission \nholder is not a vulnerability. Unauthorised access to the functions is \naddressed under CVE-2026-0856.\n\nImproper Control of Generation of Code ('Code Injection') vulnerability in Mesalvo Meona Client Launcher Component, Mesalvo Meona Server Component enables code execution on other users' systems.\u00a0This issue affects Meona Client Launcher Component: through 19.06.2020 15:11:49; Meona Server Component: through 2025.04 5+323020.",
-      "last_modified": "2026-10-02T00:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22314"
+      "description": "Improper Validation of Certificate with Host Mismatch in the C++ and D libraries of Apache Thrift.\n\n\n\nBoth libraries install a default access manager for client sockets \u2014 TSSLSocketFactory does so in C++, and the accessManager property does so in D \u2014 which compares the peer certificate against the host\n\nname that was connected to. That comparison walks the subjectAltName dNSName entries first and consults the certificate Common Name afterwards. A name that does not match yields a \"skip\" result rather than\n\na rejection, so a certificate whose subjectAltName entries are all present and all non-matching falls through to the Common Name, which can then satisfy the check.\n\n\n\nRFC 6125 section 6.4.4, and RFC 9525 section 2, require that the Common Name is not consulted when a dNSName subjectAltName is present. A certificate carrying subjectAltName entries for one name and a\n\nCommon Name for another is therefore accepted for a connection to the second name.\n\n\n\nExploitation requires an attacker positioned on the network path who holds a certificate that chains to a certificate authority in the client's trust store and whose Common Name matches the connected host\n\nname. Public certificate authorities have not issued on Common Name alone for many years, so this is principally a concern for deployments using a private or enterprise public-key infrastructure.\n\n\n\nThis issue affects the C++ library of Apache Thrift from 0.7.0 through 0.24.0 and the D library from 0.9.0 through 0.24.0. Users should upgrade to 0.25.0.",
+      "last_modified": "2026-10-02T11:37:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85088"
     },
     {
-      "cve_id": "CVE-2026-100817",
-      "asset_id": "CVE-2026-100817",
+      "cve_id": "CVE-2026-85087",
+      "asset_id": "CVE-2026-85087",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Other issue in the JavaScript: WebAssembly component. This vulnerability was fixed in Thunderbird 157 and Firefox 157.",
-      "last_modified": "2026-10-02T00:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100817"
+      "description": "Improper certificate validation, Return of wrong status code vulnerability in Apache Thrift python bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:35:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85087"
     },
     {
-      "cve_id": "CVE-2026-92173",
-      "asset_id": "CVE-2026-92173",
+      "cve_id": "CVE-2026-85086",
+      "asset_id": "CVE-2026-85086",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Prior to v74.0.0.878.1682 of Meta Horizon OS, MediaSyncJobReceiver could be induced to send a privileged PendingIntent including a com.oculus.vrshell CallerIdentity to an arbitrary application listening via NotificationListenerService. That would allow the application to impersonate the com.oculus.vrshell package, as well as packages signed with the same key, towards any endpoint within the OS that uses CallerIdentity authentication.",
-      "last_modified": "2026-10-02T00:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92173"
+      "description": "Improper certificate validation, Initialization of a resource with an insecure default vulnerability in Apache Thrift perl bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:34:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85086"
     },
     {
-      "cve_id": "CVE-2026-51873",
-      "asset_id": "CVE-2026-51873",
+      "cve_id": "CVE-2026-82459",
+      "asset_id": "CVE-2026-82459",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Devika v1.0 is vulnerable to Directory Traversal in the Coder.save_code_to_project function, which allows attackers to write files outside the intended project workspace.",
-      "last_modified": "2026-10-02T00:00:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51873"
+      "description": "Integer underflow (wrap or wraparound), Out-of-bounds write vulnerability in Apache Thrift C++ 32 bit THeaderTransport.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:32:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82459"
     },
     {
-      "cve_id": "CVE-2026-51882",
-      "asset_id": "CVE-2026-51882",
+      "cve_id": "CVE-2026-82458",
+      "asset_id": "CVE-2026-82458",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The OpenAI-compatible file upload endpoint `/v1/files` in Langchain-Chatchat 0.3.0 is vulnerable to path traversal. An attacker can write files to arbitrary locations outside the `openai_files` directory by crafting malicious filenames.",
-      "last_modified": "2026-10-02T00:00:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51882"
+      "description": "Memory allocation with excessive size value, Allocation of resources without limits or throttling vulnerability in Apache Thrift Go,\u00a0netstd, OCaml, Erlang, JavaME,\u00a0Rust, C++, Java,\u00a0Kotlin and\u00a0D language bindings.\n\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:30:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82458"
     },
     {
-      "cve_id": "CVE-2026-71449",
-      "asset_id": "CVE-2026-71449",
+      "cve_id": "CVE-2026-103885",
+      "asset_id": "CVE-2026-103885",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": ": Use of Hard-coded Cryptographic Key vulnerability in Johnson Controls EasyIO FS32 allows : Retrieve Embedded Sensitive Data.\n\nThis issue affects EasyIO FS32: before 3.0b63.",
-      "last_modified": "2026-10-01T23:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71449"
+      "description": "Asymmetric Resource Consumption\u00a0vulnerability in Apache Directory LDAP API.\n\n\n\nA LDAP server using the LDAP API (like Apache DS)\u00a0may consume 100% of a CPU core indefinitely\u00a0when processing some badly crafted Telephone Numbers.\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue.",
+      "last_modified": "2026-10-02T11:30:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103885"
     },
     {
-      "cve_id": "CVE-2026-64892",
-      "asset_id": "CVE-2026-64892",
+      "cve_id": "CVE-2026-86325",
+      "asset_id": "CVE-2026-86325",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "- Exposure of Sensitive Information vulnerability in Johnson Controls Easy IO Neo allows Collect Data from Common Resource Locations.\n\nThis issue affects Easy IO Neo: before 3.3b63.",
-      "last_modified": "2026-10-01T23:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64892"
+      "description": "A stack-based buffer overflow vulnerability exists in protocol gateways' account management interface. The vulnerability is caused by insufficient length validation of the `account_name` parameter when processing account management requests. An attacker authenticated as a read-only user to the web\u00a0management interface could supply a specially crafted account name that exceeds the size of the internal stack buffer, resulting in corruption of program execution flow. Successful exploitation could allow an attacker to read sensitive information from device memory, including credentials, modify arbitrary memory contents, and disrupt device availability.",
+      "last_modified": "2026-10-02T11:30:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86325"
     },
     {
-      "cve_id": "CVE-2026-48005",
-      "asset_id": "CVE-2026-48005",
+      "cve_id": "CVE-2026-103552",
+      "asset_id": "CVE-2026-103552",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing authentication checks in mod_auth_digest in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an unauthenticated remote client to cause a denial of service (forced re-authentication) via forged Authorization headers when Digest authentication is enabled with AuthDigestNcCheck .\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue.",
-      "last_modified": "2026-10-01T23:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48005"
+      "description": "Stack Overflow vulnerability in Apache Directory LDAP API.\n\n\n\nBefore binding, a client can send a deeply nested search filter that overflows the stack in the server's decoder.\n\n\n\nThis issue affects Apache Directory LDAP API: from 1.2.0 before 1.2.9.\n\n\n\nUsers are recommended to upgrade to version 1.2.9, which fixes the issue.",
+      "last_modified": "2026-10-02T11:30:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103552"
     },
     {
-      "cve_id": "CVE-2026-102514",
-      "asset_id": "CVE-2026-102514",
+      "cve_id": "CVE-2026-97876",
+      "asset_id": "CVE-2026-97876",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds Write (CWE-787) in the PEA archive extraction routine (pea.pas, unpea_procedure) of the first-party pea component in PeaZip 11.2.0 and earlier allows an attacker who convinces a victim to open or extract a crafted .pea archive to execute arbitrary code as the user running PeaZip. While decompressing a PCOMPRESS1 stream, the 32-bit compressed-block-size field of the first block (compsize) is read directly from the archive and used without validation as the length of a blockread into the fixed-size global buffers wbuf1/wbuf2 (1,114,112 bytes) and as the bound of the subsequent copy loop. The existing check \"compsize > WBUFSIZE\" is applied only to the size of each following block, so the first block escapes it; the same unvalidated value is also used to index wbuf1[compsize], an out-of-bounds read at an attacker-chosen offset. The copy loop additionally copies the requested length instead of the number of bytes actually read, and terminates on equality rather than on an upper bound. Because the project is built without range checking and no archive password, integrity tag or non-default configuration is required, the overflow overwrites adjacent global data; code execution was demonstrated by two independent researchers against the official Linux x86-64 and Windows x64 builds, and the denial-of-service and memory-corruption primitive is cross-platform (Windows, macOS, Linux, BSD).",
-      "last_modified": "2026-10-01T23:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102514"
+      "description": "A local attacker with control over GRUB's configuration can bypass lockdown restrictions when booting with Secure Boot and load an unsigned GRUB module, while GRUB continues to report lockdown is enabled.\n\n\n\n\nThe vulnerability is caused by insufficient validation of the MMIO base address passed to the GRUB serial command. GRUB does not validate that the base address corresponds to a UART device, rather than being an arbitrary memory address. This allows an attacker to trick GRUB into writing non-arbitrary data at an attacker-controlled address, including resetting\u00a0the grub_file_verifiers list in a way that disables the subsequent verification of loaded modules.",
+      "last_modified": "2026-10-02T11:30:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97876"
     },
     {
-      "cve_id": "CVE-2026-79654",
-      "asset_id": "CVE-2026-79654",
+      "cve_id": "CVE-2026-96288",
+      "asset_id": "CVE-2026-96288",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Katello where the Content View History API does not properly enforce authorization when accessing a Content View specified by the user. An authenticated user with permission to view Content Views in one organization may be able to access the lifecycle history of a Content View belonging to another organization by supplying its identifier to the affected API endpoint. This can result in unauthorized disclosure of Content View lifecycle information, including publication and promotion events, associated users, and timestamps.",
-      "last_modified": "2026-10-01T23:42:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79654"
+      "description": "Uncontrolled Recursion, Allocation of resources without limits or throttling vulnerability in Apache Thrift Erlang bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:18:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96288"
     },
     {
-      "cve_id": "CVE-2026-56098",
-      "asset_id": "CVE-2026-56098",
+      "cve_id": "CVE-2026-97318",
+      "asset_id": "CVE-2026-97318",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in rubygem-katello. The RegistryProxiesController in Katello contains an authorization bypass vulnerability due to an execution fall-through in the registry_authorize filter. While the application identifies unauthorized requests and triggers an error response via the unauthorized method, it fails to halt the execution of the current code path (missing return statement). This failure in the control flow allows the application to proceed into subsequent business logic and database validation filters. Consequently, the application reveals its internal state through differential responses, allowing an unprivileged attacker to enumerate valid Users, Organizations, and Products across the entire instance.",
-      "last_modified": "2026-10-01T23:42:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56098"
+      "description": "The Giveaways and Contests by RafflePress  WordPress plugin before 1.12.27 does not properly validate a giveaway's parent page URL before saving it and later redirecting visitors to it, allowing unauthenticated attackers to make the site's own giveaway confirmation and referral links redirect visitors to an arbitrary external site.",
+      "last_modified": "2026-10-02T11:17:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97318"
     },
     {
-      "cve_id": "CVE-2026-56097",
-      "asset_id": "CVE-2026-56097",
+      "cve_id": "CVE-2026-97317",
+      "asset_id": "CVE-2026-97317",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in rubygem-katello. An SQL injection vulnerability exists in the Red Hat Satellite Katello Registry Proxy. The application fails to sanitize input parameters used in database queries within the RegistryProxiesController. The methods check_blob_push_org_label and get_matching_products_from_org take user-supplied labels directly from the request path and interpolate them into raw SQL fragments. This flaw is accessible to a user with only the create_personal_access_tokens permission, even if the user access is restricted, with no Organization or Location assigned.",
-      "last_modified": "2026-10-01T23:42:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56097"
+      "description": "The Giveaways and Contests by RafflePress  WordPress plugin before 1.12.27 does not remove the reCAPTCHA secret key from the giveaway settings it embeds in public giveaway pages, allowing unauthenticated visitors to retrieve the secret key of any active giveaway that has reCAPTCHA configured.",
+      "last_modified": "2026-10-02T11:17:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97317"
     },
     {
-      "cve_id": "CVE-2026-12545",
-      "asset_id": "CVE-2026-12545",
+      "cve_id": "CVE-2026-97219",
+      "asset_id": "CVE-2026-97219",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in rubygem-hammer_cli. A command injection vulnerability exists in Hammer CLI and the Railties (Ruby on Rails) component distributed with Satellite due to the insecure interpolation of the $EDITOR environment variable into the Ruby system() method. By passing a single interpolated string to system(), the application invokes a system shell (/bin/sh) that interprets shell metacharacters (e.g., ;, |, &).",
-      "last_modified": "2026-10-01T23:42:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12545"
+      "description": "The MStore API WordPress plugin before 4.22.1 does not restrict which fields of an order a customer may update, allowing any authenticated user with a self-registerable account to change the status of their own unpaid order to a paid or fulfilled state and receive the goods without paying.",
+      "last_modified": "2026-10-02T11:17:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97219"
     },
     {
-      "cve_id": "CVE-2026-12542",
-      "asset_id": "CVE-2026-12542",
+      "cve_id": "CVE-2026-94298",
+      "asset_id": "CVE-2026-94298",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Foreman. The foreman-tail utility is vulnerable to OS command injection due to the unsafe use of the eval command. The script takes user-supplied arguments and incorporates them directly into a string that is then executed by eval to expand file paths. Because the input is not sanitized or quoted, a local attacker can inject shell metacharacters (e.g., ;, &, |) to execute arbitrary system commands.",
-      "last_modified": "2026-10-01T23:42:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12542"
+      "description": "The BuildKit  WordPress plugin before 1.0.29 does not properly sanitise and escape data submitted by contributor-level users before storing it and later using it in a SQL query, allowing a Contributor to inject SQL that runs against the database once the resulting content is published and viewed by any unauthenticated visitor.",
+      "last_modified": "2026-10-02T11:17:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94298"
     },
     {
-      "cve_id": "CVE-2026-65640",
-      "asset_id": "CVE-2026-65640",
+      "cve_id": "CVE-2026-93926",
+      "asset_id": "CVE-2026-93926",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "WordPress is vulnerable to a remote code execution vulnerability via malicious Postscript file upload by an Author level user or higher.\n\nPrerequisites:\n* Imagick and Ghostscript in use on the server\n* A malicious user with the `upload_files` capability\n\nThis issue affects all versions of WordPress. Version 7.0.4 has been released, containing a fix for the vulnerability, and as a courtesy to users on older branches the fix has been backported to all branches back to 4.7.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65640"
+      "description": "Missing release of memory after effective lifetime, Missing release of resource after effective lifetime vulnerability in Apache Thrift THeaderTransport.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:17:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93926"
     },
     {
-      "cve_id": "CVE-2026-88467",
-      "asset_id": "CVE-2026-88467",
+      "cve_id": "CVE-2026-93925",
+      "asset_id": "CVE-2026-93925",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "CRMEB Knowledge-Paid System crmeb_zzff_class 1.4.4 has a backend verification function that returns the wrong type of value, causing errors and leaking sensitive information.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88467"
+      "description": "Stack-based buffer overflow, Incorrect bitwise shift of integer vulnerability in Apache Thrift C++ THeaderProtocol.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:17:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93925"
     },
     {
-      "cve_id": "CVE-2026-51883",
-      "asset_id": "CVE-2026-51883",
+      "cve_id": "CVE-2026-92924",
+      "asset_id": "CVE-2026-92924",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The knowledge base creation and document upload interfaces in Langchain-Chatchat 0.3.0;0.3.1 is vulnerable to path traversal. An attacker can inject path traversal sequences (such as `..\\`) into the `knowledge_base_name` parameter to write knowledge base content to arbitrary locations outside the configured knowledge base root directory.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51883"
+      "description": "The Unlimited Elements for Elementor WordPress plugin before 2.0.21 does not check that a request to render widget output comes from a user allowed to make it, allowing users with a role as low as subscriber to have arbitrary WordPress shortcodes executed on the site. Version 2.0.18 removed the subscriber-level access, so from 2.0.18 onward the issue requires a Contributor role or above.",
+      "last_modified": "2026-10-02T11:17:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92924"
     },
     {
-      "cve_id": "CVE-2026-51886",
-      "asset_id": "CVE-2026-51886",
+      "cve_id": "CVE-2026-91828",
+      "asset_id": "CVE-2026-91828",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "langflow-ai langflow v1.9.3 is affected by: Code Injection. The impact is: execute arbitrary code (remote). The component is: src/backend/base/langflow/api/v1/validate.py:validate-post_validate_code-a-real-authenticated-http-post-to-api-v1. The attack vector is: Attack surface: HTTP or browser-backed service path. A public-facing route accepts raw Python source and forwards it into a server-side compile/exec validation path without any visible entitlement guard. \u00b6\u00b6 A weakness has been identified in langflow-ai langflow up to 1.9.3. langflow contains a code injection vulnerability in validate-post_validate_code-a-real-authenticated-http-post-to-api-v1 (src/backend/base/langflow/api/v1/validate.py:13). An authenticated attacker can execute arbitrary Python code on the server by submitting malicious code to the /api/v1/validate/code endpoint, which directly executes user-supplied code without sandboxing or security controls.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51886"
+      "description": "The OMGF | GDPR/DSGVO Compliant, Faster Google Fonts. Easy. WordPress plugin before 6.3.11 does not require authentication or a valid nonce on an action that issues a slow server-side loopback request, allowing unauthenticated attackers to exhaust the site's PHP worker pool and make the entire site unavailable.",
+      "last_modified": "2026-10-02T11:17:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91828"
     },
     {
-      "cve_id": "CVE-2026-51895",
-      "asset_id": "CVE-2026-51895",
+      "cve_id": "CVE-2026-91137",
+      "asset_id": "CVE-2026-91137",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ragflow 0.24.0 and prior contains improper access control in update_metadata_setting (api/apps/kb_app.py). Depending on the exposed entry, an attacker can perform unauthorized cross-session or privilege-crossing operations.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-51895"
+      "description": "Improper validation of specified quantity in input, Allocation of resources without limits or throttling, Excessive Iteration vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "last_modified": "2026-10-02T11:17:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91137"
     },
     {
-      "cve_id": "CVE-2026-71452",
-      "asset_id": "CVE-2026-71452",
+      "cve_id": "CVE-2026-91023",
+      "asset_id": "CVE-2026-91023",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "- OS Command Injection vulnerability in Johnson Controls EasyIO FS32 allows OS Command Injection.\n\nThis issue affects EasyIO FS32: before 3.0b63.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71452"
+      "description": "The Motors  WordPress plugin before 1.4.124 does not properly verify that a user is authorised to modify a listing before processing one of its listing management actions, allowing authenticated attackers with subscriber-level access and above to set metadata on posts they do not own, including overwriting product prices. Exploitation is possible only when WooCommerce is active and the Motors  WordPress plugin before 1.4.124's paid featured-listing option is enabled, neither of which is a default configuration.",
+      "last_modified": "2026-10-02T11:17:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91023"
     },
     {
-      "cve_id": "CVE-2026-71448",
-      "asset_id": "CVE-2026-71448",
+      "cve_id": "CVE-2026-91022",
+      "asset_id": "CVE-2026-91022",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": ": Insecure Default Initialization of Resource vulnerability in Johnson Controls EasyIO FS32 allows : Authentication Abuse.\n\nThis issue affects EasyIO FS32: before 3.0b63.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71448"
+      "description": "The Motors  WordPress plugin before 1.4.124 does not sanitise and escape a listing badge setting before outputting it inside an HTML attribute, allowing users with a custom, administrator-assigned listing-management role to inject arbitrary web scripts that execute when a listing is viewed by any visitor, including an administrator.",
+      "last_modified": "2026-10-02T11:17:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91022"
     },
     {
-      "cve_id": "CVE-2026-64893",
-      "asset_id": "CVE-2026-64893",
+      "cve_id": "CVE-2026-91020",
+      "asset_id": "CVE-2026-91020",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "- Cleartext Transmission of Sensitive Information vulnerability in Johnson Controls EasyIO NEO allows - Man In the Middle Attack.\n\nThis issue affects EasyIO NEO: before 3.3b25.",
-      "last_modified": "2026-10-01T23:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64893"
+      "description": "The WebToffee Gift Cards for WooCommerce WordPress plugin before 1.3.1 does not validate a user-supplied gift card amount server-side before using it as the cart-item price and store-credit coupon value, allowing unauthenticated users to submit an arbitrary or negative amount, bypassing the configured denominations and manipulating the order total to obtain products without paying.",
+      "last_modified": "2026-10-02T11:17:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91020"
     },
     {
-      "cve_id": "CVE-2026-86345",
-      "asset_id": "CVE-2026-86345",
+      "cve_id": "CVE-2026-90988",
+      "asset_id": "CVE-2026-90988",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in 389-ds-base. The server does not discard plaintext bytes already buffered from a client connection when negotiating StartTLS, allowing an on-path attacker to inject a crafted LDAP message that is processed after the TLS upgrade and whose response is delivered to the client in place of the client's own pending operation's response, due to messageID collision. This can cause a client application to treat a failed authentication (bind) attempt as successful.",
-      "last_modified": "2026-10-01T23:27:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86345"
+      "description": "The Request a Quote  WordPress plugin through 2.5.6 does not perform an authorization check on one of its unauthenticated AJAX handlers, allowing unauthenticated users to read the contact records of quote-request submissions, including records the site has not published.",
+      "last_modified": "2026-10-02T11:17:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90988"
     },
     {
-      "cve_id": "CVE-2026-96659",
-      "asset_id": "CVE-2026-96659",
+      "cve_id": "CVE-2026-90987",
+      "asset_id": "CVE-2026-90987",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Foreman. This vulnerability allows an authenticated user with low-level Viewer permissions to cause unauthorized information disclosure by submitting requests to template preview endpoints. By exploiting this issue, the user can access sensitive data, such as host root passwords. Furthermore, under insecure system configurations where Safemode protections are disabled, the flaw may allow the user to execute arbitrary commands as the Foreman system account.",
-      "last_modified": "2026-10-01T23:26:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96659"
+      "description": "The Easy PayPal & Stripe Buy Now Button WordPress plugin before 2.0.6 does not derive the payment amount on the server, taking it from a client-supplied field, so an unauthenticated attacker sets an arbitrary lower price for a purchase.",
+      "last_modified": "2026-10-02T11:17:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90987"
     },
     {
-      "cve_id": "CVE-2026-12544",
-      "asset_id": "CVE-2026-12544",
+      "cve_id": "CVE-2026-90952",
+      "asset_id": "CVE-2026-90952",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Foreman. The foreman-rake initialization logic in /usr/share/foreman/config/settings.rb contains a vulnerable code pattern where configuration data is processed through two distinct executable layers. This creates a multi-stage execution chain that allows for both Server-Side Template Injection (SSTI) and insecure deserialization. This vulnerability can lead to remote code execution, total infrastructure compromise and supply chain risk.",
-      "last_modified": "2026-10-01T23:26:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12544"
+      "description": "The WP Edit Password Protected WordPress plugin before 2.0.7 does not enforce its site-wide access restriction on the WordPress REST API, allowing unauthenticated users to read the content of published posts and pages that the site's access mode was configured to hide.",
+      "last_modified": "2026-10-02T11:17:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90952"
     },
     {
-      "cve_id": "CVE-2026-12541",
-      "asset_id": "CVE-2026-12541",
+      "cve_id": "CVE-2026-86326",
+      "asset_id": "CVE-2026-86326",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Foreman. OS command injection vulnerabilities exist in the foreman-rake db:dump and db:import_dump tasks. The application fails to properly sanitize user-supplied input in the destination parameter (during backups) and the file parameter (during imports) before passing them to a Ruby system() call for execution. An attacker with permissions to execute foreman-rake (e.g., via a restricted sudo configuration) can append malicious shell commands to the provided file paths.",
-      "last_modified": "2026-10-01T23:25:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12541"
+      "description": "An improper verification of cryptographic signature vulnerability exists in protocol gateways\u00a0because the device does not properly verify the cryptographic authenticity of firmware images before installation. An attacker with high privileges and access to the firmware update interface could provide a specially crafted or modified firmware image, causing it to be installed on the device. Successful exploitation could allow the attacker to execute unauthorized code, compromise the integrity and availability of the device, and persist malicious modifications across subsequent firmware updates.",
+      "last_modified": "2026-10-02T11:17:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86326"
     },
     {
-      "cve_id": "CVE-2026-12540",
-      "asset_id": "CVE-2026-12540",
+      "cve_id": "CVE-2026-85016",
+      "asset_id": "CVE-2026-85016",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Foreman. A command injection vulnerability exists in the foreman-rake errors:fetch_log task. The request_id parameter is passed to an underlying system command (typically grep) without adequate shell neutralization. While the task is intended to fetch specific log entries, an attacker with sudo permissions to execute this rake task can inject shell metacharacters (such as ;, \", or |) to break out of the intended command and execute arbitrary code.",
-      "last_modified": "2026-10-01T23:25:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12540"
+      "description": "The Unlimited Elements for Elementor WordPress plugin before 2.0.21 does not escape an icon value before concatenating it into an HTML attribute in its shared widget-parameter processor, allowing users with Contributor access (who do not hold unfiltered_html) to store a payload that executes when the page is rendered.",
+      "last_modified": "2026-10-02T11:17:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85016"
     },
     {
-      "cve_id": "CVE-2026-12423",
-      "asset_id": "CVE-2026-12423",
+      "cve_id": "CVE-2026-85005",
+      "asset_id": "CVE-2026-85005",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Foreman. The Red Hat Satellite /unattended/provision API endpoint is vulnerable to an authentication bypass due to a semantic logic flaw in host_verifier.rb. The application verifies the database state of a provisioning token rather than its actual presence in the incoming HTTP request. Because a host actively undergoing provisioning has an unexpired token in the database, the server's valid_host_token? method evaluates to true, granting access to the kickstart template even if the requester provides no token at all in the URL.",
-      "last_modified": "2026-10-01T23:25:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12423"
+      "description": "The Popup Maker WP WordPress plugin through 1.4.5 does not perform authorization checks on several of its actions and exposes its management page to any logged-in user, allowing users with a low-privileged role such as Subscriber to store display-targeting values that are later invoked as zero-argument PHP callables on public page loads, leading to sensitive information disclosure and denial of service.",
+      "last_modified": "2026-10-02T11:17:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85005"
     },
     {
-      "cve_id": "CVE-2026-12405",
-      "asset_id": "CVE-2026-12405",
+      "cve_id": "CVE-2026-85004",
+      "asset_id": "CVE-2026-85004",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in rubygem-foreman_remote_execution. A command injection vulnerability exists in the Red Hat Satellite API (/api/v2/job_invocations). When a job template has the effective_user property marked as overridable: true, the application fails to properly sanitize the effective_user input provided during the API request. The exploitation does not rely on the content or logic of the Job Template/playbook itself; rather, the injection occurs during the instantiation of the job execution environment by the Satellite server. An attacker with permissions to execute job templates can inject arbitrary shell commands into this parameter, which are executed on the target infrastructure with the privileges of the execution user.",
-      "last_modified": "2026-10-01T23:25:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12405"
+      "description": "The Popup Maker  WordPress plugin through 1.4.5 does not perform a capability check on one of its account-connection actions, only verifying a nonce, allowing authenticated users with minimal privileges such as Subscribers to overwrite a site-wide Popup Maker  WordPress plugin through 1.4.5 option (the linked service account and API configuration) that should only be modifiable by administrators.",
+      "last_modified": "2026-10-02T11:17:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85004"
     },
     {
-      "cve_id": "CVE-2026-96658",
-      "asset_id": "CVE-2026-96658",
+      "cve_id": "CVE-2026-84740",
+      "asset_id": "CVE-2026-84740",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Foreman. An authenticated attacker with low-level permissions can achieve remote code execution (RCE) by bypassing the safemode sandbox within the templating engine. Due to improper handling of delegated methods, an attacker can append unauthorized functions to the allowed execution list, enabling them to run arbitrary commands on the hosting server.",
-      "last_modified": "2026-10-01T23:25:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96658"
+      "description": "The Events Calendar WordPress plugin before 6.17.5.1 does not validate or sanitise data submitted to an unauthenticated AJAX action before merging it into its rendering context, allowing unauthenticated users to execute arbitrary shortcodes registered on the site.",
+      "last_modified": "2026-10-02T11:17:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84740"
     }
   ]
 }
