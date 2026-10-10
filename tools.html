@@ -16,15 +16,15 @@
   .tools-header h1 { font-size: clamp(32px, 5vw, 52px); margin: 14px 0 12px; }
   .tools-header p { font-size: 17px; max-width: 62ch; }
   .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
-  .tool-card { display: flex; flex-direction: column; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; min-height: 280px; }
+  .tool-card { display: flex; flex-direction: column; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; min-height: 240px; }
   .tool-card.featured { border-color: var(--accent-signal-dim); }
-  .tool-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+  .tool-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
   .tool-type { color: var(--accent-network); font: 600 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
   .tool-status { border: 1px solid var(--border); color: var(--text-muted); padding: 4px 7px; font: 600 10px var(--font-mono); text-transform: uppercase; white-space: nowrap; }
   .tool-status.private { color: var(--accent-signal); border-color: var(--accent-signal-dim); }
   .tool-card h2 { font-size: 20px; margin-bottom: 10px; }
   .tool-card p { font-size: 14px; }
-  .tool-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 20px; padding-top: 18px; }
+  .tool-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 16px; padding-top: 14px; }
   .tool-tag { border: 1px solid var(--border); color: var(--text-secondary); padding: 4px 8px; font: 500 11px var(--font-mono); }
   .tool-action { display: inline-flex; align-items: center; align-self: flex-start; border: 1px solid var(--border); color: var(--text-primary); padding: 9px 11px; font: 600 11px var(--font-mono); }
   .tool-action:hover { border-color: var(--accent-network); color: var(--accent-network); text-decoration: none; }
@@ -78,6 +78,22 @@
     </article>
 
     <article class="tool-card">
+      <div class="tool-meta"><span class="tool-type">Threat intelligence</span><span class="tool-status">Public tool</span></div>
+      <h2>reputation-checker</h2>
+      <p>A lightweight project for checking and organizing reputation signals around indicators, domains, and related infrastructure in security investigations.</p>
+      <div class="tool-tags"><span class="tool-tag">Threat intel</span><span class="tool-tag">OSINT</span><span class="tool-tag">Indicators</span></div>
+      <a class="tool-action" href="https://white-pebble-08cd48410.4.azurestaticapps.net" target="_blank" rel="noopener">Open tool →</a>
+    </article>
+
+    <article class="tool-card">
+      <div class="tool-meta"><span class="tool-type">Application security</span><span class="tool-status">Public tool</span></div>
+      <h2>waf-triage</h2>
+      <p>A triage-focused utility for identifying WAF-related issues, surfacing patterns, and supporting faster review during incident response and web-application investigations.</p>
+      <div class="tool-tags"><span class="tool-tag">WAF triage</span><span class="tool-tag">Incident response</span><span class="tool-tag">Investigation</span></div>
+      <a class="tool-action" href="https://salmon-sand-0ac02840f.1.azurestaticapps.net" target="_blank" rel="noopener">Open tool →</a>
+    </article>
+
+    <article class="tool-card">
       <div class="tool-meta"><span class="tool-type">Future project</span><span class="tool-status">Planned</span></div>
       <h2>More security tooling</h2>
       <p>Additional utilities will be listed here as they become ready for responsible sharing, with clear usage boundaries and project documentation.</p>
@@ -86,7 +102,7 @@
     </article>
   </section>
 
-  <aside class="tool-note"><strong>SHARING POLICY</strong> — Security-sensitive tools are not executed or hosted on this website. Public downloads will be added only for projects that are appropriate for controlled, documented distribution. Private repository access can be discussed directly.</aside>
+  <aside class="tool-note"><strong>ACCESS NOTE</strong> — Access to the hosted tools may be restricted. If you cannot open one, <a href="mailto:akashsunoj1@gmail.com">contact me</a>; I may be able to provide access. Security-sensitive tools are not executed or hosted on this website, and public downloads are shared only when appropriate.</aside>
 </main>
 
 <footer><div class="wrap"><div>&copy; <span data-year></span> Akash Sunoj. Built as a static site, deployed via CI/CD.</div><div><a href="mailto:akashsunoj1@gmail.com">Email</a><a href="https://www.linkedin.com/in/akash-sunoj-37465912b/">LinkedIn</a></div></div></footer>
