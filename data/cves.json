@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-14T21:52:26.970235+00:00",
+  "last_updated": "2026-10-15T05:00:13.845484+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-104107",
-      "asset_id": "CVE-2026-104107",
+      "cve_id": "CVE-2026-98414",
+      "asset_id": "CVE-2026-98414",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. In FileRise 3.22.0, the /api/file/saveFile.php operation accepts dot and dot-dot segments in its attacker-controlled folder input before ACL inheritance evaluates the uncanonicalized string. With an authenticated non-administrator session, a valid CSRF token, and inherited edit permission on a legitimate ancestor, the local filesystem or WebDAV adapter later resolves those segments as path navigation, permitting attacker-controlled file creation outside the authorized folder and, where backend credentials permit, outside the configured WebDAV root. Local storage also created directories before final containment validation and used a prefix comparison that accepted similarly named sibling roots. The source's tentative availability impact conflicts with the maintainer response and structured impact metadata, which state that no additional availability consequence was demonstrated; curator resolution is required. This issue is fixed in version 3.23.0.",
-      "last_modified": "2026-10-14T20:42:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104107"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmemcg: avoid charging the root memcg from obj_cgroup_charge_pages()\n\nobj_cgroup_charge_pages() resolves the objcg to its memcg and calls\ntry_charge_memcg(), which does not short circuit the root memcg.  That\nmemcg can be the root memcg: obj_cgroup_is_root() reflects the memcg the\nobjcg was created for and is never updated, while memcg_reparent_objcgs()\ndoes redirect objcg->memcg to the parent on rmdir.  An objcg of a dying\nchild of root therefore passes every obj_cgroup_is_root() filter but\nresolves to the root memcg.\n\nFolios keep the objcg they were charged with, so this is easy to reach\nthrough zswap: allocate anon memory in a cgroup, move the task out, remove\nthe cgroup, then write to the root cgroup's memory.reclaim.  The reclaimed\nfolios are charged through the reparented objcg and end up in\nrefill_stock() with the root memcg:\n\n  WARNING: mm/memcontrol.c:2198 at refill_stock+0x644/0x940\n   refill_stock+0x644/0x940\n   try_charge_memcg+0x12d6/0x1570\n   __obj_cgroup_charge+0x35/0xf0\n   obj_cgroup_charge+0x1de/0x210\n   obj_cgroup_charge_zswap+0x83/0x270\n   zswap_store+0x1620/0x2000\n   swap_writeout+0x94c/0x14c0\n   shrink_folio_list+0x3388/0x52b0\n   [...]\n   try_to_free_mem_cgroup_pages+0x30d/0x830\n   user_proactive_reclaim+0x504/0x840\n   memory_reclaim+0x1f/0x30\n\nBeyond the warning, the charge is asymmetric: obj_cgroup_uncharge_pages()\nskips refill_stock() for the root memcg, so the root's page counter grows\nand is never uncharged.  It is not user visible, since memory.current is\nnot exposed on the root, but it is a leak.\n\nUse try_charge(), which returns early for the root memcg, restoring the\nsymmetry with obj_cgroup_uncharge_pages().\n\nThe above sequence was scripted into a standalone reproducer (zswap on,\nswap on a virtio disk, 512MB of anon memory faulted in inside a child of\nthe root cgroup, the task then migrated to the root cgroup, the child\nremoved, followed by \"echo 600M swappiness=max > memory.reclaim\" on the\nroot) and run in a CONFIG_DEBUG_VM=y VM.  It reproduces the splat on the\nfirst zswap store of a reparented folio, with the same call chain as the\nreport.  With this patch applied the splat is gone while the zswap store\ncount over the run is unchanged, so the same path is still exercised. \ncgroup selftests test_zswap, test_kmem and test_memcontrol show no new\nfailures.",
+      "last_modified": "2026-10-15T03:30:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98414"
     },
     {
-      "cve_id": "CVE-2026-104110",
-      "asset_id": "CVE-2026-104110",
+      "cve_id": "CVE-2026-98418",
+      "asset_id": "CVE-2026-98418",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.24.0, FileRise Pro /api/pro/portals/get.php returns a configured client portal's full internal record to an unauthenticated caller who knows or guesses the portal slug. The response includes the internal storage folder path, client contact email, form settings, and upload-policy details, while the separate publicMeta.php endpoint intentionally exposes only curated branding data. Exploitation requires the Pro add-on and at least one configured portal. This issue is fixed in version 3.24.0.",
-      "last_modified": "2026-10-14T20:40:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104110"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsched/core: Avoid false migration warning for proxy donors\n\nProxy execution can move a blocked donor's scheduling context to the\nlock owner's CPU even when the donor is migration-disabled. The donor\ndoes not execute there, and its original execution CPU remains recorded\nin wake_cpu.\n\nset_task_cpu() warns unconditionally for migration-disabled tasks, so a\nsubsequent proxy migration or the wakeup path returning the donor home\ntriggers a false positive: moving a blocked scheduling context does not\nviolate the migration-disabled execution context.\n\nFor example, creating a mutex owner on CPU1 and a migration-disabled\nwaiter on CPU0 can trigger the following warning:\n\n  proxy_migrate_repro: donor blocking on CPU0 with migration disabled\n  proxy_migrate_repro: donor moved from CPU0 to CPU1\n  WARNING: kernel/sched/core.c:3389 at set_task_cpu+0x1d3/0x280\n  ...\n  Call Trace:\n   try_to_wake_up+0x43f/0x780\n   __mutex_unlock_slowpath+0x330/0x540\n   owner_fn+0x9f/0xc0 [proxy_migrate_repro]\n  ...\n  proxy_migrate_repro: donor woke on CPU0, task_cpu=0\n  proxy_migrate_repro: completed\n\nExclude blocked proxy donors from the warning. The proxy wakeup path\nrestores an executable placement before clearing the blocked state.",
+      "last_modified": "2026-10-15T03:30:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98418"
     },
     {
-      "cve_id": "CVE-2026-104108",
-      "asset_id": "CVE-2026-104108",
+      "cve_id": "CVE-2026-98420",
+      "asset_id": "CVE-2026-98420",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.23.0, FileRise maps an authenticated OIDC identity to a local account using mutable preferred_username or email claims and does not require email_verified for email-based naming. An attacker who can obtain provider-issued claims colliding with an existing local username can be logged in as that account, including the built-in administrator, even when automatic provisioning is disabled. Exploitability depends on the configured identity provider allowing the colliding claim. This issue is fixed in version 3.23.0.",
-      "last_modified": "2026-10-14T20:39:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104108"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: follow SMB2 session expiration semantics\n\nksmbd_session_register() destroys valid sessions after ten seconds of\ninactivity whenever a client starts another SessionSetup exchange. This\nconfuses Session.IdleTime with Session.ExpirationTime. Windows can create\nadditional authenticated sessions on an existing connection, so deleting\nthe older session invalidates its tree connects and makes mapped drives\nfail with STATUS_NETWORK_NAME_DELETED.\n\nThe session expiration rules require the server to change a valid session\nto expired only after its credential expiration time passes. A valid or\nexpired session otherwise keeps its connection from being scavenged.\nConnections that have not negotiated a dialect, have no sessions, or have\nonly InProgress sessions are disconnected after an implementation-specific\ntimeout. Use the Windows-compatible 45 second value and run the expiration\ncheck periodically for both TCP and SMB Direct.\n\nKeep zero as an infinite credential expiration time, and count each\nValid-to-Expired transition. Set expired sessions to InProgress when they\nreauthenticate. If authentication fails, remove the session from the\nglobal and per-connection tables immediately, including SMB3 multichannel\nconnections.\n\nRetain protection against abandoned SessionId-zero exchanges by allowing\nonly one InProgress authentication per connection. Additional exchanges\nfail with STATUS_INSUFFICIENT_RESOURCES, and stale InProgress sessions are\nreaped after the same 45 second setup timeout. This bounds the original\nunauthenticated memory-exhaustion path without evicting established\nsessions.",
+      "last_modified": "2026-10-15T03:30:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98420"
     },
     {
-      "cve_id": "CVE-2026-103977",
-      "asset_id": "CVE-2026-103977",
+      "cve_id": "CVE-2026-98421",
+      "asset_id": "CVE-2026-98421",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.23.0, FileRise stores failed TOTP verification attempts in $_SESSION. An attacker who already possesses a target account's valid primary credential can restart the login workflow in a new session and restore the second-factor attempt allowance, permitting continued online TOTP guessing beyond the intended five-attempt limit. The pending-login TOTP handlers did not share a durable account-wide limit. This issue is fixed in version 3.23.0.",
-      "last_modified": "2026-10-14T20:38:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103977"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: mac80211: require a peer station for TDLS setup confirm\n\nIt's nonsense for the setup confirm to go to station that\ndoesn't even exist, and it hits a warning when building\nthe frame:\n\n  WARN_ON_ONCE(!sta || !ap_sta)\n\nOnly accept WLAN_TDLS_SETUP_CONFIRM when the station is\nalready there as a TDLS station. Need to copy the call\nto ieee80211_tdls_prep_mgmt_packet() since the existing\nWLAN_TDLS_DISCOVERY_REQUEST already falls through to it.",
+      "last_modified": "2026-10-15T03:30:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98421"
     },
     {
-      "cve_id": "CVE-2026-104105",
-      "asset_id": "CVE-2026-104105",
+      "cve_id": "CVE-2026-98425",
+      "asset_id": "CVE-2026-98425",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.23.0, FileRise verifies that a TOTP code is valid for the accepted time window but does not record that the same account and time step already succeeded. An attacker who has the target account's valid primary credential and captures a TOTP code after its successful use can replay that code from another pending-login session before the window closes. The issue does not by itself disclose the primary credential or TOTP code. This issue is fixed in version 3.23.0.",
-      "last_modified": "2026-10-14T20:37:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104105"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: mac80211: don't warn when an IBSS has no channel to scan\n\nieee80211_request_ibss_scan() warns when regulatory leaves no\nallowed channel, but that can happen as the regdomain can change\nwhile IBSS is operating, and it can continue to operate briefly\nduring the 60s grace period until it's shut down.\n\nJust remove the warning in this case.",
+      "last_modified": "2026-10-15T03:30:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98425"
     },
     {
-      "cve_id": "CVE-2026-84247",
-      "asset_id": "CVE-2026-84247",
+      "cve_id": "CVE-2026-110912",
+      "asset_id": "CVE-2026-110912",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.2 could allow a remote authenticated attacker to cause a denial of service due to a path traversal vulnerability.",
-      "last_modified": "2026-10-14T20:37:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84247"
+      "description": "In DragonFly BSD through 6.4.2 before 4bb22ff, the ARP input handlers arpintr() and in_arpinput() (sys/netinet/if_ether.c) do not validate the hardware address length (ar_hln) and protocol address length (ar_pln) fields of incoming ARP packets. in_arpreply() then uses these attacker-controlled values as memcpy lengths when copying from kernel buffers that are only 6 and 4 bytes long, resulting in an out-of-bounds read of kernel heap and stack memory that is copied into the ARP reply sent back to the requester. An unauthenticated attacker on the adjacent network can use a single crafted ARP request to disclose up to roughly 250 bytes of each type of kernel memory, including kernel pointers. This is expected to be fixed in the 6.6 stable release when that is available.",
+      "last_modified": "2026-10-15T03:26:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110912"
     },
     {
-      "cve_id": "CVE-2026-84246",
-      "asset_id": "CVE-2026-84246",
+      "cve_id": "CVE-2026-94451",
+      "asset_id": "CVE-2026-94451",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.0, 12.1, and 12.2\u00a0could allow a remote attacker to execute arbitrary code due to a buffer overflow.",
-      "last_modified": "2026-10-14T20:36:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84246"
+      "description": "Quarkus REST Data Panache provides a way to automatically generate REST endpoints for data entities. A flaw was found where certain endpoints do not properly check the sort parameter provided by users. This could allow an attacker to learn information they should not have access to or slow down the system by forcing the database to perform complex tasks, potentially causing a denial of service.",
+      "last_modified": "2026-10-15T03:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94451"
     },
     {
-      "cve_id": "CVE-2026-104106",
-      "asset_id": "CVE-2026-104106",
+      "cve_id": "CVE-2026-109394",
+      "asset_id": "CVE-2026-109394",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.23.0, FileRise permits an authenticated session with a valid CSRF token to disable TOTP without recent full reauthentication or to begin enrollment when the account currently has no TOTP secret. The enrollment endpoint returns 409 rather than directly overwriting an already configured secret, but it persists and activates a newly generated secret before a TOTP code verifies possession. An attacker controlling an existing authenticated session can therefore disable an existing second factor or enroll one after the account has no configured secret; this is not a direct overwrite of an active authenticator. This issue is fixed in version 3.23.0.",
-      "last_modified": "2026-10-14T20:36:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104106"
+      "description": "Thirty bees through 1.7.0 contains an authentication bypass vulnerability in PasswordController::resolveCustomer() that allows unauthenticated attackers to reset registered customers' passwords using guest account tokens. Attackers can place a guest order with the victim's email, then use the guest secure key to reset and take over the victim's account when guest checkout is enabled.",
+      "last_modified": "2026-10-15T03:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109394"
     },
     {
-      "cve_id": "CVE-2026-103988",
-      "asset_id": "CVE-2026-103988",
+      "cve_id": "CVE-2026-109371",
+      "asset_id": "CVE-2026-109371",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.23.0, FileRise /api/folder/renameFolder.php authorizes an authenticated, non-folder-scoped, non-administrator with a valid CSRF token against the source folder but does not independently authorize a changed destination parent. A qualifying user who owns a source folder can move that tree beneath another user's existing folder or into the root namespace, and the operation rekeys the moved ownership and ACL records to the new path. The destination must be unused and existing victim files cannot be overwritten. Distinct pre-fix errors reveal whether a specifically guessed destination path exists, but disclose no directory listing or file contents. This issue is fixed in version 3.23.0.",
-      "last_modified": "2026-10-14T20:35:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103988"
+      "description": "ZITADEL 3.0.0 before 4.18.0 contains a missing authentication vulnerability in the hosted Login V1 UI, where the change-username handler acts on the account bound to a login flow before any factor is verified. Unauthenticated attackers can submit a victim's login name and then post a new username to rename any active human user, including administrators, locking them out.",
+      "last_modified": "2026-10-15T03:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109371"
     },
     {
-      "cve_id": "CVE-2026-75875",
-      "asset_id": "CVE-2026-75875",
+      "cve_id": "CVE-2026-109362",
+      "asset_id": "CVE-2026-109362",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.0, 12.1, and 12.2\u00a0could allow a remote attacker to execute arbitrary code due to path traversal.",
-      "last_modified": "2026-10-14T20:35:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75875"
+      "description": "Heym v0.0.5 before v0.0.113 contains a broken access control vulnerability that allows former collaborators to keep executing JWT-auth workflows by reusing scoped workflow:execute tokens after share removal. Attackers can mint a token with a TTL up to 10 years, which the owner cannot list or revoke, and repeatedly run the workflow consuming shared credentials.",
+      "last_modified": "2026-10-15T03:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109362"
     },
     {
-      "cve_id": "CVE-2026-80381",
-      "asset_id": "CVE-2026-80381",
+      "cve_id": "CVE-2026-109357",
+      "asset_id": "CVE-2026-109357",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.0, 12.1, and 12.2\u00a0could allow a remote attacker to execute unauthorized SQL statements due to SQL injection.",
-      "last_modified": "2026-10-14T20:34:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80381"
+      "description": "LibreNMS before 26.9.0 contains an LDAP filter injection in ldap-authorization and ad-authorization modes because usernames are inserted unescaped into LDAP search filters and authentication only checks user existence. When REMOTE_USER is not forwarded, unauthenticated attackers can send a wildcard username via HTTP Basic Authorization (PHP_AUTH_USER) to match all users and groups and gain admin access.",
+      "last_modified": "2026-10-15T03:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109357"
     },
     {
-      "cve_id": "CVE-2026-81932",
-      "asset_id": "CVE-2026-81932",
+      "cve_id": "CVE-2026-109352",
+      "asset_id": "CVE-2026-109352",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.0, 12.1, and 12.2\u00a0is vulnerable to SQL injection. A remote unauthenticated attacker could send specially crafted SQL statements, which could allow the attacker to view, add, modify, or delete information in the back-end database.",
-      "last_modified": "2026-10-14T20:34:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81932"
+      "description": "LibreNMS before 26.9.0 contains a stored cross-site scripting vulnerability in includes/html/pages/device/wireless.inc.php, which echoes wireless sensor sensor_descr values, populated from SNMP DisplayString fields during discovery, into HTML without escaping. Attackers controlling a monitored device's SNMP agent can set values such as AI-AP-MIB::aiSSID to malicious JavaScript that executes when authenticated users view the device's Wireless tab, enabling session hijacking.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109352"
     },
     {
-      "cve_id": "CVE-2026-69193",
-      "asset_id": "CVE-2026-69193",
+      "cve_id": "CVE-2026-109347",
+      "asset_id": "CVE-2026-109347",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.21.0, FileRise tracks failed logins only by the combination of source IP address and username. A remote unauthenticated attacker can rotate usernames to obtain a fresh per-account attempt budget for each name, enabling password spraying from one source beyond the intended limit. Per-user limits still apply and can also produce distinguishable throttling behavior for targeted accounts. The affected surface is AuthModel::getFailedLoginKey(). This issue is fixed in version 3.21.0.",
-      "last_modified": "2026-10-14T20:34:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69193"
+      "description": "Adminer before 6.1.1 contains a remote code execution vulnerability that allows authenticated SQLite users to bypass ATTACH and VACUUM INTO restrictions by prefixing statements with a UTF-8 byte-order mark. Attackers can attach a database file at a PHP-served path and create a table named with PHP code to execute it as the web server user.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109347"
     },
     {
-      "cve_id": "CVE-2026-82895",
-      "asset_id": "CVE-2026-82895",
+      "cve_id": "CVE-2026-109342",
+      "asset_id": "CVE-2026-109342",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.0, 12.1, and 12.2\u00a0could allow a remote attacker to execute arbitrary code due to a buffer overflow.",
-      "last_modified": "2026-10-14T20:33:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82895"
+      "description": "SurrealDB from 3.0.0 before 3.3.0 contains a missing authentication vulnerability in the revoke RPC method that allows low-privileged or unauthenticated callers to invalidate other users' refresh tokens without proof of possession. Attackers can obtain grant identifiers via ACCESS SHOW ALL with VIEWER permission or leaked tokens, then permanently revoke refresh tokens to force re-authentication.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109342"
     },
     {
-      "cve_id": "CVE-2026-69191",
-      "asset_id": "CVE-2026-69191",
+      "cve_id": "CVE-2026-109337",
+      "asset_id": "CVE-2026-109337",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.21.0, FileRise enforces disableFormLogin, disableBasicAuth, and disableOIDCLogin in the client interface but not consistently in the corresponding server-side authentication flows. A user with otherwise valid credentials for a disabled method can call its backend endpoint directly and authenticate despite the administrator's login-method policy. The flaw does not permit credential-free authentication. This issue is fixed in version 3.21.0.",
-      "last_modified": "2026-10-14T20:33:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69191"
+      "description": "SurrealDB before 3.3.0 contains an authorization bypass vulnerability that allows record users to infer field values hidden by field-level SELECT permissions using LIVE SELECT WHERE predicates over $before or $after. Attackers can craft repeated predicates and observe whether notifications are delivered on CREATE, UPDATE, or DELETE to confirm or narrow restricted field values.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109337"
     },
     {
-      "cve_id": "CVE-2026-77427",
-      "asset_id": "CVE-2026-77427",
+      "cve_id": "CVE-2026-109332",
+      "asset_id": "CVE-2026-109332",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. From 3.9.0 until 3.22.0, pristine manual FileRise installations without PERSISTENT_TOKENS_KEY or metadata/persistent_tokens.key can activate a published legacy compatibility key. If an attacker separately obtains ciphertext-bearing account or configuration files, the known fallback key can enable decryption of TOTP secrets or credentials. Docker installations already generated a unique persistent key, and existing installations are not automatically rotated because doing so could make encrypted state unreadable. This issue is fixed in version 3.22.0.",
-      "last_modified": "2026-10-14T20:32:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77427"
+      "description": "Network-AI (npm network-ai) before 5.15.2 contains an origin validation error in McpSseServer._handleRequest in lib/mcp-transport-sse.ts that reflects localhost Origins into Access-Control-Allow-Origin regardless of bind interface. When the server binds a non-loopback address, an attacker page with a localhost Origin visited by a victim can read unauthenticated endpoints like /health cross-origin.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109332"
     },
     {
-      "cve_id": "CVE-2026-69194",
-      "asset_id": "CVE-2026-69194",
+      "cve_id": "CVE-2026-109327",
+      "asset_id": "CVE-2026-109327",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.21.0, FileRise returns the stored branding.footerHtml value through the unauthenticated public site configuration API without server-side sanitization. The FileRise frontend already sanitizes this value before rendering it into the page, using an allowlist of simple footer tags and safe link handling. The unauthenticated public config API exposed raw admin-provided footer HTML to clients, which is still undesirable and could be unsafe for alternate clients or future render paths. An administrator must first store the malicious footer value. This issue is fixed in version 3.21.0.",
-      "last_modified": "2026-10-14T20:32:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69194"
+      "description": "Admidio 4.0.12 through 4.3.17 and 5.0.0 before 5.0.15 contains a reflected cross-site scripting vulnerability in system/redirect.php that allows unauthenticated attackers to inject JavaScript via the url GET parameter, due to an incomplete fix for CVE-2021-43810. Attackers can craft a javascript: URL containing a decoy http:// segment that passes validation and executes script in the Admidio origin when victims click the redirect link.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109327"
     },
     {
-      "cve_id": "CVE-2026-110679",
-      "asset_id": "CVE-2026-110679",
+      "cve_id": "CVE-2026-109322",
+      "asset_id": "CVE-2026-109322",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was determined in OpenSIPS up to 3.6.8/4.0.1. The impacted element is the function rtpproxy_offer/rtpproxy_answer of the component rtpproxy. This manipulation causes out-of-bounds read. The attack may be initiated remotely. Upgrading to version 3.6.9 and 4.0.2 is sufficient to resolve this issue. It is advisable to upgrade the affected component.",
-      "last_modified": "2026-10-14T20:30:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110679"
+      "description": "Grav Guestbook plugin before 0.5.2 contains a stored cross-site scripting vulnerability because its AJAX Load more and Admin Load all handlers insert stored author and message fields into the DOM as unescaped HTML via jQuery. Unauthenticated visitors can submit markup that executes in other visitors' browsers and, in versions 0.5.0 and 0.5.1, in administrator moderation sessions.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109322"
     },
     {
-      "cve_id": "CVE-2026-109729",
-      "asset_id": "CVE-2026-109729",
+      "cve_id": "CVE-2026-109317",
+      "asset_id": "CVE-2026-109317",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use-after-free in the JavaScript Engine: JIT component. This vulnerability was fixed in Firefox 158, Firefox ESR 115.43, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.",
-      "last_modified": "2026-10-14T20:30:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109729"
+      "description": "Grav grav-plugin-api before 1.0.36 contains a privilege escalation vulnerability that allows delegated user managers to obtain super-admin access by storing positive scalar admin or api parent grants. Attackers with api.users.write can edit account access maps or invitations so the inheriting permission resolver satisfies requireSuper checks, accessing super-only API endpoints.",
+      "last_modified": "2026-10-15T03:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109317"
     },
     {
-      "cve_id": "CVE-2026-84035",
-      "asset_id": "CVE-2026-84035",
+      "cve_id": "CVE-2026-109312",
+      "asset_id": "CVE-2026-109312",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.0, 12.1, and 12.2\u00a0could allow a remote attacker to execute arbitrary code due to a stack-based buffer overflow.",
-      "last_modified": "2026-10-14T20:29:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84035"
+      "description": "Grav Login plugin 2.7.0 before 3.9.9 contains an authentication bypass in processUserProfile(), which checks that the session user exists but not that a pending front-end 2FA session is fully authorized. Attackers with a victim's password who can publish a page form without an access rule can invoke update_user before completing 2FA to disable twofa_enabled and take over the account.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109312"
     },
     {
-      "cve_id": "CVE-2026-0311",
-      "asset_id": "CVE-2026-0311",
+      "cve_id": "CVE-2026-109307",
+      "asset_id": "CVE-2026-109307",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A server-side request forgery vulnerability in Palo Alto Networks Checkov by Prisma\u00ae Cloud enables a local unauthenticated user to make unauthorized network requests from host to internal services.",
-      "last_modified": "2026-10-14T20:29:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0311"
+      "description": "Craft CMS 5.0.0 before 5.10.14 contains a DOM-based cross-site scripting vulnerability in the control panel login and 2FA verification flow, where a user-controlled returnUrl accepting javascript: URLs is used in client-side navigation. Attackers can lure a 2FA-enabled victim into opening a crafted /admin/login?verify=1 URL between password submission and TOTP verification, executing JavaScript in the authenticated control panel with the victim's permissions.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109307"
     },
     {
-      "cve_id": "CVE-2026-0312",
-      "asset_id": "CVE-2026-0312",
+      "cve_id": "CVE-2026-109302",
+      "asset_id": "CVE-2026-109302",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Path traversal vulnerabilities in Palo Alto Networks Checkov by Prisma\u00ae Cloud enable an unauthenticated local user to write files to arbitrary locations on the scanning filesystem.",
-      "last_modified": "2026-10-14T20:28:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0312"
+      "description": "Parse Server 8.2.2 before 8.6.94 and 9.0.0 before 9.10.1-alpha.14 applies its GraphQL introspection control only to operation text sent directly with a request, not to operations resolved from Apollo Server's automatic persisted query cache. Unauthenticated attackers holding the public Application Id and client key can replay an introspection query previously cached by a master or maintenance key client to retrieve the schema, including private class and field names.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109302"
     },
     {
-      "cve_id": "CVE-2026-84058",
-      "asset_id": "CVE-2026-84058",
+      "cve_id": "CVE-2026-109297",
+      "asset_id": "CVE-2026-109297",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Guardium Data Protection 12.0, 12.1, and 12.2\u00a0is vulnerable to a buffer overrun in the TDS (Microsoft SQL Server) PRELOGIN packet decoder. A remote attacker who can send a specially crafted TDS PRELOGIN packet to a network monitored by an IBM Guardium Collector may cause a denial of service or potentially execute arbitrary code on the Collector appliance.",
-      "last_modified": "2026-10-14T20:28:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84058"
+      "description": "Open WebUI 0.11.0 before 0.11.4 contains a denial of service vulnerability in the automation recurrence-rule validator, whose sub-daily frequency guard parses rule text more strictly than the calendar library that executes it. Users permitted to create automations can submit whitespace-folded rules (or, in 0.11.0, lowercase frequencies or omitted RRULE prefixes) that expand per-second synchronously, blocking the shared event loop for minutes per request and on every scheduler poll.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109297"
     },
     {
-      "cve_id": "CVE-2026-0313",
-      "asset_id": "CVE-2026-0313",
+      "cve_id": "CVE-2026-109292",
+      "asset_id": "CVE-2026-109292",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A command injection vulnerability in Palo Alto Networks Cortex XSOAR and Cortex XSIAM OS Query content pack enables an authenticated administrator to execute arbitrary OS commands on remote endpoints.",
-      "last_modified": "2026-10-14T20:27:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0313"
+      "description": "Open WebUI from 0.6.27 before 0.11.4 contains an information disclosure vulnerability that allows destination servers to obtain user session cookies by receiving the full browser cookie jar on OAuth-mode connections. Operators of OpenAI-compatible connections, OpenAPI tool servers or terminal servers can capture forwarded session cookies from routine requests and replay them to hijack accounts, including administrators.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109292"
     },
     {
-      "cve_id": "CVE-2026-64856",
-      "asset_id": "CVE-2026-64856",
+      "cve_id": "CVE-2026-109287",
+      "asset_id": "CVE-2026-109287",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.20.0, FileRise /api/file/snippet.php does not apply the standard authenticated-session guard before processing short text preview requests. The endpoint still performs FileRise ACL checks, so normal installations do not expose an unauthenticated arbitrary file read, but unauthenticated requests can reach ACL evaluation instead of receiving an immediate 401 response. Only additional unusual proxy-header or ACL misconfiguration is documented as allowing requests to proceed into path and file-content handling. This issue is fixed in version 3.20.0.",
-      "last_modified": "2026-10-14T20:25:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64856"
+      "description": "Open WebUI from 0.9.6 before 0.11.4 contains an authorization flaw where the knowledge base file listing does not verify that a supplied directory_id belongs to the requested knowledge base. Users with read access to any knowledge base can supply a retained foreign directory UUID to GET /api/v1/knowledge/{id}/files. The returned breadcrumbs expose folder names, owner user ids and knowledge base ids of that directory and all its ancestors.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109287"
     },
     {
-      "cve_id": "CVE-2026-0314",
-      "asset_id": "CVE-2026-0314",
+      "cve_id": "CVE-2026-109282",
+      "asset_id": "CVE-2026-109282",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A type confusion vulnerability in Palo Alto Networks GlobalProtect\u2122 app on Windows enables a local user with low privileges to cause a denial of service (DoS) condition.\n\nThe GlobalProtect\u2122 app on Linux, macOS, iOS, Android, and Chrome OS is not affected by this vulnerability.",
-      "last_modified": "2026-10-14T20:25:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0314"
+      "description": "ImageMagick before 6.9.13-57 and 7.x before 7.1.2-32 contains a type confusion flaw in the INFO, JSON and YAML encoders, where an internal method receives a pointer of an unexpected type when writing an image in a compressed format. An attacker who can cause such an image write can trigger a SIGABRT or SIGSEGV, crashing the process and causing denial of service.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109282"
     },
     {
-      "cve_id": "CVE-2026-62664",
-      "asset_id": "CVE-2026-62664",
+      "cve_id": "CVE-2026-109277",
+      "asset_id": "CVE-2026-109277",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.19.0, FileRise validates the complete folderName string but does not reject dot-dot path segments before FolderModel::createFolder() constructs and creates the destination. An authenticated low-privileged user with a valid CSRF token and create or owner permission on the parent can submit traversal segments to POST /api/folder/createFolder.php and create directories outside UPLOAD_DIR wherever the web-server account can write. This issue is fixed in version 3.19.0.",
-      "last_modified": "2026-10-14T20:24:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-62664"
+      "description": "ImageMagick before 7.1.2-32 contains a policy bypass vulnerability in the -script operation due to missing checks on file descriptor handling. Attackers can use the -script operation to close file descriptors not opened by the current operation, circumventing configured security policies.",
+      "last_modified": "2026-10-15T03:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109277"
     },
     {
-      "cve_id": "CVE-2026-0315",
-      "asset_id": "CVE-2026-0315",
+      "cve_id": "CVE-2026-109272",
+      "asset_id": "CVE-2026-109272",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A local privilege escalation vulnerability in the Palo Alto Networks GlobalProtect\u2122 app enables a local user to escalate their privileges to root on macOS. This enables a non-administrative user to execute arbitrary commands with administrative privileges.\n\nThe GlobalProtect app on Linux, Windows, iOS, Android and Chrome OS is not affected by this vulnerability.",
-      "last_modified": "2026-10-14T20:24:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0315"
+      "description": "ImageMagick 7.1.1-31 before 7.1.2-32 contains a NULL pointer dereference in the PostScript decoder that is triggered when a policy limit is reached. Attackers can supply a crafted PostScript file for processing to crash the application, causing a denial of service.",
+      "last_modified": "2026-10-15T03:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109272"
     },
     {
-      "cve_id": "CVE-2026-61844",
-      "asset_id": "CVE-2026-61844",
+      "cve_id": "CVE-2026-109267",
+      "asset_id": "CVE-2026-109267",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.18.0, FileRise flattens logical folder paths into metadata filenames by replacing separators and spaces with hyphens, so distinct folders such as team/docs and team-docs can share one metadata file. Because uploader metadata is used to authorize read_own and ownership-restricted edits, a low-privileged user who controls one colliding folder, knows the target basename, and already has read_own access to the target folder can alter the metadata used by that folder, make the victim file appear attacker-owned, read it, and modify it when edit-own permission is also available. This issue is fixed in version 3.18.0.",
-      "last_modified": "2026-10-14T20:23:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61844"
+      "description": "ImageMagick before 6.9.13-57 and 7.x before 7.1.2-32 contains a stack overflow in the MSL decoder caused by an incorrect depth check that fails to limit recursion. Attackers can supply a set of crafted MSL images that exhaust the stack when one of them is read, crashing the process and causing a denial of service.",
+      "last_modified": "2026-10-15T03:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109267"
     },
     {
-      "cve_id": "CVE-2026-76519",
-      "asset_id": "CVE-2026-76519",
+      "cve_id": "CVE-2026-109262",
+      "asset_id": "CVE-2026-109262",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability in the Advanced Malware Protection (AMP) feature of Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.\r\n\r\nThis vulnerability is due to improper handling of email attachments when the file reputation service is enabled. An attacker could exploit this vulnerability by sending an email that contains a crafted attachment through an affected device. A successful exploit could allow the attacker to write arbitrary files and execute commands with&nbsp;root privileges on the underlying operating system.",
-      "last_modified": "2026-10-14T20:23:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76519"
+      "description": "ImageMagick before 6.9.13-57 and 7.x before 7.1.2-32 contains a memory leak in the SVG encoder (WriteSVGImage) that fails to release allocated memory when handling crafted images. Attackers can supply crafted image files that are processed by the SVG encoder to leak memory and cause a denial of service through resource consumption.",
+      "last_modified": "2026-10-15T03:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109262"
     },
     {
-      "cve_id": "CVE-2026-0316",
-      "asset_id": "CVE-2026-0316",
+      "cve_id": "CVE-2026-109257",
+      "asset_id": "CVE-2026-109257",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stored cross-site scripting (XSS) vulnerability in Palo Alto Networks PAN-OS\u00ae software enables a malicious authenticated administrator to store or execute a JavaScript payload using the web interface.\n\n\n\nThe security risk posed by this issue is minimized when the management interface is restricted to only trusted internal IP addresses according to our recommended\u00a0 best practice deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\u00a0\n\n\n\n\nThis issue is applicable to PAN-OS\u00ae software on PA-Series and VM-Series firewalls and on Panorama (virtual and M-Series).\n\n\n\nCloud NGFW and Prisma\u00ae Access are not affected by these vulnerabilities.",
-      "last_modified": "2026-10-14T20:23:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0316"
+      "description": "FreeRDP before 3.32.0 contains a double-free vulnerability in nsc_context_initialize_encode() that leaves dangling plane pointers after a partial buffer growth failure. Attackers using a crafted RDP client can negotiate NSCodec with a large desktop geometry to trigger allocation failure, crashing the server during context teardown.",
+      "last_modified": "2026-10-15T03:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109257"
     },
     {
-      "cve_id": "CVE-2026-61843",
-      "asset_id": "CVE-2026-61843",
+      "cve_id": "CVE-2026-109252",
+      "asset_id": "CVE-2026-109252",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.18.0, FileRise upload-enabled shared-folder and upload-only links do not reject a destination filename that already exists. An unauthenticated visitor with a valid share token and any configured share password can upload a file with the same name as an existing file and silently replace its content while the original uploader metadata remains. The same replacement gap affects ordinary authenticated uploads through /api/upload/upload.php and authenticated upload-only users who lack edit authority over the existing file. This issue is fixed in version 3.18.0.",
-      "last_modified": "2026-10-14T20:22:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61843"
+      "description": "FreeRDP from 3.9.0 before 3.32.0 contains a NULL pointer dereference vulnerability in the RDPEAR NDR reader that allows malicious servers to crash clients via truncated KERB_RPC_INTERNAL_NAME data. Attackers can send a CreateApReqAuthenticatorReq with NameCount of two or more ending before the Names pointer, causing cleanup to dereference a null base and terminate the client.",
+      "last_modified": "2026-10-15T03:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109252"
     },
     {
-      "cve_id": "CVE-2026-97757",
-      "asset_id": "CVE-2026-97757",
+      "cve_id": "CVE-2026-109247",
+      "asset_id": "CVE-2026-109247",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-10-14T20:22:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97757"
+      "description": "FreeRDP before 3.32.0 contains a path traversal vulnerability in convert_filedescriptors_to_file_list() in winpr/libwinpr/clipboard/synthetic_file.c, which concatenates server-supplied cFileName values from FileGroupDescriptorW clipboard data into the published local file:// URI without rejecting '/' or '..' sequences. A malicious RDP server can supply '../' sequences so the user's next clipboard paste copies an arbitrary local file readable by the client user instead of the expected remote file.",
+      "last_modified": "2026-10-15T03:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109247"
     },
     {
-      "cve_id": "CVE-2026-57493",
-      "asset_id": "CVE-2026-57493",
+      "cve_id": "CVE-2026-109242",
+      "asset_id": "CVE-2026-109242",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.16.0, FileRise stores the isAdmin flag in remember-me tokens and restores that stale value during automatic login instead of resolving the account's current role from users.txt. A user who was issued a token while an administrator can retain administrator access after demotion, and token rotation copies the stale privilege into each replacement token. Exploitation requires possession of the pre-demotion remember-me token. This issue is fixed in version 3.16.0.",
-      "last_modified": "2026-10-14T20:22:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57493"
+      "description": "FreeRDP before 3.0.0 and 3.6.0 before 3.32.0 renders uninitialized heap memory from un-decoded progressive tiles because the tile->current buffer is allocated without zeroing. A malicious RDP server can send a crafted WBT_TILE_FIRST then WBT_TILE_UPGRADE sequence to paint heap bytes onscreen or abort the client process.",
+      "last_modified": "2026-10-15T03:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109242"
     },
     {
-      "cve_id": "CVE-2026-97758",
-      "asset_id": "CVE-2026-97758",
+      "cve_id": "CVE-2026-109237",
+      "asset_id": "CVE-2026-109237",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-10-14T20:21:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97758"
+      "description": "Crawl4AI from 0.9.0 before 0.9.4 contains an untrusted-config gate bypass that allows non-admin API clients to construct forbidden config objects by wrapping them in dict-type wrappers. Attackers can send a laundered LLMConfig with api_token set to an env reference via /config/dump to read SECRET_KEY and provider keys, enabling admin JWT forgery.",
+      "last_modified": "2026-10-15T03:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109237"
     },
     {
-      "cve_id": "CVE-2026-0317",
-      "asset_id": "CVE-2026-0317",
+      "cve_id": "CVE-2026-109200",
+      "asset_id": "CVE-2026-109200",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A denial of service vulnerability in Palo Alto Networks PAN-OS software enables an authenticated user with a read-only administrator role\u00a0to cause a denial of service (DoS) condition by sending a specially crafted API request.\n\nThe security risk posed by this issue is significantly minimized by restricting access to the management web interface to only trusted internal IP addresses according to our recommended  best practice deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\nCloud NGFW, Panorama, and Prisma\u00ae Access are not affected by this vulnerability.",
-      "last_modified": "2026-10-14T20:21:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0317"
+      "description": "LogicalDOC Community Edition through 9.3 contains a server-side request forgery vulnerability in the default-enabled XMLConverter that fetches xml-stylesheet href URLs without scheme or host allowlisting. Authenticated users can upload XML documents whose stylesheet href points to internal http, ftp, file, or jar URLs, forcing server requests and applying attacker-controlled XSLT during conversion.",
+      "last_modified": "2026-10-15T03:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109200"
     },
     {
-      "cve_id": "CVE-2026-97759",
-      "asset_id": "CVE-2026-97759",
+      "cve_id": "CVE-2026-108906",
+      "asset_id": "CVE-2026-108906",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-10-14T20:21:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97759"
+      "description": "A vulnerability has been found in Netcore NR268 1.7.121109. This affects the function filter_arp_put_file_cgi of the file /router/filter_arp_put_file.cgi. The manipulation of the argument put_file leads to out-of-bounds read. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "last_modified": "2026-10-15T03:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-108906"
     },
     {
-      "cve_id": "CVE-2026-57492",
-      "asset_id": "CVE-2026-57492",
+      "cve_id": "CVE-2026-98429",
+      "asset_id": "CVE-2026-98429",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.16.0, FileRise treats an empty or missing users.txt file as a fresh installation even after setup previously completed. If storage loss, truncation, or another failure empties the user store, an unauthenticated remote caller can detect that setup mode reopened and create the next initial administrator account through the setup flow. The application lacked a durable setup-complete marker independent of the mutable user store. This issue is fixed in version 3.16.0.",
-      "last_modified": "2026-10-14T20:21:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57492"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nRDMA/efa: Keep EQ resources alive while IRQ is registered\n\nThe completion IRQ handler accesses the EQ state and DMA buffer. Its IRQ was\nregistered before that state was initialized, while teardown released the\nbuffer before free_irq() synchronized the handler.\n\nInitialize the EQ without arming it, register the IRQ, and then arm it.\nReverse the resource order during teardown by freeing the IRQ before\ndestroying the EQ.",
+      "last_modified": "2026-10-15T03:15:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98429"
     },
     {
-      "cve_id": "CVE-2026-97760",
-      "asset_id": "CVE-2026-97760",
+      "cve_id": "CVE-2026-98430",
+      "asset_id": "CVE-2026-98430",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97760"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nRDMA/efa: Keep admin queues alive while IRQ is registered\n\nThe management IRQ handler accesses both the admin completion queue and the\nasync event queue. The driver registered the IRQ before constructing these\nqueues and destroyed them before freeing the IRQ, so the handler's lifetime\nwas not contained by the resources it accesses.\n\nInitialize the queues with interrupts masked, request the IRQ, and then\nswitch to interrupt mode. On removal, reset the device and free the IRQ\nbefore destroying the queues. Also reset the device before destroying the\nqueues if IRQ registration fails, because the device already has their DMA\naddresses.",
+      "last_modified": "2026-10-15T03:15:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98430"
     },
     {
-      "cve_id": "CVE-2026-97844",
-      "asset_id": "CVE-2026-97844",
+      "cve_id": "CVE-2026-101215",
+      "asset_id": "CVE-2026-101215",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97844"
+      "description": "Dell Unisphere for PowerMax vApp, version(s) 9.2.4.x, contain(s) an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Remote execution.",
+      "last_modified": "2026-10-15T03:15:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101215"
     },
     {
-      "cve_id": "CVE-2026-97843",
-      "asset_id": "CVE-2026-97843",
+      "cve_id": "CVE-2026-35161",
+      "asset_id": "CVE-2026-35161",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97843"
+      "description": "Dell PowerScale InsightIQ, versions 5.2.0 through 6.3.0, contains an Overly Restrictive Account Lockout Mechanism vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Denial of service.",
+      "last_modified": "2026-10-15T03:15:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35161"
     },
     {
-      "cve_id": "CVE-2026-97842",
-      "asset_id": "CVE-2026-97842",
+      "cve_id": "CVE-2026-110911",
+      "asset_id": "CVE-2026-110911",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97842"
+      "description": "Wheels 1.1.8 through 4.1.1 allows SQL injection when caller-supplied quoted values are parsed again as SQL by dynamic finders (such as findOneByEmail), the query builder's where(property, value) and where(property, operator, value), string/UUID-key lookup paths (findByKey, updateByKey, deleteByKey and findOrCreateBy...), and validatesUniquenessOf. The parser incorrectly treats a doubled single quote as the end of a literal. Applications passing request data to these APIs can expose authentication, password-reset or token lookups, and data to unauthorized access; numeric-column values are not affected. There is a similar concern for query-builder whereBetween() in 4.0.0 through 4.1.1: string/date bounds can alter SQL on MySQL/MariaDB with backslash escaping enabled. This is fixed in 4.1.2.",
+      "last_modified": "2026-10-15T03:03:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110911"
     },
     {
-      "cve_id": "CVE-2026-97841",
-      "asset_id": "CVE-2026-97841",
+      "cve_id": "CVE-2026-110909",
+      "asset_id": "CVE-2026-110909",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97841"
+      "description": "Wheels CLI through 4.1.0 does not verify that the local development server answering its HTTP requests belongs to the current project. A process listening on a port targeted by the CLI can receive the project's reload password and code submitted through wheels reload or wheels console; console also probes common ports when the project server is down. Other commands can perform unintended state-changing operations against a different local application's server and database. Exploitation requires a process listening on a targeted local port and the developer running an affected command. This is fixed in 4.1.1, including changes to the CLI and application template.",
+      "last_modified": "2026-10-15T02:56:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110909"
     },
     {
-      "cve_id": "CVE-2026-97840",
-      "asset_id": "CVE-2026-97840",
+      "cve_id": "CVE-2026-108982",
+      "asset_id": "CVE-2026-108982",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97840"
+      "description": "VeraCrypt 1.26.29 (FUSE-T build) on macOS sometimes allows unintended access to decrypted data. It does not terminate the FUSE-T auxiliary service (go-nfsv4) and its associated VeraCrypt core-service helper processes when a volume is dismounted. After VeraCrypt reports the volume as dismounted, the auxiliary mount continues to serve the decrypted volume image (volume.dmg) over a loopback SMB session, and the leaked processes retain an open handle to the underlying raw device. A local user or process can therefore remount and access the decrypted volume without the passphrase, e.g., by reopening a previously accessed path (such as through a macOS Open Recent menu) or by attaching volume.dmg from the stale auxiliary mount. (The macFUSE build of VeraCrypt is not affected.)",
+      "last_modified": "2026-10-15T02:49:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-108982"
     },
     {
-      "cve_id": "CVE-2026-57490",
-      "asset_id": "CVE-2026-57490",
+      "cve_id": "CVE-2026-96940",
+      "asset_id": "CVE-2026-96940",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.16.0, when an administrator has enabled WebDAV, FileRise WebDAV Basic authentication validates only the account username and password through AuthModel::authenticate() and does not enforce the account's configured TOTP factor. An attacker who knows valid primary credentials for a TOTP-enabled account can authenticate to the enabled WebDAV service without supplying the second factor and exercise the account's WebDAV file permissions. The browser login path enforces TOTP, but the separate public/webdav.php authentication callback did not. This issue is fixed in version 3.16.0.",
-      "last_modified": "2026-10-14T20:20:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57490"
+      "description": "Weak authentication in Microsoft Exchange Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-10-15T02:35:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96940"
     },
     {
-      "cve_id": "CVE-2026-97761",
-      "asset_id": "CVE-2026-97761",
+      "cve_id": "CVE-2026-101027",
+      "asset_id": "CVE-2026-101027",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-10-14T20:20:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97761"
+      "description": "When `[migrations] ALLOWED_DOMAINS` was configured, a hostname matching the allow list was accepted without checking its resolved address against the local-network restrictions. A user who can start repository migrations and control the DNS of an allowed hostname could make it resolve to loopback or private addresses and bypass `ALLOW_LOCALNETWORKS = false`, reaching internal services from the Gitea server. Instances without `ALLOWED_DOMAINS` configured are not affected by this specific bypass.",
+      "last_modified": "2026-10-15T02:32:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101027"
     },
     {
-      "cve_id": "CVE-2026-97839",
-      "asset_id": "CVE-2026-97839",
+      "cve_id": "CVE-2026-108913",
+      "asset_id": "CVE-2026-108913",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97839"
+      "description": "omarchy-theme-set in Omarchy 4 before 4.0.1 allows code execution via a third-party theme because the files placed into ~/.local/state/omarchy/current/theme may include executable content from an untrusted Git repository.",
+      "last_modified": "2026-10-15T02:32:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-108913"
     },
     {
-      "cve_id": "CVE-2026-97838",
-      "asset_id": "CVE-2026-97838",
+      "cve_id": "CVE-2026-101029",
+      "asset_id": "CVE-2026-101029",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97838"
+      "description": "Gitea's repository migration and pull mirror egress checks could be bypassed with a hostname that returns multiple DNS answers, because the address that was validated was not necessarily the address Git later connected to. A low-privileged user who can create migrations or mirrors could direct the server to internal services, reading from and writing to reachable internal Git or HTTP endpoints. Content from internal responses could additionally be disclosed through migration and mirror error messages.",
+      "last_modified": "2026-10-15T02:29:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101029"
     },
     {
-      "cve_id": "CVE-2026-97837",
-      "asset_id": "CVE-2026-97837",
+      "cve_id": "CVE-2026-103059",
+      "asset_id": "CVE-2026-103059",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97837"
+      "description": "When Gitea's built-in SSH server is enabled (`START_SSH_SERVER = true`), the presented public key was looked up with an SQL `LIKE` comparison of its encoded content, which is case-insensitive on some databases, including the default SQLite. An attacker who can construct a case variant of another user's registered RSA public key for which they can derive the private key could have that key matched to the victim's account and authenticate over SSH as that user. Keys are now looked up by fingerprint.",
+      "last_modified": "2026-10-15T02:26:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103059"
     },
     {
-      "cve_id": "CVE-2026-97836",
-      "asset_id": "CVE-2026-97836",
+      "cve_id": "CVE-2026-103667",
+      "asset_id": "CVE-2026-103667",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97836"
+      "description": "Gitea's container registry served blob downloads with a `Content-Type` taken from the media type declared in pushed image manifests, without a `Content-Disposition` or restrictive content security policy. A user who can push container images can publish a blob containing HTML and JavaScript with a `text/html` media type. When a victim who is authenticated to the instance opens the blob URL in a browser, the script runs on the Gitea origin and can perform actions as the victim, such as creating API tokens.",
+      "last_modified": "2026-10-15T02:25:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103667"
     },
     {
-      "cve_id": "CVE-2026-97835",
-      "asset_id": "CVE-2026-97835",
+      "cve_id": "CVE-2026-110908",
+      "asset_id": "CVE-2026-110908",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97835"
+      "description": "Netgate pfSense FRR package (pfSense-pkg-frr) 2.0.2_1 and source revision 2.1.2_1 contain an OS command injection vulnerability in the FRR status filter. An authenticated WebGUI user with only the page-status-frr privilege can supply a filter value that breaks out of a single-quoted sed expression into which escapeshellarg() output is concatenated. Shell command substitution is then evaluated by a popen() pipeline, allowing attacker-selected commands to execute as root. There are updated FRR packages for pfSense Plus 26.07/26.03.1 and CE 2.9.0/2.8.1.",
+      "last_modified": "2026-10-15T02:24:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110908"
     },
     {
-      "cve_id": "CVE-2026-97834",
-      "asset_id": "CVE-2026-97834",
+      "cve_id": "CVE-2026-103670",
+      "asset_id": "CVE-2026-103670",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97834"
+      "description": "When a Gitea Actions run was inserted, older runs in the same workflow-level concurrency group were cancelled without checking whether the new run still needed approval. Because fork pull request runs are inserted under the base repository, a user who can open a pull request from a fork could cancel trusted in-progress runs that share a concurrency group with `cancel-in-progress` enabled, without approval and without running any code. On self-hosted runners this can interrupt deployments and leave partial state behind.",
+      "last_modified": "2026-10-15T02:23:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103670"
     },
     {
-      "cve_id": "CVE-2026-97833",
-      "asset_id": "CVE-2026-97833",
+      "cve_id": "CVE-2026-84854",
+      "asset_id": "CVE-2026-84854",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97833"
+      "description": "In the WibuKey driver for Windows below Version 6.72, insufficient validation of user input when calculating the size of a kernel buffer could cause small amounts of data to be written outside the intended kernel buffer. This can lead to a system crash. Under\u00a0unfavorable circumstances, adjacent kernel memory may be modified.",
+      "last_modified": "2026-10-15T02:20:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84854"
     },
     {
-      "cve_id": "CVE-2026-97832",
-      "asset_id": "CVE-2026-97832",
+      "cve_id": "CVE-2026-84393",
+      "asset_id": "CVE-2026-84393",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:20:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97832"
+      "description": "A improper validation of certificate with host mismatch vulnerability in Fortinet FortiOS 7.6.1 through 7.6.6, FortiProxy 7.6.2 through 7.6.6 may allow attacker to information disclosure via <insert attack vector here>",
+      "last_modified": "2026-10-15T02:20:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84393"
     },
     {
-      "cve_id": "CVE-2026-97831",
-      "asset_id": "CVE-2026-97831",
+      "cve_id": "CVE-2026-84392",
+      "asset_id": "CVE-2026-84392",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97831"
+      "description": "A NULL Pointer Dereference vulnerability [CWE-476] vulnerability in Fortinet FortiOS 7.4 all versions, FortiOS 7.2 all versions, FortiPAM 1.9.0, FortiPAM 1.8 all versions, FortiPAM 1.7 all versions, FortiPAM 1.6 all versions, FortiPAM 1.5 all versions, FortiPAM 1.4 all versions, FortiPAM 1.3 all versions, FortiPAM 1.2 all versions, FortiPAM 1.1 all versions, FortiPAM 1.0 all versions, FortiProxy 7.6.0 through 7.6.6, FortiProxy 7.4 all versions, FortiProxy 7.2 all versions may allow an authenticated attacker to crash the httpsd daemon via crafted HTTP requests.",
+      "last_modified": "2026-10-15T02:20:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84392"
     },
     {
-      "cve_id": "CVE-2026-97830",
-      "asset_id": "CVE-2026-97830",
+      "cve_id": "CVE-2026-71408",
+      "asset_id": "CVE-2026-71408",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Double free in Windows Internet Information Services allows an unauthorized attacker to deny service over a network.",
-      "last_modified": "2026-10-14T20:19:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97830"
+      "description": "A allocation of resources without limits or throttling vulnerability in Fortinet FortiOS 7.6.0 through 7.6.6, FortiOS 7.4 all versions, FortiOS 7.2 all versions may allow attacker to denial of service via <insert attack vector here>",
+      "last_modified": "2026-10-15T02:20:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71408"
     },
     {
-      "cve_id": "CVE-2026-97829",
-      "asset_id": "CVE-2026-97829",
+      "cve_id": "CVE-2026-71407",
+      "asset_id": "CVE-2026-71407",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97829"
+      "description": "A Stack-based Buffer Overflow vulnerability [CWE-121] vulnerability in Fortinet FortiOS 7.6.1 through 7.6.6 may allow an unauthenticated attacker who can bypass stack protection and ASLR to execute arbitrary code or commands in the context of the WAD daemon via crafted sockets, only if the explicit proxy is configured with Kerberos authentication and SOCKS enabled.",
+      "last_modified": "2026-10-15T02:20:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71407"
     },
     {
-      "cve_id": "CVE-2026-97762",
-      "asset_id": "CVE-2026-97762",
+      "cve_id": "CVE-2026-64560",
+      "asset_id": "CVE-2026-64560",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds write in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-10-14T20:19:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97762"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nposix-cpu-timers: Prevent UAF caused by non-leader exec() race\n\nWongi and Jungwoo decoded and reported a non-leader exec() related race\nwhich can result in an UAF:\n\n sys_timer_delete()\t\t\texec()\n   posix_cpu_timer_del()\n   // Observes old leader\n   p = pid_task(pid, pid_type);\t\tde_thread()\n   \t\t\t\t\t  switch_leader();\n\t\t\t\t\t  release_task(old_leader)\n\t\t\t\t\t    __exit_signal(old_leader)\n\t\t\t\t\t      sighand = lock(old_leader, sighand);\n\t\t\t\t\t      posix_cpu_timers*_exit();\n   sighand = lock_task_sighand(p)\t      unhash_task(old_leader);\n     sh = lock(p, sighand)\t    \t      old_leader->sighand = NULL;\n\t\t\t\t\t      unlock(sighand);\n     (p->sighand == NULL)\n\tunlock(sh)\n\treturn NULL;\n\n   // Returns without action\n   if(!sighand)\n      return 0;\n   free_posix_timer();\n\nThis is \"harmless\" unless the deleted timer was armed and enqueued in\np->signal because on exec() a TGID targeted timer is inherited.\n\nAs sys_timer_delete() freed the underlying posix timer object\nrun_posix_cpu_timers() or any timerqueue related add/delete operations on\nother timers will access the freed object's timerqueue node, which results\nin an UAF.\n\nThere is a similar problem vs. posix_cpu_timer_set(). For regular posix\ntimers it just transiently returns -ESRCH to user space, but for the use\ncase in do_cpu_nanosleep() it's the same UAF just that the k_itimer is\nallocated on the stack.\n\nAlso posix_cpu_timer_rearm() fails to rearm the timer, which means it stops\nto expire.\n\nWhile debating solutions Frederic pointed out another problem:\n\n   posix_cpu_timer_del(tmr)\n\t\t\t\t\t__exit_signal(p)\n\t\t\t\t\t  posix_cpu_timers*_exit(p);\n\t\t\t\t\t  unhash_task(p);\n\t\t\t\t\t  p->sighand = NULL;\n     sh = lock_task_sighand(p)\n        sighand = p->sighand;\n\tif (!sighand)\n\t    return NULL;\n\tlock(sighand);\n\n     if (!sh)\n\tWARN_ON_ONCE(timer_queued(tmr));\n\nOn weakly ordered architectures it is not guaranteed that\nposix_cpu_timer_del() will observe the stores in posix_cpu_timers*_exit()\nwhen p->sighand is observed as NULL, which means the WARN() can be a false\npositive.\n\nSolve these issues by:\n\n  1) Changing the store in __exit_signal() to smp_store_release().\n\n  2) Adding a smp_acquire__after_ctrl_dep() into the !sighand path\n     of lock_task_sighand().\n\n  3) Creating a helper function for looking up the task and locking sighand\n     which does not return when sighand == NULL. Instead it retries the\n     task lookup and only if that fails it gives up.\n\n  4) Using that helper in the three affected functions.\n\n#1/#2 ensures that the reader side which observes sighand == NULL also\nobserves all preceeding stores, i.e. the stores in posix_cpu_timers*_exit()\nand the ones in unhash_task().\n\n#3 ensures that the above described non-leader exec() situation is handled\ngracefully. When the task lookup returns the old leader, but sighand ==\nNULL then it retries. In the non-leader exec() case the subsequent task\nlookup will observe the new leader due to #1/#2. In normal exit() scenarios\nthe subsequent lookup fails.\n\nWhen the task lookup fails, the function also checks whether the timer is\nstill enqueued and issues a warning if that's the case. Unfortunately there\nis nothing which can be done about it, but as the task is already not\nlonger visible the timer should not be accessed anymore. This check also\nrequires memory ordering, which is not provided when the first lookup\nfails. To achieve that the check is preceeded by a smp_rmb() which pairs\nwith the smp_wmb() in write_seqlock() in __exit_signal(). That ensures that\nthe stores in posix_cpu_timers*_exit() are visible.\n\nThe history of the non-leader exec() issue goes back to the early days of\nposix CPU timers, which stored a pointer to the group leader task in the\ntimer. That obviously fails when a non-leader exec() switches the leader.\ncommit e0a70217107e (\"posix-cpu-timers: workaround to suppress the problems\nwith mt exec\") added a temporary workaround for that in 2010 which surv\n---truncated---",
+      "last_modified": "2026-10-15T02:20:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64560"
     },
     {
-      "cve_id": "CVE-2026-97828",
-      "asset_id": "CVE-2026-97828",
+      "cve_id": "CVE-2026-64552",
+      "asset_id": "CVE-2026-64552",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Buffer over-read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97828"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio-net: fix len check in receive_big()\n\nreceive_big() bounds the device-announced length by\n(big_packets_num_skbfrags + 1) * PAGE_SIZE.  That is still too loose:\nadd_recvbuf_big() sets sg[1] to start at offset\nsizeof(struct padded_vnet_hdr) into the first page, so the chain\nactually carries hdr_len + (PAGE_SIZE - sizeof(padded_vnet_hdr)) +\nbig_packets_num_skbfrags * PAGE_SIZE bytes -- 20 bytes less than the\ncheck allows for the common hdr_len == 12 case.\n\nA malicious virtio backend can announce a len in that gap.  page_to_skb()\nthen walks one frag past the page chain, storing a NULL page->private\ninto skb_shinfo()->frags[MAX_SKB_FRAGS], which is both an out-of-bounds\nwrite past the static frag array and a NULL frag handed up the rx path.\n\nBound len by the size add_recvbuf_big() actually advertised.",
+      "last_modified": "2026-10-15T02:20:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64552"
     },
     {
-      "cve_id": "CVE-2026-97827",
-      "asset_id": "CVE-2026-97827",
+      "cve_id": "CVE-2026-64545",
+      "asset_id": "CVE-2026-64545",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97827"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet, bpf: check master for NULL in xdp_master_redirect()\n\nxdp_master_redirect() dereferences the result of\nnetdev_master_upper_dev_get_rcu() without a NULL check, but that helper\nreturns NULL when the receiving device has no upper-master adjacency.\n\nThe reach guard only checks netif_is_bond_slave(). On bond slave release\nbond_upper_dev_unlink() drops the upper-master adjacency before clearing\nIFF_SLAVE, so an XDP_TX reaching xdp_master_redirect() in that window\nstill passes netif_is_bond_slave() while master is already NULL, and\nfaults on master->flags at offset 0xb0:\n\n  BUG: kernel NULL pointer dereference, address: 00000000000000b0\n  RIP: 0010:xdp_master_redirect (net/core/filter.c:4432)\n  Call Trace:\n   xdp_master_redirect (net/core/filter.c:4432)\n   bpf_prog_run_generic_xdp (include/net/xdp.h:700)\n   do_xdp_generic (net/core/dev.c:5608)\n   __netif_receive_skb_one_core (net/core/dev.c:6204)\n   process_backlog (net/core/dev.c:6319)\n   __napi_poll (net/core/dev.c:7729)\n   net_rx_action (net/core/dev.c:7792)\n   handle_softirqs (kernel/softirq.c:622)\n   __dev_queue_xmit (include/linux/bottom_half.h:33)\n   packet_sendmsg (net/packet/af_packet.c:3082)\n   __sys_sendto (net/socket.c:2252)\n  Kernel panic - not syncing: Fatal exception in interrupt\n\nThe missing check dates back to the original code; commit 1921f91298d1\n(\"net, bpf: fix null-ptr-deref in xdp_master_redirect() for down master\")\nlater added the master->flags read where the fault now lands but kept the\nunconditional deref. Check master for NULL before use; a NULL master is\ntreated the same as one that is not up.",
+      "last_modified": "2026-10-15T02:20:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64545"
     },
     {
-      "cve_id": "CVE-2026-97826",
-      "asset_id": "CVE-2026-97826",
+      "cve_id": "CVE-2026-64538",
+      "asset_id": "CVE-2026-64538",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97826"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv6: Fix null-ptr-deref in fib6_nh_mtu_change().\n\nfib6_nh_mtu_change() re-fetches idev via __in6_dev_get(arg->dev) and\ndereferences idev->cnf.mtu6 without a NULL check. addrconf_ifdown()\nclears dev->ip6_ptr with RCU_INIT_POINTER() after rt6_disable_ip() has\nreleased tb6_lock, so the RA-driven MTU walk can observe a NULL idev and\noops. The caller rt6_mtu_change_route() guards its own __in6_dev_get(),\nbut this re-fetch is unguarded; nexthop-backed routes survive\naddrconf_ifdown()'s flush, so the walk still reaches it after ip6_ptr is\nnulled.\n\nReturn 0 when idev is NULL, matching rt6_mtu_change_route() and the\nfib6_mtu() fix in commit 5ad509c1fdad (\"ipv6: Fix null-ptr-deref in\nfib6_mtu().\").\n\n  Oops: general protection fault, ... KASAN: null-ptr-deref in range\n        [0x00000000000002a8-0x00000000000002af]\n  RIP: 0010:fib6_nh_mtu_change+0x203/0x990\n   rt6_mtu_change_route+0x141/0x1d0\n   __fib6_clean_all+0xd0/0x160\n   rt6_mtu_change+0xb4/0x100\n   ndisc_router_discovery+0x24b5/0x2cb0\n   icmpv6_rcv+0x12e9/0x1710\n   ipv6_rcv+0x39b/0x410",
+      "last_modified": "2026-10-15T02:20:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64538"
     },
     {
-      "cve_id": "CVE-2026-97825",
-      "asset_id": "CVE-2026-97825",
+      "cve_id": "CVE-2026-64425",
+      "asset_id": "CVE-2026-64425",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97825"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nio_uring/io-wq: re-check IO_WQ_BIT_EXIT for each linked work item\n\ncommit 10dc95939817 (\"io_uring/io-wq: check IO_WQ_BIT_EXIT inside work\nrun loop\") fixed the obvious case where io_worker_handle_work() took one\nexit-bit snapshot before draining pending work, but the fix stops one\nlevel too early.\n\nio_worker_handle_work() now re-checks IO_WQ_BIT_EXIT in its outer work\nrun loop, yet it still snapshots that bit once before processing a whole\ndependent linked-work chain. If io_wq_exit_start() sets IO_WQ_BIT_EXIT\nafter the first linked item has started, the remaining linked items can\nstill reuse stale do_kill = false, skip IO_WQ_WORK_CANCEL, and continue\nrunning after exit has begun.\n\nMove the check further inside, so it covers linked items too. Note: this\nis a syzbot special as it loves setting up tons of slow linked work on\nweird devices like msr that take forever to read, and immediately close\nthe ring. Exit then takes a long time.",
+      "last_modified": "2026-10-15T02:20:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64425"
     },
     {
-      "cve_id": "CVE-2026-0318",
-      "asset_id": "CVE-2026-0318",
+      "cve_id": "CVE-2026-64423",
+      "asset_id": "CVE-2026-64423",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stack-based buffer overflow vulnerability in the log processing functionality of Palo Alto Networks PAN-OS\u00ae software on Panorama enables an attacker to cause a denial of service (DoS) condition. Repeated attempts to trigger this condition result in the Panorama entering maintenance mode.\n\nCloud NGFW, Prisma\u00ae Access, and standalone PAN-OS firewalls are not affected by this vulnerability.",
-      "last_modified": "2026-10-14T20:19:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0318"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv4: igmp: remove multicast group from hash table on device destruction\n\nWhen a device is destroyed under RTNL, ip_mc_destroy_dev() iterates through\nthe multicast list and calls ip_ma_put() on each membership, scheduling\nthem for RCU reclamation. However, they are not unlinked from the device's\nmulticast hash table (mc_hash).\n\nSince the device remains published in dev->ip_ptr until after\nip_mc_destroy_dev() completes, concurrent RCU readers traversing mc_hash\ncan still locate and access the multicast group after its refcount is\ndecremented. If the RCU callback runs and frees the group while a reader is\naccessing it, a use-after-free occurs.\n\nFix this by unlinking the multicast group from mc_hash using\nip_mc_hash_remove() before scheduling it for reclamation.\n\nBUG: KASAN: slab-use-after-free in ip_check_mc_rcu+0x149/0x3f0\nRead of size 4 at addr ffff888009bf1408 by task mausezahn/2276\n\nCall Trace:\n <IRQ>\n dump_stack_lvl+0x67/0x90\n print_report+0x175/0x7c0\n kasan_report+0x147/0x180\n ip_check_mc_rcu+0x149/0x3f0\n udp_v4_early_demux+0x36d/0x12d0\n ip_rcv_finish_core+0xb8b/0x1390\n ip_rcv_finish+0x54/0x120\n NF_HOOK+0x213/0x2b0\n __netif_receive_skb+0x126/0x340\n process_backlog+0x4f2/0xf00\n __napi_poll+0x92/0x2c0\n net_rx_action+0x583/0xc60\n handle_softirqs+0x236/0x7f0\n do_softirq+0x57/0x80\n </IRQ>\n\nAllocated by task 2239:\n kasan_save_track+0x3e/0x80\n __kasan_kmalloc+0x72/0x90\n ____ip_mc_inc_group+0x31a/0xa40\n __ip_mc_join_group+0x334/0x3f0\n do_ip_setsockopt+0x16fa/0x2010\n ip_setsockopt+0x3f/0x90\n do_sock_setsockopt+0x1ad/0x300\n\nFreed by task 0:\n kasan_save_track+0x3e/0x80\n kasan_save_free_info+0x40/0x50\n __kasan_slab_free+0x3a/0x60\n __rcu_free_sheaf_prepare+0xd4/0x220\n rcu_free_sheaf+0x36/0x190\n rcu_core+0x8d9/0x12f0\n handle_softirqs+0x236/0x7f0",
+      "last_modified": "2026-10-15T02:20:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64423"
     },
     {
-      "cve_id": "CVE-2026-97763",
-      "asset_id": "CVE-2026-97763",
+      "cve_id": "CVE-2026-64422",
+      "asset_id": "CVE-2026-64422",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-10-14T20:19:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97763"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ipv4: bound TCP reordering sysctl writes and MTU probe sizes\n\nReject invalid `net.ipv4.tcp_reordering` values before they reach TCP\nsocket state. The sysctl is stored as an `int` but copied into the\n`u32` `tp->reordering` field for new sockets, so negative writes wrap\nto large values.\n\nWith `tcp_mtu_probing=2`, the wrapped value can overflow the\n`tcp_mtu_probe()` size calculation and drive the MTU probing path into\nan out-of-bounds read. Route `tcp_reordering` writes through\n`proc_dointvec_minmax()` and require it to be at least 1. Also require\n`tcp_max_reordering` to be at least 1 so the configured maximum cannot\nbecome negative either.\n\nWhen registering the table for a non-init network namespace, relocate\n`extra2` pointers that refer into `init_net.ipv4` so the\n`tcp_reordering` upper bound follows that namespace's\n`tcp_max_reordering`.\n\nHarden `tcp_mtu_probe()` itself by computing `size_needed` as `u64`.\nThis keeps the send queue and window checks from being bypassed through\nsigned integer overflow.",
+      "last_modified": "2026-10-15T02:20:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64422"
     },
     {
-      "cve_id": "CVE-2026-97824",
-      "asset_id": "CVE-2026-97824",
+      "cve_id": "CVE-2026-64413",
+      "asset_id": "CVE-2026-64413",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97824"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: ebtables: zero chainstack array\n\nsashiko reports:\n looking at ebtables table\n translation, could a sparse cpu_possible_mask lead to an uninitialized pointer\n free?\n\n If cpu_possible_mask is sparse (for example, CPU 0 and CPU 2 are possible,\n but CPU 1 is not), the allocation loop skips CPU 1. If vmalloc_node() fails at\n CPU 2, the cleanup loop will blindly decrement and call vfree() on\n newinfo->chainstack[1].\n\nNot a real-world bug, such allocation isn't expected to fail\nin the first place.",
+      "last_modified": "2026-10-15T02:20:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64413"
     },
     {
-      "cve_id": "CVE-2026-97823",
-      "asset_id": "CVE-2026-97823",
+      "cve_id": "CVE-2026-64412",
+      "asset_id": "CVE-2026-64412",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97823"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: ebtables: module names must be null-terminated\n\nWe need to explicitly check the length, else we may pass non-null\nterminated string to request_module().",
+      "last_modified": "2026-10-15T02:20:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64412"
     },
     {
-      "cve_id": "CVE-2026-97822",
-      "asset_id": "CVE-2026-97822",
+      "cve_id": "CVE-2026-64411",
+      "asset_id": "CVE-2026-64411",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97822"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: ebtables: terminate table name before find_table_lock()\n\nupdate_counters() and compat_update_counters() forward a user-supplied\n32-byte table name to find_table_lock() without NUL-terminating it. On a\nlookup miss, find_inlist_lock() calls try_then_request_module(..., \"%s%s\",\n\"ebtable_\", name), and vsnprintf() reads past the name field and the\nstack object until it hits a zero byte.\n\n  BUG: KASAN: stack-out-of-bounds in string (lib/vsprintf.c:648 lib/vsprintf.c:730)\n  Read of size 1 at addr ffff8880119dfb20 by task exploit/147\n  Call Trace:\n  ...\n   string (lib/vsprintf.c:648 lib/vsprintf.c:730)\n   vsnprintf (lib/vsprintf.c:2945)\n   __request_module (kernel/module/kmod.c:150)\n   do_update_counters.isra.0 (net/bridge/netfilter/ebtables.c:371 net/bridge/netfilter/ebtables.c:380)\n   update_counters (net/bridge/netfilter/ebtables.c:1440)\n   do_ebt_set_ctl (net/bridge/netfilter/ebtables.c:2573)\n   nf_setsockopt (net/netfilter/nf_sockopt.c:101)\n   ip_setsockopt (net/ipv4/ip_sockglue.c:1424)\n   raw_setsockopt (net/ipv4/raw.c:847)\n   __sys_setsockopt (net/socket.c:2393)\n  ...\n\ncompat_do_replace() shares the same unterminated name via\ncompat_copy_ebt_replace_from_user(); terminate it there too so all\nfind_table_lock() callers behave alike. The other callers already\nterminate the name after the copy.",
+      "last_modified": "2026-10-15T02:20:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64411"
     },
     {
-      "cve_id": "CVE-2026-97821",
-      "asset_id": "CVE-2026-97821",
+      "cve_id": "CVE-2026-64375",
+      "asset_id": "CVE-2026-64375",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:19:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97821"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nproc: protect ptrace_may_access() with exec_update_lock (FD links)\n\nproc_pid_get_link() and proc_pid_readlink() currently look up the task from\nthe pid once, then do the ptrace access check on that task, then look up\nthe task from the pid a second time to do the actual access.\nThat's racy in several ways.\n\nTo fix it, pass the task to the ->proc_get_link() handler, and instead of\nproc_fd_access_allowed(), introduce a new helper call_proc_get_link() that\nlooks up and locks the task, does the access check, and calls\n->proc_get_link().",
+      "last_modified": "2026-10-15T02:20:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64375"
     },
     {
-      "cve_id": "CVE-2026-97820",
-      "asset_id": "CVE-2026-97820",
+      "cve_id": "CVE-2026-64371",
+      "asset_id": "CVE-2026-64371",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-14T20:18:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97820"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nproc: protect ptrace_may_access() with exec_update_lock (part 1)\n\nFix the easy cases where procfs currently calls ptrace_may_access() without\nexec_update_lock protection, where the fix is to simply add the extra lock\nor use mm_access():\n\n - do_task_stat(): grab exec_update_lock\n - proc_pid_wchan(): grab exec_update_lock\n - proc_map_files_lookup(): use mm_access() instead of get_task_mm()\n - proc_map_files_readdir(): use mm_access() instead of get_task_mm()\n - proc_ns_get_link(): grab exec_update_lock\n - proc_ns_readlink(): grab exec_update_lock",
+      "last_modified": "2026-10-15T02:20:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64371"
     },
     {
-      "cve_id": "CVE-2026-97765",
-      "asset_id": "CVE-2026-97765",
+      "cve_id": "CVE-2026-64370",
+      "asset_id": "CVE-2026-64370",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
-      "last_modified": "2026-10-14T20:18:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97765"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nposix-cpu-timers: Fix pid refcount leak in do_cpu_nanosleep() error path\n\nIn do_cpu_nanosleep(), posix_cpu_timer_create() takes a pid reference\nvia get_pid() and stores it in timer.it.cpu.pid. If the subsequent\nposix_cpu_timer_set() call fails, the function returns immediately\nwithout calling posix_cpu_timer_del() to release the pid reference,\ncausing a leak.\n\nFix it by calling posix_cpu_timer_del() before the unlock-and-return\non the error path, consistent with the other exit paths in the same\nfunction.",
+      "last_modified": "2026-10-15T02:20:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64370"
     },
     {
-      "cve_id": "CVE-2026-9268",
-      "asset_id": "CVE-2026-9268",
+      "cve_id": "CVE-2026-64317",
+      "asset_id": "CVE-2026-64317",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab EE affecting all versions from 13.6 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an authenticated user with limited permissions to modify project CI/CD deployment rollback settings without proper authorization, due to insufficient access control checks.",
-      "last_modified": "2026-10-14T20:18:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9268"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nisofs: bound Rock Ridge symlink components to the SL record\n\nget_symlink_chunk() and the SL handling in\nparse_rock_ridge_inode_internal() walk the variable-length components of\na Rock Ridge \"SL\" (symbolic link) record.  Each component is a two-byte\nheader (flags, len) followed by len bytes of text, so it occupies\nslp->len + 2 bytes.  Both loops read slp->len and advance to the next\ncomponent, and get_symlink_chunk() additionally does\nmemcpy(rpnt, slp->text, slp->len), but neither checks that the component\nlies within the SL record before dereferencing it.\n\nA crafted SL record whose component declares a len that runs past the\nrecord (rr->len) therefore triggers an out-of-bounds read of up to 255\nbytes.  When the record sits at the tail of its backing buffer - for\nexample a small kmalloc()ed continuation block reached through a CE\nrecord - the read crosses the allocation; get_symlink_chunk() then\ncopies the out-of-bounds bytes into the symlink body returned to user\nspace by readlink(), disclosing adjacent kernel memory.\n\nISO 9660 images are routinely mounted from untrusted removable media -\ndesktop environments auto-mount them (e.g. via udisks2) without\nCAP_SYS_ADMIN - so the record contents are attacker-controlled.\n\nReject any component that does not fit in the remaining record bytes\nbefore using it.  In get_symlink_chunk() return NULL, like the existing\noutput-buffer (plimit) checks, so a malformed record makes readlink()\nfail with -EIO rather than silently returning a truncated target; in\nparse_rock_ridge_inode_internal() stop the inode-size walk.",
+      "last_modified": "2026-10-15T02:20:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64317"
     },
     {
-      "cve_id": "CVE-2026-95121",
-      "asset_id": "CVE-2026-95121",
+      "cve_id": "CVE-2026-64279",
+      "asset_id": "CVE-2026-64279",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in mp4v2 2.0.0 allows an attacker to execute arbitrary code via the MP4RtpAtom::ReadHntiType() in src/atom_rtp.cpp. A specially crafted MP4 file can cause an undersized rtp atom to produce a near-2^64 allocation size through an unchecked offset subtraction",
-      "last_modified": "2026-10-14T20:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95121"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ni2c: core: fix adapter deregistration race\n\nAdapters can be looked up by their id using i2c_get_adapter() which\ntakes a reference to the embedded struct device.\n\nRemove the adapter from the IDR before tearing it down during\nderegistration (and on registration failure) to make sure its resources\nare not accessed after having been freed (e.g. the device name).",
+      "last_modified": "2026-10-15T02:20:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64279"
     },
     {
-      "cve_id": "CVE-2026-92883",
-      "asset_id": "CVE-2026-92883",
+      "cve_id": "CVE-2026-63810",
+      "asset_id": "CVE-2026-63810",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 19.1 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2  that, under certain conditions, could have allowed an authenticated user to execute arbitrary JavaScript in the context of other users' browser sessions via a specially crafted repository, due to improper sanitization of HTML attributes in syntax-highlighted output.",
-      "last_modified": "2026-10-14T20:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92883"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nblock: Avoid mounting the bdev pseudo-filesystem in userspace\n\nThe bdev pseudo-filesystem is an internal kernel filesystem with which\nuserspace should not interfere. Unregister it so that userspace cannot\neven attempt to mount it.\n\nThis fixes a bug [1] that occurs when attempting to access files,\nbecause the system call move_mount() uses pointers declared in the\ninode_operations structure, which for the bdev pseudo-filesystem\nare always equal to 0. `inode->i_op = &empty_iops;`\n\n[1]\n\n BUG: kernel NULL pointer dereference, address: 0000000000000000\n #PF: supervisor instruction fetch in kernel mode\n #PF: error_code(0x0010) - not-present page\n PGD 23380067 P4D 23380067 PUD 23381067 PMD 0\n Oops: 0010 [#1] PREEMPT SMP KASAN NOPTI\n CPU: 2 PID: 17125 Comm: syz-executor.0 Not tainted 6.1.155-syzkaller-00350-g84221fde2681 #0\n Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.12.0-1 04/01/2014\n RIP: 0010:0x0\n\n Call Trace:\n <TASK>\n lookup_open.isra.0+0x700/0x1180 fs/namei.c:3460\n open_last_lookups fs/namei.c:3550 [inline]\n path_openat+0x953/0x2700 fs/namei.c:3780\n do_filp_open+0x1c5/0x410 fs/namei.c:3810\n do_sys_openat2+0x171/0x4d0 fs/open.c:1318\n do_sys_open fs/open.c:1334 [inline]\n __do_sys_openat fs/open.c:1350 [inline]\n __se_sys_openat fs/open.c:1345 [inline]\n __x64_sys_openat+0x13c/0x1f0 fs/open.c:1345\n do_syscall_x64 arch/x86/entry/common.c:51 [inline]\n do_syscall_64+0x35/0x80 arch/x86/entry/common.c:81\n entry_SYSCALL_64_after_hwframe+0x6e/0xd8\n\nFound by Linux Verification Center (linuxtesting.org) with Syzkaller.",
+      "last_modified": "2026-10-15T02:20:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63810"
     },
     {
-      "cve_id": "CVE-2026-92528",
-      "asset_id": "CVE-2026-92528",
+      "cve_id": "CVE-2026-53400",
+      "asset_id": "CVE-2026-53400",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab EE affecting all versions from 16.11 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an authenticated user to approve a merge request despite having contributed commits to it, due to improper identity resolution.",
-      "last_modified": "2026-10-14T20:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92528"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ni2c: core: fix adapter registration race\n\nAdapters can be looked up based on their id using i2c_get_adapter()\nwhich takes a reference to the embedded struct device.\n\nMake sure that the adapter (including its struct device) has been\ninitialised before adding it to the IDR to avoid accessing uninitialised\ndata which could, for example, lead to NULL-pointer dereferences or\nuse-after-free.\n\nNote that the i2c-dev chardev, which is registered from a bus notifier,\ncurrently uses i2c_get_adapter() so the adapter needs to be added to the\nIDR before registration.",
+      "last_modified": "2026-10-15T02:20:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53400"
     },
     {
-      "cve_id": "CVE-2026-89201",
-      "asset_id": "CVE-2026-89201",
+      "cve_id": "CVE-2026-53362",
+      "asset_id": "CVE-2026-53362",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been identified in RUGGEDCOM CROSSBOW (All versions < V6.0). Affected devices do not properly validate or sanitize input in device group or facility names processed during the Bulk Export workflow. This could allow an authenticated attacker with specific privileges to execute arbitrary SQL commands on the underlying database.",
-      "last_modified": "2026-10-14T20:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89201"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv6: account for fraggap on the paged allocation path\n\nIn __ip6_append_data(), when the paged-allocation branch is taken\n(MSG_MORE / NETIF_F_SG / large fraglen), alloclen and pagedlen are\ncomputed as\n\n\talloclen = fragheaderlen + transhdrlen;\n\tpagedlen = datalen - transhdrlen;\n\ndatalen already includes fraggap (datalen = length + fraggap). When\nfraggap is non-zero, this is not the first skb and transhdrlen is zero.\nThe fraggap bytes carried over from the previous skb are copied just past\nthe fragment headers in the new skb's linear area. The linear area is\ntherefore undersized by fraggap bytes while pagedlen is overstated by the\nsame amount, and the copy writes past skb->end into the trailing\nskb_shared_info.\n\nAn unprivileged user can trigger this via a UDPv6 socket using\nMSG_MORE together with MSG_SPLICE_PAGES.\n\nThe bad accounting was introduced by commit 773ba4fe9104 (\"ipv6:\navoid partial copy for zc\"). Before commit ce650a166335 (\"udp6: Fix\n__ip6_append_data()'s handling of MSG_SPLICE_PAGES\"), the negative\ncopy value caused -EINVAL to be returned. That later commit allowed\nMSG_SPLICE_PAGES to proceed in this case, making the corruption\ntriggerable.\n\nThe non-paged branch sets alloclen to fraglen, which already accounts\nfor fraggap because datalen does. Bring the paged branch in line by\nadding fraggap to alloclen and subtracting it from pagedlen.\n\nAfter this adjustment, copy no longer collapses to -fraggap on the\npaged path, so remove the stale comment describing that old arithmetic.\nSince a negative copy is no longer expected for a valid MSG_SPLICE_PAGES\ncase, remove the MSG_SPLICE_PAGES exception from the negative copy check.",
+      "last_modified": "2026-10-15T02:20:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53362"
     },
     {
-      "cve_id": "CVE-2026-89196",
-      "asset_id": "CVE-2026-89196",
+      "cve_id": "CVE-2026-53358",
+      "asset_id": "CVE-2026-53358",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been identified in RUGGEDCOM CROSSBOW (All versions < V6.0). Affected devices do not properly validate or sanitize input in facility names processed during the Bulk Import/Export workflow. This could allow an authenticated attacker with specific privileges to execute arbitrary SQL commands on the underlying database.",
-      "last_modified": "2026-10-14T20:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89196"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: L2CAP: use chan timer to close channels in cleanup_listen()\n\nl2cap_chan_close() removes the channel from conn->chan_l, which\nmust be done under conn->lock.  cleanup_listen() runs under the\nparent sk_lock, so acquiring conn->lock would invert the\nestablished conn->lock -> chan->lock -> sk_lock order.\n\nInstead of calling l2cap_chan_close() directly, schedule\nl2cap_chan_timeout with delay 0 to close the channel\nasynchronously.  The timeout handler already acquires conn->lock\nand chan->lock in the correct order.\n\nThe timer is only armed when chan->conn is still set: if it is\nalready NULL, l2cap_conn_del() has already processed this channel\n(l2cap_chan_del + l2cap_sock_teardown_cb + l2cap_sock_close_cb),\nso there is nothing left to do.  If l2cap_conn_del() races in\nafter the timer is armed, __clear_chan_timer() inside\nl2cap_chan_del() cancels it; if the timer has already fired, the\nhandler returns harmlessly because chan->conn was cleared.",
+      "last_modified": "2026-10-15T02:20:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53358"
     },
     {
-      "cve_id": "CVE-2026-89111",
-      "asset_id": "CVE-2026-89111",
+      "cve_id": "CVE-2026-53356",
+      "asset_id": "CVE-2026-53356",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SAP Cloud SDK for Python contains an OAuth2 SSRF vulnerability affecting multi-tenant BTP applications. An attacker who controls the tenant_subdomain parameter can redirect OAuth2 token requests to an attacker-controlled server, causing client credentials to be exfiltrated.",
-      "last_modified": "2026-10-14T20:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89111"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/i915/gem: Fix phys BO pread/pwrite with offset\n\nsg_page() returns struct page pointer not (void *) so the scaling\nof pread/pwrite is wrong for phys BO and wrong parts of BO would be\naccessed if non-zero offset is used.\n\nLast impacted platform with overlay or cursor planes using phys\nmapping was Gen3/945G/Lakeport.\n\n(cherry picked from commit 3e49a2f85070b2fb672c1e0fdba281a4ea3aebe6)",
+      "last_modified": "2026-10-15T02:20:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53356"
     },
     {
-      "cve_id": "CVE-2026-86848",
-      "asset_id": "CVE-2026-86848",
+      "cve_id": "CVE-2026-53352",
+      "asset_id": "CVE-2026-53352",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost vhost-crypto. The indirect-descriptor snapshot double-fetches a guest descriptor next index, allowing a malicious guest to cause an out-of-bounds access in the host backend.",
-      "last_modified": "2026-10-14T20:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86848"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsignal: clear JOBCTL_PENDING_MASK for caller in zap_other_threads()\n\nWhen a multi-threaded process receives a stop signal (e.g., SIGSTOP),\ndo_signal_stop() sets JOBCTL_STOP_PENDING and JOBCTL_STOP_CONSUME on all\nthreads and sets signal->group_stop_count to the number of threads. If\none of the threads concurrently calls execve(), de_thread() invokes\nzap_other_threads() to kill all other threads. zap_other_threads()\naborts the pending group stop by resetting signal->group_stop_count to 0\nand clears the JOBCTL_PENDING_MASK for all other threads. However, it\nfails to clear the job control flags for the calling thread.\n\nWhen execve() completes, the calling thread returns to user mode and\nchecks for pending signals. Seeing the stale JOBCTL_STOP_PENDING flag,\nit calls do_signal_stop(), which invokes task_participate_group_stop().\nSince JOBCTL_STOP_CONSUME is still set, it attempts to decrement the\nalready-zero signal->group_stop_count, triggering a warning:\n\nsig->group_stop_count == 0\nWARNING: CPU: 1 PID: 6475 at kernel/signal.c:373\ntask_participate_group_stop+0x215/0x2d0\nCall Trace:\n <TASK>\n do_signal_stop+0x3be/0x5c0 kernel/signal.c:2619\n get_signal+0xa8c/0x1330 kernel/signal.c:2884\n arch_do_signal_or_restart+0xbc/0x840 arch/x86/kernel/signal.c:337\n exit_to_user_mode_loop+0x8c/0x4d0 kernel/entry/common.c:98\n do_syscall_64+0x33e/0xf80 arch/x86/entry/syscall_64.c:100\n entry_SYSCALL_64_after_hwframe+0x77/0x7f\n </TASK>\n\nFix this race condition by clearing the JOBCTL_PENDING_MASK for the\ncalling thread in zap_other_threads(), ensuring it does not retain any\nstale job control state after the thread group is destroyed. This aligns\nwith other functions that tear down a thread group and abort group\nstops, such as zap_process() and complete_signal(), which correctly\nclear these flags for all threads including the current one.",
+      "last_modified": "2026-10-15T02:20:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53352"
     },
     {
-      "cve_id": "CVE-2026-86566",
-      "asset_id": "CVE-2026-86566",
+      "cve_id": "CVE-2026-53350",
+      "asset_id": "CVE-2026-53350",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost. A guest with runt RX descriptors can underflow the copy length in vhost enqueue, causing a denial of service in a shared vhost backend such as OVS-DPDK.",
-      "last_modified": "2026-10-14T20:17:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86566"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: wm_adsp: Fix NULL dereference when removing firmware controls\n\nIn wm_adsp_control_remove() check that the priv pointer is not NULL\nbefore attempting to cleanup what it points to.\n\nWhen cs_dsp creates a control it calls wm_adsp_control_add_cb() so that\nwm_adsp can create its own private control data. There are two cases\nwhere private data is not created:\n\n1. The control is a SYSTEM control, so an ALSA control is not created.\n\n2. The codec driver has registered a control_add() callback that\n   hides the control, so wm_adsp_control_add() is not called.\n\nWhen cs_dsp_remove destroys its control list it calls\nwm_adsp_control_remove() for each control. But wm_adsp_control_remove()\nwas attempting to cleanup the private data pointed to by cs_ctl->priv\nwithout checking the pointer for NULL.",
+      "last_modified": "2026-10-15T02:20:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53350"
     },
     {
-      "cve_id": "CVE-2026-85529",
-      "asset_id": "CVE-2026-85529",
+      "cve_id": "CVE-2026-53349",
+      "asset_id": "CVE-2026-53349",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 19.2 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an unauthenticated user to read internal notes and confidential system notes on public projects due to improper authorization in the GraphQL API.",
-      "last_modified": "2026-10-14T20:17:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85529"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: nf_conntrack: destroy stale expectfn expectations on unregister\n\nNAT helpers such as nf_nat_h323 store a raw pointer to module text in\nexp->expectfn (e.g. ip_nat_q931_expect). nf_ct_helper_expectfn_unregister()\nonly unlinks the callback descriptor and never walks the expectation table,\nso an expectation pending at module removal survives with a dangling\nexp->expectfn into freed module text.\n\nWhen the expected connection arrives, init_conntrack() invokes\nexp->expectfn(), now a stale pointer into the unloaded module. Reproduced\non a KASAN build by loading the H.323 helpers, creating a Q.931\nexpectation, unloading nf_nat_h323, then connecting to the expected port:\n\n Oops: int3: 0000 [#1] SMP KASAN NOPTI\n RIP: 0010:0xffffffffa06102d1\n  init_conntrack.isra.0 (net/netfilter/nf_conntrack_core.c:1862)\n  nf_conntrack_in (net/netfilter/nf_conntrack_core.c:2049)\n  ipv4_conntrack_local (net/netfilter/nf_conntrack_proto.c:223)\n  nf_hook_slow (net/netfilter/core.c:619)\n  __ip_local_out (net/ipv4/ip_output.c:120)\n  __tcp_transmit_skb (net/ipv4/tcp_output.c:1715)\n  tcp_connect (net/ipv4/tcp_output.c:4374)\n  tcp_v4_connect (net/ipv4/tcp_ipv4.c:345)\n  __sys_connect (net/socket.c:2167)\n Modules linked in: nf_conntrack_h323 [last unloaded: nf_nat_h323]\n\nReaching the dangling state requires CAP_SYS_MODULE in the initial user\nnamespace to remove a NAT helper that still has live expectations, so this\nis a robustness fix; leaving an expectation pointing at freed text is wrong\nregardless.\n\nAdd nf_ct_helper_expectfn_destroy(), which walks the expectation table and\ndrops every expectation whose ->expectfn matches the descriptor being torn\ndown. Call it from each NAT helper's exit path after the existing RCU grace\nperiod, so no expectation outlives the code it points at and no extra\nsynchronize_rcu() is introduced. With the fix, the same reproducer runs to\ncompletion without the Oops.",
+      "last_modified": "2026-10-15T02:20:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53349"
     },
     {
-      "cve_id": "CVE-2026-84284",
-      "asset_id": "CVE-2026-84284",
+      "cve_id": "CVE-2026-53337",
+      "asset_id": "CVE-2026-53337",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 17.11 before 19.2.8, all 19.3 versions, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an unauthenticated user to read work item contents from private groups and projects due to incorrect authorization checks.",
-      "last_modified": "2026-10-14T20:17:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84284"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: bonding: fix NULL pointer dereference in bond_do_ioctl()\n\nIn bond_do_ioctl(), slave_dev is obtained via __dev_get_by_name() which\ncan return NULL if the requested interface name does not exist. However,\nthe subsequent slave_dbg() call is placed before the NULL check:\n\n    slave_dev = __dev_get_by_name(net, ifr->ifr_slave);\n    slave_dbg(bond_dev, slave_dev, \"slave_dev=%p:\\n\", slave_dev); //here\n    if (!slave_dev)\n        return -ENODEV;\n\nThe slave_dbg() macro expands to netdev_dbg(bond_dev, \"(slave %s): \" fmt,\n(slave_dev)->name, ...) which unconditionally dereferences slave_dev->name\nbefore the NULL check is performed. This results in a NULL pointer\ndereference kernel oops when a user calls bonding ioctl (e.g.\nSIOCBONDENSLAVE, SIOCBONDRELEASE, etc.) with a non-existent slave\ninterface name.\n\nThis is reachable from userspace via the bonding ioctl interface with\nCAP_NET_ADMIN capability, making it a potential local denial-of-service\nvector.\n\nFix by moving the slave_dbg() call after the NULL check.",
+      "last_modified": "2026-10-15T02:20:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53337"
     },
     {
-      "cve_id": "CVE-2026-78802",
-      "asset_id": "CVE-2026-78802",
+      "cve_id": "CVE-2026-53325",
+      "asset_id": "CVE-2026-53325",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in SKYWORTH DIGITAL CO.,LTD SK-WR6640X Wi-Fi 6 Dual-Band Fiber Router (AX1800M) V1.0.3 allows a remote attacker to execute arbitrary code.",
-      "last_modified": "2026-10-14T20:17:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78802"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nagp/amd64: Fix broken error propagation in agp_amd64_probe()\n\nA NULL pointer dereference was observed in the AMD64 AGP driver when\nrunning in a virtualized environment (e.g. qemu/kvm) without a physical\nAMD northbridge. The crash occurs in amd64_fetch_size() when attempting\nto dereference the pointer returned by node_to_amd_nb(0).\n\nThe root cause of this crash is broken error propagation in\nagp_amd64_probe(): When no AMD northbridges are found, cache_nbs()\ncorrectly returns -ENODEV. However, the probe function erroneously\nchecks the return value against exactly -1, rather than < 0.\n\nAs a result, the hardware absence error is masked, allowing the driver\nto improperly proceed with initialization. It eventually calls\nagp_add_bridge(), which invokes amd64_fetch_size(). Since the hardware\ndoes not exist, node_to_amd_nb(0) returns NULL, leading to a General\nProtection Fault (GPF) when accessing its ->misc member.\n\nFix the issue by correcting the error check in agp_amd64_probe() to\nabort properly when cache_nbs() returns any negative error code. This\nprevents the driver from erroneously proceeding without hardware, thereby\navoiding the subsequent NULL pointer dereference at its source.",
+      "last_modified": "2026-10-15T02:20:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53325"
     },
     {
-      "cve_id": "CVE-2026-78628",
-      "asset_id": "CVE-2026-78628",
+      "cve_id": "CVE-2026-53295",
+      "asset_id": "CVE-2026-53295",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Okta Credential Provider for Windows does not validate a serialized credential buffer before interpreting it as a Kerberos logon structure. The buffer size and packed string offsets are not checked. Processing a malformed buffer can cause the credential provider process to terminate unexpectedly or lead to out-of-bounds memory reads and writes, which may result in the disclosure of adjacent process memory into local system logs.",
-      "last_modified": "2026-10-14T20:17:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78628"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmailbox: add sanity check for channel array\n\nFail gracefully if there is no channel array attached to the mailbox\ncontroller. Otherwise the later dereference will cause an OOPS which\nmight not be seen because mailbox controllers might instantiate very\nearly. Remove the comment explaining the obvious while here.",
+      "last_modified": "2026-10-15T02:20:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53295"
     },
     {
-      "cve_id": "CVE-2026-77371",
-      "asset_id": "CVE-2026-77371",
+      "cve_id": "CVE-2026-53275",
+      "asset_id": "CVE-2026-53275",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Redash is a package for data visualization and sharing. From 26.0.0 until 26.9.0, the DuckDB query runner's _connect() path in redash/query_runner/duckdb.py created connections with enable_external_access left at its default value of true. A user with query access to an administrator-created DuckDB data source could use native file-reading functions to retrieve files readable by the Redash process or use COPY TO to write files with that process's privileges. Reading application secrets such as REDASH_COOKIE_SECRET or REDASH_SECRET_KEY could also enable forged sessions and authentication bypass. This issue is fixed in version 26.9.0.",
-      "last_modified": "2026-10-14T20:17:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77371"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv6: mcast: Fix use-after-free when processing MLD queries\n\nWhen processing an MLD query, a pointer to the multicast group address\nis retrieved when initially parsing the packet. This pointer is later\ndereferenced without being reloaded despite the fact that the skb header\nmight have been reallocated following the pskb_may_pull() calls, leading\nto a use-after-free [1].\n\nFix by copying the multicast group address when the packet is initially\nparsed.\n\n[1]\nBUG: KASAN: slab-use-after-free in __mld_query_work (net/ipv6/mcast.c:1512)\nRead of size 8 at addr ffff8881154b8e90 by task kworker/4:1/118\n\nWorkqueue: mld mld_query_work\nCall Trace:\n<TASK>\ndump_stack_lvl (lib/dump_stack.c:94 lib/dump_stack.c:120)\nprint_address_description.constprop.0 (mm/kasan/report.c:378)\nprint_report (mm/kasan/report.c:482)\nkasan_report (mm/kasan/report.c:595)\n__mld_query_work (net/ipv6/mcast.c:1512)\nmld_query_work (net/ipv6/mcast.c:1563)\nprocess_one_work (kernel/workqueue.c:3314)\nworker_thread (kernel/workqueue.c:3397 kernel/workqueue.c:3478)\nkthread (kernel/kthread.c:436)\nret_from_fork (arch/x86/kernel/process.c:158)\nret_from_fork_asm (arch/x86/entry/entry_64.S:245)\n</TASK>\n\n[...]\n\nFreed by task 118:\nkasan_save_stack (mm/kasan/common.c:57)\nkasan_save_track (mm/kasan/common.c:78)\nkasan_save_free_info (mm/kasan/generic.c:584)\n__kasan_slab_free (mm/kasan/common.c:253 mm/kasan/common.c:285)\nkfree (./include/linux/kasan.h:235 mm/slub.c:2689 mm/slub.c:6251 mm/slub.c:6566)\npskb_expand_head (net/core/skbuff.c:2335)\n__pskb_pull_tail (net/core/skbuff.c:2878 (discriminator 4))\n__mld_query_work (net/ipv6/mcast.c:1495 (discriminator 1))\nmld_query_work (net/ipv6/mcast.c:1563)\nprocess_one_work (kernel/workqueue.c:3314)\nworker_thread (kernel/workqueue.c:3397 kernel/workqueue.c:3478)\nkthread (kernel/kthread.c:436)\nret_from_fork (arch/x86/kernel/process.c:158)\nret_from_fork_asm (arch/x86/entry/entry_64.S:245)",
+      "last_modified": "2026-10-15T02:20:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53275"
     },
     {
-      "cve_id": "CVE-2026-72895",
-      "asset_id": "CVE-2026-72895",
+      "cve_id": "CVE-2026-53269",
+      "asset_id": "CVE-2026-53269",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been identified in SIMATIC IPC BX-21A (All versions < V31.01.13), SIMATIC IPC RW-543A (All versions < V1.1.4), SIMATIC IPC227G / IPC277G / IPC277G PRO / IPC327G / IPC377G (All versions < V28.01.15). A BIOS vendor test key is present in the UEFI Secure Boot key database. This could allow a local attacker with physical or administrative access to the device to boot an operating system or UEFI application signed with that test key, bypassing UEFI Secure Boot protections even when Secure Boot is enabled, potentially leading to a full loss of confidentiality, integrity, and availability of the device.",
-      "last_modified": "2026-10-14T20:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72895"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: synproxy: add mutex to guard hook reference counting\n\nAs the synproxy infrastructure register netfilter hooks on-demand when a\nuser adds the first iptables target or nftables expression, if done\nconcurrently they can race each other.\n\nIntroduce a mutex to serialize the refcount control blocks access from\nboth frontends. While a per namespace mutex might be more efficient, it\nis not needed for target/expression like SYNPROXY.",
+      "last_modified": "2026-10-15T02:20:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53269"
     },
     {
-      "cve_id": "CVE-2026-65198",
-      "asset_id": "CVE-2026-65198",
+      "cve_id": "CVE-2026-53268",
+      "asset_id": "CVE-2026-53268",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Huawei's openUBMC ships a default SNMPv3 USM key that uses one value for both authentication and privacy. An attacker who holds the key (recoverable from the open-source build) can authenticate SNMPv3 to, and decrypt SNMPv3 traffic from, any unit that still carries the shipped key. The build customization `manifest/build/customization/default_password.lua` sets `AuthenticationKey == EncryptionKey == 7df2f29369e3ac3245b2c9d46b67a0ecd055197e41808a34ef325db2f6422581` for the iBMC product build, and the community seed `account/manufacture/default_password.lua` sets both to `7a2f5b86f20233ec7b7bef49643fbf34d86d0cbf6f1f8f5c52d4f30d4536938b`. These are shipped constants, not per-unit values, and they are not rotated by the Administrator password reset, so they survive account provisioning. This is especially dangerous considering that SNMP access is mapped to full device administration privileges, including system reset and firmware upgrades.",
-      "last_modified": "2026-10-14T20:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65198"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: conntrack_irc: fix possible out-of-bounds read\n\nWhen parsing fails after we've matched the command string we\nshould bail out instead of trying to match a different command.\n\nThis helper should be deprecated, given prevalence of TLS I doubt it has\nany relevance in 2026.",
+      "last_modified": "2026-10-15T02:20:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53268"
     },
     {
-      "cve_id": "CVE-2026-63353",
-      "asset_id": "CVE-2026-63353",
+      "cve_id": "CVE-2026-53265",
+      "asset_id": "CVE-2026-53265",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Affected devices do not properly sanitize comment fields contained in imported trace files before rendering them on the Trace page.\r\n\r\nThis could allow an attacker to social engineer an authorized user who holds the function right \u201cRead diagnostics\u201d into importing a specially crafted trace file. Successful exploitation could allow attacker-controlled JavaScript to execute in the user\u2019s browser session and perform PLC operations through the web server within the scope of the user\u2019s authorization.",
-      "last_modified": "2026-10-14T20:17:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63353"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm cache policy smq: check allocation under invalidate lock\n\ncommit 2d1f7b65f5de (\"dm cache policy smq: fix missing locks in\ninvalidating cache blocks\") added mq->lock around the destructive part of\nsmq_invalidate_mapping(), but left the e->allocated check outside the\ncritical section.\n\nThat leaves a check-then-act race. Two concurrent invalidators can both\nobserve e->allocated as true before either of them takes mq->lock. The\nfirst invalidator that acquires the lock removes the entry from the\nqueues and hash table and then calls free_entry(), which clears\ne->allocated and puts the entry back on the free list. The second\ninvalidator can then acquire mq->lock and continue with the stale result\nof the unlocked check.\n\nThis can corrupt the SMQ queues or hash table by deleting an entry that\nis no longer on those structures. It can also hit the allocation check in\nfree_entry() when the same entry is freed again.\n\nMove the allocation check under mq->lock so the predicate and the\ndestructive operations are serialized by the same lock.",
+      "last_modified": "2026-10-15T02:20:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53265"
     },
     {
-      "cve_id": "CVE-2026-44415",
-      "asset_id": "CVE-2026-44415",
+      "cve_id": "CVE-2026-53264",
+      "asset_id": "CVE-2026-53264",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Affected systems do not properly restrict access to internal APIs and paths for authenticated users. This could allow an authenticated remote attacker to access sensitive internal information, which in the worst case could be leveraged to facilitate unauthorized access to the system or result in the deletion of data.",
-      "last_modified": "2026-10-14T20:17:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44415"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: act_api: use RCU with deferred freeing for action lifecycle\n\nWhen NEWTFILTER and DELFILTER are run concurrently it is possible to create a\nrace with an associated action.\n\nLet's illustrate with CPU0 running NEWTFILTER and CPU1 running DELFILTER:\n\n 0: mutex_lock() <-- holds the idr lock\n 0: rcu_read_lock()\n 0: p = idr_find(idr, index) <-- action p is valid (RCU protects IDR)\n 0: mutex_unlock() <-- releases the idr lock\n 1: refcount_dec_and_mutex_lock() <-- refcnt 1->0, mutex held\n 1: idr_remove(idr, index) <-- Action removed from IDR\n 1: mutex_unlock() <-- mutex released allowing us to delete the action\n 1: tcf_action_cleanup(p); kfree(p) <-- Kfrees p immediately, no deferral\n 0: refcount_inc_not_zero(&p->tcfa_refcnt) <-- ouch, UAF p points to freed memory\n\nThis patch fixes the race condition between NEWTFILTER and DELFILTER by\nadding struct rcu_head to tc_action used in the deferral and introducing a\ncall_rcu() in the delete path to defer the final kfree().\n\nNote: this is a revert of commit d7fb60b9cafb (\"net_sched: get rid of tcfa_rcu\")\nbut also modernization/simplification to directly use kfree_rcu().\n\nLet's illustrate the new restored code path:\n\n 0: rcu_read_lock()\n 1: refcount_dec_and_mutex_lock() <-- refcnt 1->0, mutex held\n 1: idr_remove(idr, index)\n 1: mutex_unlock()\n 1: call_rcu(&p->tcfa_rcu, tcf_action_rcu_free) <-- defer kfree after grace period\n 0: p = idr_find(idr, index)\n 0: refcount_inc_not_zero(&p->tcfa_refcnt) <-- fails, refcnt already 0\n 1: rcu_read_unlock() <-- release so freeing can run after grace period\n\nAfter CPU1 calls idr_remove(), the object is no longer reachable through the IDR.\nCPU0's subsequent idr_find() will return NULL, and even if it still held a\nstale pointer, the immediate kfree() is now deferred until after the RCU grace\nperiod, so no UAF can occur.",
+      "last_modified": "2026-10-15T02:20:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53264"
     },
     {
-      "cve_id": "CVE-2026-42093",
-      "asset_id": "CVE-2026-42093",
+      "cve_id": "CVE-2026-53263",
+      "asset_id": "CVE-2026-53263",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Redash is a package for data visualization and sharing. From versions after 8.0.0 until 26.9.0, the Query Results query runner in redash/query_runner/query_results.py accepts param_query_N_{key=value} parameters and passed attacker-controlled values to replace_query_parameters() for raw substitution into a referenced query's SQL. This path bypassed the ParameterizedQuery schema validation used by normal query execution and omitted the is_safe permission check. An authenticated user with at least view-only access to both the Query Results data source and the referenced data source could therefore inject SQL through text parameters and execute it with the referenced data source's privileges. This issue is fixed in version 26.9.0.",
-      "last_modified": "2026-10-14T20:17:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42093"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\n6lowpan: fix off-by-one in multicast context address compression\n\nThe second memcpy in lowpan_iphc_mcast_ctx_addr_compress() uses\n&data[1] as destination and &ipaddr->s6_addr[11] as source, but\nboth should be offset by one: &data[2] and &ipaddr->s6_addr[12]\nrespectively.\n\nThis off-by-one has two consequences:\n1. data[1] is overwritten with s6_addr[11], corrupting the RIID\n   field in the compressed multicast address\n2. data[5] is never written, so uninitialized kernel stack memory\n   is transmitted over the network via lowpan_push_hc_data(),\n   leaking kernel stack contents\n\nThe correct inline data layout must match what the decompression\nfunction lowpan_uncompress_multicast_ctx_daddr() expects:\n  data[0..1] = s6_addr[1..2]  (flags/scope + RIID)\n  data[2..5] = s6_addr[12..15] (group ID)\n\nAlso zero-initialize the data array as a defensive measure against\nsimilar bugs in the future.",
+      "last_modified": "2026-10-15T02:20:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53263"
     },
     {
-      "cve_id": "CVE-2026-19940",
-      "asset_id": "CVE-2026-19940",
+      "cve_id": "CVE-2026-53256",
+      "asset_id": "CVE-2026-53256",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Bluetooth Classic Hands-Free Profile Audio Gateway implementation in subsys/bluetooth/host/classic/hfp_ag.c keeps its struct bt_hfp_ag objects in a static pool indexed by ACL connection index. On link teardown, hfp_ag_disconnected() cancels ag->tx_work and the per-call work items and then clears ag->acl_conn, which marks the pool slot as free \u2014 but it leaves ag->ongoing_call_work (and ag->slc_work) untouched. The next connection that lands on the same slot enters hfp_ag_create(), whose only occupancy test is ag->acl_conn, and immediately executes memset(ag, 0, sizeof(struct bt_hfp_ag)) followed by k_work_init_delayable(). Zeroing and re-initialising a k_work_delayable whose struct _timeout node is still linked into the kernel timeout list leaves the kernel holding a reference to a node with NULL prev/next links.\n\nag->ongoing_call_work is armed by the remote peer: when a Hands-Free unit sends AT+CIND? during Service Level Connection establishment and the application provides the asynchronous get_ongoing_call callback, the AG schedules the work for CONFIG_BT_HFP_AG_GET_ONGOING_CALL_TIMEOUT milliseconds (default 10000). The timer is cancelled only if the application answers in time via bt_hfp_ag_ongoing_calls(). A peer that sends AT+CIND?, then disconnects the HFP RFCOMM DLC, then immediately re-opens it on the same ACL link, reuses the same pool slot deterministically while the timeout is still pending \u2014 the AG's RFCOMM server accept path (hfp_ag_accept()) calls hfp_ag_create() directly, so the remote side drives both teardown and re-creation.\n\nThe result is corruption of the kernel's timeout list: sys_dlist_remove() on the zeroed node performs writes through NULL pointers from the clock-announce path, and rescheduling the re-initialised work re-inserts a node the list already references, creating a cycle that the announce loop walks with interrupts locked. The observable impact is a fault or hang of the whole system, i.e. a denial of service reachable from Bluetooth radio range; no attacker-controlled data is written, so this does not by itself yield code execution. Exposure is limited to builds with CONFIG_BT_HFP_AG (marked experimental and disabled by default) whose application implements the asynchronous get_ongoing_call callback.",
-      "last_modified": "2026-10-14T20:17:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19940"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: RFCOMM: hold listener socket in rfcomm_connect_ind()\n\nrfcomm_get_sock_by_channel() scans rfcomm_sk_list under the list lock,\nbut returns the selected listener after dropping that lock without\ntaking a reference. rfcomm_connect_ind() then locks the listener,\nqueues a child socket on it, and may notify it after unlocking it.\n\nThe buggy scenario involves two paths, with each column showing the\norder within that path:\n\nrfcomm_connect_ind():            listener close:\n  1. Find parent in              1. close() enters\n     rfcomm_get_sock_by_channel()   rfcomm_sock_release().\n  2. Drop rfcomm_sk_list.lock    2. rfcomm_sock_shutdown()\n     without pinning parent.        closes the listener.\n  3. Call lock_sock(parent) and  3. rfcomm_sock_kill()\n     bt_accept_enqueue(parent,      unlinks and puts parent.\n     sk, true).\n  4. Read parent flags and may   4. parent can be freed.\n     call sk_state_change().\n\nIf close wins the race, parent can be freed before\nrfcomm_connect_ind() reaches lock_sock(), bt_accept_enqueue(), or the\ndeferred-setup callback.\n\nTake a reference on the listener before leaving rfcomm_sk_list.lock.\nAfter lock_sock() succeeds, recheck that it is still in BT_LISTEN\nbefore queueing a child, cache the deferred-setup bit while the parent\nis locked, and drop the reference after the last parent use.\n\nKASAN reported a slab-use-after-free in lock_sock_nested() from\nrfcomm_connect_ind(), with the freeing stack going through\nrfcomm_sock_kill() and rfcomm_sock_release().",
+      "last_modified": "2026-10-15T02:20:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53256"
     },
     {
-      "cve_id": "CVE-2026-19938",
-      "asset_id": "CVE-2026-19938",
+      "cve_id": "CVE-2026-53255",
+      "asset_id": "CVE-2026-53255",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Bluetooth host's ATT transmit path releases a buffer it does not own when signing fails. chan_send() in subsys/bluetooth/host/att.c documents (and every other error exit implements) the contract that on failure the caller retains ownership of the net_buf; the BT_ATT_OP_SIGNED_WRITE_CMD branch instead called net_buf_unref(buf) when bt_smp_sign() returned an error and then returned that error to the caller. The callers act on the contract: process_queue() re-queues the buffer with k_queue_prepend(), bt_att_chan_send_rsp() puts it back on chan->tx_queue, bt_att_chan_req_send() restores it into the request, and att_req_retry() unreferences it \u2014 so the already-freed buffer was re-queued, later dereferenced, and eventually freed again.\n\nAn ATT Signed Write Command is produced when an application calls bt_gatt_write_without_response_cb() with sign set on an unencrypted connection. bt_smp_sign() fails whenever no local CSRK exists for the peer (-ENOENT), and whether one exists is negotiated with the peer: smp_distribute_keys() stores a local CSRK only when the peer's pairing key-distribution field requests the signing key and bonding was agreed. A peer can therefore pair without accepting the CSRK, pair with No Bonding, remain unpaired, or keep the link unencrypted, and the victim's next signed write takes the failing path. Because struct net_buf's node field is simultaneously the linkage word for the ATT TX FIFO, for the deferred-destroy list used by the att_pool destroy callback att_tx_destroy(), and for the pool free list, the mishandled buffer corrupts these lists and can be re-issued by bt_att_create_pdu() to a new PDU while the ATT TX path still holds it.\n\nThe same branch also saved the net_buf_simple_state only after signing, so a buffer restored after a bt_l2cap_send_pdu() failure kept its 12-octet signature; a subsequent retry re-signed it and appended a second signature with net_buf_add(buf, 12) to a buffer that bt_att_create_pdu() sized for exactly one, writing past the end of the pooled buffer in builds where the net_buf tailroom assertion is compiled out.\n\nImpact is host-side memory corruption in the Bluetooth stack: list corruption, a pooled ATT buffer with two owners (wrong PDU contents transmitted, or a double free when the queues are drained at disconnect), and a bounded out-of-bounds write on the retry path \u2014 typically observed as a crash or assertion failure. Exposure requires the deprecated CONFIG_BT_SIGNING to be enabled and an application that actually issues signed writes; in that configuration the triggering condition is under the remote peer's control.",
-      "last_modified": "2026-10-14T20:17:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19938"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: MGMT: validate advertising TLV before type checks\n\ntlv_data_is_valid() reads each advertising data field length from\ndata[i], then inspects data[i + 1] for managed EIR types before\nchecking that the current field still fits inside the supplied buffer.\n\nA malformed field whose length byte is the last byte of the buffer can\ntherefore make the parser read one byte past the advertising data.\n\nKASAN reported the following when a malformed MGMT_OP_ADD_ADVERTISING\nrequest reached that path:\n\n  BUG: KASAN: vmalloc-out-of-bounds in tlv_data_is_valid()\n  Read of size 1\n  Call trace:\n    tlv_data_is_valid()\n    add_advertising()\n    hci_mgmt_cmd()\n    hci_sock_sendmsg()\n\nMove the existing element-length check before any type-octet inspection\nso each non-empty element is proven to contain its type byte before the\nparser looks at data[i + 1].",
+      "last_modified": "2026-10-15T02:20:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53255"
     },
     {
-      "cve_id": "CVE-2026-19937",
-      "asset_id": "CVE-2026-19937",
+      "cve_id": "CVE-2026-53254",
+      "asset_id": "CVE-2026-53254",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Bluetooth Mesh Access layer delayable-message machinery in subsys/bluetooth/mesh/delayable_msg.c manages a static pool of CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG_COUNT message contexts (default 4) threaded onto a free_ctx or busy_ctx list. release_delayable_msg_ctx() returned a context to free_ctx only when sys_slist_find_and_remove() found it on busy_ctx. The chunk-exhaustion error path in bt_mesh_delayable_msg_manage() releases a context that was already popped off free_ctx but not yet inserted on busy_ctx, so the context was appended to neither list and was permanently lost from the pool. Because bt_mesh_delayable_msg_init() runs only once from bt_mesh_init(), and node reset/suspend only drain busy_ctx, the loss survives unprovision, re-provision and suspend/resume \u2014 it is cleared only by a reboot.\n\nThe error path is reached when the chunk pool (CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG_CHUNK_COUNT, default 40 chunks) is short of the chunks a new delayed message needs and the oldest pending message cannot be flushed because bt_mesh_access_send() returns -EBUSY or -ENOBUFS (all segmented-TX contexts busy, or advertising/segment buffers exhausted). A peer that is provisioned into the mesh network \u2014 holding a valid NetKey plus an AppKey or DevKey bound to a server model \u2014 can drive both conditions by flooding the victim with requests that elicit segmented responses while withholding the Segment Acknowledgment, which keeps the transmit contexts occupied while queued responses hold the chunk pool. Each further request that arrives in that window leaks one context.\n\nOnce the pool is drained, bt_mesh_delayable_msg_manage() returns -ENOMEM for every subsequent send and bt_mesh_model_send() propagates that error with no fallback to an immediate transmit. Since CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG and CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG_CTX_ENABLED are both enabled by default, ctx->rnd_delay is set for every received access message, so all replies from Configuration Server, Health Server and application server models are silently dropped. The node keeps receiving and processing traffic but never answers, a persistent denial of service until the device is restarted. There is no memory corruption, information disclosure or integrity impact; releases before the fix compute the chunk count from the transmit buffer capacity rather than its payload length, making chunk-pool starvation \u2014 and therefore the leak \u2014 considerably easier to provoke.",
-      "last_modified": "2026-10-14T20:17:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19937"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: RFCOMM: validate skb length in MCC handlers\n\nThe RFCOMM MCC handlers cast skb->data to protocol-specific structs\nwithout validating skb->len first. A malicious remote device can send\ntruncated MCC frames and trigger out-of-bounds reads in these handlers.\n\nFix this by using skb_pull_data() to validate and access the required\ndata before dereferencing it.\n\nrfcomm_recv_rpn() requires special handling since ETSI TS 07.10 allows\n1-byte RPN requests. Handle this by validating only the DLCI byte first,\nand validating the full struct only when len > 1.",
+      "last_modified": "2026-10-15T02:20:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53254"
     },
     {
-      "cve_id": "CVE-2026-19936",
-      "asset_id": "CVE-2026-19936",
+      "cve_id": "CVE-2026-53253",
+      "asset_id": "CVE-2026-53253",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Bluetooth Mesh Access-layer delayable message queue in subsys/bluetooth/mesh/delayable_msg.c shares three intrusive lists (busy_ctx, free_ctx, free_chunks) and one k_work_delayable between two cooperative threads with no synchronization: bt_mesh_delayable_msg_manage() runs on the Bluetooth host RX thread, while delayable_msg_handler() runs on the system workqueue. Both block while the lists are in an intermediate state \u2014 the enqueuer in bt_rand(), both in bt_mesh_access_send() \u2014 which lets the other context observe torn state. delayable_msg_handler() used the result of sys_slist_get() on busy_ctx without a NULL check, and allocate_delayable_msg_ctx() tested sys_slist_is_empty() and then assumed a separate sys_slist_get() would succeed.\n\nBecause CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG and CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG_CTX_ENABLED default to y, every model response to a received mesh message is parked on this queue, so the enqueuer runs as a direct consequence of inbound traffic. A peer that can get access-layer messages accepted by a model (it must hold the NetKey and a bound AppKey, so a legitimate or compromised network member) controls the arrival rate, the size of the elicited responses and the destination address, and thereby controls occupancy of the 4-entry context pool and the 40-entry chunk pool. Exhausting the chunk pool forces bt_mesh_delayable_msg_manage() down the purge path, which sends and releases the only queued message and leaves busy_ctx empty while the delayable work item is still armed; if the enqueuer then yields, the handler runs against the empty list.\n\nThe result is a read-modify-write through a NULL-based pointer (pending_msg->fired_time += 10) at a fixed low address on the system workqueue thread. On typical targets that faults, aborting the system workqueue thread \u2014 which stops all workqueue-driven functionality, including the mesh timing machinery \u2014 or resetting the node, so the impact is loss of availability of the affected node. The write value and address are fixed and no attacker-controlled length or index is involved, so this is not exploitable for memory corruption or code execution. The same unsynchronized window also allowed one message context to be selected and released by two contexts at once, producing duplicated transmissions, duplicated send-completion callbacks and crossed chunk ownership.\n\nThe fix serializes every list mutation with a k_spinlock that is never held across a blocking call, makes push_msg_from_delayable_msgs() detach the queue head atomically so a message being sent is on no list, removes the unchecked sys_slist_get() from delayable_msg_handler(), and drops any message that reaches the front of the queue while the stack is suspended or reset.",
-      "last_modified": "2026-10-14T20:17:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19936"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: bnep: reject short frames before parsing\n\nA BNEP peer can send a short BNEP SDU. bnep_rx_frame() reads the\npacket type byte immediately and, for control packets, reads the control\nopcode and setup UUID-size byte before proving that those bytes are\npresent. bnep_rx_control() also dereferences the control opcode without\nrejecting an empty control payload.\n\nUse skb_pull_data() for the fixed fields in bnep_rx_frame() so a NULL\nreturn gates each dereference. Split the control handler so the frame\npath can pass an opcode that has already been pulled, and keep the\nbyte-buffer wrapper for extension control payloads.\n\nFor BNEP_SETUP_CONN_REQ, name the UUID-size byte before pulling the\nsetup payload. struct bnep_setup_conn_req carries destination and source\nservice UUIDs after that byte, each uuid_size bytes, so the parser now\ndocuments that tuple explicitly instead of leaving the pull length as an\nopaque multiplication.\n\nValidation reproduced this kernel report:\nKASAN slab-out-of-bounds in bnep_rx_frame.isra.0+0x130c/0x1790\nThe buggy address belongs to the object at ffff88800c0f7908 which belongs\nto the cache kmalloc-8 of size 8\nThe buggy address is located 0 bytes to the right of allocated 1-byte\nregion [ffff88800c0f7908, ffff88800c0f7909)\nRead of size 1\nCall trace:\n  dump_stack_lvl+0xb3/0x140 (?:?)\n  print_address_description+0x57/0x3a0 (?:?)\n  bnep_rx_frame+0x130c/0x1790 (net/bluetooth/bnep/core.c:306)\n  print_report+0xb9/0x2b0 (?:?)\n  __virt_addr_valid+0x1ba/0x3a0 (?:?)\n  srso_alias_return_thunk+0x5/0xfbef5 (?:?)\n  kasan_addr_to_slab+0x21/0x60 (?:?)\n  kasan_report+0xe0/0x110 (?:?)\n  process_one_work+0xfce/0x17e0 (kernel/workqueue.c:3200)\n  worker_thread+0x65c/0xe40 (?:?)\n  __kthread_parkme+0x184/0x230 (?:?)\n  kthread+0x35e/0x470 (?:?)\n  _raw_spin_unlock_irq+0x28/0x50 (?:?)\n  ret_from_fork+0x586/0x870 (?:?)\n  __switch_to+0x74f/0xdc0 (?:?)\n  ret_from_fork_asm+0x1a/0x30 (?:?)",
+      "last_modified": "2026-10-15T02:20:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53253"
     },
     {
-      "cve_id": "CVE-2026-16301",
-      "asset_id": "CVE-2026-16301",
+      "cve_id": "CVE-2026-53249",
+      "asset_id": "CVE-2026-53249",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 18.7 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an authenticated user with Developer role to execute CI/CD pipelines on protected branches without authorization due to improper authorization checks in the downstream pipeline creation service.",
-      "last_modified": "2026-10-14T20:17:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16301"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv4: restrict IPOPT_SSRR and IPOPT_LSRR options\n\nThis patch restricts setting Loose Source and Record Route (LSRR)\nand Strict Source and Record Route (SSRR) IP options to users\nwith CAP_NET_RAW capability.\n\nThis prevents unprivileged applications from forcing packets to route\nthrough attacker-controlled nodes to leak TCP ISN and possibly other\nprotocol information.\n\nWhile LSRR and SSRR are commonly filtered in many network environments,\nthey may still be supported and forwarded along some network paths.\n\nRFC 7126 (Recommendations on Filtering of IPv4 Packets Containing\nIPv4 Options) recommend to drop these options in 4.3 and 4.4.",
+      "last_modified": "2026-10-15T02:20:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53249"
     },
     {
-      "cve_id": "CVE-2026-14552",
-      "asset_id": "CVE-2026-14552",
+      "cve_id": "CVE-2026-53245",
+      "asset_id": "CVE-2026-53245",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 17.0 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an authenticated user with Guest access to read confidential epic content meant to be restricted by external authorization, due to incorrect authorization checks.",
-      "last_modified": "2026-10-14T20:17:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14552"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/802/mrp: fix vector attribute parsing in mrp_pdu_parse_vecattr\n\nIn mrp_pdu_parse_vecattr(), vector attribute events are encoded three\nper byte and valen tracks the number of events left to process.\n\nThe parser decrements valen after processing the first and second events\nfrom each event byte, but not after processing the third one. When valen\nis exactly a multiple of three, the loop continues after the last valid\nevent and consumes the next byte as a new event byte, applying a\nspurious event to the MRP applicant state.\n\nAdditionally, when valen is zero the parser unconditionally consumes\nattrlen bytes as FirstValue and advances the offset, even though per\nIEEE 802.1ak a VectorAttribute with only a LeaveAllEvent has valen of\nzero and no FirstValue or Vector fields. This corrupts the offset for\nsubsequent PDU parsing.\n\nAlso, when valen exceeds three the loop crosses byte boundaries but\nthe attribute value is not incremented between the last event of one\nbyte and the first event of the next. This causes the first event of\nthe next byte to use the same attribute value as the third event\nrather than the next consecutive value.\n\nDecrement valen after processing the third event, skip FirstValue\nconsumption when valen is zero, and increment the attribute value at\nthe end of each loop iteration.",
+      "last_modified": "2026-10-15T02:20:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53245"
     },
     {
-      "cve_id": "CVE-2026-14210",
-      "asset_id": "CVE-2026-14210",
+      "cve_id": "CVE-2026-53242",
+      "asset_id": "CVE-2026-53242",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 18.11 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an authenticated user with a project-scoped fine-grained Personal Access Token to permanently delete or modify group-level labels, due to incorrect authorization logic on label ownership scope validation.",
-      "last_modified": "2026-10-14T20:17:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14210"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nALSA: PCM: Fix wait queue list corruption in snd_pcm_drain() on linked streams\n\nsnd_pcm_drain() uses init_waitqueue_entry which does not clear\nentry.prev/next, and add_wait_queue with a conditional\nremove_wait_queue that is skipped when to_check is no longer\nin the group after concurrent UNLINK.  The orphaned wait entry\nremains on the unlinked substream sleep queue.  On the next\ndrain iteration, add_wait_queue adds the entry to a new queue\nwhile still linked on the old one, corrupting both lists.  A\nsubsequent wake_up dereferences NULL at the func pointer\n(mapped from the spinlock at offset 0 of the misinterpreted\nwait_queue_head_t), causing a kernel panic.\n\nReplace init_waitqueue_entry/add_wait_queue/conditional\nremove_wait_queue with init_wait_entry/prepare_to_wait/\nfinish_wait.  init_wait_entry clears prev/next via\nINIT_LIST_HEAD on each iteration and sets\nautoremove_wake_function which auto-removes the entry on\nwake-up.  finish_wait safely handles both the already-removed\nand still-queued cases.",
+      "last_modified": "2026-10-15T02:20:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53242"
     },
     {
-      "cve_id": "CVE-2026-110771",
-      "asset_id": "CVE-2026-110771",
+      "cve_id": "CVE-2026-53239",
+      "asset_id": "CVE-2026-53239",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Shopizer through 3.2.5 contains an authorization bypass vulnerability that allows authenticated customers to post reviews as other customers by supplying a customerId field. Attackers can send crafted requests to POST /api/v1/auth/products/{id}/reviews to publish reviews and ratings attributed to other store customers, corrupting authorship and product ratings.",
-      "last_modified": "2026-10-14T20:17:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110771"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nxfrm: policy: fix use-after-free on inexact bin in xfrm_policy_bysel_ctx()\n\nFix the race by pruning the bin while still holding xfrm_policy_lock,\nbefore dropping it. Use __xfrm_policy_inexact_prune_bin() directly since\nthe lock is already held. The wrapper xfrm_policy_inexact_prune_bin()\nbecomes unused and is removed.\n\nRace:\n\n  CPU0 (XFRM_MSG_DELPOLICY)           CPU1 (XFRM_MSG_NEWSPDINFO)\n  ==========================          ==========================\n  xfrm_policy_bysel_ctx():\n    spin_lock_bh(xfrm_policy_lock)\n    bin = xfrm_policy_inexact_lookup()\n    __xfrm_policy_unlink(pol)\n    spin_unlock_bh(xfrm_policy_lock)\n    xfrm_policy_kill(ret)\n    // wide window, lock not held\n                                       xfrm_hash_rebuild():\n                                         spin_lock_bh(xfrm_policy_lock)\n                                         __xfrm_policy_inexact_flush():\n                                           kfree_rcu(bin)  // bin freed\n                                         spin_unlock_bh(xfrm_policy_lock)\n    xfrm_policy_inexact_prune_bin(bin)\n    // UAF: bin is freed",
+      "last_modified": "2026-10-15T02:20:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53239"
     },
     {
-      "cve_id": "CVE-2026-110766",
-      "asset_id": "CVE-2026-110766",
+      "cve_id": "CVE-2026-53236",
+      "asset_id": "CVE-2026-53236",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Colanode server through 0.4.7 contains a path traversal vulnerability that allows authenticated users to read arbitrary .jpeg files by supplying an encoded traversal sequence in avatarId. Attackers can send percent-encoded ../ sequences to GET /client/v1/avatars/:avatarId to escape the avatars directory and read .jpeg files belonging to other workspaces.",
-      "last_modified": "2026-10-14T20:17:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110766"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntcp: restrict SO_ATTACH_FILTER to priv users\n\nThis patch restricts the use of SO_ATTACH_FILTER (cBPF) on TCP sockets\nto users with CAP_NET_ADMIN capability.\n\nThis blocks potential side-channel attack where an unprivileged application\nattaches a filter to leak TCP sequence/acknowledgment numbers.",
+      "last_modified": "2026-10-15T02:20:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53236"
     },
     {
-      "cve_id": "CVE-2026-110667",
-      "asset_id": "CVE-2026-110667",
+      "cve_id": "CVE-2026-53228",
+      "asset_id": "CVE-2026-53228",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in cemtan sar2html 4.0.0. Affected by this vulnerability is an unknown functionality of the file sar2html.py. The manipulation of the argument SECRET_KEY results in hard-coded credentials. The attack can be executed remotely. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-10-14T20:17:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110667"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv6: sit: reload inner IPv6 header after GSO offloads\n\nipip6_tunnel_xmit() caches the inner IPv6 header pointer at function\nentry and continues using it after iptunnel_handle_offloads().\n\nFor GSO skbs, iptunnel_handle_offloads() calls skb_header_unclone().\nWhen the skb header is cloned, skb_header_unclone() can call\npskb_expand_head(), which may move the skb head. The pskb_expand_head()\ncontract requires pointers into the skb header to be reloaded after the\ncall.\n\nIf the later skb_realloc_headroom() branch is not taken, SIT uses the\nstale iph6 pointer to read the inner hop limit and DS field. That can\nread from a freed skb head after the old head's remaining clone is\nreleased.\n\nReload iph6 after the offload helper succeeds and before subsequent\nreads from the inner IPv6 header. Keep the existing reload after\nskb_realloc_headroom(), since that branch can also replace the skb.",
+      "last_modified": "2026-10-15T02:20:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53228"
     },
     {
-      "cve_id": "CVE-2026-108395",
-      "asset_id": "CVE-2026-108395",
+      "cve_id": "CVE-2026-53227",
+      "asset_id": "CVE-2026-53227",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Model Context Protocol Java SDK is the official Java SDK for Model Context Protocol servers and clients. From version 0.8.0 through 0.12.0 in the io.modelcontextprotocol.sdk:mcp artifact, from 0.13.0 through 0.18.3 and 1.0.0 through 1.1.3 in io.modelcontextprotocol.sdk:mcp-core, and from mcp-core 2.0.0-M1 through 2.0.0, the Servlet-based SSE, Streamable HTTP, and Stateless server transports read an HTTP request body into memory without enforcing a maximum size. An unauthenticated remote client able to reach an affected transport can stream an arbitrarily large POST body, including with chunked transfer encoding, until the Java process exhausts its heap and becomes unavailable. Authentication, Origin or Host validation, or an upstream request-size limit can reject the request before the vulnerable read. The maintained mcp-core lines are fixed in versions 0.18.4, 1.1.4, and 2.0.1.",
-      "last_modified": "2026-10-14T20:17:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-108395"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: openvswitch: fix possible kfree_skb of ERR_PTR\n\nAfter the patch in the \"Fixes\" tag, the allocation of the \"reply\" skb\ncan happen either before or after locking the ovs_mutex.\n\nHowever, error cleanups still follow the classical reversed order,\nassuming \"reply\" is allocated before locking: it is freed after unlocking.\n\nIf \"reply\" allocation happens after locking the mutex and it fails,\n\"reply\" is left with an ERR_PTR, and execution jumps to the correspondent\ncleanup stage which will try to free an invalid pointer.\n\nFix this by setting the pointer to NULL after having saved its error\nvalue.",
+      "last_modified": "2026-10-15T02:20:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53227"
     }
   ]
 }
