@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-19T22:33:22.705218+00:00",
+  "last_updated": "2026-10-20T05:07:22.558167+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-87766",
-      "asset_id": "CVE-2026-87766",
+      "cve_id": "CVE-2024-12397",
+      "asset_id": "CVE-2024-12397",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in bubblewrap. During sandbox setup, creating files or directories under the new root can follow a parent symlink onto the host via /oldroot, writing attacker-chosen paths outside the sandbox as the launching user. This happens before the sandboxed process starts. This issue is GHSA-pxhw-h44j-8pfx. It is fixed in bubblewrap 0.12.0.",
-      "last_modified": "2026-10-19T21:37:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87766"
+      "description": "A flaw was found in Quarkus-HTTP, which incorrectly parses cookies with\ncertain value-delimiting characters in incoming requests. This issue could\nallow an attacker to construct a cookie value to exfiltrate HttpOnly cookie\nvalues or spoof arbitrary additional cookie values, leading to unauthorized\ndata access or modification. The main threat from this flaw impacts data\nconfidentiality and integrity.",
+      "last_modified": "2026-10-20T04:33:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-12397"
     },
     {
-      "cve_id": "CVE-2026-112261",
-      "asset_id": "CVE-2026-112261",
+      "cve_id": "CVE-2026-76763",
+      "asset_id": "CVE-2026-76763",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GIMP. Opening a crafted XCF that selects a path and then fails to load that path can cause a use-after-free in the main process, leading to a crash and potentially arbitrary code execution.",
-      "last_modified": "2026-10-19T21:37:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112261"
+      "description": "A flaw was found in SmallRye GraphQL. The number scalar coercion for BigInteger does not properly validate the magnitude of float or string inputs. An unauthenticated remote attacker can exploit this by sending a GraphQL query containing a large exponent float literal. This can lead to the allocation of extremely large BigInteger objects, causing CPU exhaustion or an OutOfMemoryError, resulting in a denial of service.",
+      "last_modified": "2026-10-20T04:32:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76763"
     },
     {
-      "cve_id": "CVE-2026-112258",
-      "asset_id": "CVE-2026-112258",
+      "cve_id": "CVE-2026-17615",
+      "asset_id": "CVE-2026-17615",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GIMP. The XCF loader can leave a dangling pointer in the linked-channels list when a linked channel is later destroyed via a selection property. Opening a crafted XCF file can cause a use-after-free in the main GIMP process, leading to a crash and potentially arbitrary code execution.",
-      "last_modified": "2026-10-19T21:37:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112258"
+      "description": "A flaw was found in RESTEasy's SourceProvider. This vulnerability allows an unauthenticated attacker to perform an unauthenticated remote file read. By sending a specially crafted XML body with a DOCTYPE declaration referencing external entities to an endpoint that accepts application/xml and returns Source or StreamSource, the server can be tricked into resolving the entity and including sensitive file contents in the HTTP response. This is due to the SourceProvider.writeTo() method creating a SAXParser without disabling external entity resolution, leading to an XML External Entity (XXE) vulnerability.",
+      "last_modified": "2026-10-20T04:31:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17615"
     },
     {
-      "cve_id": "CVE-2026-112257",
-      "asset_id": "CVE-2026-112257",
+      "cve_id": "CVE-2026-12894",
+      "asset_id": "CVE-2026-12894",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GIMP. The PSD thumbnail resource loader performs a BGR-to-RGB channel swap with a fixed 3-byte stride and does not verify that the JPEG thumbnail is RGB. A crafted grayscale PSD thumbnail can cause a heap out-of-bounds read and write in the plug-in process, leading to a crash and potentially arbitrary code execution when the victim browses or opens the file.",
-      "last_modified": "2026-10-19T21:37:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112257"
+      "description": "A flaw was found in the Qute template engine, which is used by Quarkus to generate dynamic content like HTML pages or emails. The issue exists in the component responsible for looking up data values (ReflectionValueResolver), which fails to properly block access to sensitive Java internal functions when processing certain data types like Enums. An attacker who can provide or influence the template text can exploit this bypass to take control of the server by executing unauthorized commands.",
+      "last_modified": "2026-10-20T04:31:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12894"
     },
     {
-      "cve_id": "CVE-2026-112892",
-      "asset_id": "CVE-2026-112892",
+      "cve_id": "CVE-2026-86868",
+      "asset_id": "CVE-2026-86868",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 4.1.0 until 13.0.0, Pillow's MSP RLE decoder can expand a small file into an unbounded in-memory buffer. The decoder writes run-length output to BytesIO without limiting expansion to the declared image size. An attacker can supply a crafted MSP image to an application that loads its pixels. This can exhaust memory and deny service even when the declared pixel count passes the decompression-bomb check. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:35:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112892"
+      "description": "An authentication issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An attacker may be able to impersonate other users.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86868"
     },
     {
-      "cve_id": "CVE-2026-112891",
-      "asset_id": "CVE-2026-112891",
+      "cve_id": "CVE-2026-86871",
+      "asset_id": "CVE-2026-86871",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 9.2.0 until 13.0.0, Pillow performs quadratic copying when saving a GIF with a long comment. _get_global_header() repeatedly copies portions of comment data while assembling the global header, including comments retained from an untrusted input image. An attacker can supply an image with a large GIF comment to an application that saves it as GIF. This can consume excessive CPU and delay or deny service. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:33:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112891"
+      "description": "An integer underflow was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An attacker with control of a network file server may be able to cause unexpected system termination.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86871"
     },
     {
-      "cve_id": "CVE-2026-34118",
-      "asset_id": "CVE-2026-34118",
+      "cve_id": "CVE-2026-86872",
+      "asset_id": "CVE-2026-86872",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A heap-based buffer overflow vulnerability was identified in TP-Link Tapo C100/C101 v5, C210 v3.6 and C520WS v2.6\u00a0in the HTTP POST body parsing logic due to missing validation of remaining buffer capacity after dynamic allocation, due to\u00a0insufficient boundary validation when handling externally supplied HTTP input.\u00a0\u00a0\n\nAn attacker\non the same network segment could trigger heap memory corruption conditions by\nsending crafted payloads that cause write operations beyond allocated buffer\nboundaries.\u00a0 Successful exploitation\ncauses a Denial-of-Service (DoS) condition, causing the device\u2019s process to\ncrash or become unresponsive.",
-      "last_modified": "2026-10-19T21:32:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34118"
+      "description": "A logic issue was addressed with improved state management. This issue is fixed in Safari 27, visionOS 27, watchOS 27. Processing maliciously crafted web content may lead to unexpected behavior.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86872"
     },
     {
-      "cve_id": "CVE-2026-112406",
-      "asset_id": "CVE-2026-112406",
+      "cve_id": "CVE-2026-86874",
+      "asset_id": "CVE-2026-86874",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 5.1.0 until 13.0.0, Pillow can enter an infinite loop while rewriting PDF pages. PdfParser.rewrite_pages() follows Parent relationships without detecting a cycle in the page tree. An attacker can supply a cyclic PDF to an application that appends an image to that PDF. This can hold the worker at full CPU and deny service. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:31:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112406"
+      "description": "An out-of-bounds read was addressed with improved input validation. This issue is fixed in Xcode 27. Parsing a maliciously crafted binary may lead to unexpected tool termination.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86874"
     },
     {
-      "cve_id": "CVE-2026-112360",
-      "asset_id": "CVE-2026-112360",
+      "cve_id": "CVE-2026-86875",
+      "asset_id": "CVE-2026-86875",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in Netis EAP930 1.250905.115454. This issue affects the function return200 of the file /cgi-bin/debug of the component CGI Endpoint. The manipulation of the argument SIGNATURE leads to backdoor. The attack may be initiated remotely. A high degree of complexity is needed for the attack. The exploitability is assessed as difficult. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-10-19T21:30:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112360"
+      "description": "An input validation issue was addressed with improved input validation. This issue is fixed in Xcode 27. Parsing a maliciously crafted binary may lead to unexpected app termination.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86875"
     },
     {
-      "cve_id": "CVE-2026-97829",
-      "asset_id": "CVE-2026-97829",
+      "cve_id": "CVE-2026-86907",
+      "asset_id": "CVE-2026-86907",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds read in DNS Server allows an authorized attacker to disclose information over a network.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97829"
+      "description": "An authorization issue was addressed with improved entitlement checks. This issue is fixed in macOS Sequoia 15.8, macOS Tahoe 26.7. An app with admin privileges may be able to modify the System Keychain.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86907"
     },
     {
-      "cve_id": "CVE-2026-112285",
-      "asset_id": "CVE-2026-112285",
+      "cve_id": "CVE-2026-86913",
+      "asset_id": "CVE-2026-86913",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Thelia before 3.1.5 and 3.2.x before 3.2.4 contains a business logic vulnerability that allows authenticated customers to bypass coupon usage limits because usage is counted only when orders become paid. Attackers can place multiple pay-later orders while a usage remains, or cancel paid orders to inflate max_usage, gaining unlimited discounts.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112285"
+      "description": "A use after free issue was addressed with improved memory management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86913"
     },
     {
-      "cve_id": "CVE-2026-112286",
-      "asset_id": "CVE-2026-112286",
+      "cve_id": "CVE-2026-86914",
+      "asset_id": "CVE-2026-86914",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Krayin CRM before 2.2.7 contains an insecure direct object reference vulnerability that allows scope-restricted authenticated users to read other users' quotes by bypassing per-user data scope checks in QuoteController. Attackers can query the quotes search and lead-products endpoints to retrieve quote addresses, totals, contact details, and product pricing belonging to any user or lead.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112286"
+      "description": "An information disclosure issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive network connection information.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86914"
     },
     {
-      "cve_id": "CVE-2026-111748",
-      "asset_id": "CVE-2026-111748",
+      "cve_id": "CVE-2026-86915",
+      "asset_id": "CVE-2026-86915",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.4, an attacker can send an absolute-form request that causes Request.scheme to use attacker-controlled request-target scheme data instead of the connection protocol. Applications that use Request.scheme for security decisions can consequently be tricked into treating an unencrypted connection as encrypted or an encrypted connection as unencrypted. This issue is fixed in version 3.14.4.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111748"
+      "description": "A race condition was addressed with improved locking. This issue is fixed in macOS Golden Gate 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86915"
     },
     {
-      "cve_id": "CVE-2026-110676",
-      "asset_id": "CVE-2026-110676",
+      "cve_id": "CVE-2026-86918",
+      "asset_id": "CVE-2026-86918",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by encoding exponent notation as full decimal digits under allow_bignum.\n\nWith allow_bignum, a JSON number with a fraction or exponent decodes to a Math::BigFloat, which stores the exponent separately and so decodes cheaply. Encoding it untyped or as JSON_TYPE_FLOAT writes the plain decimal form with one digit per unit of exponent. Nothing bounds the exponent, so the 12-byte text [1e30000000] encodes to 30 MB.\n\nUntrusted JSON decoded with allow_bignum and encoded again can exhaust memory and CPU.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110676"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted image may lead to unexpected app termination.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86918"
     },
     {
-      "cve_id": "CVE-2026-110684",
-      "asset_id": "CVE-2026-110684",
+      "cve_id": "CVE-2026-86919",
+      "asset_id": "CVE-2026-86919",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Cpanel::JSON::XS versions from 3.0202 before 4.80 for Perl leak memory and retain overloaded objects when encoding values as strings in encode_stringify.\n\nencode_stringify writes a value in its string form under allow_stringify, under convert_blessed for objects without TO_JSON, and under allow_bignum. For an array or hash object with a \"\" overload, and from 4.20 a scalar object, it takes an extra reference that is never released, so the object and everything it references are never freed. From 4.10 it also never frees its copy of the string.\n\nRepeatedly encoding data that contains such values grows process memory without bound.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110684"
+      "description": "A stack overflow was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, visionOS 27. An attacker with a paired Bluetooth device may be able to execute arbitrary code.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86919"
     },
     {
-      "cve_id": "CVE-2026-110686",
-      "asset_id": "CVE-2026-110686",
+      "cve_id": "CVE-2026-86921",
+      "asset_id": "CVE-2026-86921",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Cpanel::JSON::XS versions before 4.80 for Perl use freed filter callbacks when a filter removes itself during decoding in decode_hv.\n\nA decode copies the parser's filter_json_object and filter_json_single_key_object callbacks without taking references to them. A filter callback that removes the last single-key filter frees the callback table while the decode in progress still uses it. The next object is dispatched through freed memory and can crash the process.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110686"
+      "description": "A permissions issue was addressed with improved validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. A local attacker may be able to overwrite restricted files.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86921"
     },
     {
-      "cve_id": "CVE-2026-111766",
-      "asset_id": "CVE-2026-111766",
+      "cve_id": "CVE-2026-86922",
+      "asset_id": "CVE-2026-86922",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "markdown-it is a Markdown parser. Prior to 14.3.3 and 15.0.3, when the html option or commonmark preset is enabled and the constructs occur inside a paragraph, attacker-controlled Markdown containing repeated unterminated inline HTML comments, processing instructions, declarations, or CDATA sections reaches src/rules_inline/html_inline.ts. Its HTML_TAG_RE match searches the remaining suffix for the appropriate terminator; when no terminator is present, parsing advances to the next opener and repeats the match over overlapping input, causing quadratic processing and denial of service through event-loop blocking or an unresponsive browser main thread. HTML blocks and the default HTML-disabled configuration are not affected by these payloads. This issue is fixed in versions 14.3.3 and 15.0.3.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111766"
+      "description": "A type confusion issue was addressed with improved state management. This issue is fixed in Safari 27, iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27. Processing maliciously crafted web content may lead to arbitrary code execution.",
+      "last_modified": "2026-10-20T04:30:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86922"
     },
     {
-      "cve_id": "CVE-2026-112390",
-      "asset_id": "CVE-2026-112390",
+      "cve_id": "CVE-2026-9800",
+      "asset_id": "CVE-2026-9800",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 7.2.0 until 13.0.0, Pillow can enter an infinite loop while determining the frame count of a MIC image. MicImageFile inherits TIFF frame traversal, but MicImageFile.tell reports the OLE stream index and its seek() resets TIFF frame state, so an embedded TIFF with at least three IFDs never advances. When an application with olefile installed reads n_frames or saves all frames from a crafted MIC file, the non-advancing traversal can hold a worker at full CPU indefinitely. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112390"
+      "description": "A flaw was found in Keycloak Policy Enforcer. This vulnerability allows any authenticated user to bypass all authorization policies, including role, scope, and User-Managed Access (UMA) permission checks. By including the configured access-denied page path within a request URL, either as a path segment or a query parameter, an attacker can gain unauthorized access to protected resources.",
+      "last_modified": "2026-10-20T04:28:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9800"
     },
     {
-      "cve_id": "CVE-2026-76787",
-      "asset_id": "CVE-2026-76787",
+      "cve_id": "CVE-2026-113380",
+      "asset_id": "CVE-2026-113380",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The UpdateHub firmware-over-the-air client parses the CoAP probe response with Zephyr's JSON library in z_impl_updatehub_probe() (subsys/mgmt/updatehub/updatehub.c). The decoder treats every descriptor field as optional \u2014 json_obj_parse() returns a bitmask of the fields it actually decoded and never fails on a missing one \u2014 so a response that omits the \"sha256sum\" string leaves the corresponding const char * in the zero-initialised struct resp_probe_any_boards / struct resp_probe_some_boards at NULL. Both metadata branches then computed sha256size = strlen(...objects.sha256sum) + 1 before any validation, dereferencing that NULL pointer; the SHA256_HEX_DIGEST_SIZE test that follows operates on a value the bad read has already produced and cannot prevent it.\n\nThe metadata is supplied entirely by the network peer: probe_cb() accepts the datagram, runs coap_packet_parse() and copies the payload with no token matching and no cryptographic check. With CONFIG_UPDATEHUB_DTLS unset \u2014 the default \u2014 start_coap_client() uses plain CoAP over UDP on port 5683 with no peer authentication and resolves the server via unauthenticated DNS, so an on-path attacker, a DNS spoofer, or an off-path attacker who wins the race with a forged source address can deliver the malformed metadata. A probe response as simple as \"objects\":[[{}],[{}]] suffices, and no user interaction is required because updatehub_autohandler() polls on CONFIG_UPDATEHUB_POLL_INTERVAL. When CONFIG_UPDATEHUB_DTLS=y the trigger narrows to a malicious or compromised update server.\n\nThe primitive is a read at address zero, not a write, so the impact is availability only. On targets where the low address range is unmapped or protected \u2014 MMU-based architectures, builds with CONFIG_NULL_POINTER_EXCEPTION_DETECTION_DWT/_MPU/_PMP, TrustZone non-secure images, and SoCs such as nRF54L whose 0x0\u20130x400 window is unmapped \u2014 the load faults and Zephyr's default fatal handler halts the system, giving a remotely re-triggerable denial of service on every poll. On classic Cortex-M targets where the vector table is readable at address zero the walk usually terminates immediately and the request is rejected by the length check, so the outcome is configuration- and SoC-dependent. There is no memory write, and the copied bytes are only compared against the locally computed image hash, so there is no information-disclosure channel.\n\nThe fix adds an explicit sha256sum == NULL test that returns UPDATEHUB_METADATA_ERROR ahead of the strlen() in both metadata branches. Debug builds (CONFIG_UPDATEHUB_LOG_LEVEL=4) still format the same pointers with %s in a LOG_DBG() loop that runs before the new checks, so that variant remains in debug configurations only.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76787"
+      "description": "In the RingRTC library before 2.72.0 for Signal, a peer that saturates a call's FSM queue can interfere with the ability of a local hangup to tear the call (with its audio and perhaps also video track) down.",
+      "last_modified": "2026-10-20T04:25:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113380"
     },
     {
-      "cve_id": "CVE-2026-76788",
-      "asset_id": "CVE-2026-76788",
+      "cve_id": "CVE-2025-2240",
+      "asset_id": "CVE-2025-2240",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The OSDP Control Panel reply parser cp_decode_response() in subsys/mgmt/osdp/src/osdp_cp.c decodes replies from a Peripheral Device into a stack-allocated struct osdp_event. For the REPLY_KEYPPAD and REPLY_RAW reply types, the payload length is taken from the received frame and the only validation performed is that the declared length is self-consistent with the number of payload bytes present in the frame. Because the attacker controls both the length field and the frame length, that check imposes no bound, and the subsequent memcpy() writes into the fixed 64-byte data arrays of struct osdp_event_keypress / struct osdp_event_cardread (OSDP_EVENT_MAX_DATALEN). The sibling REPLY_FMT handler in the same switch already carried the missing > OSDP_EVENT_MAX_DATALEN bound.\n\nThe defect is reached from cp_process_reply(), which reads bytes from the OSDP RS-485 channel and passes them through osdp_phy_check_packet() and osdp_phy_decode_packet() before dispatching on the reply ID. Triggering it requires CONFIG_OSDP with CONFIG_OSDP_MODE_CP and an application event callback registered (the normal Control Panel integration), plus a frame carrying a correct SOM, a valid CRC-16, and a matching 2-bit sequence number \u2014 all of which are computable or observable by anyone on the bus. No check ties the reply ID to the outstanding command, so an oversized REPLY_KEYPPAD or REPLY_RAW is accepted as the answer to a routine CMD_POLL. A malicious or compromised card reader, or anyone with access to the RS-485 wiring, can supply such a frame; CONFIG_OSDP_SC_ENABLED only helps while a secure channel is active, and a single unauthenticated frame carrying a bad MAC causes sc_deactivate(), after which plaintext replies are again accepted.\n\nWith the default CONFIG_OSDP_UART_BUFFER_LENGTH of 256, roughly 180 bytes of fully attacker-chosen data can be written past the end of the stack-allocated event object, over saved registers and the return address on typical Cortex-M and RISC-V frame layouts (Zephyr does not enable stack canaries by default). The impact ranges from a hard crash of the access-control panel to potential control-flow hijack in the context of the OSDP receive thread. The fix adds an OSDP_EVENT_MAX_DATALEN bound to both handlers, capping each memcpy() at the size of its destination.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76788"
+      "description": "A flaw was found in Smallrye, where smallrye-fault-tolerance is vulnerable to an out-of-memory (OOM) issue. This vulnerability is externally triggered when calling the metrics URI. Every call creates a new object within meterMap and may lead to a denial of service (DoS) issue.",
+      "last_modified": "2026-10-20T04:21:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-2240"
     },
     {
-      "cve_id": "CVE-2026-112391",
-      "asset_id": "CVE-2026-112391",
+      "cve_id": "CVE-2025-1634",
+      "asset_id": "CVE-2025-1634",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 5.1.0 until 13.0.0, Pillow's PdfParser.get_value() can recurse without a limit while reading nested PDF objects. The parser follows attacker-controlled arrays and dictionaries when an existing PDF is opened for append. An attacker can provide a deeply nested PDF to an application that saves an image with PDF append enabled. This can raise an uncaught RecursionError or terminate the worker, causing denial of service. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:30:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112391"
+      "description": "A flaw was found in the quarkus-resteasy extension, which causes memory leaks when client requests with low timeouts are made. If a client request times out, a buffer is not released correctly, leading to increased memory usage and eventual application crash due to OutOfMemoryError.",
+      "last_modified": "2026-10-20T04:21:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1634"
     },
     {
-      "cve_id": "CVE-2026-112405",
-      "asset_id": "CVE-2026-112405",
+      "cve_id": "CVE-2025-1247",
+      "asset_id": "CVE-2025-1247",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 12.0.0 until 13.0.0, Pillow's Image.merge() can dereference a null image8 plane. Validation skips the first input band, allowing a 32-bit integer or floating-point image backed by image32 storage to be merged as a narrower multiband image. A crafted IPTC file can reach this path when an application opens and loads it, or a caller can invoke Image.merge() directly with such a first band. This causes a native process crash. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:29:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112405"
+      "description": "A flaw was found in Quarkus REST that allows request parameters to leak between concurrent requests if endpoints use field injection without a CDI scope. This vulnerability allows attackers to manipulate request data, impersonate users, or access sensitive information.",
+      "last_modified": "2026-10-20T04:21:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1247"
     },
     {
-      "cve_id": "CVE-2026-112404",
-      "asset_id": "CVE-2026-112404",
+      "cve_id": "CVE-2023-6394",
+      "asset_id": "CVE-2023-6394",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 8.1.0 until 13.0.0, Pillow's TIFF tile and RGBA decode paths can read beyond row data produced by libtiff. In _decodeTile and the RGBA unpacker path, when Pillow and libtiff interpret duplicated PhotometricInterpretation or BitsPerSample tags differently, Pillow does not verify that the required input row fits inside the row libtiff produced, while the strip path has this validation. Loading pixels from such a crafted TIFF can expose adjacent heap data in output pixels or crash the process. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:27:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112404"
+      "description": "A flaw was found in Quarkus. This issue occurs when receiving a request over websocket with no role-based permission specified on the GraphQL operation, Quarkus processes the request without authentication despite the endpoint being secured. This can allow an attacker to access information and functionality outside of normal granted API permissions.",
+      "last_modified": "2026-10-20T04:20:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6394"
     },
     {
-      "cve_id": "CVE-2026-105815",
-      "asset_id": "CVE-2026-105815",
+      "cve_id": "CVE-2026-28850",
+      "asset_id": "CVE-2026-28850",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TP-Link Tapo\nC210 V3.60 may expose shared credential material and cryptographic metadata\nthrough unauthenticated DS JSON API requests. The exposed shared credential can\nbe accepted by the Streamd Digest authentication mechanism as an administrative\npassword, allowing an unauthenticated adjacent-network attacker to establish\nencrypted media sessions without knowledge of the device account\npassword.\u00a0 \n\n\n\n\n\n\n\n\n\nSuccessful\nexploitation may disclose credential and cryptographic material and allow\nunauthorized access to encrypted media sessions.",
-      "last_modified": "2026-10-19T21:27:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105815"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in visionOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T04:15:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28850"
     },
     {
-      "cve_id": "CVE-2026-105814",
-      "asset_id": "CVE-2026-105814",
+      "cve_id": "CVE-2026-65356",
+      "asset_id": "CVE-2026-65356",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TP-Link Tapo\nC210 V3.60 contains an authentication bypass vulnerability in the DS JSON API.\nA crafted JSON request containing both a protected operation and public\nonboarding-related fields may cause module-level authorization checks to be\napplied inconsistently, allowing protected camera operations, including\npan-tilt-zoom control, to be executed without a valid authenticated\nsession.\u00a0\n\n\n\n\n\nSuccessful\nexploitation may allow an unauthenticated attacker on the adjacent network to\nperform protected camera operations, including pan-tilt-zoom (PTZ) control,\nwithout a valid authenticated session. This could result in unauthorized\nmanipulation of camera functionality.",
-      "last_modified": "2026-10-19T21:26:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105814"
+      "description": "An access issue was addressed with improved access controls. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T04:15:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65356"
     },
     {
-      "cve_id": "CVE-2026-112403",
-      "asset_id": "CVE-2026-112403",
+      "cve_id": "CVE-2026-84490",
+      "asset_id": "CVE-2026-84490",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. Prior to 13.0.0, Pillow's JPEG decoder can write a full-width scanline into a buffer sized for a requested draft scale. ImagingJpegDecode does not verify libjpeg's actual output width and component count after scaling is requested, and an 8-bit lossless SOF3 JPEG decoded by a build linked to libjpeg-turbo 3.x can ignore the requested downscaling geometry. An attacker can supply such a JPEG to an application that uses draft() or thumbnail() to request downscaling. This can corrupt heap memory, crash the process, or potentially allow code execution. Older libjpeg-turbo 2.x and IJG builds reject the SOF3 input. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-19T21:22:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112403"
+      "description": "This issue was addressed through improved state management. This issue is fixed in iOS 27 and iPadOS 27. An attacker with physical access to a locked device may be able to bypass Digital ID authentication when iPhone Mirroring is active.",
+      "last_modified": "2026-10-20T04:15:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84490"
     },
     {
-      "cve_id": "CVE-2024-54657",
-      "asset_id": "CVE-2024-54657",
+      "cve_id": "CVE-2026-86928",
+      "asset_id": "CVE-2026-86928",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54657"
+      "description": "A path handling issue was addressed with improved validation. This issue is fixed in macOS Golden Gate 27. An app may be able to access protected user data.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86928"
     },
     {
-      "cve_id": "CVE-2024-54656",
-      "asset_id": "CVE-2024-54656",
+      "cve_id": "CVE-2026-86932",
+      "asset_id": "CVE-2026-86932",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54656"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86932"
     },
     {
-      "cve_id": "CVE-2024-54655",
-      "asset_id": "CVE-2024-54655",
+      "cve_id": "CVE-2026-86933",
+      "asset_id": "CVE-2026-86933",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54655"
+      "description": "A permissions issue was addressed with additional sandbox restrictions. This issue is fixed in macOS Golden Gate 27. An app may be able to access information about a user's contacts.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86933"
     },
     {
-      "cve_id": "CVE-2024-54654",
-      "asset_id": "CVE-2024-54654",
+      "cve_id": "CVE-2026-86935",
+      "asset_id": "CVE-2026-86935",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54654"
+      "description": "This issue was addressed by removing additional entitlements. This issue is fixed in macOS Golden Gate 27. An app may be able to access user-sensitive data.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86935"
     },
     {
-      "cve_id": "CVE-2024-54653",
-      "asset_id": "CVE-2024-54653",
+      "cve_id": "CVE-2026-86940",
+      "asset_id": "CVE-2026-86940",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54653"
+      "description": "This issue was addressed by removing the vulnerable code. This issue is fixed in macOS Golden Gate 27. An app may be able to disclose kernel memory.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86940"
     },
     {
-      "cve_id": "CVE-2024-54652",
-      "asset_id": "CVE-2024-54652",
+      "cve_id": "CVE-2026-86944",
+      "asset_id": "CVE-2026-86944",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54652"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86944"
     },
     {
-      "cve_id": "CVE-2024-54651",
-      "asset_id": "CVE-2024-54651",
+      "cve_id": "CVE-2026-86948",
+      "asset_id": "CVE-2026-86948",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54651"
+      "description": "This issue was addressed by enforcing library validation on the affected binaries. This issue is fixed in Xcode 27. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86948"
     },
     {
-      "cve_id": "CVE-2024-54650",
-      "asset_id": "CVE-2024-54650",
+      "cve_id": "CVE-2026-86949",
+      "asset_id": "CVE-2026-86949",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54650"
+      "description": "This issue was addressed by enforcing library validation on the affected binaries. This issue is fixed in Xcode 27. A malicious app may be able to break out of its sandbox.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86949"
     },
     {
-      "cve_id": "CVE-2024-54649",
-      "asset_id": "CVE-2024-54649",
+      "cve_id": "CVE-2026-86953",
+      "asset_id": "CVE-2026-86953",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54649"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. An attacker in physical proximity may be able to cause a denial-of-service.",
+      "last_modified": "2026-10-20T04:00:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86953"
     },
     {
-      "cve_id": "CVE-2024-54648",
-      "asset_id": "CVE-2024-54648",
+      "cve_id": "CVE-2026-103365",
+      "asset_id": "CVE-2026-103365",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54648"
+      "description": "The Bookly \u2013 Online Scheduling and Appointment Booking System plugin for WordPress is vulnerable to Sensitive Information Exposure in versions up to, and including, 28.4 via the classic booking form's Details step. The endpoint bookly_render_details is registered for both wp_ajax and wp_ajax_nopriv, the module overrides csrfTokenValid() to always return true, and Bookly\\Frontend\\Components\\Booking\\InfoText::getCodes() calls UserBookingData::getCustomer() to load the persisted Customer entity keyed solely by the attacker-supplied phone (or email) with no invocation of the plugin's own customerIdentityConfirmed() predicate. When a site owner has placed the supported {client_name}, {client_email}, {client_phone}, or {client_note} placeholders into the Details step's Appearance information text, the matched customer's stored name, email, phone and internal notes are substituted into the returned HTML. This makes it possible for unauthenticated attackers who know only a registered customer's primary phone (or email) to read that customer's stored personal data.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103365"
     },
     {
-      "cve_id": "CVE-2024-54647",
-      "asset_id": "CVE-2024-54647",
+      "cve_id": "CVE-2026-86955",
+      "asset_id": "CVE-2026-86955",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54647"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86955"
     },
     {
-      "cve_id": "CVE-2024-54646",
-      "asset_id": "CVE-2024-54646",
+      "cve_id": "CVE-2026-86957",
+      "asset_id": "CVE-2026-86957",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54646"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An attacker in wireless proximity may be able to cause unexpected system termination.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86957"
     },
     {
-      "cve_id": "CVE-2024-54645",
-      "asset_id": "CVE-2024-54645",
+      "cve_id": "CVE-2026-86959",
+      "asset_id": "CVE-2026-86959",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54645"
+      "description": "An input validation issue was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Processing a maliciously crafted image may lead to unexpected process termination.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86959"
     },
     {
-      "cve_id": "CVE-2024-54644",
-      "asset_id": "CVE-2024-54644",
+      "cve_id": "CVE-2026-86961",
+      "asset_id": "CVE-2026-86961",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54644"
+      "description": "A race condition was addressed with additional validation. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27. A malicious app may be able to break out of its sandbox.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86961"
     },
     {
-      "cve_id": "CVE-2024-54643",
-      "asset_id": "CVE-2024-54643",
+      "cve_id": "CVE-2026-86962",
+      "asset_id": "CVE-2026-86962",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54643"
+      "description": "A double free issue was addressed with improved memory management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86962"
     },
     {
-      "cve_id": "CVE-2024-54642",
-      "asset_id": "CVE-2024-54642",
+      "cve_id": "CVE-2026-86975",
+      "asset_id": "CVE-2026-86975",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54642"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted image may lead to unexpected process termination.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86975"
     },
     {
-      "cve_id": "CVE-2024-54641",
-      "asset_id": "CVE-2024-54641",
+      "cve_id": "CVE-2026-86976",
+      "asset_id": "CVE-2026-86976",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54641"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86976"
     },
     {
-      "cve_id": "CVE-2024-54640",
-      "asset_id": "CVE-2024-54640",
+      "cve_id": "CVE-2026-86977",
+      "asset_id": "CVE-2026-86977",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54640"
+      "description": "An authorization issue was addressed with improved network restrictions. This issue is fixed in iOS 27 and iPadOS 27. An app may be able to initiate calls or send messages.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86977"
     },
     {
-      "cve_id": "CVE-2024-54639",
-      "asset_id": "CVE-2024-54639",
+      "cve_id": "CVE-2026-86979",
+      "asset_id": "CVE-2026-86979",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54639"
+      "description": "A privacy issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T03:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86979"
     },
     {
-      "cve_id": "CVE-2024-54638",
-      "asset_id": "CVE-2024-54638",
+      "cve_id": "CVE-2026-97394",
+      "asset_id": "CVE-2026-97394",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54638"
+      "description": "kin-openapi is a Go project for handling OpenAPI files. From 0.136.0 until 0.143.0, openapi3filter accepts OpenAPI 3.1 array schemas without an items keyword and then dereferences the nil Schema.Items value while decoding application/x-www-form-urlencoded or multipart/form-data request bodies, response headers, and other array parameter surfaces. A remote unauthenticated client can reach an affected operation with a nonempty request or matching response and deterministically trigger a nil-pointer panic during ValidateRequest or ValidateResponse. OpenAPI 3.0 documents are not affected because document validation rejects arrays without items, and JSON request bodies use a different decoder path. This issue is fixed in version 0.143.0.",
+      "last_modified": "2026-10-20T03:17:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97394"
     },
     {
-      "cve_id": "CVE-2024-54637",
-      "asset_id": "CVE-2024-54637",
+      "cve_id": "CVE-2026-88753",
+      "asset_id": "CVE-2026-88753",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54637"
+      "description": "A Regular-Expression Denial of Service (ReDoS) in the Markdown2. extract_metadata() function (lib/markdown2.py) of trentm markdown2 through v2.5.5 allows attackers to cause a Denial of Service (DoS) via a crafted Markdown document.",
+      "last_modified": "2026-10-20T03:17:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88753"
     },
     {
-      "cve_id": "CVE-2024-54636",
-      "asset_id": "CVE-2024-54636",
+      "cve_id": "CVE-2026-77467",
+      "asset_id": "CVE-2026-77467",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54636"
+      "description": "Lychee is a free, open-source photo-management tool. Prior to 7.7.0, Lychee enables ImageMagick PDF support with Ghostscript but does not apply an effective pre-render limit to PDF page dimensions in ImagickHandler::loadPdf(). An authenticated user who can upload a small PDF with an oversized /MediaBox can cause Imagick::readImage() to consume substantial CPU before failing to produce an image. When QUEUE_CONNECTION selects synchronous processing the request can occupy a web worker, while the official asynchronous Docker configuration can clog the shared image-processing queue and delay other work. The advisory did not identify a Ghostscript sandbox escape. This issue is fixed in version 7.7.0.",
+      "last_modified": "2026-10-20T03:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77467"
     },
     {
-      "cve_id": "CVE-2024-54635",
-      "asset_id": "CVE-2024-54635",
+      "cve_id": "CVE-2026-77427",
+      "asset_id": "CVE-2026-77427",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54635"
+      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. From 3.9.0 until 3.22.0, pristine manual FileRise installations without PERSISTENT_TOKENS_KEY or metadata/persistent_tokens.key can activate a published legacy compatibility key. If an attacker separately obtains ciphertext-bearing account or configuration files, the known fallback key can enable decryption of TOTP secrets or credentials. Docker installations already generated a unique persistent key, and existing installations are not automatically rotated because doing so could make encrypted state unreadable. This issue is fixed in version 3.22.0.",
+      "last_modified": "2026-10-20T03:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77427"
     },
     {
-      "cve_id": "CVE-2024-54634",
-      "asset_id": "CVE-2024-54634",
+      "cve_id": "CVE-2026-61610",
+      "asset_id": "CVE-2026-61610",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54634"
+      "description": "Lychee is a free, open-source photo-management tool. Prior to 7.6.1, when photos_star_visibility is set to anonymous, POST /api/v2/Photo::highlight can fetch and modify a photo without confirming that the caller can see it. BaseApiRequest::validateResolved() invokes SetPhotosHighlightedRequest::processValidatedValues() before authorization, and PhotoPolicy::canHighlight() returns true for anonymous callers without a canSee check. An unauthenticated attacker who can guess photo identifiers can distinguish existing private photos through differing success and not-found responses and can change their is_highlighted state, including for photos in private or password-protected albums. The issue is limited to installations using the non-default anonymous star-visibility setting. This issue is fixed in version 7.6.1.",
+      "last_modified": "2026-10-20T03:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61610"
     },
     {
-      "cve_id": "CVE-2024-54633",
-      "asset_id": "CVE-2024-54633",
+      "cve_id": "CVE-2026-59994",
+      "asset_id": "CVE-2026-59994",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54633"
+      "description": "EspoCRM is an open source customer relationship management application. Prior to 9.3.9, an unauthenticated remote attacker can send an email to a monitored group or IMAP address, including an email-to-Case address, and place arbitrary HTML in its plain-text body. EspoCRM stores that body and renders it without escaping in Email Received stream notification emails sent to users following the related record, allowing HTML injection and, in mail clients that execute it, JavaScript execution. Earlier sanitization for Post and Mention notifications did not cover this notification path. This issue is fixed in version 9.3.9.",
+      "last_modified": "2026-10-20T03:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59994"
     },
     {
-      "cve_id": "CVE-2024-54632",
-      "asset_id": "CVE-2024-54632",
+      "cve_id": "CVE-2026-58391",
+      "asset_id": "CVE-2026-58391",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54632"
+      "description": "OPNsense is a FreeBSD based firewall and routing platform. Prior to version 26.1.11, Firewall Rules and NAT views place stored category names and alias descriptions into HTML title attributes in filter_rule.volt and nat_rule.volt without quote-safe encoding. The response layer uses ENT_NOQUOTES, so a double quote survives and closes the attribute, allowing an event-handler attribute to be added to the existing span. A user with Firewall Categories or Firewall Alias Edit privileges can store a category name or alias description; the category must be assigned to a filter or NAT rule, or the alias must be referenced by a rule source or destination, and the rule must be saved so the affected tooltip is rendered. Script then executes in the session of an administrator or other user who opens the affected Rules or NAT page. The script can access CSRF material and perform authenticated actions as the victim. This issue is fixed in version 26.1.11.",
+      "last_modified": "2026-10-20T03:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58391"
     },
     {
-      "cve_id": "CVE-2024-54631",
-      "asset_id": "CVE-2024-54631",
+      "cve_id": "CVE-2026-58390",
+      "asset_id": "CVE-2026-58390",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54631"
+      "description": "OPNsense is a FreeBSD based firewall and routing platform. Prior to version 26.1.11, the OpenVPN connection-status dashboard widget in src/opnsense/www/js/widgets/OpenVPNClients.js and the connection-status view place a client common_name into data-common-name attributes without quote-safe encoding. Exploitation requires an OpenVPN server configured with username-as-common-name and RADIUS or LDAP authentication, plus the ability to provision or self-register a valid backend username containing a double quote; deployments where the same administrator controls both the identity backend and firewall do not cross a separate trust boundary. An authenticated client using that username can close the attribute and add an event handler, while the local user database is not affected because its username validator rejects quotes. Script executes in an administrator's session when the administrator opens the dashboard or connection-status page and the injected event is triggered; the demonstrated payload used pointer movement over the client row rather than unconditional page-load execution. The advisory demonstrates that the script can read config.xml, invoke privileged APIs, reset the root password, and obtain root command execution. This issue is fixed in version 26.1.11.",
+      "last_modified": "2026-10-20T03:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58390"
     },
     {
-      "cve_id": "CVE-2024-54630",
-      "asset_id": "CVE-2024-54630",
+      "cve_id": "CVE-2026-57493",
+      "asset_id": "CVE-2026-57493",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54630"
+      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.16.0, FileRise stores the isAdmin flag in remember-me tokens and restores that stale value during automatic login instead of resolving the account's current role from users.txt. A user who was issued a token while an administrator can retain administrator access after demotion, and token rotation copies the stale privilege into each replacement token. Exploitation requires possession of the pre-demotion remember-me token. This issue is fixed in version 3.16.0.",
+      "last_modified": "2026-10-20T03:17:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57493"
     },
     {
-      "cve_id": "CVE-2024-54629",
-      "asset_id": "CVE-2024-54629",
+      "cve_id": "CVE-2026-57489",
+      "asset_id": "CVE-2026-57489",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54629"
+      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.16.0, FileRise deployments with AUTH_BYPASS enabled trust the configured reverse-proxy identity header without verifying that the request originated from FR_TRUSTED_PROXIES. When the backend application port is reachable directly, an unauthenticated attacker can supply X-Remote-User and obtain a session for the asserted account, including an administrator account, without a password or MFA. The flaw is limited to deployments that enable proxy-header authentication and expose an untrusted path to the backend. This issue is fixed in version 3.16.0.",
+      "last_modified": "2026-10-20T03:17:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57489"
     },
     {
-      "cve_id": "CVE-2024-54628",
-      "asset_id": "CVE-2024-54628",
+      "cve_id": "CVE-2026-55679",
+      "asset_id": "CVE-2026-55679",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54628"
+      "description": "WeGIA is a web manager for charitable institutions. Prior to 3.8.6, the pre-installation web/instalador/instalador.php endpoint is reachable before config.php exists and processes unauthenticated installation POST data. In the Linux reinstall flow, a crafted usuario value reaches a command executed by shell_exec(). The installer also writes attacker-controlled values into executable config.php and concatenates the database name nomebd into a CREATE DATABASE statement. Successful exploitation can execute commands as the web-server user, persist attacker-controlled PHP configuration, and alter or disrupt the application and its data. This issue is fixed in version 3.8.6.",
+      "last_modified": "2026-10-20T03:17:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55679"
     },
     {
-      "cve_id": "CVE-2024-54627",
-      "asset_id": "CVE-2024-54627",
+      "cve_id": "CVE-2026-55480",
+      "asset_id": "CVE-2026-55480",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54627"
+      "description": "OpenPrinting CUPS is an open source printing system for Linux and other Unix-like operating systems. Prior to 2.4.20, copy_model() in scheduler/ipp.c creates a predictable TempDir/<connection-number>.ppd path in an lp-group-writable directory and opens it as root without O_EXCL or O_NOFOLLOW. Exploitation requires an lp-group process able to write that directory to predict the connection-derived name and plant a symlink before the root open, while a privileged add-printer or modify-printer operation using a model PPD triggers copy_model(). The reporter treats an existing lp foothold and the privileged operation as distinct prerequisites, while the maintainer assesses high privileges because installing the relevant filter or administering the printer requires root or print-administrator access. If the race succeeds, the root scheduler follows the symlink and truncates or overwrites a root-writable target with generated PPD data, compromising file integrity or availability. This issue is fixed in version 2.4.20.",
+      "last_modified": "2026-10-20T03:17:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55480"
     },
     {
-      "cve_id": "CVE-2024-54626",
-      "asset_id": "CVE-2024-54626",
+      "cve_id": "CVE-2026-47168",
+      "asset_id": "CVE-2026-47168",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54626"
+      "description": "EspoCRM is an open source customer relationship management application. Prior to 9.3.7, an authenticated administrator can supply crafted serialized PHP object data that is stored in background MassAction or Export parameters and later deserialized by the application. The deserialization paths do not restrict allowed classes, allowing attacker-controlled object instantiation and arbitrary code execution on the server. This issue is fixed in version 9.3.7.",
+      "last_modified": "2026-10-20T03:17:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47168"
     },
     {
-      "cve_id": "CVE-2024-54625",
-      "asset_id": "CVE-2024-54625",
+      "cve_id": "CVE-2026-110957",
+      "asset_id": "CVE-2026-110957",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54625"
+      "description": "A vulnerability has been found in Wavlink WL-WN530BE2-A up to M30BE2_V250604. The affected element is the function sub_12580 of the file api.cgi of the component Login Processing. The manipulation of the argument REMOTE_ADDR leads to os command injection. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. Upgrading to version 2026-09-24-841a51c6d5_tclinux.bin is sufficient to fix this issue. You should upgrade the affected component. The vendor confirms: \"We confirm the finding, and it has already been addressed. In the current firmware the api=info&client=app handler no longer builds a shell command: the login script is now invoked through an argument vector (execvp) instead of system(), and the client address is length-limited and null-checked.\"",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110957"
     },
     {
-      "cve_id": "CVE-2024-54624",
-      "asset_id": "CVE-2024-54624",
+      "cve_id": "CVE-2026-110923",
+      "asset_id": "CVE-2026-110923",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54624"
+      "description": "A flaw was found in OpenSSH. During an sftp copy, a malicious server can supply an empty name, a slash-only path, or a \"..\" basename that sftp uses as the local destination, writing outside the directory the user selected.",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110923"
     },
     {
-      "cve_id": "CVE-2024-54623",
-      "asset_id": "CVE-2024-54623",
+      "cve_id": "CVE-2026-110909",
+      "asset_id": "CVE-2026-110909",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54623"
+      "description": "Wheels CLI through 4.1.0 does not verify that the local development server answering its HTTP requests belongs to the current project. A process listening on a port targeted by the CLI can receive the project's reload password and code submitted through wheels reload or wheels console; console also probes common ports when the project server is down. Other commands can perform unintended state-changing operations against a different local application's server and database. Exploitation requires a process listening on a targeted local port and the developer running an affected command. This is fixed in 4.1.1, including changes to the CLI and application template.",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110909"
     },
     {
-      "cve_id": "CVE-2024-54622",
-      "asset_id": "CVE-2024-54622",
+      "cve_id": "CVE-2026-110871",
+      "asset_id": "CVE-2026-110871",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54622"
+      "description": "Nodemailer from 3.0.0 before 10.0.10 contains a denial of service vulnerability in MessageParser.parseHeaders that allows users to exhaust CPU through quadratic header unfolding. Attackers can supply large recipient lists or long headers that fold into tens of thousands of continuation lines, blocking the Node.js event loop during DKIM signing.",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110871"
     },
     {
-      "cve_id": "CVE-2024-54621",
-      "asset_id": "CVE-2024-54621",
+      "cve_id": "CVE-2026-110866",
+      "asset_id": "CVE-2026-110866",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54621"
+      "description": "Renovate before 44.61.3 contains a protection mechanism bypass vulnerability that allows minimumReleaseAge checks to be skipped when a user requests a PR rebase via the rebase/retry checkbox. Attackers who publish a malicious dependency version can have it pushed into the PR and run in CI before the required release age elapses.",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110866"
     },
     {
-      "cve_id": "CVE-2024-54620",
-      "asset_id": "CVE-2024-54620",
+      "cve_id": "CVE-2026-110861",
+      "asset_id": "CVE-2026-110861",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54620"
+      "description": "Better Auth @better-auth/drizzle-adapter and better-auth from 1.6.17 before 1.7.7, and @better-auth/kysely-adapter from 1.6.17 before 1.7.0, contain a race condition in database-backed rate limiting on PostgreSQL where the limit check is not atomic with the counter update. Remote attackers can send bursts of concurrent requests that pass the check together, exceeding configured limits on password sign-in, two-factor verification, one-time code, password reset, and other rate-limited endpoints.",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110861"
     },
     {
-      "cve_id": "CVE-2024-54619",
-      "asset_id": "CVE-2024-54619",
+      "cve_id": "CVE-2026-110856",
+      "asset_id": "CVE-2026-110856",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54619"
+      "description": "GitPython before 3.2.0 contains a regular expression denial of service vulnerability in the _re_actor_epoch pattern used by parse_actor_and_date on author, committer, and tagger lines. Attackers can serve repositories with commit or tag objects containing long space-filled lines lacking a valid epoch or timezone, causing quadratic backtracking and CPU exhaustion.",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110856"
     },
     {
-      "cve_id": "CVE-2024-54618",
-      "asset_id": "CVE-2024-54618",
+      "cve_id": "CVE-2026-110851",
+      "asset_id": "CVE-2026-110851",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54618"
+      "description": "n8n before 2.41.4 and 2.42.x before 2.42.1 contains an authorization bypass in the Agents create endpoint, which accepts a caller-supplied Agent ID, checks permissions only against the requested project, and updates an existing Agent without verifying which project owns it. An authenticated user with read-only Agent access to another project can supply an existing Agent ID to move that Agent into their own project and rewrite its name, schema and version.",
+      "last_modified": "2026-10-20T03:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110851"
     },
     {
-      "cve_id": "CVE-2024-54617",
-      "asset_id": "CVE-2024-54617",
+      "cve_id": "CVE-2026-110846",
+      "asset_id": "CVE-2026-110846",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54617"
+      "description": "n8n before 2.41.4 and 2.42.x before 2.42.1 contains a signature bypass in the waiting-webhook endpoint, which selects Send-and-Wait validation before normalising an alternate node reference form. Attackers holding an execution's resume token can approve waiting executions meant for others, running downstream actions under the workflow owner's credentials, potentially including command execution.",
+      "last_modified": "2026-10-20T03:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110846"
     },
     {
-      "cve_id": "CVE-2024-54616",
-      "asset_id": "CVE-2024-54616",
+      "cve_id": "CVE-2026-110841",
+      "asset_id": "CVE-2026-110841",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54616"
+      "description": "n8n before 2.41.4 and 2.42.0 contains an authorization bypass in the agent chat resume endpoint, which accepts a run identifier from the request body without verifying that the suspended checkpoint belongs to the caller. Authenticated project members can list and read other members' private agent conversations through project-scoped endpoints, then approve their pending tool calls, causing the tools to execute and write results into the victim's conversation.",
+      "last_modified": "2026-10-20T03:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110841"
     },
     {
-      "cve_id": "CVE-2024-54615",
-      "asset_id": "CVE-2024-54615",
+      "cve_id": "CVE-2026-110836",
+      "asset_id": "CVE-2026-110836",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54615"
+      "description": "FreeRDP from 3.0.0 before 3.32.0 contains an infinite loop vulnerability in http_response_recv() that allows malicious gateways to exhaust client CPU via crafted Content-Type headers. Attackers controlling a gateway can return a nonzero Content-Length with a semicolon-containing unrecognized Content-Type, pinning a client thread at full CPU indefinitely.",
+      "last_modified": "2026-10-20T03:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110836"
     },
     {
-      "cve_id": "CVE-2024-54614",
-      "asset_id": "CVE-2024-54614",
+      "cve_id": "CVE-2026-110831",
+      "asset_id": "CVE-2026-110831",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54614"
+      "description": "FreeRDP versions 3.13.0 before 3.32.0 contain a resource retention flaw in drive_process_irp_create, which registers an opened local file in the drive dictionary before applying the allocation size and does not remove it when that operation fails. A malicious RDP server connected to a client with drive redirection enabled can send IRP_MJ_CREATE with AllocationSize set to UINT64_MAX, forcing the seek to fail and leaking the file object and operating-system handle until drive teardown.",
+      "last_modified": "2026-10-20T03:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110831"
     },
     {
-      "cve_id": "CVE-2024-54613",
-      "asset_id": "CVE-2024-54613",
+      "cve_id": "CVE-2026-110698",
+      "asset_id": "CVE-2026-110698",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54613"
+      "description": "A security vulnerability has been detected in Praat up to 7.0.02. Affected is the function whisper_model_load of the file external/whispercpp/whisper.cpp of the component Model Loader. The manipulation of the argument n_dims leads to out-of-bounds write. The attack can be initiated remotely. The exploit has been disclosed publicly and may be used. The identifier of the patch is a910d21a2705ef4cd16d91f29cdc8da1ab1a7221. To fix this issue, it is recommended to deploy a patch. The project maintainer confirms: \"We did a quick fix (suggested fix 1) for Praat version 7.0.03, and scheduled a better fix (suggested fix 2).\"",
+      "last_modified": "2026-10-20T03:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110698"
     },
     {
-      "cve_id": "CVE-2024-54612",
-      "asset_id": "CVE-2024-54612",
+      "cve_id": "CVE-2026-110689",
+      "asset_id": "CVE-2026-110689",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54612"
+      "description": "A security flaw has been discovered in OpenClaw ClawScan up to 0.1.6. This impacts the function shouldSkipTargetPath of the file internal/runner/runner.go of the component Static Scanner. Performing a manipulation results in protection mechanism failure. Attacking locally is a requirement. The exploit has been released to the public and may be used for attacks. Upgrading to version 0.1.7 will fix this issue. The patch is named 9f6a6fbb9f1137345566d0ab44c73893dfe112fa. The affected component should be upgraded.",
+      "last_modified": "2026-10-20T03:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110689"
     },
     {
-      "cve_id": "CVE-2024-54611",
-      "asset_id": "CVE-2024-54611",
+      "cve_id": "CVE-2026-109430",
+      "asset_id": "CVE-2026-109430",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54611"
+      "description": "Ellucian WebAdvisor 3.2 contains an unauthenticated XML External Entity (XXE) injection vulnerability that allows remote attackers to submit crafted XML POST requests to the /WebAdvisor/WebAdvisor endpoint without disabling external entity and DTD resolution. Attackers can exploit this flaw to force the server into SSRF requests, coerce NTLMv2 hash disclosure via attacker-controlled SMB shares, and read arbitrary files from the underlying Windows host through an out-of-band error-based channel. WebAdvisor entered end-of-support status in June 2022 and users are encouraged to migrate to Colleague Self-Service.",
+      "last_modified": "2026-10-20T03:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109430"
     },
     {
-      "cve_id": "CVE-2024-54610",
-      "asset_id": "CVE-2024-54610",
+      "cve_id": "CVE-2026-106701",
+      "asset_id": "CVE-2026-106701",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54610"
+      "description": "ELADMIN v2.7 and before is vulnerable to Cross Site Scripting (XSS) via the component WebSocketServer, SpringSecurityConfig, deploy.vue.",
+      "last_modified": "2026-10-20T03:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-106701"
     },
     {
-      "cve_id": "CVE-2024-54609",
-      "asset_id": "CVE-2024-54609",
+      "cve_id": "CVE-2026-104586",
+      "asset_id": "CVE-2026-104586",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54609"
+      "description": "AUTOM8N (WHM/cPanel plugin) through commit 82821f7 contains an OS Command Injection in borg_restore.cgi.",
+      "last_modified": "2026-10-20T03:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104586"
     },
     {
-      "cve_id": "CVE-2024-54608",
-      "asset_id": "CVE-2024-54608",
+      "cve_id": "CVE-2026-104108",
+      "asset_id": "CVE-2026-104108",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54608"
+      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.23.0, FileRise maps an authenticated OIDC identity to a local account using mutable preferred_username or email claims and does not require email_verified for email-based naming. An attacker who can obtain provider-issued claims colliding with an existing local username can be logged in as that account, including the built-in administrator, even when automatic provisioning is disabled. Exploitability depends on the configured identity provider allowing the colliding claim. This issue is fixed in version 3.23.0.",
+      "last_modified": "2026-10-20T03:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104108"
     },
     {
-      "cve_id": "CVE-2024-54607",
-      "asset_id": "CVE-2024-54607",
+      "cve_id": "CVE-2026-103977",
+      "asset_id": "CVE-2026-103977",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54607"
+      "description": "FileRise is a self-hosted web-based file manager with multi-file upload, editing, and batch operations. Prior to 3.23.0, FileRise stores failed TOTP verification attempts in $_SESSION. An attacker who already possesses a target account's valid primary credential can restart the login workflow in a new session and restore the second-factor attempt allowance, permitting continued online TOTP guessing beyond the intended five-attempt limit. The pending-login TOTP handlers did not share a durable account-wide limit. This issue is fixed in version 3.23.0.",
+      "last_modified": "2026-10-20T03:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103977"
     },
     {
-      "cve_id": "CVE-2024-54606",
-      "asset_id": "CVE-2024-54606",
+      "cve_id": "CVE-2026-100352",
+      "asset_id": "CVE-2026-100352",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54606"
+      "description": "kin-openapi is a Go project for handling OpenAPI files. Prior to 0.148.0, the OpenAPI 3.1 validation path passes YAML NaN and infinity numeric values to santhosh-tekuri/jsonschema v6.0.2 without applying kin-openapi's existing finite-number guards. A remote unauthenticated client can send an application/yaml or application/x-yaml request body containing .nan, .inf, or -.inf to an operation with a numeric constraint, causing the dependency to create and dereference a nil big.Rat during ValidateRequest. Standard net/http servers recover the panic per connection, while other hosts or application goroutines may terminate the process. This issue is fixed in version 0.148.0.",
+      "last_modified": "2026-10-20T03:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100352"
     },
     {
-      "cve_id": "CVE-2024-54605",
-      "asset_id": "CVE-2024-54605",
+      "cve_id": "CVE-2026-28853",
+      "asset_id": "CVE-2026-28853",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54605"
+      "description": "The issue was addressed with improved checks. This issue is fixed in macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to elevate privileges.",
+      "last_modified": "2026-10-20T03:15:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28853"
     },
     {
-      "cve_id": "CVE-2024-54604",
-      "asset_id": "CVE-2024-54604",
+      "cve_id": "CVE-2026-28854",
+      "asset_id": "CVE-2026-28854",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54604"
+      "description": "The issue was addressed with additional app bundle integrity checks. This issue is fixed in macOS Golden Gate 27. A maliciously modified app may not be prevented from launching.",
+      "last_modified": "2026-10-20T03:15:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28854"
     },
     {
-      "cve_id": "CVE-2024-54603",
-      "asset_id": "CVE-2024-54603",
+      "cve_id": "CVE-2026-77932",
+      "asset_id": "CVE-2026-77932",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54603"
+      "description": "DB-GPT through 0.8.2 contains an unauthenticated remote code execution vulnerability because the /api/v1/chat/react-agent endpoint relies on a mock get_user_from_headers function that grants every caller the admin role. Unauthenticated attackers can send prompts that make the ReAct agent's unsandboxed code_interpreter and shell_interpreter tools run arbitrary Python or bash as root in the webserver container, including reaching the bundled database with default credentials.",
+      "last_modified": "2026-10-20T03:00:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77932"
     },
     {
-      "cve_id": "CVE-2024-54602",
-      "asset_id": "CVE-2024-54602",
+      "cve_id": "CVE-2026-65372",
+      "asset_id": "CVE-2026-65372",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54602"
+      "description": "A race condition was addressed with additional validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. A malicious application may be able to bypass Privacy preferences.",
+      "last_modified": "2026-10-20T03:00:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65372"
     },
     {
-      "cve_id": "CVE-2024-54601",
-      "asset_id": "CVE-2024-54601",
+      "cve_id": "CVE-2026-65379",
+      "asset_id": "CVE-2026-65379",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54601"
+      "description": "The issue was addressed with improved handling of secure input state. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T03:00:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65379"
     },
     {
-      "cve_id": "CVE-2024-54600",
-      "asset_id": "CVE-2024-54600",
+      "cve_id": "CVE-2026-65396",
+      "asset_id": "CVE-2026-65396",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54600"
+      "description": "A buffer overflow was addressed with improved size validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-10-20T03:00:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65396"
     },
     {
-      "cve_id": "CVE-2024-54599",
-      "asset_id": "CVE-2024-54599",
+      "cve_id": "CVE-2026-84508",
+      "asset_id": "CVE-2026-84508",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54599"
+      "description": "This issue was addressed with improved validation of the caller's access. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Tahoe 26.7, visionOS 27. An app may be able to access protected user data.",
+      "last_modified": "2026-10-20T03:00:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84508"
     },
     {
-      "cve_id": "CVE-2024-54598",
-      "asset_id": "CVE-2024-54598",
+      "cve_id": "CVE-2026-84547",
+      "asset_id": "CVE-2026-84547",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54598"
+      "description": "A memory corruption issue was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An attacker in physical proximity may be able to corrupt process memory.",
+      "last_modified": "2026-10-20T03:00:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84547"
     },
     {
-      "cve_id": "CVE-2024-54597",
-      "asset_id": "CVE-2024-54597",
+      "cve_id": "CVE-2026-84579",
+      "asset_id": "CVE-2026-84579",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54597"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Opening a file referencing a network share may lead to unexpected software execution.",
+      "last_modified": "2026-10-20T03:00:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84579"
     },
     {
-      "cve_id": "CVE-2024-54596",
-      "asset_id": "CVE-2024-54596",
+      "cve_id": "CVE-2026-42719",
+      "asset_id": "CVE-2026-42719",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54596"
+      "description": "Subscriber PHP Object Injection in Dynamic User Directory <= 2.4 versions.",
+      "last_modified": "2026-10-20T02:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42719"
     },
     {
-      "cve_id": "CVE-2024-54595",
-      "asset_id": "CVE-2024-54595",
+      "cve_id": "CVE-2026-84582",
+      "asset_id": "CVE-2026-84582",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54595"
+      "description": "A privacy issue was addressed with improved access restrictions. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to access sensitive user data.",
+      "last_modified": "2026-10-20T02:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84582"
     },
     {
-      "cve_id": "CVE-2024-54594",
-      "asset_id": "CVE-2024-54594",
+      "cve_id": "CVE-2026-84613",
+      "asset_id": "CVE-2026-84613",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54594"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An attacker in radio range may be able to cause unexpected system termination.",
+      "last_modified": "2026-10-20T02:45:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84613"
     },
     {
-      "cve_id": "CVE-2024-54593",
-      "asset_id": "CVE-2024-54593",
+      "cve_id": "CVE-2026-86467",
+      "asset_id": "CVE-2026-86467",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54593"
+      "description": "Apache Airflow Amazon provider: the AWS auth manager's SAML login flow does not bind the authentication response to the browser that began it. The login handler discards the AuthnRequest ID and the callback validates the assertion without requiring a matching InResponseTo, so an unauthenticated attacker who can cause a victim to load a page can complete a SAML login in the victim's browser using the attacker's own assertion, silently logging the victim into the attacker's Airflow account. Subsequent work the victim performs lands in a session the attacker controls.\n\nAffects deployments using the AWS auth manager with SAML authentication. The victim needs only to visit an attacker-controlled page; no Airflow account or credential is required of the attacker. This is the same login-CSRF class fixed in the Keycloak auth manager as CVE-2026-40948.\n\nUsers of apache-airflow-providers-amazon are recommended to upgrade to version 9.38.0, which fixes the issue.",
+      "last_modified": "2026-10-20T02:37:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86467"
     },
     {
-      "cve_id": "CVE-2024-54592",
-      "asset_id": "CVE-2024-54592",
+      "cve_id": "CVE-2026-96278",
+      "asset_id": "CVE-2026-96278",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54592"
+      "description": "The WP Photo Album Plus plugin for WordPress is vulnerable to Stored Cross-Site Scripting via REQUEST_URI Session History in all versions up to, and including, 9.3.03.002 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The bypass works because esc_url_raw() strips literal angle brackets but retains HTML entities, which wppaEntityDecode() silently converts back to live HTML tags before jQuery('#wppa-modal-container').html() renders them.",
+      "last_modified": "2026-10-20T02:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96278"
     },
     {
-      "cve_id": "CVE-2024-54591",
-      "asset_id": "CVE-2024-54591",
+      "cve_id": "CVE-2026-107686",
+      "asset_id": "CVE-2026-107686",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54591"
+      "description": "The Gitea web handlers for adding and removing reactions on issues and comments did not refuse locked issues for users without write access, although the API did. A signed-in user who could read an issue could therefore add or remove reactions on a locked issue and its comments, bypassing the interaction restriction of the lock. Only reactions were affected; no content could be changed.",
+      "last_modified": "2026-10-20T02:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107686"
     },
     {
-      "cve_id": "CVE-2024-54590",
-      "asset_id": "CVE-2024-54590",
+      "cve_id": "CVE-2026-109844",
+      "asset_id": "CVE-2026-109844",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54590"
+      "description": "`GET /api/v1/user/subscriptions` returned the metadata of every repository a user was watching without checking that the user still had access to it. A user who watched a private repository while having access, and later lost it, for example through a team permission downgrade, could still read its name, description, clone URLs, owner and counters. The issue was fixed in 1.27.0 and 28.0.0 and disclosed with 28.2.0.",
+      "last_modified": "2026-10-20T02:30:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109844"
     },
     {
-      "cve_id": "CVE-2024-54589",
-      "asset_id": "CVE-2024-54589",
+      "cve_id": "CVE-2026-92157",
+      "asset_id": "CVE-2026-92157",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54589"
+      "description": "F\u00b4 (F Prime) is a framework that enables development and deployment of spaceflight and other embedded software applications. Prior to 4.3.0, Svc::FileDownlink SendPartial range validation is vulnerable because unchecked startOffset plus length arithmetic bypasses the range check and stores a wrapped m_endOffset that is inconsistent with m_byteOffset. When an existing source file is larger than a valid startOffset and a SendPartial command supplies a length whose U32 sum with that offset wraps below the file size, under standard F Prime assertion handling, the first data-packet transition reaches FW_ASSERT and aborts or resets the process, causing denial of service. This issue is fixed in version 4.3.0.",
+      "last_modified": "2026-10-20T02:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92157"
     },
     {
-      "cve_id": "CVE-2024-54588",
-      "asset_id": "CVE-2024-54588",
+      "cve_id": "CVE-2026-92150",
+      "asset_id": "CVE-2026-92150",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54588"
+      "description": "F\u00b4 (F Prime) is a framework that enables development and deployment of spaceflight and other embedded software applications. Prior to 4.2.0, Svc::GenericHub fromBufferDriver_handler deserialization is vulnerable because the receive handler uses FW_ASSERT for externally influenced deserialization status and type validation and permits a command payload size subtraction to underflow. When an unauthenticated inter-processor hub peer sends a truncated buffer, an invalid HubType, or a header-only command-dispatch payload, malformed hub traffic aborts or resets the process, causing denial of service. This issue is fixed in version 4.2.0.",
+      "last_modified": "2026-10-20T02:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92150"
     },
     {
-      "cve_id": "CVE-2024-54587",
-      "asset_id": "CVE-2024-54587",
+      "cve_id": "CVE-2026-91159",
+      "asset_id": "CVE-2026-91159",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54587"
+      "description": "Discourse is an open-source discussion platform. Prior to 2026.9.0, 2026.8.1, 2026.7.3, and 2026.1.9, oEmbed processing treated an entire attacker-controlled HTML fragment as trusted when the fragment contained an iframe whose source matched the configured allowlist. A user with posting permission who controlled a public webpage and its oEmbed response could combine an allowlisted iframe with unrelated sibling HTML or CSS, causing stored visual overlays or other styled content to appear in post content and enabling misleading or fraudulent user interfaces. Exploitation requires a posting account, control of the fetched webpage and oEmbed response, and an allowlisted iframe source. The issue affects content integrity but does not expose restricted data, disrupt availability, or require interaction with Discourse Content Security Policy. This issue is fixed in versions 2026.9.0, 2026.8.1, 2026.7.3, and 2026.1.9.",
+      "last_modified": "2026-10-20T02:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91159"
     },
     {
-      "cve_id": "CVE-2024-54586",
-      "asset_id": "CVE-2024-54586",
+      "cve_id": "CVE-2026-91157",
+      "asset_id": "CVE-2026-91157",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54586"
+      "description": "Discourse is an open-source discussion platform. Prior to 2026.9.0, 2026.8.1, 2026.7.3, and 2026.1.9, sites with secure uploads enabled did not reconcile existing upload security metadata when a previously public category became read-restricted or when category permissions changed during a bulk import. Media and attachments uploaded while the category was public retained a public accessibility flag and remained reachable by anonymous users through their short upload URLs, including uploads associated with deleted topics. This issue is fixed in versions 2026.9.0, 2026.8.1, 2026.7.3, and 2026.1.9.",
+      "last_modified": "2026-10-20T02:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91157"
     },
     {
-      "cve_id": "CVE-2024-54585",
-      "asset_id": "CVE-2024-54585",
+      "cve_id": "CVE-2026-86847",
+      "asset_id": "CVE-2026-86847",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54585"
+      "description": "A flaw was found in DPDK lib/vhost vhost-crypto. Write-back chain cleanup can follow an uninitialized next pointer when mapping a guest descriptor fails, causing the host vhost-crypto process to hang or crash.",
+      "last_modified": "2026-10-20T02:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86847"
     },
     {
-      "cve_id": "CVE-2024-54584",
-      "asset_id": "CVE-2024-54584",
+      "cve_id": "CVE-2026-86561",
+      "asset_id": "CVE-2026-86561",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This candidate was in a CNA pool that was not assigned to any issues.",
-      "last_modified": "2026-10-19T21:20:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54584"
+      "description": "A flaw was found in DPDK lib/vhost. Memory size is not adequately validated before mmap during vhost memory-region setup, which can lead to a host crash or memory corruption.",
+      "last_modified": "2026-10-20T02:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86561"
     }
   ]
 }
