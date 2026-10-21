@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-21T05:08:31.137677+00:00",
+  "last_updated": "2026-10-21T12:11:32.754653+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-101641",
-      "asset_id": "CVE-2026-101641",
+      "cve_id": "CVE-2026-54426",
+      "asset_id": "CVE-2026-54426",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Report Manager product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Report Manager.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Report Manager accessible data as well as  unauthorized update, insert or delete access to some of Oracle Report Manager accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Report Manager. CVSS 3.1 Base Score 7.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101641"
+      "description": "Uncontrolled recursion in the Redis reply parser in Apache bRPC < 1.18.0 allows a remote Redis server peer to crash a bRPC Redis client process by returning a deeply nested RESP array reply. The parser recursed once for each nested array level without enforcing a depth limit. The fix adds a configurable Redis reply depth limit with default value 128 and rejects replies exceeding that limit.\u00a0\n\nAffected Scenarios:\nApplications using bRPC as a Redis client with ChannelOptions.protocol=\"redis\" and receiving replies from an untrusted or faulty Redis server peer.\n\nHow to Fix:\n1. Upgrade Apache bRPC to 1.18.0.\n2. Apply the patch from PR  https://github.com/apache/brpc/pull/3344 .\n\nNote:\nAfter applying the fix, Redis replies with array nesting deeper than redis_max_reply_depth are rejected.",
+      "last_modified": "2026-10-21T11:32:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54426"
     },
     {
-      "cve_id": "CVE-2026-101642",
-      "asset_id": "CVE-2026-101642",
+      "cve_id": "CVE-2026-54425",
+      "asset_id": "CVE-2026-54425",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Report Manager product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Report Manager.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Report Manager accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Report Manager. CVSS 3.1 Base Score 7.1 (Confidentiality and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101642"
+      "description": "Uncontrolled recursion in the HTTP/2 HPACK decoder in Apache bRPC before 1.18.0 allows remote attackers to cause denial of service by sending a crafted HTTP/2 header block containing many consecutive Dynamic Table Size Update entries. Each update was decoded by recursively invoking the HPACK decoder, which could exhaust the thread stack before a header field or end of input was reached.\n\nRoot Cause:\nThe bRPC HPACK decoder recursively decoded the next entry after processing a Dynamic Table Size Update. The decoder did not bound the recursion depth, so a long sequence of update entries could consume excessive stack space.\n\nAffected Scenarios:\nUse bRPC with the built-in HTTP/2 implementation to accept HTTP/2 traffic from an untrusted network.\n\nHow to Fix:\n1. Upgrade bRPC to version 1.18.0, which fixes this issue.\n2. Apply this patch:  https://github.com/apache/brpc/pull/3343 \n\nNote:\nThe fix changes HPACK Dynamic Table Size Update decoding to use iterative parsing instead of recursive parsing.",
+      "last_modified": "2026-10-21T11:31:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54425"
     },
     {
-      "cve_id": "CVE-2026-101643",
-      "asset_id": "CVE-2026-101643",
+      "cve_id": "CVE-2026-91597",
+      "asset_id": "CVE-2026-91597",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Sales Online product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Sales Online.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Sales Online accessible data as well as  unauthorized read access to a subset of Oracle Sales Online accessible data. CVSS 3.1 Base Score 7.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101643"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Platform Security).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Difficult to exploit vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the Oracle Business Intelligence Enterprise Edition executes to compromise Oracle Business Intelligence Enterprise Edition.  While the vulnerability is in Oracle Business Intelligence Enterprise Edition, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 8.3 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91597"
     },
     {
-      "cve_id": "CVE-2026-101645",
-      "asset_id": "CVE-2026-101645",
+      "cve_id": "CVE-2026-91598",
+      "asset_id": "CVE-2026-91598",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle iSetup product of Oracle E-Business Suite (component: General Ledger Update Transform, Reports).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle iSetup.  Successful attacks of this vulnerability can result in takeover of Oracle iSetup. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101645"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Majel Mobile Service).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91598"
     },
     {
-      "cve_id": "CVE-2026-101647",
-      "asset_id": "CVE-2026-101647",
+      "cve_id": "CVE-2026-91600",
+      "asset_id": "CVE-2026-91600",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle iSetup product of Oracle E-Business Suite (component: General Ledger Update Transform, Reports).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle iSetup.  Successful attacks of this vulnerability can result in takeover of Oracle iSetup. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101647"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Visual Analyzer).   The supported version that is affected is 26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91600"
     },
     {
-      "cve_id": "CVE-2026-101649",
-      "asset_id": "CVE-2026-101649",
+      "cve_id": "CVE-2026-91604",
+      "asset_id": "CVE-2026-91604",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Partner Management product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Partner Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Partner Management accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Partner Management. CVSS 3.1 Base Score 7.1 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101649"
+      "description": "Vulnerability in the Oracle Agile Product Lifecycle Management for Process product of Oracle Supply Chain (component: Product Quality Management).   The supported version that is affected is 6.2.4. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Agile Product Lifecycle Management for Process.  Successful attacks of this vulnerability can result in takeover of Oracle Agile Product Lifecycle Management for Process. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91604"
     },
     {
-      "cve_id": "CVE-2026-101650",
-      "asset_id": "CVE-2026-101650",
+      "cve_id": "CVE-2026-91607",
+      "asset_id": "CVE-2026-91607",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Partner Management product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Partner Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Partner Management accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Partner Management. CVSS 3.1 Base Score 7.1 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101650"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Analytics Server).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91607"
     },
     {
-      "cve_id": "CVE-2026-101651",
-      "asset_id": "CVE-2026-101651",
+      "cve_id": "CVE-2026-91608",
+      "asset_id": "CVE-2026-91608",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Partner Management product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Partner Management.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Partner Management accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101651"
+      "description": "Vulnerability in the Oracle BI Publisher product of Oracle Analytics (component: Web Server).  Supported versions that are affected are 8.2.0.0.0, 12.2.1.4.0 and  26.01.0.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle BI Publisher.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle BI Publisher accessible data. CVSS 3.1 Base Score 7.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91608"
     },
     {
-      "cve_id": "CVE-2026-101654",
-      "asset_id": "CVE-2026-101654",
+      "cve_id": "CVE-2026-91609",
+      "asset_id": "CVE-2026-91609",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Mobile Field Service product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Mobile Field Service.  Successful attacks of this vulnerability can result in takeover of Oracle Mobile Field Service. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101654"
+      "description": "Vulnerability in Oracle REST Data Services (component: Graph QL).  Supported versions that are affected are 24.2.0-26.2.1. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle REST Data Services accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91609"
     },
     {
-      "cve_id": "CVE-2026-101660",
-      "asset_id": "CVE-2026-101660",
+      "cve_id": "CVE-2026-91610",
+      "asset_id": "CVE-2026-91610",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Mobile Field Service product of Oracle E-Business Suite (component: Admin UI).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Mobile Field Service.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Mobile Field Service accessible data. CVSS 3.1 Base Score 7.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101660"
+      "description": "Vulnerability in Oracle REST Data Services (component: General).  Supported versions that are affected are 24.2.0-26.2.2. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in takeover of Oracle REST Data Services. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91610"
     },
     {
-      "cve_id": "CVE-2026-101664",
-      "asset_id": "CVE-2026-101664",
+      "cve_id": "CVE-2026-105996",
+      "asset_id": "CVE-2026-105996",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Mobile Field Service product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Mobile Field Service.  Successful attacks of this vulnerability can result in takeover of Oracle Mobile Field Service. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101664"
+      "description": "The Booking Package WordPress plugin before 1.7.31 does not generate booking cancellation tokens using a secure source of randomness, deriving them instead from values it exposes publicly, so an unauthenticated attacker can reconstruct an arbitrary booking's token, disclose that booking's personal data and, where visitor cancellation is enabled, cancel the booking.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105996"
     },
     {
-      "cve_id": "CVE-2026-101670",
-      "asset_id": "CVE-2026-101670",
+      "cve_id": "CVE-2026-105998",
+      "asset_id": "CVE-2026-105998",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Email Center product of Oracle E-Business Suite (component: Message Component).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Email Center.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Email Center accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101670"
+      "description": "The Booking Package WordPress plugin before 1.7.31 does not perform any authorization or validity check before resetting its premium subscription state, allowing unauthenticated attackers to disable the Booking Package WordPress plugin before 1.7.31's paid features.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105998"
     },
     {
-      "cve_id": "CVE-2026-101672",
-      "asset_id": "CVE-2026-101672",
+      "cve_id": "CVE-2026-106932",
+      "asset_id": "CVE-2026-106932",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Call Center Technology product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows unauthenticated attacker with network access via RMI to compromise Oracle Call Center Technology.  Successful attacks of this vulnerability can result in takeover of Oracle Call Center Technology. CVSS 3.1 Base Score 8.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101672"
+      "description": "The Moloni WordPress plugin before 5.0.14 does not perform capability or nonce checks on several of its authenticated AJAX actions, relying only on whether the site holds a stored connection to its external invoicing provider, allowing any authenticated user such as a Subscriber to generate fiscal invoices for arbitrary orders, discard arbitrary orders, and create or modify products and stock.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-106932"
     },
     {
-      "cve_id": "CVE-2026-101674",
-      "asset_id": "CVE-2026-101674",
+      "cve_id": "CVE-2026-107127",
+      "asset_id": "CVE-2026-107127",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Mobile Field Service product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle Mobile Field Service executes to compromise Oracle Mobile Field Service.  Successful attacks of this vulnerability can result in takeover of Oracle Mobile Field Service. CVSS 3.1 Base Score 6.7 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101674"
+      "description": "The Uncanny Toolkit for LearnDash WordPress plugin before 3.8.2 does not validate the origin of a password-reset request, allowing an unauthenticated attacker to set the password of a user who is partway through a password reset to an attacker-chosen value through a forged request, resulting in full account takeover.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107127"
     },
     {
-      "cve_id": "CVE-2026-86961",
-      "asset_id": "CVE-2026-86961",
+      "cve_id": "CVE-2026-107128",
+      "asset_id": "CVE-2026-107128",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A race condition was addressed with additional validation. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27. A malicious app may be able to break out of its sandbox.",
-      "last_modified": "2026-10-21T04:18:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86961"
+      "description": "The Uncanny Toolkit for LearnDash WordPress plugin before 3.8.2 does not verify that the acting user is permitted to manage the targeted accounts before changing their verification state, allowing a subsite administrator on a multisite network to mark arbitrary network users outside their own site as unverified and prevent those users from logging in.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107128"
     },
     {
-      "cve_id": "CVE-2026-86949",
-      "asset_id": "CVE-2026-86949",
+      "cve_id": "CVE-2026-107237",
+      "asset_id": "CVE-2026-107237",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This issue was addressed by enforcing library validation on the affected binaries. This issue is fixed in Xcode 27. A malicious app may be able to break out of its sandbox.",
-      "last_modified": "2026-10-21T04:18:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86949"
+      "description": "The Backup and Staging by WP Time Capsule WordPress plugin before 1.22.28 does not perform capability or nonce checks on the handler that deploys a staging site to the live site, allowing any authenticated user with a Subscriber account on a WP Time Capsule staging site to overwrite the separate live site's database and configuration and take it offline.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107237"
     },
     {
-      "cve_id": "CVE-2026-12489",
-      "asset_id": "CVE-2026-12489",
+      "cve_id": "CVE-2026-107789",
+      "asset_id": "CVE-2026-107789",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An incorrect authorization vulnerability in the Data Access Layer (DAL) of Zyxel EX3501-T0 firmware versions through 5.44(ACHR.6)C0 could allow an authenticated attacker to escalate privileges by modifying the login_privilege data on an affected device.",
-      "last_modified": "2026-10-21T04:18:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12489"
+      "description": "The SmartyParcel  WordPress plugin before 1.23.4 does not perform authorisation checks when serving shipping label downloads, allowing unauthenticated users to obtain the shipping labels of arbitrary orders, which contain customer names, addresses and phone numbers.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107789"
     },
     {
-      "cve_id": "CVE-2026-113274",
-      "asset_id": "CVE-2026-113274",
+      "cve_id": "CVE-2026-101138",
+      "asset_id": "CVE-2026-101138",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use after free in ReadingMode in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-10-21T04:17:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113274"
+      "description": "The CMP \u2013 Coming Soon & Maintenance WordPress plugin before 4.1.21 does not correctly apply maintenance mode to pages added to its page whitelist by manually entered URL pattern, allowing unauthenticated visitors to view the content of those pages while maintenance mode is active.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101138"
     },
     {
-      "cve_id": "CVE-2026-113125",
-      "asset_id": "CVE-2026-113125",
+      "cve_id": "CVE-2026-104642",
+      "asset_id": "CVE-2026-104642",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Memory corruption in DevTools in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-10-21T04:17:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113125"
+      "description": "The Simple Shopping Cart WordPress plugin before 5.3.3 does not verify submitted product prices against a value only the site owner can set, allowing users with the Contributor role and above to register attacker-chosen prices for existing products, which any visitor can then use to add those products to the cart at that price.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104642"
     },
     {
-      "cve_id": "CVE-2026-113088",
-      "asset_id": "CVE-2026-113088",
+      "cve_id": "CVE-2026-107447",
+      "asset_id": "CVE-2026-107447",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Memory corruption in Mobile in Google Chrome on on Android prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-10-21T04:17:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113088"
+      "description": "The Contest Gallery WordPress plugin before 34.0.1 does not reliably validate the visitor identity used to enforce its one-vote-per-entry restriction, trusting a client-supplied request header and an unbound client-generated token, which allows unauthenticated users to bypass the restriction and cast multiple votes for the same contest entry, inflating its vote total.",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107447"
     },
     {
-      "cve_id": "CVE-2026-113039",
-      "asset_id": "CVE-2026-113039",
+      "cve_id": "CVE-2026-48830",
+      "asset_id": "CVE-2026-48830",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use after free in Bookmarks in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-10-21T04:17:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113039"
+      "description": "Improper authentication in Apache bRPC through 1.17.0 allows a remote unauthenticated attacker to bypass authentication for protected non-builtin HTTP endpoints by first sending a builtin HTTP request on the same HTTP/1.1 keep-alive connection.\n\nWhen ServerOptions.auth is enabled and builtin HTTP services are exposed on the public listener, a builtin request received as the first message on a socket may cause the connection to be treated as authenticated for later requests on that socket. Users are recommended to upgrade to version 1.18.0, which fixes this issue, or apply this PR separately:  https://github.com/apache/brpc/pull/3308",
+      "last_modified": "2026-10-21T11:30:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48830"
     },
     {
-      "cve_id": "CVE-2026-113013",
-      "asset_id": "CVE-2026-113013",
+      "cve_id": "CVE-2026-113317",
+      "asset_id": "CVE-2026-113317",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Memory corruption in DevTools in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-10-21T04:17:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113013"
+      "description": "Memory corruption in Accessibility in Google Chrome on on Mac prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-10-21T11:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113317"
     },
     {
-      "cve_id": "CVE-2026-102438",
-      "asset_id": "CVE-2026-102438",
+      "cve_id": "CVE-2026-113318",
+      "asset_id": "CVE-2026-113318",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An uncontrolled search path element vulnerability in ASUS Armoury Crate allows local users to execute arbitrary code with SYSTEM privileges via replacement of a dynamic-link library (DLL) that is later loaded by a high-privilege process.\nRefer to the '\nSecurity Update for Armoury Crate App\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-10-21T04:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102438"
+      "description": "Memory corruption in ServiceWorker in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "last_modified": "2026-10-21T11:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113318"
     },
     {
-      "cve_id": "CVE-2026-101296",
-      "asset_id": "CVE-2026-101296",
+      "cve_id": "CVE-2026-113140",
+      "asset_id": "CVE-2026-113140",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A missing critical step in authentication vulnerability in Apache Tomcat when the JNDI realm was configured with with a non GSSAPI SASL authentication mechanism\u00a0allowed attackers to authenticate without providing the correct password.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.26, from 10.1.0-M1 through 10.1.60, from 9.0.0.M1 through 9.0.122.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected:\u00a0from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.\u00a0Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 11.0.27, 10.1.61 or 9.0.123, which fix the issue.",
-      "last_modified": "2026-10-21T04:16:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101296"
+      "description": "Use after free in ANGLE in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-21T11:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113140"
     },
     {
-      "cve_id": "CVE-2026-101678",
-      "asset_id": "CVE-2026-101678",
+      "cve_id": "CVE-2026-83381",
+      "asset_id": "CVE-2026-83381",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).   The supported version that is affected is 26.7.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Connectors.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized ability to cause a partial denial of service (partial DOS) of MySQL Connectors. CVSS 3.1 Base Score 4.3 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101678"
+      "description": "Vulnerability in Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE accessible data as well as  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 4.8 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N).",
+      "last_modified": "2026-10-21T11:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83381"
     },
     {
-      "cve_id": "CVE-2026-101679",
-      "asset_id": "CVE-2026-101679",
+      "cve_id": "CVE-2026-87255",
+      "asset_id": "CVE-2026-87255",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Client programs).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 7.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101679"
+      "description": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 3.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T11:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87255"
     },
     {
-      "cve_id": "CVE-2026-101682",
-      "asset_id": "CVE-2026-101682",
+      "cve_id": "CVE-2026-87263",
+      "asset_id": "CVE-2026-87263",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Applications DBA product of Oracle E-Business Suite (component: AD Utilities).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where Applications DBA executes to compromise Applications DBA.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Applications DBA. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101682"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Analytics Server).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87263"
     },
     {
-      "cve_id": "CVE-2026-101713",
-      "asset_id": "CVE-2026-101713",
+      "cve_id": "CVE-2026-87291",
+      "asset_id": "CVE-2026-87291",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile PLM product of Oracle Supply Chain (component: Application Server).   The supported version that is affected is 9.3.6. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Agile PLM.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Agile PLM, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Agile PLM accessible data as well as  unauthorized read access to a subset of Oracle Agile PLM accessible data. CVSS 3.1 Base Score 5.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101713"
+      "description": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T11:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87291"
     },
     {
-      "cve_id": "CVE-2026-101718",
-      "asset_id": "CVE-2026-101718",
+      "cve_id": "CVE-2026-86320",
+      "asset_id": "CVE-2026-86320",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile PLM product of Oracle Supply Chain (component: Application Server).   The supported version that is affected is 9.3.6. Difficult to exploit vulnerability allows unauthenticated attacker with network access via TLS to compromise Oracle Agile PLM.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Agile PLM accessible data as well as  unauthorized update, insert or delete access to some of Oracle Agile PLM accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101718"
+      "description": "A flaw was found in flatpak-builder where Git hooks are not disabled when applying patch sources with use-git-am: true. An attacker who can provide a malicious source containing a Git post-applypatch hook can cause the hook to execute on the host during the build process, resulting in arbitrary code execution with the privileges of the user running flatpak-builder.",
+      "last_modified": "2026-10-21T11:21:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86320"
     },
     {
-      "cve_id": "CVE-2026-101731",
-      "asset_id": "CVE-2026-101731",
+      "cve_id": "CVE-2026-96512",
+      "asset_id": "CVE-2026-96512",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101731"
+      "description": "A flaw was found in sudo. When sudoers rules use NOTBEFORE or NOTAFTER time-based access restrictions with timestamps that omit the trailing 'Z' timezone indicator, the time evaluation relies on the TZ environment variable inherited from the calling user. Because sudo is a setuid-root program, an unprivileged local user can set TZ to an extreme timezone offset to shift the authorization window by up to approximately 25 hours, causing expired rules to be treated as valid. This allows the user to execute commands outside the intended time window. Authentication is not bypassed; only the time-based authorization check is affected.",
+      "last_modified": "2026-10-21T11:20:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96512"
     },
     {
-      "cve_id": "CVE-2026-101738",
-      "asset_id": "CVE-2026-101738",
+      "cve_id": "CVE-2026-80110",
+      "asset_id": "CVE-2026-80110",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile Engineering Data Management product of Oracle Supply Chain (component: Engineering Communication Interface).   The supported version that is affected is 6.2.1. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Agile Engineering Data Management.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Agile Engineering Data Management accessible data. CVSS 3.1 Base Score 3.1 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101738"
+      "description": "A flaw was found in pki-core. The v2 REST ACL filter selects a tie-breaking permission for colliding literal and wildcard ACL keys using lexicographic string comparison rather than specificity, causing a wildcard-mapped permission to override a more specific literal-mapped permission when both match. In the CA's profile-management REST API this allows a request to POST /v2/profiles/raw -- intended to require Administrator-level profiles.create permission -- to instead be authorized under the lower-privileged profiles.approve permission held by the default Certificate Manager Agents group. The highest threat from this vulnerability is to confidentiality and integrity of the certificate authority's issuance policy.",
+      "last_modified": "2026-10-21T11:19:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80110"
     },
     {
-      "cve_id": "CVE-2026-101743",
-      "asset_id": "CVE-2026-101743",
+      "cve_id": "CVE-2026-76561",
+      "asset_id": "CVE-2026-76561",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: GIS).  Supported versions that are affected are MySQL Server: 26.7.0-26.7.1; MySQL Cluster: 26.7.0-26.7.1. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101743"
+      "description": "A flaw was found in Dogtag PKI, as used by FreeIPA's certificate authority component. The certificate profile import functionality does not fully validate uploaded profile content beyond the profile ID. An authenticated user with CA Administrator privileges can exploit Dogtag's ExternalProcessConstraint mechanism to execute arbitrary commands with attacker-controlled environment variables, achieving code execution as the pkiuser account.",
+      "last_modified": "2026-10-21T11:19:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76561"
     },
     {
-      "cve_id": "CVE-2026-101751",
-      "asset_id": "CVE-2026-101751",
+      "cve_id": "CVE-2026-96901",
+      "asset_id": "CVE-2026-96901",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Group Replication GCS).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101751"
+      "description": "The Cart Abandonment Recovery for WooCommerce  WordPress plugin before 2.2.0 does not verify the integrity of its cart-recovery token before acting on it and still accepts an unsigned legacy token format, allowing unauthenticated attackers who know a victim's cart session identifier to modify that victim's abandoned-cart record, for example unsubscribing them from recovery emails or applying an arbitrary coupon to their restored cart.",
+      "last_modified": "2026-10-21T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96901"
     },
     {
-      "cve_id": "CVE-2026-101777",
-      "asset_id": "CVE-2026-101777",
+      "cve_id": "CVE-2026-92999",
+      "asset_id": "CVE-2026-92999",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Security: Encryption).  Supported versions that are affected are MySQL Server: 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster and  unauthorized read access to a subset of MySQL Server, MySQL Cluster accessible data. CVSS 3.1 Base Score 5.5 (Confidentiality and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101777"
+      "description": "The Click n Chat (Chat Widget Integration) WordPress plugin before 1.1.3 does not perform any authorization check on a lead-export handler, allowing unauthenticated users to download every captured contact record (names, email addresses and phone numbers).",
+      "last_modified": "2026-10-21T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92999"
     },
     {
-      "cve_id": "CVE-2026-101789",
-      "asset_id": "CVE-2026-101789",
+      "cve_id": "CVE-2026-92998",
+      "asset_id": "CVE-2026-92998",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101789"
+      "description": "The Click n Chat (Chat Widget Integration) WordPress plugin before 1.1.3 does not sanitise sort parameters before using them in a SQL ORDER BY clause, allowing unauthenticated attackers to perform SQL injection attacks.",
+      "last_modified": "2026-10-21T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92998"
     },
     {
-      "cve_id": "CVE-2026-101798",
-      "asset_id": "CVE-2026-101798",
+      "cve_id": "CVE-2026-92997",
+      "asset_id": "CVE-2026-92997",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101798"
+      "description": "The Click n Chat (Chat Widget Integration) WordPress plugin before 1.1.3 does not properly validate a parameter before using it as a column identifier in a SQL query, allowing unauthenticated attackers to perform SQL injection attacks.",
+      "last_modified": "2026-10-21T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92997"
     },
     {
-      "cve_id": "CVE-2026-101799",
-      "asset_id": "CVE-2026-101799",
+      "cve_id": "CVE-2026-91665",
+      "asset_id": "CVE-2026-91665",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Group Replication GCS).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the MySQL Server, MySQL Cluster executes to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101799"
+      "description": "Vulnerability in Oracle Essbase (component: Security).   The supported version that is affected is 21.8.3.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via TCP to compromise Oracle Essbase.  Successful attacks of this vulnerability can result in takeover of Oracle Essbase. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91665"
     },
     {
-      "cve_id": "CVE-2026-101815",
-      "asset_id": "CVE-2026-101815",
+      "cve_id": "CVE-2026-91624",
+      "asset_id": "CVE-2026-91624",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Assets product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Assets.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Assets as well as  unauthorized update, insert or delete access to some of Assets accessible data and  unauthorized read access to a subset of Assets accessible data. CVSS 3.1 Base Score 7.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H).",
-      "last_modified": "2026-10-21T04:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101815"
+      "description": "Vulnerability in the Oracle Agile Product Lifecycle Management for Process product of Oracle Supply Chain (component: Product Quality Management).   The supported version that is affected is 6.2.4. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Agile Product Lifecycle Management for Process.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Agile Product Lifecycle Management for Process accessible data as well as  unauthorized access to critical data or complete access to all Oracle Agile Product Lifecycle Management for Process accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91624"
     },
     {
-      "cve_id": "CVE-2026-101684",
-      "asset_id": "CVE-2026-101684",
+      "cve_id": "CVE-2026-91495",
+      "asset_id": "CVE-2026-91495",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle E-Business Suite Integrated SOA Gateway product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle E-Business Suite Integrated SOA Gateway.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle E-Business Suite Integrated SOA Gateway accessible data as well as  unauthorized access to critical data or complete access to all Oracle E-Business Suite Integrated SOA Gateway accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle E-Business Suite Integrated SOA Gateway. CVSS 3.1 Base Score 8.3 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101684"
+      "description": "Vulnerability in the Oracle WebCenter Content product of Oracle Fusion Middleware (component: Content Server).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebCenter Content.  Successful attacks of this vulnerability can result in takeover of Oracle WebCenter Content. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91495"
     },
     {
-      "cve_id": "CVE-2026-101689",
-      "asset_id": "CVE-2026-101689",
+      "cve_id": "CVE-2026-91491",
+      "asset_id": "CVE-2026-91491",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle E-Business Suite Integrated SOA Gateway product of Oracle E-Business Suite (component: SOA Provider).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle E-Business Suite Integrated SOA Gateway.  While the vulnerability is in Oracle E-Business Suite Integrated SOA Gateway, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle E-Business Suite Integrated SOA Gateway accessible data. CVSS 3.1 Base Score 7.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101689"
+      "description": "Vulnerability in the Oracle Identity Manager Connector product of Oracle Fusion Middleware (component: LDAP Gateway).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via LDAP to compromise Oracle Identity Manager Connector.  Successful attacks of this vulnerability can result in takeover of Oracle Identity Manager Connector. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91491"
     },
     {
-      "cve_id": "CVE-2026-101694",
-      "asset_id": "CVE-2026-101694",
+      "cve_id": "CVE-2026-91490",
+      "asset_id": "CVE-2026-91490",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Mobile Field Service product of Oracle E-Business Suite (component: Admin UI).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows high privileged attacker with network access via HTTPS to compromise Oracle Mobile Field Service.  Successful attacks of this vulnerability can result in takeover of Oracle Mobile Field Service. CVSS 3.1 Base Score 7.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101694"
+      "description": "Vulnerability in the Oracle Identity Manager Connector product of Oracle Fusion Middleware (component: LDAP Gateway).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via LDAP to compromise Oracle Identity Manager Connector.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Identity Manager Connector accessible data as well as  unauthorized access to critical data or complete access to all Oracle Identity Manager Connector accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91490"
     },
     {
-      "cve_id": "CVE-2026-101696",
-      "asset_id": "CVE-2026-101696",
+      "cve_id": "CVE-2026-91408",
+      "asset_id": "CVE-2026-91408",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Application Object Library product of Oracle E-Business Suite (component: Core).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Application Object Library.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Application Object Library accessible data as well as  unauthorized access to critical data or complete access to all Oracle Application Object Library accessible data. CVSS 3.1 Base Score 6.8 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101696"
+      "description": "Vulnerability in the Oracle Identity Manager product of Oracle Fusion Middleware (component: End User Self Service).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via T3, IIOP to compromise Oracle Identity Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Identity Manager. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91408"
     },
     {
-      "cve_id": "CVE-2026-101699",
-      "asset_id": "CVE-2026-101699",
+      "cve_id": "CVE-2026-91323",
+      "asset_id": "CVE-2026-91323",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle One-to-One Fulfillment product of Oracle E-Business Suite (component: Documents).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle One-to-One Fulfillment.  Successful attacks of this vulnerability can result in takeover of Oracle One-to-One Fulfillment. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101699"
+      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in takeover of Oracle WebLogic Server. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91323"
     },
     {
-      "cve_id": "CVE-2026-101704",
-      "asset_id": "CVE-2026-101704",
+      "cve_id": "CVE-2026-91305",
+      "asset_id": "CVE-2026-91305",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Concurrent Processing product of Oracle E-Business Suite (component: Other).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle Concurrent Processing executes to compromise Oracle Concurrent Processing.  While the vulnerability is in Oracle Concurrent Processing, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Concurrent Processing. CVSS 3.1 Base Score 8.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101704"
+      "description": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD Edwards (component: Installation Security).  Supported versions that are affected are 9.2.0.0-9.2.26.5. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTPS to compromise JD Edwards EnterpriseOne Tools.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all JD Edwards EnterpriseOne Tools accessible data as well as  unauthorized access to critical data or complete access to all JD Edwards EnterpriseOne Tools accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91305"
     },
     {
-      "cve_id": "CVE-2026-101706",
-      "asset_id": "CVE-2026-101706",
+      "cve_id": "CVE-2026-91265",
+      "asset_id": "CVE-2026-91265",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle One-to-One Fulfillment product of Oracle E-Business Suite (component: Documents).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle One-to-One Fulfillment.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle One-to-One Fulfillment accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101706"
+      "description": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD Edwards (component: Enterprise Infrastructure SEC).  Supported versions that are affected are 9.2.0.0-9.2.26.5. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise JD Edwards EnterpriseOne Tools.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all JD Edwards EnterpriseOne Tools accessible data as well as  unauthorized access to critical data or complete access to all JD Edwards EnterpriseOne Tools accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91265"
     },
     {
-      "cve_id": "CVE-2026-101709",
-      "asset_id": "CVE-2026-101709",
+      "cve_id": "CVE-2026-91236",
+      "asset_id": "CVE-2026-91236",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Payroll.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Payroll, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Payroll accessible data as well as  unauthorized read access to a subset of Oracle Payroll accessible data. CVSS 3.1 Base Score 5.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101709"
+      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91236"
     },
     {
-      "cve_id": "CVE-2026-101712",
-      "asset_id": "CVE-2026-101712",
+      "cve_id": "CVE-2026-91235",
+      "asset_id": "CVE-2026-91235",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Payroll.  Successful attacks of this vulnerability can result in takeover of Oracle Payroll. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101712"
+      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91235"
     },
     {
-      "cve_id": "CVE-2026-101714",
-      "asset_id": "CVE-2026-101714",
+      "cve_id": "CVE-2026-91234",
+      "asset_id": "CVE-2026-91234",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile PLM product of Oracle Supply Chain (component: Web Client).   The supported version that is affected is 9.3.6. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Agile PLM.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Agile PLM, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Agile PLM accessible data as well as  unauthorized read access to a subset of Oracle Agile PLM accessible data. CVSS 3.1 Base Score 6.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101714"
+      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91234"
     },
     {
-      "cve_id": "CVE-2026-101715",
-      "asset_id": "CVE-2026-101715",
+      "cve_id": "CVE-2026-91233",
+      "asset_id": "CVE-2026-91233",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile PLM product of Oracle Supply Chain (component: Application Server).   The supported version that is affected is 9.3.6. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Agile PLM.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Agile PLM accessible data as well as  unauthorized update, insert or delete access to some of Oracle Agile PLM accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101715"
+      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Enterprise Scheduling System).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via SOAP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91233"
     },
     {
-      "cve_id": "CVE-2026-101716",
-      "asset_id": "CVE-2026-101716",
+      "cve_id": "CVE-2026-91220",
+      "asset_id": "CVE-2026-91220",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile PLM product of Oracle Supply Chain (component: Web Client).   The supported version that is affected is 9.3.6. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Agile PLM.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Agile PLM accessible data. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101716"
+      "description": "Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Human Workflow).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Business Process Management Suite.  Successful attacks of this vulnerability can result in takeover of Oracle Business Process Management Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91220"
     },
     {
-      "cve_id": "CVE-2026-101717",
-      "asset_id": "CVE-2026-101717",
+      "cve_id": "CVE-2026-91214",
+      "asset_id": "CVE-2026-91214",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile PLM product of Oracle Supply Chain (component: Security).   The supported version that is affected is 9.3.6. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Agile PLM executes to compromise Oracle Agile PLM.  While the vulnerability is in Oracle Agile PLM, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Agile PLM accessible data as well as  unauthorized update, insert or delete access to some of Oracle Agile PLM accessible data. CVSS 3.1 Base Score 6.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101717"
+      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91214"
     },
     {
-      "cve_id": "CVE-2026-101826",
-      "asset_id": "CVE-2026-101826",
+      "cve_id": "CVE-2026-88784",
+      "asset_id": "CVE-2026-88784",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle HCM Common Architecture product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle HCM Common Architecture.  Successful attacks of this vulnerability can result in takeover of Oracle HCM Common Architecture. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101826"
+      "description": "The Translate WordPress with Weglot 2.0  WordPress plugin before 6.4.3 does not escape the URLs it re-inserts into a page when rewriting links for a translated language, and reverses the encoding that was applied to them beforehand, allowing unauthenticated users to store a payload which executes in the browser of anyone viewing the page in a translated language.",
+      "last_modified": "2026-10-21T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88784"
     },
     {
-      "cve_id": "CVE-2026-101832",
-      "asset_id": "CVE-2026-101832",
+      "cve_id": "CVE-2026-87838",
+      "asset_id": "CVE-2026-87838",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Order Management product of Oracle E-Business Suite (component: Product Diagnostic Tools).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Order Management.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Order Management accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101832"
+      "description": "The Wava Payment Plugin WordPress plugin before 0.3.10 does not perform any authorisation, nonce or origin verification on one of its public REST endpoints, allowing unauthenticated attackers to overwrite the stored credential that identifies the merchant account the store's payments are created against, to force the integration into a verified state the site owner never completed, and to remove the payment method from the store's checkout.",
+      "last_modified": "2026-10-21T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87838"
     },
     {
-      "cve_id": "CVE-2026-101833",
-      "asset_id": "CVE-2026-101833",
+      "cve_id": "CVE-2026-87837",
+      "asset_id": "CVE-2026-87837",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Shipping Execution product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Shipping Execution.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Shipping Execution accessible data as well as  unauthorized update, insert or delete access to some of Oracle Shipping Execution accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Shipping Execution. CVSS 3.1 Base Score 7.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L).",
-      "last_modified": "2026-10-21T04:00:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101833"
+      "description": "The Wava Payment Plugin WordPress plugin before 0.3.10 does not verify the authenticity of incoming payment-provider notifications, nor restrict who may send them, allowing unauthenticated attackers to change the status of any WooCommerce order in the store, including marking an unpaid order as paid and completed, and cancelling other customers' orders.\n\nIn versions up to 0.3.7 the response additionally returns the affected order's billing details, disclosing customer names, addresses, email addresses and phone numbers to the same unauthenticated caller.",
+      "last_modified": "2026-10-21T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87837"
     },
     {
-      "cve_id": "CVE-2026-114040",
-      "asset_id": "CVE-2026-114040",
+      "cve_id": "CVE-2026-87302",
+      "asset_id": "CVE-2026-87302",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in DT42 BerryNet up to 3.10.2. The affected element is the function DLModelManager.get_model_meta of the file berrynet/dlmodelmgr.py of the component Model Package Metadata Handler. The manipulation of the argument label leads to path traversal. The attack is possible to be carried out remotely. The exploit has been disclosed publicly and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-10-21T03:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114040"
+      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle WebLogic Server accessible data as well as  unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T11:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87302"
     },
     {
-      "cve_id": "CVE-2026-101722",
-      "asset_id": "CVE-2026-101722",
+      "cve_id": "CVE-2026-87251",
+      "asset_id": "CVE-2026-87251",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Connection Handling).  Supported versions that are affected are MySQL Server: 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of MySQL Server, MySQL Cluster accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101722"
+      "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via SAML to compromise Oracle Access Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Access Manager. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87251"
     },
     {
-      "cve_id": "CVE-2026-101724",
-      "asset_id": "CVE-2026-101724",
+      "cve_id": "CVE-2026-86611",
+      "asset_id": "CVE-2026-86611",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: InnoDB).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101724"
+      "description": "The Download Manager WordPress plugin before 3.3.71, Download Manager WordPress plugin before 7.5.9 does not have CSRF checks in some places, allowing attackers to make a logged in admin update its privacy and storage settings via a crafted link, including the credential that gates its unauthenticated maintenance endpoint.",
+      "last_modified": "2026-10-21T11:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86611"
     },
     {
-      "cve_id": "CVE-2026-101725",
-      "asset_id": "CVE-2026-101725",
+      "cve_id": "CVE-2026-85683",
+      "asset_id": "CVE-2026-85683",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: C API).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101725"
+      "description": "The Jane Menu WordPress plugin before 1.5.1 does not have any capability or nonce checks on one of its form handlers, which is reachable by unauthenticated users, allowing them to bind any published page to a remote document of their choosing. The plugin then fetches that document and outputs its head and body into the page without escaping, so an unauthenticated attacker can run arbitrary JavaScript in the browser of any visitor to that page, including an administrator.",
+      "last_modified": "2026-10-21T11:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85683"
     },
     {
-      "cve_id": "CVE-2026-101732",
-      "asset_id": "CVE-2026-101732",
+      "cve_id": "CVE-2026-85642",
+      "asset_id": "CVE-2026-85642",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101732"
+      "description": "The Formidable Forms  WordPress plugin before 7.0 does not verify the identity of the caller before recording the timestamp it uses to rate limit payment gateway verification requests, allowing unauthenticated attackers to consume the daily allowance and cause legitimate verification attempts to be refused for the next 24 hours.",
+      "last_modified": "2026-10-21T11:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85642"
     },
     {
-      "cve_id": "CVE-2026-101733",
-      "asset_id": "CVE-2026-101733",
+      "cve_id": "CVE-2026-83399",
+      "asset_id": "CVE-2026-83399",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: JSON).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101733"
+      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via T3, IIOP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in takeover of Oracle WebLogic Server. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83399"
     },
     {
-      "cve_id": "CVE-2026-101752",
-      "asset_id": "CVE-2026-101752",
+      "cve_id": "CVE-2026-83397",
+      "asset_id": "CVE-2026-83397",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Components Services).  Supported versions that are affected are MySQL Server: 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 9.7.0-9.7.3 and  26.7.0-26.7.1. Difficult to exploit vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.4 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101752"
+      "description": "Vulnerability in the Oracle Data Integrator product of Oracle Fusion Middleware (component: Console / Repository Explorer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Data Integrator.  Successful attacks of this vulnerability can result in takeover of Oracle Data Integrator. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83397"
     },
     {
-      "cve_id": "CVE-2026-101753",
-      "asset_id": "CVE-2026-101753",
+      "cve_id": "CVE-2026-83396",
+      "asset_id": "CVE-2026-83396",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: RAPID).  Supported versions that are affected are MySQL Server: 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 9.7.0-9.7.3 and  26.7.0-26.7.1. Difficult to exploit vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.4 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101753"
+      "description": "Vulnerability in the Oracle Data Integrator product of Oracle Fusion Middleware (component: Console / Repository Explorer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via RMI to compromise Oracle Data Integrator.  Successful attacks of this vulnerability can result in takeover of Oracle Data Integrator. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83396"
     },
     {
-      "cve_id": "CVE-2026-101759",
-      "asset_id": "CVE-2026-101759",
+      "cve_id": "CVE-2026-81813",
+      "asset_id": "CVE-2026-81813",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Communications Billing and Revenue Management product of Oracle Communications (component: BRM Server).  Supported versions that are affected are 15.0.0.0.0, 15.0.1.0.0, 15.1.0.0.0 and  15.2.0.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Communications Billing and Revenue Management.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Communications Billing and Revenue Management accessible data. CVSS 3.1 Base Score 7.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101759"
+      "description": "The Elementor Website Builder  WordPress plugin before 4.3.5 does not sanitize the text content of SVG files, checking only their elements and attributes, allowing users with the Contributor role and above to store a payload which breaks out when the SVG is rendered inline in a page and executes in the browser of any user viewing it. Execution is specific to Chromium-based browsers; Firefox is not affected.",
+      "last_modified": "2026-10-21T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81813"
     },
     {
-      "cve_id": "CVE-2026-101761",
-      "asset_id": "CVE-2026-101761",
+      "cve_id": "CVE-2026-81812",
+      "asset_id": "CVE-2026-81812",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Security: Encryption).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 5.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101761"
+      "description": "The Elementor Website Builder  WordPress plugin before 4.3.5 does not sanitize uploaded SVG files on every upload route, allowing users with the Author role and above to upload a file containing JavaScript, which will run in the browser of any user who opens it. Exploitation requires unfiltered file uploads to be enabled in the Elementor Website Builder  WordPress plugin before 4.3.5 settings, which is not the default.",
+      "last_modified": "2026-10-21T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81812"
     },
     {
-      "cve_id": "CVE-2026-101762",
-      "asset_id": "CVE-2026-101762",
+      "cve_id": "CVE-2026-79627",
+      "asset_id": "CVE-2026-79627",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Security: Encryption).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Difficult to exploit vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 5.3 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101762"
+      "description": "The Advanced File Manager  WordPress plugin before 6.0.0 does not correctly determine whether a stored file is an SVG before sanitising it, allowing users granted file-manager access by an administrator to store a file containing script that is not stripped and that runs in the browser of anyone who opens it, including an administrator.",
+      "last_modified": "2026-10-21T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79627"
     },
     {
-      "cve_id": "CVE-2026-101770",
-      "asset_id": "CVE-2026-101770",
+      "cve_id": "CVE-2026-60432",
+      "asset_id": "CVE-2026-60432",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Client programs).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in takeover of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 8.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101770"
+      "description": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: Image Packaging System).  Supported versions that are affected are 11.3 and  11.4. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Solaris.  Successful attacks of this vulnerability can result in takeover of Oracle Solaris. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60432"
     },
     {
-      "cve_id": "CVE-2026-101776",
-      "asset_id": "CVE-2026-101776",
+      "cve_id": "CVE-2026-15261",
+      "asset_id": "CVE-2026-15261",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Group Replication Plugin).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101776"
+      "description": "The TI WooCommerce Wishlist WordPress plugin before 2.13.0 does not enforce the same owner-only access control on its REST API that it applies on the front-end, allowing unauthenticated users to read the metadata and item contents of private wishlists.",
+      "last_modified": "2026-10-21T11:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15261"
     },
     {
-      "cve_id": "CVE-2026-101779",
-      "asset_id": "CVE-2026-101779",
+      "cve_id": "CVE-2026-14556",
+      "asset_id": "CVE-2026-14556",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Telemetry).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a partial denial of service (partial DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 2.7 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101779"
+      "description": "The HappyForms WordPress plugin before 1.26.15 does not sanitise or escape a user-controlled referral value before embedding it in the form notification email, allowing unauthenticated attackers to inject arbitrary HTML into the emails site administrators receive.",
+      "last_modified": "2026-10-21T11:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14556"
     },
     {
-      "cve_id": "CVE-2026-101780",
-      "asset_id": "CVE-2026-101780",
+      "cve_id": "CVE-2026-112861",
+      "asset_id": "CVE-2026-112861",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: X Plugin).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101780"
+      "description": "Authorization Bypass Through User-Controlled Key vulnerability in xnau webdesign Participants Database participants-database allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Participants Database: from n/a through 2.7.8.5.",
+      "last_modified": "2026-10-21T11:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112861"
     },
     {
-      "cve_id": "CVE-2026-101784",
-      "asset_id": "CVE-2026-101784",
+      "cve_id": "CVE-2026-112840",
+      "asset_id": "CVE-2026-112840",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101784"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Brainstorm Force SureCart surecart allows Stored XSS.This issue affects SureCart: from n/a through 4.9.5.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112840"
     },
     {
-      "cve_id": "CVE-2026-101797",
-      "asset_id": "CVE-2026-101797",
+      "cve_id": "CVE-2026-112834",
+      "asset_id": "CVE-2026-112834",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Client: mysqldump).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101797"
+      "description": "Missing Authorization vulnerability in Castos Seriously Simple Podcasting seriously-simple-podcasting allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Seriously Simple Podcasting: from n/a through 3.17.0.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112834"
     },
     {
-      "cve_id": "CVE-2026-101829",
-      "asset_id": "CVE-2026-101829",
+      "cve_id": "CVE-2026-112829",
+      "asset_id": "CVE-2026-112829",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Mobile Application Server product of Oracle E-Business Suite (component: MWA Terminal Server).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Mobile Application Server.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Mobile Application Server accessible data as well as  unauthorized access to critical data or complete access to all Oracle Mobile Application Server accessible data. CVSS 3.1 Base Score 7.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101829"
+      "description": "Missing Authorization vulnerability in Arraytics Booktics booktics allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Booktics: from n/a through 1.0.30.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112829"
     },
     {
-      "cve_id": "CVE-2026-101830",
-      "asset_id": "CVE-2026-101830",
+      "cve_id": "CVE-2026-112823",
+      "asset_id": "CVE-2026-112823",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Project Contracts product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Project Contracts.  While the vulnerability is in Oracle Project Contracts, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Project Contracts accessible data. CVSS 3.1 Base Score 7.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101830"
+      "description": "Missing Authorization vulnerability in WP User Manager WP User Manager wp-user-manager allows Manipulating User State.This issue affects WP User Manager: from n/a through 2.9.25.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112823"
     },
     {
-      "cve_id": "CVE-2026-101831",
-      "asset_id": "CVE-2026-101831",
+      "cve_id": "CVE-2026-111957",
+      "asset_id": "CVE-2026-111957",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Quality product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Quality.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Quality accessible data as well as  unauthorized access to critical data or complete access to all Oracle Quality accessible data. CVSS 3.1 Base Score 8.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101831"
+      "description": "The SUMIT Payment Gateway for WooCommerce WordPress plugin before 4.0.0 does not bind the payment it confirms with the provider to the order being completed, nor check the payment amount against the order total, allowing unauthenticated users to mark a pending order as paid by replaying a payment identifier obtained from any single genuine payment.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111957"
     },
     {
-      "cve_id": "CVE-2026-101840",
-      "asset_id": "CVE-2026-101840",
+      "cve_id": "CVE-2026-111956",
+      "asset_id": "CVE-2026-111956",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Contract Lifecycle Management for Public Sector product of Oracle E-Business Suite (component: Award/PO).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle Contract Lifecycle Management for Public Sector.  Successful attacks of this vulnerability can result in takeover of Oracle Contract Lifecycle Management for Public Sector. CVSS 3.1 Base Score 7.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101840"
+      "description": "The WholesaleX  WordPress plugin before 3.0.9 does not protect or remove the user-import file it keeps in a publicly accessible location under a predictable name, allowing unauthenticated users to download the most recently imported user data, including any account passwords and customer contact and address details it contains.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111956"
     },
     {
-      "cve_id": "CVE-2026-101843",
-      "asset_id": "CVE-2026-101843",
+      "cve_id": "CVE-2026-111955",
+      "asset_id": "CVE-2026-111955",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Production Scheduling product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Production Scheduling executes to compromise Production Scheduling.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Production Scheduling accessible data as well as  unauthorized read access to a subset of Production Scheduling accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Production Scheduling. CVSS 3.1 Base Score 4.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101843"
+      "description": "The WholesaleX  WordPress plugin before 3.0.9 does not check that a stored account confirmation code is set before comparing it with the one supplied in a request, allowing unauthenticated users to activate pending accounts and bypass the administrator approval required before login.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111955"
     },
     {
-      "cve_id": "CVE-2026-101847",
-      "asset_id": "CVE-2026-101847",
+      "cve_id": "CVE-2026-111949",
+      "asset_id": "CVE-2026-111949",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Bills of Material product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Bills of Material.  Successful attacks of this vulnerability can result in takeover of Oracle Bills of Material. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101847"
+      "description": "The miniOrange 2FA  WordPress plugin before 6.3.1 does not prevent a pending passkey login from registering an additional passkey on an account that already has one configured, allowing an attacker who knows a user's password to add their own authenticator and bypass the second factor.",
+      "last_modified": "2026-10-21T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111949"
     },
     {
-      "cve_id": "CVE-2026-101852",
-      "asset_id": "CVE-2026-101852",
+      "cve_id": "CVE-2026-111948",
+      "asset_id": "CVE-2026-111948",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Product Hub product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Product Hub.  Successful attacks of this vulnerability can result in takeover of Oracle Product Hub. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101852"
+      "description": "The User Profile Builder  WordPress plugin before 4.0.1 does not escape the current page URL before outputting it in a JavaScript context on one of its admin pages, leading to Reflected Cross-Site Scripting against high-privilege users.",
+      "last_modified": "2026-10-21T11:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111948"
     },
     {
-      "cve_id": "CVE-2026-101856",
-      "asset_id": "CVE-2026-101856",
+      "cve_id": "CVE-2026-111947",
+      "asset_id": "CVE-2026-111947",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Order Management product of Oracle E-Business Suite (component: Product Diagnostic Tools).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Order Management.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Order Management accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T03:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101856"
+      "description": "The Pricing Table WordPress Plugin  WordPress plugin before 4.1.3 does not perform authorisation checks when duplicating a legacy pricing table, allowing users with the contributor role and above to clone and publish any post or page on the site, including private and draft content belonging to other users.",
+      "last_modified": "2026-10-21T11:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111947"
     },
     {
-      "cve_id": "CVE-2026-114039",
-      "asset_id": "CVE-2026-114039",
+      "cve_id": "CVE-2026-111843",
+      "asset_id": "CVE-2026-111843",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in projectworlds Advanced Library Management System 1.0. Impacted is the function mysqli_query of the file report_search.php. Executing a manipulation of the argument dateto/datefrom can lead to sql injection. The attack can be executed remotely. The exploit has been made available to the public and could be used for attacks.",
-      "last_modified": "2026-10-21T03:30:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114039"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in CozyThemes Rootblox rootblox allows Stored XSS.This issue affects Rootblox: from n/a through 1.0.7.",
+      "last_modified": "2026-10-21T11:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111843"
     },
     {
-      "cve_id": "CVE-2026-92824",
-      "asset_id": "CVE-2026-92824",
+      "cve_id": "CVE-2026-111596",
+      "asset_id": "CVE-2026-111596",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libmodulemd. In the module stream v2 rpm-map emission path, an inner loop incorrectly uses the count of digest algorithms as its bound instead of the number of checksums in the current digest table. Crafted modulemd v2 metadata with multiple digest types can trigger an out-of-bounds read during YAML serialization, typically causing a crash and resulting in a denial of service.",
-      "last_modified": "2026-10-21T03:23:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92824"
+      "description": "The Kliken: Ads + Pixel for Meta WordPress plugin before 1.2.3 does not verify that a visitor holds an order's key before outputting that order's details on the order confirmation page, allowing unauthenticated users to retrieve the billing location, purchased products and totals of other customers' orders by enumerating order IDs.",
+      "last_modified": "2026-10-21T11:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111596"
     },
     {
-      "cve_id": "CVE-2026-92822",
-      "asset_id": "CVE-2026-92822",
+      "cve_id": "CVE-2026-111574",
+      "asset_id": "CVE-2026-111574",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libmodulemd. When parsing module metadata, the xmd field is converted into nested GVariant values through recursive YAML mapping and sequence helpers without a recursion-depth or node-count limit. An attacker who can supply crafted modulemd YAML with deeply nested xmd content can cause stack exhaustion or excessive resource consumption, resulting in a denial of service.",
-      "last_modified": "2026-10-21T03:23:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92822"
+      "description": "The Redirection for Contact Form 7 WordPress plugin before 3.2.12 does not sanitise or escape submitted form data stored as lead entries before outputting it in the lead debug metabox, allowing unauthenticated attackers to store a malicious script that executes when a logged-in user views the entry with the Redirection for Contact Form 7 WordPress plugin before 3.2.12's debug mode enabled.",
+      "last_modified": "2026-10-21T11:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111574"
     },
     {
-      "cve_id": "CVE-2026-92823",
-      "asset_id": "CVE-2026-92823",
+      "cve_id": "CVE-2026-110982",
+      "asset_id": "CVE-2026-110982",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libmodulemd. In builds with rpmio support enabled, compressed modulemd YAML is decompressed through a custom read handler that does not enforce a cumulative decompressed-size limit before parsing. An attacker who can supply a highly compressible compressed YAML file can cause excessive CPU and memory consumption, resulting in a denial of service.",
-      "last_modified": "2026-10-21T03:23:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92823"
+      "description": "The AI Engine  WordPress plugin before 3.8.6 does not check that the caller is allowed to edit the targeted object before updating its title and excerpt, allowing users with the Editor role and above to modify arbitrary posts of any type, including content they cannot otherwise edit such as navigation menus, block templates, global styles and WooCommerce coupons.",
+      "last_modified": "2026-10-21T11:17:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110982"
     },
     {
-      "cve_id": "CVE-2026-95859",
-      "asset_id": "CVE-2026-95859",
+      "cve_id": "CVE-2026-110899",
+      "asset_id": "CVE-2026-110899",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "libp2p-rust is the official Rust language implementation of the libp2p networking stack. Prior to 0.49.5, Gossipsub GRAFT control-message handling unconditionally adds attacker-supplied topic hashes to connected_peer.topics without confirming that the peer previously subscribed to those topics. A remote unauthenticated peer that can reach a Gossipsub listener can repeatedly send novel GRAFT topics, causing cumulative per-peer memory growth that is not bounded by subscription filters, peer scoring, or per-message size limits. This can exhaust process memory and cause a denial of service. This issue is fixed in version 0.49.5.",
-      "last_modified": "2026-10-21T03:17:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95859"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Kevin Stover Ninja Forms ninja-forms allows Stored XSS.This issue affects Ninja Forms: from n/a through 3.15.5.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110899"
     },
     {
-      "cve_id": "CVE-2026-92263",
-      "asset_id": "CVE-2026-92263",
+      "cve_id": "CVE-2026-110884",
+      "asset_id": "CVE-2026-110884",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SparkyFitness is a self-hosted, AI-powered health and fitness tracker for families. Prior to 1.6.0, the api/admin/backup/restore endpoint interpolates an uploaded filename into a shell command. An authenticated global administrator uploads a restore archive with a crafted filename. The administrator can supply a restore archive with a filename containing shell metacharacters. Successful exploitation can execute arbitrary operating-system commands with the server process privileges. This issue is fixed in version 1.6.0.",
-      "last_modified": "2026-10-21T03:17:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92263"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in geekontheroad Live Summary for Gravity Forms live-summary-for-gravity-forms allows Reflected XSS.This issue affects Live Summary for Gravity Forms: from n/a through 1.2.10.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110884"
     },
     {
-      "cve_id": "CVE-2026-92262",
-      "asset_id": "CVE-2026-92262",
+      "cve_id": "CVE-2026-110651",
+      "asset_id": "CVE-2026-110651",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MariaDB server is a community developed fork of MySQL server. From 10.6.1 until 10.6.28, 10.11.19, 11.4.13, 11.8.9, 12.3.3, and 13.0.2, the #mysql50# bypass prefix is affected because it allows the #mysql50# prefix to bypass normal table-name filesystem encoding. An attacker can trigger the issue with a table name using the #mysql50# prefix, then use a #mysql50# table name to access files under their legacy unencoded name and cause crashes, data corruption, data exfiltration, or remote code execution. This issue is fixed in versions 10.6.28, 10.11.19, 11.4.13, 11.8.9, 12.3.3, and 13.0.2.",
-      "last_modified": "2026-10-21T03:17:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92262"
+      "description": "The Swift Performance Lite WordPress plugin before 2.3.7.4 does not properly sanitize and escape a value before using it in a SQL statement, which could allow users with the author role and above to perform SQL injection attacks.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110651"
     },
     {
-      "cve_id": "CVE-2026-86009",
-      "asset_id": "CVE-2026-86009",
+      "cve_id": "CVE-2026-110523",
+      "asset_id": "CVE-2026-110523",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Mailu is a mail server distributed as a set of Docker images. Prior to f05aeb8322e2f61096af6b089d61ba6f40587d96, domain managers can enable spoofing for hosted domains they do not control. A potentially malicious domain administrator enables spoofing for another hosted domain and can send emails that are authenticated with DKIM/SPF for domains they should not be able to. This vulnerability is addressed by f05aeb8322e2f61096af6b089d61ba6f40587d96.",
-      "last_modified": "2026-10-21T03:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86009"
+      "description": "The WP User Manager  WordPress plugin before 2.9.26 does not keep its paid-registration capability restrictions in force once the payment gateway is disconnected, while a published paid registration form continues to assign its configured role, allowing unauthenticated users to register and immediately obtain a privileged administrator-equivalent role without completing the payment meant to gate it.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110523"
     },
     {
-      "cve_id": "CVE-2026-57487",
-      "asset_id": "CVE-2026-57487",
+      "cve_id": "CVE-2026-110514",
+      "asset_id": "CVE-2026-110514",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "pupnp is an SDK for development of UPnP device and control point applications. Prior to 2.0.2, Transfer-Encoding: chunked causes the HTTP parser in upnp/src/genlib/net/http/httpparser.c to leave parser->content_length at zero while parser_parse_chunky_entity and parser_parse_chunky_body accumulate decoded bytes in parser->msg.entity. The g_maxContentLength checks in http_RecvMessage in upnp/src/genlib/net/http/httpreadwrite.c therefore reject oversized numeric Content-Length bodies but do not enforce the same limit on decoded chunked bodies. A remote peer that can reach a SOAP, GENA, miniserver, or control-point HTTP response path can make the process buffer an entity larger than the configured maximum, causing resource exhaustion and denial of service. This issue is fixed in 2.0.2.",
-      "last_modified": "2026-10-21T03:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57487"
+      "description": "The WPZOOM Portfolio Lite  WordPress plugin before 1.4.34 does not check that a user is allowed to edit a post before changing its type and order, which could allow users with the contributor role and above to convert any other user's posts and pages into portfolio items, removing them from their original listings and URLs.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110514"
     },
     {
-      "cve_id": "CVE-2026-49868",
-      "asset_id": "CVE-2026-49868",
+      "cve_id": "CVE-2026-110370",
+      "asset_id": "CVE-2026-110370",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "RIOT is an open-source microcontroller operating system designed for Internet of Things devices and other embedded systems. Prior to 2026.07, _parse_reply() in sys/net/application_layer/dhcpv6/client.c omits minimum-length validation before passing IA_PD and IA_NA option bodies to sub-option parsers. A malicious or compromised DHCPv6 server can send a REPLY with an option length smaller than the required structure while MODULE_DHCPV6_CLIENT_IA_PD is enabled, causing _parse_ia_pd_option to read past the option body, size_t underflow, and unbounded out-of-bounds heap reads that can crash the device and may expose or corrupt memory. This issue is fixed in version 2026.07.",
-      "last_modified": "2026-10-21T03:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49868"
+      "description": "Deserialization of Untrusted Data vulnerability in GS Plugins GS Pins for Pinterest gs-pinterest-portfolio allows Object Injection.This issue affects GS Pins for Pinterest: from n/a through 1.9.2.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110370"
     },
     {
-      "cve_id": "CVE-2026-48741",
-      "asset_id": "CVE-2026-48741",
+      "cve_id": "CVE-2026-110369",
+      "asset_id": "CVE-2026-110369",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "libIEC61850 is an open-source implementation of IEC 61850 client and server protocols including MMS, GOOSE, Sampled Values, and R-Session. Prior to 1.6.2, alternateArrayAccess in src/mms/iso_mms/server/mms_read_service.c does not validate an alternate-access sub-array range when numberOfElements is greater than zero. An out-of-range MmsValue_getElement call returns NULL, and the sub-array branch passes that value to MmsValue_isDeletable, causing a NULL pointer dereference. A remote MMS Read request can therefore crash servers whose data models contain arrays, while the single-element error path handles the same invalid index safely. This issue is fixed in version 1.6.2.",
-      "last_modified": "2026-10-21T03:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48741"
+      "description": "Deserialization of Untrusted Data vulnerability in GS Plugins WordPress Team Members \u2013 GS Plugins gs-team-members allows Object Injection.This issue affects WordPress Team Members \u2013 GS Plugins: from n/a through 2.8.2.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110369"
     },
     {
-      "cve_id": "CVE-2026-44977",
-      "asset_id": "CVE-2026-44977",
+      "cve_id": "CVE-2026-109926",
+      "asset_id": "CVE-2026-109926",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "countly-server is the server-side part of Countly, a product analytics solution. Prior to 24.05.50 and 25.03.44, plugins/star-rating/api/api.js allows a non-global application administrator to use uploadFeedbackFile to store attacker-controlled active content while trusting the supplied MIME type. plugins/star-rating/frontend/app.js publicly serves the stored content from feedback/preview/ with the attacker-influenced Content-Type, so a global administrator who opens the preview executes the payload in the Countly origin and exposes authenticated session capabilities, including auth_token and csrf_token values. This issue is fixed in versions 24.05.50 and 25.03.44.",
-      "last_modified": "2026-10-21T03:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44977"
+      "description": "The Productive Commerce  WordPress plugin before 1.1.49 does not perform a capability check in one of its AJAX actions and exposes the nonce that guards it on every admin-area page, allowing any authenticated user such as a subscriber to activate arbitrary Productive Commerce  WordPress plugin before 1.1.49 already installed on the site.",
+      "last_modified": "2026-10-21T11:17:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109926"
     },
     {
-      "cve_id": "CVE-2026-112202",
-      "asset_id": "CVE-2026-112202",
+      "cve_id": "CVE-2026-109147",
+      "asset_id": "CVE-2026-109147",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Imager::File::GIF versions before 1.006 for Perl allow out-of-bounds reads when consolidating GIF images.\n\nWith `gif_consolidate => 1`, palette indices from the image are used without checking the colour table's bounds. The i_readgif_low routine reads beyond the heap allocation and copies the bytes into output pixels. The default GIF reader is not affected.\n\nThe same code ships bundled in the Imager distribution.\n\nAn attacker supplying a crafted GIF can disclose adjacent heap memory through the decoded output and may crash the process.",
-      "last_modified": "2026-10-21T03:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112202"
+      "description": "The WP Booking System  WordPress plugin before 2.1.0.3 does not validate and escape one of its parameters before reflecting it back in an admin page, leading to Reflected Cross-Site Scripting which could be used against high privilege users such as administrators.",
+      "last_modified": "2026-10-21T11:17:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109147"
     },
     {
-      "cve_id": "CVE-2026-111609",
-      "asset_id": "CVE-2026-111609",
+      "cve_id": "CVE-2026-108073",
+      "asset_id": "CVE-2026-108073",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "PKP Open Journal Systems through 3.5.0-5 contains an insecure direct object reference vulnerability that allows journal or subscription managers to access other journals' subscriptions by supplying arbitrary subscription ids. Attackers can enumerate sequential ids through editSubscription to view subscriber details and use updateSubscription to reassign subscriptions to their own journal, revoking victims' access.",
-      "last_modified": "2026-10-21T03:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111609"
+      "description": "The SureCart  WordPress plugin before 4.9.5 does not restrict which related objects an anonymous visitor may include when reading a single upsell funnel through its REST API, nor strip private fields from those objects, allowing unauthenticated users to read merchant-private catalog data such as pricing, commission, stock, SKU and tax internals, including unpublished products.",
+      "last_modified": "2026-10-21T11:17:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-108073"
     },
     {
-      "cve_id": "CVE-2026-111604",
-      "asset_id": "CVE-2026-111604",
+      "cve_id": "CVE-2026-107790",
+      "asset_id": "CVE-2026-107790",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "eladmin through 2.7 contains an authorization bypass vulnerability that allows department-scoped user managers to modify or delete accounts outside their data scope because write handlers skip department checks. Attackers with user:edit or user:del permissions can send PUT or DELETE requests to /api/users with target user ids to disable, reassign, alter, or delete accounts in other departments.",
-      "last_modified": "2026-10-21T03:17:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111604"
+      "description": "The HireZoot  WordPress plugin before 4.1.1 does not sanitise and escape some of its stored data before outputting it in the admin dashboard, and additionally reverses the HTML-entity encoding that would otherwise neutralise it, allowing users with the Author role to perform Stored Cross-Site Scripting attacks that execute in the context of a logged-in administrator.",
+      "last_modified": "2026-10-21T11:17:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107790"
     },
     {
-      "cve_id": "CVE-2026-111447",
-      "asset_id": "CVE-2026-111447",
+      "cve_id": "CVE-2026-107788",
+      "asset_id": "CVE-2026-107788",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Wheels 1.1 through 4.1.2 resolves nestedProperties() records by posted primary key without checking that they belong to the parent being saved. A user able to submit a nested form for their own parent can update and reassign another parent's hasMany or hasOne rows, or delete them when allowDelete=true. Nested belongsTo records can also be edited by posting another associated record's key. New child rows with composite primary keys not made up of foreign keys retain posted key values, allowing the request to choose their identity. This is fixed in 4.2.0.",
-      "last_modified": "2026-10-21T03:17:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111447"
+      "description": "The SmartyParcel  WordPress plugin before 1.23.4 does not perform authorisation checks when deleting shipping label records, allowing any authenticated user such as a subscriber to delete the shipping label and tracking records of arbitrary orders store-wide.",
+      "last_modified": "2026-10-21T11:17:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107788"
     },
     {
-      "cve_id": "CVE-2026-111442",
-      "asset_id": "CVE-2026-111442",
+      "cve_id": "CVE-2026-107506",
+      "asset_id": "CVE-2026-107506",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Backdrop CMS Core 1.35.x before 1.35.2 and 1.34.x before 1.34.6 does not sufficiently validate uploaded SVG images to ensure they lack potentially dangerous SVG tags. SVG images can contain clickable links or executable scripting. By uploading a crafted SVG, it is possible to execute scripting in the browser when an SVG image is viewed. This issue is mitigated by the attacker needing to be able to upload SVG images, and that Backdrop embeds all uploaded SVG images within <img> tags, which prevents script from executing. The SVG must be viewed directly by its URL in order to run any embedded scripting.",
-      "last_modified": "2026-10-21T03:17:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111442"
+      "description": "The Simple Banner  WordPress plugin before 3.3.3 does not correctly limit the capabilities it grants to the user roles an administrator allows to manage its banners, granting such roles the full administrator capability, which allows users in a low-privileged role to escalate their privileges and fully compromise the site.",
+      "last_modified": "2026-10-21T11:17:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107506"
     },
     {
-      "cve_id": "CVE-2026-111390",
-      "asset_id": "CVE-2026-111390",
+      "cve_id": "CVE-2026-107435",
+      "asset_id": "CVE-2026-107435",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Erupt through 2.3.0 contains an HQL injection vulnerability that allows authenticated users to bypass tree-scoped data filters by injecting unescaped quotes into the linkTreeVal parameter of POST /erupt-api/data/table/{erupt}. Attackers holding query permission on entities with String-keyed linkTree targets can append always-true OR clauses or boolean subqueries to read data from other mapped entities.",
-      "last_modified": "2026-10-21T03:17:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111390"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Chill Strong Testimonials strong-testimonials allows Stored XSS.This issue affects Strong Testimonials: from n/a through 3.3.12.",
+      "last_modified": "2026-10-21T11:17:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107435"
     },
     {
-      "cve_id": "CVE-2026-111385",
-      "asset_id": "CVE-2026-111385",
+      "cve_id": "CVE-2026-105999",
+      "asset_id": "CVE-2026-105999",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Nezha from 2.1.0 before 2.3.15 contains a host header injection vulnerability in mintTransferTool that builds fs.download_url and fs.upload_url transfer URLs from the unvalidated Host header. Attackers who control the Host header seen on a victim's MCP request can redirect file uploads or capture one-time download tokens and replay them to exfiltrate files.",
-      "last_modified": "2026-10-21T03:17:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111385"
+      "description": "The Booking Package WordPress plugin before 1.7.31 does not perform authorization checks before returning calendar-account configuration in a response, allowing unauthenticated users to disclose sensitive settings including the administrator's notification email addresses.",
+      "last_modified": "2026-10-21T11:17:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105999"
     },
     {
-      "cve_id": "CVE-2026-111380",
-      "asset_id": "CVE-2026-111380",
+      "cve_id": "CVE-2026-105992",
+      "asset_id": "CVE-2026-105992",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeRDP from 3.29.0 before 3.32.0 contains an integer overflow in the Apple audin backends (audin_mac.m, audin_ios.m), which compute the audio queue buffer size as FramesPerPacket * 2 * nChannels in UINT32 arithmetic, bypassing the CVE-2026-91962 fix. A malicious RDP server can send FramesPerPacket of 2^30 in the audin Open PDU to wrap the multiplication, causing undersized AudioQueueAllocateBuffer allocations and a heap out-of-bounds write in macOS and iOS clients.",
-      "last_modified": "2026-10-21T03:17:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111380"
+      "description": "The Ettrick Escape Room Booking WordPress plugin before 1.3.1 does not verify a booking's payment status against the payment provider before marking it paid and confirmed, allowing unauthenticated attackers to mark bookings as paid without paying.",
+      "last_modified": "2026-10-21T11:17:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105992"
     },
     {
-      "cve_id": "CVE-2026-104715",
-      "asset_id": "CVE-2026-104715",
+      "cve_id": "CVE-2026-105262",
+      "asset_id": "CVE-2026-105262",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in cifs-utils. This flaw allows an unprivileged local user to achieve privilege escalation. When a privileged service mounts a Common Internet File System (CIFS) share using a user-controlled credentials file, input values are not properly sanitized before being assembled into mount options. A local attacker can exploit this vulnerability to inject unauthorized mount options, allowing them to bypass permission checks and execute files with administrative (root) privileges.",
-      "last_modified": "2026-10-21T03:17:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104715"
+      "description": "The Falang multilanguage for WordPress plugin before 1.4.6 does not perform a capability check when saving term translations, and exposes a valid nonce to any logged-in user through an unprotected handler, allowing users with Subscriber-level access and above to store content that is later output without proper escaping, leading to Stored Cross-Site Scripting that executes in the context of higher-privileged users such as administrators.",
+      "last_modified": "2026-10-21T11:17:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105262"
     }
   ]
 }
