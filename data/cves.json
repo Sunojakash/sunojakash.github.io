@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-21T12:11:32.754653+00:00",
+  "last_updated": "2026-10-21T17:32:19.565138+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-54426",
-      "asset_id": "CVE-2026-54426",
+      "cve_id": "CVE-2026-92768",
+      "asset_id": "CVE-2026-92768",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Uncontrolled recursion in the Redis reply parser in Apache bRPC < 1.18.0 allows a remote Redis server peer to crash a bRPC Redis client process by returning a deeply nested RESP array reply. The parser recursed once for each nested array level without enforcing a depth limit. The fix adds a configurable Redis reply depth limit with default value 128 and rejects replies exceeding that limit.\u00a0\n\nAffected Scenarios:\nApplications using bRPC as a Redis client with ChannelOptions.protocol=\"redis\" and receiving replies from an untrusted or faulty Redis server peer.\n\nHow to Fix:\n1. Upgrade Apache bRPC to 1.18.0.\n2. Apply the patch from PR  https://github.com/apache/brpc/pull/3344 .\n\nNote:\nAfter applying the fix, Redis replies with array nesting deeper than redis_max_reply_depth are rejected.",
-      "last_modified": "2026-10-21T11:32:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54426"
+      "description": "A flaw was found in cockpit-machines. This vulnerability allows a local attacker to expose sensitive Virtual Machine (VM) credentials, including plaintext passwords, by inspecting process command-line arguments during VM creation or installation. The cockpit-machines component passes password values directly on the command line, making them visible to other local users on systems where process arguments are not restricted. Successful exploitation leads to information disclosure, potentially compromising VM access.",
+      "last_modified": "2026-10-21T13:31:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92768"
     },
     {
-      "cve_id": "CVE-2026-54425",
-      "asset_id": "CVE-2026-54425",
+      "cve_id": "CVE-2026-92745",
+      "asset_id": "CVE-2026-92745",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Uncontrolled recursion in the HTTP/2 HPACK decoder in Apache bRPC before 1.18.0 allows remote attackers to cause denial of service by sending a crafted HTTP/2 header block containing many consecutive Dynamic Table Size Update entries. Each update was decoded by recursively invoking the HPACK decoder, which could exhaust the thread stack before a header field or end of input was reached.\n\nRoot Cause:\nThe bRPC HPACK decoder recursively decoded the next entry after processing a Dynamic Table Size Update. The decoder did not bound the recursion depth, so a long sequence of update entries could consume excessive stack space.\n\nAffected Scenarios:\nUse bRPC with the built-in HTTP/2 implementation to accept HTTP/2 traffic from an untrusted network.\n\nHow to Fix:\n1. Upgrade bRPC to version 1.18.0, which fixes this issue.\n2. Apply this patch:  https://github.com/apache/brpc/pull/3343 \n\nNote:\nThe fix changes HPACK Dynamic Table Size Update decoding to use iterative parsing instead of recursive parsing.",
-      "last_modified": "2026-10-21T11:31:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54425"
+      "description": "A flaw was found in cockpit-machines. This vulnerability allows a local attacker with the ability to inspect process metadata to disclose a sensitive Red Hat Subscription Management (RHSM) offline token. The token is exposed when it is passed as a command-line argument to a helper script during the token validation process. Successful exploitation could lead to the compromise of confidentiality, as the exposed token can be used to request access tokens.",
+      "last_modified": "2026-10-21T13:31:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92745"
     },
     {
-      "cve_id": "CVE-2026-91597",
-      "asset_id": "CVE-2026-91597",
+      "cve_id": "CVE-2026-92747",
+      "asset_id": "CVE-2026-92747",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Platform Security).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Difficult to exploit vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the Oracle Business Intelligence Enterprise Edition executes to compromise Oracle Business Intelligence Enterprise Edition.  While the vulnerability is in Oracle Business Intelligence Enterprise Edition, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 8.3 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91597"
+      "description": "A flaw was found in `cockpit-machines`. This vulnerability allows a local attacker with the ability to inspect running processes to expose sensitive guest virtual machine (VM) credentials, such as `rootPassword` and `userPassword`. This occurs when the `install_machine.py` script passes these credentials as a JSON command-line argument during VM creation or installation. The exposure is limited to the period when the installation workflow is active and depends on host process-visibility policies.",
+      "last_modified": "2026-10-21T13:31:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92747"
     },
     {
-      "cve_id": "CVE-2026-91598",
-      "asset_id": "CVE-2026-91598",
+      "cve_id": "CVE-2026-114249",
+      "asset_id": "CVE-2026-114249",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Majel Mobile Service).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91598"
+      "description": "A vulnerability was detected in dhikshitha29 Insurance-Management-System 91de5edda5baa109ad8e9baf03ce6a3ceda84183/125362cc21dca20d74091a4913a5096bb58dd837. This vulnerability affects unknown code of the file /Agent/includes/UpdatePolicyHolder-inc.php of the component Policy Holder Update Form. The manipulation of the argument Policy_no results in improper authorization. It is possible to launch the attack remotely. The exploit is now public and may be used. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "last_modified": "2026-10-21T13:30:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114249"
     },
     {
-      "cve_id": "CVE-2026-91600",
-      "asset_id": "CVE-2026-91600",
+      "cve_id": "CVE-2026-91392",
+      "asset_id": "CVE-2026-91392",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Visual Analyzer).   The supported version that is affected is 26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91600"
+      "description": "Vulnerability in the Siebel CRM End User product of Oracle Siebel CRM (component: Open UI).  Supported versions that are affected are 17.0-26.9. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM End User.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Siebel CRM End User accessible data. CVSS 3.1 Base Score 3.7 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91392"
     },
     {
-      "cve_id": "CVE-2026-91604",
-      "asset_id": "CVE-2026-91604",
+      "cve_id": "CVE-2026-91396",
+      "asset_id": "CVE-2026-91396",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile Product Lifecycle Management for Process product of Oracle Supply Chain (component: Product Quality Management).   The supported version that is affected is 6.2.4. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Agile Product Lifecycle Management for Process.  Successful attacks of this vulnerability can result in takeover of Oracle Agile Product Lifecycle Management for Process. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91604"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 6.5 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91396"
     },
     {
-      "cve_id": "CVE-2026-91607",
-      "asset_id": "CVE-2026-91607",
+      "cve_id": "CVE-2026-91397",
+      "asset_id": "CVE-2026-91397",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Analytics Server).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91607"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Serviceability).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition executes to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 3.6 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:L).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91397"
     },
     {
-      "cve_id": "CVE-2026-91608",
-      "asset_id": "CVE-2026-91608",
+      "cve_id": "CVE-2026-91398",
+      "asset_id": "CVE-2026-91398",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle BI Publisher product of Oracle Analytics (component: Web Server).  Supported versions that are affected are 8.2.0.0.0, 12.2.1.4.0 and  26.01.0.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle BI Publisher.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle BI Publisher accessible data. CVSS 3.1 Base Score 7.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91608"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via SOCKS5 to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  While the vulnerability is in Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 6.8 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91398"
     },
     {
-      "cve_id": "CVE-2026-91609",
-      "asset_id": "CVE-2026-91609",
+      "cve_id": "CVE-2026-91399",
+      "asset_id": "CVE-2026-91399",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle REST Data Services (component: Graph QL).  Supported versions that are affected are 24.2.0-26.2.1. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle REST Data Services accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91609"
+      "description": "Vulnerability in the Primavera P6 Enterprise Project Portfolio Management product of Oracle Construction and Engineering (component: Web Access).  Supported versions that are affected are 21.12.0.0-21.12.21.9, 22.12.0.0-22.12.21.4, 23.12.0-23.12.20, 24.12.0-24.12.16 and 25.12.0-25.12.8. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Primavera P6 Enterprise Project Portfolio Management.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Primavera P6 Enterprise Project Portfolio Management accessible data. CVSS 3.1 Base Score 4.3 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91399"
     },
     {
-      "cve_id": "CVE-2026-91610",
-      "asset_id": "CVE-2026-91610",
+      "cve_id": "CVE-2026-91400",
+      "asset_id": "CVE-2026-91400",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle REST Data Services (component: General).  Supported versions that are affected are 24.2.0-26.2.2. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in takeover of Oracle REST Data Services. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91610"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Sound).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 3.1 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91400"
     },
     {
-      "cve_id": "CVE-2026-105996",
-      "asset_id": "CVE-2026-105996",
+      "cve_id": "CVE-2026-91402",
+      "asset_id": "CVE-2026-91402",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Booking Package WordPress plugin before 1.7.31 does not generate booking cancellation tokens using a secure source of randomness, deriving them instead from values it exposes publicly, so an unauthenticated attacker can reconstruct an arbitrary booking's token, disclose that booking's personal data and, where visitor cancellation is enabled, cancel the booking.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105996"
+      "description": "Vulnerability in the Oracle Java SE, Oracle JavaFX, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JavaFX).  Supported versions that are affected are Oracle Java SE: 8u503; Oracle JavaFX: 21.0.12, 25.0.4 and  27; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle JavaFX, Oracle GraalVM Enterprise Edition.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Java SE, Oracle JavaFX, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 3.1 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91402"
     },
     {
-      "cve_id": "CVE-2026-105998",
-      "asset_id": "CVE-2026-105998",
+      "cve_id": "CVE-2026-91405",
+      "asset_id": "CVE-2026-91405",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Booking Package WordPress plugin before 1.7.31 does not perform any authorization or validity check before resetting its premium subscription state, allowing unauthenticated attackers to disable the Booking Package WordPress plugin before 1.7.31's paid features.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105998"
+      "description": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In PDF Export SDK).   The supported version that is affected is 8.5.8. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Outside In Technology.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Oracle Outside In Technology. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91405"
     },
     {
-      "cve_id": "CVE-2026-106932",
-      "asset_id": "CVE-2026-106932",
+      "cve_id": "CVE-2026-91406",
+      "asset_id": "CVE-2026-91406",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Moloni WordPress plugin before 5.0.14 does not perform capability or nonce checks on several of its authenticated AJAX actions, relying only on whether the site holds a stored connection to its external invoicing provider, allowing any authenticated user such as a Subscriber to generate fiscal invoices for arbitrary orders, discard arbitrary orders, and create or modify products and stock.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-106932"
+      "description": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In PDF Export SDK).   The supported version that is affected is 8.5.8. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Outside In Technology.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Oracle Outside In Technology. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91406"
     },
     {
-      "cve_id": "CVE-2026-107127",
-      "asset_id": "CVE-2026-107127",
+      "cve_id": "CVE-2026-91440",
+      "asset_id": "CVE-2026-91440",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Uncanny Toolkit for LearnDash WordPress plugin before 3.8.2 does not validate the origin of a password-reset request, allowing an unauthenticated attacker to set the password of a user who is partway through a password reset to an attacker-chosen value through a forged request, resulting in full account takeover.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107127"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Siebel CRM Deployment accessible data as well as  unauthorized read access to a subset of Siebel CRM Deployment accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91440"
     },
     {
-      "cve_id": "CVE-2026-107128",
-      "asset_id": "CVE-2026-107128",
+      "cve_id": "CVE-2026-91453",
+      "asset_id": "CVE-2026-91453",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Uncanny Toolkit for LearnDash WordPress plugin before 3.8.2 does not verify that the acting user is permitted to manage the targeted accounts before changing their verification state, allowing a subsite administrator on a multisite network to mark arbitrary network users outside their own site as unverified and prevent those users from logging in.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107128"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Lightweight HTTP Server).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 5.3 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91453"
     },
     {
-      "cve_id": "CVE-2026-107237",
-      "asset_id": "CVE-2026-107237",
+      "cve_id": "CVE-2026-91468",
+      "asset_id": "CVE-2026-91468",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Backup and Staging by WP Time Capsule WordPress plugin before 1.22.28 does not perform capability or nonce checks on the handler that deploys a staging site to the live site, allowing any authenticated user with a Subscriber account on a WP Time Capsule staging site to overwrite the separate live site's database and configuration and take it offline.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107237"
+      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: QAS).  Supported versions that are affected are 8.61-8.63. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of PeopleSoft Enterprise PeopleTools accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of PeopleSoft Enterprise PeopleTools. CVSS 3.1 Base Score 6.5 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91468"
     },
     {
-      "cve_id": "CVE-2026-107789",
-      "asset_id": "CVE-2026-107789",
+      "cve_id": "CVE-2026-91474",
+      "asset_id": "CVE-2026-91474",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SmartyParcel  WordPress plugin before 1.23.4 does not perform authorisation checks when serving shipping label downloads, allowing unauthenticated users to obtain the shipping labels of arbitrary orders, which contain customer names, addresses and phone numbers.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107789"
+      "description": "Vulnerability in the PeopleSoft Enterprise FIN Common Objects Brazil product of Oracle PeopleSoft (component: eProcurement).   The supported version that is affected is 9.1. Easily exploitable vulnerability allows high privileged attacker with access to the physical communication segment attached to the hardware where the PeopleSoft Enterprise FIN Common Objects Brazil executes to compromise PeopleSoft Enterprise FIN Common Objects Brazil.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all PeopleSoft Enterprise FIN Common Objects Brazil accessible data as well as  unauthorized access to critical data or complete access to all PeopleSoft Enterprise FIN Common Objects Brazil accessible data. CVSS 3.1 Base Score 6.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91474"
     },
     {
-      "cve_id": "CVE-2026-101138",
-      "asset_id": "CVE-2026-101138",
+      "cve_id": "CVE-2026-91482",
+      "asset_id": "CVE-2026-91482",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The CMP \u2013 Coming Soon & Maintenance WordPress plugin before 4.1.21 does not correctly apply maintenance mode to pages added to its page whitelist by manually entered URL pattern, allowing unauthenticated visitors to view the content of those pages while maintenance mode is active.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101138"
+      "description": "Vulnerability in the PeopleSoft Enterprise SCM Strategic Sourcing product of Oracle PeopleSoft (component: Bidder Registration).   The supported version that is affected is 9.2. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise PeopleSoft Enterprise SCM Strategic Sourcing.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all PeopleSoft Enterprise SCM Strategic Sourcing accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91482"
     },
     {
-      "cve_id": "CVE-2026-104642",
-      "asset_id": "CVE-2026-104642",
+      "cve_id": "CVE-2026-91484",
+      "asset_id": "CVE-2026-91484",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Simple Shopping Cart WordPress plugin before 5.3.3 does not verify submitted product prices against a value only the site owner can set, allowing users with the Contributor role and above to register attacker-chosen prices for existing products, which any visitor can then use to add those products to the cart at that price.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104642"
+      "description": "Vulnerability in Oracle Java SE (component: Java plugin).  Supported versions that are affected are Oracle Java SE: 8u503 and  8u503-perf. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Java SE executes to compromise Oracle Java SE.  While the vulnerability is in Oracle Java SE, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Java SE accessible data as well as  unauthorized access to critical data or complete access to all Oracle Java SE accessible data. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 7.5 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91484"
     },
     {
-      "cve_id": "CVE-2026-107447",
-      "asset_id": "CVE-2026-107447",
+      "cve_id": "CVE-2026-91496",
+      "asset_id": "CVE-2026-91496",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Contest Gallery WordPress plugin before 34.0.1 does not reliably validate the visitor identity used to enforce its one-vote-per-entry restriction, trusting a client-supplied request header and an unbound client-generated token, which allows unauthenticated users to bypass the restriction and cast multiple votes for the same contest entry, inflating its vote total.",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107447"
+      "description": "Vulnerability in the Workflow product of Oracle E-Business Suite (component: Workflow Notification Mailer).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Workflow.  Successful attacks of this vulnerability can result in takeover of Workflow. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91496"
     },
     {
-      "cve_id": "CVE-2026-48830",
-      "asset_id": "CVE-2026-48830",
+      "cve_id": "CVE-2026-91514",
+      "asset_id": "CVE-2026-91514",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper authentication in Apache bRPC through 1.17.0 allows a remote unauthenticated attacker to bypass authentication for protected non-builtin HTTP endpoints by first sending a builtin HTTP request on the same HTTP/1.1 keep-alive connection.\n\nWhen ServerOptions.auth is enabled and builtin HTTP services are exposed on the public listener, a builtin request received as the first message on a socket may cause the connection to be treated as authenticated for later requests on that socket. Users are recommended to upgrade to version 1.18.0, which fixes this issue, or apply this PR separately:  https://github.com/apache/brpc/pull/3308",
-      "last_modified": "2026-10-21T11:30:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48830"
+      "description": "Vulnerability in the Oracle BI Publisher product of Oracle Analytics (component: Web Server).  Supported versions that are affected are 8.2.0.0.0, 12.2.1.4.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle BI Publisher.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle BI Publisher accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91514"
     },
     {
-      "cve_id": "CVE-2026-113317",
-      "asset_id": "CVE-2026-113317",
+      "cve_id": "CVE-2026-83879",
+      "asset_id": "CVE-2026-83879",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Memory corruption in Accessibility in Google Chrome on on Mac prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
-      "last_modified": "2026-10-21T11:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113317"
+      "description": "Concurrent execution using shared resource with improper synchronization ('race condition') in Windows Overlay Filter allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:28:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83879"
     },
     {
-      "cve_id": "CVE-2026-113318",
-      "asset_id": "CVE-2026-113318",
+      "cve_id": "CVE-2026-83881",
+      "asset_id": "CVE-2026-83881",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Memory corruption in ServiceWorker in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
-      "last_modified": "2026-10-21T11:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113318"
+      "description": "Heap-based buffer overflow in Windows exFAT File System allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:27:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83881"
     },
     {
-      "cve_id": "CVE-2026-113140",
-      "asset_id": "CVE-2026-113140",
+      "cve_id": "CVE-2026-70092",
+      "asset_id": "CVE-2026-70092",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use after free in ANGLE in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
-      "last_modified": "2026-10-21T11:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113140"
+      "description": "Heap-based buffer overflow in Microsoft PostScript Printer Driver allows an unauthorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:26:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-70092"
     },
     {
-      "cve_id": "CVE-2026-83381",
-      "asset_id": "CVE-2026-83381",
+      "cve_id": "CVE-2026-83882",
+      "asset_id": "CVE-2026-83882",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE accessible data as well as  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 4.8 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N).",
-      "last_modified": "2026-10-21T11:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83381"
+      "description": "Heap-based buffer overflow in Windows Kernel allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:25:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83882"
     },
     {
-      "cve_id": "CVE-2026-87255",
-      "asset_id": "CVE-2026-87255",
+      "cve_id": "CVE-2026-83883",
+      "asset_id": "CVE-2026-83883",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 3.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-21T11:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87255"
+      "description": "Use after free in Windows Win32K allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:24:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83883"
     },
     {
-      "cve_id": "CVE-2026-87263",
-      "asset_id": "CVE-2026-87263",
+      "cve_id": "CVE-2026-83885",
+      "asset_id": "CVE-2026-83885",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Analytics Server).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87263"
+      "description": "Inadequate encryption strength in Windows Virtualization-Based Security (VBS) Enclave allows an authorized attacker to perform spoofing locally.",
+      "last_modified": "2026-10-21T13:23:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83885"
     },
     {
-      "cve_id": "CVE-2026-87291",
-      "asset_id": "CVE-2026-87291",
+      "cve_id": "CVE-2025-40075",
+      "asset_id": "CVE-2025-40075",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-21T11:30:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87291"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntcp_metrics: use dst_dev_net_rcu()\n\nReplace three dst_dev() with a lockdep enabled helper.",
+      "last_modified": "2026-10-21T13:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40075"
     },
     {
-      "cve_id": "CVE-2026-86320",
-      "asset_id": "CVE-2026-86320",
+      "cve_id": "CVE-2025-39990",
+      "asset_id": "CVE-2025-39990",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in flatpak-builder where Git hooks are not disabled when applying patch sources with use-git-am: true. An attacker who can provide a malicious source containing a Git post-applypatch hook can cause the hook to execute on the host during the build process, resulting in arbitrary code execution with the privileges of the user running flatpak-builder.",
-      "last_modified": "2026-10-21T11:21:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86320"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Check the helper function is valid in get_helper_proto\n\nkernel test robot reported verifier bug [1] where the helper func\npointer could be NULL due to disabled config option.\n\nAs Alexei suggested we could check on that in get_helper_proto\ndirectly. Marking tail_call helper func with BPF_PTR_POISON,\nbecause it is unused by design.\n\n  [1] https://lore.kernel.org/oe-lkp/202507160818.68358831-lkp@intel.com",
+      "last_modified": "2026-10-21T13:18:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-39990"
     },
     {
-      "cve_id": "CVE-2026-96512",
-      "asset_id": "CVE-2026-96512",
+      "cve_id": "CVE-2025-38372",
+      "asset_id": "CVE-2025-38372",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in sudo. When sudoers rules use NOTBEFORE or NOTAFTER time-based access restrictions with timestamps that omit the trailing 'Z' timezone indicator, the time evaluation relies on the TZ environment variable inherited from the calling user. Because sudo is a setuid-root program, an unprivileged local user can set TZ to an extreme timezone offset to shift the authorization window by up to approximately 25 hours, causing expired rules to be treated as valid. This allows the user to execute commands outside the intended time window. Authentication is not bypassed; only the time-based authorization check is affected.",
-      "last_modified": "2026-10-21T11:20:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96512"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nRDMA/mlx5: Fix unsafe xarray access in implicit ODP handling\n\n__xa_store() and __xa_erase() were used without holding the proper lock,\nwhich led to a lockdep warning due to unsafe RCU usage.  This patch\nreplaces them with xa_store() and xa_erase(), which perform the necessary\nlocking internally.\n\n  =============================\n  WARNING: suspicious RCPU usage\n  6.14.0-rc7_for_upstream_debug_2025_03_18_15_01 #1 Not tainted\n  -----------------------------\n  ./include/linux/xarray.h:1211 suspicious rcu_dereference_protected() usage!\n\n  other info that might help us debug this:\n\n  rcu_scheduler_active = 2, debug_locks = 1\n  3 locks held by kworker/u136:0/219:\n      at: process_one_work+0xbe4/0x15f0\n      process_one_work+0x75c/0x15f0\n      pagefault_mr+0x9a5/0x1390 [mlx5_ib]\n\n  stack backtrace:\n  CPU: 14 UID: 0 PID: 219 Comm: kworker/u136:0 Not tainted\n  6.14.0-rc7_for_upstream_debug_2025_03_18_15_01 #1\n  Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS\n  rel-1.16.0-0-gd239552ce722-prebuilt.qemu.org 04/01/2014\n  Workqueue: mlx5_ib_page_fault mlx5_ib_eqe_pf_action [mlx5_ib]\n  Call Trace:\n   dump_stack_lvl+0xa8/0xc0\n   lockdep_rcu_suspicious+0x1e6/0x260\n   xas_create+0xb8a/0xee0\n   xas_store+0x73/0x14c0\n   __xa_store+0x13c/0x220\n   ? xa_store_range+0x390/0x390\n   ? spin_bug+0x1d0/0x1d0\n   pagefault_mr+0xcb5/0x1390 [mlx5_ib]\n   ? _raw_spin_unlock+0x1f/0x30\n   mlx5_ib_eqe_pf_action+0x3be/0x2620 [mlx5_ib]\n   ? lockdep_hardirqs_on_prepare+0x400/0x400\n   ? mlx5_ib_invalidate_range+0xcb0/0xcb0 [mlx5_ib]\n   process_one_work+0x7db/0x15f0\n   ? pwq_dec_nr_in_flight+0xda0/0xda0\n   ? assign_work+0x168/0x240\n   worker_thread+0x57d/0xcd0\n   ? rescuer_thread+0xc40/0xc40\n   kthread+0x3b3/0x800\n   ? kthread_is_per_cpu+0xb0/0xb0\n   ? lock_downgrade+0x680/0x680\n   ? do_raw_spin_lock+0x12d/0x270\n   ? spin_bug+0x1d0/0x1d0\n   ? finish_task_switch.isra.0+0x284/0x9e0\n   ? lockdep_hardirqs_on_prepare+0x284/0x400\n   ? kthread_is_per_cpu+0xb0/0xb0\n   ret_from_fork+0x2d/0x70\n   ? kthread_is_per_cpu+0xb0/0xb0\n   ret_from_fork_asm+0x11/0x20",
+      "last_modified": "2026-10-21T13:18:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-38372"
     },
     {
-      "cve_id": "CVE-2026-80110",
-      "asset_id": "CVE-2026-80110",
+      "cve_id": "CVE-2025-38303",
+      "asset_id": "CVE-2025-38303",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in pki-core. The v2 REST ACL filter selects a tie-breaking permission for colliding literal and wildcard ACL keys using lexicographic string comparison rather than specificity, causing a wildcard-mapped permission to override a more specific literal-mapped permission when both match. In the CA's profile-management REST API this allows a request to POST /v2/profiles/raw -- intended to require Administrator-level profiles.create permission -- to instead be authorized under the lower-privileged profiles.approve permission held by the default Certificate Manager Agents group. The highest threat from this vulnerability is to confidentiality and integrity of the certificate authority's issuance policy.",
-      "last_modified": "2026-10-21T11:19:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80110"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: eir: Fix possible crashes on eir_create_adv_data\n\neir_create_adv_data may attempt to add EIR_FLAGS and EIR_TX_POWER\nwithout checking if that would fit.",
+      "last_modified": "2026-10-21T13:18:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-38303"
     },
     {
-      "cve_id": "CVE-2026-76561",
-      "asset_id": "CVE-2026-76561",
+      "cve_id": "CVE-2025-38064",
+      "asset_id": "CVE-2025-38064",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Dogtag PKI, as used by FreeIPA's certificate authority component. The certificate profile import functionality does not fully validate uploaded profile content beyond the profile ID. An authenticated user with CA Administrator privileges can exploit Dogtag's ExternalProcessConstraint mechanism to execute arbitrary commands with attacker-controlled environment variables, achieving code execution as the pkiuser account.",
-      "last_modified": "2026-10-21T11:19:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76561"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvirtio: break and reset virtio devices on device_shutdown()\n\nHongyu reported a hang on kexec in a VM. QEMU reported invalid memory\naccesses during the hang.\n\n\tInvalid read at addr 0x102877002, size 2, region '(null)', reason: rejected\n\tInvalid write at addr 0x102877A44, size 2, region '(null)', reason: rejected\n\t...\n\nIt was traced down to virtio-console. Kexec works fine if virtio-console\nis not in use.\n\nThe issue is that virtio-console continues to write to the MMIO even after\nunderlying virtio-pci device is reset.\n\nAdditionally, Eric noticed that IOMMUs are reset before devices, if\ndevices are not reset on shutdown they continue to poke at guest memory\nand get errors from the IOMMU. Some devices get wedged then.\n\nThe problem can be solved by breaking all virtio devices on virtio\nbus shutdown, then resetting them.",
+      "last_modified": "2026-10-21T13:18:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-38064"
     },
     {
-      "cve_id": "CVE-2026-96901",
-      "asset_id": "CVE-2026-96901",
+      "cve_id": "CVE-2025-23133",
+      "asset_id": "CVE-2025-23133",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Cart Abandonment Recovery for WooCommerce  WordPress plugin before 2.2.0 does not verify the integrity of its cart-recovery token before acting on it and still accepts an unsigned legacy token format, allowing unauthenticated attackers who know a victim's cart session identifier to modify that victim's abandoned-cart record, for example unsubscribing them from recovery emails or applying an arbitrary coupon to their restored cart.",
-      "last_modified": "2026-10-21T11:17:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96901"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: ath11k: update channel list in reg notifier instead reg worker\n\nCurrently when ath11k gets a new channel list, it will be processed\naccording to the following steps:\n1. update new channel list to cfg80211 and queue reg_work.\n2. cfg80211 handles new channel list during reg_work.\n3. update cfg80211's handled channel list to firmware by\nath11k_reg_update_chan_list().\n\nBut ath11k will immediately execute step 3 after reg_work is just\nqueued. Since step 2 is asynchronous, cfg80211 may not have completed\nhandling the new channel list, which may leading to an out-of-bounds\nwrite error:\nBUG: KASAN: slab-out-of-bounds in ath11k_reg_update_chan_list\nCall Trace:\n    ath11k_reg_update_chan_list+0xbfe/0xfe0 [ath11k]\n    kfree+0x109/0x3a0\n    ath11k_regd_update+0x1cf/0x350 [ath11k]\n    ath11k_regd_update_work+0x14/0x20 [ath11k]\n    process_one_work+0xe35/0x14c0\n\nShould ensure step 2 is completely done before executing step 3. Thus\nWen raised patch[1]. When flag NL80211_REGDOM_SET_BY_DRIVER is set,\ncfg80211 will notify ath11k after step 2 is done.\n\nSo enable the flag NL80211_REGDOM_SET_BY_DRIVER then cfg80211 will\nnotify ath11k after step 2 is done. At this time, there will be no\nKASAN bug during the execution of the step 3.\n\n[1] https://patchwork.kernel.org/project/linux-wireless/patch/20230201065313.27203-1-quic_wgong@quicinc.com/\n\nTested-on: WCN6855 hw2.0 PCI WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3",
+      "last_modified": "2026-10-21T13:18:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23133"
     },
     {
-      "cve_id": "CVE-2026-92999",
-      "asset_id": "CVE-2026-92999",
+      "cve_id": "CVE-2025-21976",
+      "asset_id": "CVE-2025-21976",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Click n Chat (Chat Widget Integration) WordPress plugin before 1.1.3 does not perform any authorization check on a lead-export handler, allowing unauthenticated users to download every captured contact record (names, email addresses and phone numbers).",
-      "last_modified": "2026-10-21T11:17:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92999"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nfbdev: hyperv_fb: Allow graceful removal of framebuffer\n\nWhen a Hyper-V framebuffer device is unbind, hyperv_fb driver tries to\nrelease the framebuffer forcefully. If this framebuffer is in use it\nproduce the following WARN and hence this framebuffer is never released.\n\n[   44.111220] WARNING: CPU: 35 PID: 1882 at drivers/video/fbdev/core/fb_info.c:70 framebuffer_release+0x2c/0x40\n< snip >\n[   44.111289] Call Trace:\n[   44.111290]  <TASK>\n[   44.111291]  ? show_regs+0x6c/0x80\n[   44.111295]  ? __warn+0x8d/0x150\n[   44.111298]  ? framebuffer_release+0x2c/0x40\n[   44.111300]  ? report_bug+0x182/0x1b0\n[   44.111303]  ? handle_bug+0x6e/0xb0\n[   44.111306]  ? exc_invalid_op+0x18/0x80\n[   44.111308]  ? asm_exc_invalid_op+0x1b/0x20\n[   44.111311]  ? framebuffer_release+0x2c/0x40\n[   44.111313]  ? hvfb_remove+0x86/0xa0 [hyperv_fb]\n[   44.111315]  vmbus_remove+0x24/0x40 [hv_vmbus]\n[   44.111323]  device_remove+0x40/0x80\n[   44.111325]  device_release_driver_internal+0x20b/0x270\n[   44.111327]  ? bus_find_device+0xb3/0xf0\n\nFix this by moving the release of framebuffer and assosiated memory\nto fb_ops.fb_destroy function, so that framebuffer framework handles\nit gracefully.\n\nWhile we fix this, also replace manual registrations/unregistration of\nframebuffer with devm_register_framebuffer.",
+      "last_modified": "2026-10-21T13:18:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21976"
     },
     {
-      "cve_id": "CVE-2026-92998",
-      "asset_id": "CVE-2026-92998",
+      "cve_id": "CVE-2025-21885",
+      "asset_id": "CVE-2025-21885",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Click n Chat (Chat Widget Integration) WordPress plugin before 1.1.3 does not sanitise sort parameters before using them in a SQL ORDER BY clause, allowing unauthenticated attackers to perform SQL injection attacks.",
-      "last_modified": "2026-10-21T11:17:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92998"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nRDMA/bnxt_re: Fix the page details for the srq created by kernel consumers\n\nWhile using nvme target with use_srq on, below kernel panic is noticed.\n\n[  549.698111] bnxt_en 0000:41:00.0 enp65s0np0: FEC autoneg off encoding: Clause 91 RS(544,514)\n[  566.393619] Oops: divide error: 0000 [#1] PREEMPT SMP NOPTI\n..\n[  566.393799]  <TASK>\n[  566.393807]  ? __die_body+0x1a/0x60\n[  566.393823]  ? die+0x38/0x60\n[  566.393835]  ? do_trap+0xe4/0x110\n[  566.393847]  ? bnxt_qplib_alloc_init_hwq+0x1d4/0x580 [bnxt_re]\n[  566.393867]  ? bnxt_qplib_alloc_init_hwq+0x1d4/0x580 [bnxt_re]\n[  566.393881]  ? do_error_trap+0x7c/0x120\n[  566.393890]  ? bnxt_qplib_alloc_init_hwq+0x1d4/0x580 [bnxt_re]\n[  566.393911]  ? exc_divide_error+0x34/0x50\n[  566.393923]  ? bnxt_qplib_alloc_init_hwq+0x1d4/0x580 [bnxt_re]\n[  566.393939]  ? asm_exc_divide_error+0x16/0x20\n[  566.393966]  ? bnxt_qplib_alloc_init_hwq+0x1d4/0x580 [bnxt_re]\n[  566.393997]  bnxt_qplib_create_srq+0xc9/0x340 [bnxt_re]\n[  566.394040]  bnxt_re_create_srq+0x335/0x3b0 [bnxt_re]\n[  566.394057]  ? srso_return_thunk+0x5/0x5f\n[  566.394068]  ? __init_swait_queue_head+0x4a/0x60\n[  566.394090]  ib_create_srq_user+0xa7/0x150 [ib_core]\n[  566.394147]  nvmet_rdma_queue_connect+0x7d0/0xbe0 [nvmet_rdma]\n[  566.394174]  ? lock_release+0x22c/0x3f0\n[  566.394187]  ? srso_return_thunk+0x5/0x5f\n\nPage size and shift info is set only for the user space SRQs.\nSet page size and page shift for kernel space SRQs also.",
+      "last_modified": "2026-10-21T13:18:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21885"
     },
     {
-      "cve_id": "CVE-2026-92997",
-      "asset_id": "CVE-2026-92997",
+      "cve_id": "CVE-2025-21870",
+      "asset_id": "CVE-2025-21870",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Click n Chat (Chat Widget Integration) WordPress plugin before 1.1.3 does not properly validate a parameter before using it as a column identifier in a SQL query, allowing unauthenticated attackers to perform SQL injection attacks.",
-      "last_modified": "2026-10-21T11:17:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92997"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: SOF: ipc4-topology: Harden loops for looking up ALH copiers\n\nOther, non DAI copier widgets could have the same  stream name (sname) as\nthe ALH copier and in that case the copier->data is NULL, no alh_data is\nattached, which could lead to NULL pointer dereference.\nWe could check for this NULL pointer in sof_ipc4_prepare_copier_module()\nand avoid the crash, but a similar loop in sof_ipc4_widget_setup_comp_dai()\nwill miscalculate the ALH device count, causing broken audio.\n\nThe correct fix is to harden the matching logic by making sure that the\n1. widget is a DAI widget - so dai = w->private is valid\n2. the dai (and thus the copier) is ALH copier",
+      "last_modified": "2026-10-21T13:17:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21870"
     },
     {
-      "cve_id": "CVE-2026-91665",
-      "asset_id": "CVE-2026-91665",
+      "cve_id": "CVE-2025-21825",
+      "asset_id": "CVE-2025-21825",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Essbase (component: Security).   The supported version that is affected is 21.8.3.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via TCP to compromise Oracle Essbase.  Successful attacks of this vulnerability can result in takeover of Oracle Essbase. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91665"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Cancel the running bpf_timer through kworker for PREEMPT_RT\n\nDuring the update procedure, when overwrite element in a pre-allocated\nhtab, the freeing of old_element is protected by the bucket lock. The\nreason why the bucket lock is necessary is that the old_element has\nalready been stashed in htab->extra_elems after alloc_htab_elem()\nreturns. If freeing the old_element after the bucket lock is unlocked,\nthe stashed element may be reused by concurrent update procedure and the\nfreeing of old_element will run concurrently with the reuse of the\nold_element. However, the invocation of check_and_free_fields() may\nacquire a spin-lock which violates the lockdep rule because its caller\nhas already held a raw-spin-lock (bucket lock). The following warning\nwill be reported when such race happens:\n\n  BUG: scheduling while atomic: test_progs/676/0x00000003\n  3 locks held by test_progs/676:\n  #0: ffffffff864b0240 (rcu_read_lock_trace){....}-{0:0}, at: bpf_prog_test_run_syscall+0x2c0/0x830\n  #1: ffff88810e961188 (&htab->lockdep_key){....}-{2:2}, at: htab_map_update_elem+0x306/0x1500\n  #2: ffff8881f4eac1b8 (&base->softirq_expiry_lock){....}-{2:2}, at: hrtimer_cancel_wait_running+0xe9/0x1b0\n  Modules linked in: bpf_testmod(O)\n  Preemption disabled at:\n  [<ffffffff817837a3>] htab_map_update_elem+0x293/0x1500\n  CPU: 0 UID: 0 PID: 676 Comm: test_progs Tainted: G ... 6.12.0+ #11\n  Tainted: [W]=WARN, [O]=OOT_MODULE\n  Hardware name: QEMU Standard PC (i440FX + PIIX, 1996)...\n  Call Trace:\n  <TASK>\n  dump_stack_lvl+0x57/0x70\n  dump_stack+0x10/0x20\n  __schedule_bug+0x120/0x170\n  __schedule+0x300c/0x4800\n  schedule_rtlock+0x37/0x60\n  rtlock_slowlock_locked+0x6d9/0x54c0\n  rt_spin_lock+0x168/0x230\n  hrtimer_cancel_wait_running+0xe9/0x1b0\n  hrtimer_cancel+0x24/0x30\n  bpf_timer_delete_work+0x1d/0x40\n  bpf_timer_cancel_and_free+0x5e/0x80\n  bpf_obj_free_fields+0x262/0x4a0\n  check_and_free_fields+0x1d0/0x280\n  htab_map_update_elem+0x7fc/0x1500\n  bpf_prog_9f90bc20768e0cb9_overwrite_cb+0x3f/0x43\n  bpf_prog_ea601c4649694dbd_overwrite_timer+0x5d/0x7e\n  bpf_prog_test_run_syscall+0x322/0x830\n  __sys_bpf+0x135d/0x3ca0\n  __x64_sys_bpf+0x75/0xb0\n  x64_sys_call+0x1b5/0xa10\n  do_syscall_64+0x3b/0xc0\n  entry_SYSCALL_64_after_hwframe+0x4b/0x53\n  ...\n  </TASK>\n\nIt seems feasible to break the reuse and refill of per-cpu extra_elems\ninto two independent parts: reuse the per-cpu extra_elems with bucket\nlock being held and refill the old_element as per-cpu extra_elems after\nthe bucket lock is unlocked. However, it will make the concurrent\noverwrite procedures on the same CPU return unexpected -E2BIG error when\nthe map is full.\n\nTherefore, the patch fixes the lock problem by breaking the cancelling\nof bpf_timer into two steps for PREEMPT_RT:\n1) use hrtimer_try_to_cancel() and check its return value\n2) if the timer is running, use hrtimer_cancel() through a kworker to\n   cancel it again\nConsidering that the current implementation of hrtimer_cancel() will try\nto acquire a being held softirq_expiry_lock when the current timer is\nrunning, these steps above are reasonable. However, it also has\ndownside. When the timer is running, the cancelling of the timer is\ndelayed when releasing the last map uref. The delay is also fixable\n(e.g., break the cancelling of bpf timer into two parts: one part in\nlocked scope, another one in unlocked scope), it can be revised later if\nnecessary.\n\nIt is a bit hard to decide the right fix tag. One reason is that the\nproblem depends on PREEMPT_RT which is enabled in v6.12. Considering the\nsoftirq_expiry_lock lock exists since v5.4 and bpf_timer is introduced\nin v5.15, the bpf_timer commit is used in the fixes tag and an extra\ndepends-on tag is added to state the dependency on PREEMPT_RT.\n\nDepends-on: v6.12+ with PREEMPT_RT enabled",
+      "last_modified": "2026-10-21T13:17:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21825"
     },
     {
-      "cve_id": "CVE-2026-91624",
-      "asset_id": "CVE-2026-91624",
+      "cve_id": "CVE-2024-47794",
+      "asset_id": "CVE-2024-47794",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile Product Lifecycle Management for Process product of Oracle Supply Chain (component: Product Quality Management).   The supported version that is affected is 6.2.4. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Agile Product Lifecycle Management for Process.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Agile Product Lifecycle Management for Process accessible data as well as  unauthorized access to critical data or complete access to all Oracle Agile Product Lifecycle Management for Process accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T11:17:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91624"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Prevent tailcall infinite loop caused by freplace\n\nThere is a potential infinite loop issue that can occur when using a\ncombination of tail calls and freplace.\n\nIn an upcoming selftest, the attach target for entry_freplace of\ntailcall_freplace.c is subprog_tc of tc_bpf2bpf.c, while the tail call in\nentry_freplace leads to entry_tc. This results in an infinite loop:\n\nentry_tc -> subprog_tc -> entry_freplace --tailcall-> entry_tc.\n\nThe problem arises because the tail_call_cnt in entry_freplace resets to\nzero each time entry_freplace is executed, causing the tail call mechanism\nto never terminate, eventually leading to a kernel panic.\n\nTo fix this issue, the solution is twofold:\n\n1. Prevent updating a program extended by an freplace program to a\n   prog_array map.\n2. Prevent extending a program that is already part of a prog_array map\n   with an freplace program.\n\nThis ensures that:\n\n* If a program or its subprogram has been extended by an freplace program,\n  it can no longer be updated to a prog_array map.\n* If a program has been added to a prog_array map, neither it nor its\n  subprograms can be extended by an freplace program.\n\nMoreover, an extension program should not be tailcalled. As such, return\n-EINVAL if the program has a type of BPF_PROG_TYPE_EXT when adding it to a\nprog_array map.\n\nAdditionally, fix a minor code style issue by replacing eight spaces with a\ntab for proper formatting.",
+      "last_modified": "2026-10-21T13:17:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-47794"
     },
     {
-      "cve_id": "CVE-2026-91495",
-      "asset_id": "CVE-2026-91495",
+      "cve_id": "CVE-2026-91407",
+      "asset_id": "CVE-2026-91407",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,47 +741,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle WebCenter Content product of Oracle Fusion Middleware (component: Content Server).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebCenter Content.  Successful attacks of this vulnerability can result in takeover of Oracle WebCenter Content. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91495"
-    },
-    {
-      "cve_id": "CVE-2026-91491",
-      "asset_id": "CVE-2026-91491",
-      "asset_name": "OpenCVE catalog",
-      "vendor": "",
-      "product": "",
-      "version": "See affected versions",
-      "severity": "UNKNOWN",
-      "cvss": null,
-      "known_exploited": false,
-      "epss": null,
-      "fixed_version": "",
-      "patch_available": false,
-      "vendor_url": "",
-      "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Identity Manager Connector product of Oracle Fusion Middleware (component: LDAP Gateway).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via LDAP to compromise Oracle Identity Manager Connector.  Successful attacks of this vulnerability can result in takeover of Oracle Identity Manager Connector. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91491"
-    },
-    {
-      "cve_id": "CVE-2026-91490",
-      "asset_id": "CVE-2026-91490",
-      "asset_name": "OpenCVE catalog",
-      "vendor": "",
-      "product": "",
-      "version": "See affected versions",
-      "severity": "UNKNOWN",
-      "cvss": null,
-      "known_exploited": false,
-      "epss": null,
-      "fixed_version": "",
-      "patch_available": false,
-      "vendor_url": "",
-      "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Identity Manager Connector product of Oracle Fusion Middleware (component: LDAP Gateway).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via LDAP to compromise Oracle Identity Manager Connector.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Identity Manager Connector accessible data as well as  unauthorized access to critical data or complete access to all Oracle Identity Manager Connector accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T11:17:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91490"
+      "description": "Vulnerability in the Oracle Identity Manager product of Oracle Fusion Middleware (component: REST WebServices).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Identity Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Identity Manager. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91407"
     },
     {
       "cve_id": "CVE-2026-91408",
@@ -799,12 +761,12 @@
       "vendor_url": "",
       "source": "OpenCVE",
       "description": "Vulnerability in the Oracle Identity Manager product of Oracle Fusion Middleware (component: End User Self Service).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via T3, IIOP to compromise Oracle Identity Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Identity Manager. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:11Z",
+      "last_modified": "2026-10-21T13:15:04Z",
       "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91408"
     },
     {
-      "cve_id": "CVE-2026-91323",
-      "asset_id": "CVE-2026-91323",
+      "cve_id": "CVE-2026-91410",
+      "asset_id": "CVE-2026-91410",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in takeover of Oracle WebLogic Server. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91323"
+      "description": "Vulnerability in Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Java SE. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 5.3 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91410"
     },
     {
-      "cve_id": "CVE-2026-91305",
-      "asset_id": "CVE-2026-91305",
+      "cve_id": "CVE-2026-91414",
+      "asset_id": "CVE-2026-91414",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD Edwards (component: Installation Security).  Supported versions that are affected are 9.2.0.0-9.2.26.5. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTPS to compromise JD Edwards EnterpriseOne Tools.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all JD Edwards EnterpriseOne Tools accessible data as well as  unauthorized access to critical data or complete access to all JD Edwards EnterpriseOne Tools accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T11:17:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91305"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.9. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM Deployment.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Deployment accessible data. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91414"
     },
     {
-      "cve_id": "CVE-2026-91265",
-      "asset_id": "CVE-2026-91265",
+      "cve_id": "CVE-2026-91418",
+      "asset_id": "CVE-2026-91418",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD Edwards (component: Enterprise Infrastructure SEC).  Supported versions that are affected are 9.2.0.0-9.2.26.5. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise JD Edwards EnterpriseOne Tools.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all JD Edwards EnterpriseOne Tools accessible data as well as  unauthorized access to critical data or complete access to all JD Edwards EnterpriseOne Tools accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T11:17:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91265"
+      "description": "Vulnerability in the Oracle Java SE, Oracle JavaFX, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: ImageIO).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle JavaFX: 21.0.12, 25.0.4, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle JavaFX, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Java SE, Oracle JavaFX, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 5.3 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91418"
     },
     {
-      "cve_id": "CVE-2026-91236",
-      "asset_id": "CVE-2026-91236",
+      "cve_id": "CVE-2026-91422",
+      "asset_id": "CVE-2026-91422",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91236"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.9. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Siebel CRM Deployment accessible data. CVSS 3.1 Base Score 5.3 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91422"
     },
     {
-      "cve_id": "CVE-2026-91235",
-      "asset_id": "CVE-2026-91235",
+      "cve_id": "CVE-2026-91426",
+      "asset_id": "CVE-2026-91426",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91235"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Siebel CRM Deployment executes to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Deployment accessible data. CVSS 3.1 Base Score 5.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91426"
     },
     {
-      "cve_id": "CVE-2026-91234",
-      "asset_id": "CVE-2026-91234",
+      "cve_id": "CVE-2026-91433",
+      "asset_id": "CVE-2026-91433",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91234"
+      "description": "Vulnerability in the Siebel Apps - Field Service product of Oracle Siebel CRM (component: Smart Answer).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Siebel Apps - Field Service.  Successful attacks of this vulnerability can result in takeover of Siebel Apps - Field Service. CVSS 3.1 Base Score 7.2 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91433"
     },
     {
-      "cve_id": "CVE-2026-91233",
-      "asset_id": "CVE-2026-91233",
+      "cve_id": "CVE-2026-91445",
+      "asset_id": "CVE-2026-91445",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Enterprise Scheduling System).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via SOAP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91233"
+      "description": "Vulnerability in the Siebel CRM End User product of Oracle Siebel CRM (component: Communications Panel/Dashboard).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM End User.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM End User accessible data as well as  unauthorized update, insert or delete access to some of Siebel CRM End User accessible data. CVSS 3.1 Base Score 8.2 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91445"
     },
     {
-      "cve_id": "CVE-2026-91220",
-      "asset_id": "CVE-2026-91220",
+      "cve_id": "CVE-2026-91450",
+      "asset_id": "CVE-2026-91450",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Human Workflow).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Business Process Management Suite.  Successful attacks of this vulnerability can result in takeover of Oracle Business Process Management Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91220"
+      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.9. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Siebel CRM Deployment accessible data as well as  unauthorized access to critical data or complete access to all Siebel CRM Deployment accessible data. CVSS 3.1 Base Score 7.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91450"
     },
     {
-      "cve_id": "CVE-2026-91214",
-      "asset_id": "CVE-2026-91214",
+      "cve_id": "CVE-2026-91451",
+      "asset_id": "CVE-2026-91451",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91214"
+      "description": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 5.3 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91451"
     },
     {
-      "cve_id": "CVE-2026-88784",
-      "asset_id": "CVE-2026-88784",
+      "cve_id": "CVE-2026-91452",
+      "asset_id": "CVE-2026-91452",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Translate WordPress with Weglot 2.0  WordPress plugin before 6.4.3 does not escape the URLs it re-inserts into a page when rewriting links for a translated language, and reverses the encoding that was applied to them beforehand, allowing unauthenticated users to store a payload which executes in the browser of anyone viewing the page in a translated language.",
-      "last_modified": "2026-10-21T11:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88784"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 5.3 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91452"
     },
     {
-      "cve_id": "CVE-2026-87838",
-      "asset_id": "CVE-2026-87838",
+      "cve_id": "CVE-2026-91457",
+      "asset_id": "CVE-2026-91457",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Wava Payment Plugin WordPress plugin before 0.3.10 does not perform any authorisation, nonce or origin verification on one of its public REST endpoints, allowing unauthenticated attackers to overwrite the stored credential that identifies the merchant account the store's payments are created against, to force the integration into a verified state the site owner never completed, and to remove the payment method from the store's checkout.",
-      "last_modified": "2026-10-21T11:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87838"
+      "description": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In Image Export SDK).   The supported version that is affected is 8.5.8. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Outside In Technology executes to compromise Oracle Outside In Technology.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Oracle Outside In Technology. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91457"
     },
     {
-      "cve_id": "CVE-2026-87837",
-      "asset_id": "CVE-2026-87837",
+      "cve_id": "CVE-2026-91459",
+      "asset_id": "CVE-2026-91459",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Wava Payment Plugin WordPress plugin before 0.3.10 does not verify the authenticity of incoming payment-provider notifications, nor restrict who may send them, allowing unauthenticated attackers to change the status of any WooCommerce order in the store, including marking an unpaid order as paid and completed, and cancelling other customers' orders.\n\nIn versions up to 0.3.7 the response additionally returns the affected order's billing details, disclosing customer names, addresses, email addresses and phone numbers to the same unauthenticated caller.",
-      "last_modified": "2026-10-21T11:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87837"
+      "description": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In Image Export SDK).   The supported version that is affected is 8.5.8. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Outside In Technology executes to compromise Oracle Outside In Technology.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Oracle Outside In Technology. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91459"
     },
     {
-      "cve_id": "CVE-2026-87302",
-      "asset_id": "CVE-2026-87302",
+      "cve_id": "CVE-2026-91461",
+      "asset_id": "CVE-2026-91461",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle WebLogic Server accessible data as well as  unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-21T11:17:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87302"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via TLS to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 3.7 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91461"
     },
     {
-      "cve_id": "CVE-2026-87251",
-      "asset_id": "CVE-2026-87251",
+      "cve_id": "CVE-2026-91463",
+      "asset_id": "CVE-2026-91463",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via SAML to compromise Oracle Access Manager.  Successful attacks of this vulnerability can result in takeover of Oracle Access Manager. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87251"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91463"
     },
     {
-      "cve_id": "CVE-2026-86611",
-      "asset_id": "CVE-2026-86611",
+      "cve_id": "CVE-2026-83886",
+      "asset_id": "CVE-2026-83886",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Download Manager WordPress plugin before 3.3.71, Download Manager WordPress plugin before 7.5.9 does not have CSRF checks in some places, allowing attackers to make a logged in admin update its privacy and storage settings via a crafted link, including the credential that gates its unauthenticated maintenance endpoint.",
-      "last_modified": "2026-10-21T11:17:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86611"
+      "description": "Use after free in Windows Update Orchestrator Service allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:14:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83886"
     },
     {
-      "cve_id": "CVE-2026-85683",
-      "asset_id": "CVE-2026-85683",
+      "cve_id": "CVE-2026-83888",
+      "asset_id": "CVE-2026-83888",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Jane Menu WordPress plugin before 1.5.1 does not have any capability or nonce checks on one of its form handlers, which is reachable by unauthenticated users, allowing them to bind any published page to a remote document of their choosing. The plugin then fetches that document and outputs its head and body into the page without escaping, so an unauthenticated attacker can run arbitrary JavaScript in the browser of any visitor to that page, including an administrator.",
-      "last_modified": "2026-10-21T11:17:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85683"
+      "description": "Buffer over-read in Windows CD-ROM Driver allows an unauthorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-10-21T13:13:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83888"
     },
     {
-      "cve_id": "CVE-2026-85642",
-      "asset_id": "CVE-2026-85642",
+      "cve_id": "CVE-2026-83893",
+      "asset_id": "CVE-2026-83893",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Formidable Forms  WordPress plugin before 7.0 does not verify the identity of the caller before recording the timestamp it uses to rate limit payment gateway verification requests, allowing unauthenticated attackers to consume the daily allowance and cause legitimate verification attempts to be refused for the next 24 hours.",
-      "last_modified": "2026-10-21T11:17:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85642"
+      "description": "Exposure of sensitive system information to an unauthorized control sphere in Windows Clipboard User Service allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-10-21T13:10:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83893"
     },
     {
-      "cve_id": "CVE-2026-83399",
-      "asset_id": "CVE-2026-83399",
+      "cve_id": "CVE-2026-110936",
+      "asset_id": "CVE-2026-110936",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via T3, IIOP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in takeover of Oracle WebLogic Server. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83399"
+      "description": "A vulnerability has been identified in Siemens Software Center (All versions < V4.0.9.8). The affected application loads dynamic-link libraries (DLLs) from an uncontrolled search path. This could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.",
+      "last_modified": "2026-10-21T13:10:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110936"
     },
     {
-      "cve_id": "CVE-2026-83397",
-      "asset_id": "CVE-2026-83397",
+      "cve_id": "CVE-2026-83895",
+      "asset_id": "CVE-2026-83895",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Data Integrator product of Oracle Fusion Middleware (component: Console / Repository Explorer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Data Integrator.  Successful attacks of this vulnerability can result in takeover of Oracle Data Integrator. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83397"
+      "description": "Heap-based buffer overflow in Windows Win32 Kernel Subsystem allows an unauthorized attacker to elevate privileges with a physical attack.",
+      "last_modified": "2026-10-21T13:09:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83895"
     },
     {
-      "cve_id": "CVE-2026-83396",
-      "asset_id": "CVE-2026-83396",
+      "cve_id": "CVE-2026-83896",
+      "asset_id": "CVE-2026-83896",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Data Integrator product of Oracle Fusion Middleware (component: Console / Repository Explorer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via RMI to compromise Oracle Data Integrator.  Successful attacks of this vulnerability can result in takeover of Oracle Data Integrator. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83396"
+      "description": "Heap-based buffer overflow in Windows Direct Composition allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:08:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83896"
     },
     {
-      "cve_id": "CVE-2026-81813",
-      "asset_id": "CVE-2026-81813",
+      "cve_id": "CVE-2026-83897",
+      "asset_id": "CVE-2026-83897",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Elementor Website Builder  WordPress plugin before 4.3.5 does not sanitize the text content of SVG files, checking only their elements and attributes, allowing users with the Contributor role and above to store a payload which breaks out when the SVG is rendered inline in a page and executes in the browser of any user viewing it. Execution is specific to Chromium-based browsers; Firefox is not affected.",
-      "last_modified": "2026-10-21T11:17:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81813"
+      "description": "Exposure of sensitive system information to an unauthorized control sphere in Windows Win32 Kernel Subsystem allows an authorized attacker to disclose information locally.",
+      "last_modified": "2026-10-21T13:06:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83897"
     },
     {
-      "cve_id": "CVE-2026-81812",
-      "asset_id": "CVE-2026-81812",
+      "cve_id": "CVE-2026-83899",
+      "asset_id": "CVE-2026-83899",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Elementor Website Builder  WordPress plugin before 4.3.5 does not sanitize uploaded SVG files on every upload route, allowing users with the Author role and above to upload a file containing JavaScript, which will run in the browser of any user who opens it. Exploitation requires unfiltered file uploads to be enabled in the Elementor Website Builder  WordPress plugin before 4.3.5 settings, which is not the default.",
-      "last_modified": "2026-10-21T11:17:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81812"
+      "description": "Improper privilege management in Windows Installer allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:05:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83899"
     },
     {
-      "cve_id": "CVE-2026-79627",
-      "asset_id": "CVE-2026-79627",
+      "cve_id": "CVE-2026-83900",
+      "asset_id": "CVE-2026-83900",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Advanced File Manager  WordPress plugin before 6.0.0 does not correctly determine whether a stored file is an SVG before sanitising it, allowing users granted file-manager access by an administrator to store a file containing script that is not stripped and that runs in the browser of anyone who opens it, including an administrator.",
-      "last_modified": "2026-10-21T11:17:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79627"
+      "description": "Use after free in Windows Bind Filter Driver allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-10-21T13:04:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83900"
     },
     {
-      "cve_id": "CVE-2026-60432",
-      "asset_id": "CVE-2026-60432",
+      "cve_id": "CVE-2026-111849",
+      "asset_id": "CVE-2026-111849",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: Image Packaging System).  Supported versions that are affected are 11.3 and  11.4. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Solaris.  Successful attacks of this vulnerability can result in takeover of Oracle Solaris. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-21T11:17:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60432"
+      "description": "Missing Authorization vulnerability in Magepeople inc. WpTravelly tour-booking-manager allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WpTravelly: from n/a through 2.3.5.",
+      "last_modified": "2026-10-21T13:00:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111849"
     },
     {
-      "cve_id": "CVE-2026-15261",
-      "asset_id": "CVE-2026-15261",
+      "cve_id": "CVE-2026-114248",
+      "asset_id": "CVE-2026-114248",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The TI WooCommerce Wishlist WordPress plugin before 2.13.0 does not enforce the same owner-only access control on its REST API that it applies on the front-end, allowing unauthenticated users to read the metadata and item contents of private wishlists.",
-      "last_modified": "2026-10-21T11:17:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15261"
+      "description": "A security vulnerability has been detected in dhikshitha29 Insurance-Management-System 91de5edda5baa109ad8e9baf03ce6a3ceda84183/125362cc21dca20d74091a4913a5096bb58dd837. This affects an unknown part of the file /Admin/includes/AddNewPlan-inc.php of the component Plan Management Form. The manipulation of the argument submit/Plan_no/Name leads to missing authentication. It is possible to initiate the attack remotely. The exploit has been disclosed publicly and may be used. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "last_modified": "2026-10-21T13:00:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114248"
     },
     {
-      "cve_id": "CVE-2026-14556",
-      "asset_id": "CVE-2026-14556",
+      "cve_id": "CVE-2026-91464",
+      "asset_id": "CVE-2026-91464",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The HappyForms WordPress plugin before 1.26.15 does not sanitise or escape a user-controlled referral value before embedding it in the form notification email, allowing unauthenticated attackers to inject arbitrary HTML into the emails site administrators receive.",
-      "last_modified": "2026-10-21T11:17:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14556"
+      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91464"
     },
     {
-      "cve_id": "CVE-2026-112861",
-      "asset_id": "CVE-2026-112861",
+      "cve_id": "CVE-2026-91465",
+      "asset_id": "CVE-2026-91465",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Authorization Bypass Through User-Controlled Key vulnerability in xnau webdesign Participants Database participants-database allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Participants Database: from n/a through 2.7.8.5.",
-      "last_modified": "2026-10-21T11:17:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112861"
+      "description": "Vulnerability in the PeopleSoft Enterprise FIN Common Objects Argentina product of Oracle PeopleSoft (component: Integration).   The supported version that is affected is 9.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via Oracle Net to compromise PeopleSoft Enterprise FIN Common Objects Argentina.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all PeopleSoft Enterprise FIN Common Objects Argentina accessible data. CVSS 3.1 Base Score 7.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91465"
     },
     {
-      "cve_id": "CVE-2026-112840",
-      "asset_id": "CVE-2026-112840",
+      "cve_id": "CVE-2026-91466",
+      "asset_id": "CVE-2026-91466",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Brainstorm Force SureCart surecart allows Stored XSS.This issue affects SureCart: from n/a through 4.9.5.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112840"
+      "description": "Vulnerability in the PeopleSoft Enterprise FIN Common Objects Argentina product of Oracle PeopleSoft (component: Asset Management).   The supported version that is affected is 9.1. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise PeopleSoft Enterprise FIN Common Objects Argentina.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all PeopleSoft Enterprise FIN Common Objects Argentina accessible data as well as  unauthorized access to critical data or complete access to all PeopleSoft Enterprise FIN Common Objects Argentina accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of PeopleSoft Enterprise FIN Common Objects Argentina. CVSS 3.1 Base Score 6.4 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:L).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91466"
     },
     {
-      "cve_id": "CVE-2026-112834",
-      "asset_id": "CVE-2026-112834",
+      "cve_id": "CVE-2026-91471",
+      "asset_id": "CVE-2026-91471",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authorization vulnerability in Castos Seriously Simple Podcasting seriously-simple-podcasting allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Seriously Simple Podcasting: from n/a through 3.17.0.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112834"
+      "description": "Vulnerability in the PeopleSoft Enterprise CC Common Application Objects product of Oracle PeopleSoft (component: BAM Framework).   The supported version that is affected is 9.2. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise PeopleSoft Enterprise CC Common Application Objects.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of PeopleSoft Enterprise CC Common Application Objects accessible data. CVSS 3.1 Base Score 3.7 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91471"
     },
     {
-      "cve_id": "CVE-2026-112829",
-      "asset_id": "CVE-2026-112829",
+      "cve_id": "CVE-2026-91475",
+      "asset_id": "CVE-2026-91475",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authorization vulnerability in Arraytics Booktics booktics allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Booktics: from n/a through 1.0.30.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112829"
+      "description": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In Clean Content SDK).   The supported version that is affected is 8.5.8. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Outside In Technology executes to compromise Oracle Outside In Technology.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Outside In Technology accessible data as well as  unauthorized read access to a subset of Oracle Outside In Technology accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Outside In Technology. CVSS 3.1 Base Score 6.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91475"
     },
     {
-      "cve_id": "CVE-2026-112823",
-      "asset_id": "CVE-2026-112823",
+      "cve_id": "CVE-2026-91476",
+      "asset_id": "CVE-2026-91476",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authorization vulnerability in WP User Manager WP User Manager wp-user-manager allows Manipulating User State.This issue affects WP User Manager: from n/a through 2.9.25.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112823"
+      "description": "Vulnerability in the PeopleSoft Enterprise FIN Common Objects Brazil product of Oracle PeopleSoft (component: eProcurement).   The supported version that is affected is 9.1. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise PeopleSoft Enterprise FIN Common Objects Brazil.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of PeopleSoft Enterprise FIN Common Objects Brazil accessible data. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91476"
     },
     {
-      "cve_id": "CVE-2026-111957",
-      "asset_id": "CVE-2026-111957",
+      "cve_id": "CVE-2026-91477",
+      "asset_id": "CVE-2026-91477",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SUMIT Payment Gateway for WooCommerce WordPress plugin before 4.0.0 does not bind the payment it confirms with the provider to the order being completed, nor check the payment amount against the order total, allowing unauthenticated users to mark a pending order as paid by replaying a payment identifier obtained from any single genuine payment.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111957"
+      "description": "Vulnerability in the Oracle JavaFX product of Oracle Java SE (component: JavaFX).  Supported versions that are affected are Oracle JavaFX: 25.0.4 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle JavaFX.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle JavaFX accessible data. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 3.1 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91477"
     },
     {
-      "cve_id": "CVE-2026-111956",
-      "asset_id": "CVE-2026-111956",
+      "cve_id": "CVE-2026-91479",
+      "asset_id": "CVE-2026-91479",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WholesaleX  WordPress plugin before 3.0.9 does not protect or remove the user-import file it keeps in a publicly accessible location under a predictable name, allowing unauthenticated users to download the most recently imported user data, including any account passwords and customer contact and address details it contains.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111956"
+      "description": "Vulnerability in the RDBMS component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.3. Easily exploitable vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the RDBMS executes to compromise RDBMS.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of RDBMS. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91479"
     },
     {
-      "cve_id": "CVE-2026-111955",
-      "asset_id": "CVE-2026-111955",
+      "cve_id": "CVE-2026-91557",
+      "asset_id": "CVE-2026-91557",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WholesaleX  WordPress plugin before 3.0.9 does not check that a stored account confirmation code is set before comparing it with the one supplied in a request, allowing unauthenticated users to activate pending accounts and bypass the administrator approval required before login.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111955"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: BI Foundation).   The supported version that is affected is 12.2.1.4.0. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Business Intelligence Enterprise Edition executes to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 7.0 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91557"
     },
     {
-      "cve_id": "CVE-2026-111949",
-      "asset_id": "CVE-2026-111949",
+      "cve_id": "CVE-2026-91579",
+      "asset_id": "CVE-2026-91579",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The miniOrange 2FA  WordPress plugin before 6.3.1 does not prevent a pending passkey login from registering an additional passkey on an account that already has one configured, allowing an attacker who knows a user's password to add their own authenticator and bypass the second factor.",
-      "last_modified": "2026-10-21T11:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111949"
+      "description": "Vulnerability in the Oracle BI Publisher product of Oracle Analytics (component: BI Platform Security).  Supported versions that are affected are 8.2.0.0.0, 12.2.1.4.0 and  26.01.0.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle BI Publisher.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Oracle BI Publisher. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91579"
     },
     {
-      "cve_id": "CVE-2026-111948",
-      "asset_id": "CVE-2026-111948",
+      "cve_id": "CVE-2026-91588",
+      "asset_id": "CVE-2026-91588",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The User Profile Builder  WordPress plugin before 4.0.1 does not escape the current page URL before outputting it in a JavaScript context on one of its admin pages, leading to Reflected Cross-Site Scripting against high-privilege users.",
-      "last_modified": "2026-10-21T11:17:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111948"
+      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: BI Search).  Supported versions that are affected are 8.2.0.0.0 and  12.2.1.4.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Business Intelligence Enterprise Edition accessible data. CVSS 3.1 Base Score 6.5 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91588"
     },
     {
-      "cve_id": "CVE-2026-111947",
-      "asset_id": "CVE-2026-111947",
+      "cve_id": "CVE-2026-91628",
+      "asset_id": "CVE-2026-91628",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Pricing Table WordPress Plugin  WordPress plugin before 4.1.3 does not perform authorisation checks when duplicating a legacy pricing table, allowing users with the contributor role and above to clone and publish any post or page on the site, including private and draft content belonging to other users.",
-      "last_modified": "2026-10-21T11:17:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111947"
+      "description": "Vulnerability in the Oracle Communications Billing and Revenue Management product of Oracle Communications (component: BRM Server).  Supported versions that are affected are 15.0.0.0.0, 15.0.1.0.0, 15.1.0.0.0 and  15.2.0.0.0. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Communications Billing and Revenue Management executes to compromise Oracle Communications Billing and Revenue Management.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Communications Billing and Revenue Management accessible data. CVSS 3.1 Base Score 5.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91628"
     },
     {
-      "cve_id": "CVE-2026-111843",
-      "asset_id": "CVE-2026-111843",
+      "cve_id": "CVE-2026-91644",
+      "asset_id": "CVE-2026-91644",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in CozyThemes Rootblox rootblox allows Stored XSS.This issue affects Rootblox: from n/a through 1.0.7.",
-      "last_modified": "2026-10-21T11:17:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111843"
+      "description": "Vulnerability in Oracle Essbase (component: Security).   The supported version that is affected is 21.8.3.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Essbase.  While the vulnerability is in Oracle Essbase, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Essbase accessible data as well as  unauthorized update, insert or delete access to some of Oracle Essbase accessible data. CVSS 3.1 Base Score 9.3 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91644"
     },
     {
-      "cve_id": "CVE-2026-111596",
-      "asset_id": "CVE-2026-111596",
+      "cve_id": "CVE-2026-91661",
+      "asset_id": "CVE-2026-91661",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Kliken: Ads + Pixel for Meta WordPress plugin before 1.2.3 does not verify that a visitor holds an order's key before outputting that order's details on the order confirmation page, allowing unauthenticated users to retrieve the billing location, purchased products and totals of other customers' orders by enumerating order IDs.",
-      "last_modified": "2026-10-21T11:17:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111596"
+      "description": "Vulnerability in Oracle Essbase (component: Security).   The supported version that is affected is 21.8.3.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Essbase.  While the vulnerability is in Oracle Essbase, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Essbase accessible data. CVSS 3.1 Base Score 7.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N).",
+      "last_modified": "2026-10-21T13:00:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91661"
     },
     {
-      "cve_id": "CVE-2026-111574",
-      "asset_id": "CVE-2026-111574",
+      "cve_id": "CVE-2026-98862",
+      "asset_id": "CVE-2026-98862",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Redirection for Contact Form 7 WordPress plugin before 3.2.12 does not sanitise or escape submitted form data stored as lead entries before outputting it in the lead debug metabox, allowing unauthenticated attackers to store a malicious script that executes when a logged-in user views the entry with the Redirection for Contact Form 7 WordPress plugin before 3.2.12's debug mode enabled.",
-      "last_modified": "2026-10-21T11:17:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111574"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\naudit: fix exe mark UAF in kill_rules()\n\nkill_rules() removes mixed AUDIT_DIR and AUDIT_EXE rules when an audit\ntree is pruned. It drops entry->rule.exe before removing the rule from\nthe RCU-visible filter lists.\n\nAfter a rule has been installed with AUDIT_ADD_RULE, which requires\nCAP_AUDIT_CONTROL, removing the watched directory can race with another\ntask that is still evaluating the rule. In that case, fsnotify can free\nthe executable mark before the reader reaches audit_mark_compare(),\ncausing a use-after-free.\n\nKASAN reports:\n\n    BUG: KASAN: slab-use-after-free in audit_mark_compare+0x8d/0xa0\n\nUnlink the published rules from the RCU-visible lists and retain them\non tree->rules for cleanup. If any rule has an executable mark, wait for\na single RCU grace period before removing the marks and scheduling the\nentries for freeing. Otherwise, call_rcu() already provides the required\ndeferred freeing without a synchronous wait.",
+      "last_modified": "2026-10-21T12:57:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98862"
     },
     {
-      "cve_id": "CVE-2026-110982",
-      "asset_id": "CVE-2026-110982",
+      "cve_id": "CVE-2026-98859",
+      "asset_id": "CVE-2026-98859",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The AI Engine  WordPress plugin before 3.8.6 does not check that the caller is allowed to edit the targeted object before updating its title and excerpt, allowing users with the Editor role and above to modify arbitrary posts of any type, including content they cannot otherwise edit such as navigation menus, block templates, global styles and WooCommerce coupons.",
-      "last_modified": "2026-10-21T11:17:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110982"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nHID: multitouch: stop the release timer from being rearmed on remove\n\nmt_remove() quiesces the sticky-finger timer before stopping the\nhardware:\n\n    timer_delete_sync(&td->release_timer);\n\n    sysfs_remove_group(&hdev->dev.kobj, &mt_attribute_group);\n    hid_hw_stop(hdev);\n\ntimer_delete_sync() waits for a running callback and dequeues the timer,\nbut it does not stop the timer from being armed again. The transport is\nstill delivering reports at that point, and the report path rearms it:\n\n    if (app->quirks & MT_QUIRK_STICKY_FINGERS) {\n        if (td->mt_io_flags & MT_IO_SLOTS_MASK)\n            mod_timer(&td->release_timer,\n                      jiffies + msecs_to_jiffies(100));\n\nA report that arrives after timer_delete_sync() has returned therefore\nleaves the timer queued. td is allocated with devm_kzalloc() against\nhdev->dev, so it is freed when the driver is unbound, after mt_remove()\nreturns. When the timer fires afterwards, mt_expired_timeout()\ndereferences the freed td:\n\n    struct mt_device *td = timer_container_of(td, t, release_timer);\n    struct hid_device *hdev = td->hdev;\n\n    if (test_and_set_bit_lock(MT_IO_FLAGS_RUNNING, &td->mt_io_flags))\n\nSimply moving the teardown after hid_hw_stop() does not fix this on its\nown, because mt_expired_timeout() calls mt_release_contacts(), which\nwalks hdev->inputs; the timer still has to be quiesced before\nhid_hw_stop() tears the input devices down.\n\nUse timer_shutdown_sync() instead, which additionally makes any later\nmod_timer() a no-op, so neither ordering constraint has to be traded off\nagainst the other. This is the final-teardown pattern the function was\nintroduced for, and hid-wiimote already uses it for the same reason.",
+      "last_modified": "2026-10-21T12:57:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98859"
     },
     {
-      "cve_id": "CVE-2026-110899",
-      "asset_id": "CVE-2026-110899",
+      "cve_id": "CVE-2026-98857",
+      "asset_id": "CVE-2026-98857",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Kevin Stover Ninja Forms ninja-forms allows Stored XSS.This issue affects Ninja Forms: from n/a through 3.15.5.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110899"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipvs: bound LBLCR and LBLC cache growth\n\nip_vs_lblcr_new() and ip_vs_lblc_new() create cache entries for\nevery previously unseen destination address. The table max_size only\ntells the periodic collector to reclaim entries after the cache has\nalready exceeded the limit. It does not reclaim entries that the\nattacker continues to use.\n\nReject new cache entries once either table reaches max_size * 3 / 2.\nThe extra headroom lets the periodic collector catch up while the\nexisting scheduler fallback continues to use the selected destination\nwhen cache creation fails. New traffic therefore stays serviceable\nwithout growing the tables further.",
+      "last_modified": "2026-10-21T12:57:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98857"
     },
     {
-      "cve_id": "CVE-2026-110884",
-      "asset_id": "CVE-2026-110884",
+      "cve_id": "CVE-2026-98856",
+      "asset_id": "CVE-2026-98856",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in geekontheroad Live Summary for Gravity Forms live-summary-for-gravity-forms allows Reflected XSS.This issue affects Live Summary for Gravity Forms: from n/a through 1.2.10.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110884"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nkprobes: Skip disarmed probes when checking optkprobe overlap\n\nOn x86, an optkprobe at A replaces five bytes with a jump. If a disabled\nprobe B is at A+2, get_optimized_kprobe() stops at B when arming a new\nprobe C at A+4. It leaves A optimized:\n\n              A    A+1  A+2  A+3  A+4\n  A's jump  | e9 | d0 | d1 | d2 | d3 |\n  after C   | e9 | d0 | d1 | d2 | cc |\n\nThe INT3 for C overwrites the last byte of A's jump displacement, so\nexecution can jump to the wrong address. B can have prepared optinsns\nwhile disarmed, but has no jump to unoptimize.\n\nContinue past disarmed and unprepared probes to find the active optimized\nprobe before arming a probe in its jump.",
+      "last_modified": "2026-10-21T12:57:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98856"
     },
     {
-      "cve_id": "CVE-2026-110651",
-      "asset_id": "CVE-2026-110651",
+      "cve_id": "CVE-2026-98855",
+      "asset_id": "CVE-2026-98855",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Swift Performance Lite WordPress plugin before 2.3.7.4 does not properly sanitize and escape a value before using it in a SQL statement, which could allow users with the author role and above to perform SQL injection attacks.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110651"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nof/overlay: put property on deadprops only after changeset add succeeds\n\nadd_changeset_property() links a new property of a not-yet-live\ntarget node into the node's deadprops list before handing it to\nof_changeset_add_property(). If that fails, the error path frees the\nproperty but leaves the freed pointer linked in deadprops, and\nof_node_release() frees it a second time when the aborted overlay's\nnode is released.\n\nRecord the changeset entry first and link the property into deadprops\nonly on success. of_changeset_add_property() never looks at the\nnode's property lists, so the order of the two steps is otherwise\nimmaterial, and the error path frees a property that nothing\nreferences.",
+      "last_modified": "2026-10-21T12:57:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98855"
     },
     {
-      "cve_id": "CVE-2026-110523",
-      "asset_id": "CVE-2026-110523",
+      "cve_id": "CVE-2026-98854",
+      "asset_id": "CVE-2026-98854",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WP User Manager  WordPress plugin before 2.9.26 does not keep its paid-registration capability restrictions in force once the payment gateway is disconnected, while a published paid registration form continues to assign its configured role, allowing unauthenticated users to register and immediately obtain a privileged administrator-equivalent role without completing the payment meant to gate it.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110523"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nof/overlay: only treat a positive changeset id as registered\n\nof_overlay_fdt_apply() stores the idr_alloc() return value in\novcs->id before checking it. On failure the stored id is negative,\nfree_overlay_changeset()'s \"if (ovcs->id)\" check passes, idr_remove()\nis called with a negative id and list_del() runs on ovcs->ovcs_list,\nwhich is not initialized until after the id allocation. An allocation\nfailure at that point dereferences NULL.\n\nMake free_overlay_changeset() treat only a strict-positive id as\nregistered. The rest of the function already copes with a\npartially-initialized ovcs, so the error path stays a plain\ngoto err_free_ovcs.",
+      "last_modified": "2026-10-21T12:57:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98854"
     },
     {
-      "cve_id": "CVE-2026-110514",
-      "asset_id": "CVE-2026-110514",
+      "cve_id": "CVE-2026-98852",
+      "asset_id": "CVE-2026-98852",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WPZOOM Portfolio Lite  WordPress plugin before 1.4.34 does not check that a user is allowed to edit a post before changing its type and order, which could allow users with the contributor role and above to convert any other user's posts and pages into portfolio items, removing them from their original listings and URLs.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110514"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: extend IPv6 exthdr detection of tunneled packets\n\nCommit c4336a07eb6b (\"net: correctly handle tunneled traffic on IPV6_CSUM\nGSO fallback\") split skb_gso_has_extension_hdr() into mutually exclusive\nbranches on skb->encapsulation. This did not yet address all paths:\n\n1. With skb->encapsulation set, the outer header is not checked. IPv6\n   tunnels such as ip6_gre and ip6_tunnel add an outer Destination\n   Options header by default (encap_limit). Their GSO packets skip\n   software GSO, then skb_csum_hwoffload_help() sees the outer extension\n   header and calls skb_checksum_help() on the GSO skb, which warns and\n   drops it.\n\n2. Tunnels over IPv6 without an outer transport header, such as\n   ip6_tunnel, leave skb->transport_header at the inner transport\n   header. skb_network_header_len() then spans the outer IPv6, tunnel\n   and inner IP headers, a false positive.\n\n3. UDP tunnels without an inner network header, such as SCTP-in-UDP or\n   PSP, have no inner IPv6 header to check. Decide on the outer header\n   alone.\n\n4. Directly dereferencing inner_ip_hdr(skb)->version without\n   skb_header_pointer() is unsafe.\n\nInstead, check ipv6_ext_hdr(nexthdr) on the outer IPv6 header and, if\nset, on the inner IPv6 header. Read the headers with skb_header_pointer().\nKeep the skb_network_header_len() check when !skb->encapsulation to also\ncatch encapsulated packets without skb->encapsulation (e.g., virtio).\n\nUse the same helper in skb_csum_hwoffload_help(). Its open coded test\nhas the false positive of (2) and ignores the inner header.\n\nBackground: checksum offload of tunneled packets invariants:\n\nNon-GSO skb:\n- If the inner packet is CHECKSUM_PARTIAL, Local Checksum Offload computes\n  the outer checksum in software and the device offloads only the inner L4\n  checksum.\n- If the inner packet is CHECKSUM_NONE (e.g., SCTP-in-UDP, ESP-in-UDP,\n  Remote Checksum Offload), the device offloads the outer UDP or GRE\n  checksum instead.\n\nGSO skb:\n- A device with NETIF_F_GSO_UDP_TUNNEL_CSUM or NETIF_F_GSO_GRE_CSUM\n  computes both inner and outer checksums per segment.\n  The outer checksum is seeded with only the pseudo-header checksum.\n\nA NETIF_F_IPV6_CSUM device must parse through the outer headers to\nreach the inner ones.",
+      "last_modified": "2026-10-21T12:57:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98852"
     },
     {
-      "cve_id": "CVE-2026-110370",
-      "asset_id": "CVE-2026-110370",
+      "cve_id": "CVE-2026-98851",
+      "asset_id": "CVE-2026-98851",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Deserialization of Untrusted Data vulnerability in GS Plugins GS Pins for Pinterest gs-pinterest-portfolio allows Object Injection.This issue affects GS Pins for Pinterest: from n/a through 1.9.2.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110370"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: nft_flow_offload: drop flowtable reference on init error path\n\nnft_flow_offload_init() bumps the flowtable use count with\nnft_use_inc() before calling nf_ct_netns_get().  When the latter\nfails, the error is returned as-is and the reference is leaked.\n\nThe upper layers do not balance it either: nf_tables_newexpr()\nclears expr->ops when the expression init callback fails, so the\nnft_expr_more() iteration in nft_rule_expr_deactivate() and\nnf_tables_rule_destroy() stops right before the failed expression\nand its ->destroy callback, which would drop the reference, never\nruns.\n\nEach failed rule addition therefore leaks one flowtable reference\nand the flowtable can no longer be removed: NFT_MSG_DELFLOWTABLE\nkeeps reporting -EBUSY even though no rule references it.\n\nSave the nf_ct_netns_get() return value and undo the nft_use_inc()\nwhen it fails, restoring the inc/dec pairing within\nnft_flow_offload_init() itself.",
+      "last_modified": "2026-10-21T12:57:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98851"
     },
     {
-      "cve_id": "CVE-2026-110369",
-      "asset_id": "CVE-2026-110369",
+      "cve_id": "CVE-2026-98850",
+      "asset_id": "CVE-2026-98850",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Deserialization of Untrusted Data vulnerability in GS Plugins WordPress Team Members \u2013 GS Plugins gs-team-members allows Object Injection.This issue affects WordPress Team Members \u2013 GS Plugins: from n/a through 2.8.2.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110369"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/packet: prevent TX_RING byte count overflow\n\ntpacket_snd() drains every SEND_REQUEST frame in a TX ring and adds\neach valid packet length to the signed int len_sum. Userspace can\nrecycle completed frames concurrently, so a single blocking send call\nis not bounded by the ring size.\n\nAfter enough successful transmissions len_sum wraps into the negative\nrange. In particular, 65536 65535-byte frames followed by a 65007-byte\nframe produce 0xfffffdef, or -EIOCBQUEUED. sock_sendmsg_nosec() treats\nthat as an impossible return and triggers a BUG. On systems configured\nto panic on oops, a CAP_NET_RAW holder can panic the host kernel.\n\nStop before the next frame would make the byte count exceed INT_MAX.\nThe positive short count leaves that frame pending for a later send\ncall.\n\nA two-thread TPACKET_V2 reproducer triggered the BUG on an arm64 build\nof Linux 7.3-rc4. With this change, the same reproducer returned the\nexpected positive short count without an oops.",
+      "last_modified": "2026-10-21T12:57:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98850"
     },
     {
-      "cve_id": "CVE-2026-109926",
-      "asset_id": "CVE-2026-109926",
+      "cve_id": "CVE-2026-98848",
+      "asset_id": "CVE-2026-98848",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Productive Commerce  WordPress plugin before 1.1.49 does not perform a capability check in one of its AJAX actions and exposes the nonce that guards it on every admin-area page, allowing any authenticated user such as a subscriber to activate arbitrary Productive Commerce  WordPress plugin before 1.1.49 already installed on the site.",
-      "last_modified": "2026-10-21T11:17:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109926"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nrtc: ac100: Assign .num before accessing .hws\n\nCommit f316cdff8d67 (\"clk: Annotate struct clk_hw_onecell_data with\n__counted_by\") annotated the hws member of 'struct clk_hw_onecell_data'\nwith __counted_by, which informs the bounds sanitizer (UBSAN_BOUNDS)\nabout the number of elements in .hws[], so that it can warn when .hws[]\nis accessed out of bounds. As noted in that change, the __counted_by\nmember must be initialized with the number of elements before the first\narray access happens, otherwise there will be a warning from each access\nprior to the initialization because the number of elements is zero.\nThis occurs in ac100_rtc_register_clks() due to .num being assigned only\nafter every clkout clock has been stored in .hws[]. With\nCONFIG_UBSAN_BOUNDS and a compiler that implements __counted_by (GCC\n15.1+ or Clang 20.1+), this triggers an array-index-out-of-bounds report\nduring probe, and with CONFIG_UBSAN_TRAP the first store traps.\n\nInitialize .num with AC100_CLKOUT_NUM, the number of elements .hws[] was\nallocated with, right after the allocation. That is the value the loop\ncounter ends up at on the success path anyway, so the provider's\nbehaviour is unchanged.",
+      "last_modified": "2026-10-21T12:57:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98848"
     },
     {
-      "cve_id": "CVE-2026-109147",
-      "asset_id": "CVE-2026-109147",
+      "cve_id": "CVE-2026-98847",
+      "asset_id": "CVE-2026-98847",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The WP Booking System  WordPress plugin before 2.1.0.3 does not validate and escape one of its parameters before reflecting it back in an admin page, leading to Reflected Cross-Site Scripting which could be used against high privilege users such as administrators.",
-      "last_modified": "2026-10-21T11:17:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109147"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nrtc: spear: initialize IRQ state before requesting alarm IRQ\n\ndevm_request_irq() enables the interrupt before it returns, so the handler\nmay run while probe is still initializing the device. Initialize the MMIO\naddress and spinlock before requesting the alarm IRQ.",
+      "last_modified": "2026-10-21T12:57:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98847"
     },
     {
-      "cve_id": "CVE-2026-108073",
-      "asset_id": "CVE-2026-108073",
+      "cve_id": "CVE-2026-98846",
+      "asset_id": "CVE-2026-98846",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SureCart  WordPress plugin before 4.9.5 does not restrict which related objects an anonymous visitor may include when reading a single upsell funnel through its REST API, nor strip private fields from those objects, allowing unauthenticated users to read merchant-private catalog data such as pricing, commission, stock, SKU and tax internals, including unpublished products.",
-      "last_modified": "2026-10-21T11:17:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-108073"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsctp: check RCV_SHUTDOWN after the sendmsg connect wait\n\nsctp_wait_for_connect() drops the socket lock while it sleeps. An\nout-of-the-blue ABORT can then be processed from the socket backlog and\nunlink the association. If a concurrent shutdown(fd, SHUT_RD) sets\nRCV_SHUTDOWN, the waiter breaks with err == 0 before checking\nasoc->base.dead. Its final sctp_association_put() can then free the\nassociation, leaving sctp_sendmsg_to_asoc() to continue with a dangling\npointer.\n\nCheck RCV_SHUTDOWN along with the wait error in sctp_sendmsg_to_asoc()\nbefore using the association again. The check only accesses the socket,\nso it needs no additional association reference. Return the existing\n-ESRCH so that sctp_sendmsg() skips freeing a new association that may\nalready have been destroyed.\n\nKeep sctp_wait_for_connect() unchanged to preserve its behavior for the\nconnect() caller.",
+      "last_modified": "2026-10-21T12:57:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98846"
     },
     {
-      "cve_id": "CVE-2026-107790",
-      "asset_id": "CVE-2026-107790",
+      "cve_id": "CVE-2026-98840",
+      "asset_id": "CVE-2026-98840",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The HireZoot  WordPress plugin before 4.1.1 does not sanitise and escape some of its stored data before outputting it in the admin dashboard, and additionally reverses the HTML-entity encoding that would otherwise neutralise it, allowing users with the Author role to perform Stored Cross-Site Scripting attacks that execute in the context of a logged-in administrator.",
-      "last_modified": "2026-10-21T11:17:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107790"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvc_screen: reload vc pointer before if (ret) in vcs_write() to avoid UAF\n\nThe reload of 'vc' added by commit 8fb9ea65c9d1 (\"vc_screen: reload load\nof struct vc_data pointer in vcs_write() to avoid UAF\") sits after the\n'if (ret)' block, so the copy-failure break path exits the loop without\nreloading vc. If the vc was kfree()'d via vc_port_destruct during the\nunlocked copy_from_user() window, the post-loop\n'if (written && vc) vcs_scr_updated(vc)' is reached with a stale\nnon-NULL vc. The '&& vc' guard from commit a287620312dc (\"vc_screen:\nfix null-ptr-deref in vcs_notifier() during concurrent vcs_write\") only\nhandles the NULL case, not this stale-non-NULL case; vcs_notifier() then\nreads param->vc->vc_num from freed memory:\n\n  BUG: KASAN: slab-use-after-free in vcs_notifier+0x7c/0xd0\n  Read of size 2 at addr ffff888007149190\n  Call Trace:\n   vcs_notifier+0x7c/0xd0\n   atomic_notifier_call_chain+0x70/0xa0\n   vcs_scr_updated+0x77/0xa0\n   vcs_write+0x71b/0x7e0\n  Allocated by task: vc_allocate -> con_install -> tty_open\n  Freed by task: kfree <- vt_ioctl (VT_DISALLOCATE -> vc_port_destruct)\n\nMove the reload to immediately after console_lock(), before 'if (ret)',\nso every break path below passes a fresh vc to the post-loop\nvcs_scr_updated().",
+      "last_modified": "2026-10-21T12:57:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98840"
     },
     {
-      "cve_id": "CVE-2026-107788",
-      "asset_id": "CVE-2026-107788",
+      "cve_id": "CVE-2026-98838",
+      "asset_id": "CVE-2026-98838",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SmartyParcel  WordPress plugin before 1.23.4 does not perform authorisation checks when deleting shipping label records, allowing any authenticated user such as a subscriber to delete the shipping label and tracking records of arbitrary orders store-wide.",
-      "last_modified": "2026-10-21T11:17:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107788"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvt: skip screen update for DEC alignment test on backgroup consoles\n\n[BUG]\nRecently, we encountered a KASAN warning as follows:\n\nBUG: KASAN: slab-out-of-bounds in fb_pad_aligned_buffer+0x11f/0x140\nRead of size 1 at addr ff1100015fd9f6a4 by task tty_fbcon_oob/1239\nCPU: 7 UID: 0 PID: 1239 Comm: tty_fbcon_oob Not tainted 7.3.0-rc1 #100 PREEMPT(full)\nHardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.17.0-4.fc41 04/01/2014\nCall Trace:\n <TASK>\n ...\n kasan_report+0xf0/0x120\n fb_pad_aligned_buffer+0x11f/0x140\n ccw_putcs+0x86c/0xa80\n fbcon_putcs+0x338/0x410\n do_update_region+0x21d/0x450\n do_con_write+0x1e0e/0x4880\n con_write+0x13/0x80\n n_tty_write+0x374/0x1010\n file_tty_write.isra.0+0x404/0x7a0\n ...\n\nreproduce:\n1) open /dev/tty0, set a KDFONTOP ioctl with op.op = KD_FONT_OP_SET,\nop.width = 8 and op.height = 16 (visible VC1)\n2) open /dev/tty1, set a KDFONTOP ioctl with op.op = KD_FONT_OP_SET,\nop.width = 28 and op.height = 24 (invisible VC2)\n3) echo 3 > /sys/devices/virtual/graphics/fbcon/rotate_all\n4) write EShash8(esc hash8) to tty1\n\n[CAUSE]\nAll VCs render to the framebuffer. setfont only modifies the target VC's\nfont without resizing the framebuffer backing buffer (par->rotated.buf);\nthe buffer is only resized for the visible VC\n(fbcon_do_set_font -> ... -> vc_do_resize -> update_screen). This relies on\nthe con_should_update() check performed before every update_region().\n\nHowever, the ESC # 8 path (do_con_trol -> do_update_region) omits the\ncon_should_update() check. After changing the font size of an invisible VC,\ndo_update_region() fills using the new font size against a buffer that was\nnever resized, causing an out-of-bounds access.\n\n[FIX]\nOnly push the update when the console is visible and not blanked, add\nthe con_should_update() check in the do_con_trol() like every other call\nsite of do_update_region() (update_region(), invert_screen(), ...).",
+      "last_modified": "2026-10-21T12:57:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98838"
     },
     {
-      "cve_id": "CVE-2026-107506",
-      "asset_id": "CVE-2026-107506",
+      "cve_id": "CVE-2026-98837",
+      "asset_id": "CVE-2026-98837",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Simple Banner  WordPress plugin before 3.3.3 does not correctly limit the capabilities it grants to the user roles an administrator allows to manage its banners, granting such roles the full administrator capability, which allows users in a low-privileged role to escalate their privileges and fully compromise the site.",
-      "last_modified": "2026-10-21T11:17:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107506"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nALSA: caiaq: unregister the input device when probe fails\n\nsetup_card() registers the input device, whose name and phys point into\nstruct snd_usb_caiaqdev, and then goes on to snd_card_register() and\nsnd_usb_caiaq_control_init(). If either fails, snd_probe() calls\nsnd_card_free(), which frees the device state but leaves the input\ndevice registered: card_free() only clears the pointer, and the input\ndevice is unregistered from snd_disconnect() alone. Reading its \"uevent\"\nattribute afterwards dereferences freed memory:\n\n  BUG: KASAN: slab-use-after-free in string+0x4a9/0x4f0\n  Read of size 1 at addr ffff8880208f5043 by task caiaq/4967\n   add_uevent_var+0x183/0x3a0\n   input_dev_uevent+0x162/0x900\n   dev_uevent+0x2f1/0x870\n   uevent_show+0x1ca/0x3a0\n   ...\n\nUnregister the input device on the probe error path, as\nsnd_disconnect() does. snd_usb_caiaq_input_disconnect() is a no-op when\nno input device was registered.\n\nReproduced with a raw-gadget Audio Kontrol 1 and a temporary hack that\nmakes snd_usb_caiaq_control_init() fail.",
+      "last_modified": "2026-10-21T12:57:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98837"
     },
     {
-      "cve_id": "CVE-2026-107435",
-      "asset_id": "CVE-2026-107435",
+      "cve_id": "CVE-2026-98836",
+      "asset_id": "CVE-2026-98836",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Chill Strong Testimonials strong-testimonials allows Stored XSS.This issue affects Strong Testimonials: from n/a through 3.3.12.",
-      "last_modified": "2026-10-21T11:17:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107435"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nALSA: line6: reject oversized playback packets\n\nEach playback URB is handed a slice of out.buffer that is exactly\nLINE6_ISO_PACKETS * max_packet_size_out bytes, sized from the OUT\nendpoint, but the number of bytes written into that slice is never\ncompared against it.\n\nsubmit_audio_out_urb() takes the frame count from prev_fsize, which\naudio_in_callback() derived from the *IN* endpoint's received packet\nlength, and rescales it with the playback frame size; when prev_fsize is\nstill zero it synthesizes a length from the sample rate instead.  On a\ndevice declaring a large IN wMaxPacketSize and a small OUT\nwMaxPacketSize, the resulting memcpy(), or the memset() when the\nplayback stream is idle, runs past its slice and, as the reproducer\nbelow shows, beyond the allocation.\n\nusb_submit_urb() is not a backstop.  max_packet_size_out comes from\nusb_maxpacket(), which returns only the low 11 bits of wMaxPacketSize,\nwhile USB core validates a high-speed isochronous length against that\nbase scaled by usb_endpoint_maxp_mult().  A length of up to three times\nthe allocated slice is therefore accepted, and even a rejected URB is\nonly rejected after the write.\n\nReject a packet that does not fit the slice the driver allocated for it.\nClamping it instead would silently shorten the capture-derived rate\nfeedback and desynchronize the two streams.\n\n  BUG: KASAN: slab-out-of-bounds in submit_audio_out_urb (sound/usb/line6/playback.c:229)\n  Write of size 1024 at addr ffff888100bbd400 by task kworker/1:2/5002\n  Workqueue: events line6_startup_work\n  Call Trace:\n   __asan_memcpy (mm/kasan/shadow.c:106)\n   submit_audio_out_urb (sound/usb/line6/playback.c:229)\n   line6_submit_audio_out_all_urbs (sound/usb/line6/playback.c:291)\n   line6_stream_start (sound/usb/line6/pcm.c:194)\n   line6_pcm_acquire (sound/usb/line6/pcm.c:337)\n   line6_startup_work (sound/usb/line6/driver.c:728)\n   process_one_work (kernel/workqueue.c:3396)\n   worker_thread (kernel/workqueue.c:3479 kernel/workqueue.c:3560)\n   kthread (kernel/kthread.c:436)\n   ret_from_fork (arch/x86/kernel/process.c:158)\n   ret_from_fork_asm (arch/x86/entry/entry_64.S:245)\n\n  The buggy address belongs to the object at ffff888100bbd400\n   which belongs to the cache kmalloc-256 of size 256\n  The buggy address is located 0 bytes inside of\n   allocated 256-byte region [ffff888100bbd400, ffff888100bbd500)",
+      "last_modified": "2026-10-21T12:57:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98836"
     },
     {
-      "cve_id": "CVE-2026-105999",
-      "asset_id": "CVE-2026-105999",
+      "cve_id": "CVE-2026-98835",
+      "asset_id": "CVE-2026-98835",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Booking Package WordPress plugin before 1.7.31 does not perform authorization checks before returning calendar-account configuration in a response, allowing unauthenticated users to disclose sensitive settings including the administrator's notification email addresses.",
-      "last_modified": "2026-10-21T11:17:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105999"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\niio: accel: kionix-kx022a: Fix array boundary check\n\nThe driver performs a sanity check for an array size, when converting a\nregister value to an array index. The check incorrectly accepts the\nsizeof(array) as a last index, when last valid index should be\nsizeof(array) - 1.\n\nFix the check by bailing out when index >= sizeof(array).",
+      "last_modified": "2026-10-21T12:57:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98835"
     },
     {
-      "cve_id": "CVE-2026-105992",
-      "asset_id": "CVE-2026-105992",
+      "cve_id": "CVE-2026-98833",
+      "asset_id": "CVE-2026-98833",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Ettrick Escape Room Booking WordPress plugin before 1.3.1 does not verify a booking's payment status against the payment provider before marking it paid and confirmed, allowing unauthenticated attackers to mark bookings as paid without paying.",
-      "last_modified": "2026-10-21T11:17:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105992"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmtd: core: call _get_device() with the master MTD\n\n__get_mtd_device() calls the master's _get_device() callback with mtd,\nwhich may be a partition. __put_mtd_device() passes the master.\n\nThis breaks gluebi partitions because gluebi_get_device() uses\ncontainer_of() and therefore requires the master MTD. Pass the master\nto _get_device(), matching _put_device().",
+      "last_modified": "2026-10-21T12:57:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98833"
     },
     {
-      "cve_id": "CVE-2026-105262",
-      "asset_id": "CVE-2026-105262",
+      "cve_id": "CVE-2026-98831",
+      "asset_id": "CVE-2026-98831",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1862,47 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Falang multilanguage for WordPress plugin before 1.4.6 does not perform a capability check when saving term translations, and exposes a valid nonce to any logged-in user through an unprotected handler, allowing users with Subscriber-level access and above to store content that is later output without proper escaping, leading to Stored Cross-Site Scripting that executes in the context of higher-privileged users such as administrators.",
-      "last_modified": "2026-10-21T11:17:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105262"
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nof/overlay: don't leak fragment references when changeset init fails\n\ninit_overlay_changeset() stores the number of initialized fragments\nin ovcs->count only on full success. When find_target() or the\n__symbols__ lookup fails partway through, the target and overlay\nreferences taken for the fragments initialized so far are never\ndropped: free_overlay_changeset() bounds its cleanup loop by\novcs->count, which is still 0.\n\nStore the running count on the error path so free_overlay_changeset()\nputs whatever was set up. The store is guarded by ovcs->fragments\nbecause on the allocation-failure path cnt still holds the counting\npass total while there is no fragments array; everywhere else cnt\nonly counts fully-initialized fragments.",
+      "last_modified": "2026-10-21T12:57:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98831"
+    },
+    {
+      "cve_id": "CVE-2026-98830",
+      "asset_id": "CVE-2026-98830",
+      "asset_name": "OpenCVE catalog",
+      "vendor": "",
+      "product": "",
+      "version": "See affected versions",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "known_exploited": false,
+      "epss": null,
+      "fixed_version": "",
+      "patch_available": false,
+      "vendor_url": "",
+      "source": "OpenCVE",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: wfx: validate MIB read length before copying to caller\n\nwfx_hif_read_mib() copies reply->length bytes from the firmware\nresponse into the caller-provided buffer without checking that\nreply->length does not exceed val_len. A firmware response with\na length field larger than expected overruns the caller buffer and\nreads past the end of the reply allocation.\n\nReplace the dead -ENOMEM check with an active validation that\nreply->length fits within val_len before the memcpy.",
+      "last_modified": "2026-10-21T12:57:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98830"
+    },
+    {
+      "cve_id": "CVE-2026-98825",
+      "asset_id": "CVE-2026-98825",
+      "asset_name": "OpenCVE catalog",
+      "vendor": "",
+      "product": "",
+      "version": "See affected versions",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "known_exploited": false,
+      "epss": null,
+      "fixed_version": "",
+      "patch_available": false,
+      "vendor_url": "",
+      "source": "OpenCVE",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nrtc: mpfs: fix unchecked devm_clk_get() error pointer in probe()\n\ndevm_clk_get(&pdev->dev, \"rtcref\")'s return value was passed straight\ninto clk_get_rate() without checking it for an error first, unlike the\n\"rtc\" clock a few lines above which is correctly checked with\nIS_ERR(). clk_get_rate() only guards against a NULL clk, not an error\npointer:\n\n\tif (!clk)\n\t\treturn 0;\n\t...\n\trate = clk_core_get_rate_recalc(clk->core);\n\nso if devm_clk_get() ever returns an error pointer here (for example\nERR_PTR(-EPROBE_DEFER), which is the normal, expected outcome if the\nclkcfg clock-provider this RTC depends on has not registered its\nclocks yet by the time this driver probes), clk_get_rate() dereferences\nthat error pointer instead of returning 0, crashing instead of letting\nprobe defer.\n\nCapture the clock in the existing 'clk' local and check it with\nIS_ERR() before calling clk_get_rate(), matching the handling already\nused for the \"rtc\" clock in this same function.",
+      "last_modified": "2026-10-21T12:57:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98825"
     }
   ]
 }
