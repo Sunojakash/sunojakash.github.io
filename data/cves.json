@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-10-22T05:11:57.589023+00:00",
+  "last_updated": "2026-10-22T12:14:51.205386+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-98869",
-      "asset_id": "CVE-2026-98869",
+      "cve_id": "CVE-2026-113080",
+      "asset_id": "CVE-2026-113080",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Infer zext_dst based on static register liveness analysis\n\nAs reported in the thread [1], the verifier's 32-bit operations zero\nextension logic is broken. This logic is responsible for correct\nsemantics of 32-bit operations on s390 architecture.\n\nAccording to BPF semantics, operation `w1 += 1` is supposed to zero\nextend the upper half of the register `r1`. On s390 the JIT relies on\nthe verifier emitting explicit zero extension before such operations.\n\nThe verifier attempts to minimize the amount of zero extensions\ninserted by tracking whether upper halves of the 64-bit registers are\never used. Previously such tracking worked as follows:\n\n- bpf_reg_state->subreg_def field was set by do_check_insn()\n  for each operation defining lower but not the upper halves\n  of the register.\n- Whenever an operation reading the whole register was verified,\n  the verifier checked register's subreg_def and set\n  bpf_insn_aux_data->zext_dst flag as true via a call to\n  mark_insn_zext() function.\n- After the verification was complete, a special pass\n  bpf_opt_subreg_zext_lo32_rnd_hi32() extended 32-bit operations\n  with bpf_insn_aux_data->zext_dst set as true by adding\n  explicit zero extension.\n\nNote that the logic above relies on bpf_reg_state->subreg_def,\nwhich is a property of a current verifier state.\nBefore the commit [2] two additional steps happened:\n\n- The verifier tracked upper and lower register halves' liveness as\n  flags REG_LIVE_READ{32,64} in bpf_reg_state->live.\n- The function propagate_liveness() called mark_insn_zext()\n  in order to transfer the knowledge about which registers have\n  their upper halves alive (and thus might require zero extension).\n\nThe commit [2] removed the two steps described above,\nhence making possible a situation like below:\n\n- The register's upper half is set and is used on some verification\n  path P1 and the register happens not to be marked as precise.\n- The checkpoint C is created while processing some instruction\n  between register initialization and usage.\n- On some other verification path P2 the register's upper half is not\n  initialized and that path ends hitting the checkpoint C.\n- In such a case the register's initialization on path P2 would lack\n  zext_dst mark, making it possible for the program to inject\n  an arbitrary value in the register's upper half.\n\nThis commit replaces subreg_def based logic with computing zext_dst\nstatically, as a part of the bpf_compute_live_registers() analysis:\n\n- The analysis now tracks usage of upper and lower halves of the\n  registers separately.\n- If some instruction defines a 32-bit subregister, but not the whole\n  register, *and* the upper half of the register is alive after that\n  instruction, the instruction is marked as zext_dst.\n\nThere is one notable drop in precision: whenever a BPF subprogram is\ncalled, all 64 bits of parameter registers are presumed to be used.\nThe assumption is that such a drop in precision would not inflict\na noticeable performance penalty.\n\n[1] https://lore.kernel.org/bpf/CAGKGUv=sOuqQtA1Ub-5JXfA4FPosJFYKAQE4B79cK+P1erxqtg@mail.gmail.com/\n[2] commit 107e16979905 (\"bpf: disable and remove registers chain based liveness\")",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-98869"
+      "description": "Use after free in WebAppInstalls in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113080"
     },
     {
-      "cve_id": "CVE-2026-96638",
-      "asset_id": "CVE-2026-96638",
+      "cve_id": "CVE-2026-113140",
+      "asset_id": "CVE-2026-113140",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 9.1.0 until 13.0.0, BmpRleDecoder.decode() in src/PIL/BmpImagePlugin.py permits crafted RLE BMP delta escapes and absolute-mode runs to append beyond the remaining dest_length without a per-branch cap. A delta can add roughly 255 image rows in one iteration, so a kilobyte-sized file with a large but permitted width can expand the data bytearray to hundreds of megabytes or more, causing memory-exhaustion denial of service. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96638"
+      "description": "Use after free in ANGLE in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113140"
     },
     {
-      "cve_id": "CVE-2026-96641",
-      "asset_id": "CVE-2026-96641",
+      "cve_id": "CVE-2026-113021",
+      "asset_id": "CVE-2026-113021",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. Prior to 13.0.0, PILfont text-width accumulation in src/_imaging.c checks positive glyph advances against INT_MAX but does not check negative advances against INT_MIN. Repeating a signed 16-bit advance of -32768 can therefore execute a signed C integer overflow in xsize += dx, producing a large positive width from a negative mathematical result. Applications that use getlength(), getsize(), or derived layout, quota, serialization, or allocation calculations can experience logic-integrity errors or resource consumption, while the high-level mask path commonly retains a decompression-bomb check. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96641"
+      "description": "Use after free in WebAppInstalls in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113021"
     },
     {
-      "cve_id": "CVE-2026-96644",
-      "asset_id": "CVE-2026-96644",
+      "cve_id": "CVE-2026-113145",
+      "asset_id": "CVE-2026-113145",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. Prior to 13.0.0 on Windows, src/PIL/WmfImagePlugin.py passes unchecked 32-bit WMF or EMF dimensions to the native drawwmf handler in src/display.c. The handler sizes a DIB allocation from 16-bit-truncated bcWidth and bcHeight fields but copies pixel data using the original full dimensions. A crafted wide, short metafile can pass the pixel-count decompression-bomb check and make the Windows-only renderer read beyond the heap buffer, potentially disclosing memory or crashing the process. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96644"
+      "description": "Memory corruption in Messages in Google Chrome on on Android prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113145"
     },
     {
-      "cve_id": "CVE-2026-96643",
-      "asset_id": "CVE-2026-96643",
+      "cve_id": "CVE-2026-113047",
+      "asset_id": "CVE-2026-113047",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 11.0.0 until 13.0.0, Exif.load() in src/PIL/Image.py repeatedly slices the remaining EXIF data while it begins with the six-byte Exif header. src/PIL/PngImagePlugin.py accepts an uncapped PNG eXIf chunk, so a file filled with repeated headers causes a new shrinking copy on every iteration and quadratic CPU work. The condition is reachable through Image.getexif(), Image._getexif(), and ImageOps.exif_transpose(), including common photo-upload rotation workflows. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96643"
+      "description": "Memory corruption in BrowserTag in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially read memory inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113047"
     },
     {
-      "cve_id": "CVE-2026-96778",
-      "asset_id": "CVE-2026-96778",
+      "cve_id": "CVE-2026-113173",
+      "asset_id": "CVE-2026-113173",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 9.4.0 until 13.0.0, ImagingJpegEncode() in src/libImaging/JpegEncode.c can call jpeg_write_marker() for a JPEG COM comment when an ICC profile has exactly filled the 65536-byte encoder buffer. libjpeg writes one byte before checking the exhausted free_in_buffer counter, which then wraps and permits the attacker-controlled comment and subsequent compressed image data to overwrite adjacent heap memory. Re-saving an untrusted image as JPEG while preserving its ICC profile and forwarded comment can crash the process and may enable code execution in suitable runtime and heap layouts. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96778"
+      "description": "Improper input validation in UI in Google Chrome on on Android prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113173"
     },
     {
-      "cve_id": "CVE-2026-96637",
-      "asset_id": "CVE-2026-96637",
+      "cve_id": "CVE-2026-113036",
+      "asset_id": "CVE-2026-113036",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. Prior to 13.0.0, SpiderImageFile.seek() in src/PIL/SpiderImagePlugin.py reparses a later SPIDER stack frame and replaces self._size without rerunning Image._decompression_bomb_check(). A tiny file can use a safe first frame to pass Image.open() and then declare very large dimensions in a later mode F frame. Loading that frame allocates approximately four bytes per attacker-declared pixel and can consume multiple gigabytes of memory. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96637"
+      "description": "Memory corruption in HTML in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113036"
     },
     {
-      "cve_id": "CVE-2026-96640",
-      "asset_id": "CVE-2026-96640",
+      "cve_id": "CVE-2026-113268",
+      "asset_id": "CVE-2026-113268",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 5.1.0 until 13.0.0, PdfParser.linearize_page_tree() in src/PIL/PdfParser.py treats a PDF /Pages graph as a tree without tracking duplicate indirect references. When Image.save(..., format=\"PDF\", append=True) processes an attacker-controlled existing PDF whose /Kids arrays repeatedly reference the same child /Pages node, Pillow expands the shared subtree as distinct pages. A compact malformed PDF can therefore create exponentially many page references and consume disproportionate CPU before the append completes. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96640"
+      "description": "Memory corruption in Navigation in Google Chrome on on iOS prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113268"
     },
     {
-      "cve_id": "CVE-2026-96636",
-      "asset_id": "CVE-2026-96636",
+      "cve_id": "CVE-2026-113038",
+      "asset_id": "CVE-2026-113038",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. Prior to 13.0.0, MpoImageFile.seek() and DcxImageFile.seek() reparse later MPO or DCX frames and replace self._size without rerunning Image._decompression_bomb_check(). A crafted multi-frame image can use a tiny first frame to pass Image.open() and then declare an over-limit later frame. Normal frame iteration through seek(), load(), or ImageSequence.Iterator can decode that frame and commit hundreds of megabytes or more, causing memory-exhaustion denial of service. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96636"
+      "description": "Memory corruption in DevTools in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially read memory inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113038"
     },
     {
-      "cve_id": "CVE-2026-96639",
-      "asset_id": "CVE-2026-96639",
+      "cve_id": "CVE-2026-101620",
+      "asset_id": "CVE-2026-101620",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 11.0.0 until 13.0.0, multi-frame loaders can retain an ImagingCore allocation created for a narrow frame mode while a later frame of the same dimensions changes the logical mode and decoder tiles to wider RGB or CMYK data. ImageFile.load_prepare() reuses the stale native storage because _im is non-null without verifying that its mode and size still match. Crafted PSD, MPO, DCX, or MIC frame transitions can then write wider pixels into the narrow allocation, causing native out-of-bounds writes and crashes. The MPO path can also cause a native over-read and, in demonstrated runtime-specific profiles, command execution. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T04:30:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96639"
+      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are affected are MySQL Server: 9.7.0-9.7.3; MySQL Cluster: 9.7.0-9.7.3. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101620"
     },
     {
-      "cve_id": "CVE-2026-114223",
-      "asset_id": "CVE-2026-114223",
+      "cve_id": "CVE-2026-101623",
+      "asset_id": "CVE-2026-101623",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NT OneAPP developed by NewType Infortech has an Exposure of Sensitive Information vulnerability. Unauthenticated local attackers can extract plaintext usernames and passwords from backup data after obtaining ADB backup access authorization and user confirmation of the backup, resulting in sensitive information disclosure.",
-      "last_modified": "2026-10-22T04:27:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114223"
+      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: Server: Optimizer).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101623"
     },
     {
-      "cve_id": "CVE-2026-114222",
-      "asset_id": "CVE-2026-114222",
+      "cve_id": "CVE-2026-101656",
+      "asset_id": "CVE-2026-101656",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NT OneAPP developed by NewType Infortech has an Authentication Bypass vulnerability. Unauthenticated local attackers can bypass the App PIN lock mechanism via a Deep Link, thereby accessing protected resources of a logged-in user.",
-      "last_modified": "2026-10-22T04:27:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114222"
+      "description": "Vulnerability in the Oracle Mobile Field Service product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Mobile Field Service.  Successful attacks of this vulnerability can result in takeover of Oracle Mobile Field Service. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101656"
     },
     {
-      "cve_id": "CVE-2026-114221",
-      "asset_id": "CVE-2026-114221",
+      "cve_id": "CVE-2026-101666",
+      "asset_id": "CVE-2026-101666",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NT OneAPP developed by NewType Infortech has a Credential Disclosure vulnerability. Unauthenticated remote attackers can trigger an HTTP Basic Authentication challenge from an unvalidated source in the WebView under specific conditions, thereby obtaining the NUP Portal passcode of a logged-in user.",
-      "last_modified": "2026-10-22T04:26:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114221"
+      "description": "Vulnerability in the Oracle Trade Management product of Oracle E-Business Suite (component: Claim LOV).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Trade Management.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Trade Management, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Trade Management accessible data as well as  unauthorized read access to a subset of Oracle Trade Management accessible data. CVSS 3.1 Base Score 5.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N).",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101666"
     },
     {
-      "cve_id": "CVE-2026-114220",
-      "asset_id": "CVE-2026-114220",
+      "cve_id": "CVE-2026-101676",
+      "asset_id": "CVE-2026-101676",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NT OneAPP developed by NewType Infortech has an Improper Certificate Validation vulnerability. Unauthenticated network-adjacent attackers can perform a man-in-the-middle attack by failing to validate the server certificate and the hostname, thereby intercepting or modifying communications between the application and the server.",
-      "last_modified": "2026-10-22T04:26:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114220"
+      "description": "Vulnerability in the Oracle Concurrent Processing product of Oracle E-Business Suite (component: Other Issues).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Concurrent Processing executes to compromise Oracle Concurrent Processing.  Successful attacks of this vulnerability can result in takeover of Oracle Concurrent Processing. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101676"
     },
     {
-      "cve_id": "CVE-2026-114219",
-      "asset_id": "CVE-2026-114219",
+      "cve_id": "CVE-2026-101765",
+      "asset_id": "CVE-2026-101765",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NT OneAPP developed by NewType Infortech has a Hard-coded Credentials vulnerability. Unauthenticated remote attackers can obtain the hard-coded cryptographic key and decrypt login request contents, thereby obtaining users' plaintext account credentials and device information.",
-      "last_modified": "2026-10-22T04:25:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114219"
+      "description": "Vulnerability in the Oracle Communications Billing and Revenue Management product of Oracle Communications (component: BRM Server).  Supported versions that are affected are 15.0.0.0.0, 15.0.1.0.0, 15.1.0.0.0 and  15.2.0.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Communications Billing and Revenue Management.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Communications Billing and Revenue Management accessible data as well as  unauthorized access to critical data or complete access to all Oracle Communications Billing and Revenue Management accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101765"
     },
     {
-      "cve_id": "CVE-2026-114508",
-      "asset_id": "CVE-2026-114508",
+      "cve_id": "CVE-2026-105256",
+      "asset_id": "CVE-2026-105256",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Laravel is a web application framework. From 12.45.0 until 12.68.0 and 13.27.0, crafted relationship inclusion on a read-only endpoint can trigger a destructive database operation on a related table instead of retrieving data. A user with read access but no write permission can empty related-table data, causing irreversible data loss, denial of service, and loss of data integrity. This issue is fixed in versions 12.68.0 and 13.27.0.",
-      "last_modified": "2026-10-22T04:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114508"
+      "description": "The LatePoint WordPress plugin before 5.7.5 does not validate the client-supplied value that determines how much is charged for a booking against the amounts the service and site actually allow, allowing an unauthenticated visitor to make the amount due resolve to zero and obtain a confirmed appointment and a recorded order without completing any payment.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105256"
     },
     {
-      "cve_id": "CVE-2026-114509",
-      "asset_id": "CVE-2026-114509",
+      "cve_id": "CVE-2026-109125",
+      "asset_id": "CVE-2026-109125",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Laravel is a web application framework. Prior to 12.68.0 and 13.29.0, TokenGuard configured as a standard token-based API guard does not reject a crafted non-string credential. Under affected MySQL or MariaDB configurations, the authentication lookup can match an unintended existing user, allowing an unauthenticated attacker to bypass authentication and take over an account on routes protected by TokenGuard. This issue is fixed in versions 12.68.0 and 13.29.0.",
-      "last_modified": "2026-10-22T04:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114509"
+      "description": "In NLnet Labs Unbound up to and including version 1.26.1, an observable  cache-level side-channel can be exposed with 'unwanted-reply-threshold > 0' configurations (not a default configuration). If a response-like UDP datagram reaches the upstream source port currently used by a recursive query, but its TXID does not match any pending query, Unbound counts the packet as an unwanted reply. When the accumulated count reaches the configured threshold, Unbound clears the worker's RRset cache and message cache. This cache clear action does not destroy the current upstream UDP pending query. Therefore, an external observer can distinguish whether a candidate port matches the current upstream source port by checking whether an existing cached item has been cleared. This is a cache side-channel vulnerability that can be used to probe the upstream source port. Although the attack is not feasible on default configurations and the suggested value (10 million) makes it an ureliable attack on a public resolver, in scenarios where the attacker can keep a concurrent query window alive, the attacker can first filter the source port and then perform birthday-style guessing against the TXID, making cache poisoning a feasible attack path.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109125"
     },
     {
-      "cve_id": "CVE-2026-114383",
-      "asset_id": "CVE-2026-114383",
+      "cve_id": "CVE-2026-35501",
+      "asset_id": "CVE-2026-35501",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. This impacts the function setWiFiAclAddConfig of the file /cgi-bin/cstecgi.cgi of the component wireless.so. This manipulation of the argument macAddress causes stack-based buffer overflow. The attack can be initiated remotely. The exploit has been made available to the public and could be used for attacks.",
-      "last_modified": "2026-10-22T04:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114383"
+      "description": "When NLnet Labs Unbound 1.0.1 up to and including version 1.26.1 is configured with both a root trust anchor and an additional 'trust-anchor:' for an island-of-security zone whose parent is provably insecure under the root chain, a malicious actor with a forged NSEC reply with the SOA bit cleared can trick Unbound to treat the configured trust island as insecure. This happens because the DNSSEC validator in Unbound accepts and caches the NSEC insecure response bypassing the RRSIG validation that the validator was supposed to do. The acceptance of the NSEC record at the trust anchor apex was allowed due to and old fix for type DS and NSEC queries from clients when trust anchor for that name existed.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35501"
     },
     {
-      "cve_id": "CVE-2026-103090",
-      "asset_id": "CVE-2026-103090",
+      "cve_id": "CVE-2026-96405",
+      "asset_id": "CVE-2026-96405",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authentication for Critical Function (CWE-306) and Insufficiently Protected Credentials (CWE-522) in the control plane enrollment status handler (HandleEnrollStatus at GET /enroll/status in internal/controlplane/server.go) in Google OSS Agent Mesh (SAM) versions 0.1.0-alpha.1 through 0.1.0-alpha.8 allow an unauthenticated remote attacker to retrieve an approved bootstrap-enrolled peer's signed Biscuit identity token by supplying a peer_id obtainable from the unauthenticated GET /info endpoint. A related flaw in POST /enroll allowed any bootstrap-token holder to re-fetch another peer's credential. An attacker can replay the disclosed Biscuit token as a bearer credential on /policies to read mesh authorization policies and on /routers/lease to overwrite advertised router multiaddrs. Users should upgrade to version 0.1.0-alpha.9 or later, which requires cryptographic proof of possession of the enrollment private key on credential-releasing endpoints, enforces rate limiting, and validates router lease addresses.",
-      "last_modified": "2026-10-22T04:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103090"
+      "description": "NLnet Labs Unbound up to and including version 1.26.1 limits compression-pointer traversal for each individual domain-name operation but has no aggregate inbound decompression-work budget. Many chained compression pointers in a message results in a lot of CPU usage following them. A malicious actor with recursive-query access and control of an ordinarily delegated authority that serves specially crafted replies can exploit the vulnerability and degrade Unbound's general performance.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96405"
     },
     {
-      "cve_id": "CVE-2026-114575",
-      "asset_id": "CVE-2026-114575",
+      "cve_id": "CVE-2026-58663",
+      "asset_id": "CVE-2026-58663",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw has been found in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected by this issue is the function UploadCustomModule of the file lib/cste_modules/product.so. Executing a manipulation of the argument FileMd5 can lead to command injection. The attack can be launched remotely. The exploit has been published and may be used.",
-      "last_modified": "2026-10-22T04:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114575"
+      "description": "An authentication bypass vulnerability exists in Apache IoTDB's Thrift RPC service\n\n\n\nThis issue affects Apache IoTDB: from 2.0.0 before 2.0.11.\n\n\n\nUsers are recommended to upgrade to version 2.0.11, which fixes the issue.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58663"
     },
     {
-      "cve_id": "CVE-2026-114576",
-      "asset_id": "CVE-2026-114576",
+      "cve_id": "CVE-2026-59562",
+      "asset_id": "CVE-2026-59562",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been found in Linksys RE6250 1.0.04.001. This affects the function strcmp of the component Web Management Interface. The manipulation of the argument session_id leads to insufficiently random values. The attack may be initiated remotely. The complexity of an attack is rather high. It is indicated that the exploitability is difficult. The exploit has been disclosed to the public and may be used.",
-      "last_modified": "2026-10-22T04:15:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114576"
+      "description": "Missing authentication for critical function vulnerability in Apache IoTDB.\n\n\n\nThis issue affects Apache IoTDB: from 2.0.0 before 2.0.11.\n\n\n\nUsers are recommended to upgrade to version 2.0.11, which fixes the issue.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59562"
     },
     {
-      "cve_id": "CVE-2026-114406",
-      "asset_id": "CVE-2026-114406",
+      "cve_id": "CVE-2026-114121",
+      "asset_id": "CVE-2026-114121",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The system certificate authority (CA) store in Red Hat products, distributed via ca-certificates RPM packages, included multiple root CA certificates of authorities, which signed intermediate CA certificates with weak private keys issued by the eMudhra certificate authority. A man-in-the-middle attacker could use this flaw to issue certificates for arbitrary host names signed by the weak intermediate CA certificates, which would be considered trusted by a TLS/SSL client using system CA store and cause such clients to connect to malicious sites.\n\nDue to inability to only distrust specific intermediate certificates in all clients using the system CA store, root CA certificates of authorities that signed weak intermediate CA certificates are being removed.",
-      "last_modified": "2026-10-22T03:56:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114406"
+      "description": "Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to versions 42.11.3, 43.7.0, 44.3.0, and 45.0.0-alpha.5, requests to open external protocol URLs could be attributed to a document other than the one that initiated them, causing the requestingUrl passed to session.setPermissionRequestHandler to identify trusted content for a launch requested by untrusted content. An application that grants openExternal based on the requesting origin and allows untrusted content to open or navigate windows could therefore allow that content to launch an OS-registered external application. This issue is fixed in versions 42.11.3, 43.7.0, 44.3.0, and 45.0.0-alpha.5.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114121"
     },
     {
-      "cve_id": "CVE-2026-76487",
-      "asset_id": "CVE-2026-76487",
+      "cve_id": "CVE-2026-114180",
+      "asset_id": "CVE-2026-114180",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability in Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) could allow an unauthenticated, remote attacker to conduct access control bypass attacks on an affected device.\r\n\r\nThis vulnerability is due to improper input validation for specific HTTP requests. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to access parts of the network that are beyond the scope of their intended access.",
-      "last_modified": "2026-10-22T03:45:18Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76487"
+      "description": "Missing Authorization vulnerability in Wpmet Metform metform allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Metform: from n/a through 4.3.2.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114180"
     },
     {
-      "cve_id": "CVE-2026-39717",
-      "asset_id": "CVE-2026-39717",
+      "cve_id": "CVE-2026-112843",
+      "asset_id": "CVE-2026-112843",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authorization vulnerability in ThimPress LearnPress learnpress allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects LearnPress: from n/a through 4.4.10.",
-      "last_modified": "2026-10-22T03:30:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-39717"
+      "description": "Missing Authorization vulnerability in WP Chill Strong Testimonials strong-testimonials allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Strong Testimonials: from n/a through 3.3.14.",
+      "last_modified": "2026-10-22T11:30:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112843"
     },
     {
-      "cve_id": "CVE-2026-112283",
-      "asset_id": "CVE-2026-112283",
+      "cve_id": "CVE-2026-97328",
+      "asset_id": "CVE-2026-97328",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "VideoLAN libbluray through 1.5.1 contains an uncontrolled memory allocation vulnerability in _parse_extent_start_points() in clpi_parse.c that trusts the num_point field without bounds checking. Attackers can supply a crafted .clpi file on a disc, image, or directory with a huge num_point to exhaust memory and CPU, causing denial of service.",
-      "last_modified": "2026-10-22T03:16:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112283"
+      "description": "The WebP Express WordPress plugin before 0.25.16 does not escape values that its bundled HTML parser re-emits into element attributes when a non-default image delivery mode is enabled, allowing unauthenticated users to submit content that is stored and later executed as Cross-Site Scripting in the browser of any user viewing an affected page, including administrators.",
+      "last_modified": "2026-10-22T11:17:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97328"
     },
     {
-      "cve_id": "CVE-2026-112278",
-      "asset_id": "CVE-2026-112278",
+      "cve_id": "CVE-2026-88849",
+      "asset_id": "CVE-2026-88849",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "rdesktop through 1.9.0 contains a heap out-of-bounds read vulnerability in process_raw_bmpcache() in orders.c that allows malicious RDP servers to crash clients. Attackers can send a raw bitmap cache order declaring large width, height, and bpp values with a tiny payload, causing memcpy() to read past the receive buffer and crash the client.",
-      "last_modified": "2026-10-22T03:16:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112278"
+      "description": "The MasterStudy LMS WordPress Plugin  WordPress plugin before 3.7.55 does not verify that a user targeted through its student-enrolment feature has any relationship to the requesting instructor, allowing users with the Instructor role to overwrite the first name, last name and public display name of any registered user on the site, including administrators, enabling impersonation and phishing.",
+      "last_modified": "2026-10-22T11:17:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88849"
     },
     {
-      "cve_id": "CVE-2026-112273",
-      "asset_id": "CVE-2026-112273",
+      "cve_id": "CVE-2026-78392",
+      "asset_id": "CVE-2026-78392",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "libtins through 4.6 contains a heap out-of-bounds read vulnerability in DNS::compose_name in src/dns.cpp that allows remote attackers to read past the packet buffer by sending a label ending exactly at the packet end. Attackers can deliver crafted DNS packets whose additional, answer, or authority records trigger a one-byte read when parsed, crashing applications on hardened allocators.",
-      "last_modified": "2026-10-22T03:16:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112273"
+      "description": "The Link Library WordPress plugin before 7.9.6 does not sanitise and escape a link field before outputting it inside an attribute of a link preview, allowing users with the Contributor role and above to perform Stored Cross-Site Scripting attacks. The preview is generated without authentication and without checking whether the link has been published, so an unapproved submission is enough to reach any visitor who opens it.",
+      "last_modified": "2026-10-22T11:17:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78392"
     },
     {
-      "cve_id": "CVE-2026-112059",
-      "asset_id": "CVE-2026-112059",
+      "cve_id": "CVE-2026-114703",
+      "asset_id": "CVE-2026-114703",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "libLAS through 1.8.1 contains a heap out-of-bounds write vulnerability in the point record reader caused by truncating the schema byte size to 16 bits when sizing the point buffer. Attackers can craft a .las file with a LASSchema variable length record whose schema exceeds 65535 bytes, so tools like lasinfo, las2las, or las2txt write attacker-controlled bytes past the heap buffer, causing memory corruption and crashes.",
-      "last_modified": "2026-10-22T03:16:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112059"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in hupe13 Extensions for Leaflet Map extensions-leaflet-map allows Stored XSS.This issue affects Extensions for Leaflet Map: from n/a through 6.0.",
+      "last_modified": "2026-10-22T11:17:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114703"
     },
     {
-      "cve_id": "CVE-2026-112054",
-      "asset_id": "CVE-2026-112054",
+      "cve_id": "CVE-2026-114702",
+      "asset_id": "CVE-2026-114702",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Schroedinger libschroedinger through 1.0.11 contains a divide by zero vulnerability that allows attackers to crash applications by supplying a zero slice_bytes_denom or slice count in a Dirac stream. Attackers can provide a crafted low-delay picture parsed by schro_decoder_parse_transform_parameters and schro_decoder_parse_lowdelay_transform_data to trigger a SIGFPE and cause denial of service.",
-      "last_modified": "2026-10-22T03:16:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112054"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in nicdark ND Shortcodes For Visual Composer nd-shortcodes allows Stored XSS.This issue affects ND Shortcodes For Visual Composer: from n/a through 7.8.",
+      "last_modified": "2026-10-22T11:17:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114702"
     },
     {
-      "cve_id": "CVE-2026-112020",
-      "asset_id": "CVE-2026-112020",
+      "cve_id": "CVE-2026-114701",
+      "asset_id": "CVE-2026-114701",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "LodePNG through 20261006 contains a heap out-of-bounds read vulnerability in lodepng::getFilterTypesInterlaced() in lodepng_util.cpp that lacks bounds checks on decompressed IDAT data. Attackers can supply a crafted interlaced PNG declaring a raster larger than its IDAT stream to disclose adjacent heap memory or crash applications.",
-      "last_modified": "2026-10-22T03:16:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112020"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in xootix Waitlist Woocommerce ( Back in stock notifier ) waitlist-woocommerce allows Stored XSS.This issue affects Waitlist Woocommerce ( Back in stock notifier ): from n/a through 2.9.1.",
+      "last_modified": "2026-10-22T11:17:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114701"
     },
     {
-      "cve_id": "CVE-2026-107081",
-      "asset_id": "CVE-2026-107081",
+      "cve_id": "CVE-2026-114700",
+      "asset_id": "CVE-2026-114700",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SQL injection via identifier injection in the tableName and tableFields POST parameters of admin AJAX endpoints (admin/AJAX_lookup_handler.php, admin/AJAX_check_id.php, admin/AJAX_vocabolary_control.php) in SENAYAN Library Management System (SLiMS) Bulian 9.8.0 allows any authenticated staff user to extract arbitrary database contents.",
-      "last_modified": "2026-10-22T03:16:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107081"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Gloriafood Restaurant Menu \u2013 Food Ordering System \u2013 Table Reservation menu-ordering-reservations allows Stored XSS.This issue affects Restaurant Menu \u2013 Food Ordering System \u2013 Table Reservation: from n/a through 2.4.4.",
+      "last_modified": "2026-10-22T11:17:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114700"
     },
     {
-      "cve_id": "CVE-2025-55654",
-      "asset_id": "CVE-2025-55654",
+      "cve_id": "CVE-2026-114699",
+      "asset_id": "CVE-2026-114699",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A use-after-free in the gf_filter_pid_get_packet function (filter_core/filter_pid.c) of GPAC MP4Box v2.4 allows attackers to cause a Denial of Service (DoS) via supplying a crafted file.",
-      "last_modified": "2026-10-22T03:16:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-55654"
+      "description": "Missing Authorization vulnerability in yoomoney \u042eKassa \u0434\u043b\u044f WooCommerce yookassa allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects \u042eKassa \u0434\u043b\u044f WooCommerce: from n/a through 2.17.3.",
+      "last_modified": "2026-10-22T11:17:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114699"
     },
     {
-      "cve_id": "CVE-2026-114471",
-      "asset_id": "CVE-2026-114471",
+      "cve_id": "CVE-2026-114698",
+      "asset_id": "CVE-2026-114698",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insertion of sensitive information into a log file in the SMTP server of Progressive Robot hMailServer 6.0.0 through 6.3.6 allows a local user who can read the server's log, or anyone given a copy of it, to obtain credentials. With SMTP logging enabled, the server hid the credential of an AUTH PLAIN command only when it was sent after EHLO in one exact form, and wrote the rest of the SASL exchange as the client sent it: a PLAIN password sent before EHLO or with extra spacing, the OAuth 2.0 bearer token of AUTH XOAUTH2 and AUTH OAUTHBEARER (from 6.2.0), the SCRAM-SHA-256 client proof (from 6.2.0), which with the logged salt and iteration count allows offline password guessing, and the GSSAPI authenticator (from 6.3.2). SMTP logging is off by default; on Windows before 6.3.6 the log folder was readable by every local user.",
-      "last_modified": "2026-10-22T03:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114471"
+      "description": "Authorization Bypass Through User-Controlled Key vulnerability in myCred myCred mycred allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects myCred: from n/a through 4.0.0-beta.1.",
+      "last_modified": "2026-10-22T11:17:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114698"
     },
     {
-      "cve_id": "CVE-2026-87263",
-      "asset_id": "CVE-2026-87263",
+      "cve_id": "CVE-2026-114696",
+      "asset_id": "CVE-2026-114696",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Analytics Server).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  Successful attacks of this vulnerability can result in takeover of Oracle Business Intelligence Enterprise Edition. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-22T03:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87263"
+      "description": "Missing Authorization vulnerability in miniOrange Page Restriction WordPress (WP) page-and-post-restriction allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Page Restriction WordPress (WP): from n/a through 1.6.0.",
+      "last_modified": "2026-10-22T11:17:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114696"
     },
     {
-      "cve_id": "CVE-2026-87291",
-      "asset_id": "CVE-2026-87291",
+      "cve_id": "CVE-2026-114195",
+      "asset_id": "CVE-2026-114195",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-22T03:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87291"
+      "description": "Insertion of Sensitive Information into Externally-Accessible File or Directory vulnerability in WP Desk ShopMagic shopmagic-for-woocommerce allows Retrieve Embedded Sensitive Data.This issue affects ShopMagic: from n/a through 4.9.1.",
+      "last_modified": "2026-10-22T11:17:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114195"
     },
     {
-      "cve_id": "CVE-2026-87292",
-      "asset_id": "CVE-2026-87292",
+      "cve_id": "CVE-2026-114184",
+      "asset_id": "CVE-2026-114184",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 3.7 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N).",
-      "last_modified": "2026-10-22T03:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87292"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WPVibes Elementor Addon Elements addon-elements-for-elementor-page-builder allows Stored XSS.This issue affects Elementor Addon Elements: from n/a through 1.14.4.",
+      "last_modified": "2026-10-22T11:17:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114184"
     },
     {
-      "cve_id": "CVE-2026-114472",
-      "asset_id": "CVE-2026-114472",
+      "cve_id": "CVE-2026-114182",
+      "asset_id": "CVE-2026-114182",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient resource pool in the ACME HTTP-01 challenge responder of Progressive Robot hMailServer 6.0.0 through 6.3.6 allows a remote unauthenticated attacker to cause a certificate issuance or renewal to fail. When the server obtains or renews a TLS certificate over ACME it runs an HTTP-01 challenge responder on port 80 for the certificate authority to read the challenge token; the responder served one connection at a time, accepting a socket, waiting up to five seconds to receive a request, answering it, and only then accepting the next. A client that connected and sent nothing held the single worker for the whole timeout, so enough idle connections during a validation keep the certificate authority's own request from being answered in time and the validation fails. Sustained across a certificate's renewals this leads to the certificate expiring, after which clients refuse the server's TLS; the mail service itself continues on its current certificate until then. No authentication is required to connect to the responder. Version 6.3.7 serves up to 64 connections at once and closes a connection past that, so that where a handful of idle connections, one after another, sufficed before, a client must keep 64 idle connections open at once throughout a validation to have the certificate authority's connection closed.",
-      "last_modified": "2026-10-22T03:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114472"
+      "description": "Missing Authorization vulnerability in IdeaBox Creations PowerPack Addons for Elementor powerpack-lite-for-elementor allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects PowerPack Addons for Elementor: from n/a through 3.1.0.",
+      "last_modified": "2026-10-22T11:17:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114182"
     },
     {
-      "cve_id": "CVE-2026-114473",
-      "asset_id": "CVE-2026-114473",
+      "cve_id": "CVE-2026-114177",
+      "asset_id": "CVE-2026-114177",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in the Sender Rewriting Scheme (SRS) of Progressive Robot hMailServer 6.2.1 through 6.3.6 allows a remote attacker to relay mail through the server to outside addresses. With SRS enabled, the server rewrites the envelope sender of mail it forwards to a signed SRS address at the forwarding domain, and passes a bounce to that address back to the original sender; but it took every message to a valid SRS address, whatever its sender, as delivery to a local recipient, so the relay rules and the SMTP authentication they require were not applied, and the message was delivered to the outside address the SRS address encodes. Anyone holding a valid SRS address of the server, such as the recipient of a forwarded message, could have the server relay mail to the address it encodes for 21 days, and an account holder whose account forwards to an outside mailbox could obtain one for any address. SRS is off by default.",
-      "last_modified": "2026-10-22T03:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114473"
+      "description": "Cross-Site Request Forgery (CSRF) vulnerability in Xpro Xpro Elementor Addons xpro-elementor-addons allows Cross Site Request Forgery.This issue affects Xpro Elementor Addons: from n/a through 1.7.10.",
+      "last_modified": "2026-10-22T11:17:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114177"
     },
     {
-      "cve_id": "CVE-2026-114474",
-      "asset_id": "CVE-2026-114474",
+      "cve_id": "CVE-2026-114176",
+      "asset_id": "CVE-2026-114176",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use of a less trusted source for the envelope sender in the external-account download of Progressive Robot hMailServer 6.0.0 through 6.3.6 allows a remote unauthenticated attacker to have mail they write in the name of a domain the server hosts sent on by the server with an envelope sender at that domain, so that it passes the domain's SPF and DMARC at other receivers. A message the server downloads from an external POP3 or IMAP account has no SMTP envelope of its own, and the server took the address in its From header as its envelope sender, whatever that address was. A forward or redirect of the downloaded message to an outside address then left with that address as its envelope sender, which the Sender Rewriting Scheme leaves alone for a hosted domain, so that the receiver's SPF check passed for the forged domain, aligned even under strict alignment, with no non-default setting, host name record or DMARC policy needed. An attacker needs to know a mailbox elsewhere that an account here collects and forwards to an outside address; an account holder who adds an external account of their own can collect from a server of their own, which matters where SmtpAuthenticatedSenderCheck holds signed-in senders to their own addresses.",
-      "last_modified": "2026-10-22T03:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114474"
+      "description": "Missing Authorization vulnerability in DigitalME eRoom eroom-zoom-meetings-webinar allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects eRoom: from n/a through 1.7.1.",
+      "last_modified": "2026-10-22T11:17:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114176"
     },
     {
-      "cve_id": "CVE-2026-114475",
-      "asset_id": "CVE-2026-114475",
+      "cve_id": "CVE-2026-114175",
+      "asset_id": "CVE-2026-114175",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing authorization in the REST role-management routes of Progressive Robot hMailServer 6.3.4 through 6.3.6 allows a remote authenticated user whose credential is confined to named domains to modify a custom role that accounts in other domains hold, and to create custom roles and delete any that no account holds. The routes that create, update and delete a custom role require the manage_roles permission, which only the serveradmin role holds; but a full-scope API key issued for named domains, and serveradmin assigned with a domain list, are serveradmin confined to those domains and hold manage_roles. The server's authorization gate did not refuse the three role routes to a confined credential and the route named no domain, so a credential issued to one tenant could raise or lower the permissions of a custom role assigned across other tenants - granting another domain's role every permission over its mailboxes and settings, or removing what it needs. A custom role may not hold administer_server, administer_domain or manage_roles, so the confined credential cannot make itself or another a server administrator by creating or rewriting a custom role.",
-      "last_modified": "2026-10-22T03:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114475"
+      "description": "Missing Authorization vulnerability in DigitalME eRoom eroom-zoom-meetings-webinar allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects eRoom: from n/a through 1.7.1.",
+      "last_modified": "2026-10-22T11:17:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114175"
     },
     {
-      "cve_id": "CVE-2026-114476",
-      "asset_id": "CVE-2026-114476",
+      "cve_id": "CVE-2026-112868",
+      "asset_id": "CVE-2026-112868",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in the REST administration API of Progressive Robot hMailServer 6.3.4 through 6.3.6 allows a remote authenticated user whose credential holds the manage_roles permission in named domains - a full-scope API key issued for those domains, or an account assigned the serveradmin role with a list of domains - to obtain the server administrator's authority. An account's admin level gives it authority, and a role assigned to it replaces that authority, which is how an administrator narrows an account whose admin level is the server administrator's. The route that takes a role away (DELETE /api/v1/role-assignments/{address}) checked only that the credential takes in what the account held at the time, not what it would hold afterwards, so such a credential could take a narrowing role away from an account in its domains whose admin level is the server administrator's, returning it to the server administrator's authority, and, having set that account's password while it held the narrower role, sign in as the server administrator.",
-      "last_modified": "2026-10-22T03:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114476"
+      "description": "Authorization Bypass Through User-Controlled Key vulnerability in H5P H5P h5p allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects H5P: from n/a through 1.17.9.",
+      "last_modified": "2026-10-22T11:17:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112868"
     },
     {
-      "cve_id": "CVE-2026-114477",
-      "asset_id": "CVE-2026-114477",
+      "cve_id": "CVE-2026-112867",
+      "asset_id": "CVE-2026-112867",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing authorization in the REST metrics route of Progressive Robot hMailServer 6.2.25 through 6.3.6 allows a remote authenticated user whose credential is confined to named domains to read the server-wide traffic history. GET /api/v1/metrics/history returns the server's traffic counters over the last 30 days; those counters are server-wide and carry no domain, which is why the report routes already refuse the same counters to a credential confined to named domains. The metrics route was not among the routes the server's authorization gate refuses a confined credential and its handler was not given the caller, so a domain administrator, an account given another role that holds view_configuration in named domains (the auditor role given a domain list among them), or an API key issued for named domains could read the whole server's traffic totals rather than its own domains'. The disclosure is of aggregate operational counters, not of any message or account.",
-      "last_modified": "2026-10-22T03:00:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114477"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in H5P H5P h5p allows Stored XSS.This issue affects H5P: from n/a through 1.17.9.",
+      "last_modified": "2026-10-22T11:17:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112867"
     },
     {
-      "cve_id": "CVE-2026-110353",
-      "asset_id": "CVE-2026-110353",
+      "cve_id": "CVE-2026-112845",
+      "asset_id": "CVE-2026-112845",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "HAProxy 3.2 before 3.4.6 allows a remote unauthenticated attacker to cause a denial of service (worker-thread CPU exhaustion) via a truncated HTTP/2 PING frame. h2c_handle_ping in src/mux_h2.c does not check for a short read, unlike the other H2 frame handlers. Because the incomplete frame cannot be processed, its data is never consumed, and the H2 multiplexer tasklet is repeatedly woken by that pending data without making progress. The CPU spins until timeout http-request closes the connection, and an attacker opening many such connections can sustain high CPU usage.",
-      "last_modified": "2026-10-22T02:53:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110353"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Jory Hogeveen Off-Canvas Sidebars & Menus (Slidebars) off-canvas-sidebars allows Stored XSS.This issue affects Off-Canvas Sidebars & Menus (Slidebars): from n/a through 0.5.9.",
+      "last_modified": "2026-10-22T11:17:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112845"
     },
     {
-      "cve_id": "CVE-2026-110354",
-      "asset_id": "CVE-2026-110354",
+      "cve_id": "CVE-2026-112826",
+      "asset_id": "CVE-2026-112826",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "HAProxy 3 before 3.4.6 allows a remote unauthenticated attacker to cause a denial of service (persistent worker-thread CPU exhaustion) via an HTTP/1.1 chunked request. Although the H1 multiplexer drains the request before closing the stream, the parser repeatedly re-processes the same bytes without making progress. The affected thread stays busy at 100% CPU after timeouts expire and after the client disconnects, and repeated requests can consume all worker threads until the process is restarted.",
-      "last_modified": "2026-10-22T02:46:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110354"
+      "description": "Missing Authorization vulnerability in eLightUp Falcon \u2013 WordPress Optimizations & Tweaks falcon allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Falcon \u2013 WordPress Optimizations & Tweaks: from n/a through 2.12.0.",
+      "last_modified": "2026-10-22T11:17:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112826"
     },
     {
-      "cve_id": "CVE-2026-87293",
-      "asset_id": "CVE-2026-87293",
+      "cve_id": "CVE-2026-112820",
+      "asset_id": "CVE-2026-112820",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Java SE (component: RMI).  Supported versions that are affected are Oracle Java SE: 8u503 and  8u503-perf; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  While the vulnerability is in Oracle Java SE, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Java SE accessible data as well as  unauthorized read access to a subset of Oracle Java SE accessible data. Note: This vulnerability can only be exploited by supplying data to APIs in the specified Component without using Untrusted Java Web Start applications or Untrusted Java applets, such as through a web service. CVSS 3.1 Base Score 5.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87293"
+      "description": "Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion') vulnerability in Elated-Themes Academist Core academist-core allows PHP Local File Inclusion.This issue affects Academist Core: from n/a through 1.4.1.",
+      "last_modified": "2026-10-22T11:17:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112820"
     },
     {
-      "cve_id": "CVE-2026-87295",
-      "asset_id": "CVE-2026-87295",
+      "cve_id": "CVE-2026-112379",
+      "asset_id": "CVE-2026-112379",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle HRMS (India) product of Oracle E-Business Suite (component: Indian Payroll).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle HRMS (India) executes to compromise Oracle HRMS (India).  While the vulnerability is in Oracle HRMS (India), attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle HRMS (India) accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87295"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Codepeople Contact Form Email contact-form-to-email allows Stored XSS.This issue affects Contact Form Email: from n/a through 1.3.68.",
+      "last_modified": "2026-10-22T11:17:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112379"
     },
     {
-      "cve_id": "CVE-2026-87297",
-      "asset_id": "CVE-2026-87297",
+      "cve_id": "CVE-2026-112327",
+      "asset_id": "CVE-2026-112327",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Communications Billing and Revenue Management product of Oracle Communications (component: Platform).  Supported versions that are affected are 15.0.0.0.0, 15.0.1.0.0, 15.1.0.0.0 and  15.2.0.0.0. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Oracle Communications Billing and Revenue Management executes to compromise Oracle Communications Billing and Revenue Management.  Successful attacks of this vulnerability can result in takeover of Oracle Communications Billing and Revenue Management. CVSS 3.1 Base Score 6.7 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87297"
+      "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in TMS Amelia ameliabooking allows SQL Injection.This issue affects Amelia: from n/a through 2.4.11.",
+      "last_modified": "2026-10-22T11:17:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112327"
     },
     {
-      "cve_id": "CVE-2026-87302",
-      "asset_id": "CVE-2026-87302",
+      "cve_id": "CVE-2026-112313",
+      "asset_id": "CVE-2026-112313",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle WebLogic Server accessible data as well as  unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87302"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in ACF Extended ACF Extended acf-extended allows Stored XSS.This issue affects ACF Extended: from n/a through 0.9.2.7.",
+      "last_modified": "2026-10-22T11:17:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112313"
     },
     {
-      "cve_id": "CVE-2026-87317",
-      "asset_id": "CVE-2026-87317",
+      "cve_id": "CVE-2026-112312",
+      "asset_id": "CVE-2026-112312",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD Edwards (component: Enterprise Infrastructure SEC).  Supported versions that are affected are 9.2.0.0-9.2.26.5. Difficult to exploit vulnerability allows unauthenticated attacker with network access via SMTP to compromise JD Edwards EnterpriseOne Tools.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of JD Edwards EnterpriseOne Tools accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of JD Edwards EnterpriseOne Tools. CVSS 3.1 Base Score 4.8 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87317"
+      "description": "Missing Authorization vulnerability in ACF Extended ACF Extended acf-extended allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects ACF Extended: from n/a through 0.9.2.7.",
+      "last_modified": "2026-10-22T11:17:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112312"
     },
     {
-      "cve_id": "CVE-2026-87355",
-      "asset_id": "CVE-2026-87355",
+      "cve_id": "CVE-2026-112311",
+      "asset_id": "CVE-2026-112311",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Panel Processor).  Supported versions that are affected are 8.61-8.63. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in PeopleSoft Enterprise PeopleTools, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of PeopleSoft Enterprise PeopleTools accessible data as well as  unauthorized read access to a subset of PeopleSoft Enterprise PeopleTools accessible data. CVSS 3.1 Base Score 4.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:N).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87355"
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in ACF Extended ACF Extended acf-extended allows Path Traversal.This issue affects ACF Extended: from n/a through 0.9.2.7.",
+      "last_modified": "2026-10-22T11:17:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112311"
     },
     {
-      "cve_id": "CVE-2026-87404",
-      "asset_id": "CVE-2026-87404",
+      "cve_id": "CVE-2026-112242",
+      "asset_id": "CVE-2026-112242",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Pasta product of Oracle E-Business Suite (component: Printing Engine).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Pasta.  Successful attacks of this vulnerability can result in takeover of Pasta. CVSS 3.1 Base Score 7.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87404"
+      "description": "Incorrect Privilege Assignment vulnerability in Cozmoslabs Profile Builder profile-builder allows Privilege Escalation.This issue affects Profile Builder: from n/a through 4.0.4.",
+      "last_modified": "2026-10-22T11:17:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112242"
     },
     {
-      "cve_id": "CVE-2026-87423",
-      "asset_id": "CVE-2026-87423",
+      "cve_id": "CVE-2026-112241",
+      "asset_id": "CVE-2026-112241",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Solaris product of Oracle Systems (component: X Window System).   The supported version that is affected is 11.4. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Solaris executes to compromise Oracle Solaris.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle Solaris accessible data as well as  unauthorized read access to a subset of Oracle Solaris accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle Solaris. CVSS 3.1 Base Score 4.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87423"
+      "description": "Authentication Bypass by Spoofing vulnerability in Brainstorm Force SureCart surecart allows Authentication Abuse.This issue affects SureCart: from n/a through 4.9.5.",
+      "last_modified": "2026-10-22T11:17:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112241"
     },
     {
-      "cve_id": "CVE-2026-91377",
-      "asset_id": "CVE-2026-91377",
+      "cve_id": "CVE-2026-112218",
+      "asset_id": "CVE-2026-112218",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Siebel CRM Integration product of Oracle Siebel CRM (component: Open Integration).  Supported versions that are affected are 25.12-26.9. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM Integration.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Integration accessible data. CVSS 3.1 Base Score 7.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91377"
+      "description": "Missing Authorization vulnerability in Ahmad Majestic Support majestic-support allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Majestic Support: from n/a through 1.2.1.",
+      "last_modified": "2026-10-22T11:17:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112218"
     },
     {
-      "cve_id": "CVE-2026-91379",
-      "asset_id": "CVE-2026-91379",
+      "cve_id": "CVE-2026-111972",
+      "asset_id": "CVE-2026-111972",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JDK tools).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition executes to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. This vulnerability does not apply to Java deployments, typically in servers, that load and run only trusted code (e.g., code installed by an administrator). CVSS 3.1 Base Score 4.7 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N).",
-      "last_modified": "2026-10-22T02:45:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91379"
+      "description": "The Photo Engine (Media Organizer & Lightroom) WordPress plugin before 6.5.8 does not verify that a user is authorised to act on the targeted media attachment, allowing authenticated users with the author role and above to delete arbitrary media attachments, including those uploaded by other users and administrators.",
+      "last_modified": "2026-10-22T11:17:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111972"
     },
     {
-      "cve_id": "CVE-2026-97644",
-      "asset_id": "CVE-2026-97644",
+      "cve_id": "CVE-2026-111971",
+      "asset_id": "CVE-2026-111971",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Groundhogg \u2014 CRM, Newsletters, and Marketing Automation plugin for WordPress is vulnerable to Privilege Escalation via Contact Identity Rebinding in all versions up to, and including, 4.9 The vulnerability exists because the `create_contact` function in the v3 REST endpoint (`POST /gh/v3/contacts`) is gated solely by the `add_contacts` capability and forwards the full request payload \u2014 including the security-bearing `user_id` column \u2014 into the upsert path of `Contacts_DB::add()`, which bypasses the ownership guard that `Contacts_DB::update()` enforces, allowing an attacker to rebind any existing contact record to an arbitrary WordPress user ID. This makes it possible for authenticated attackers with Sales Representative-level access and above to upsert their own contact row to point to an Administrator's user ID, then invoke the v4 email-test endpoint (`POST /gh/v4/emails/test`) \u2014 also accessible to the Sales Representative role via the `send_emails` capability \u2014 to generate an `{auto_login_url}` one-time permissions key bound to the rebound contact, and consume that link to call `wp_set_auth_cookie()` and gain a fully authenticated session as the WordPress Administrator.",
-      "last_modified": "2026-10-22T02:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97644"
+      "description": "The Photo Engine (Media Organizer & Lightroom) WordPress plugin before 6.5.8 does not sanitise and escape collection and gallery names before storing them and outputting them in an administrative dashboard, allowing authenticated users with the author role and above to perform Stored Cross-Site Scripting attacks.",
+      "last_modified": "2026-10-22T11:17:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111971"
     },
     {
-      "cve_id": "CVE-2026-92538",
-      "asset_id": "CVE-2026-92538",
+      "cve_id": "CVE-2026-111958",
+      "asset_id": "CVE-2026-111958",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The LearnPress \u2013 WordPress LMS Plugin for Create and Sell Online Courses plugin for WordPress is vulnerable to Reflected DOM-Based Cross-Site Scripting via the 'orderby' parameter in all versions up to, and including, 4.4.7 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.",
-      "last_modified": "2026-10-22T02:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92538"
+      "description": "The Royal MCP  WordPress plugin before 1.5.7 does not limit a preview-link token to the single preview it was issued for, so any party that obtains a valid token is authenticated as the token's owning user, an administrator in the default configuration, across the entire REST API with no nonce, leading to full site takeover.",
+      "last_modified": "2026-10-22T11:17:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111958"
     },
     {
-      "cve_id": "CVE-2026-93428",
-      "asset_id": "CVE-2026-93428",
+      "cve_id": "CVE-2026-111851",
+      "asset_id": "CVE-2026-111851",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Ultimate Member \u2013 User Profile, Registration, Login, Member Directory, Content Restriction & Membership Plugin plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 2.13.1 This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for unauthenticated attackers to view privacy-restricted member profile field values \u2014 including fields explicitly configured as owner-only, members-only, or role-restricted \u2014 by querying the publicly accessible wp_ajax_nopriv_um_get_members endpoint. The nonce required by the endpoint ('um-frontend-nonce') is emitted to all unauthenticated visitors via wp_localize_script, meaning it provides no meaningful access control and any anonymous visitor can satisfy the endpoint's authentication requirements.",
-      "last_modified": "2026-10-22T02:30:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93428"
+      "description": "Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in WProyal Royal Elementor Addons royal-elementor-addons allows Code Injection.This issue affects Royal Elementor Addons: from n/a through 1.7.1068.",
+      "last_modified": "2026-10-22T11:17:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111851"
     },
     {
-      "cve_id": "CVE-2026-29001",
-      "asset_id": "CVE-2026-29001",
+      "cve_id": "CVE-2026-111847",
+      "asset_id": "CVE-2026-111847",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "TastyIgniter through 4.4.5 contain a PHP object injection vulnerability that allows authenticated administrators to achieve arbitrary code execution by submitting a serialized PHP object as a settings value, which is stored unsanitized and later unserialized by getValueAttribute() when the setting is read. Attackers can submit a serialized gadget chain, such as one generated via phpggc, through the admin settings form (for example the maintenance_message setting loaded by CheckMaintenance.php) to achieve arbitrary operating-system command execution as the PHP application process user, with the impact persisting until the value is overwritten.",
-      "last_modified": "2026-10-22T02:30:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-29001"
+      "description": "Missing Authorization vulnerability in Kings Plugins MarketKing marketking-multivendor-marketplace-for-woocommerce allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects MarketKing: from n/a through 2.1.72.",
+      "last_modified": "2026-10-22T11:17:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111847"
     },
     {
-      "cve_id": "CVE-2026-114732",
-      "asset_id": "CVE-2026-114732",
+      "cve_id": "CVE-2026-111842",
+      "asset_id": "CVE-2026-111842",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 is affected by an improper authentication vulnerability in multi-host installations. When a user logs in with an alias address, rcube_user::query() matched the address against identity records without qualifying the lookup by IMAP host, so a login could be resolved to a user account belonging to a different IMAP host. Upstream fixed this in the commit \u201cFix bug where an alias login wasn\u2019t qualified by IMAP host\u201d.",
-      "last_modified": "2026-10-22T02:16:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114732"
+      "description": "Missing Authorization vulnerability in WP Sunshine Sunshine Photo Cart sunshine-photo-cart allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Sunshine Photo Cart: from n/a through 3.7.5.",
+      "last_modified": "2026-10-22T11:17:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111842"
     },
     {
-      "cve_id": "CVE-2026-104947",
-      "asset_id": "CVE-2026-104947",
+      "cve_id": "CVE-2026-111830",
+      "asset_id": "CVE-2026-111830",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "WarehousePG (WHPG) 7.2.1 through 7.6.0 is affected by a missing authorization vulnerability (CWE-862) in the built-in function gp_log_backend_memory_contexts(). Any authenticated database role can run this function without a GRANT. It also gets around the superuser restriction that PostgreSQL places on the underlying pg_log_backend_memory_contexts() function. A low-privileged user can force the segment backends of any other session, superuser sessions included, to write their memory context details to the segment server logs, which the attacker cannot read. Those details can include query text from other users' cached plans, and the call can be repeated to generate large amounts of log output. WarehousePG 6.x is not affected.",
-      "last_modified": "2026-10-22T02:15:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104947"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Mailster WP Mailster wp-mailster allows Stored XSS.This issue affects WP Mailster: from n/a through 1.9.1.0.",
+      "last_modified": "2026-10-22T11:17:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111830"
     },
     {
-      "cve_id": "CVE-2026-114478",
-      "asset_id": "CVE-2026-114478",
+      "cve_id": "CVE-2026-111401",
+      "asset_id": "CVE-2026-111401",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient preservation of the original sender in the forwarding of Progressive Robot hMailServer 6.0.0 through 6.3.6 allows a remote unauthenticated attacker to have mail they write, naming in its From an address at a domain the server hosts, delivered to other receivers as passing that domain's DMARC policy. When the server sent on a copy of mail that came from outside - an account's forward, a mail rule's forward, a Sieve redirect, a list's copy, or an alias or list expanding to an outside address - it could give the copy an SMTP identity in the organisation of the domain the copy's From names, whatever the message's origin: with the Sender Rewriting Scheme or the rewrite of the envelope sender on forwarding enabled (both off by default), an address at the forwarding domain; for a list, its bounce address; for a message with an empty envelope sender, none, under the server's own host name; and an envelope sender the message came with at a subdomain of a hosted domain was kept. Where that identity's SPF record authorises the server, other receivers' SPF check of the copy passed for a domain aligned with the From, and DMARC passed with it, although the message had not passed DMARC when the server received it. Exploitation needs a forward, redirect, alias or list that carries the hosted domain's mail to an outside address, and one of: SRS or the envelope rewrite enabled; a list whose bounce address is in the domain's organisation; an envelope sender at a subdomain whose SPF record authorises the server; or, for an empty envelope sender, an SPF record that authorises the server under its host name. The DKIM route to the same result is CVE-2026-107567.",
-      "last_modified": "2026-10-22T02:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114478"
+      "description": "Cross-Site Request Forgery (CSRF) vulnerability in Tailored Media Tailored Tools tailored-tools allows Cross Site Request Forgery.This issue affects Tailored Tools: from n/a through 3.0.3.",
+      "last_modified": "2026-10-22T11:17:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111401"
     },
     {
-      "cve_id": "CVE-2026-114479",
-      "asset_id": "CVE-2026-114479",
+      "cve_id": "CVE-2026-110894",
+      "asset_id": "CVE-2026-110894",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Not failing securely in the anti-virus attachment-stripping action of Progressive Robot hMailServer 6.0.0 through 6.3.6 allows a remote unauthenticated attacker to have a message that the server's virus scanner found infected delivered to the recipient's mailbox unchanged. With virus scanning enabled and its action set to remove attachments and deliver the text (the default action deletes the message), the server keeps one text part of an infected message and replaces every attachment with a note. A message whose single part is not text - a program or an archive sent as the whole message, a message carried whole, a file declared an attachment, or an S/MIME message signed as one part, whose content the recipient's mail client opens - had no part the action could pick out, and was delivered as it arrived, with the content the scanner had found and nothing but a line in the application log to show it. Any sender can write such a message.",
-      "last_modified": "2026-10-22T02:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114479"
+      "description": "Missing Authorization vulnerability in Brainstorm Force SureDash suredash allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects SureDash: from n/a through 1.12.2.",
+      "last_modified": "2026-10-22T11:17:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110894"
     },
     {
-      "cve_id": "CVE-2026-114489",
-      "asset_id": "CVE-2026-114489",
+      "cve_id": "CVE-2026-110893",
+      "asset_id": "CVE-2026-110893",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing authorization in the REST and COM administration APIs of Progressive Robot hMailServer 6.0.0 through 6.3.6 allows a remote authenticated user whose credential is confined to named domains to change mail routing and domain configuration beyond those domains on a multi-tenant server. A domain administrator, an account or API key given another role that manages accounts in named domains, or a full-scope API key issued for named domains could create a domain alias for any name (so that other tenants' mail for that name is diverted to an address the attacker controls, or denied), rename a domain to any name the server does not host, set a rule's bind-to-address, send-using-route or script-function action to reach one of the server's own addresses, a configured route's stored credentials or a function of the server's event script, and set the domain's relay host - which delivery then connects to with no address rule - to an address on the server's own network; and over the COM API any account could set the three rule actions on its own rules, where the script-function action runs at delivery. The authorization gate did not refuse these routes to a confined credential and the handlers were not given the caller; over COM the domain-alias save performed no authorization check at all, the domain rename required only a domain administrator, and a rule save required at most that the caller could change the rule's owner.",
-      "last_modified": "2026-10-22T02:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114489"
+      "description": "Missing Authorization vulnerability in Brainstorm Force SureDash suredash allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects SureDash: from n/a through 1.12.2.",
+      "last_modified": "2026-10-22T11:17:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110893"
     },
     {
-      "cve_id": "CVE-2026-114490",
-      "asset_id": "CVE-2026-114490",
+      "cve_id": "CVE-2026-110011",
+      "asset_id": "CVE-2026-110011",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect authorization in the COM administration API of Progressive Robot hMailServer 6.3.4 through 6.3.6 allows an account assigned the serveradmin role with a list of domains - a credential an administrator may create meaning to confine it to those domains - to act as the whole-server administrator over COM. Administrator roles are meant to confine such a credential to the domains its list names, and the REST API did not take it for the server administrator, but the COM API's server-administrator check read the administer_server permission as the whole server whatever list the grant carried. So the credential signed in through the Control Panel, or through a script run on the server, as the server administrator of every domain: it could read and change every domain's accounts and mail, rename any domain, map a domain alias onto any, write the server's settings and secrets, and create further server-administrator accounts. The COM API's domain-administrator check, asked with no domain, likewise let an account assigned the domainadmin role with a list of domains that leaves out the account's own domain administer that domain's ordinary accounts over COM. An account holding serveradmin with no list is the server administrator by design and is unaffected, as are the help desk, auditor and custom roles.",
-      "last_modified": "2026-10-22T02:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114490"
+      "description": "The MB Custom Post Types & Custom Taxonomies WordPress plugin before 2.12.3 does not perform a capability check in its export feature, allowing users with a role as low as Contributor to read the configuration of admin-only custom post types and taxonomies, as well as the titles, dates, statuses and some stored content of other users' non-public posts and pages.",
+      "last_modified": "2026-10-22T11:17:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110011"
     },
     {
-      "cve_id": "CVE-2026-114731",
-      "asset_id": "CVE-2026-114731",
+      "cve_id": "CVE-2026-110010",
+      "asset_id": "CVE-2026-110010",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 is affected by an uncontrolled resource consumption vulnerability in the CSS proxy (the utils/modcss action). The fetched stylesheet was read into memory in full, with no size limit and no read timeout, so a stylesheet URL referencing an attacker-controlled host could be used to exhaust server memory. Upstream fixed this in the commit \u201cAdd a size limit to the CSS proxy content processing\u201d, which caps the response at 5 MB, reads it as a stream and applies a read timeout.",
-      "last_modified": "2026-10-22T02:12:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114731"
+      "description": "The MB Custom Post Types & Custom Taxonomies WordPress plugin before 2.12.3 does not perform any capability or authentication check before allowing an unauthenticated request to re-run a legacy data migration, letting anyone revert a custom post type or taxonomy definition on sites upgraded from a pre-2.0 release back to its pre-upgrade state. This discards configuration changes an administrator made after upgrading and, where those changes had restricted a definition's visibility, silently re-exposes the definition and its content to anonymous visitors.",
+      "last_modified": "2026-10-22T11:17:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110010"
     },
     {
-      "cve_id": "CVE-2026-113406",
-      "asset_id": "CVE-2026-113406",
+      "cve_id": "CVE-2026-109987",
+      "asset_id": "CVE-2026-109987",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "BA-Workflow developed by YS-infoware has a SQL Injection vulnerability. Authenticated remote attackers can inject arbitrary SQL statements to read, modify, and delete database contents.",
-      "last_modified": "2026-10-22T02:09:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113406"
+      "description": "The PixelYourSite  WordPress plugin before 11.4.3, PixelYourSite Pro WordPress plugin before 12.6.8 do not sanitise and escape a cookie value before printing it into the page output, which, on a site running a full-page cache, allows unauthenticated attackers to store a Cross-Site Scripting payload in the cached page that is then served to other visitors.",
+      "last_modified": "2026-10-22T11:17:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109987"
     },
     {
-      "cve_id": "CVE-2026-114730",
-      "asset_id": "CVE-2026-114730",
+      "cve_id": "CVE-2026-109931",
+      "asset_id": "CVE-2026-109931",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail 1.6.14 before 1.6.20 and 1.7.0 before 1.7.5 is affected by a server-side request forgery filter bypass. The network blocklist used by rcube_utils::is_local_url() omitted the RFC 6052 NAT64 prefix 64:ff9b::/96, the RFC 8215 local-use NAT64 prefix 64:ff9b:1::/48 and the unspecified address ::/128, so URLs such as http://[64:ff9b::7f00:1]/ passed the filter and reached loopback, link-local and cloud metadata addresses. Upstream fixed this in the commit \u201cFix SSRF filter (is_local_url()) bypass via NAT64 64:ff9b::/96\u201d.",
-      "last_modified": "2026-10-22T02:09:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114730"
+      "description": "The Infility Global WordPress plugin before 2.16.25 does not perform any authorisation or nonce check on an AJAX action available to unauthenticated users, allowing any visitor to overwrite a machine-translation configuration value belonging to a companion Infility Global WordPress plugin before 2.16.25.",
+      "last_modified": "2026-10-22T11:17:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109931"
     },
     {
-      "cve_id": "CVE-2026-113405",
-      "asset_id": "CVE-2026-113405",
+      "cve_id": "CVE-2026-109927",
+      "asset_id": "CVE-2026-109927",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "BA-Workflow developed by YS-infoware has a SQL Injection vulnerability. Authenticated remote attackers can inject arbitrary SQL statements to read, modify, and delete database contents.",
-      "last_modified": "2026-10-22T02:09:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113405"
+      "description": "The HIPAA Forms WordPress plugin before 3.3.2 does not perform a capability check when handling a request that rebuilds its own custom user role, allowing a user who already holds that role to grant it administrator-level capabilities and escalate their privileges.",
+      "last_modified": "2026-10-22T11:17:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109927"
     },
     {
-      "cve_id": "CVE-2026-114729",
-      "asset_id": "CVE-2026-114729",
+      "cve_id": "CVE-2026-103234",
+      "asset_id": "CVE-2026-103234",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 is affected by a remote content blocking bypass. rcube_washtml inspected the SVG SMIL animation attributes `to`, `from` and values for URIs, but not `by`; so markup such as in an HTML message caused remote content to be loaded without the user's consent, disclosing the client IP address and confirming that the message was opened. Upstream fixed this in the commit \u201cFix remote-content blocker bypass via SVG SMIL `by` attribute\u201d.",
-      "last_modified": "2026-10-22T02:05:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114729"
+      "description": "The WP Ultimate Review WordPress plugin before 2.4.5 does not neutralise shortcodes in all of the review fields submitted through its public review form, which is available to unauthenticated visitors, allowing them to execute arbitrary shortcodes when the affected field is displayed, provided user reviews and that field's display are enabled.",
+      "last_modified": "2026-10-22T11:17:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103234"
     },
     {
-      "cve_id": "CVE-2026-114728",
-      "asset_id": "CVE-2026-114728",
+      "cve_id": "CVE-2026-100142",
+      "asset_id": "CVE-2026-100142",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 is affected by a remote content blocking bypass in the handling of FuncIRI attributes. rcube_washtml detected the CSS url() token with a pattern that enumerated only some of its escaped spellings, so values using other CSS escape sequences, for example \\000075rl( or u\\72 l(, were not recognized and remote content was loaded from an HTML message without the user's consent. Upstream fixed this in the commit \u201cFix remote content blocking bypass via CSS escapes in FuncIRI attributes (again)\u201d, which resolves CSS escapes before matching and also inspects the `to`, `from` and `by` attributes.",
-      "last_modified": "2026-10-22T02:02:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114728"
+      "description": "The FluentCart A New Era of eCommerce  WordPress plugin before 2.2.0 does not verify that a stored customer address selected during checkout belongs to the requester, allowing unauthenticated attackers to attach any customer's stored address to an order they place and read it back, disclosing customers' postal addresses, phone numbers and company details.",
+      "last_modified": "2026-10-22T11:17:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100142"
     },
     {
-      "cve_id": "CVE-2026-114577",
-      "asset_id": "CVE-2026-114577",
+      "cve_id": "CVE-2026-113061",
+      "asset_id": "CVE-2026-113061",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in oretnom23 php-travel-agency-system. This vulnerability affects unknown code of the file admin/insert.php of the component Insertion Handler. The manipulation of the argument costomer_id/payment_type/amount/description/user/uploadimage/full_name/visa_no results in sql injection. The attack may be launched remotely. The exploit has been made public and could be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "last_modified": "2026-10-22T02:00:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114577"
+      "description": "Memory corruption in Chromoting in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113061"
     },
     {
-      "cve_id": "CVE-2026-19676",
-      "asset_id": "CVE-2026-19676",
+      "cve_id": "CVE-2026-113248",
+      "asset_id": "CVE-2026-113248",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The user-mode verifier for the peci_transfer() system call, z_vrfy_peci_transfer() in drivers/peci/peci_handlers.c, checked only the device object permission and copied the caller-supplied struct peci_msg with k_usermode_from_copy(). That copy validates the outer structure only; the buf pointers and len values inside the embedded struct peci_buf members tx_buffer and rx_buffer remained fully caller-controlled and were passed unchecked to the driver.\n\nEvery in-tree PECI driver dereferences those pointers in supervisor mode: peci_npcx_transfer() in drivers/peci/peci_npcx.c and peci_it8xxx2_transfer() in drivers/peci/peci_ite_it8xxx2.c copy hardware bytes into rx_buffer.buf[i] and read command bytes out of tx_buffer.buf[i], and peci_xec_read()/peci_xec_write() in drivers/peci/peci_mchp_xec.c do the same with no bound on rx_buffer.len at all. A user-mode thread that has been granted the PECI device object \u2014 the normal way an application exposes a device under CONFIG_USERSPACE \u2014 could therefore point rx_buffer.buf at kernel data structures and have the driver write hardware-supplied bytes there, or point tx_buffer.buf at kernel memory and have its contents pushed onto the PECI/eSPI out-of-band bus.\n\nThe impact is a full user-mode-to-kernel escape: an arbitrary kernel write primitive (integrity and, through it, code execution at supervisor privilege), an arbitrary kernel read disclosed to a PECI bus observer, and a trivially reachable supervisor-mode fault if an unmapped address is supplied. Exploitation requires CONFIG_USERSPACE=y, one of the PECI drivers enabled (CONFIG_PECI_NPCX, CONFIG_PECI_XEC or CONFIG_PECI_ITE_IT8XXX2), and local code execution in a user-mode thread holding the PECI device.\n\nThe fix adds K_SYSCALL_MEMORY_READ() and K_SYSCALL_MEMORY_WRITE() checks over the two embedded buffers, with a size_add_overflow() guard on the frame-check-sequence byte accounted for in the RX length.",
-      "last_modified": "2026-10-22T02:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19676"
+      "description": "Memory corruption in FileSystem in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113248"
     },
     {
-      "cve_id": "CVE-2026-18748",
-      "asset_id": "CVE-2026-18748",
+      "cve_id": "CVE-2026-113085",
+      "asset_id": "CVE-2026-113085",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Bluetooth Classic A2DP host stores a codec Information Element (IE) in struct bt_a2dp_codec_ie, a one-byte len field plus a fixed 8-byte codec_ie[] array. When an AVDTP peer sent a codec IE longer than 8 bytes, a2dp_process_config_ind() in subsys/bluetooth/host/classic/a2dp.c copied only the first 8 bytes but assigned the full, attacker-chosen length to len, and then persisted that inconsistent structure into the application's struct bt_a2dp_stream via stream->codec_config. bt_a2dp_get_config_cb() and bt_a2dp_set_config_cb() had the same truncate-the-copy-but-keep-the-length pattern.\n\nEvery later consumer trusts len. In particular the responder for an incoming AVDTP GET_CONFIGURATION, a2dp_get_config_ind(), executes net_buf_add_mem(rsp_buf, &ep->stream->codec_config.codec_ie[0], ep->stream->codec_config.len), so a paired BR/EDR peer that first sends a SET_CONFIGURATION carrying an oversized codec IE and then requests the configuration back causes the stack to read up to roughly 245 bytes past the end of the 8-byte array and transmit them in the response. codec_config is the last member of struct bt_a2dp_stream, so the read runs into memory adjacent to the application's stream object. The same inconsistency is also handed to the config_req(), reconfig_req() and get_config_rsp() application callbacks, where a natural memcpy() of len bytes performs a further out-of-bounds read.\n\nReaching the on-air disclosure requires CONFIG_BT_CLASSIC with CONFIG_BT_A2DP, an AVDTP peer that has completed pairing (the AVDTP L2CAP channel requires BT_SECURITY_L2), and a local endpoint registered for a non-SBC codec \u2014 BT_A2DP_MPEG1/BT_A2DP_MPEG2/BT_A2DP_ATRAC/BT_A2DP_VENDOR via BT_A2DP_EP_INIT() \u2014 because the SBC branch already pins the IE length to 4 bytes. The bt_a2dp_get_config_cb() response path has no such gate and hands the lying length to any application. There is no out-of-bounds write: the net_buf tailroom check bounds the destination, so the impact is limited to disclosure of a bounded region of adjacent RAM to the peer.\n\nThe fix replaces the hardcoded BT_A2DP_MAX_IE_LENGTH with the configurable CONFIG_BT_A2DP_CODEC_MAX_IE_LEN (default 8, range 4\u2013253), sizes codec_ie[] from it, and rejects any received IE that exceeds it instead of silently truncating, so len can no longer exceed the number of valid bytes.",
-      "last_modified": "2026-10-22T02:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18748"
+      "description": "Use after free in Media in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113085"
     },
     {
-      "cve_id": "CVE-2026-19947",
-      "asset_id": "CVE-2026-19947",
+      "cve_id": "CVE-2026-113107",
+      "asset_id": "CVE-2026-113107",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The device multiplexer pseudo-driver in drivers/misc/devmux/devmux.c exposes two system calls, devmux_select_get() and devmux_select_set(). When CONFIG_USERSPACE is enabled, their user-mode verifiers z_vrfy_devmux_select_get() and z_vrfy_devmux_select_set() forwarded directly to the kernel implementations without performing any kernel-object validation \u2014 no k_object_access_check() and no driver object check. Compounding this, DEVICE_DT_INST_DEFINE() registered devmux instances with a NULL driver API pointer, which causes scripts/build/gen_kobject_list.py to skip them entirely, so a devmux device had no struct k_object and no permission on it could be granted or withheld in the first place.\n\nAny thread running in user mode can reach the defect: device pointers such as DEVICE_DT_GET(DT_NODELABEL(devmux0)) are compile-time constants available to application code, and the syscall accepted them from a thread that had never been granted access to the device. The kernel implementations do validate the pointer against the static devmux instance table and bounds-check the selection index, so this is not a memory-safety issue; the failure is purely one of authorization. Exposure requires CONFIG_USERSPACE=y together with the experimental CONFIG_DEVMUX=y (which depends on CONFIG_DEVICE_MUTABLE) and a zephyr,devmux devicetree node.\n\nAn unprivileged user-mode thread can read and change which downstream device a multiplexer forwards to, bypassing the userspace object-permission model. Because a devmux forwards the data, configuration and API of the selected device \u2014 its documented use being zephyr,console and zephyr,shell-uart switching \u2014 an attacker can suppress console, log and shell output, redirect that output to a downstream device it is able to observe, or flip the selection underneath another thread that is legitimately using the multiplexer. The impact is bounded to the devicetree-fixed set of downstream devices; no out-of-bounds access or arbitrary pointer dereference is reachable.\n\nThe fix declares __subsystem struct devmux_driver_api and attaches a DEVICE_API(devmux, devmux_api) instance to each devmux device so that it becomes a tracked K_OBJ_DRIVER_DEVMUX kernel object, and adds K_OOPS(devmux_inst_get(dev) == SIZE_MAX) plus K_OOPS(k_object_access_check(dev) != 0) to both verifiers.",
-      "last_modified": "2026-10-22T02:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19947"
+      "description": "Use after free in Media in Google Chrome on on Android prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113107"
     },
     {
-      "cve_id": "CVE-2026-114501",
-      "asset_id": "CVE-2026-114501",
+      "cve_id": "CVE-2026-113169",
+      "asset_id": "CVE-2026-113169",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pillow is a Python imaging library. From 11.2.1 until 13.0.0, Arrow export assumes that an image's rows are tightly contiguous and exports from im->blocks[0].ptr even when PILLOW_ALIGNMENT makes aligned_linesize include row padding or an aligned offset before the first row. The resulting Arrow buffer can include uninitialized padding, bytes preceding the first row, or stale heap contents from previously freed images. Applications that configure alignment and export images to Arrow can therefore disclose one user's pixels or other process memory to another user. This issue is fixed in version 13.0.0.",
-      "last_modified": "2026-10-22T02:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114501"
+      "description": "Memory corruption in WebAppInstalls in Google Chrome on on Android prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113169"
     },
     {
-      "cve_id": "CVE-2026-114727",
-      "asset_id": "CVE-2026-114727",
+      "cve_id": "CVE-2026-113254",
+      "asset_id": "CVE-2026-113254",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 passes potentially unsafe content into ImageMagick when resizing images. SVG and EPS were accepted as valid image types for contact photo upload and conversion, and both formats can reference external resources and invoke ImageMagick delegates when processed. Upstream fixed this in the commit \u201cFix passing potentally unsafe attachment content into ImageMagick on image resize\u201d, which removes svg and eps from the accepted types.",
-      "last_modified": "2026-10-22T01:59:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114727"
+      "description": "Memory corruption in DevTools in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113254"
     },
     {
-      "cve_id": "CVE-2026-114726",
-      "asset_id": "CVE-2026-114726",
+      "cve_id": "CVE-2026-113294",
+      "asset_id": "CVE-2026-113294",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 is affected by a mail header injection vulnerability in the Bounce (resend) action. rcube_mime::decode_address_list() did not strip control characters from the decoded display name, so a received message whose From display-name carries CRLF sequences in an encoded word could inject arbitrary headers into the message emitted when the user bounces it. Upstream fixed this in the commit \u201cFix mail header injection via the From display-name in the Bounce (resend) action\u201d.",
-      "last_modified": "2026-10-22T01:55:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114726"
+      "description": "Improper input validation in Loader in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113294"
     },
     {
-      "cve_id": "CVE-2026-114725",
-      "asset_id": "CVE-2026-114725",
+      "cve_id": "CVE-2026-113088",
+      "asset_id": "CVE-2026-113088",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 is affected by a mail header injection vulnerability. rcmail_sendmail stripped newline characters only from the Subject and Organization headers, leaving other header values taken from request parameters unsanitized, so a remote authenticated attacker could inject arbitrary headers into an outgoing message via the References, In-Reply-To, Message-ID and From parameters. Upstream fixed this in the commit \u201cFix mail header injection via References/In-Reply-To/Message-ID/From parameters\u201d, which normalizes whitespace in every string header value.",
-      "last_modified": "2026-10-22T01:52:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114725"
+      "description": "Memory corruption in Mobile in Google Chrome on on Android prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113088"
     },
     {
-      "cve_id": "CVE-2026-114724",
-      "asset_id": "CVE-2026-114724",
+      "cve_id": "CVE-2026-101618",
+      "asset_id": "CVE-2026-101618",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 contains an object injection primitive in rcube_session::unserialize(). A session key prefixed with \u201c!\u201d was treated as having no value, and the reconstructed serialized string was emitted with a key but no corresponding value, desynchronizing the remainder of the input so that following session data was interpreted as a serialized value. This yields a PHP object injection primitive for an attacker able to influence stored session data. Upstream fixed this in the commit \u201cFix object injection primitive in rcube_session::unserialize() via \u201c!\u201d-prefixed session keys\u201d, which rejects such keys.",
-      "last_modified": "2026-10-22T01:48:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114724"
+      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: InnoDB).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101618"
     },
     {
-      "cve_id": "CVE-2026-87298",
-      "asset_id": "CVE-2026-87298",
+      "cve_id": "CVE-2026-101621",
+      "asset_id": "CVE-2026-101621",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle WebCenter Content product of Oracle Fusion Middleware (component: Content Server).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle WebCenter Content.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle WebCenter Content accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87298"
+      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: InnoDB).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101621"
     },
     {
-      "cve_id": "CVE-2026-87309",
-      "asset_id": "CVE-2026-87309",
+      "cve_id": "CVE-2026-101622",
+      "asset_id": "CVE-2026-101622",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD Edwards (component: Package Build SEC).  Supported versions that are affected are 9.2.0.0-9.2.26.5. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise JD Edwards EnterpriseOne Tools.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all JD Edwards EnterpriseOne Tools accessible data and unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of JD Edwards EnterpriseOne Tools. CVSS 3.1 Base Score 8.1 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87309"
+      "description": "Vulnerability in the MySQL Server, MySQL Cluster product of Oracle MySQL (component: InnoDB).  Supported versions that are affected are MySQL Server: 8.4.0-8.4.12, 9.7.0-9.7.3, 26.7.0-26.7.1; MySQL Cluster: 8.0.0-8.0.49, 8.4.0-8.4.12, 9.7.0-9.7.3 and  26.7.0-26.7.1. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server, MySQL Cluster.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server, MySQL Cluster. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
+      "last_modified": "2026-10-22T11:15:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101622"
     },
     {
-      "cve_id": "CVE-2026-87320",
-      "asset_id": "CVE-2026-87320",
+      "cve_id": "CVE-2026-110982",
+      "asset_id": "CVE-2026-110982",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the JD Edwards EnterpriseOne Tools product of Oracle JD Edwards (component: E1 Dev Platform Tech - UNIX).  Supported versions that are affected are 9.2.0.0-9.2.26.5. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where JD Edwards EnterpriseOne Tools executes to compromise JD Edwards EnterpriseOne Tools.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of JD Edwards EnterpriseOne Tools. CVSS 3.1 Base Score 6.7 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87320"
+      "description": "The AI Engine  WordPress plugin before 3.8.6 does not check that the caller is allowed to edit the targeted object before updating its title and excerpt, allowing users with the Editor role and above to modify arbitrary posts of any type, including content they cannot otherwise edit such as navigation menus, block templates, global styles and WooCommerce coupons.",
+      "last_modified": "2026-10-22T11:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110982"
     },
     {
-      "cve_id": "CVE-2026-87347",
-      "asset_id": "CVE-2026-87347",
+      "cve_id": "CVE-2026-114122",
+      "asset_id": "CVE-2026-114122",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle HTTP Server product of Oracle Fusion Middleware (component: OSSL Module).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle HTTP Server.  While the vulnerability is in Oracle HTTP Server, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle HTTP Server accessible data as well as  unauthorized access to critical data or complete access to all Oracle HTTP Server accessible data. CVSS 3.1 Base Score 9.6 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87347"
+      "description": "Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to versions 42.11.6, 43.7.3, 44.4.3, and 45.0.0-alpha.9, frame data received from the GPU process for webContents.beginFrameSubscription was not fully validated by the main process. An attacker who had separately gained code execution in the GPU process could supply inconsistent frame geometry and cause the main process to read out-of-bounds memory while producing captured frame images, disclosing memory or crashing the application. This issue is fixed in versions 42.11.6, 43.7.3, 44.4.3, and 45.0.0-alpha.9.",
+      "last_modified": "2026-10-22T11:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114122"
     },
     {
-      "cve_id": "CVE-2026-87350",
-      "asset_id": "CVE-2026-87350",
+      "cve_id": "CVE-2026-114124",
+      "asset_id": "CVE-2026-114124",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Security).  Supported versions that are affected are 8.61-8.63. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where PeopleSoft Enterprise PeopleTools executes to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of PeopleSoft Enterprise PeopleTools accessible data as well as  unauthorized read access to a subset of PeopleSoft Enterprise PeopleTools accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of PeopleSoft Enterprise PeopleTools. CVSS 3.1 Base Score 4.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87350"
+      "description": "Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to versions 42.11.6, 43.7.3, 44.4.3, and 45.0.0-alpha.9, frame data received from the GPU process for macOS offscreen rendering was not fully validated by the main process. An attacker who had separately gained code execution in the GPU process could provide inconsistent frame geometry and cause the main process to read out-of-bounds memory while producing paint event images, disclosing memory or crashing the application. This issue is fixed in versions 42.11.6, 43.7.3, 44.4.3, and 45.0.0-alpha.9.",
+      "last_modified": "2026-10-22T11:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114124"
     },
     {
-      "cve_id": "CVE-2026-87352",
-      "asset_id": "CVE-2026-87352",
+      "cve_id": "CVE-2026-114125",
+      "asset_id": "CVE-2026-114125",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: LDAP).  Supported versions that are affected are 8.61-8.63. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where PeopleSoft Enterprise PeopleTools executes to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of PeopleSoft Enterprise PeopleTools accessible data as well as  unauthorized read access to a subset of PeopleSoft Enterprise PeopleTools accessible data. CVSS 3.1 Base Score 4.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87352"
+      "description": "Storybook is a frontend workshop for building user interface components and pages in isolation. From 8.0.0 until 8.6.19, 9.1.21, 10.6.2, and 11.0.0-alpha.6, a malicious website can interact with the preview of a running Storybook development server. Insufficient iframe embedding and message-origin restrictions can allow attacker-controlled events to reach the running preview. A developer must visit the malicious website and interact with the injected interface. The attack can cause unauthorized changes to story files and, if a changed file is later executed by a local runtime, arbitrary code execution with the developer's privileges. This issue is fixed in 8.6.19, 9.1.21, 10.6.2, and 11.0.0-alpha.6.",
+      "last_modified": "2026-10-22T11:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114125"
     },
     {
-      "cve_id": "CVE-2026-87353",
-      "asset_id": "CVE-2026-87353",
+      "cve_id": "CVE-2026-84284",
+      "asset_id": "CVE-2026-84284",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Porting).  Supported versions that are affected are 8.61-8.63. Difficult to exploit vulnerability allows unauthenticated attacker with logon to the infrastructure where PeopleSoft Enterprise PeopleTools executes to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of PeopleSoft Enterprise PeopleTools accessible data as well as  unauthorized read access to a subset of PeopleSoft Enterprise PeopleTools accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of PeopleSoft Enterprise PeopleTools. CVSS 3.1 Base Score 4.5 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87353"
+      "description": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 17.11 before 19.2.8, 19.3 before 19.3.6, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an unauthenticated user to read work item contents from private groups and projects due to incorrect authorization checks.",
+      "last_modified": "2026-10-22T11:14:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84284"
     },
     {
-      "cve_id": "CVE-2026-87354",
-      "asset_id": "CVE-2026-87354",
+      "cve_id": "CVE-2026-112832",
+      "asset_id": "CVE-2026-112832",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle TimesTen In-Memory Database (component: Kubernetes Operator).  Supported versions that are affected are 22.1-22.1.40.0 and  26.1-26.1.1.2.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle TimesTen In-Memory Database.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle TimesTen In-Memory Database accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87354"
+      "description": "Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion') vulnerability in CozyThemes Rootblox rootblox allows PHP Local File Inclusion.This issue affects Rootblox: from n/a through 1.0.6.",
+      "last_modified": "2026-10-22T11:00:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112832"
     },
     {
-      "cve_id": "CVE-2026-87356",
-      "asset_id": "CVE-2026-87356",
+      "cve_id": "CVE-2026-112842",
+      "asset_id": "CVE-2026-112842",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Applications Platform Engineering product of Oracle E-Business Suite (component: Valid Session).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Applications Platform Engineering executes to compromise Applications Platform Engineering.  Successful attacks of this vulnerability can result in takeover of Applications Platform Engineering. CVSS 3.1 Base Score 7.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-10-22T01:45:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87356"
+      "description": "Missing Authorization vulnerability in Cozmoslabs Paid Member Subscriptions paid-member-subscriptions allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Paid Member Subscriptions: from n/a through 3.1.2.",
+      "last_modified": "2026-10-22T11:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112842"
     },
     {
-      "cve_id": "CVE-2026-113790",
-      "asset_id": "CVE-2026-113790",
+      "cve_id": "CVE-2026-112822",
+      "asset_id": "CVE-2026-112822",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "pypdf is a free and open-source pure-python PDF library. Prior to 6.21.0, an attacker can craft a PDF containing arrays or dictionaries with many elements, causing parsing to consume large amounts of memory. This issue is fixed in version 6.21.0.",
-      "last_modified": "2026-10-22T01:45:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113790"
+      "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in AmentoTech Workreap Core workreap_core allows Blind SQL Injection.This issue affects Workreap Core: from n/a before 3.4.4.",
+      "last_modified": "2026-10-22T11:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112822"
     },
     {
-      "cve_id": "CVE-2026-114723",
-      "asset_id": "CVE-2026-114723",
+      "cve_id": "CVE-2026-113063",
+      "asset_id": "CVE-2026-113063",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Roundcube Webmail before 1.6.20 and 1.7.x before 1.7.5 allows the ImageMagick resource limits to be bypassed during thumbnail generation. When rcube_image falls back to GD, the available-memory check was applied only on Windows, so on other platforms a crafted image with large dimensions was processed by GD without any resource limit and could exhaust server memory. Upstream fixed this in the commit \u201cFix ImageMagick resource limits bypass by GD fallback during thumbnail generation\u201d, which applies the memory check on all platforms.",
-      "last_modified": "2026-10-22T01:44:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114723"
+      "description": "Improper input validation in Chromoting in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113063"
     },
     {
-      "cve_id": "CVE-2026-114664",
-      "asset_id": "CVE-2026-114664",
+      "cve_id": "CVE-2026-112994",
+      "asset_id": "CVE-2026-112994",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Frappe Framework before 16.33.0 contains a blind SQL injection vulnerability in the frappe.desk.doctype.event.event.get_events method, which fails to properly neutralize user-supplied input before including it in SQL queries. Authenticated attackers can send crafted input to get_events and infer query results from application behavior to extract sensitive database information.",
-      "last_modified": "2026-10-22T01:43:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114664"
+      "description": "Memory corruption in Browser in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112994"
     },
     {
-      "cve_id": "CVE-2026-114663",
-      "asset_id": "CVE-2026-114663",
+      "cve_id": "CVE-2026-113237",
+      "asset_id": "CVE-2026-113237",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vyper 0.4.0b1 through 0.5.0b1 miscompiles unfoldable constants and omitted default arguments from imported modules, because parse_Name resolves their names in the using function's scope rather than at declaration. When a contract's parameter, local, or loop variable shares such a name, attacker-influenced input can replace the intended value, including out-of-range values for narrow types such as uint8, corrupting validation or accounting logic.",
-      "last_modified": "2026-10-22T01:43:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114663"
+      "description": "Memory corruption in Chromoting in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to read memory inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113237"
     },
     {
-      "cve_id": "CVE-2026-114662",
-      "asset_id": "CVE-2026-114662",
+      "cve_id": "CVE-2026-113182",
+      "asset_id": "CVE-2026-113182",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Obot before 0.26.0 contains an authentication bypass vulnerability in the CLI login flow that allows unauthenticated attackers to steal API keys by choosing token request IDs. Attackers can create a token request via POST /api/token-request, send the login link to a signed-in user, and fetch the resulting non-expiring API key to take over the victim's account.",
-      "last_modified": "2026-10-22T01:43:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114662"
+      "description": "Memory corruption in Passwords in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113182"
     },
     {
-      "cve_id": "CVE-2026-114661",
-      "asset_id": "CVE-2026-114661",
+      "cve_id": "CVE-2026-101373",
+      "asset_id": "CVE-2026-101373",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OpenRemote 1.2.0 before 1.31.0 contains a missing authorization vulnerability in GatewayServiceResource that allows any authenticated user to start, stop and query gateway tunnels without an administrative role. Attackers can send POST or DELETE requests to the gateway tunnel endpoint to open persistent bidirectional TCP circuits into an edge gateway's network or tear down operator tunnels.",
-      "last_modified": "2026-10-22T01:43:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114661"
+      "description": "Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle REST Data Services accessible data. CVSS 3.1 Base Score 2.4 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101373"
     },
     {
-      "cve_id": "CVE-2026-114660",
-      "asset_id": "CVE-2026-114660",
+      "cve_id": "CVE-2026-101374",
+      "asset_id": "CVE-2026-101374",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Grav from 2.0.0 before 2.2.5 contains an improper access control vulnerability in FlexDirectory::dynamicFlexField() that allows page authors to call arbitrary Flex object methods via flex-*@ directives in page frontmatter. When a user with page edit rights opens the page, directives calling setStorageKey() and delete() run in their session, deleting protected pages neither account may delete.",
-      "last_modified": "2026-10-22T01:43:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114660"
+      "description": "Vulnerability in Oracle REST Data Services (component: Backend-as-a-Service).  Supported versions that are affected are 24.2.0-26.1.0. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle REST Data Services accessible data. CVSS 3.1 Base Score 5.9 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N).",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101374"
     },
     {
-      "cve_id": "CVE-2026-114659",
-      "asset_id": "CVE-2026-114659",
+      "cve_id": "CVE-2026-101375",
+      "asset_id": "CVE-2026-101375",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Grav Flex Objects plugin 1.4.0 before 1.4.17 contains an authorization bypass because its generic /api/v1/flex-objects/pages API routes check only directory-level admin.pages permissions, without enforcing the Pages API's api.pages.read/write permissions or page-level permissions rules. Authenticated non-super users with api.access and admin.pages or admin.configuration.pages permissions can read page source and frontmatter, modify content, or delete pages they are denied.",
-      "last_modified": "2026-10-22T01:43:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114659"
+      "description": "Vulnerability in Oracle REST Data Services (component: Database Actions).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle REST Data Services accessible data as well as  unauthorized read access to a subset of Oracle REST Data Services accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle REST Data Services. CVSS 3.1 Base Score 6.3 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L).",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101375"
     },
     {
-      "cve_id": "CVE-2026-114658",
-      "asset_id": "CVE-2026-114658",
+      "cve_id": "CVE-2026-101377",
+      "asset_id": "CVE-2026-101377",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Grav Login plugin from 3.6.0 before 3.9.13 contains a missing authorization vulnerability in the login.invite task that allows page authors to obtain super user accounts. Attackers can define an invitation form granting super access in page frontmatter, submit it unauthenticated, and register the invited address for full site control.",
-      "last_modified": "2026-10-22T01:43:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114658"
+      "description": "Vulnerability in Oracle REST Data Services (component: Database Actions).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows high privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in unauthorized ability to cause a partial denial of service (partial DOS) of Oracle REST Data Services. CVSS 3.1 Base Score 2.7 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L).",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101377"
     },
     {
-      "cve_id": "CVE-2026-114657",
-      "asset_id": "CVE-2026-114657",
+      "cve_id": "CVE-2026-101378",
+      "asset_id": "CVE-2026-101378",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Grav from 2.0.0 before 2.2.5 contains an information disclosure vulnerability that allows page authors to capture visitors' HTTP Basic credentials through Twig page content. Authors can print the request Uri object, which embeds PHP_AUTH_USER and PHP_AUTH_PW, inside an inline style background image to exfiltrate administrators' credentials to an external host.",
-      "last_modified": "2026-10-22T01:43:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114657"
+      "description": "Vulnerability in Oracle REST Data Services (component: ADP).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle REST Data Services accessible data. CVSS 3.1 Base Score 4.3 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N).",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101378"
     },
     {
-      "cve_id": "CVE-2026-114656",
-      "asset_id": "CVE-2026-114656",
+      "cve_id": "CVE-2026-101379",
+      "asset_id": "CVE-2026-101379",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Traefik before 2.11.58 and 3.7.13 contains an authentication bypass vulnerability that allows unauthenticated clients to skip client-certificate checks because negated Host matchers are counted as served domains. Attackers can reach backends protected by RequireAndVerifyClientCert when a router rule with !Host() creates a TLS options conflict that falls back to the default options.",
-      "last_modified": "2026-10-22T01:43:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114656"
+      "description": "Vulnerability in Oracle REST Data Services (component: ADP).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Oracle REST Data Services accessible data. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101379"
     },
     {
-      "cve_id": "CVE-2026-114642",
-      "asset_id": "CVE-2026-114642",
+      "cve_id": "CVE-2026-101380",
+      "asset_id": "CVE-2026-101380",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Traefik 2.11.0 before 2.11.58 and 3.0.0 before 3.7.14 stores its NTLM/Kerberos backend round tripper in a client-connection slot not keyed by ServersTransport, so one service's TLS client configuration is reused for another service's backend. An unauthenticated client can arm the slot via a backend issuing an NTLM or Negotiate challenge, then reach another service on the same keep-alive connection, bypassing its root CAs, server name, and certificate verification.",
-      "last_modified": "2026-10-22T01:43:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114642"
+      "description": "Vulnerability in Oracle REST Data Services (component: ADP).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle REST Data Services.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle REST Data Services, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Oracle REST Data Services accessible data as well as  unauthorized read access to a subset of Oracle REST Data Services accessible data. CVSS 3.1 Base Score 5.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N).",
+      "last_modified": "2026-10-22T11:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101380"
     }
   ]
 }
