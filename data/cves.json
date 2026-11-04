@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-11-03T19:42:15.718989+00:00",
+  "last_updated": "2026-11-04T06:52:28.715613+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-63198",
-      "asset_id": "CVE-2026-63198",
+      "cve_id": "CVE-2026-77779",
+      "asset_id": "CVE-2026-77779",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "traQ is a messenger application built for Digital Creators Club traP. Prior to 3.28.3, OAuth2 silent authorization requests using prompt=none with an empty or omitted scope parameter check prior consent against the empty requested scope set even though all scopes registered for the client become eligible for issuance. An attacker who controls an OAuth client capable of receiving authorization codes can target a user who previously consented to only some client scopes and obtain an access token containing broader registered scopes without additional consent. A user who has never consented to the client still receives consent_required. This issue is fixed in version 3.28.3.",
-      "last_modified": "2026-11-03T18:38:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63198"
+      "description": "ManageEngine Key Manager Plus versions before 7151 were vulnerable to an Improper Access Control vulnerability that allowed authenticated low-privilege users to export keys outside their authorized scope.",
+      "last_modified": "2026-11-04T05:35:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77779"
     },
     {
-      "cve_id": "CVE-2026-119728",
-      "asset_id": "CVE-2026-119728",
+      "cve_id": "CVE-2026-113056",
+      "asset_id": "CVE-2026-113056",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the H.264 video parser in gst-plugins-bad. When processing a specially crafted H.264 video file with malformed Multiview (MVC) Sequence Parameter Set data, the parser can dereference a NULL pointer during the cleanup of partially allocated internal structures after a parse failure. This can cause the application using GStreamer to crash, resulting in a denial of service.",
-      "last_modified": "2026-11-03T18:37:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119728"
+      "description": "Observable discrepancy in PerformanceAPIs in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to leak cross-origin data via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113056"
     },
     {
-      "cve_id": "CVE-2026-112437",
-      "asset_id": "CVE-2026-112437",
+      "cve_id": "CVE-2026-113004",
+      "asset_id": "CVE-2026-113004",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to gain root privileges.",
-      "last_modified": "2026-11-03T18:36:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112437"
+      "description": "Type confusion in Sync in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to read memory outside the sandbox via a crafted file. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113004"
     },
     {
-      "cve_id": "CVE-2026-82976",
-      "asset_id": "CVE-2026-82976",
+      "cve_id": "CVE-2026-113080",
+      "asset_id": "CVE-2026-113080",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the image-customization-controller used in OpenShift's bare metal provisioning stack. The controller registers an HTTP file server on port 8084 with no authentication. The custom imageFileSystem implementation exposes a browsable HTML directory listing of all registered images at the root path. The only access control on per-host images is the random UUID filename; the directory listing discloses those UUIDs to any caller on the provisioning network. Each served image embeds an Ignition config containing the base64-encoded cluster pull secret, optional IRONIC_RAMDISK_SSH_KEY, proxy settings, and per-host NetworkManager keyfiles. An adjacent network attacker can enumerate all image UUIDs via directory listing, download any image, extract the embedded Ignition config, and recover the cluster pull secret and SSH key.\n\n### Evidence\n**pkg/imagehandler/imagefilesystem.go \u2014 root directory is browsable and enumerates all UUID image names**\n```go\nfunc (f *imageFileSystem) Readdir(n int) ([]fs.FileInfo, error) {\n    f.mu.Lock()\n    defer f.mu.Unlock()\n    result := []fs.FileInfo{}\n    for _, im := range f.images {\n        result = append(result, im)\n    }\n    return result, nil\n}\n\nfunc (f *imageFileSystem) Open(name string) (http.File, error) {\n    f.log.Info(\"Open\", \"path\", name)\n    if name == \"/\" {\n        return f, nil\n    }\n    ...\n```\n\n**cmd/controller/main.go \u2014 file server bound on all interfaces without auth or TLS**\n```go\nhttp.Handle(\"/\", http.FileServer(imageServer.FileSystem()))\n\ngo func() {\n    server := &http.Server{\n        Addr:              imagesBindAddr,   // default \":8084\"\n        ReadHeaderTimeout: 5 * time.Second,\n    }\n    err := server.ListenAndServe()\n```\n\n**pkg/ignition/service_config.go:94-100 \u2014 pull secret is embedded in every served image**\n```go\nfunc (b *ignitionBuilder) authFile() ignition_config_types_32.File {\n    source := \"data:;base64,\" + strings.TrimSpace(b.ironicAgentPullSecret)\n    return ignition_config_types_32.File{\n        Node: ignition_config_types_32.Node{Path: \"/etc/authfile.json\"},\n        ...\n```\n\n### Attack Pattern\nAdjacent provisioning-network client \u2192 GET / lists UUID image names \u2192 download ISO/initramfs \u2192 extract embedded Ignition \u2192 recover cluster pull secret and SSH key.",
-      "last_modified": "2026-11-03T18:36:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82976"
+      "description": "UI misrepresentation in WebAppInstalls in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to spoof address bar via a crafted Chrome extension. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113080"
     },
     {
-      "cve_id": "CVE-2026-112434",
-      "asset_id": "CVE-2026-112434",
+      "cve_id": "CVE-2026-112998",
+      "asset_id": "CVE-2026-112998",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to gain root privileges.",
-      "last_modified": "2026-11-03T18:36:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112434"
+      "description": "Use after free in Views in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112998"
     },
     {
-      "cve_id": "CVE-2026-5419",
-      "asset_id": "CVE-2026-5419",
+      "cve_id": "CVE-2026-113036",
+      "asset_id": "CVE-2026-113036",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnutls. The PKCS#7 padding check, performed during decryption, was not constant-time. This timing side-channel could allow a remote attacker to potentially leak sensitive information about the padding bytes through observable timing differences. This vulnerability is a form of information disclosure.",
-      "last_modified": "2026-11-03T18:34:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5419"
+      "description": "Incorrect authorization in HTML in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to bypass web origin policy via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113036"
     },
     {
-      "cve_id": "CVE-2026-120673",
-      "asset_id": "CVE-2026-120673",
+      "cve_id": "CVE-2026-113107",
+      "asset_id": "CVE-2026-113107",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A component of the MongoDB Rust Driver that records diagnostic tracing data can capture command content before automatic client-side field level encryption is applied. In deployments that turn on the optional tracing capability together with automatic in-use encryption, a party with read access to the application's exported trace data may obtain field values that the application designated for encryption, without access to the encryption keys. This may result in unintended disclosure of data.",
-      "last_modified": "2026-11-03T18:33:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120673"
+      "description": "Missing authorization in Media in Google Chrome on on Android prior to 156.0.8078.47 allowed a remote attacker who had compromised the renderer process to obtain sensitive information via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113107"
     },
     {
-      "cve_id": "CVE-2026-92615",
-      "asset_id": "CVE-2026-92615",
+      "cve_id": "CVE-2026-101439",
+      "asset_id": "CVE-2026-101439",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in flightctl. The configureRepoHTTPSClient() function in the device-render worker builds a per-repository tls.Config (which may include InsecureSkipVerify, a custom CA bundle, or tenant-supplied mTLS client certificates) and installs it into go-git's process-global client.Protocols map via gitclient.InstallProtocol(\"https\", ...). Because the worker renders devices for multiple organizations concurrently from a shared goroutine pool, whichever tenant's repository configuration is written last wins for all in-flight git.Clone calls. \nThis race condition can cause one tenant's TLS settings, including InsecureSkipVerify or mTLS client credentials, to leak into another tenant's git operations.",
-      "last_modified": "2026-11-03T18:32:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92615"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 22.3-26.9. Difficult to exploit vulnerability allows unauthenticated attacker with network access via LDAP to compromise Siebel CRM Cloud Applications.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Cloud Applications accessible data. CVSS 3.1 Base Score 5.9 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101439"
     },
     {
-      "cve_id": "CVE-2026-18107",
-      "asset_id": "CVE-2026-18107",
+      "cve_id": "CVE-2026-101440",
+      "asset_id": "CVE-2026-101440",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in CRIU's handling of restartable sequences (rseq) during checkpoint/restore. A malicious process inside a container can register an rseq critical section that hijacks CRIU's parasite code injection during checkpoint, allowing it to spoof the process credentials saved in the checkpoint image. On restore, the container process gains elevated capabilities and zeroed UIDs/GIDs.\n\nThe practical impact on Red Hat products is limited by several factors: checkpoint/restore requires root privileges (podman) or cluster-admin RBAC (OpenShift) to trigger and cannot be initiated from within the container itself; on OpenShift prior to 4.17 the feature required explicit opt-in, and on 4.17+ the kubelet checkpoint API RBAC is not configured by default; OpenShift enforces user namespaces by default for regular workloads (hostUsers is gated behind admin-only SCCs), which makes the spoofed capabilities namespace-scoped and ineffective for privilege escalation; SELinux type enforcement (container_t) blocks privilege transitions independently of capabilities; seccomp filters persist through checkpoint/restore and cannot be corrupted via the parasite; and kernel mount namespace ownership checks on RHEL 9/10 kernels prevent mount-based container escape even with spoofed capabilities.",
-      "last_modified": "2026-11-03T18:31:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18107"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 22.3-26.9. Difficult to exploit vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the Siebel CRM Cloud Applications executes to compromise Siebel CRM Cloud Applications.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Cloud Applications accessible data as well as  unauthorized update, insert or delete access to some of Siebel CRM Cloud Applications accessible data. CVSS 3.1 Base Score 5.9 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N).",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101440"
     },
     {
-      "cve_id": "CVE-2026-101418",
-      "asset_id": "CVE-2026-101418",
+      "cve_id": "CVE-2026-101441",
+      "asset_id": "CVE-2026-101441",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Report Distribution).  Supported versions that are affected are 8.61-8.63. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all PeopleSoft Enterprise PeopleTools accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101418"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 22.3-26.9. Difficult to exploit vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the Siebel CRM Cloud Applications executes to compromise Siebel CRM Cloud Applications.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Cloud Applications accessible data. CVSS 3.1 Base Score 5.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101441"
     },
     {
-      "cve_id": "CVE-2026-101434",
-      "asset_id": "CVE-2026-101434",
+      "cve_id": "CVE-2026-101443",
+      "asset_id": "CVE-2026-101443",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Database Server).  Supported versions that are affected are 8.61-8.63. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of PeopleSoft Enterprise PeopleTools as well as  unauthorized update, insert or delete access to some of PeopleSoft Enterprise PeopleTools accessible data and  unauthorized read access to a subset of PeopleSoft Enterprise PeopleTools accessible data. CVSS 3.1 Base Score 7.6 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:H).",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101434"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 22.3-26.9. Easily exploitable vulnerability allows low privileged attacker with network access via LDAP to compromise Siebel CRM Cloud Applications.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Siebel CRM Cloud Applications accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101443"
     },
     {
-      "cve_id": "CVE-2026-101447",
-      "asset_id": "CVE-2026-101447",
+      "cve_id": "CVE-2026-112443",
+      "asset_id": "CVE-2026-112443",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Siebel CRM Development product of Oracle Siebel CRM (component: Workflow).  Supported versions that are affected are 25.12-26.9. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Development.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Siebel CRM Development. CVSS 3.1 Base Score 7.1 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101447"
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in macOS Golden Gate 27.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination or corrupt process memory.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112443"
     },
     {
-      "cve_id": "CVE-2026-101449",
-      "asset_id": "CVE-2026-101449",
+      "cve_id": "CVE-2026-112480",
+      "asset_id": "CVE-2026-112480",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,89 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Siebel Management Console).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows physical access to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Siebel CRM Deployment accessible data. CVSS 3.1 Base Score 2.4 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101449"
+      "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. A user with screen sharing access may be able to view another user's screen.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112480"
     },
     {
-      "cve_id": "CVE-2026-112689",
-      "asset_id": "CVE-2026-112689",
-      "asset_name": "OpenCVE catalog",
-      "vendor": "",
-      "product": "",
-      "version": "See affected versions",
-      "severity": "UNKNOWN",
-      "cvss": null,
-      "known_exploited": false,
-      "epss": null,
-      "fixed_version": "",
-      "patch_available": false,
-      "vendor_url": "",
-      "source": "OpenCVE",
-      "description": "An out-of-bounds write issue was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2. An app may be able to cause unexpected system termination or corrupt kernel memory.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112689"
-    },
-    {
-      "cve_id": "CVE-2026-112693",
-      "asset_id": "CVE-2026-112693",
-      "asset_name": "OpenCVE catalog",
-      "vendor": "",
-      "product": "",
-      "version": "See affected versions",
-      "severity": "UNKNOWN",
-      "cvss": null,
-      "known_exploited": false,
-      "epss": null,
-      "fixed_version": "",
-      "patch_available": false,
-      "vendor_url": "",
-      "source": "OpenCVE",
-      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 27.2, iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, visionOS 27.2. Processing maliciously crafted web content may lead to an unexpected Safari crash.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112693"
-    },
-    {
-      "cve_id": "CVE-2026-112692",
-      "asset_id": "CVE-2026-112692",
-      "asset_name": "OpenCVE catalog",
-      "vendor": "",
-      "product": "",
-      "version": "See affected versions",
-      "severity": "UNKNOWN",
-      "cvss": null,
-      "known_exploited": false,
-      "epss": null,
-      "fixed_version": "",
-      "patch_available": false,
-      "vendor_url": "",
-      "source": "OpenCVE",
-      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in iOS 27.2 and iPadOS 27.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. An app may be able to access sensitive user data.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112692"
-    },
-    {
-      "cve_id": "CVE-2026-112493",
-      "asset_id": "CVE-2026-112493",
-      "asset_name": "OpenCVE catalog",
-      "vendor": "",
-      "product": "",
-      "version": "See affected versions",
-      "severity": "UNKNOWN",
-      "cvss": null,
-      "known_exploited": false,
-      "epss": null,
-      "fixed_version": "",
-      "patch_available": false,
-      "vendor_url": "",
-      "source": "OpenCVE",
-      "description": "A downgrade issue was addressed with additional version checks. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to gain root privileges.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112493"
-    },
-    {
-      "cve_id": "CVE-2026-112695",
-      "asset_id": "CVE-2026-112695",
+      "cve_id": "CVE-2026-112654",
+      "asset_id": "CVE-2026-112654",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -343,12 +267,12 @@
       "vendor_url": "",
       "source": "OpenCVE",
       "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 27.2, iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, visionOS 27.2. Processing maliciously crafted web content may lead to an unexpected process termination.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112695"
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112654"
     },
     {
-      "cve_id": "CVE-2026-112698",
-      "asset_id": "CVE-2026-112698",
+      "cve_id": "CVE-2026-112619",
+      "asset_id": "CVE-2026-112619",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The issue was addressed with improved memory handling. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112698"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, visionOS 27.2, watchOS 27.2. Processing a maliciously crafted calendar invitation may lead to memory corruption.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112619"
     },
     {
-      "cve_id": "CVE-2026-107027",
-      "asset_id": "CVE-2026-107027",
+      "cve_id": "CVE-2026-112571",
+      "asset_id": "CVE-2026-112571",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insecure permissions in lz233 Tarnhelm v1.8.2 (versionCode 20250630) allows unauthorized attackers to invoke an exported component, leading to arbitrary data access and overwriting.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107027"
+      "description": "A memory initialization issue was addressed with improved memory handling. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. Processing a maliciously crafted image may result in disclosure of process memory.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112571"
     },
     {
-      "cve_id": "CVE-2026-107043",
-      "asset_id": "CVE-2026-107043",
+      "cve_id": "CVE-2026-112570",
+      "asset_id": "CVE-2026-112570",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insecure permissions in Code Catcher versionCode 131 allow unauthorized attackers to arbitrarily manipulate the app's SMS-code-capture mechanism.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107043"
+      "description": "An access issue was addressed with additional sandbox restrictions. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112570"
     },
     {
-      "cve_id": "CVE-2026-107048",
-      "asset_id": "CVE-2026-107048",
+      "cve_id": "CVE-2026-112531",
+      "asset_id": "CVE-2026-112531",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in the WebView rendering path component of MotionCreative Motion UI versionCode 101 allows attackers to execute arbitrary code via supplying a crafted POST request.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107048"
+      "description": "A use after free issue was addressed with improved memory management. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112531"
     },
     {
-      "cve_id": "CVE-2026-107059",
-      "asset_id": "CVE-2026-107059",
+      "cve_id": "CVE-2026-112566",
+      "asset_id": "CVE-2026-112566",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue in Nextcloud versionCode 30390190 allows attackers to force victim users to logout of their accounts and switch to an attacker controlled progile, bypassing authentication.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107059"
+      "description": "A null pointer dereference was addressed with improved validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. An attacker in physical proximity may be able to cause a denial-of-service.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112566"
     },
     {
-      "cve_id": "CVE-2026-109594",
-      "asset_id": "CVE-2026-109594",
+      "cve_id": "CVE-2026-112497",
+      "asset_id": "CVE-2026-112497",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Post-authentication Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability has been identified in the End-of-Life SonicWall GMS 9.5.2 and earlier versions which in specific conditions could potentially allow an authenticated attacker to access or modify information stored in the GMS database.",
-      "last_modified": "2026-11-03T18:30:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109594"
+      "description": "This issue was addressed with improved permissions checking. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112497"
     },
     {
-      "cve_id": "CVE-2026-12944",
-      "asset_id": "CVE-2026-12944",
+      "cve_id": "CVE-2026-112478",
+      "asset_id": "CVE-2026-112478",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Langflow OSS 1.0.0 through 1.10.0 can allow attackers to execute arbitrary Python code with root privileges (UID=0) on the Langflow server by submitting components containing socket or urllib imports. This enables: (1) AWS credential theft via IMDSv1 SSRF with full IAM role permissions, (2) arbitrary file exfiltration from the container filesystem, and (3) lateral movement to internal services (PostgreSQL, Redis) within the Docker network. The scanner incorrectly returns \"validated\": true, providing a false security signal.",
-      "last_modified": "2026-11-03T18:27:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12944"
+      "description": "An out-of-bounds read issue was addressed by removing the vulnerable code. This issue is fixed in macOS Golden Gate 27.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination or read kernel memory.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112478"
     },
     {
-      "cve_id": "CVE-2026-12767",
-      "asset_id": "CVE-2026-12767",
+      "cve_id": "CVE-2026-112454",
+      "asset_id": "CVE-2026-112454",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Langflow OSS 1.0.0 through 1.11.5 is vulnerable to server-side request forgery (SSRF). This may allow an unauthenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks.",
-      "last_modified": "2026-11-03T18:27:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12767"
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. Processing a maliciously crafted video file may lead to unexpected app termination or corrupt process memory.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112454"
     },
     {
-      "cve_id": "CVE-2026-12766",
-      "asset_id": "CVE-2026-12766",
+      "cve_id": "CVE-2026-112511",
+      "asset_id": "CVE-2026-112511",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Langflow OSS 1.0.0 through 1.11.2 is vulnerable to server-side request forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks.",
-      "last_modified": "2026-11-03T18:27:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12766"
+      "description": "A path handling issue was addressed with improved logic. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. A malicious Screen Sharing peer may be able to create arbitrary symlinks as root.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112511"
     },
     {
-      "cve_id": "CVE-2026-12765",
-      "asset_id": "CVE-2026-12765",
+      "cve_id": "CVE-2026-112638",
+      "asset_id": "CVE-2026-112638",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Langflow OSS 1.0.0 through 1.10.2 is vulnerable to server-side request forgery (SSRF). This may allow an unauthenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks.",
-      "last_modified": "2026-11-03T18:27:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12765"
+      "description": "A heap buffer overflow was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. An attacker in radio range may be able to cause unexpected system termination.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112638"
     },
     {
-      "cve_id": "CVE-2026-12763",
-      "asset_id": "CVE-2026-12763",
+      "cve_id": "CVE-2026-112546",
+      "asset_id": "CVE-2026-112546",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Langflow OSS 1.0.0 through 1.11.5 could allow an authenticated attacker to access another user's MCP server context due to improper cache key isolation in the MCP Tools component.",
-      "last_modified": "2026-11-03T18:27:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12763"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. Processing a maliciously crafted file may lead to unexpected app termination.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112546"
     },
     {
-      "cve_id": "CVE-2026-17628",
-      "asset_id": "CVE-2026-17628",
+      "cve_id": "CVE-2026-112680",
+      "asset_id": "CVE-2026-112680",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "IBM Langflow OSS 1.0.0 through 1.10.2 could allow a remote authenticated attacker to change the password of an account due to improper authentication.",
-      "last_modified": "2026-11-03T18:27:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17628"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in Safari 27.2, iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, visionOS 27.2. Processing maliciously crafted web content may result in the disclosure of process memory.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112680"
     },
     {
-      "cve_id": "CVE-2026-63197",
-      "asset_id": "CVE-2026-63197",
+      "cve_id": "CVE-2026-112647",
+      "asset_id": "CVE-2026-112647",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "traQ is a messenger application built for Digital Creators Club traP. Prior to 3.28.3, instances configured with TRAQ_STORAGE_TYPE=local can return user-uploaded SVG or HTML content from the /files/{fileId} retrieval endpoint for direct browser rendering. An attacker with file-upload capability can provide crafted active content and induce another user to open its file URL, causing attacker-controlled JavaScript to execute in the victim's browser. This issue is fixed in version 3.28.3.",
-      "last_modified": "2026-11-03T18:26:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63197"
+      "description": "An access issue was addressed with additional sandbox restrictions. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to access sensitive user data.",
+      "last_modified": "2026-11-04T05:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112647"
     },
     {
-      "cve_id": "CVE-2026-93683",
-      "asset_id": "CVE-2026-93683",
+      "cve_id": "CVE-2025-11229",
+      "asset_id": "CVE-2025-11229",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the DPDK vhost library. When handling a virtio indirect descriptor table, the host reads the table length more than once from guest memory and can allocate a host copy before validating that length. A guest that changes the length between those reads, or that supplies an out-of-range next index on a small host copy in the vDPA relay path, can cause the host vhost process to walk past the validated mapping or heap copy. That can crash or disrupt the vhost process. Out-of-bounds bytes are consumed as descriptor fields for GPA translation and are not returned to the guest as payload. This is a residual issue in the non-contiguous indirect descriptor copy path introduced as part of the CVE-2018-1059 fix.",
-      "last_modified": "2026-11-03T18:24:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93683"
+      "description": "The system fails to properly enforce scope authorization when the `authorize_all_scopes` configuration is enabled. This allows applications using the client credentials grant type to obtain all API scopes, including sensitive internal and console scopes, without requiring explicit authorization, bypassing intended access controls.\n\nExploitation of this vulnerability can lead to privilege escalation, enabling unprivileged clients to perform unauthorized administrative actions, access confidential organizational data, and potentially achieve full account takeover in deployments where the `authorize_all_scopes` configuration deviates from its default disabled state.",
+      "last_modified": "2026-11-04T05:29:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11229"
     },
     {
-      "cve_id": "CVE-2026-86856",
-      "asset_id": "CVE-2026-86856",
+      "cve_id": "CVE-2026-114406",
+      "asset_id": "CVE-2026-114406",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the DPDK nfp vDPA driver. Stack and heap buffers sized for a single queue pair can be overflowed when more virtqueues are configured, leading to a host crash or memory corruption.",
-      "last_modified": "2026-11-03T18:24:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86856"
+      "description": "The system certificate authority (CA) store in Red Hat products, distributed via ca-certificates RPM packages, included multiple root CA certificates of authorities, which signed intermediate CA certificates with weak private keys issued by the eMudhra certificate authority. A man-in-the-middle attacker could use this flaw to issue certificates for arbitrary host names signed by the weak intermediate CA certificates, which would be considered trusted by a TLS/SSL client using system CA store and cause such clients to connect to malicious sites.\n\nDue to inability to only distrust specific intermediate certificates in all clients using the system CA store, root CA certificates of authorities that signed weak intermediate CA certificates are being removed.",
+      "last_modified": "2026-11-04T05:28:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114406"
     },
     {
-      "cve_id": "CVE-2026-86849",
-      "asset_id": "CVE-2026-86849",
+      "cve_id": "CVE-2026-54099",
+      "asset_id": "CVE-2026-54099",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost vhost-crypto. Integer overflow in chain length checks, and missing length checks on the RSA path, can overflow a host buffer in the vhost-crypto backend.",
-      "last_modified": "2026-11-03T18:24:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86849"
+      "description": "A flaw was found in the Windows Machine Config Operator (WMCO) for Red Hat OpenShift Container Platform. The WICD CSR auto-approver validates that a Certificate Signing Request contains the organization system:wicd-nodes but does not reject additional organization values such as system:masters. A compromised Windows worker node that holds WICD credentials can submit a CSR that is auto-approved and signed by the cluster, yielding a client certificate that grants cluster-administrator privileges and enabling full cluster takeover.",
+      "last_modified": "2026-11-04T05:28:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54099"
     },
     {
-      "cve_id": "CVE-2026-86847",
-      "asset_id": "CVE-2026-86847",
+      "cve_id": "CVE-2026-42784",
+      "asset_id": "CVE-2026-42784",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost vhost-crypto. Write-back chain cleanup can follow an uninitialized next pointer when mapping a guest descriptor fails, causing the host vhost-crypto process to hang or crash.",
-      "last_modified": "2026-11-03T18:24:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86847"
+      "description": "A flaw was found in sequoia-openpgp. The library incorrectly infers key flags for older certificates when a key flags subpacket is missing, leading to a discrepancy in how key capabilities are viewed. This key flag confusion allows an attacker to bypass the back-signature check. Consequently, an attacker can illegitimately bind an arbitrary subkey to their own certificate and forge signatures, completely compromising cryptographic integrity.",
+      "last_modified": "2026-11-04T05:24:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42784"
     },
     {
-      "cve_id": "CVE-2026-86846",
-      "asset_id": "CVE-2026-86846",
+      "cve_id": "CVE-2026-74860",
+      "asset_id": "CVE-2026-74860",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost vhost-crypto. A guest can supply an avail-ring descriptor index that is used without bounds checking, causing an out-of-bounds write in the host vhost-crypto backend.",
-      "last_modified": "2026-11-03T18:24:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86846"
+      "description": "A flaw was found in libxml2 with Python bindings enabled. A remote attacker could exploit this vulnerability by providing a specially crafted XML document containing a Document Type Definition (DTD) with enumerated attribute values. This triggers a double-free error in the SAX attributeDecl callback handler, where a string is freed twice. This flaw can lead to a denial of service (DoS) due to a reproducible crash in Python applications using the libxml2 SAX bindings.",
+      "last_modified": "2026-11-04T05:20:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74860"
     },
     {
-      "cve_id": "CVE-2026-86845",
-      "asset_id": "CVE-2026-86845",
+      "cve_id": "CVE-2026-96889",
+      "asset_id": "CVE-2026-96889",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost vhost-crypto. Session cleanup can leave a stale cached session pointer, and the data path does not check the session type before attaching it, leading to use-after-free or type confusion in the host vhost-crypto backend.",
-      "last_modified": "2026-11-03T18:24:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86845"
+      "description": "A flaw was found in librsvg. When processing an SVG document containing nested XML inclusions (Xincludes) with duplicate entity declarations, a use-after-free error can occur. This vulnerability arises because the library incorrectly frees an XML entity that is still in use by the parser. An attacker could potentially exploit this to cause a denial of service or execute arbitrary code.",
+      "last_modified": "2026-11-04T05:20:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96889"
     },
     {
-      "cve_id": "CVE-2026-86566",
-      "asset_id": "CVE-2026-86566",
+      "cve_id": "CVE-2026-11753",
+      "asset_id": "CVE-2026-11753",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost. A guest with runt RX descriptors can underflow the copy length in vhost enqueue, causing a denial of service in a shared vhost backend such as OVS-DPDK.",
-      "last_modified": "2026-11-03T18:24:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86566"
+      "description": "A vulnerability has been identified in armeria-saml versions prior to 1.41.1, where attacker-controlled RelayState is reflected into the HTTP Location header after successful authentication, allowing an unvalidated redirect to an attacker-controlled URL.",
+      "last_modified": "2026-11-04T05:20:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11753"
     },
     {
-      "cve_id": "CVE-2026-86561",
-      "asset_id": "CVE-2026-86561",
+      "cve_id": "CVE-2026-11749",
+      "asset_id": "CVE-2026-11749",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost. Memory size is not adequately validated before mmap during vhost memory-region setup, which can lead to a host crash or memory corruption.",
-      "last_modified": "2026-11-03T18:24:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86561"
+      "description": "A vulnerability has been identified in armeria-saml prior to 1.41.1, where bearer assertions are not enforced for one-time use, allowing replay of previously consumed assertion IDs within their validity period.",
+      "last_modified": "2026-11-04T05:20:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11749"
     },
     {
-      "cve_id": "CVE-2026-63417",
-      "asset_id": "CVE-2026-63417",
+      "cve_id": "CVE-2026-95210",
+      "asset_id": "CVE-2026-95210",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Logging Redactor is a Python library designed to redact sensitive data in logs based on regex patterns and / or dictionary keys. Prior to 0.0.7, personally identifiable information returned by custom object __str__ or __repr__ methods is not redacted when such non-primitive objects are logged, causing sensitive values to appear in logs that are expected to mask them. This issue is fixed in version 0.0.7.",
-      "last_modified": "2026-11-03T18:21:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63417"
+      "description": "GnuTLS v3.8.13 does not reject a critical keyUsage extension when it cannot be processed, such as when extnValue is an ASN.1 NULL (05 00) instead of a BIT STRING. NOTE: the Supplier does not consider this an actionable security vulnerability because of its \"threat model doesn't consider attacks only possible by modifying anything within the trust boundary (private keys, trusted certificate authorities and their issued certificates including intermediate CAs, etc.)\" policy.",
+      "last_modified": "2026-11-04T05:19:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95210"
     },
     {
-      "cve_id": "CVE-2026-119922",
-      "asset_id": "CVE-2026-119922",
+      "cve_id": "CVE-2026-95209",
+      "asset_id": "CVE-2026-95209",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper access control in the Babelfish for PostgreSQL extension versions 1.2-1.5, 2.1-2.15, 3.1-3.12, 4.0-4.8, 5.1-5.4 may allow remote authenticated users to elevate their privileges. To remediate this issue, we recommend you upgrade to Babelfish for PostgreSQL extension versions 4.10, 5.6, 6.1 or later.",
-      "last_modified": "2026-11-03T18:19:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119922"
+      "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: none. Reason: This candidate was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+      "last_modified": "2026-11-04T05:19:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95209"
     },
     {
-      "cve_id": "CVE-2026-97350",
-      "asset_id": "CVE-2026-97350",
+      "cve_id": "CVE-2026-95184",
+      "asset_id": "CVE-2026-95184",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Securepoint SSL VPN Client v2 on Windows contains vulnerabilities in the handling of OpenVPN configurations and proxy settings that allow non-privileged local users to influence operations performed with NT AUTHORITY\\SYSTEM privileges.\n\n\n\nTwo attack vectors have been identified:\n\n  *  \n\nImproper authorization of configuration checksum updates:\u00a0The privileged service does not properly validate the authorization of connecting clients when updating the checksum of an OpenVPN configuration. This allows a non-privileged local user to modify an OpenVPN configuration and set a valid checksum without administrator privileges. The modified configuration is subsequently processed with NT AUTHORITY\\SYSTEM privileges.\n\n\n  *  \n\nArgument injection via proxy settings:\u00a0The client does not properly validate or sanitize proxy settings before passing them as arguments to OpenVPN. A non-privileged local user can inject additional arguments through the proxy settings, influencing the execution of OpenVPN with NT AUTHORITY\\SYSTEM privileges. This attack vector does not require direct communication with the privileged service or modification of the protected OpenVPN configuration.",
-      "last_modified": "2026-11-03T18:18:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97350"
+      "description": "GnuTLS v3.8.13 does not properly enforce name constraints, as demonstrated by a permitted subtree violation for \"EE O=Evil accepted although outside permitted O=Good.\" NOTE: the Supplier does not consider this an actionable security vulnerability because of its \"threat model doesn't consider attacks only possible by modifying anything within the trust boundary (private keys, trusted certificate authorities and their issued certificates including intermediate CAs, etc.)\" policy.",
+      "last_modified": "2026-11-04T05:19:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95184"
     },
     {
-      "cve_id": "CVE-2026-97072",
-      "asset_id": "CVE-2026-97072",
+      "cve_id": "CVE-2026-88648",
+      "asset_id": "CVE-2026-88648",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authorization vulnerability in myCred myCred mycred allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects myCred: from n/a through 4.0.2.",
-      "last_modified": "2026-11-03T18:18:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97072"
+      "description": "In GnuTLS v3.8.13, an excluded msUPN/SRV otherName is never checked. NOTE: the Supplier does not consider this an actionable security vulnerability because of its \"threat model doesn't consider attacks only possible by modifying anything within the trust boundary (private keys, trusted certificate authorities and their issued certificates including intermediate CAs, etc.)\" policy.",
+      "last_modified": "2026-11-04T05:19:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88648"
     },
     {
-      "cve_id": "CVE-2026-86970",
-      "asset_id": "CVE-2026-86970",
+      "cve_id": "CVE-2026-88647",
+      "asset_id": "CVE-2026-88647",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds read was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. Processing a maliciously crafted font may result in the disclosure of process memory.",
-      "last_modified": "2026-11-03T18:18:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86970"
+      "description": "GnuTLS v3.8.13 can perhaps unexpectedly trust a certificate on the basis of Common Name when Subject Alternative Name has an SRV otherName (1.3.6.1.5.5.7.8.7) whose value is an OCTET STRING. NOTE: the Supplier does not consider this an actionable security vulnerability because of its \"threat model doesn't consider attacks only possible by modifying anything within the trust boundary (private keys, trusted certificate authorities and their issued certificates including intermediate CAs, etc.)\" policy.",
+      "last_modified": "2026-11-04T05:19:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88647"
     },
     {
-      "cve_id": "CVE-2026-86946",
-      "asset_id": "CVE-2026-86946",
+      "cve_id": "CVE-2026-67693",
+      "asset_id": "CVE-2026-67693",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination or corrupt kernel memory.",
-      "last_modified": "2026-11-03T18:18:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86946"
+      "description": "GnuTLS v3.8.13 does not reject end-entity X.509 certificates that contain a contradictory combination of Key Usage (KU) and Extended Key Usage (EKU). NOTE: the Supplier does not consider this an actionable security vulnerability because of its \"threat model doesn't consider attacks only possible by modifying anything within the trust boundary (private keys, trusted certificate authorities and their issued certificates including intermediate CAs, etc.)\" policy.",
+      "last_modified": "2026-11-04T05:19:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67693"
     },
     {
-      "cve_id": "CVE-2026-86848",
-      "asset_id": "CVE-2026-86848",
+      "cve_id": "CVE-2026-13217",
+      "asset_id": "CVE-2026-13217",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost vhost-crypto. The indirect-descriptor snapshot double-fetches a guest descriptor next index, allowing a malicious guest to cause an out-of-bounds access in the host backend.",
-      "last_modified": "2026-11-03T18:18:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86848"
+      "description": "The OCPP 1.6 client in subsys/net/lib/ocpp/ocpp.c reconstructs a session handle and PDU id from the uid field of a CALLRESULT message. In ocpp_process_server_msg() the code calls atoi(strtok_r(uid, \"-\", &tmp)) without checking the strtok_r return value. When the server-supplied uid is empty or contains no - delimiter, strtok_r() returns NULL and atoi(NULL) dereferences a NULL pointer, which is undefined behaviour.\n\nThe uid originates from network data: parse_rpc_msg() in subsys/net/lib/ocpp/ocpp_j.c JSON-parses a frame received from the OCPP central system over TCP/WebSocket and copies the server-controlled string into the local buffer. A malicious or compromised central system, or a man-in-the-middle on a non-TLS ws:// connection, can return a malformed uid to reach the defect. No authentication beyond the existing server connection (or MITM position) is required, and the reconstructed pointer is membership-validated by ocpp_session_is_valid(), so the impact is limited to the NULL dereference rather than arbitrary pointer use.\n\nOn Zephyr targets that trap access to address 0 (MMU/MPU platforms or CONFIG_NULL_POINTER_EXCEPTION_DETECTION), the dereference faults inside the OCPP reader thread and invokes the fatal handler, producing a remote denial of service of the charge point; on bare targets where address 0 is readable the call returns 0 and is benign, so the impact is availability-only and platform-conditional.\n\nThe applied fix guards only the first atoi(); the second strtok_r(NULL, \"-\", &tmp) followed by pdu = atoi(buf) in the same function remains unguarded and the identical NULL dereference is still reachable from the same network input when the uid has a first token but no second --delimited token. A complete fix should validate the second token as well.",
+      "last_modified": "2026-11-04T05:18:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13217"
     },
     {
-      "cve_id": "CVE-2026-86567",
-      "asset_id": "CVE-2026-86567",
+      "cve_id": "CVE-2026-121803",
+      "asset_id": "CVE-2026-121803",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost. The VDUSE handler fails to invalidate vring pointers when the IOTLB is invalidated, leading to use-after-unmap.",
-      "last_modified": "2026-11-03T18:18:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86567"
+      "description": "This CVE ID is a duplicate of CVE-2026-80335 (VULN-002 dl_download_midst) and has been rejected.",
+      "last_modified": "2026-11-04T05:18:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121803"
     },
     {
-      "cve_id": "CVE-2026-86565",
-      "asset_id": "CVE-2026-86565",
+      "cve_id": "CVE-2026-113085",
+      "asset_id": "CVE-2026-113085",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost. A guest can desynchronize virtqueue size from inflight descriptor table size, causing an out-of-bounds write in the host vhost process.",
-      "last_modified": "2026-11-03T18:18:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86565"
+      "description": "Information leak in Media in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to obtain sensitive information via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113085"
     },
     {
-      "cve_id": "CVE-2026-86563",
-      "asset_id": "CVE-2026-86563",
+      "cve_id": "CVE-2026-113046",
+      "asset_id": "CVE-2026-113046",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost. A double-offset bug in vhost log mapping calculation can lead to incorrect memory access.",
-      "last_modified": "2026-11-03T18:18:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86563"
+      "description": "UI misrepresentation in Passwords in Google Chrome prior to 156.0.8078.47 allowed a remote attacker to spoof UI elements via a crafted HTML page. (Chromium security severity: Low)",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113046"
     },
     {
-      "cve_id": "CVE-2026-86562",
-      "asset_id": "CVE-2026-86562",
+      "cve_id": "CVE-2026-101438",
+      "asset_id": "CVE-2026-101438",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in DPDK lib/vhost. A TOCTOU double-fetch of control-queue descriptors allows a heap buffer overflow with attacker-controlled content in the VDUSE control-queue handler.",
-      "last_modified": "2026-11-03T18:18:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86562"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 22.3-26.9. Difficult to exploit vulnerability allows unauthenticated attacker with access to the physical communication segment attached to the hardware where the Siebel CRM Cloud Applications executes to compromise Siebel CRM Cloud Applications.  While the vulnerability is in Siebel CRM Cloud Applications, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Siebel CRM Cloud Applications accessible data as well as  unauthorized access to critical data or complete access to all Siebel CRM Cloud Applications accessible data. CVSS 3.1 Base Score 8.0 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N).",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101438"
     },
     {
-      "cve_id": "CVE-2026-84605",
-      "asset_id": "CVE-2026-84605",
+      "cve_id": "CVE-2026-101442",
+      "asset_id": "CVE-2026-101442",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2. An app may be able to read the device's name.",
-      "last_modified": "2026-11-03T18:18:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84605"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 22.3-26.9. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Cloud Applications.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of Siebel CRM Cloud Applications accessible data. CVSS 3.1 Base Score 3.1 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N).",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101442"
     },
     {
-      "cve_id": "CVE-2026-84594",
-      "asset_id": "CVE-2026-84594",
+      "cve_id": "CVE-2026-112442",
+      "asset_id": "CVE-2026-112442",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A logic issue was addressed with improved state management. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27 and iPadOS 27. An app may be able to access sensitive user data.",
-      "last_modified": "2026-11-03T18:18:05Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84594"
+      "description": "A race condition was addressed with additional validation. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to modify protected parts of the file system.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112442"
     },
     {
-      "cve_id": "CVE-2026-65631",
-      "asset_id": "CVE-2026-65631",
+      "cve_id": "CVE-2026-112625",
+      "asset_id": "CVE-2026-112625",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Inefficient Algorithmic Complexity in erlang-jose allows an unauthenticated remote attacker to cause a CPU-exhaustion denial of service by submitting a crafted RSA JSON Web Key.\n\nWhen an application parses an untrusted JWK through the public jose_jwk:from_binary/1 or jose_jwk:from_map/1 API (or the Elixir wrappers JOSE.JWK.from_binary/1 and JOSE.JWK.from_map/1), an RSA private key that supplies d, e, and n but omits all Chinese Remainder Theorem parameters (p, q, dp, dq, qi) is routed into convert_sfm_to_crt/1, which tries to recover the missing primes by factoring the modulus. The three integers are read straight from the base64url input and are never validated as a real RSA key. When the modulus cannot be split into two factors (for example, when it is itself prime), the search loop convert_sfm_to_crt_find_p/6 performs a modular exponentiation over the attacker-sized modulus on every iteration and never succeeds. A single request of a few hundred bytes forces close to one CPU-second of work before an internal one-second watchdog kills the worker, and a larger modulus raises the cost further. By flooding such requests an attacker can saturate every scheduler and deny service, without credentials, a valid RSA key, or any special configuration.\n\nThis issue affects jose: from 1.7.7 before 1.11.13.",
-      "last_modified": "2026-11-03T18:18:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65631"
+      "description": "An integer underflow was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Processing a maliciously crafted image may result in memory corruption.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112625"
     },
     {
-      "cve_id": "CVE-2026-28336",
-      "asset_id": "CVE-2026-28336",
+      "cve_id": "CVE-2026-112672",
+      "asset_id": "CVE-2026-112672",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SolarWinds Dameware was found to be affected by a command injection vulnerability that could lead to the compromise of the remotely controlled host. Authentication is required.",
-      "last_modified": "2026-11-03T18:18:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28336"
+      "description": "The issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. A maliciously crafted ZIP archive may bypass Gatekeeper checks.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112672"
     },
     {
-      "cve_id": "CVE-2026-28335",
-      "asset_id": "CVE-2026-28335",
+      "cve_id": "CVE-2026-112561",
+      "asset_id": "CVE-2026-112561",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SolarWinds Dameware was found to be affected by a buffer overflow vulnerability that can result in remote code execution. Authentication is required.",
-      "last_modified": "2026-11-03T18:18:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28335"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. Processing a maliciously crafted image may result in disclosure of process memory.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112561"
     },
     {
-      "cve_id": "CVE-2026-28327",
-      "asset_id": "CVE-2026-28327",
+      "cve_id": "CVE-2026-112428",
+      "asset_id": "CVE-2026-112428",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SolarWinds Dameware was found to be affected by a DLL hijacking vulnerability. The hijack occurs during installations only and requires access to the local machine and admin privileges.",
-      "last_modified": "2026-11-03T18:18:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28327"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may bypass Gatekeeper checks.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112428"
     },
     {
-      "cve_id": "CVE-2026-121625",
-      "asset_id": "CVE-2026-121625",
+      "cve_id": "CVE-2026-112486",
+      "asset_id": "CVE-2026-112486",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "GNU Gatekeeper (gnugk) before 5.16 contains an out-of-bounds read vulnerability in ParseRTCP() in ProxyChannel.cxx that allows remote RTP peers to read heap memory past received packets. Attackers can send RTCP SDES items lacking a NUL byte to the media proxy port during proxied H.323 calls with EnableRTCPStats enabled, crashing the gatekeeper.",
-      "last_modified": "2026-11-03T18:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121625"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. Processing a 3D model may lead to unexpected app termination.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112486"
     },
     {
-      "cve_id": "CVE-2026-121603",
-      "asset_id": "CVE-2026-121603",
+      "cve_id": "CVE-2026-112690",
+      "asset_id": "CVE-2026-112690",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Solanum before commit 2ea1382 contains a buffer overflow vulnerability in ms_kill() that allows malicious linked servers to corrupt memory by sending an overlong kill reason. Attackers controlling a rogue or compromised peer server can send a reason exceeding KILLLEN that overflows a static 512-byte buffer, crashing the ircd or potentially achieving remote code execution.",
-      "last_modified": "2026-11-03T18:17:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121603"
+      "description": "This issue was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. A remote attacker may be able to break out of the WebContent sandbox.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112690"
     },
     {
-      "cve_id": "CVE-2026-121578",
-      "asset_id": "CVE-2026-121578",
+      "cve_id": "CVE-2026-112444",
+      "asset_id": "CVE-2026-112444",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Tactical RMM contains a stored XSS vulnerability caused by improperly validated input or encode output for various fields, enabling HTML/JavaScript to be stored in the tools database, which is then executed in the browsers of users when they view content containing the infected objects, leading to account takeover or code execution.",
-      "last_modified": "2026-11-03T18:17:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121578"
+      "description": "This issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Tahoe 26.7.2. An app may be able to bypass Gatekeeper checks.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112444"
     },
     {
-      "cve_id": "CVE-2026-121564",
-      "asset_id": "CVE-2026-121564",
+      "cve_id": "CVE-2026-112673",
+      "asset_id": "CVE-2026-112673",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incomplete Comparison with Missing Factors (CWE-1023) in merge_chats() (whatstk/utils/chat_merge.py), reached from BaseChat.merge(), in whatstk from 0.3.0 before 0.9.0 allows a party that supplies the chat exports to cause messages to be absent from the merged output with no indication that anything was removed, because the merge keeps whole the chat whose first message is oldest and appends from the other only the messages that are strictly newer than the last message of the first. Every message of the second chat that falls inside the date range already covered by the first is therefore discarded. The two chats are compared on their date ranges and not on the identity of the individual messages, so a message held by only one of the two exports is dropped whenever its date falls inside the range of the other, and both branches of _merge_two_chats() behave this way. The merged result is returned without a warning and without a count of what was removed. This results in a merged chat that omits messages the inputs contain, in a library whose documented uses include forensic review and the generation of training data.",
-      "last_modified": "2026-11-03T18:17:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121564"
+      "description": "A type confusion issue was addressed with improved state handling. This issue is fixed in Safari 27.2, iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, visionOS 27.2. Processing maliciously crafted web content may lead to an unexpected process termination.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112673"
     },
     {
-      "cve_id": "CVE-2026-121413",
-      "asset_id": "CVE-2026-121413",
+      "cve_id": "CVE-2026-112430",
+      "asset_id": "CVE-2026-112430",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Parse Server before 8.6.112 and 9.0.0 before 9.10.6-alpha.4 contains an authorization bypass in the session upgrade endpoint, which creates a new session for any valid session token without enforcing the _Session class create class-level permission. Attackers holding a user's session token can send an already revocable token to /upgradeToRevocableSession to obtain additional sessions with fresh expiration that persist after the original session is logged out.",
-      "last_modified": "2026-11-03T18:17:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121413"
+      "description": "An authentication issue was addressed with improved validation of user attributes. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to gain root privileges.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112430"
     },
     {
-      "cve_id": "CVE-2026-121409",
-      "asset_id": "CVE-2026-121409",
+      "cve_id": "CVE-2026-112410",
+      "asset_id": "CVE-2026-112410",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeRDP before 3.32.2 contains a denial of service vulnerability that allows malicious servers or unauthenticated peers to abort clients or proxies via oversized X.224 routing tokens. Attackers can send an oversized LoadBalanceInfo in a Server Redirection PDU, or a 240\u2013247 byte token to a FixedTarget freerdp-proxy, triggering a tpdu_write_header assertion that crashes the process.",
-      "last_modified": "2026-11-03T18:17:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121409"
+      "description": "A double free issue was addressed with improved memory management. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. A remote attacker may cause an unexpected process termination.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112410"
     },
     {
-      "cve_id": "CVE-2026-121405",
-      "asset_id": "CVE-2026-121405",
+      "cve_id": "CVE-2026-112671",
+      "asset_id": "CVE-2026-112671",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeRDP before 3.32.2 fails to cap the OutputBufferLength in serial device-control IRP requests, allowing malicious servers to trigger excessive memory allocation. Attackers running a server with serial redirection can send an IRP_MJ_DEVICE_CONTROL request with IOCTL_USBPRINT_GET_1284_ID and a near-maximum length to exhaust client memory.",
-      "last_modified": "2026-11-03T18:17:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121405"
+      "description": "A resource exhaustion issue was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. A remote attacker may be able to cause a denial-of-service.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112671"
     },
     {
-      "cve_id": "CVE-2026-120758",
-      "asset_id": "CVE-2026-120758",
+      "cve_id": "CVE-2026-112683",
+      "asset_id": "CVE-2026-112683",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "HDF5 through 2.2.0 contains a NULL pointer dereference vulnerability in H5HL_unprotect() in src/H5HL.c. H5HL_protect() pins a single metadata cache entry for a local heap, either the heap prefix or the separate data block, and H5HL_unprotect() unpins it on the final unprotect. When the metadata cache destroys a corrupted local heap entry, H5HL__prfx_dest() unlinks it from the heap by setting heap->prfx or heap->dblk to NULL. A crafted HDF5 file can therefore reach H5HL_unprotect() with no cached object to unpin, and the function passes the NULL pointer to H5AC_unpin_entry(). This causes an assertion failure in debug builds and a NULL pointer dereference and crash in release builds. An attacker who can get a user or application to open and traverse a malicious file can cause a denial of service.",
-      "last_modified": "2026-11-03T18:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120758"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. Processing a maliciously crafted font may lead to unexpected app termination or corrupt process memory.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112683"
     },
     {
-      "cve_id": "CVE-2026-120757",
-      "asset_id": "CVE-2026-120757",
+      "cve_id": "CVE-2026-112525",
+      "asset_id": "CVE-2026-112525",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "HDF5 through 2.2.0 contains a heap buffer over-read vulnerability in H5L__extern_traverse() in src/H5Lexternal.c, the default traversal callback for external links. The callback locates the target file name and object path within the link\u2019s user data using strlen() without validating the buffer against its stored size (udata_size, which was marked unused). A crafted HDF5 file containing an external link whose data is not NULL-terminated, or is too short to hold both strings, causes strlen() to read past the end of the udata heap buffer, and the derived object path pointer may also point outside the buffer. The overrun is unbounded and continues until a zero byte is found. The flaw is triggered when the malicious link is traversed, for example when opening an object through it. An attacker who can get a user or application to access a crafted file can cause a denial of service, and adjacent heap contents may be incorporated into the external file name or object path the library attempts to open.",
-      "last_modified": "2026-11-03T18:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120757"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination or read kernel memory.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112525"
     },
     {
-      "cve_id": "CVE-2026-120756",
-      "asset_id": "CVE-2026-120756",
+      "cve_id": "CVE-2026-107045",
+      "asset_id": "CVE-2026-107045",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "HDF5 through 2.2.0 contains a heap buffer over-read vulnerability in H5O__chunk_deserialize() in src/H5Ocache.c. When decoding object header messages, the declared message size is checked against the end of the chunk image before the remainder of the message header (flags, and for version 2 object headers, the optional creation index) has been decoded. Because the message body begins after these fields, a message can start up to four bytes further into the chunk than the size check accounts for. A crafted HDF5 file can declare a message size that passes the check but extends past the end of the chunk image, causing the message\u2019s decode callback, for example H5O__mtime_new_decode() in src/H5Omtime.c, to read beyond the heap allocation. The flaw is reachable during H5Fopen() on a crafted file. An attacker who can get a user or application to open a malicious file can cause a denial of service or limited disclosure of process memory.",
-      "last_modified": "2026-11-03T18:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120756"
+      "description": "Insecure permissions in the CitrineContentProvider component of Citrine v3.1.0 (versionCode 62) allows unauthorized attackers to arbitrarily read another's Nostr event database.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107045"
     },
     {
-      "cve_id": "CVE-2026-120754",
-      "asset_id": "CVE-2026-120754",
+      "cve_id": "CVE-2026-59015",
+      "asset_id": "CVE-2026-59015",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "HDF5 through 2.2.0 contains an uninitialized memory read vulnerability in H5Z__filter_scaleoffset() in src/H5Zscaleoffset.c. The decode path validates reads against the allocated size of the chunk buffer rather than the number of bytes actually read from the file. Because H5D__chunk_lock() deliberately sizes filtered chunk buffers to the larger of the stored and unfiltered chunk sizes and fills only the stored bytes, a truncated chunk passes these bounds checks and is decompressed from the uninitialized remainder of the allocation. Unrelated heap contents are then returned to the caller as dataset data. Because the reads remain within the allocation, the issue is not detected by AddressSanitizer. An attacker who can get a user or application to read a dataset from a crafted HDF5 file can cause disclosure of process memory. This issue exists because of an incomplete fix for CVE-2026-19029.",
-      "last_modified": "2026-11-03T18:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120754"
+      "description": "In multiple locations, there is a possible permission bypass due to a confused deputy. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59015"
     },
     {
-      "cve_id": "CVE-2026-119675",
-      "asset_id": "CVE-2026-119675",
+      "cve_id": "CVE-2026-121415",
+      "asset_id": "CVE-2026-121415",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MongoDB Database Tools mongorestore inconsistently handles the system.buckets. prefix when validating collection names in an untrusted dump. A specially crafted collection name can bypass special-collection guards and operator namespace filters, causing a restore to create an unauthorized user-chosen database account, including an account with the root role. Exploitation requires an operator to restore unauthorized user-controlled data using credentials with sufficient user-management privileges on the destination deployment. Excluding the admin namespace alone does not prevent this behavior. This issue affects MongoDB Database Tools versions 100.4.0 through versions before 100.20.1.",
-      "last_modified": "2026-11-03T18:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119675"
+      "description": "Parse Server before 8.6.111 and 9.0.0 before 9.10.6-alpha.3 on MongoDB skips field type validation for null-valued dot notation keys, allowing sub-documents to be written beneath Pointer, Number, String, Date, or Boolean fields. Any client with write access, including unauthenticated clients where public writes are permitted, can corrupt field values, make objects unreadable via internal date fields, or break atomic operations on number fields.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121415"
     },
     {
-      "cve_id": "CVE-2026-119674",
-      "asset_id": "CVE-2026-119674",
+      "cve_id": "CVE-2026-121438",
+      "asset_id": "CVE-2026-121438",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MongoDB Database Tools mongorestore incorrectly URL-decodes an original collection name read from metadata when the corresponding dump filename has been truncated. A database user who can create and populate a suitably encoded collection can cause a later authorized directory restore to write those documents into a different collection that the user cannot modify directly. When both collection names resolve to the same destination, backed-up documents may be omitted; use of --drop can also replace the unintended destination collection. Exploitation requires an operator to restore the affected collection from a directory dump with write access to the destination. This issue affects MongoDB Database Tools versions 100.0.2 through versions before 100.20.1.",
-      "last_modified": "2026-11-03T18:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119674"
+      "description": "Mistune before 3.3.3 contains a denial of service vulnerability in InlineParser.parse_link that allows attackers to cause quadratic CPU growth by supplying balanced nested brackets. Attackers can submit crafted Markdown with thousands of nested bracket pairs not forming a valid link, triggering repeated _contains_nested_link scans that exhaust CPU in parsing applications.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121438"
     },
     {
-      "cve_id": "CVE-2026-119673",
-      "asset_id": "CVE-2026-119673",
+      "cve_id": "CVE-2026-119521",
+      "asset_id": "CVE-2026-119521",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MongoDB Database Tools mongofiles does not resolve existing parent-directory symlinks when validating output paths for get_regex. An unauthorized user who can both upload a GridFS file and place a symlink in the operator's download working directory can cause a later retrieval to create a file containing unauthorized user-controlled data outside that directory, using the operator process's filesystem permissions. The issue can occur with default traversal and overwrite settings. Exploitation requires an operator to retrieve matching files from the affected working directory; the demonstrated default behavior creates a new file rather than overwriting an existing file. This issue affects MongoDB Database Tools versions 100.2.0 through versions before 100.20.1.",
-      "last_modified": "2026-11-03T18:17:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119673"
+      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Cozmoslabs Paid Member Subscriptions paid-member-subscriptions allows Stored XSS.This issue affects Paid Member Subscriptions: from n/a through 3.1.3.",
+      "last_modified": "2026-11-04T05:15:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119521"
     },
     {
-      "cve_id": "CVE-2026-119672",
-      "asset_id": "CVE-2026-119672",
+      "cve_id": "CVE-2026-79976",
+      "asset_id": "CVE-2026-79976",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "MongoDB Database Tools mongofiles uses a database-stored GridFS filename as the output destination for get_id when --local is not specified. A user who can modify the file metadata can set the stored filename to '-', causing a later authorized retrieval to write the file contents to standard output instead of a local file. If standard output is captured in a location accessible to that user, this may disclose GridFS content the user cannot read directly. Exploitation requires a higher-privileged operator to retrieve the affected file without an explicit local destination and attacker access to the captured output. This issue affects MongoDB Database Tools from version 3.1.4 through versions before 100.20.1.",
-      "last_modified": "2026-11-03T18:17:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119672"
+      "description": "The MCTP-over-I2C+GPIO target binding in subsys/pmci/mctp/mctp_i2c_gpio_target.c emulates a small pseudo-register file, where the bus controller first writes a register number and then writes or reads payload bytes. The selected register (b->reg_addr) and the data-phase flag (b->rxtx) were never cleared when the controller issued an I2C STOP, so after a completed transfer the target still had a data register selected while the packet buffer that register refers to had already been consumed and set to NULL by mctp_i2c_gpio_target_stop().\n\nA controller on the bus can re-enter the same branch of mctp_i2c_gpio_target_stop() with a NULL buffer using two ordinary transactions and no authentication: first a normal packet write to MCTP_I2C_GPIO_RX_MSG_ADDR followed by STOP (which delivers and frees b->rx_pkt), then a bare read transaction followed by STOP. The failing read_requested() call leaves the stale state untouched and the I2C driver still delivers the STOP callback, which then calls mctp_bus_rx() with a NULL packet. The symmetric case exists on the transmit side, where the stale MCTP_I2C_GPIO_TX_MSG_ADDR selection dereferences b->tx_pkt->end after b->tx_pkt has been cleared and additionally signals b->tx_complete a second time, causing the next outbound packet to be dropped.\n\nThe dereference happens in the I2C target interrupt handler, so on any target that traps accesses to address 0 the result is a fatal exception and a device reset or halt \u2014 a denial of service inflicted by any device able to act as controller on the shared management bus (for example compromised firmware on a peer MCTP endpoint or on the BMC). On parts where address 0 is readable, the impact degrades to a malformed packet buffer being handed to the MCTP stack and lost transmit packets. No attacker-controlled value is written and no confidentiality or integrity boundary is crossed.\n\nThe fix resets b->reg_addr to MCTP_I2C_GPIO_INVALID_ADDR and clears b->rxtx at every STOP, so a new register must be selected before any data phase can run again. Only builds that opt into the experimental CONFIG_MCTP subsystem with CONFIG_MCTP_I2C_GPIO_TARGET=y are affected.",
+      "last_modified": "2026-11-04T05:01:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79976"
     },
     {
-      "cve_id": "CVE-2026-119495",
-      "asset_id": "CVE-2026-119495",
+      "cve_id": "CVE-2026-77684",
+      "asset_id": "CVE-2026-77684",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authorization vulnerability in WebberZone Better Search better-search allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Better Search: from n/a through 4.5.2.",
-      "last_modified": "2026-11-03T18:17:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119495"
+      "description": "The Bluetooth Classic Hands-Free Profile HF role in subsys/bluetooth/host/classic/hfp_hf.c does not release the AT command buffers that are still queued on hf->tx_pending when the RFCOMM DLC goes down. hfp_hf_disconnected() only cancelled the work items and cleared hf->acl, and no other code path ever dequeues those buffers, so each one is permanently lost from the fixed hf_pool (CONFIG_BT_MAX_CONN + 1 buffers, i.e. two in the default configuration). The same function also left BT_HFP_HF_FLAG_CONNECTED set, and hfp_hf_create() wiped the object with memset() as soon as hf->acl was NULL, without checking whether hf->work, hf->slc_work or hf->deferred_work was still pending or running.\n\nThe remote Audio Gateway peer controls the trigger end to end and needs no application involvement: an unsolicited +BCS: 1 response makes bcs_handle() call bt_hfp_hf_select_codec() and queue an AT+BCS buffer, which cannot be transmitted while BT_HFP_HF_FLAG_RX_ONGOING is set, and an immediately following RFCOMM DISC strands that buffer. Repeating the connect / +BCS / disconnect cycle a couple of times empties hf_pool for good.\n\nWith the pool exhausted, HFP command sending fails permanently, and because hfp_hf_send_cmd() allocates with K_FOREVER (bt_rfcomm_create_pdu() \u2192 bt_conn_create_pdu()) from the Bluetooth RX context \u2014 where that timeout is not downgraded to K_NO_WAIT \u2014 one further +BCS from the peer parks the Bluetooth RX thread inside net_buf_alloc() with no possible waker, halting all HCI event processing until the device is rebooted. Separately, reusing the HF slot while a work handler was still queued or running allowed memset() to wipe live k_work items out from under the system workqueue, corrupting shared kernel workqueue state. Exploitation requires an established HFP session (for SSP devices L2CAP enforces authentication before the RFCOMM channel is reachable) and a build with CONFIG_BT_HFP_HF enabled.",
+      "last_modified": "2026-11-04T05:01:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77684"
     },
     {
-      "cve_id": "CVE-2026-119487",
-      "asset_id": "CVE-2026-119487",
+      "cve_id": "CVE-2026-101445",
+      "asset_id": "CVE-2026-101445",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Missing Authorization vulnerability in weDevs Dokan dokan-lite allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Dokan: from n/a through 5.3.2.",
-      "last_modified": "2026-11-03T18:17:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119487"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 22.3-26.9. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Siebel CRM Cloud Applications executes to compromise Siebel CRM Cloud Applications.  Successful attacks of this vulnerability can result in  unauthorized update, insert or delete access to some of Siebel CRM Cloud Applications accessible data as well as  unauthorized read access to a subset of Siebel CRM Cloud Applications accessible data. CVSS 3.1 Base Score 3.6 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N).",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101445"
     },
     {
-      "cve_id": "CVE-2026-119215",
-      "asset_id": "CVE-2026-119215",
+      "cve_id": "CVE-2026-101446",
+      "asset_id": "CVE-2026-101446",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Authorization Bypass Through User-Controlled Key vulnerability in team-alembic ash_authentication allows a user with an account to install a TOTP secret they control on another user's account, and then sign in as that user or hold their second factor.\n\nAshAuthentication.Strategy.Totp.ConfirmSetupChange verified a setup token but did not check that it was issued to the record being confirmed, so an attacker's own pending secret could be confirmed onto another user's record. The TOTP setup changes, ConfirmSetupChange, GeneratePendingSetupChange and GenerateSecretChange, also marked their changesets as AshAuthentication interactions, which the standard AshAuthenticationInteraction policy bypass lets through. A policy limiting setup and confirm_setup to the actor's own record therefore never ran when an application exposed those actions by record key, and a direct setup call on another user's record returned that user's pending secret and setup token.\n\nThis issue affects ash_authentication: from 5.0.0-rc.0 before 5.0.0-rc.16.",
-      "last_modified": "2026-11-03T18:17:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119215"
+      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Cloud Applications.  While the vulnerability is in Siebel CRM Cloud Applications, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Siebel CRM Cloud Applications. CVSS 3.1 Base Score 9.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101446"
     },
     {
-      "cve_id": "CVE-2026-118505",
-      "asset_id": "CVE-2026-118505",
+      "cve_id": "CVE-2026-112459",
+      "asset_id": "CVE-2026-112459",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Restriction of Excessive Authentication Attempts vulnerability in team-alembic ash_authentication allows an unauthenticated attacker to guess passwords and one-time passwords without limit.\n\nThe password, magic link and OTP strategies enforce brute_force_strategy by adding a preparation only to the actions they generate. When the resource defines one of those actions itself, the strategy uses it as written and nothing checked that it carried the preparation, so the setting compiled and applied no limit. The generators produce exactly this: mix ash_authentication.install writes sign_in_with_password, request_password_reset_token and request_magic_link, mix ash_authentication.upgrade then adds brute_force_strategy to those strategies, and mix ash_authentication.add_strategy.otp writes its OTP actions without the preparation. Separately, with registration_enabled? true the OTP sign-in is a create action, which preparations do not run on, so brute_force_strategy {:preparation, module} never applied to it.\n\nThis issue affects ash_authentication: from 5.0.0-rc.4 before 5.0.0-rc.16.",
-      "last_modified": "2026-11-03T18:17:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118505"
+      "description": "A race condition was addressed with improved state handling. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, tvOS 27.2, watchOS 27.2. An app may be able to cause unexpected system termination or corrupt kernel memory.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112459"
     },
     {
-      "cve_id": "CVE-2026-118488",
-      "asset_id": "CVE-2026-118488",
+      "cve_id": "CVE-2026-112526",
+      "asset_id": "CVE-2026-112526",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Eclipse Vert.x versions [4.0.0, 4.5.35] or [5.0.0, 5.2.2], when a malicious server keeps sending bytes on an EOL-terminated line (not length-prefixed, for example a simple string [1]), we'll keep growing the buffer without bounds, eventually leading to an OOM. We need to have a configurable limit for EOL-terminated lines.\n\n\n\nIf a malicious server sends a specially crafted RESP response (for example a bulk string [2] with missing CRLF trailer), the parser enters an infinite loop where it keeps parsing the same buffer and pushing the same response to the caller, which may lead e.g. to an OOM if the consumer just buffers the responses. We must fix the parser to avoid this infinite looping.",
-      "last_modified": "2026-11-03T18:17:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118488"
+      "description": "A buffer overflow was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. A remote attacker may be able to cause unexpected app termination.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112526"
     },
     {
-      "cve_id": "CVE-2026-115716",
-      "asset_id": "CVE-2026-115716",
+      "cve_id": "CVE-2026-112474",
+      "asset_id": "CVE-2026-112474",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Allocation of Resources Without Limits or Throttling (CWE-770) in APM Server can lead to denial of service via Oversized Serialized Data Payloads (CAPEC-231). An attacker who can send OpenTelemetry (OTLP) data to APM Server over HTTP can cause APM Server to exhaust its memory and terminate. This stops the intake of APM and OpenTelemetry data until APM Server restarts.",
-      "last_modified": "2026-11-03T18:17:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115716"
+      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. An app may be able to cause unexpected system termination or write kernel memory.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112474"
     },
     {
-      "cve_id": "CVE-2026-115715",
-      "asset_id": "CVE-2026-115715",
+      "cve_id": "CVE-2026-112550",
+      "asset_id": "CVE-2026-112550",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Allocation of Resources Without Limits or Throttling (CWE-770) in Elasticsearch can lead to denial of service via a specially crafted input value that is processed by an affected phonetic encoder of the analysis-phonetic plugin. An authenticated user with permission to write documents to or run searches against an index that uses an affected encoder can cause an Elasticsearch node to exhaust its heap memory. The node can become unresponsive or terminate.",
-      "last_modified": "2026-11-03T18:17:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115715"
+      "description": "A type confusion issue was addressed with improved memory handling. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to cause a denial-of-service.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112550"
     },
     {
-      "cve_id": "CVE-2026-115714",
-      "asset_id": "CVE-2026-115714",
+      "cve_id": "CVE-2026-112507",
+      "asset_id": "CVE-2026-112507",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Certificate Validation (CWE-295) in the operating system certificate bundle shipped in the Docker images of APM Server; Auditbeat, Filebeat, Heartbeat, Metricbeat and Packetbeat; Elastic Agent, including Fleet Server and Cloudbeat; Logstash, for TLS connections that use the operating system certificate bundle; Elastic connectors; Universal Profiling (host agent, collector and symbolizer); and Elastic Maps Server. This certificate bundle, a dependency of these products (Dependency on Vulnerable Third-Party Component, CWE-1395), could allow an attacker to intercept or modify TLS-protected traffic via Signature Spoofing by Key Theft (CAPEC-474). The certificate bundle includes root certificate authorities that signed eight eMudhra intermediate certificate authorities whose private keys are compromised. Anyone with these keys can issue a certificate for any host name that these products accept as trusted. Exploitation requires an attacker in a network position between the product and the remote party, who presents a certificate issued with one of the compromised keys.",
-      "last_modified": "2026-11-03T18:17:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115714"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2. An app may be able to cause unexpected system termination or write kernel memory.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112507"
     },
     {
-      "cve_id": "CVE-2026-115710",
-      "asset_id": "CVE-2026-115710",
+      "cve_id": "CVE-2026-112449",
+      "asset_id": "CVE-2026-112449",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use of Cache Containing Sensitive Information (CWE-524) in Elasticsearch can lead to information disclosure and incorrect search results via specially crafted search requests. For some query types, Elasticsearch can share cached query results between users who have field-level security restrictions and users who do not. A user restricted by field-level security can learn which documents match a value in a field that they cannot read. A restricted user can also cause users with full access to receive incomplete search results. Disclosure is only possible when a user with full access ran the same query on the same shard recently.",
-      "last_modified": "2026-11-03T18:17:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115710"
+      "description": "An integer overflow was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. Processing a maliciously crafted 3D model may lead to memory corruption.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112449"
     },
     {
-      "cve_id": "CVE-2026-115298",
-      "asset_id": "CVE-2026-115298",
+      "cve_id": "CVE-2026-112557",
+      "asset_id": "CVE-2026-112557",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect Authorization (CWE-863) in Elasticsearch can lead to information disclosure via Accessing Functionality Not Properly Constrained by ACLs (CAPEC-1). An authenticated user whose index access is restricted by field-level security can retrieve the value of a constant_keyword field that their role excludes. Some search and query features do not apply the field-level security restriction to this field type.",
-      "last_modified": "2026-11-03T18:17:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115298"
+      "description": "The issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. A malicious application may be able to bypass Privacy preferences.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112557"
     },
     {
-      "cve_id": "CVE-2026-115297",
-      "asset_id": "CVE-2026-115297",
+      "cve_id": "CVE-2026-112469",
+      "asset_id": "CVE-2026-112469",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NULL Pointer Dereference (CWE-476) in the AMQP protocol parser in Packetbeat can lead to denial of service via specially crafted network traffic. An unauthenticated attacker who can send traffic on a network segment that Packetbeat monitors for AMQP can cause a Go runtime panic that terminates the Packetbeat process. A single crafted packet is sufficient. No AMQP authentication is necessary. While Packetbeat is not running, it does not collect network telemetry.",
-      "last_modified": "2026-11-03T18:17:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115297"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2. An app may be able to cause unexpected system termination or corrupt kernel memory.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112469"
     },
     {
-      "cve_id": "CVE-2026-115295",
-      "asset_id": "CVE-2026-115295",
+      "cve_id": "CVE-2026-112464",
+      "asset_id": "CVE-2026-112464",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Authorization Bypass Through User-Controlled Key (CWE-639) in Kibana can lead to information disclosure via Accessing Functionality Not Properly Constrained by ACLs (CAPEC-1). An authenticated user with read access to connectors in one Kibana space can retrieve connector execution log information from other spaces that they are not authorized to access. The disclosed information includes connector names and identifiers, execution status, timestamps, error messages, and aggregated execution statistics.",
-      "last_modified": "2026-11-03T18:17:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115295"
+      "description": "An out-of-bounds write issue was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2. Processing a maliciously crafted file may lead to heap corruption.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112464"
     },
     {
-      "cve_id": "CVE-2026-115294",
-      "asset_id": "CVE-2026-115294",
+      "cve_id": "CVE-2026-112467",
+      "asset_id": "CVE-2026-112467",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Limitation of a Pathname to a Restricted Directory (CWE-22) in the Kibana Fleet feature can lead to unauthorized resource deletion via Path Traversal (CAPEC-126). A low-privileged user with Fleet agent policies write access could cause a subsequent administrative action to act on unintended resources. This can result in the deletion of resources such as Kibana spaces and other organizational assets that the low-privileged user cannot delete directly. Exploitation requires an administrator to interact with the affected Fleet interface.",
-      "last_modified": "2026-11-03T18:17:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115294"
+      "description": "This issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Tahoe 26.7.2. An app may be able to bypass network restrictions.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112467"
     },
     {
-      "cve_id": "CVE-2026-115293",
-      "asset_id": "CVE-2026-115293",
+      "cve_id": "CVE-2026-112461",
+      "asset_id": "CVE-2026-112461",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insertion of Sensitive Information Into Sent Data (CWE-201) in Kibana Observability onboarding can lead to disclosure of the credentials that Kibana uses to connect to Elasticsearch. When these credentials are embedded in the Elasticsearch host URLs in the Kibana configuration, an authenticated user with the privileges to onboard Observability data can obtain them. The user can then access Elasticsearch directly with the privileges of the Kibana service account, which are outside the privileges granted to that user.",
-      "last_modified": "2026-11-03T18:17:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115293"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. Processing a maliciously crafted 3D model may lead to memory corruption.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112461"
     },
     {
-      "cve_id": "CVE-2026-115292",
-      "asset_id": "CVE-2026-115292",
+      "cve_id": "CVE-2026-112676",
+      "asset_id": "CVE-2026-112676",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Authorization Bypass Through User-Controlled Key (CWE-639) in Kibana Machine Learning can lead to information disclosure via Accessing Functionality Not Properly Constrained by ACLs (CAPEC-1). An authenticated user with Machine Learning read access in one Kibana space can read the audit and error messages of data frame analytics jobs that belong to other spaces that the user is not authorized to access. These messages can include job details such as destination index names, analyzed field names, and failure information.",
-      "last_modified": "2026-11-03T18:17:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115292"
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. An app may be able to access a user's Photos Library.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112676"
     },
     {
-      "cve_id": "CVE-2026-115290",
-      "asset_id": "CVE-2026-115290",
+      "cve_id": "CVE-2026-112505",
+      "asset_id": "CVE-2026-112505",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Uncontrolled Recursion (CWE-674) in Elasticsearch can lead to denial of service via Serialized Data with Nested Payloads (CAPEC-230). An unauthenticated attacker with network access to the remote cluster server interface of a node can send a specially crafted request that causes the node to terminate. No credentials are required. The attacker can repeat the request against each reachable node.",
-      "last_modified": "2026-11-03T18:17:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115290"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. A malicious Screen Sharing peer may be able to corrupt process memory.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112505"
     },
     {
-      "cve_id": "CVE-2026-115289",
-      "asset_id": "CVE-2026-115289",
+      "cve_id": "CVE-2026-86964",
+      "asset_id": "CVE-2026-86964",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Use of Multiple Resources with Duplicate Identifier (CWE-694) in APM Server can lead to information disclosure via a specially crafted agent configuration request. An authenticated APM agent could receive the central agent configuration that belongs to a different service until the cached configuration expires. A service could also run with central configuration settings, such as sampling settings, that were meant for a different service.",
-      "last_modified": "2026-11-03T18:17:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115289"
+      "description": "A null pointer dereference was addressed with improved input validation. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Tahoe 26.7.2, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86964"
     },
     {
-      "cve_id": "CVE-2026-114185",
-      "asset_id": "CVE-2026-114185",
+      "cve_id": "CVE-2026-107040",
+      "asset_id": "CVE-2026-107040",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WPVibes AnyWhere Elementor anywhere-elementor allows Stored XSS.This issue affects AnyWhere Elementor: from n/a through 1.3.0.",
-      "last_modified": "2026-11-03T18:17:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114185"
+      "description": "Insecure permissions in MBasov OMN-Go versionCode 26080824 allows unauthorized attackers to invoke an exported component, leading to arbitrary data access and control of data flow.",
+      "last_modified": "2026-11-04T05:00:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107040"
     },
     {
-      "cve_id": "CVE-2026-112622",
-      "asset_id": "CVE-2026-112622",
+      "cve_id": "CVE-2026-10686",
+      "asset_id": "CVE-2026-10686",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Tahoe 26.7.2. An attacker in radio range may be able to cause unexpected system termination.",
-      "last_modified": "2026-11-03T18:17:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112622"
+      "description": "Zephyr's IPv6 forwarding path re-sent routed unicast packets without ever decrementing the IPv6 hop limit. Both routing branches of ipv6_route_packet() (subsys/net/ip) were affected: the explicit-route path (net_route_packet()) and the on-link cross-interface path (net_route_packet_if()). Each set the packet forwarding flag and called net_send_data() with the hop limit untouched and no expiry check.\n\nPer RFC 8200 the hop-limit decrement is the mechanism that bounds packet lifetime and terminates routing loops; without it, a device acting as an IPv6 router relays looping packets indefinitely. An on-path attacker who can induce or exploit a transient L3 loop turns it into a permanent forwarding storm, causing CPU/bandwidth resource exhaustion (availability DoS) on the forwarder and adjacent links; path-discovery and loop diagnostics that rely on hop-limit expiry are also defeated.\n\nAffected configurations. In every affected release the forwarding path is reached via CONFIG_NET_ROUTE (enabled by default when CONFIG_NET_IPV6_NBR_CACHE is set), together with CONFIG_NET_ROUTING for cross-interface routing. Note that CONFIG_NET_IPV6_FORWARDING and CONFIG_NET_IPV4_FORWARDING \u2014 which appear in the fix and in this advisory's evidence notes \u2014 were introduced after v4.4.0, when the routing options were split and renamed; they do not exist in any affected release. When auditing a v4.4.1-or-earlier configuration, look for CONFIG_NET_ROUTE and CONFIG_NET_ROUTING.\n\nIPv4 is not affected in any release. The IPv4 forwarding path (net_route_ipv4_packet() in route_ipv4.c) was added after v4.4.0 and has never shipped in a release. Its TTL decrement and IPv4 header-checksum recomputation landed on main as part of the same fix, so the evidence notes below discuss it, but no released version is reachable by way of IPv4.\n\nAffected releases are v1.8.0 through v4.4.1: v1.8.0 introduced net_route_packet() and v2.2.0 added net_route_packet_if(), and neither decremented the hop limit. v4.3.1 carries the explicit-route fix but not the on-link one, so it is affected as well. Fixed on main by 7d8f1afa7345 (explicit-route path) and 589eadc74efa (on-link path).",
+      "last_modified": "2026-11-04T04:59:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10686"
     },
     {
-      "cve_id": "CVE-2026-112593",
-      "asset_id": "CVE-2026-112593",
+      "cve_id": "CVE-2026-10593",
+      "asset_id": "CVE-2026-10593",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination or write kernel memory.",
-      "last_modified": "2026-11-03T18:17:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112593"
+      "description": "The Zephyr Bluetooth LE Audio Basic Audio Profile (BAP) unicast client mishandles peer-supplied ASE state notifications. In unicast_client_ep_qos_state() (subsys/bluetooth/audio/bap_unicast_client.c), the handler writes attacker-controlled QoS fields (interval, framing, phy, sdu, rtn, latency, pd) through the stream->qos pointer with only a stream != NULL guard. stream->qos is NULL for any stream that has been codec-configured via bt_bap_stream_config() but not yet added to a unicast group (it is set only by unicast_group_add_stream()).\n\nA malicious or buggy remote ASCS server, to which the local device is connected as a BAP unicast client, can send a GATT notification announcing the ASE has entered the QoS Configured state while the local endpoint is still in the Codec Configured state \u2014 a transition the dispatcher explicitly permits \u2014 during that window, causing a write through a NULL pointer and a crash (denial of service). The data written is itself remote-controlled.\n\nThe defect shipped in v4.3.0 and v4.4.0 (and earlier). The fix re-points all BAP QoS storage to the always-valid embedded ep->qos struct, eliminating the NULL dereference.",
+      "last_modified": "2026-11-04T04:58:21Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10593"
     },
     {
-      "cve_id": "CVE-2026-112481",
-      "asset_id": "CVE-2026-112481",
+      "cve_id": "CVE-2026-10643",
+      "asset_id": "CVE-2026-10643",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An attacker on the local network may be able to cause unexpected process termination or disclose process memory.",
-      "last_modified": "2026-11-03T18:17:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112481"
+      "description": "Zephyr's IP socket recvmsg() implementation (subsys/net/lib/sockets/sockets_inet.c, insert_pktinfo()) validated the user-supplied ancillary (msg_control) buffer using only the payload length (msg->msg_controllen < pktinfo_len) before writing a full control message consisting of an aligned cmsg header plus the payload. Because the check omitted the cmsg header size, a control buffer whose length falls in the under-checked window (e.g. 16-27 bytes for IPv4 IP_PKTINFO on a 64-bit target, where a single element actually occupies 28 bytes) passes the guard yet causes a fixed-size out-of-bounds write of up to one cmsg header (~12 bytes) past the end of the buffer.\n\nUnder CONFIG_USERSPACE the recvmsg verifier allocates a kernel-heap copy of the control buffer sized to msg_controllen and runs the implementation against it, so the overflow corrupts kernel heap memory and is triggerable from an unprivileged userspace thread; in supervisor mode it corrupts the caller's buffer.\n\nThe path is reachable on a UDP/IP socket with IP_PKTINFO/IPV6_RECVPKTINFO (or hoplimit/timestamping) enabled when the application calls recvmsg() with an undersized control buffer and a datagram is received; part of the overwritten bytes (the destination IP in ipi_addr) is influenced by the received packet.\n\nThe fix makes the capacity check use NET_CMSG_SPACE(pktinfo_len) (aligned header + aligned data) and returns -ENOMEM when the buffer is too small. Affected: v3.6.0 through v4.4.0.",
+      "last_modified": "2026-11-04T04:58:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10643"
     },
     {
-      "cve_id": "CVE-2026-111211",
-      "asset_id": "CVE-2026-111211",
+      "cve_id": "CVE-2026-10642",
+      "asset_id": "CVE-2026-10642",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An issue was discovered in Django 6.1 before 6.1.3, 6.0 before 6.0.10, and 5.2 before 5.2.19.\n`django.contrib.gis.forms.widgets.BaseGeometryWidget.deserialize()`, used by `django.contrib.gis.forms.GeometryField`, does not escape invalid submitted values before logging them, which allows remote attackers to inject or forge log entries via a crafted geometry value.\nEarlier, unsupported Django series (such as 5.1.x, 5.0.x, and 4.2.x) were not evaluated and may also be affected.\nDjango would like to thank Aaron chen for reporting this issue.",
-      "last_modified": "2026-11-03T18:17:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111211"
+      "description": "The Zephyr PL011 UART driver (drivers/serial/uart_pl011.c) contains an unbounded software loop in pl011_irq_tx_enable() that repeatedly invokes the interrupt-driven application callback while the TX interrupt mask bit (PL011_IMSC_TXIM) is set, to work around the controller's level-transition TX-interrupt behavior.\n\nWhen CTS hardware flow control is enabled (devicetree hw-flow-control or runtime UART_CFG_FLOW_CTRL_RTS_CTS) and the wired serial peer de-asserts CTS, the controller stops draining the TX FIFO; pl011_fifo_fill() then returns 0 on every call while the application still has pending data and therefore never disables the TX interrupt. The loop condition never clears, so the thread that called uart_irq_tx_enable() (e.g. h4_send() in the Bluetooth HCI H4 driver) spins indefinitely, hanging the executing context and stalling the transport \u2014 a denial of service (CWE-835).\n\nAn attacker controlling the device attached to the UART's CTS line can trigger the hang by withholding CTS during transmission. Because that peer is the device wired to the UART \u2014 which may be a removable or external module (e.g. an off-board Bluetooth controller on the HCI H4 link) rather than a permanently-bonded on-PCB part \u2014 the attack vector is scored Adjacent (AV:A) rather than Physical; the security subcommittee should confirm the vector against the specific deployment. Impact is availability only; there is no memory-safety, confidentiality, or integrity consequence.\n\nThe vulnerable loop was introduced in commit b783bc8448ef (Feb 2025) and shipped in releases v4.1.0 through v4.4.0. The fix breaks out of the loop when CTS is blocking and arms the CTS modem-status interrupt to resume transmission when CTS re-asserts.",
+      "last_modified": "2026-11-04T04:58:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10642"
     },
     {
-      "cve_id": "CVE-2026-110748",
-      "asset_id": "CVE-2026-110748",
+      "cve_id": "CVE-2026-105296",
+      "asset_id": "CVE-2026-105296",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This issue affects Apache SIS from version 0.7 through 1.6 inclusive. When a data file contains links to other files, Apache SIS opened these files regardless their paths. It was possible, for example, to specify a path to a local file. However, these files were always expected to be in some specific formats and the reading stops at the first parsing error, which makes this vulnerability unlikely to leak sensitive information. The impacted formats are:\n\n  *  Geographic Markup Language (GML) with `xlink:href` attributes for other files in GML format.\n  *  Well Known Text (WKT) with parameter elements for datum shift grids in NADCON, NTv2 or RGF93 formats.\n  *  Landsat scene with paths to files for each band in the GeoTIFF format.\n\n\n\n\nUsers are recommended to upgrade to version 1.7, which fixes the issue by restricting the paths to the same directory as the file containing the references to other files, or to a predetermined directory for datum shift grids.",
-      "last_modified": "2026-11-03T18:17:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110748"
+      "description": "Multiple Akeeba products lack the anti-CSRF check on some actions. If the user access a malicious page while logged into the product, unintended operations may be performed.",
+      "last_modified": "2026-11-04T04:46:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105296"
     },
     {
-      "cve_id": "CVE-2026-103916",
-      "asset_id": "CVE-2026-103916",
+      "cve_id": "CVE-2026-65363",
+      "asset_id": "CVE-2026-65363",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Docker Sandboxes sbx cp does not safely confine host-side paths to a shared workspace. A malicious sandbox can create or replace a workspace symlink so that a later user-initiated copy reads a host file outside the workspace into the sandbox or writes sandbox-controlled data to a host path outside the workspace with the invoking user's permissions.",
-      "last_modified": "2026-11-03T18:17:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103916"
+      "description": "The issue was addressed with improved checks. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to break out of its sandbox.",
+      "last_modified": "2026-11-04T04:45:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65363"
     },
     {
-      "cve_id": "CVE-2026-100236",
-      "asset_id": "CVE-2026-100236",
+      "cve_id": "CVE-2026-112653",
+      "asset_id": "CVE-2026-112653",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the DPDK GSO library. When software GSO copies packet headers into a new mbuf, it does not check that the header fits in the source first segment or in the destination buffer, and a header longer than the configured GSO segment size can underflow the payload-size calculation. A remote or guest-supplied packet processed with software GSO can trigger an out-of-bounds read or write.",
-      "last_modified": "2026-11-03T18:17:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100236"
+      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 27.2, iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, visionOS 27.2. Processing maliciously crafted web content may lead to an unexpected process termination.",
+      "last_modified": "2026-11-04T04:45:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112653"
     },
     {
-      "cve_id": "CVE-2025-71434",
-      "asset_id": "CVE-2025-71434",
+      "cve_id": "CVE-2026-86937",
+      "asset_id": "CVE-2026-86937",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Weaver E-cology 8.0, 9.0, and 10.0 prior to 10.76 contains an unauthenticated SQL injection vulnerability in the /api/doc/out/more/list endpoint via the elementmore parameter with srcType=2. Attackers can inject SQL through doc_datefrom/doc_dateto fields and read results via /api/ec/dev/table/counts to extract database information. Exploitation evidence was first observed by the Shadowserver Foundation on 2026-07-19.",
-      "last_modified": "2026-11-03T18:17:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71434"
+      "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may bypass Gatekeeper checks.",
+      "last_modified": "2026-11-04T04:45:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86937"
     },
     {
-      "cve_id": "CVE-2025-13833",
-      "asset_id": "CVE-2025-13833",
+      "cve_id": "CVE-2026-112576",
+      "asset_id": "CVE-2026-112576",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability exists in SecureConnector for Windows when the \u201cAdditional Appliance Connections\u201d setting is enabled and the agent\u2019s configuration file contains more than three trusted\u2011server entries. Some entries omit TLS certificate fingerprints, which allows the agent to accept and establish sessions with a malicious server. An attacker who controls the wired or wireless network can redirect traffic to a malicious server. The attacker can then use the agent\u2019s built\u2011in command/file features to execute arbitrary commands as SYSTEM, granting full administrative control and the ability to disable endpoint protections or exfiltrate data.",
-      "last_modified": "2026-11-03T18:17:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-13833"
+      "description": "A memory integrity issue was addressed with improved handling of copy-on-write pages. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. An app may be able to cause unexpected changes to copy-on-write memory.",
+      "last_modified": "2026-11-04T04:45:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112576"
     },
     {
-      "cve_id": "CVE-2019-25779",
-      "asset_id": "CVE-2019-25779",
+      "cve_id": "CVE-2026-112425",
+      "asset_id": "CVE-2026-112425",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "WooThemes Diarise through 1.5.9 contains a file read vulnerability that allows unauthenticated attackers to read arbitrary files through the calendar parameter of download.php. Attackers can send GET requests with file:// scheme paths to the calendar parameter to disclose sensitive files like /etc/passwd. Exploitation evidence was first observed by the Shadowserver Foundation on 2023-10-19.",
-      "last_modified": "2026-11-03T18:17:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-25779"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2. Processing a 3D model may result in disclosure of process memory.",
+      "last_modified": "2026-11-04T04:45:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112425"
     },
     {
-      "cve_id": "CVE-2026-86936",
-      "asset_id": "CVE-2026-86936",
+      "cve_id": "CVE-2026-112666",
+      "asset_id": "CVE-2026-112666",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1824,85 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to gain root privileges.",
-      "last_modified": "2026-11-03T18:15:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86936"
+      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 27.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, tvOS 27.2, watchOS 27.2. Processing maliciously crafted web content may lead to an unexpected process termination.",
+      "last_modified": "2026-11-04T04:45:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112666"
+    },
+    {
+      "cve_id": "CVE-2026-112670",
+      "asset_id": "CVE-2026-112670",
+      "asset_name": "OpenCVE catalog",
+      "vendor": "",
+      "product": "",
+      "version": "See affected versions",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "known_exploited": false,
+      "epss": null,
+      "fixed_version": "",
+      "patch_available": false,
+      "vendor_url": "",
+      "source": "OpenCVE",
+      "description": "An out-of-bounds write issue was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Processing a maliciously crafted file may lead to heap corruption.",
+      "last_modified": "2026-11-04T04:45:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112670"
+    },
+    {
+      "cve_id": "CVE-2026-112660",
+      "asset_id": "CVE-2026-112660",
+      "asset_name": "OpenCVE catalog",
+      "vendor": "",
+      "product": "",
+      "version": "See affected versions",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "known_exploited": false,
+      "epss": null,
+      "fixed_version": "",
+      "patch_available": false,
+      "vendor_url": "",
+      "source": "OpenCVE",
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. An app may be able to bypass certain Privacy preferences.",
+      "last_modified": "2026-11-04T04:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112660"
+    },
+    {
+      "cve_id": "CVE-2026-112552",
+      "asset_id": "CVE-2026-112552",
+      "asset_name": "OpenCVE catalog",
+      "vendor": "",
+      "product": "",
+      "version": "See affected versions",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "known_exploited": false,
+      "epss": null,
+      "fixed_version": "",
+      "patch_available": false,
+      "vendor_url": "",
+      "source": "OpenCVE",
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An attacker with control of a network file server may be able to cause unexpected system termination.",
+      "last_modified": "2026-11-04T04:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112552"
+    },
+    {
+      "cve_id": "CVE-2026-112682",
+      "asset_id": "CVE-2026-112682",
+      "asset_name": "OpenCVE catalog",
+      "vendor": "",
+      "product": "",
+      "version": "See affected versions",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "known_exploited": false,
+      "epss": null,
+      "fixed_version": "",
+      "patch_available": false,
+      "vendor_url": "",
+      "source": "OpenCVE",
+      "description": "An input validation issue was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Tahoe 26.7.2, visionOS 27.2, watchOS 27.2. A remote attacker may be able to cause unexpected app termination.",
+      "last_modified": "2026-11-04T04:45:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112682"
     }
   ]
 }
