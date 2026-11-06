@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-11-05T20:11:27.445971+00:00",
+  "last_updated": "2026-11-06T07:10:27.614159+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-116783",
-      "asset_id": "CVE-2026-116783",
+      "cve_id": "CVE-2026-83494",
+      "asset_id": "CVE-2026-83494",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, udptl_rx_packet() used a peer-controlled FEC entry count directly to fill five-entry FEC arrays in a mod_spandsp T.38 session. A larger count wrote sender-controlled error-recovery data beyond those arrays and persisted the oversized count for a later reconstruction pass. Any peer able to deliver UDPTL to an established T.38 fax session can reach the parser, including deployments using fax applications or a T.38 gateway. The memory corruption can crash FreeSWITCH and end every active call, although remote code execution has not been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:41:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116783"
+      "description": "A flaw was found in the training-operator. An incorrect object casting in the PyTorchJob ValidateUpdate webhook allows users to bypass an immutability check. This vulnerability could enable users to detach a queued job from its quota management system or hijack a running job's controller ownership. The primary impact is a Denial of Service (DoS) condition.",
+      "last_modified": "2026-11-06T06:39:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83494"
     },
     {
-      "cve_id": "CVE-2026-116790",
-      "asset_id": "CVE-2026-116790",
+      "cve_id": "CVE-2026-83493",
+      "asset_id": "CVE-2026-83493",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, FreeSWITCH's inbound ICE handling accepted every connectivity check without cryptographically validating its STUN MESSAGE-INTEGRITY attribute. A network peer able to reach an ICE-enabled leg's media port could forge an ICE connectivity check without SDP credentials, nominate its own address, redirect RTP and DTLS traffic, and terminate the legitimate media path. On unencrypted legs this enables eavesdropping and media injection, while all WebRTC and SIP legs that negotiate ICE are in scope. Version 1.11.2 introduces the remediation, which requires ice_verify_message_integrity=true.",
-      "last_modified": "2026-11-05T19:40:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116790"
+      "description": "A flaw was found in distributed-workloads. A remote attacker could exploit a vulnerability in the pull_request_target workflow by submitting a specially crafted pull request. This workflow processes untrusted code from the pull request author while operating with the base repository's sensitive secrets, such as the SNYK_TOKEN, and its default write token. Consequently, an attacker could exfiltrate these secrets, leading to unauthorized access to the Snyk integration and potential control over the repository.",
+      "last_modified": "2026-11-06T06:39:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83493"
     },
     {
-      "cve_id": "CVE-2026-76580",
-      "asset_id": "CVE-2026-76580",
+      "cve_id": "CVE-2026-93432",
+      "asset_id": "CVE-2026-93432",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in OpenText OpenText Directory Services (OTDS) on Windows and Linux allows Cross-Site Scripting (XSS).\n\nThis issue affects OpenText Directory Services (OTDS): from 25.1 through 26.2.",
-      "last_modified": "2026-11-05T19:40:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76580"
+      "description": "A flaw was found in the Quarkus Qute template engine. When the {#eval} section helper processes a sub-template, it fails to pass the parent template's content type information. This bypasses standard escaping mechanisms, allowing untrusted data to be output as raw, unescaped text. This vulnerability can lead to Cross-Site Scripting (XSS) and JSON Injection, potentially allowing a remote attacker to execute arbitrary code in a user's browser or manipulate data.",
+      "last_modified": "2026-11-06T06:36:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93432"
     },
     {
-      "cve_id": "CVE-2026-19134",
-      "asset_id": "CVE-2026-19134",
+      "cve_id": "CVE-2026-9797",
+      "asset_id": "CVE-2026-9797",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability in OpenText OpenText Directory Services (OTDS) allows Black Box Reverse Engineering.\n\nThis issue affects OpenText Directory Services (OTDS): from 22.1 to 26.2",
-      "last_modified": "2026-11-05T19:40:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19134"
+      "description": "A flaw was found in Keycloak's administrative services (org.keycloak.services.resources.admin). A highly privileged attacker, authenticated with a 'manage-clients' role, could exploit this vulnerability through several methods, including manipulating client JSON Web Key Sets (JWKS), swapping client authenticator types and resetting secrets, or downloading legitimate signing keys. Successful exploitation allows the attacker to obtain a token with 'realm-admin' role assignments, leading to privilege escalation and potential unauthorized access to sensitive resources.",
+      "last_modified": "2026-11-06T06:36:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9797"
     },
     {
-      "cve_id": "CVE-2026-116788",
-      "asset_id": "CVE-2026-116788",
+      "cve_id": "CVE-2026-15562",
+      "asset_id": "CVE-2026-15562",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is an open-source software telecommunications platform. Before version 1.11.2, an integer underflow in \u00a0switch_xml_decode()\u00a0 can cause an undersized heap allocation when an XML document declares an entity with an empty replacement value. Subsequent copying overruns the allocated buffer. An unauthenticated attacker who can reach a SIP profile with presence management enabled and DTD processing permitted can trigger the vulnerability through a crafted SIP PUBLISH request. Exploitation can corrupt heap memory and terminate the FreeSWITCH process, interrupting all active calls. This vulnerability is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:39:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116788"
+      "description": "A flaw was found in EAP's jboss-remoting. A remote unauthenticated attacker who can reach :8080 (or :9990, or :4447) and complete an Upgrade: jboss-remoting handshake can cause OOM errors that degrade requests server-wide, leading to denial of service.",
+      "last_modified": "2026-11-06T06:33:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15562"
     },
     {
-      "cve_id": "CVE-2026-87375",
-      "asset_id": "CVE-2026-87375",
+      "cve_id": "CVE-2026-73473",
+      "asset_id": "CVE-2026-73473",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the WebCenter Content: Imaging product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise WebCenter Content: Imaging.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all WebCenter Content: Imaging accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-11-05T19:38:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87375"
+      "description": "A flaw was found in GStreamer gst-plugins-good (avidemux). In the subindex parser, missing validation of the entry count can cause excessive memory allocation and denial of service. Because avidemux is auto-plugged by playbin, decodebin, and gst-discoverer, opening or previewing a crafted AVI is sufficient to trigger the issue. Fixed upstream in gst-plugins-good 1.28.6 (GStreamer-SA-2026-0072).",
+      "last_modified": "2026-11-06T06:32:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73473"
     },
     {
-      "cve_id": "CVE-2026-87376",
-      "asset_id": "CVE-2026-87376",
+      "cve_id": "CVE-2026-73472",
+      "asset_id": "CVE-2026-73472",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the WebCenter Content: Imaging product of Oracle Fusion Middleware (component: Core).   The supported version that is affected is 14.1.2.0.0. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise WebCenter Content: Imaging.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all WebCenter Content: Imaging accessible data as well as  unauthorized access to critical data or complete access to all WebCenter Content: Imaging accessible data. CVSS 3.1 Base Score 6.8 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-11-05T19:38:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87376"
+      "description": "A flaw was found in GStreamer gst-plugins-good (avidemux). In the superindex and subindex parsers, integer overflow can bypass bounds checks and cause out-of-bounds reads. Because avidemux is auto-plugged by playbin, decodebin, and gst-discoverer, opening or previewing a crafted AVI is sufficient to trigger the issue. Fixed upstream in gst-plugins-good 1.28.6 (GStreamer-SA-2026-0072).",
+      "last_modified": "2026-11-06T06:32:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73472"
     },
     {
-      "cve_id": "CVE-2026-0089",
-      "asset_id": "CVE-2026-0089",
+      "cve_id": "CVE-2026-73471",
+      "asset_id": "CVE-2026-73471",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple functions of PackageInstallerService.java, there is a possible way to install unverified apps due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:37:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0089"
+      "description": "A flaw was found in GStreamer gst-plugins-good (avidemux). In the Nikon metadata tag parser, a pointer can be dereferenced without verifying that data remains in the buffer, causing out-of-bounds reads. Because avidemux is auto-plugged by playbin, decodebin, and gst-discoverer, opening or previewing a crafted AVI is sufficient to trigger the issue. Fixed upstream in gst-plugins-good 1.28.6 (GStreamer-SA-2026-0072).",
+      "last_modified": "2026-11-06T06:32:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73471"
     },
     {
-      "cve_id": "CVE-2026-87377",
-      "asset_id": "CVE-2026-87377",
+      "cve_id": "CVE-2026-102010",
+      "asset_id": "CVE-2026-102010",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the WebCenter Content: Imaging product of Oracle Fusion Middleware (component: Core).   The supported version that is affected is 14.1.2.0.0. Difficult to exploit vulnerability allows low privileged attacker with network access via SOAP to compromise WebCenter Content: Imaging.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all WebCenter Content: Imaging accessible data as well as  unauthorized access to critical data or complete access to all WebCenter Content: Imaging accessible data. CVSS 3.1 Base Score 6.8 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N).",
-      "last_modified": "2026-11-05T19:37:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87377"
+      "description": "A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation can exploit this use-after-free condition, leading to a Denial of Service (DoS) via an application crash or potential memory corruption.",
+      "last_modified": "2026-11-06T06:19:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-102010"
     },
     {
-      "cve_id": "CVE-2026-0093",
-      "asset_id": "CVE-2026-0093",
+      "cve_id": "CVE-2026-97848",
+      "asset_id": "CVE-2026-97848",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible misleading UI due to obfuscation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:37:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0093"
+      "description": "A flaw was found in the token sanitization logic of Keycloak, an open source identity and access management solution. The issue occurs when a protocol mapper is configured to emit structured claims using the JSON type. The security check designed to remove unauthorized role mappings only looks for standard Java maps and fails to recognize Jackson based JSON objects. This allows an attacker to inject forged client roles into security tokens, which could lead to unauthorized access to protected resources.",
+      "last_modified": "2026-11-06T06:03:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97848"
     },
     {
-      "cve_id": "CVE-2026-87378",
-      "asset_id": "CVE-2026-87378",
+      "cve_id": "CVE-2026-97367",
+      "asset_id": "CVE-2026-97367",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the WebCenter Content: Imaging product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise WebCenter Content: Imaging.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all WebCenter Content: Imaging accessible data. CVSS 3.1 Base Score 6.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N).",
-      "last_modified": "2026-11-05T19:37:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87378"
+      "description": "A flaw was found in the Keycloak Account REST API where it incorrectly handles session identification. A malicious client owner can manipulate their own security tokens to point to a different user's active session. This allows the attacker to access and modify the victim's account information, potentially leading to a full account takeover by changing the recovery email and resetting the password.",
+      "last_modified": "2026-11-06T06:03:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97367"
     },
     {
-      "cve_id": "CVE-2026-0095",
-      "asset_id": "CVE-2026-0095",
+      "cve_id": "CVE-2026-96547",
+      "asset_id": "CVE-2026-96547",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In l2c_fcr_clone_buf of l2c_fcr.cc, there is a possible way to trigger controlled heap corruption within the privileged Bluetooth process due to an integer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:37:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0095"
+      "description": "A flaw was found in the Dynamic Client Registration component of Keycloak, an open-source identity and access management solution. The issue occurs because the system does not properly restrict which claim names can be used when setting up new clients. An attacker with valid registration credentials could create a client that incorrectly maps standard user profile information to sensitive security roles, potentially allowing them to gain unauthorized privileges on external applications that trust Keycloak tokens.",
+      "last_modified": "2026-11-06T06:02:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96547"
     },
     {
-      "cve_id": "CVE-2026-87379",
-      "asset_id": "CVE-2026-87379",
+      "cve_id": "CVE-2026-96460",
+      "asset_id": "CVE-2026-96460",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the WebCenter Content: Imaging product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via SOAP to compromise WebCenter Content: Imaging.  Successful attacks of this vulnerability can result in  unauthorized read access to a subset of WebCenter Content: Imaging accessible data. CVSS 3.1 Base Score 4.3 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N).",
-      "last_modified": "2026-11-05T19:37:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87379"
+      "description": "A flaw was found in the token exchange mechanism of Keycloak. When using Standard Token Exchange V2, the system issues new tokens with a fresh lifetime based on the requester clients configuration instead of limiting it to the original tokens expiration. This issue allows an authenticated requester to indefinitely extend access for service accounts by repeatedly exchanging tokens, even if the original client has been disabled by an administrator.",
+      "last_modified": "2026-11-06T06:02:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96460"
     },
     {
-      "cve_id": "CVE-2026-10665",
-      "asset_id": "CVE-2026-10665",
+      "cve_id": "CVE-2026-92856",
+      "asset_id": "CVE-2026-92856",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In Zephyr's WireGuard subsystem (subsys/net/lib/wireguard), wg_process_data_message() in wg_crypto.c linearizes an inbound transport-data payload into a fixed pool buffer of CONFIG_WIREGUARD_BUF_LEN bytes before decryption. The call net_buf_linearize(buf->data, data_len, pkt->buffer, ..., data_len) passed the attacker-derived data_len as both the destination capacity and the copy length, defeating the function's internal len = min(len, dst_len) bound. data_len is derived from the received UDP datagram length and is only lower-bounded by wg_ctrl_recv() (no upper bound). When data_len exceeds CONFIG_WIREGUARD_BUF_LEN \u2014 e.g. when the buffer length is lowered below the link MTU, on links with MTU above the buffer size, or via reassembled IPv4/IPv6 fragments that exceed it \u2014 the underlying memcpy writes past the end of the pool buffer, an out-of-bounds write (CWE-787). The overflow occurs before the Poly1305 authentication check, so it requires only a valid receiver session index rather than a valid authenticator, and is reachable by a malicious or compromised peer (or an on-path attacker driving an established session) over the network, yielding remote memory corruption and at minimum a reliable denial of service. The defect was present in the WireGuard implementation shipped in Zephyr 4.4.0. The fix adds an explicit data_len > CONFIG_WIREGUARD_BUF_LEN rejection and corrects the linearize call to pass net_buf_max_len(buf) as the destination capacity.",
-      "last_modified": "2026-11-05T19:37:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10665"
+      "description": "A flaw was found in the SAML brokering component of Keycloak, an identity and access management solution. The issue occurs when Keycloak acts as an intermediary between an upstream identity provider and downstream services. Keycloak fails to respect specific security instructions called ProxyRestrictions in the login messages it receives. This allows a user to log into downstream services even when the original identity provider explicitly forbade further sharing of the login session. As a result, users can bypass security boundaries intended to limit where their identity can be used.",
+      "last_modified": "2026-11-06T06:02:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92856"
     },
     {
-      "cve_id": "CVE-2026-0097",
-      "asset_id": "CVE-2026-0097",
+      "cve_id": "CVE-2026-19688",
+      "asset_id": "CVE-2026-19688",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible way to bypass user interaction when pairing an LE device due to a logic error. This could lead to remote (proximal/adjacent) escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:37:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0097"
+      "description": "A flaw was found in the Admin REST API of Keycloak, an identity and access management solution. The Admin API fails to verify the intended audience of bearer tokens during authentication. This issue allows an attacker who operates a client within a realm to capture an administrator's access token and reuse it to perform unauthorized administrative actions, potentially leading to full realm compromise.",
+      "last_modified": "2026-11-06T06:02:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19688"
     },
     {
-      "cve_id": "CVE-2026-0099",
-      "asset_id": "CVE-2026-0099",
+      "cve_id": "CVE-2026-96447",
+      "asset_id": "CVE-2026-96447",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In onNullBinding of HostEmulationManager.java, there is a possible way to launch an activity from the background due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
-      "last_modified": "2026-11-05T19:37:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0099"
+      "description": "A flaw was found in the TokenManager component of Keycloak, an open-source identity and access management solution. The issue occurs during the validation of stateless access tokens when the original user ID no longer exists. Keycloak incorrectly falls back to using the username to identify the user without verifying if the identity matches the original token subject. This could allow an attacker with an old token to gain access to a newly created service account if it shares the same client ID as a previously deleted one.",
+      "last_modified": "2026-11-06T06:02:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96447"
     },
     {
-      "cve_id": "CVE-2026-28577",
-      "asset_id": "CVE-2026-28577",
+      "cve_id": "CVE-2026-118239",
+      "asset_id": "CVE-2026-118239",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In addWindow of WindowManagerService.java, there is a possible tapjacking issue due to a tapjacking/overlay attack. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:36:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28577"
+      "description": "The AutomatorWP  WordPress plugin before 6.0.7 does not check that the user completing its Zoom and AWeber integration connections is allowed to do so, allowing unauthenticated attackers to replace the stored integration credentials with their own and divert the data the site sends to those services into an account they control. Exploitation requires the integration to already be connected and knowledge of the site's OAuth client identifier.",
+      "last_modified": "2026-11-06T06:00:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118239"
     },
     {
-      "cve_id": "CVE-2026-28580",
-      "asset_id": "CVE-2026-28580",
+      "cve_id": "CVE-2026-118188",
+      "asset_id": "CVE-2026-118188",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple functions of NotificationChannel.java, there is a possible desync in persistence due to an incorrect bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:36:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28580"
+      "description": "The PublishPress Revisions: Duplicate Posts, Submit, Approve and Schedule Content Changes WordPress plugin before 4.3.1 does not verify that a user is permitted to read a given post before returning its content through its revision-comparison feature, allowing any authenticated user, including a Subscriber, to read the title, content and excerpt of any other user's private, draft, pending, scheduled or trashed post.",
+      "last_modified": "2026-11-06T06:00:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118188"
     },
     {
-      "cve_id": "CVE-2026-87391",
-      "asset_id": "CVE-2026-87391",
+      "cve_id": "CVE-2026-118187",
+      "asset_id": "CVE-2026-118187",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the WebCenter Content: Imaging product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where WebCenter Content: Imaging executes to compromise WebCenter Content: Imaging.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in WebCenter Content: Imaging, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all WebCenter Content: Imaging accessible data. CVSS 3.1 Base Score 5.5 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:C/C:H/I:N/A:N).",
-      "last_modified": "2026-11-05T19:36:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87391"
+      "description": "The PublishPress Revisions: Duplicate Posts, Submit, Approve and Schedule Content Changes WordPress plugin before 4.3.1 does not verify that a user requesting to duplicate or revise a post has access to that specific post, only that they can edit posts of that type, allowing users with contributor-level access and above to duplicate another user's private, draft, pending or scheduled post into one they own and read its full content.",
+      "last_modified": "2026-11-06T06:00:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118187"
     },
     {
-      "cve_id": "CVE-2026-87392",
-      "asset_id": "CVE-2026-87392",
+      "cve_id": "CVE-2026-118186",
+      "asset_id": "CVE-2026-118186",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the WebCenter Content: Imaging product of Oracle Fusion Middleware (component: Core).   The supported version that is affected is 14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via SOAP to compromise WebCenter Content: Imaging.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all WebCenter Content: Imaging accessible data. CVSS 3.1 Base Score 6.5 (Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N).",
-      "last_modified": "2026-11-05T19:36:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87392"
+      "description": "The PublishPress Revisions: Duplicate Posts, Submit, Approve and Schedule Content Changes WordPress plugin before 4.3.1 does not correctly restrict who may publish content, allowing users such as Contributors who can edit but not publish to make unreviewed posts and pages publicly live, bypassing the intended editorial approval workflow.",
+      "last_modified": "2026-11-06T06:00:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118186"
     },
     {
-      "cve_id": "CVE-2026-28586",
-      "asset_id": "CVE-2026-28586",
+      "cve_id": "CVE-2026-118167",
+      "asset_id": "CVE-2026-118167",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple functions of AppOpsService.java, there is a possible missing permission check due to a permissions bypass. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:35:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28586"
+      "description": "The MC4WP: Mailchimp for WordPress plugin before 4.15.0 does not validate that the Mailchimp audience a sign-up form or bundled integration subscribes a visitor to matches the audience configured by the site owner, allowing unauthenticated visitors to subscribe arbitrary email addresses to any other audience in the site's connected Mailchimp account.",
+      "last_modified": "2026-11-06T06:00:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118167"
     },
     {
-      "cve_id": "CVE-2026-116780",
-      "asset_id": "CVE-2026-116780",
+      "cve_id": "CVE-2026-115673",
+      "asset_id": "CVE-2026-115673",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, switch_event_expand_headers_check() advanced beyond its heap copy when a positive offset in ${variable:offset} exceeded the variable value's length. The following length calculation and copy appended adjacent heap memory to the expansion result, potentially exposing channel variables, credentials, allocator data, and pointer bytes. The flaw is reachable through configuration templates that slice remote input and through authenticated Event Socket eval or Event Socket expand commands; the separate channel-variable expander used by ordinary dialplan slicing is unaffected. The requester cannot choose adjacent memory and disclosure stops at a zero byte, but repeated expansion can influence the layout. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:34:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116780"
+      "description": "The Anti-Spam, Spam FireWall by CleanTalk WordPress plugin before 6.91 does not escape a commenter-supplied value before outputting it on an administrative spam-review screen, allowing unauthenticated users to inject arbitrary web scripts that execute in the browser of an administrator who reviews flagged comments.",
+      "last_modified": "2026-11-06T06:00:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115673"
     },
     {
-      "cve_id": "CVE-2026-55280",
-      "asset_id": "CVE-2026-55280",
+      "cve_id": "CVE-2026-113615",
+      "asset_id": "CVE-2026-113615",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple locations, there is a possible out-of-bounds write due to uninitialized data. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:33:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55280"
+      "description": "The GS JWT Authentication for WP REST API WordPress plugin through 1.0.0 does not sanitize or parameterize a request value before using it in SQL queries on several unauthenticated REST routes, allowing unauthenticated attackers to perform SQL injection and obtain an administrator session.",
+      "last_modified": "2026-11-06T06:00:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113615"
     },
     {
-      "cve_id": "CVE-2026-58834",
-      "asset_id": "CVE-2026-58834",
+      "cve_id": "CVE-2026-110813",
+      "asset_id": "CVE-2026-110813",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In setPermissionGrantState of DevicePolicyManagerService.java, there is a possible persistent denial of service due to improper input validation. This could lead to local denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:32:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58834"
+      "description": "The Advanced Custom Fields (ACF\u00ae) WordPress plugin before 6.8.11 does not properly sanitize a stored field definition that can be modified through its comment handling, allowing unauthenticated users to inject a payload that is emitted as an HTML attribute name and executed as JavaScript in the browser of any visitor or administrator who views a page rendering the affected field.",
+      "last_modified": "2026-11-06T06:00:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110813"
     },
     {
-      "cve_id": "CVE-2026-2625",
-      "asset_id": "CVE-2026-2625",
+      "cve_id": "CVE-2026-92396",
+      "asset_id": "CVE-2026-92396",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in rust-rpm-sequoia. An attacker can exploit this vulnerability by providing a specially crafted Red Hat Package Manager (RPM) file. During the RPM signature verification process, this crafted file can trigger an error in the OpenPGP signature parsing code, leading to an unconditional termination of the rpm process. This issue results in an application level denial of service, making the system unable to process RPM files for signature verification.",
-      "last_modified": "2026-11-05T19:32:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2625"
+      "description": "The ShopEngine Gutenberg WooCommerce Builder Blocks Addon  WordPress plugin before 2.4.4 does not validate the user's capabilities or the ownership of the targeted post in one of its AJAX actions, and does not escape the stored value before outputting it in a JavaScript context, allowing users with a role as low as contributor to inject arbitrary scripts into any post that will run when a higher privileged user edits it.",
+      "last_modified": "2026-11-06T06:00:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92396"
     },
     {
-      "cve_id": "CVE-2026-2604",
-      "asset_id": "CVE-2026-2604",
+      "cve_id": "CVE-2026-87784",
+      "asset_id": "CVE-2026-87784",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in evolution-data-server. Inconsistent comparison logic in the addressbook file backend allows a Flatpak application with D-Bus access to craft a malicious URI containing directory traversal sequences. This URI is stored without proper validation during contact creation or modification. Later, during contact deletion, the URI is processed with a less strict check, leading to the deletion of arbitrary files on the host filesystem. This could potentially include critical Flatpak override files.",
-      "last_modified": "2026-11-05T19:32:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2604"
+      "description": "The Cool Media Filter WordPress plugin through 1.0.1 does not perform any capability or nonce check when updating the capabilities of a role, allowing any authenticated user, such as a subscriber, to grant their own role administrator capabilities and take over the site.",
+      "last_modified": "2026-11-06T06:00:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87784"
     },
     {
-      "cve_id": "CVE-2026-2436",
-      "asset_id": "CVE-2026-2436",
+      "cve_id": "CVE-2026-86606",
+      "asset_id": "CVE-2026-86606",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libsoup's SoupServer. A remote attacker could exploit a use-after-free vulnerability where the `soup_server_disconnect()` function frees connection objects prematurely, even if a TLS handshake is still pending. If the handshake completes after the connection object has been freed, a dangling pointer is accessed, leading to a server crash and a Denial of Service.",
-      "last_modified": "2026-11-05T19:32:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2436"
+      "description": "The iubenda | All-in-one Compliance for GDPR / CCPA Cookie Consent + more WordPress plugin before 3.13.7 does not properly escape content it re-emits through its bundled HTML parser, allowing unauthenticated users to inject arbitrary web scripts in pages that will execute in the session of any visitor viewing them, including logged in administrators.",
+      "last_modified": "2026-11-06T06:00:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86606"
     },
     {
-      "cve_id": "CVE-2026-2369",
-      "asset_id": "CVE-2026-2369",
+      "cve_id": "CVE-2026-12967",
+      "asset_id": "CVE-2026-12967",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libsoup. An integer underflow vulnerability occurs when processing content with a zero-length resource, leading to a buffer overread. This can allow an attacker to potentially access sensitive information or cause an application level denial of service.",
-      "last_modified": "2026-11-05T19:32:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2369"
+      "description": "The WCFM Membership  WordPress plugin before 2.12.1 does not verify that payment was made before completing a paid membership, allowing any authenticated Subscriber/Customer to activate a paid vendor membership for free and gain the marketplace vendor role.",
+      "last_modified": "2026-11-06T06:00:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12967"
     },
     {
-      "cve_id": "CVE-2026-2340",
-      "asset_id": "CVE-2026-2340",
+      "cve_id": "CVE-2026-120408",
+      "asset_id": "CVE-2026-120408",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Samba\u2019s vfs_worm module. The module is intended to provide write-once, read-many (WORM) protections by preventing modification of files after a configurable grace period. Due to insufficient validation during rename operations, an authenticated user with write access to a share could overwrite a protected file by renaming a newly created file over the existing WORM-protected file.",
-      "last_modified": "2026-11-05T19:31:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2340"
+      "description": "The All-in-One Video Gallery  WordPress plugin before 5.1.0 does not escape a video's stored thumbnail URL before outputting it in the admin video list, and does not sanitise that value when it is written outside its own editor, allowing users with a role as low as Subscriber to perform Stored Cross-Site Scripting attacks against administrators.",
+      "last_modified": "2026-11-06T06:00:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120408"
     },
     {
-      "cve_id": "CVE-2026-116784",
-      "asset_id": "CVE-2026-116784",
+      "cve_id": "CVE-2026-119259",
+      "asset_id": "CVE-2026-119259",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, process_rtcp_report() used an RTPFB NACK packet's declared RTCP header length as its feedback-entry loop bound instead of the datagram length already validated by the caller. A short packet with an oversized declaration could drive reads far beyond the fixed 16 KiB receive buffer. Any peer able to send RTCP to an active video call can reach the flaw, including calls where remote SDP enables video RTCP even though the SIP profile has no explicit RTCP interval configured. The out-of-bounds read can crash FreeSWITCH and terminate every active call, but supplies no write primitive and does not echo the read values to the sender. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:31:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116784"
+      "description": "The All-in-One Video Gallery  WordPress plugin before 5.1.0 does not check the type, status or ownership of the target post before writing its view count and duration meta, allowing unauthenticated visitors to create or change that meta on any post, including private and draft posts, and to inflate the view count without limit.",
+      "last_modified": "2026-11-06T06:00:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119259"
     },
     {
-      "cve_id": "CVE-2025-1675",
-      "asset_id": "CVE-2025-1675",
+      "cve_id": "CVE-2026-118639",
+      "asset_id": "CVE-2026-118639",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The function dns_copy_qname in dns_pack.c performs performs a memcpy operation with an untrusted field and does not check if the source buffer is large enough to contain the copied data.",
-      "last_modified": "2026-11-05T19:30:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1675"
+      "description": "The Surfer  WordPress plugin before 1.8.1.759 discloses a sensitive API credential to low-privileged users through the post editor page and relies on that same credential as the sole authorization for its privileged REST API, allowing users with contributor-level access and above to read the credential and escalate to publishing arbitrary posts and other privileged actions.",
+      "last_modified": "2026-11-06T06:00:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118639"
     },
     {
-      "cve_id": "CVE-2026-116779",
-      "asset_id": "CVE-2026-116779",
+      "cve_id": "CVE-2026-118045",
+      "asset_id": "CVE-2026-118045",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.3, sofia_presence_handle_sip_i_message() split the To user of an inbound SIP MESSAGE on a plus sign and treated the left side as a chat protocol selector. Selecting the api chat proto reached switch_api_execute(), allowing a peer whose MESSAGE was accepted to run FreeSWITCH API commands, including operating-system command sinks, with the daemon's privileges. Inbound chat is enabled on the stock internal and external profiles, and any authenticated profile account is sufficient; stock directory users without password material can also remove that barrier in affected configurations. The flaw permits configuration and credential disclosure, arbitrary call control, and command execution, and exploitation has been observed in the wild. This issue is fixed in version 1.11.3.",
-      "last_modified": "2026-11-05T19:30:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116779"
+      "description": "The Ever Accounting  WordPress plugin before 2.3.3 does not restrict the file path supplied to its CSV import routine to an allowed directory, allowing users with its custom Accounting Manager role (which does not have administrator privileges) to delete arbitrary files on the server, such as wp-config.php, which takes the entire site offline.",
+      "last_modified": "2026-11-06T06:00:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118045"
     },
     {
-      "cve_id": "CVE-2026-117975",
-      "asset_id": "CVE-2026-117975",
+      "cve_id": "CVE-2026-116533",
+      "asset_id": "CVE-2026-116533",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Sandbox escape due to invalid pointer in the Graphics: WebRender component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, Thunderbird 159, and Thunderbird 153.6.",
-      "last_modified": "2026-11-05T19:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117975"
+      "description": "The Static Snapshot WordPress plugin through 0.2.1 does not sanitise shell metacharacters in a user-supplied value before concatenating it into operating-system commands run by the server, allowing unauthenticated attackers to execute arbitrary commands on the host.",
+      "last_modified": "2026-11-06T06:00:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116533"
     },
     {
-      "cve_id": "CVE-2026-117984",
-      "asset_id": "CVE-2026-117984",
+      "cve_id": "CVE-2026-115230",
+      "asset_id": "CVE-2026-115230",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect boundary conditions in the Layout: Scrolling and Overflow component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, Thunderbird 159, and Thunderbird 153.6.",
-      "last_modified": "2026-11-05T19:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117984"
+      "description": "The WHIZZ WordPress plugin through 1.1.8 does not validate the password-reset key before updating a user's password, relying only on a nonce that is exposed to unauthenticated visitors, allowing attackers to set an arbitrary password for any user, including administrators, and fully take over their accounts.",
+      "last_modified": "2026-11-06T06:00:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115230"
     },
     {
-      "cve_id": "CVE-2026-117990",
-      "asset_id": "CVE-2026-117990",
+      "cve_id": "CVE-2026-114427",
+      "asset_id": "CVE-2026-114427",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Sandbox escape due to incorrect boundary conditions in the Graphics: WebRender component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, Thunderbird 159, and Thunderbird 153.6.",
-      "last_modified": "2026-11-05T19:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117990"
+      "description": "The GutenKit  WordPress plugin before 2.5.5 does not properly sanitize custom CSS saved against a post before printing it inside an inline style block on the published page, allowing users with the Author role and above to break out of the style element and store JavaScript that executes in the browser of any visitor who views the post. Exploitation affects sites running WordPress below 7.0.",
+      "last_modified": "2026-11-06T06:00:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114427"
     },
     {
-      "cve_id": "CVE-2026-117991",
-      "asset_id": "CVE-2026-117991",
+      "cve_id": "CVE-2026-113584",
+      "asset_id": "CVE-2026-113584",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect boundary conditions in the Layout: Text and Fonts component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, Thunderbird 159, and Thunderbird 153.6.",
-      "last_modified": "2026-11-05T19:30:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117991"
+      "description": "The placester WordPress plugin through 1.4.3 does not perform any capability, nonce or ownership check on an AJAX action that updates account details, allowing unauthenticated attackers to overwrite any user's email address, including an administrator's, and take over the account through the standard password-reset flow.",
+      "last_modified": "2026-11-06T06:00:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113584"
     },
     {
-      "cve_id": "CVE-2026-116789",
-      "asset_id": "CVE-2026-116789",
+      "cve_id": "CVE-2026-110955",
+      "asset_id": "CVE-2026-110955",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, dtls_state_setup() compared a peer certificate with the SDP a=fingerprint only when FreeSWITCH was the DTLS client, not when it held the DTLS server role. An unauthenticated peer able to reach the negotiated media port could complete the DTLS-SRTP handshake with an unrelated certificate, obtain the leg's SRTP keys, decrypt and inject media, and displace the legitimate endpoint; on ICE-enabled legs the peer also needs the connectivity-check credentials from SDP, which generally requires signaling visibility or a position on its path. WebRTC and SIP DTLS-SRTP legs are affected whenever the peer selects the active role, while FreeSWITCH client-role handshakes already perform fingerprint validation. Version 1.11.2 introduces the remediation, which requires rtp_dtls_client_cert_verify_mode=fingerprint.",
-      "last_modified": "2026-11-05T19:29:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116789"
+      "description": "The Wurdey WordPress plugin through 1.0.0 does not verify a request signature before logging a user in, allowing unauthenticated attackers to authenticate as an administrator knowing only the administrator's username.",
+      "last_modified": "2026-11-06T06:00:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110955"
     },
     {
-      "cve_id": "CVE-2026-116781",
-      "asset_id": "CVE-2026-116781",
+      "cve_id": "CVE-2026-110532",
+      "asset_id": "CVE-2026-110532",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, ws_read_frame() unmasked a WebSocket payload by iterating wsh->datalen, which included frame headers, while indexing from the payload pointer. A masked frame filling the 64 KiB receive buffer could therefore XOR up to 14 bytes beyond the buffer, and the exact-capacity case also wrote a terminating NUL one byte out of bounds. The flaw is reachable before authentication when mod_xml_rpc and its opt-in WebSocket endpoint are enabled, while both features are disabled in the stock configuration. The writes remain within the same connection handle's adjacent outbound buffer, so neither a process crash nor cross-session disclosure has been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:28:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116781"
+      "description": "The Mail Mage WordPress plugin through 0.0.25 does not properly sanitise and escape a user-supplied value before using it in a SQL statement, allowing unauthenticated attackers to perform SQL injection attacks.",
+      "last_modified": "2026-11-06T06:00:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110532"
     },
     {
-      "cve_id": "CVE-2026-19879",
-      "asset_id": "CVE-2026-19879",
+      "cve_id": "CVE-2026-110525",
+      "asset_id": "CVE-2026-110525",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Undertow, an HTTP server, within its HTTP response header writing path. The `writeString()` method performs a silent narrowing cast from 16-bit Unicode characters to 8-bit bytes when writing HTTP response header values. A remote attacker can exploit this by supplying specific Unicode characters in user-controlled input that an application places into response headers. This can lead to the truncation of these characters into ASCII control characters or special symbols, potentially resulting in limited integrity impact or information disclosure if the application does not properly sanitize user input.",
-      "last_modified": "2026-11-05T19:26:56Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19879"
+      "description": "The MCB  WordPress plugin through 1.0.0 does not sanitise or escape request header values before storing them and later rendering them in the administrator statistics grid, allowing unauthenticated attackers to store malicious JavaScript that executes in an administrator's browser session when the statistics page is viewed.",
+      "last_modified": "2026-11-06T06:00:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110525"
     },
     {
-      "cve_id": "CVE-2026-19730",
-      "asset_id": "CVE-2026-19730",
+      "cve_id": "CVE-2026-74860",
+      "asset_id": "CVE-2026-74860",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The 'podman quadlet install --replace' command opens the existing destination file with O_CREATE|O_WRONLY but omits O_TRUNC. When the initial reflink copy attempt fails (common on non-reflink-capable filesystems including many RHEL default XFS configurations), the fallback in ReflinkOrCopy uses io.Copy which performs a non-truncating write. If the original Quadlet is larger than the new Quadlet, the file is not truncated and content from the original is preserved. The command completes with no warning.\n\nThere is no risk of information leakage as the user already had access to the Quadlet in order to replace it, and in most cases, this would only lead to invalid Quadlet files. However, security-related options from the end of the old Quadlet could be included in the new Quadlet, and if the truncation resulted in a valid Quadlet file, this could result in undesirable behavior. For example, running podman quadlet install --replace to remove a single line from the end of a Quadlet - including security-sensitive content, like AddCapability - will fail, and the option will continue to be used. Further, with Volume Quadlets, this can include additional mounts which can cause content to be unintentionally exposed into containers. If, later, the image is updated then compromised content might be leaked to an attacker.\n\nThe vulnerable code paths are in pkg/domain/infra/abi/quadlet.go (lines 338-360, O_CREATE|O_WRONLY without O_TRUNC) and vendor/go.podman.io/storage/pkg/fileutils/reflink_linux.go (lines 12-19, non-truncating io.Copy fallback).",
-      "last_modified": "2026-11-05T19:26:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19730"
+      "description": "A flaw was found in libxml2 with Python bindings enabled. A remote attacker could exploit this vulnerability by providing a specially crafted XML document containing a Document Type Definition (DTD) with enumerated attribute values. This triggers a double-free error in the SAX attributeDecl callback handler, where a string is freed twice. This flaw can lead to a denial of service (DoS) due to a reproducible crash in Python applications using the libxml2 SAX bindings.",
+      "last_modified": "2026-11-06T05:59:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74860"
     },
     {
-      "cve_id": "CVE-2026-19617",
-      "asset_id": "CVE-2026-19617",
+      "cve_id": "CVE-2026-58016",
+      "asset_id": "CVE-2026-58016",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libdm. A local attacker could craft a malicious Logical Volume Manager (LVM) metadata configuration with deeply nested structures. This could lead to uncontrolled recursion in the libdm configuration file parser, exhausting the stack and causing any LVM command reading the metadata to crash. This vulnerability results in a Denial of Service (DoS) for affected systems.",
-      "last_modified": "2026-11-05T19:26:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19617"
+      "description": "A flaw was found in GLib. A state confusion issue exists in g_dbus_node_info_new_for_xml() in the gio/gdbusintrospection.c file when processing malformed D-Bus introspection XML, specifically with a `node` element nested within other elements like `method`, `signal`, `property` or `arg`. This issue can cause an unsigned integer overflow and lead to an out-of-bounds read, resulting in a denial of service.",
+      "last_modified": "2026-11-06T05:58:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58016"
     },
     {
-      "cve_id": "CVE-2026-19548",
-      "asset_id": "CVE-2026-19548",
+      "cve_id": "CVE-2026-43961",
+      "asset_id": "CVE-2026-43961",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Multiple Use-After-Free vulnerabilities were found in the add_archive_element function in ld/ldmain.c of the GNU linker (ld), a component of binutils. The root cause is that plugin_maybe_claim() in ld/plugin.c frees the original BFD object via bfd_close/_bfd_delete_bfd when entry->the_bfd->my_archive == NULL, but the caller retains both the original abfd parameter and a shallow copy (orig_input.the_bfd) as dangling pointers. These dangling pointers are subsequently dereferenced at three distinct locations in add_archive_element:\n\n1. Line ~1442: accessing abfd->my_archive via bfd_usrdata(abfd->my_archive)\n2. Line ~1493: multiple accesses to abfd and abfd->my_archive in a conditional check and bfd_get_filename call\n3. Line ~1525: dereferencing the shallow copy orig_input.the_bfd->my_archive in trace/verbose logging\n\nThe vulnerability is triggered when LTO plugins are active (link_info.lto_plugin_active is true) and the input object has abfd->my_archive == NULL, which is a valid state for standalone object files. Red Hat builds binutils with --enable-plugins and --enable-lto, confirming the vulnerable code path is compiled in and reachable.\n\nAn attacker who can supply a crafted object or archive file to a build process using LTO-enabled linking could exploit this flaw to cause a denial of service (linker crash via segmentation fault). Arbitrary code execution is theoretically possible through heap manipulation but is substantially mitigated by hardening measures including stack protector, FORTIFY_SOURCE, ASLR, and PIE.\n\nThe attack surface is limited to build-time environments \u2014 the linker is a development tool not exposed in production runtime. The most realistic exploitation scenario is a supply chain attack introducing a crafted object file as a build dependency in CI/CD pipelines or development environments.",
-      "last_modified": "2026-11-05T19:26:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19548"
+      "description": "A flaw was found in Vim's netrw plugin. A crafted filename containing quote characters and expression fragments can break out of the quoted context during mark/unmark operations, allowing arbitrary Vimscript execution. This can be leveraged to run shell commands with the privileges of the user running Vim.",
+      "last_modified": "2026-11-06T05:58:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43961"
     },
     {
-      "cve_id": "CVE-2026-19404",
-      "asset_id": "CVE-2026-19404",
+      "cve_id": "CVE-2026-109081",
+      "asset_id": "CVE-2026-109081",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in 389 Directory Server. The CleanAllRUV and Abort CleanAllRUV replication-maintenance extended operations perform no authorization check, allowing an unauthenticated remote attacker to invoke them when nsslapd-allow-anonymous-access is enabled (the default), or any authenticated low-privilege user to invoke them otherwise. This allows removal of a replica ID from replication metadata, purging of changelog records, and interruption of administrator-initiated cleanup, which can leave replication inconsistent or unavailable.",
-      "last_modified": "2026-11-05T19:26:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19404"
+      "description": "A flaw was found in Keycloak. The Dynamic Client Registration (DCR) endpoint does not properly validate authorization when processing the deprecated defaultRoles field. An authenticated attacker with client creation privileges or an Initial Access Token (IAT) can inject excessive roles into the realm's default roles configuration. This causes clients across the realm to generate bloated access tokens, resulting in performance and memory degradation that can lead to a Denial of Service (DoS).",
+      "last_modified": "2026-11-06T05:57:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109081"
     },
     {
-      "cve_id": "CVE-2026-19391",
-      "asset_id": "CVE-2026-19391",
+      "cve_id": "CVE-2026-107124",
+      "asset_id": "CVE-2026-107124",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in insights-core where the password redaction layer fails to recognize credentials not keyed under the literal string 'password'. This allows SSSD LDAP bind passwords (ldap_default_authtok) and Pacemaker fence device credentials to be included in cleartext in archives uploaded to console.redhat.com.",
-      "last_modified": "2026-11-05T19:26:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19391"
+      "description": "A flaw was found in the OIDC logout endpoint of the keycloak-services component, which handles user session termination in Red Hat Build of Keycloak. The issue occurs because the system sets a session cookie based on an unvalidated token hint before completing security checks. An attacker can use this flaw to fix a session ID in a victim's browser, allowing them to hijack the victim's subsequent login and gain full control over their account.",
+      "last_modified": "2026-11-06T05:57:23Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107124"
     },
     {
-      "cve_id": "CVE-2026-116785",
-      "asset_id": "CVE-2026-116785",
+      "cve_id": "CVE-2026-120194",
+      "asset_id": "CVE-2026-120194",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, ws_read_frame() decoded a WebSocket frame's 64-bit extended payload length with a 32-bit byte swap and narrowed the result into a signed length. A value whose surviving low word became negative bypassed the signed size check and was reinterpreted as an enormous unsigned count, causing client bytes to overwrite memory beyond the 64 KiB receive buffer. Any client completing a /socket WebSocket upgrade on an enabled mod_xml_rpc endpoint reached the parser before HTTP authentication; both the module and WebSocket endpoint are disabled by default. The heap overwrite can corrupt connection pointers and crash FreeSWITCH, ending every concurrent session, although remote code execution has not been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:26:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116785"
+      "description": "A flaw was found in json-glib. The JSONPath slice evaluator used by json_path_query() can enter an infinite loop when given a slice expression with a negative step. An application that evaluates attacker-controlled JSONPath expressions can be forced into a hang, leading to a denial of service.",
+      "last_modified": "2026-11-06T05:52:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120194"
     },
     {
-      "cve_id": "CVE-2026-19079",
-      "asset_id": "CVE-2026-19079",
+      "cve_id": "CVE-2026-121837",
+      "asset_id": "CVE-2026-121837",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A TOCTOU (Time-of-Check-Time-of-Use) race condition vulnerability was found in the fixfiles script in policycoreutils. When running fixfiles relabel or fixfiles restore, the script used find and chcon commands to locate and relabel unlabeled files under /tmp and other directories. A local attacker could exploit a race window between the file discovery and the label change operation by swapping directory components with symlinks, causing chcon to follow the symlink and modify SELinux labels on arbitrary system files. This could undermine SELinux mandatory access control protections on critical files such as /etc/shadow.",
-      "last_modified": "2026-11-05T19:26:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19079"
+      "description": "A flaw was found in the REST Data Panache component of Quarkus. When a security constraint is applied to an entity property using the @SecureField annotation on its getter method rather than the field itself, the generated REST resource fails to enforce this constraint for filtering and sorting operations. This allows an authenticated user to infer sensitive data values by observing which records match specific filter criteria or how they are ordered, even though the values are omitted from the final response.",
+      "last_modified": "2026-11-06T05:39:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121837"
     },
     {
-      "cve_id": "CVE-2026-18728",
-      "asset_id": "CVE-2026-18728",
+      "cve_id": "CVE-2026-123037",
+      "asset_id": "CVE-2026-123037",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in open-iscsi. An integer underflow vulnerability in the `iscsiuio` component, specifically during IPv4 Dynamic Host Configuration Protocol (DHCP) parsing, allows a remote attacker on the same local network segment to cause a denial of service. By sending a specially crafted IPv4/UDP DHCP reply, the attacker can trigger an out-of-bounds read, leading to the `iscsiuio` process crashing. This issue affects systems where `iscsiuio` is actively handling IPv4 DHCP traffic.",
-      "last_modified": "2026-11-05T19:25:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18728"
+      "description": "A flaw was found in the ansible-core user module. When generate_ssh_key is enabled, User.ssh_key_gen() guards the key files against symlinks but checks the ~/.ssh directory only with os.path.exists(). An unprivileged user on a managed node who replaces their ~/.ssh with a symlink to an existing root-writable directory causes the privileged module to write the generated key pair through the symlink and then chown both files to that user. Because such files can be dropped into directories processed by schedulers (e.g. /etc/cron.daily) or dynamic MOTD (/etc/update-motd.d), the user can escalate to root on the managed node. This is an incomplete fix of CVE-2024-9902.",
+      "last_modified": "2026-11-06T05:38:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123037"
     },
     {
-      "cve_id": "CVE-2026-18727",
-      "asset_id": "CVE-2026-18727",
+      "cve_id": "CVE-2026-121621",
+      "asset_id": "CVE-2026-121621",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in open-iscsi's iscsiuio component. This vulnerability involves an integer underflow and out-of-bounds read during Dynamic Host Configuration Protocol for IPv6 (DHCPv6) packet parsing. Specifically, crafted DHCPv6 Advertise traffic with a short User Datagram Protocol (UDP) length can cause the DHCPv6 payload length to underflow. An unauthenticated attacker on an adjacent network segment can exploit this by sending specially crafted IPv6 UDP traffic while the client is in an active DHCPv6 exchange, leading to a denial of service due to a process crash or service disruption.",
-      "last_modified": "2026-11-05T19:25:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18727"
+      "description": "A command injection vulnerability was found in Argo CD Image Updater, where a proxy URL configured on an SSH Git repository is passed unsanitized into a shell-interpreted SSH command. An attacker able to set a malicious proxy value can inject shell metacharacters to execute arbitrary commands and access credentials in the context of the Image Updater process.",
+      "last_modified": "2026-11-06T05:31:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121621"
     },
     {
-      "cve_id": "CVE-2026-18726",
-      "asset_id": "CVE-2026-18726",
+      "cve_id": "CVE-2026-114366",
+      "asset_id": "CVE-2026-114366",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in open-iscsi. This vulnerability allows a remote attacker on the same local network segment to cause a Denial of Service (DoS) in the iscsiuio daemon. By sending a specially crafted Internet Control Message Protocol version 6 (ICMPv6) Router Advertisement with a zero-length option, the attacker can trigger an infinite loop. This leads to sustained CPU usage, rendering the daemon unresponsive and impacting system availability. A secondary risk of out-of-bounds reads exists with a short IPv6 payload, though no memory corruption or data exposure has been confirmed.",
-      "last_modified": "2026-11-05T19:25:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18726"
+      "description": "An information disclosure vulnerability in the Qt Framework QWebSocket authentication handling of the Qt WebSockets module.",
+      "last_modified": "2026-11-06T04:40:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114366"
     },
     {
-      "cve_id": "CVE-2026-18663",
-      "asset_id": "CVE-2026-18663",
+      "cve_id": "CVE-2026-82965",
+      "asset_id": "CVE-2026-82965",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in 389-ds-base. The get_ldapmessage_controls_ext() function frees the parsed controls array on the Session Tracking critical-control rejection path without clearing the SLAPI_REQCONTROLS pblock slot. Operation teardown then frees the same pointer again, causing a double-free. An unauthenticated remote attacker can trigger this with a single BIND request carrying a critical Session Tracking control, resulting in heap corruption and potential denial of service.",
-      "last_modified": "2026-11-05T19:25:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18663"
+      "description": "A flaw was found in the SAML implementation of Keycloak, an open-source identity and access management solution. The SAML Artifact Resolution and ECP SOAP endpoints do not properly limit the size or complexity of incoming XML requests. An unauthenticated remote attacker can exploit this by sending specially crafted, large XML messages that cause the server to consume excessive memory. This leads to the application running out of memory and crashing, resulting in a denial of service for all users.",
+      "last_modified": "2026-11-06T04:15:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82965"
     },
     {
-      "cve_id": "CVE-2026-18651",
-      "asset_id": "CVE-2026-18651",
+      "cve_id": "CVE-2026-92857",
+      "asset_id": "CVE-2026-92857",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in 389 Directory Server. During SASL PLAIN authentication, the server installs connection-level bind credentials before performing the account-lock check. If the account is subsequently found to be locked, the bind is reported as failed to the client, but the already-installed authenticated state on the connection is not reverted. A client that supplies valid credentials for an account that has been administratively locked can continue to use the same connection with that account's privileges, defeating account lock as an access-revocation control.",
-      "last_modified": "2026-11-05T19:25:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18651"
+      "description": "Keycloak provides a Dynamic Client Registration feature that allows users with specific tokens to register their own applications. A flaw in how Keycloak validates these registration requests allows an attacker to create a malicious application that forges identity information. By mapping their own user profile details to protected fields like the user ID (sub) or intended audience (aud), an attacker can generate signed security tokens that make them appear to be a different user. This could allow an attacker to impersonate other users or gain unauthorized access to services that rely on these tokens for identity verification.",
+      "last_modified": "2026-11-06T04:15:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92857"
     },
     {
-      "cve_id": "CVE-2026-18508",
-      "asset_id": "CVE-2026-18508",
+      "cve_id": "CVE-2026-119432",
+      "asset_id": "CVE-2026-119432",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GNU tar. When extracting an archive with the --one-top-level option, hardlink targets are not confined to the designated top-level directory and may resolve relative to the extraction working directory. A crafted archive can create hardlinks that escape the intended boundary and, when combined with a preexisting symbolic link under the working directory, may allow writing outside that boundary during a single extraction.",
-      "last_modified": "2026-11-05T19:25:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18508"
+      "description": "A stored cross-site scripting (XSS) vulnerability exists in the Foxit Workspace's file share preview functionality. An attacker could upload a crafted file and share it with a victim. When the victim opens or previews the file, the embedded script executes in the application's origin, potentially accessing locally stored credentials and enabling credential theft.",
+      "last_modified": "2026-11-06T04:09:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119432"
     },
     {
-      "cve_id": "CVE-2026-18495",
-      "asset_id": "CVE-2026-18495",
+      "cve_id": "CVE-2026-119431",
+      "asset_id": "CVE-2026-119431",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in libtiff. A heap-buffer overflow vulnerability exists in the `tiff2pdf` utility due to an integer truncation error when processing crafted BigTIFF files. An attacker can provide a specially crafted BigTIFF file, causing a 64-bit `StripByteCounts` value to be truncated to a 32-bit integer. This leads to an undersized memory allocation and a subsequent out-of-bounds memory copy, resulting in a crash and severe memory corruption.",
-      "last_modified": "2026-11-05T19:25:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18495"
+      "description": "A server-side request forgery (SSRF) vulnerability exists in Foxit Workspace's file-upload functionality. Insufficient validation of user-supplied links may allow a remote attacker to induce the server to access internal resources and return their contents, potentially resulting in sensitive information disclosure and unauthorized access to internal services.",
+      "last_modified": "2026-11-06T04:09:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119431"
     },
     {
-      "cve_id": "CVE-2026-18477",
-      "asset_id": "CVE-2026-18477",
+      "cve_id": "CVE-2026-119433",
+      "asset_id": "CVE-2026-119433",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows\u2014including extracting into a newly created directory without using the -P option do not mitigate the issue.",
-      "last_modified": "2026-11-05T19:25:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18477"
+      "description": "A server-side request forgery (SSRF) vulnerability exists in an undocumented API endpoint of Foxit Workspace due to insufficient validation of user-supplied URL and network parameters. A remote attacker could exploit this issue to induce the server to send requests to arbitrary internal or external resources, potentially enabling unauthorized access to internal services, network reconnaissance, and sensitive information disclosure.",
+      "last_modified": "2026-11-06T04:09:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119433"
     },
     {
-      "cve_id": "CVE-2026-116786",
-      "asset_id": "CVE-2026-116786",
+      "cve_id": "CVE-2026-89142",
+      "asset_id": "CVE-2026-89142",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, sofia_handle_sip_i_refer() placed raw Refer-To URI parameters and headers inside a sip_invite_params channel-variable block passed to switch_ivr_originate(). The originate parser treated a comma in the attacker-controlled value as a variable separator, allowing an authenticated caller on a bridged call to inject arbitrary variables into a newly originated leg. An injected execute_on_originate value could invoke the system dialplan application before answer and execute operating-system commands with the FreeSWITCH process privileges. SIP REFER is enabled by default, and the sender needs only a registered account and a call that takes the off-box transfer path, not administrative or Event Socket access. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:25:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116786"
+      "description": "In the Wi-Fi NPU FW, there is a possible out-of-bounds write due to an incorrect bounds check. This could lead to local denial of service with user execution privileges needed. User interaction is not needed for exploitation.",
+      "last_modified": "2026-11-06T03:43:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89142"
     },
     {
-      "cve_id": "CVE-2026-18369",
-      "asset_id": "CVE-2026-18369",
+      "cve_id": "CVE-2026-112447",
+      "asset_id": "CVE-2026-112447",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Dogtag PKI's ACME responder where the HTTP-01 challenge validator accepts IP address literals as dns identifiers and follows HTTP redirects without validating that the target is a public address. An unauthenticated ACME account holder can exploit this to perform server-side request forgery (SSRF), making the Dogtag server send HTTP GET requests to internal network services. With the InMemory database backend, the response body of internal targets is disclosed to the attacker through the ACME challenge error.",
-      "last_modified": "2026-11-05T19:25:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18369"
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to bypass Privacy preferences.",
+      "last_modified": "2026-11-06T02:30:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112447"
     },
     {
-      "cve_id": "CVE-2026-18358",
-      "asset_id": "CVE-2026-18358",
+      "cve_id": "CVE-2026-97029",
+      "asset_id": "CVE-2026-97029",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gnome-remote-desktop as shipped in Red Hat Enterprise Linux. When the daemon is running in system mode with RDP enabled, the incoming connection handler bypasses the connection throttler, allowing an unauthenticated remote attacker to open many parallel pre-authentication connections to the RDP listener. This can accumulate accepted sockets and pending routing-token operations until timeout, exhausting resources and preventing legitimate users from establishing RDP sessions. This issue does not affect the upstream version.",
-      "last_modified": "2026-11-05T19:25:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18358"
+      "description": "Flatpak's process ID namespace separation does not prevent a sandboxed app's kill(0, signal) or killpg(0, signal) calls from reaching processes outside the sandbox that share the same process group. A malicious or compromised Flatpak app can use this to cause denial of service by terminating processes outside its sandbox, such as the desktop shell.",
+      "last_modified": "2026-11-06T02:18:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97029"
     },
     {
-      "cve_id": "CVE-2026-18107",
-      "asset_id": "CVE-2026-18107",
+      "cve_id": "CVE-2026-96545",
+      "asset_id": "CVE-2026-96545",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in CRIU's handling of restartable sequences (rseq) during checkpoint/restore. A malicious process inside a container can register an rseq critical section that hijacks CRIU's parasite code injection during checkpoint, allowing it to spoof the process credentials saved in the checkpoint image. On restore, the container process gains elevated capabilities and zeroed UIDs/GIDs.\n\nThe practical impact on Red Hat products is limited by several factors: checkpoint/restore requires root privileges (podman) or cluster-admin RBAC (OpenShift) to trigger and cannot be initiated from within the container itself; on OpenShift prior to 4.17 the feature required explicit opt-in, and on 4.17+ the kubelet checkpoint API RBAC is not configured by default; OpenShift enforces user namespaces by default for regular workloads (hostUsers is gated behind admin-only SCCs), which makes the spoofed capabilities namespace-scoped and ineffective for privilege escalation; SELinux type enforcement (container_t) blocks privilege transitions independently of capabilities; seccomp filters persist through checkpoint/restore and cannot be corrupted via the parasite; and kernel mount namespace ownership checks on RHEL 9/10 kernels prevent mount-based container escape even with spoofed capabilities.",
-      "last_modified": "2026-11-05T19:25:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18107"
+      "description": "An out-of-bounds heap read flaw was found in GIMP's TIM image loader. When a user opens a crafted 4bpp TIM image that causes promotion to an RGBA layer, the file-tim plug-in allocates an undersized row buffer but processes it using the larger RGBA row size. This can copy adjacent heap contents into the decoded image and may crash the plug-in.",
+      "last_modified": "2026-11-06T02:14:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96545"
     },
     {
-      "cve_id": "CVE-2026-18047",
-      "asset_id": "CVE-2026-18047",
+      "cve_id": "CVE-2026-96541",
+      "asset_id": "CVE-2026-96541",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Dogtag PKI's ACME responder where the web.xml security constraints use exact URL pattern matching for admin-only enable/disable endpoints. By appending a trailing slash to the URL, an unauthenticated attacker can bypass the Tomcat authentication constraint while RESTEasy still routes the request to the handler, allowing unauthorized toggling of the ACME service state including persistent denial of service.",
-      "last_modified": "2026-11-05T19:25:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18047"
+      "description": "A denial-of-service flaw was found in gnome-remote-desktop. An unauthenticated remote attacker can open RDP connections without completing the handshake and retain the connection-throttling slots indefinitely because no pre-authentication handshake deadline is enforced. By exhausting the global connection limit, an attacker can prevent new RDP clients from connecting until a holding socket is closed.",
+      "last_modified": "2026-11-06T02:14:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96541"
     },
     {
-      "cve_id": "CVE-2026-16768",
-      "asset_id": "CVE-2026-16768",
+      "cve_id": "CVE-2026-96281",
+      "asset_id": "CVE-2026-96281",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in gdk-pixbuf. When parsing a specially crafted ICO file with pixel values that exceed the defined palette range, an out-of-bounds read can occur due to improper bounds checking against the actual palette size. This vulnerability causes heap bytes to be interpreted as valid palette indices and rendered as RGB pixel values in the output image, allowing an attacker to extract heap content via the generated output, such as a thumbnail.",
-      "last_modified": "2026-11-05T19:24:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16768"
+      "description": "On a multi-user system, a user with an active local login session could downgrade a system-wide Flatpak app to an older version by removing the app's remote ref via the unprivileged system-helper RemoveLocalRef method, causing the anti-downgrade check to fail to find a reference date. A malicious local user could use this to expose other users of the same system to an app version with unfixed vulnerabilities.",
+      "last_modified": "2026-11-06T02:14:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96281"
     },
     {
-      "cve_id": "CVE-2026-16730",
-      "asset_id": "CVE-2026-16730",
+      "cve_id": "CVE-2026-96280",
+      "asset_id": "CVE-2026-96280",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in dbus-broker. When the process file-descriptor limit is reached, EMFILE/ENFILE errors during peer setup (notably SO_PEERPIDFD) are handled as fatal failures, causing the broker to exit. A local attacker who can open many connections to the user session bus can trigger this and deny service to the desktop session. Flatpak applications can reach the host session bus through the dbus proxy.",
-      "last_modified": "2026-11-05T19:24:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16730"
+      "description": "The OCI delta stream parser read sizes as guint64 but passed them to GLib I/O and allocation functions expecting gsize (32 bits on 32-bit systems), causing undersized allocations while subsequent operations use the original 64-bit size, leading to heap buffer overflows. An attacker controlling an OCI registry can craft a delta stream that triggers this during flatpak install/update, potentially achieving code execution on 32-bit systems.",
+      "last_modified": "2026-11-06T02:14:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96280"
     },
     {
-      "cve_id": "CVE-2026-116787",
-      "asset_id": "CVE-2026-116787",
+      "cve_id": "CVE-2026-96279",
+      "asset_id": "CVE-2026-96279",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, mod_event_socket used an unauthenticated Content-Length value directly as the allocation size for an Event Socket message body. Negative or extremely large values could overflow the terminator calculation or force an allocation failure through a helper that aborts the FreeSWITCH process. The header is parsed before the Event Socket password, so any host admitted by apply-inbound-acl can trigger termination with its first packet; the default loopback ACL limits ordinary installations to local clients. The outbound socket dialplan path is also affected when FreeSWITCH connects to a hostile application server, and process termination drops every active call until the service is restarted. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:24:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116787"
+      "description": "A malicious OCI registry can hardlink arbitrary host files into the extraction directory when a user installs or updates a Flatpak application from an OCI remote, allowing disclosure of arbitrary host file contents. For system-wide installs running as root, this includes sensitive files such as /etc/shadow.",
+      "last_modified": "2026-11-06T02:14:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96279"
     },
     {
-      "cve_id": "CVE-2026-58841",
-      "asset_id": "CVE-2026-58841",
+      "cve_id": "CVE-2026-96276",
+      "asset_id": "CVE-2026-96276",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In multiple functions of VirtualAudioControllerTest.java, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:24:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58841"
+      "description": "If a malicious SDK container declares an extension point with a crafted `directory` path, and a developer runs `flatpak build-init --writable-sdk --sdk-extension` with that SDK, attacker-chosen files could be written outside the working directory, since the target path is resolved via a function that allows `..` traversal.",
+      "last_modified": "2026-11-06T02:14:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96276"
     },
     {
-      "cve_id": "CVE-2026-16560",
-      "asset_id": "CVE-2026-16560",
+      "cve_id": "CVE-2026-95619",
+      "asset_id": "CVE-2026-95619",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A heap-buffer-overflow flaw was found in Directory Server (389-ds-base). When a DN contains a legacy-quoted value, the server won't close the heap allocation allowing another call to refer to the same memory pointer causing a denial of service or an arbitrary memory write operation.",
-      "last_modified": "2026-11-05T19:24:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16560"
+      "description": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability.",
+      "last_modified": "2026-11-06T02:14:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95619"
     },
     {
-      "cve_id": "CVE-2026-16531",
-      "asset_id": "CVE-2026-16531",
+      "cve_id": "CVE-2026-95521",
+      "asset_id": "CVE-2026-95521",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An unauthenticated remote attacker can exploit a path traversal vulnerability in the PCP pmproxy logger servlet using a crafted hostname. This allows arbitrary file and directory creation, potentially leading to a denial of service.",
-      "last_modified": "2026-11-05T19:24:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16531"
+      "description": "A command injection flaw was found in rpm. Installing or rebuilding a source RPM whose source or spec file basenames contain a %() macro construct causes rpm to execute an attacker-controlled shell command via popen() while relocating the source file list. This allows arbitrary command execution as the invoking (typically non-root) user, simply by installing, rebuilding, or otherwise processing an untrusted .src.rpm.",
+      "last_modified": "2026-11-06T02:14:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95521"
     },
     {
-      "cve_id": "CVE-2026-16530",
-      "asset_id": "CVE-2026-16530",
+      "cve_id": "CVE-2026-95520",
+      "asset_id": "CVE-2026-95520",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in the PCP (Performance Co-Pilot) `pmproxy` service. A remote attacker can exploit a vulnerability in the `pmLogLoadInDom()` function by sending a specially crafted request. This bypasses a critical bounds check, which can lead to the `pmproxy` service crashing, causing a Denial of Service (DoS). Additionally, this flaw may enable the leakage of sensitive information from the system's memory.",
-      "last_modified": "2026-11-05T19:23:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16530"
+      "description": "A heap-based buffer overflow flaw was found in rpm. Parsing a symlink entry in an untrusted RPM package whose declared RPMTAG_LONGFILESIZES value is 0xFFFFFFFFFFFFFFFF causes an integer overflow in iterReadArchiveNext() that shrinks a buffer allocation to one byte, after which the payload's independently-controlled cpio filesize field is used to write attacker-controlled data past the end of that allocation. This is reachable via rpm2cpio, rpm2archive, and rpm -qlvp on an  untrusted package.",
+      "last_modified": "2026-11-06T02:14:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95520"
     },
     {
-      "cve_id": "CVE-2026-2100",
-      "asset_id": "CVE-2026-2100",
+      "cve_id": "CVE-2026-95512",
+      "asset_id": "CVE-2026-95512",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in p11-kit. A remote attacker could exploit this vulnerability by calling the C_DeriveKey function on a remote token with specific IBM kyber or IBM btc derive mechanism parameters set to NULL. This could lead to the RPC-client attempting to return an uninitialized value, potentially resulting in a NULL dereference or undefined behavior. This issue may cause an application level denial of service or other unpredictable system states.",
-      "last_modified": "2026-11-05T19:23:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2100"
+      "description": "A flaw was found in FreeType, specifically within its CID font loader. A remote attacker could exploit this vulnerability by tricking a user into opening content that embeds or references a specially crafted CID-keyed font. This crafted font can cause repeated allocations and decryptions of subroutine data across multiple font dictionaries, leading to excessive memory and CPU consumption. This can result in a denial of service (DoS) for the application or service processing the font, potentially causing it to hang or terminate.",
+      "last_modified": "2026-11-06T02:13:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95512"
     },
     {
-      "cve_id": "CVE-2026-1940",
-      "asset_id": "CVE-2026-1940",
+      "cve_id": "CVE-2026-95519",
+      "asset_id": "CVE-2026-95519",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An incomplete fix for CVE-2024-47778 allows an out-of-bounds read in gst_wavparse_adtl_chunk() function. The patch added a size validation check lsize + 8 > size, but it does not account for the GST_ROUND_UP_2(lsize) used in the actual offset calculation. When lsize is an odd number, the parser advances more bytes than validated, causing OOB read.",
-      "last_modified": "2026-11-05T19:23:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1940"
+      "description": "A flaw was found in rpm. An attacker can supply a crafted manifest file that, when processed by a user or automation using `rpm -q -p` or similar manifest-processing flows, leads to arbitrary code execution. This occurs because manifest entries are unexpectedly macro-expanded before being opened, allowing embedded shell commands to run with the privileges of the `rpm` process. Successful exploitation can lead to a full compromise of confidentiality, integrity, and availability for the affected account.",
+      "last_modified": "2026-11-06T02:13:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95519"
     },
     {
-      "cve_id": "CVE-2026-1760",
-      "asset_id": "CVE-2026-1760",
+      "cve_id": "CVE-2026-95508",
+      "asset_id": "CVE-2026-95508",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in SoupServer. This HTTP request smuggling vulnerability occurs because SoupServer improperly handles requests that combine Transfer-Encoding: chunked and Connection: keep-alive headers. A remote, unauthenticated client can exploit this by sending specially crafted requests, causing SoupServer to fail to close the connection as required by RFC 9112. This allows the attacker to smuggle additional requests over the persistent connection, leading to unintended request processing and potential denial-of-service (DoS) conditions.",
-      "last_modified": "2026-11-05T19:23:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1760"
+      "description": "A heap-based buffer overflow was found in the DHCPv6 and TFTP response builders of libslirp. When the host is configured with a small interface MTU, a guest-supplied DHCPv6 CLIENTID option or TFTP blksize option can overflow the reply buffer with attacker-controlled content and length, resulting in denial of service and potentially arbitrary code execution in the host process. The default interface MTU is not affected.",
+      "last_modified": "2026-11-06T02:13:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95508"
     },
     {
-      "cve_id": "CVE-2026-1757",
-      "asset_id": "CVE-2026-1757",
+      "cve_id": "CVE-2026-94184",
+      "asset_id": "CVE-2026-94184",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was identified in the interactive shell of the xmllint utility, part of the libxml2 project, where memory allocated for user input is not properly released under certain conditions. When a user submits input consisting only of whitespace, the program skips command execution but fails to free the allocated buffer. Repeating this action causes memory to continuously accumulate. Over time, this can exhaust system memory and terminate the xmllint process, creating a denial-of-service condition on the local system.",
-      "last_modified": "2026-11-05T19:23:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1757"
+      "description": "A stack-based buffer overflow flaw was found in fetchmail when built with NTLM support. A malicious or compromised mail server advertising NTLM authentication can send a crafted Type 2 challenge that causes fetchmail to write past a fixed stack buffer while building the NTLM authenticate response. This may lead to remote code execution depending on stack-frame layout, or to authentication failure or process termination under memory hardening.",
+      "last_modified": "2026-11-06T02:12:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94184"
     },
     {
-      "cve_id": "CVE-2026-116567",
-      "asset_id": "CVE-2026-116567",
+      "cve_id": "CVE-2026-93683",
+      "asset_id": "CVE-2026-93683",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, rtmp_handle_control() rendered an RTMP user-control message into a 200-byte stack buffer using an unbounded sprintf loop controlled by the wire message length. A body of roughly 70 bytes or more overflowed the stack before any RTMP login, because the handshake authenticates neither side. The flaw affects deployments that build and load mod_rtmp, which is disabled in the stock build and configuration but commonly exposes a listener on TCP port 1935 when enabled. One unauthenticated message can crash FreeSWITCH and end every active call; the constrained ASCII hex output has not yielded control-flow hijacking. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:23:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116567"
+      "description": "A flaw was found in the DPDK vhost library. When handling a virtio indirect descriptor table, the host reads the table length more than once from guest memory and can allocate a host copy before validating that length. A guest that changes the length between those reads, or that supplies an out-of-range next index on a small host copy in the vDPA relay path, can cause the host vhost process to walk past the validated mapping or heap copy. That can crash or disrupt the vhost process. Out-of-bounds bytes are consumed as descriptor fields for GPA translation and are not returned to the guest as payload. This is a residual issue in the non-contiguous indirect descriptor copy path introduced as part of the CVE-2018-1059 fix.",
+      "last_modified": "2026-11-06T02:11:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93683"
     },
     {
-      "cve_id": "CVE-2026-116571",
-      "asset_id": "CVE-2026-116571",
+      "cve_id": "CVE-2026-93653",
+      "asset_id": "CVE-2026-93653",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, rtmp_rtp2rtmpH264() built an AVC decoder configuration record in a fixed stack buffer by copying wire-derived SPS and PPS values without checking that their sizes and framing fit. An established H.264 call bridged toward an RTMP endpoint could supply oversized SPS and PPS parameter sets and overrun the function's stack frame. The flaw affects only deployments that build and load mod_rtmp and bridge RTP media into an RTMP leg; the module is disabled in the stock build and configuration. The corruption can abort FreeSWITCH and terminate every active call, and builds without stack protection receive a limited stack-write primitive, although code execution has not been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:22:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116571"
+      "description": "A denial of service flaw was found in Poppler's Splash backend. A crafted PDF with tiling-pattern geometry approaching the int32 boundary can cause SplashOutputDev::tilingPatternFill to compute an attacker-controlled repeat count that drives an excessively long loop in the pattern-fill scanline routine, without a corresponding memory allocation. An attacker could exploit this by supplying a malicious PDF to an application that renders it via Poppler's Splash backend, causing the rendering process to consume 100% CPU for an attacker-controlled, extended duration.",
+      "last_modified": "2026-11-06T02:11:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93653"
     },
     {
-      "cve_id": "CVE-2026-116570",
-      "asset_id": "CVE-2026-116570",
+      "cve_id": "CVE-2026-93433",
+      "asset_id": "CVE-2026-93433",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, http_directory_auth() rebuilt an expected user@domain:password credential and base64-encoded it into an 80-byte buffer using an encoder without an output-length argument. A configured credential longer than 57 characters overflowed the stack before the supplied HTTP Basic password was compared. An unauthenticated client only needed to name an existing directory user on an exposed mod_xml_rpc HTTP listener; the module is built but not loaded by the stock configuration. The overflow can corrupt the stack and crash FreeSWITCH, ending every active call, although the overrun bytes come from the configured credential and remote code execution has not been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:21:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116570"
+      "description": "A flaw was found in libstoragemgmt. An attacker with control over a local or virtual storage device could provide specially crafted SCSI (Small Computer System Interface) Vital Product Data (VPD) page 0x80 data. This malformed data, specifically an untrusted page length field, can lead to a stack buffer overflow in the `_sg_parse_vpd_80()` function during serial number parsing. Successful exploitation could result in a denial of service by crashing or destabilizing the process querying the serial number.",
+      "last_modified": "2026-11-06T02:07:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93433"
     },
     {
-      "cve_id": "CVE-2026-44875",
-      "asset_id": "CVE-2026-44875",
+      "cve_id": "CVE-2026-93011",
+      "asset_id": "CVE-2026-93011",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In HPE Cray Programming Environment versions 25.03 and 25.09, prior to 26.03, the method that CPE is deployed on HPCM potentially allows elevated access by a local unprivileged user.",
-      "last_modified": "2026-11-05T19:21:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44875"
+      "description": "A flaw was found in dnsmasq. After a reduction of internal domain-name buffer sizes, the DNSSEC validator can write a few bytes past a name buffer when converting names to and from DNS wire format. An attacker who can cause the server to validate a crafted DNSSEC response may overwrite a small amount of adjacent heap metadata. DNSSEC support is not compiled in by default and must also be enabled at runtime.",
+      "last_modified": "2026-11-06T01:50:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93011"
     },
     {
-      "cve_id": "CVE-2026-116569",
-      "asset_id": "CVE-2026-116569",
+      "cve_id": "CVE-2026-93007",
+      "asset_id": "CVE-2026-93007",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, msrp_parse_buffer() subtracted delimiter framing from a peer-controlled short segment whose MSRP byte range ended in * without first proving the segment was long enough. The unsigned result wrapped near SIZE_MAX and reached switch_msrp_msg_set_payload() as both an allocation size and memcpy length, while related pointer arithmetic could read before the receive buffer. The listener is disabled by default in msrp.conf.xml, but any deployment enabling an MSRP TCP or TLS port parses this framing before authentication. An unauthenticated network peer can corrupt memory and crash FreeSWITCH, dropping all active calls, although remote code execution has not been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:20:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116569"
+      "description": "A flaw was found in dnsmasq. The TCP DNS service uses a small fixed pool of child processes and does not set a receive timeout on client connections. A remote attacker can open idle TCP connections to port 53 and occupy the entire pool, preventing new TCP DNS connections and DNSSEC validation that requires TCP fallback. UDP DNS resolution continues, and occupied slots are released after a fixed lifetime.",
+      "last_modified": "2026-11-06T01:50:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93007"
     },
     {
-      "cve_id": "CVE-2026-1339",
-      "asset_id": "CVE-2026-1339",
+      "cve_id": "CVE-2026-93006",
+      "asset_id": "CVE-2026-93006",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An Open Redirect vulnerability has been identified in OpenText\u2122 Universal Discovery and CMDB. The vulnerability can be exploited only if an attacker sends a specially crafted URL containing a link to a malicious resource and a user subsequently follows that link.\nAffected systems:\n\nThis issue affects only the classic deployment options for UCMDB UI (ucmdb-browser) component\u00a0within Universal Discovery and CMDB and Operations Bridge Manager. Containerized deployment options are not affected.",
-      "last_modified": "2026-11-05T19:20:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1339"
+      "description": "A flaw was found in dnsmasq. The TFTP server can serve the wrong file contents because a recently used transfer cache is not invalidated when a transfer finishes. An attacker on the local network who can request a TFTP file may cause a later client to receive previously cached data instead of the requested file. In PXE network-boot environments this can substitute attacker-chosen boot content for a victim machine.",
+      "last_modified": "2026-11-06T01:50:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93006"
     },
     {
-      "cve_id": "CVE-2026-116568",
-      "asset_id": "CVE-2026-116568",
+      "cve_id": "CVE-2026-92824",
+      "asset_id": "CVE-2026-92824",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, rtmp_rtmp2rtpH264() trusted the length prefix of each inbound H.264 NAL unit without checking it against the bytes remaining in the RTMP message. An oversized declared unit underflowed the unsigned remaining-byte counter and advanced the parser beyond its receive buffer, where the next length-prefix read could crash the process. The flaw affects deployments that build and load mod_rtmp and accept video call sessions, commonly on TCP port 1935; placing the call requires a directory login where auth-calls is true, while no credentials are required where auth-calls is absent or false. A remote client can terminate FreeSWITCH and every active call, but the defect supplies no write primitive and memory disclosure has not been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:19:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116568"
+      "description": "A flaw was found in libmodulemd. In the module stream v2 rpm-map emission path, an inner loop incorrectly uses the count of digest algorithms as its bound instead of the number of checksums in the current digest table. Crafted modulemd v2 metadata with multiple digest types can trigger an out-of-bounds read during YAML serialization, typically causing a crash and resulting in a denial of service.",
+      "last_modified": "2026-11-06T01:50:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92824"
     },
     {
-      "cve_id": "CVE-2026-116572",
-      "asset_id": "CVE-2026-116572",
+      "cve_id": "CVE-2026-92823",
+      "asset_id": "CVE-2026-92823",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is an open-source software telecommunications platform. From 1.10.0 to 1.11.1, there is a stack-based buffer overflow in \u00a0mod_sofia\u00a0 when processing SIP Contact display names for dialog-event notifications. A peer can establish a dialog containing an excessively long display name and subsequently subscribe to that entity\u2019s dialog events, causing the stored value to overflow a fixed 512-byte stack buffer. Exploitation requires presence management to be enabled, directly or through shared appearance, and normally requires valid profile credentials unless subscription authentication is disabled. The overflow can terminate the FreeSWITCH process and all active calls. This vulnerability is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:19:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116572"
+      "description": "A flaw was found in libmodulemd. In builds with rpmio support enabled, compressed modulemd YAML is decompressed through a custom read handler that does not enforce a cumulative decompressed-size limit before parsing. An attacker who can supply a highly compressible compressed YAML file can cause excessive CPU and memory consumption, resulting in a denial of service.",
+      "last_modified": "2026-11-06T01:50:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92823"
     },
     {
-      "cve_id": "CVE-2026-95208",
-      "asset_id": "CVE-2026-95208",
+      "cve_id": "CVE-2026-92822",
+      "asset_id": "CVE-2026-92822",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: none. Reason: This candidate was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
-      "last_modified": "2026-11-05T19:17:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-95208"
+      "description": "A flaw was found in libmodulemd. When parsing module metadata, the xmd field is converted into nested GVariant values through recursive YAML mapping and sequence helpers without a recursion-depth or node-count limit. An attacker who can supply crafted modulemd YAML with deeply nested xmd content can cause stack exhaustion or excessive resource consumption, resulting in a denial of service.",
+      "last_modified": "2026-11-06T01:50:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92822"
     },
     {
-      "cve_id": "CVE-2026-94395",
-      "asset_id": "CVE-2026-94395",
+      "cve_id": "CVE-2026-92821",
+      "asset_id": "CVE-2026-92821",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A stack-based buffer overflow in Thales SafeNet Authentication Client (SAC) SIS token engine processing can be triggered\u00a0by a malicious physical or software-emulated smart card. The issue can occur before authentication or PIN entry and may\ncause a denial of service or potentially arbitrary code execution with the privileges of the affected process.\u00a0Affected releases\u00a0start with SAC 10.8 R7 and include SAC 10.9 R3 GA (build 10.9.7449).",
-      "last_modified": "2026-11-05T19:17:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94395"
+      "description": "A flaw was found in SSSD. When configured to evaluate password expiration warnings before restrictive access rules in LDAP (Lightweight Directory Access Protocol) environments, an expired-password warning terminates rule evaluation early and treats the access request as successful. A remote authenticated user with an expired password using an alternative authentication method, such as SSH public key authentication, can exploit this flaw to bypass access control restrictions and gain unauthorized access to protected systems.",
+      "last_modified": "2026-11-06T01:50:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92821"
     },
     {
-      "cve_id": "CVE-2026-83525",
-      "asset_id": "CVE-2026-83525",
+      "cve_id": "CVE-2026-92382",
+      "asset_id": "CVE-2026-92382",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect operator (CWE-480) in the FetchSnapshot RPC handler\nin Apache Kafka from 2.8.0 before 4.2.2, and from 4.3.0 before 4.3.2\non all platforms allows an authenticated attacker with\nCLUSTER_ACTION privilege to cause a denial of service\n(controller process termination) via a crafted\nFetchSnapshotRequest with an empty topics array or a topic\nwith no partitions.\n\nUsers are recommended to upgrade to version 4.2.2, 4.3.2, or\n4.4.0, which fix this issue. Users on unsupported branches\n(4.1.x and earlier) should upgrade to 4.2.2 or later.",
-      "last_modified": "2026-11-05T19:17:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83525"
+      "description": "An out-of-bounds write flaw was found in usbredir. Starting an isochronous OUT stream with a transfer count of 1 leaves the stream's single transfer buffer permanently unsubmitted, defeating the bounds check in usbredirhost_iso_packet() and allowing a usbredir peer to write past the end of the packet descriptor array on every subsequent isochronous packet.",
+      "last_modified": "2026-11-06T01:48:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92382"
     },
     {
-      "cve_id": "CVE-2026-58886",
-      "asset_id": "CVE-2026-58886",
+      "cve_id": "CVE-2026-92091",
+      "asset_id": "CVE-2026-92091",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In updateInputWindows of InputMonitor.java, there is a possible tapjacking issue due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
-      "last_modified": "2026-11-05T19:17:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58886"
+      "description": "A flaw was found in jwcrypto. The JWK.import_key() function validates the key_ops JWK member for duplicate values using an algorithm with O(n^2) time complexity, and the length of key_ops is not bounded. A remote, unauthenticated attacker can supply a JWK with a large key_ops array to an application that passes attacker-controlled key material to a public key-import API (reachable via ECDH-ES key agreement, OIDC dynamic client registration, DPoP, or ACME account key registration, among others) to consume excessive CPU time, resulting in a denial of service.",
+      "last_modified": "2026-11-06T01:48:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92091"
     },
     {
-      "cve_id": "CVE-2026-58857",
-      "asset_id": "CVE-2026-58857",
+      "cve_id": "CVE-2026-91786",
+      "asset_id": "CVE-2026-91786",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In decrypt of CryptoHalHidl.cpp, there is a possible use-after-free due to a race condition. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
-      "last_modified": "2026-11-05T19:17:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58857"
+      "description": "A flaw was found in GNOME Shell. When processing icons from a remote search provider via D-Bus, the system fails to validate the icon's declared dimensions against the actual data buffer size. A malicious or compromised remote search provider could exploit this by providing oversized icon dimensions, leading to an out-of-bounds read. This can cause the GNOME Shell process to crash, disrupting the user's session, and potentially disclose sensitive information from adjacent memory.",
+      "last_modified": "2026-11-06T01:46:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91786"
     },
     {
-      "cve_id": "CVE-2026-115451",
-      "asset_id": "CVE-2026-115451",
+      "cve_id": "CVE-2026-91920",
+      "asset_id": "CVE-2026-91920",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Joomla Extension - tassos.gr - File deletion through improper access control in Advanced Custom Fields extension 2.8.13-2.8.15, 3.1.4-3.1.8 and Smile Pack 1.2.7-1.2.9, 2.1.2-2.1.6 - Anyone could delete images in the Gallery folders, including images on published articles and modules, without logging in. In ACF 3.1.7 and 3.1.8, users could also see, remove or save each other\u2019s unsaved uploads.",
-      "last_modified": "2026-11-05T19:17:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115451"
+      "description": "A flaw was found in the ChunkReader component of the Undertow web server, which is used to handle chunked transfer encoding in HTTP requests. The issue occurs because a security check for the chunk size is performed before the value is shifted, allowing a specifically crafted 15-digit chunk size to bypass the limit and overflow into internal state flags. This can cause the server to terminate a request body prematurely and interpret the remaining data as a separate, smuggled request.",
+      "last_modified": "2026-11-06T01:46:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91920"
     },
     {
-      "cve_id": "CVE-2026-115739",
-      "asset_id": "CVE-2026-115739",
+      "cve_id": "CVE-2026-9150",
+      "asset_id": "CVE-2026-9150",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Hard-coded Cryptographic Key vulnerability exists in the DLP on-prem extensions version 11.13.1 and earlier allows a remote attacker to decrypt credentials and evidence files.",
-      "last_modified": "2026-11-05T19:17:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115739"
+      "description": "A flaw was found in libsolv. This stack-based buffer overflow vulnerability occurs in libsolv's Debian metadata parser when processing specially crafted Debian repository metadata. An attacker could exploit this by providing malicious SHA384 or SHA512 checksum tags, leading to memory corruption and a denial of service (DoS) in the affected system.",
+      "last_modified": "2026-11-06T01:45:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9150"
     },
     {
-      "cve_id": "CVE-2026-110952",
-      "asset_id": "CVE-2026-110952",
+      "cve_id": "CVE-2026-9149",
+      "asset_id": "CVE-2026-9149",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A Kafka broker that authenticates clients with SASL/OAUTHBEARER using the bundled JWKS-backed validator always verifies the JWT signature, but two further checks are only performed when explicitly configured:\n\n- The issuer (iss) claim is verified only when sasl.oauthbearer.expected.issuer is set. When it is unset, a validly-signed token carrying the expected audience is accepted regardless of which issuer minted it.\n- An audience (aud) claim is required only when sasl.oauthbearer.expected.audience is set. When it is unset, a validly-signed token that omits the aud claim is accepted. (A token that carries an aud claim is\n  still rejected when no expected audience is configured.)\n\nBoth options default to unset and have been documented as optional (Importance LOW) since KIP-768 (3.1.0).\n\nImpact:\n  The exposure is realizable mainly in deployments whose JWKS endpoint serves signing keys for more than one issuer (a multi-tenant identity provider, an aggregated/shared JWKS, or shared signing keys): a token\n  minted for a different issuer, or a token lacking an audience, may be accepted to authenticate \u2014 potentially as a higher-privileged principal. In a single-issuer deployment where the provider controls the iss\n  claim and issues audience-scoped tokens, exposure is limited. The signature trust anchor remains enforced in all cases. This is distinct from CVE-2026-33557 (acceptance of unsigned/unvalidated tokens); here the\n  signature is validated and only the issuer/audience checks are not enforced by default.\n\nMitigation (all affected versions, no upgrade required):\n  Set both sasl.oauthbearer.expected.issuer (to your provider's exact iss value) and sasl.oauthbearer.expected.audience (to the audience(s) your brokers expect), per listener. Brokers that set these perform\n  exact-match issuer/audience checks and are not affected. Both have been available since 3.1.0.\n\nResolution:\n  - From Apache Kafka 4.4.0: a broker configured with a JWKS endpoint fails to start unless both sasl.oauthbearer.expected.issuer and sasl.oauthbearer.expected.audience are set (secure by default). Deployments that\n  intentionally do not restrict the issuer and/or audience may opt out per axis with sasl.oauthbearer.allow.unverified.issuer=true and/or sasl.oauthbearer.allow.unverified.audience=true.",
-      "last_modified": "2026-11-05T19:17:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110952"
+      "description": "A flaw was found in libsolv. This heap buffer overflow vulnerability occurs when a victim processes a specially crafted `.solv` file containing negative size values in the `repo_add_solv` function. This leads to an undersized memory allocation and a subsequent out-of-bounds write. An attacker could exploit this to cause a denial of service (DoS).",
+      "last_modified": "2026-11-06T01:45:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9149"
     },
     {
-      "cve_id": "CVE-2026-101602",
-      "asset_id": "CVE-2026-101602",
+      "cve_id": "CVE-2026-63017",
+      "asset_id": "CVE-2026-63017",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Oracle Agile Product Lifecycle Management for Process product of Oracle Supply Chain (component: Product Quality Management).   The supported version that is affected is 6.2.4. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Agile Product Lifecycle Management for Process.  Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in takeover of Oracle Agile Product Lifecycle Management for Process. CVSS 3.1 Base Score 8.0 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-11-05T19:17:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101602"
+      "description": "Incorrect authorization in PowerSYSTEM Center allows a low-privileged, authenticated user to access resources normally limited to administrators.",
+      "last_modified": "2026-11-06T01:45:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63017"
     },
     {
-      "cve_id": "CVE-2026-101503",
-      "asset_id": "CVE-2026-101503",
+      "cve_id": "CVE-2026-63774",
+      "asset_id": "CVE-2026-63774",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Trusted Answer Search (component: PLSQL package).   The supported version that is affected is 26.1. Easily exploitable vulnerability allows low privileged attacker with network access via Oracle Net to compromise Oracle Trusted Answer Search.  While the vulnerability is in Oracle Trusted Answer Search, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Trusted Answer Search. CVSS 3.1 Base Score 9.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
-      "last_modified": "2026-11-05T19:17:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101503"
+      "description": "Insufficient input validation in the PowerSYSTEM Center report designer allows an authenticated user to execute unauthorized SQL commands.",
+      "last_modified": "2026-11-06T01:45:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63774"
     },
     {
-      "cve_id": "CVE-2026-101457",
-      "asset_id": "CVE-2026-101457",
+      "cve_id": "CVE-2026-91205",
+      "asset_id": "CVE-2026-91205",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Siebel Apps - Life Sciences product of Oracle Siebel CRM (component: eDetailing).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows low privileged attacker with network access via SQL to compromise Siebel Apps - Life Sciences.  Successful attacks of this vulnerability can result in takeover of Siebel Apps - Life Sciences. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-11-05T19:17:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101457"
+      "description": "A flaw was found in cockpit-files. A local unprivileged attacker can exploit a race condition during directory creation with owner assignment. By controlling a writable parent directory, the attacker can replace a newly created directory with a symbolic link (symlink) before the ownership change operation (chown) is applied. This allows the attacker to redirect the ownership change to an arbitrary file, potentially leading to information disclosure or unauthorized modification of sensitive files.",
+      "last_modified": "2026-11-06T01:44:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91205"
     },
     {
-      "cve_id": "CVE-2026-101453",
-      "asset_id": "CVE-2026-101453",
+      "cve_id": "CVE-2026-91203",
+      "asset_id": "CVE-2026-91203",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Siebel CRM Deployment product of Oracle Siebel CRM (component: Server Infrastructure).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure where Siebel CRM Deployment executes to compromise Siebel CRM Deployment.  Successful attacks of this vulnerability can result in takeover of Siebel CRM Deployment. CVSS 3.1 Base Score 6.7 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H).",
-      "last_modified": "2026-11-05T19:17:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101453"
+      "description": "A flaw was found in cockpit-files. This vulnerability allows a local attacker to exploit a timing issue, known as a symlink race condition, during privileged file operations such as changing file ownership or permissions. By manipulating directory entries and winning this race, the attacker can redirect these operations to unintended files. This could lead to unauthorized changes in file ownership and permissions on arbitrary files, potentially compromising system integrity and availability by altering system or application states or rendering services unusable.",
+      "last_modified": "2026-11-06T01:44:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91203"
     },
     {
-      "cve_id": "CVE-2026-101446",
-      "asset_id": "CVE-2026-101446",
+      "cve_id": "CVE-2026-91202",
+      "asset_id": "CVE-2026-91202",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Cloud Applications.  While the vulnerability is in Siebel CRM Cloud Applications, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Siebel CRM Cloud Applications. CVSS 3.1 Base Score 9.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
-      "last_modified": "2026-11-05T19:17:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101446"
+      "description": "A flaw was found in cockpit-files. A low-privileged local user can exploit this vulnerability by crafting a directory containing a symbolic link (symlink) and then using the privileged \"Paste as owner\" function. This allows for arbitrary file ownership changes outside the intended pasted directory, leading to a compromise of data integrity. In some cases, this could also lead to reduced confidentiality if the new ownership grants unauthorized read access. Exploitation requires user interaction to select a non-original owner during the paste operation.",
+      "last_modified": "2026-11-06T01:44:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91202"
     },
     {
-      "cve_id": "CVE-2026-121963",
-      "asset_id": "CVE-2026-121963",
+      "cve_id": "CVE-2026-91147",
+      "asset_id": "CVE-2026-91147",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeRDP before 3.32.2 contains a use-after-free vulnerability in the asynchronous dynamic rdpsnd channel that allows malicious RDP servers to trigger freed callback access by closing the channel with queued audio PDUs. Attackers can send a training PDU then close the channel so the playback thread reads the freed callback in rdpsnd_virtual_channel_write, crashing the client.",
-      "last_modified": "2026-11-05T19:16:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121963"
+      "description": "A flaw was found in `cockpit-ws`. This vulnerability allows a remote, unauthenticated attacker to cause a Denial of Service (DoS) by sending a specially crafted request. When the `WebService.UrlRoot` is configured and a request is made to the exact URL-root prefix without a trailing slash, `cockpit-ws` can terminate unexpectedly. This issue leads to the unavailability of the Cockpit web service.",
+      "last_modified": "2026-11-06T01:44:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91147"
     },
     {
-      "cve_id": "CVE-2026-115928",
-      "asset_id": "CVE-2026-115928",
+      "cve_id": "CVE-2026-90996",
+      "asset_id": "CVE-2026-90996",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "FreeSWITCH is a Software Defined Telecom Stack enabling the digital transformation from proprietary telecom switches to a software implementation that runs on any commodity hardware. Prior to 1.11.2, switch_core_media_add_crypto() passed the encoded key and salt length from an inbound SDP a=crypto attribute to switch_b64_decode() as the destination capacity. A zero-length key and salt made that capacity underflow, allowing the decoded attribute to overflow a fixed stack buffer with sender-chosen bytes before the call was answered. On the shipped external profile, an unauthenticated caller can reach the SDES-SRTP parser, while profiles that challenge inbound calls remain affected for senders who can authenticate; setting rtp_secure_media_inbound to false removes the path, and WebRTC DTLS-SRTP legs are unaffected. The overflow corrupts memory and can crash the FreeSWITCH process, dropping every active call, although remote code execution has not been demonstrated. This issue is fixed in version 1.11.2.",
-      "last_modified": "2026-11-05T19:15:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115928"
+      "description": "A flaw was found in sssd. A local unprivileged user could send a specially crafted request with a zero-length body to the Network Security Services (NSS) responder. This could lead to a denial-of-service condition, causing the NSS responder to become unstable or terminate. This vulnerability affects the availability of the system responder.",
+      "last_modified": "2026-11-06T01:44:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90996"
     },
     {
-      "cve_id": "CVE-2026-101422",
-      "asset_id": "CVE-2026-101422",
+      "cve_id": "CVE-2026-90995",
+      "asset_id": "CVE-2026-90995",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Report Distribution).  Supported versions that are affected are 8.61-8.63. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise PeopleSoft Enterprise PeopleTools.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all PeopleSoft Enterprise PeopleTools accessible data and unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of PeopleSoft Enterprise PeopleTools. CVSS 3.1 Base Score 8.1 (Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H).",
-      "last_modified": "2026-11-05T19:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101422"
+      "description": "A flaw was found in SSSD (System Security Services Daemon). A local attacker with privileges to connect to the PAM (Pluggable Authentication Modules) responder socket can send a specially crafted protocol request. If the `pam_app_services` configuration is enabled and the service item is omitted from the request, a NULL pointer dereference can occur. This vulnerability leads to a denial of service, causing the PAM responder to crash and disrupt authentication services.",
+      "last_modified": "2026-11-06T01:44:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90995"
     },
     {
-      "cve_id": "CVE-2026-101483",
-      "asset_id": "CVE-2026-101483",
+      "cve_id": "CVE-2026-90994",
+      "asset_id": "CVE-2026-90994",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vulnerability in Oracle Secure Backup (component: Device Management and Support).  Supported versions that are affected are 19.1.0.0.0 and   19.1.0.1.0. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Secure Backup executes to compromise Oracle Secure Backup.  While the vulnerability is in Oracle Secure Backup, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle Secure Backup. CVSS 3.1 Base Score 6.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H).",
-      "last_modified": "2026-11-05T19:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101483"
+      "description": "A flaw was found in sssd, specifically within the PAM (Pluggable Authentication Modules) responder's protocol v1 parser, pam_parse_in_data(). A local client with access to the PAM responder's UNIX socket can exploit this by negotiating protocol v1 and sending an empty or truncated PAM request body. This can trigger an out-of-bounds read, potentially causing the PAM responder to terminate or restart, leading to a local denial of service.",
+      "last_modified": "2026-11-06T01:44:34Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90994"
     },
     {
-      "cve_id": "CVE-2026-117963",
-      "asset_id": "CVE-2026-117963",
+      "cve_id": "CVE-2026-90462",
+      "asset_id": "CVE-2026-90462",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect boundary conditions in the DOM: Service Workers component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, Thunderbird 159, and Thunderbird 153.6.",
-      "last_modified": "2026-11-05T19:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117963"
+      "description": "A flaw was found in SSSD. When configured with the LDAP access provider and `ldap_access_order` including `ppolicy` or `lockout`, a fail-open condition in the LDAP ppolicy access check can occur if a user lookup returns zero results. This can incorrectly return success and cache an allow decision, permitting continued authorization for a deleted or deprovisioned user. A remote attacker with prior valid account context could exploit this to maintain access to information and potentially make limited modifications to resources that should no longer be available.",
+      "last_modified": "2026-11-06T01:44:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90462"
     },
     {
-      "cve_id": "CVE-2026-117966",
-      "asset_id": "CVE-2026-117966",
+      "cve_id": "CVE-2026-112446",
+      "asset_id": "CVE-2026-112446",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Site isolation issue in the Networking: HTTP component. This vulnerability was fixed in Firefox 159, Firefox ESR 115.44, Firefox ESR 153.6, Thunderbird 159, and Thunderbird 153.6.",
-      "last_modified": "2026-11-05T19:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117966"
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27, macOS Golden Gate 27.2, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27.2, visionOS 27.2, watchOS 27.2. An app may be able to access sensitive user data.",
+      "last_modified": "2026-11-06T01:30:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112446"
     },
     {
-      "cve_id": "CVE-2026-117970",
-      "asset_id": "CVE-2026-117970",
+      "cve_id": "CVE-2026-77299",
+      "asset_id": "CVE-2026-77299",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Race condition in the Disability Access APIs component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, Thunderbird 159, and Thunderbird 153.6.",
-      "last_modified": "2026-11-05T19:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117970"
+      "description": "Regexp2 is a feature-rich RegExp engine for Go. Prior to version 2.3.0, when regexp2 compiles and matches a pattern containing a large fixed-count quantifier applied to a zero-width subexpression \u2014 e.g. (?:){50000000} \u2014 the match engine executes the empty loop body m-1 times, pushing two integers onto the backtracking stack on every iteration. Because the parser accepts any repetition count up to math.MaxInt32 and the backtracking stack grows without bound, a pattern of fewer than 20 bytes matched against an empty input can force multi-gigabyte allocation and OOM-kill the process. MatchTimeout does not fully mitigate this because the memory is allocated faster than the 100 ms timeout clock can fire. This issue has been patched in version 2.3.0.",
+      "last_modified": "2026-11-06T01:28:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77299"
     },
     {
-      "cve_id": "CVE-2026-101273",
-      "asset_id": "CVE-2026-101273",
+      "cve_id": "CVE-2026-123151",
+      "asset_id": "CVE-2026-123151",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Some of our API endpoints allowed to create order payments referencing a gift card by using the auto-incremented internal ID. This ID was not checked and allowed creating payments that reference gift cards from different organizers and thereby obtaining their secret. The gift card is not charged in this case, but by then triggering a refund on the payment, one can increase the value of the gift card.",
-      "last_modified": "2026-11-05T19:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101273"
+      "description": "A flaw was found in the GNU debugger (GDB). When GDB connects to a remote debug target, a malicious target can cause GDB to overflow a buffer on the stack while parsing the target's replies. This can crash GDB or potentially allow the target to execute arbitrary code in the GDB client process with the privileges of the user running GDB.",
+      "last_modified": "2026-11-06T01:15:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123151"
     },
     {
-      "cve_id": "CVE-2026-101274",
-      "asset_id": "CVE-2026-101274",
+      "cve_id": "CVE-2026-89329",
+      "asset_id": "CVE-2026-89329",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "When pretix is used as the identity provider in a Single-Sign-On (SSO) setup for customer accounts, the system did not properly validate the `response_type` requested in an authorization request against the configured grant type of the SSO client. This means that if an SSO client was configured to only allow the `code` response type, which requires knowledge of the client secret to use and would wrongfully send a response type like `id_token`, it would receive back a valid token. Exploiting this requires the attacker to run JavaScript on the page specified by `redirect_uri`, which must be from a list specified in the client configuration.",
-      "last_modified": "2026-11-05T19:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101274"
+      "description": "A flaw was found in `multipathd`. A local attacker with access to the `multipathd` UNIX control socket can exploit this vulnerability by sending valid commands and then ceasing to read replies. This action can cause the `multipathd` listener thread to block, leading to a Denial of Service (DoS) where legitimate Inter-Process Communication (IPC) operations may hang or time out. This issue does not result in privilege escalation, arbitrary code execution, or impact data confidentiality or integrity.",
+      "last_modified": "2026-11-06T01:14:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89329"
     }
   ]
 }
