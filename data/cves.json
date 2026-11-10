@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-11-10T07:37:47.730102+00:00",
+  "last_updated": "2026-11-10T19:54:43.258225+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-119273",
-      "asset_id": "CVE-2026-119273",
+      "cve_id": "CVE-2026-115559",
+      "asset_id": "CVE-2026-115559",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The BulletProof Security WordPress plugin through 7.2 does not sufficiently protect its security log files or prevent sensitive authentication material from being written to them, relying on access controls that are not enforced under all common web-server configurations, allowing unauthenticated attackers to read logged request data on affected deployments.",
-      "last_modified": "2026-11-10T06:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119273"
+      "description": "IMAP4.starttls() wraps the socket in TLS but leaves self._readbuf, imaplib's own read-ahead buffer, untouched. Any plaintext bytes that arrived in the same recv() as the tagged OK to STARTTLS are returned by readline() after the handshake, so the client treats them as the first responses on the protected channel. A network attacker who cannot break TLS can append forged lines after the server's OK, let the handshake complete with the real server and a valid certificate, and have the client accept the forged CAPABILITY and the forged tagged completion of the next command. This is the STARTTLS command/response injection class of CVE-2011-0411.",
+      "last_modified": "2026-11-10T18:39:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115559"
     },
     {
-      "cve_id": "CVE-2026-110516",
-      "asset_id": "CVE-2026-110516",
+      "cve_id": "CVE-2026-18448",
+      "asset_id": "CVE-2026-18448",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The All in One Addons For WPBakery Page Builder  (formerly Visual Composer) WordPress plugin through 1.2 does not validate a shortcode attribute before using it to build a file path that is included and executed, which could allow users with the contributor role and above to include and execute arbitrary local PHP files on the server.",
-      "last_modified": "2026-11-10T06:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-110516"
+      "description": "EDK2 contains a vulnerability in BIOS\nwhere a privileged attacker may cause \u201cExposure of Sensitive Information during\nTransient Execution\u201d by local access. Successful exploitation of\nthis vulnerability may result in disclosure of SMRAM contents. It could also impact Confidentiality.",
+      "last_modified": "2026-11-10T18:39:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18448"
     },
     {
-      "cve_id": "CVE-2026-104676",
-      "asset_id": "CVE-2026-104676",
+      "cve_id": "CVE-2026-54437",
+      "asset_id": "CVE-2026-54437",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Zion Builder  WordPress plugin through 3.6.17 does not sanitize uploaded SVG files or validate their contents before storing them in a publicly accessible location and serving them from the site's own origin, allowing authenticated users with the Author role or above to upload a crafted SVG containing JavaScript that executes in the browser of anyone who opens the file.",
-      "last_modified": "2026-11-10T06:00:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104676"
+      "description": "Improper Input Validation in the io-char library's\nDCMD_CHR_TCINJECTC devctl() handler could allow an attacker with local access\nto cause data tampering in the memory input buffer of the Character I/O device\ndriver.",
+      "last_modified": "2026-11-10T18:39:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-54437"
     },
     {
-      "cve_id": "CVE-2026-44768",
-      "asset_id": "CVE-2026-44768",
+      "cve_id": "CVE-2026-125331",
+      "asset_id": "CVE-2026-125331",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP WebClient UI allows an attacker to inject and execute malicious scripts in the context of the application due to the absence of a Content Security Policy (CSP) configuration for certain restrictive directives. This vulnerability has a low impact on the integrity of the application. Confidentiality and availability are not impacted.",
-      "last_modified": "2026-11-10T05:59:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44768"
+      "description": "HarnessRouter is a self-hosted unified API for running agent harnesses with sessions, streaming, files, cancellation, and failure handling. Prior to 0.31.8, a console that is not in self-hosted mode attaches the server's internal key to requests carrying an Authorization header before validating the bearer, while the service-only PUT and GET /v1/orgs/{org}/connections/{name}, PUT /v1/orgs/{org}/policy/{backend}, and /internal/* routes trust that key and take the organization from the URL. In a multi-organization deployment, a remote caller can use a made-up bearer to rewrite another organization's provider connection to an attacker-controlled endpoint, causing later prompts to be disclosed and attacker-controlled responses to influence tasks. This issue is fixed in version 0.31.8.",
+      "last_modified": "2026-11-10T18:38:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125331"
     },
     {
-      "cve_id": "CVE-2026-63287",
-      "asset_id": "CVE-2026-63287",
+      "cve_id": "CVE-2026-112899",
+      "asset_id": "CVE-2026-112899",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "It was possible for an authenticated non-admin user to modify certain data objects without having the appropriate permissions, which could be used to tamper with audit log creation in AXIS Camera Station.",
-      "last_modified": "2026-11-10T05:50:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63287"
+      "description": "Pillow is a Python imaging library. In versions 2.3.0 through 12.3.0, EPS rendering does not validate the scaled image dimensions before invoking Ghostscript. Applications that process untrusted EPS or PostScript files using an application-selected scale greater than one can incur excessive Ghostscript CPU and temporary disk consumption. In versions with decompression-bomb protection, the scaled output is checked only after Ghostscript has completed rendering, allowing resource consumption beyond the configured pixel limit. The amplification depends on the scale selected by the application, not an attacker-controlled scale value. This issue is fixed in version 13.0.0.",
+      "last_modified": "2026-11-10T18:38:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112899"
     },
     {
-      "cve_id": "CVE-2026-13387",
-      "asset_id": "CVE-2026-13387",
+      "cve_id": "CVE-2026-19319",
+      "asset_id": "CVE-2026-19319",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability related to URL redirection handling during the sign-out flow that could allow a user to be redirected to unintended external content under specific conditions.",
-      "last_modified": "2026-11-10T05:48:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13387"
+      "description": "IBM Watson Speech Services Cartridge 4.0.0 through 5.4.0 could allow a remote attacker to obtain sensitive information due to an out-of-bounds read.",
+      "last_modified": "2026-11-10T18:37:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19319"
     },
     {
-      "cve_id": "CVE-2026-13312",
-      "asset_id": "CVE-2026-13312",
+      "cve_id": "CVE-2026-82418",
+      "asset_id": "CVE-2026-82418",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability that could allow an attacker to compromise a system.",
-      "last_modified": "2026-11-10T05:45:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13312"
+      "description": "IBM Watson Speech Services Cartridge 4.0.0 through 5.4.0 could allow a remote attacker to execute arbitrary code due to a use-after-free vulnerability.",
+      "last_modified": "2026-11-10T18:36:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82418"
     },
     {
-      "cve_id": "CVE-2026-12964",
-      "asset_id": "CVE-2026-12964",
+      "cve_id": "CVE-2026-125330",
+      "asset_id": "CVE-2026-125330",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A\u00a0vulnerability allowing for privileged escalation of the viewer account to gain administrator privileges.",
-      "last_modified": "2026-11-10T05:43:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12964"
+      "description": "HarnessRouter is a self-hosted unified API for agent harnesses. From version 0.4.2 until 0.31.7, routes that accept a session ID or response ID validate only the caller's organization and do not enforce the workspace scope of a non-default workspace API key. A key holder who learns a non-guessable identifier from another workspace in the same organization can read sessions, conversation turns, files, traces, and responses, overwrite files, cancel or delete sessions, and publish share links. The issue does not cross organization boundaries, and console users, organization keys, and Default Workspace keys intentionally retain organization-wide access. This issue is fixed in version 0.31.7.",
+      "last_modified": "2026-11-10T18:36:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125330"
     },
     {
-      "cve_id": "CVE-2026-12963",
-      "asset_id": "CVE-2026-12963",
+      "cve_id": "CVE-2026-112902",
+      "asset_id": "CVE-2026-112902",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability that could allow a viewer account to gain unauthorized access to network attached storage devices on the server.",
-      "last_modified": "2026-11-10T05:42:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12963"
+      "description": "Pillow is a Python imaging library. In versions through 12.3.0, the libtiff TIFF encoder can pass arguments to \u00a0TIFFSetField()\u00a0 that do not match libtiff\u2019s definition of the corresponding tag. When an application saves attacker-controlled image metadata through this encoder, crafted tag values can cause invalid memory reads, copying process memory into the encoded output or crashing the process. Applications that return the encoded output to an attacker can disclose that memory. The issue is reachable when re-saving compressed TIFF images and through certain conversions that preserve EXIF metadata into compressed TIFF output. This vulnerability is fixed in version 13.0.0.",
+      "last_modified": "2026-11-10T18:36:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112902"
     },
     {
-      "cve_id": "CVE-2026-12389",
-      "asset_id": "CVE-2026-12389",
+      "cve_id": "CVE-2026-69136",
+      "asset_id": "CVE-2026-69136",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability that could lead to a high privileged authenticated user performing a remote code execution attack.",
-      "last_modified": "2026-11-10T05:40:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12389"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, email template attachment handling passes the remove_attachment POST parameter array through HTML-oriented securexss() processing and directly interpolates its elements into an SQL UPDATE statement. An authenticated attacker can inject SQL to disclose database information or abuse the UPDATE context to soft-delete all records in the notes table in one request. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:34:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69136"
     },
     {
-      "cve_id": "CVE-2026-8372",
-      "asset_id": "CVE-2026-8372",
+      "cve_id": "CVE-2026-69137",
+      "asset_id": "CVE-2026-69137",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability that could allow an attacker to gain unauthorized access.",
-      "last_modified": "2026-11-10T05:36:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8372"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the CalendarAccount testConnection action passes an authenticated caller's server_url directly to curl without host, address, or scheme validation. The affected flow begins at CalendarAccount::action_testConnection and uses server_url, CalDAVProvider::makeCalDAVRequest(), and PROPFIND to carry attacker-controlled data or authorization state into the security-sensitive operation. The server sends a PROPFIND request from its network context and returns non-success response bodies, enabling internal-service access, partial response disclosure, service enumeration, and possible cloud metadata access. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:34:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69137"
     },
     {
-      "cve_id": "CVE-2026-4762",
-      "asset_id": "CVE-2026-4762",
+      "cve_id": "CVE-2026-105437",
+      "asset_id": "CVE-2026-105437",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability to perform a privilege escalation attack on the server as a non-admin user.",
-      "last_modified": "2026-11-10T05:35:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4762"
+      "description": "Affected versions of Git have a heap buffer overflow in the three-way merge\ncode (xdiff), which an attacker can trigger through a repository they\ncontrol.\n\nWhen Git merges a file, it first adds up the size of the merged\noutput, allocates a buffer of that size, and then writes the output into\nit. That total was kept in a 32-bit signed integer. The\nconflict-marker-size attribute, which can be set from a committed\n.gitattributes file, accepts any positive integer, and the markers are\nwritten several times for every conflict. A small file with a huge marker\nsize and many separate conflicts can therefore push the total past 4 GiB,\nso the integer wraps to a small value and Git writes attacker-controlled\nmerge output past the end of a buffer that is too small. At minimum this\ncrashes Git, and because the overflow is large and its contents are largely\nattacker-controlled, worse heap corruption is possible.\n\nAny command that does a textual three-way merge can trigger it, such\nas git-merge(1), git-rebase(1), git-cherry-pick(1), and\ngit-merge-tree(1). The latter is most likely a target for Git forges,\nwhich might use git-merge-tree(1) on the server-side to check\nmergeability. When the server reads attributes from trees in the\nrepository (for example through attr.tree or --attr-source), any\nuser who can push branches and request that they be merged (for\nexample by opening a pull or merge request) can trigger the overflow\nwithout anyone else doing anything, and the data they push is small\nbecause the oversized output only appears during the merge.\n\nThe problem has been patched by computing the size as size_t and\nchecking every addition for overflow, so Git stops with an error\ninstead of overflowing.\n\nServers that cannot upgrade right away can add\n\n* conflict-marker-size=7\n\nto each repository's info/attributes as a workaround, which overrides\nany in-tree .gitattributes, or turn off server-side mergeability checks for\nuntrusted repositories.",
+      "last_modified": "2026-11-10T18:34:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105437"
     },
     {
-      "cve_id": "CVE-2026-63288",
-      "asset_id": "CVE-2026-63288",
+      "cve_id": "CVE-2026-69140",
+      "asset_id": "CVE-2026-69140",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A WebSocket request sent to a specific API endpoint allows unauthorized access to a separate API endpoint. This bypasses the intended authentication layer.",
-      "last_modified": "2026-11-10T05:32:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63288"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, GetLatestRevision.php interpolates get_latest_for_id directly into an SQL UPDATE statement. Although securexss() normally entity-encodes quotes, an input prefixed with an XSS payload makes AntiXSS select a processed string instead of the encoded backup, allowing a literal quote to reach the query. A low-privileged user with Documents module access can disclose database data and mass-update linked_documents records, while stacked statements and arbitrary DROP or INSERT operations are not supported by this vector. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:34:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69140"
     },
     {
-      "cve_id": "CVE-2026-14918",
-      "asset_id": "CVE-2026-14918",
+      "cve_id": "CVE-2026-69141",
+      "asset_id": "CVE-2026-69141",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Signed Video Framework contained a out-of-bounds read issue in the Signed Video Framework which could lead the application using this framework to crash. The issue exclusively affects the tools used for the validation of signed content. The AXIS OS device's signed video functionality remains unaffected.",
-      "last_modified": "2026-11-10T05:26:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14918"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the CasesController action_get_kb_articles action interpolates $_POST['search'] into a CASE WHEN ... LIKE expression and the SQL WHERE clause. Although securexss() normally entity-encodes quotes, an input prefixed with an XSS payload makes AntiXSS select a processed string instead of the encoded backup, allowing a literal quote to reach the query. A low-privileged user with Cases module access can perform blind SQL injection and extract sensitive database information. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:33:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69141"
     },
     {
-      "cve_id": "CVE-2026-63282",
-      "asset_id": "CVE-2026-63282",
+      "cve_id": "CVE-2026-69142",
+      "asset_id": "CVE-2026-69142",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper shell quote escaping when processing user-controlled input, potentially allowing command injection, which could lead to privilege escalation.",
-      "last_modified": "2026-11-10T05:23:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63282"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the jjwg_Maps map marker endpoint uses the authenticated caller's distance value in the map_markers action without strict numeric validation or parameterization. An authenticated attacker can alter the SQL query, extract database data, modify query results, and consume resources. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:33:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69142"
     },
     {
-      "cve_id": "CVE-2026-14543",
-      "asset_id": "CVE-2026-14543",
+      "cve_id": "CVE-2026-69144",
+      "asset_id": "CVE-2026-69144",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The VAPIX Edge storage API, enabling the escalation of user privileges by circumventing filesystem isolation, granting unauthorized access to protected system resources. This flaw can only be exploited after authenticating with an admin-privileged service account.",
-      "last_modified": "2026-11-10T05:20:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14543"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, download.php checks authorization against a Documents bean before resolving whether the supplied identifier is a document_revisions.id. When a revision UUID is submitted with type=Documents, the check targets an empty Documents bean; the revision is then resolved and served without checking its parent document. A low-privileged authenticated user can use this identifier confusion to download administrator-owned or otherwise protected documents. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:32:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69144"
     },
     {
-      "cve_id": "CVE-2026-72868",
-      "asset_id": "CVE-2026-72868",
+      "cve_id": "CVE-2026-69145",
+      "asset_id": "CVE-2026-69145",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Dokploy is a free, self-hostable Platform as a Service (PaaS). Prior to 0.29.13, apps/dokploy/server/api/routers/destination.ts interpolates the accessKey, secretAccessKey, region, endpoint, provider, and bucket fields from destination.testConnection into an rclone ls command executed through child_process.exec. The `withPermission(\"destination\", \"create\")` path permits a low-privileged organization member to reach the mutation, close a quoted argument with a crafted field, and execute arbitrary commands in the root Dokploy container, which has access to the host Docker socket. This issue is fixed in version 0.29.13.",
-      "last_modified": "2026-11-10T05:18:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72868"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, AOR report generation reloads the value stored in aor_fields.field and concatenates it into report SQL without strict field validation. An authenticated user able to configure reports can inject SQL through that stored field value and disclose database contents. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:32:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69145"
     },
     {
-      "cve_id": "CVE-2026-14542",
-      "asset_id": "CVE-2026-14542",
+      "cve_id": "CVE-2026-71548",
+      "asset_id": "CVE-2026-71548",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The VAPIX SIP configuration API lacked sufficient input validation, which could potentially lead to privilege\nescalation. This flaw can only be exploited after authenticating with an admin-privileged service\naccount.",
-      "last_modified": "2026-11-10T05:17:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14542"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, AOR_Report::build_report_query_where incorporates a report editor's parameter_value when value_type=Field without sufficient validation. An authenticated user who can save a report can use SQL injection to read the entire SuiteCRM database. Disclosed data can include users.user_hash, OAuth2 tokens, CRM records, report definitions, and configuration data; the connector does not permit stacked queries, so direct write-through-injection is not supported. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:32:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71548"
     },
     {
-      "cve_id": "CVE-2026-13409",
-      "asset_id": "CVE-2026-13409",
+      "cve_id": "CVE-2026-71550",
+      "asset_id": "CVE-2026-71550",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The VAPIX API dynamicoverlay.cgi which results in a Denial-of-Service of the overlay functionality. This flaw can only be exploited after authenticating with an operator or admin-privileged service account.",
-      "last_modified": "2026-11-10T05:15:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13409"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the workflow controller uses a path-traversal-capable aow_action value in require_once() without constraining the resolved file. The affected flow begins at modules/AOW_WorkFlow/controller.php and uses aow_action, and require_once() to carry attacker-controlled data or authorization state into the security-sensitive operation. An authenticated user with the WorkFlow role can include executable PHP, obtain server-side code execution, access CRM data and configuration secrets, and establish persistent access. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:32:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71550"
     },
     {
-      "cve_id": "CVE-2026-9063",
-      "asset_id": "CVE-2026-9063",
+      "cve_id": "CVE-2026-97377",
+      "asset_id": "CVE-2026-97377",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A locally authenticated user can achieve privilege escalation via an insecure configuration that leads to unauthorized code execution. This flaw can only be exploited after authenticating with an admin-privileged service account.",
-      "last_modified": "2026-11-10T05:12:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9063"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the legacy SOAP portal method portal_get_entry_list propagates caller-controlled where and order_by values into SQL query construction without sufficient neutralization. A low-privileged portal API user can perform blind SQL injection to disclose database metadata and sensitive records, affect query behavior, and consume resources. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:32:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97377"
     },
     {
-      "cve_id": "CVE-2026-91758",
-      "asset_id": "CVE-2026-91758",
+      "cve_id": "CVE-2026-61651",
+      "asset_id": "CVE-2026-61651",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-bounds Read and Write Vulnerability in Hitachi Dynamic Link Manager for Linux.\n\nThis issue affects Hitachi Dynamic Link Manager for Linux: from 7.5.0-00 before 9.0.5-00.",
-      "last_modified": "2026-11-10T04:44:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91758"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the get_end_date action in Projects Controller concatenates an authenticated caller's task_id value into a SQL query without parameterization. A low-privileged user can use blind SQL injection to enumerate the database schema and extract credentials, customer records, and other database contents. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:30:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61651"
     },
     {
-      "cve_id": "CVE-2026-91759",
-      "asset_id": "CVE-2026-91759",
+      "cve_id": "CVE-2026-61653",
+      "asset_id": "CVE-2026-61653",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Out-of-Bounds Write Vulnerability in Hitachi Dynamic Link Manager for Linux.\n\n\nThis issue affects Hitachi Dynamic Link Manager for Linux: from 7.5.0-00 before 9.0.5-00.",
-      "last_modified": "2026-11-10T04:44:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91759"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, modules/Campaigns/PopupCampaignRoi.php interpolates $_REQUEST['id'] into SQL. Although securexss() normally entity-encodes quotes, an input prefixed with an XSS payload makes AntiXSS select a processed string instead of the entity-encoded backup, allowing a literal quote to reach the query. An authenticated user with Campaigns access can perform time-based blind SQL injection against arbitrary database tables. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:30:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61653"
     },
     {
-      "cve_id": "CVE-2026-91760",
-      "asset_id": "CVE-2026-91760",
+      "cve_id": "CVE-2026-63111",
+      "asset_id": "CVE-2026-63111",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Heap-based Buffer Overflow Vulnerability in Hitachi Dynamic Link Manager for Linux.\n\n\nThis issue affects Hitachi Dynamic Link Manager for Linux: from 7.5.0-00 before 9.0.5-00.",
-      "last_modified": "2026-11-10T04:44:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91760"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the V8 module API lacks module-level authorization and permits a low-privileged user to create SchedulersJobs records with attacker-controlled target values. The affected flow begins at /Api/V8/module and uses SchedulersJobs, target, cron.php, and url:: to carry attacker-controlled data or authorization state into the security-sensitive operation. Cron.php later executes the queued job with system privileges, and the url:: target makes server-side requests to internal or external hosts, can follow redirects, can persist as a recurring job, and may expose internal services. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:30:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63111"
     },
     {
-      "cve_id": "CVE-2026-91764",
-      "asset_id": "CVE-2026-91764",
+      "cve_id": "CVE-2026-63213",
+      "asset_id": "CVE-2026-63213",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper Link Resolution Before File Access Vulnerability in Hitachi Dynamic Link Manager for Linux.\n\n\nThis issue affects Hitachi Dynamic Link Manager for Linux: from 6.1.1.-00 before 9.0.5-00.",
-      "last_modified": "2026-11-10T04:44:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91764"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the Upgrade Wizard commit flow trusts the hidden zip_to_dir parameter, while clean_path() does not reject traversal sequences. An authenticated administrator can copy extracted package files outside the intended destination, overwrite application or configuration files, place executable PHP under the web root, or cause denial of service. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:29:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63213"
     },
     {
-      "cve_id": "CVE-2026-115646",
-      "asset_id": "CVE-2026-115646",
+      "cve_id": "CVE-2026-63214",
+      "asset_id": "CVE-2026-63214",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Partial String Comparison Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-50-06 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-50-/F through 09-66/V; HiRDB Server Version 9(32): from 09-50-06 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-50-/F through 09-66-/V.",
-      "last_modified": "2026-11-10T04:44:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115646"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, legacy REST methods append an authenticated caller's query parameter as a SQL WHERE clause after insufficient structural validation. The affected flow begins at /service/v4_1/rest.php and uses get_entry_list, get_entries_count, and query to carry attacker-controlled data or authorization state into the security-sensitive operation. An account with list permission on a module can bypass the user_hash filter, retrieve password hashes and other database data, and use recovered administrative credentials to compromise the application. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:29:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63214"
     },
     {
-      "cve_id": "CVE-2026-91761",
-      "asset_id": "CVE-2026-91761",
+      "cve_id": "CVE-2026-63215",
+      "asset_id": "CVE-2026-63215",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "UNIX Symbolic Link (Symlink) Following Vulnerability in Hitachi Dynamic Link Manager for Linux.\n\nThis issue affects Hitachi Dynamic Link Manager for Linux: from 8.6.2.-00 before 9.0.5-00.",
-      "last_modified": "2026-11-10T04:44:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91761"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the REST API v4.1 get_entry_list method is vulnerable to time-based blind SQL injection when an authenticated caller simultaneously bypasses two independent security mechanisms. The advisory does not identify those controls more precisely, so their identities remain unspecified. Successful exploitation can extract sensitive database information. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:29:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63215"
     },
     {
-      "cve_id": "CVE-2026-91762",
-      "asset_id": "CVE-2026-91762",
+      "cve_id": "CVE-2026-63217",
+      "asset_id": "CVE-2026-63217",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "UNIX Symbolic Link (Symlink) Following Vulnerability in Hitachi Dynamic Link Manager for Linux.\n\n\nThis issue affects Hitachi Dynamic Link Manager for Linux: from 8.5.3.-00 before 9.0.5-00.",
-      "last_modified": "2026-11-10T04:44:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91762"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the generatePdf entry point loads an arbitrary record through BeanFactory::getBean() without checking the requesting user's record access. The affected flow begins at modules/AOS_PDF_Templates/generatePdf.php and uses generatePdf, and BeanFactory::getBean() to carry attacker-controlled data or authorization state into the security-sensitive operation. Any authenticated user can read fields from records denied by configured ACL roles, including contact, financial, deal, and custom-field data. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:29:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63217"
     },
     {
-      "cve_id": "CVE-2026-91763",
-      "asset_id": "CVE-2026-91763",
+      "cve_id": "CVE-2026-63218",
+      "asset_id": "CVE-2026-63218",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "UNIX Symbolic Link (Symlink) Following Vulnerability in Hitachi Dynamic Link Manager for Linux.\nThis issue affects Hitachi Dynamic Link Manager for Linux: from 8.6.2.-00 before 9.0.5-00.",
-      "last_modified": "2026-11-10T04:44:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91763"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the changeReportPage controller action renders a protected report without repeating the record-level access check enforced by DetailView. The affected flow begins at AOR_Reports and uses changeReportPage, and DetailView to carry attacker-controlled data or authorization state into the security-sensitive operation. An authenticated user can directly invoke the action and read report rows and restricted-module data despite owner-only or role-based report visibility. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:29:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63218"
     },
     {
-      "cve_id": "CVE-2026-92864",
-      "asset_id": "CVE-2026-92864",
+      "cve_id": "CVE-2026-69135",
+      "asset_id": "CVE-2026-69135",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insecure Temporary File Vulnerability in Hitachi Dynamic Link Manager for AIX (for markets outside Japan) and Hitachi Dynamic Link Manager EX for AIX (for the Japanese market).\n\nThis issue affects Hitachi Dynamic Link Manager for AIX: from 7.4.1-00 before 9.0.4-01; Hitachi Dynamic Link Manager EX for AIX: from 7.4.1-00 before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92864"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the Project module interpolates the authenticated caller's duplicateId POST parameter directly into a SQL query without sanitization, quoting, or parameterization. An authenticated attacker can alter query structure and disclose sensitive database information. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:29:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69135"
     },
     {
-      "cve_id": "CVE-2026-112125",
-      "asset_id": "CVE-2026-112125",
+      "cve_id": "CVE-2026-125329",
+      "asset_id": "CVE-2026-125329",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Incorrect Permission Assignment for Critical Resource Vulnerability in HA Monitor.\n\nThis issue affects HA Monitor: from 01-00 before 01-83-01.",
-      "last_modified": "2026-11-10T04:44:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112125"
+      "description": "Kaneo is a project management application with boards, Gantt charts, and GitHub integration that can be self-hosted or used as a cloud service. Prior to 2.13.0, GET /api/external-link/task/:taskId returns integration.config to any workspace member, including the viewer role, when a task has a linked Gitea issue or pull request. The plaintext integration.config contains the Gitea accessToken and webhookSecret, allowing the token's granted Gitea actions and forged webhook deliveries that pass HMAC verification. GitHub integrations and installations without a configured Gitea integration are not affected. This issue is fixed in version 2.13.0.",
+      "last_modified": "2026-11-10T18:28:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125329"
     },
     {
-      "cve_id": "CVE-2026-92863",
-      "asset_id": "CVE-2026-92863",
+      "cve_id": "CVE-2026-69134",
+      "asset_id": "CVE-2026-69134",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Integer Overflow Vulnerability in Hitachi Dynamic Link Manager for AIX (for the Japanese market).\n\nThis issue affects Hitachi Dynamic Link Manager for AIX: before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-92863"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the REST v4 JSON handler reads the pre-filter RAW_REQUEST value and relationship write helpers interpolate supplied field values into INSERT and UPDATE statements. The affected flow begins at $GLOBALS['RAW_REQUEST'] and uses set_relationship, SugarRelationship::addRow(), SugarRelationship::updateRow(), and contact_role to carry attacker-controlled data or authorization state into the security-sensitive operation. An authenticated user can inject SQL through relationship fields to read or alter database data and may reach file-write consequences when the database account has elevated privileges. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:28:28Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-69134"
     },
     {
-      "cve_id": "CVE-2026-91754",
-      "asset_id": "CVE-2026-91754",
+      "cve_id": "CVE-2026-100358",
+      "asset_id": "CVE-2026-100358",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Stack-based Buffer Overflow Vulnerability in Hitachi Dynamic Link Manager for VMware.\n\nThis issue affects Hitachi Dynamic Link Manager for VMware: from 8.7.3-00 before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91754"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the Studio Dropdown Editor passes $dropdown_name through html_entity_decode() and writes the result verbatim into a PHP language file under custom/ that is included on later page loads. An administrator can inject persistent PHP that executes as the web-server account, survives cache clears, and compromises application and host confidentiality, integrity, and availability. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:27:25Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100358"
     },
     {
-      "cve_id": "CVE-2026-91755",
-      "asset_id": "CVE-2026-91755",
+      "cve_id": "CVE-2026-100359",
+      "asset_id": "CVE-2026-100359",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Integer Overflow Vulnerability in Hitachi Dynamic Link Manager for VMware.\n\nThis issue affects Hitachi Dynamic Link Manager for VMware: from 8.7.3-00 before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91755"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the Project Template module's action_get_end_date function interpolates authenticated caller-controlled task_id and lag POST parameters directly into SQL without sanitization, parameterization, or escaping. Any authenticated user can perform blind SQL injection to read customer data, internal communications, credentials, and other database contents. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:26:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100359"
     },
     {
-      "cve_id": "CVE-2026-91756",
-      "asset_id": "CVE-2026-91756",
+      "cve_id": "CVE-2026-100360",
+      "asset_id": "CVE-2026-100360",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OS Command Injection Vulnerability in Hitachi Dynamic Link Manager for VMware.\n\nThis issue affects Hitachi Dynamic Link Manager for VMware: from 8.7.3-00 before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91756"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, V8 API relationship write paths do not consistently enforce object-level edit and view authorization on both related records. In the verified Account-to-Contact case, an authenticated user can create a relationship while unable to edit the Account and can delete relationship links to a hidden Contact that cannot be viewed directly. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:26:32Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100360"
     },
     {
-      "cve_id": "CVE-2026-91757",
-      "asset_id": "CVE-2026-91757",
+      "cve_id": "CVE-2026-120003",
+      "asset_id": "CVE-2026-120003",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OS Command Injection Vulnerability in Hitachi Dynamic Link Manager for VMware.\n\nThis issue affects Hitachi Dynamic Link Manager for VMware: from 7.3.0-00 before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91757"
+      "description": "Heap-based buffer overflow in Microsoft Office allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120003"
     },
     {
-      "cve_id": "CVE-2026-86578",
-      "asset_id": "CVE-2026-86578",
+      "cve_id": "CVE-2026-120002",
+      "asset_id": "CVE-2026-120002",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Link Following Vulnerability in Hitachi Dynamic Link Manager for Windows.\n\nThis issue affects Hitachi Dynamic Link Manager for Windows: from 5.0.0-03 before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86578"
+      "description": "Incorrect authorization in Microsoft Office SharePoint allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:25:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120002"
     },
     {
-      "cve_id": "CVE-2026-86579",
-      "asset_id": "CVE-2026-86579",
+      "cve_id": "CVE-2026-120001",
+      "asset_id": "CVE-2026-120001",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Binary Planting Vulnerability in Hitachi Dynamic Link Manager for Windows.\n\nThis issue affects Hitachi Dynamic Link Manager for Windows: from 5.9.5-00 before 9.0.4-01.",
-      "last_modified": "2026-11-10T04:44:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86579"
+      "description": "Heap-based buffer overflow in Microsoft Office PowerPoint allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120001"
     },
     {
-      "cve_id": "CVE-2026-96769",
-      "asset_id": "CVE-2026-96769",
+      "cve_id": "CVE-2026-120000",
+      "asset_id": "CVE-2026-120000",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Extend B2B - Companies and Users Management for WooCommerce plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 2.1.4 via the register_company_api. This makes it possible for unauthenticated attackers to extract sensitive company data including owner and member WordPress user IDs, company billing email addresses, credit balances and full credit histories with admin user IDs, per-member purchase limits and spend totals, and shared-cart records containing purchase-order numbers.",
-      "last_modified": "2026-11-10T04:43:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96769"
+      "description": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120000"
     },
     {
-      "cve_id": "CVE-2026-115640",
-      "asset_id": "CVE-2026-115640",
+      "cve_id": "CVE-2026-119999",
+      "asset_id": "CVE-2026-119999",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "LimeSurvey Community Edition 7.7.0 contains a stored cross-site scripting vulnerability in the Central Participants Database blocklist control. An authenticated user with only global participantpanel:import permission can import a CSV participant_id containing HTML. The import flow persists that value without model validation. When a CPDB editor opens the participant list, LimeSurvey derives ButtonGroupWidget id and name attributes from participant_id and inserts them without HTML encoding, causing attacker-controlled markup to execute in the victim's authenticated LimeSurvey origin. Exploitation can access session-exposed data and issue same-origin requests with the victim's effective permissions.",
-      "last_modified": "2026-11-10T04:12:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115640"
+      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-11-10T18:25:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119999"
     },
     {
-      "cve_id": "CVE-2026-125612",
-      "asset_id": "CVE-2026-125612",
+      "cve_id": "CVE-2026-119998",
+      "asset_id": "CVE-2026-119998",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Deltaww DIAEnergie allows SQL Injection.\n\nThis issue affects DIAEnergie: before 1.11.01.032.",
-      "last_modified": "2026-11-10T03:02:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125612"
+      "description": "Product ui does not warn user of unsafe actions in Microsoft Office allows an unauthorized attacker to bypass a security feature over a network.",
+      "last_modified": "2026-11-10T18:25:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119998"
     },
     {
-      "cve_id": "CVE-2026-4967",
-      "asset_id": "CVE-2026-4967",
+      "cve_id": "CVE-2026-119997",
+      "asset_id": "CVE-2026-119997",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In IMS, there is a possible out of bounds read due to a missing bounds check. This could lead to remote denial of service with no additional execution privileges needed.",
-      "last_modified": "2026-11-10T02:56:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4967"
+      "description": "Heap-based buffer overflow in Microsoft Office Outlook allows an unauthorized attacker to execute code locally.",
+      "last_modified": "2026-11-10T18:25:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119997"
     },
     {
-      "cve_id": "CVE-2026-120749",
-      "asset_id": "CVE-2026-120749",
+      "cve_id": "CVE-2026-119996",
+      "asset_id": "CVE-2026-119996",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in D-Bus. With a privileged Monitoring client attached (for example dbus-monitor or busctl monitor), an unprivileged local user can cause dbus-daemon to abort if a driver-originated broadcast such as NameOwnerChanged or ActivatableServicesChanged cannot be delivered to a recipient (for example due to a deny rule or an exceeded outgoing message queue). Driver broadcasts still use serial 0; when delivery fails, composing the monitor error reply asserts reply_serial != 0 and aborts the daemon.",
-      "last_modified": "2026-11-10T02:32:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120749"
+      "description": "Heap-based buffer overflow in Microsoft Office Outlook allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119996"
     },
     {
-      "cve_id": "CVE-2026-88708",
-      "asset_id": "CVE-2026-88708",
+      "cve_id": "CVE-2026-119995",
+      "asset_id": "CVE-2026-119995",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An\noff-by-one error in certain ASUS Router firmware\nallows\nan unauthenticated nearby user to send a packet with a specific header\nlength, potentially overwriting memory and causing the\naffected service to crash.\nRefer to the ' Security Update for ASUS Router Firmware\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-11-10T02:00:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88708"
+      "description": "Heap-based buffer overflow in Microsoft Office Outlook allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119995"
     },
     {
-      "cve_id": "CVE-2026-88707",
-      "asset_id": "CVE-2026-88707",
+      "cve_id": "CVE-2026-119993",
+      "asset_id": "CVE-2026-119993",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An\nout-of-bounds write in certain ASUS Router firmware\nallows an unauthenticated nearby user to send an HTTP request containing\nparameters that exceed the buffer length, potentially overwriting other memory\nregions or causing the system to crash.\nRefer to the ' Security Update for ASUS Router Firmware\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-11-10T02:00:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88707"
+      "description": "Access of resource using incompatible type ('type confusion') in Microsoft Office Outlook allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-11-10T18:25:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119993"
     },
     {
-      "cve_id": "CVE-2026-88710",
-      "asset_id": "CVE-2026-88710",
+      "cve_id": "CVE-2026-118732",
+      "asset_id": "CVE-2026-118732",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper\nneutralization of special elements used in an OS command in certain\nASUS Router firmware\nallows an unauthenticated nearby user to trigger a chain of\nactions\u2014unauthenticated queries, identifier guessing, credential overwriting,\nand command injection\u2014resulting in the execution of arbitrary commands with\nroot privileges.\nRefer to the ' Security Update for ASUS Router Firmware\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-11-10T02:00:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88710"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118732"
     },
     {
-      "cve_id": "CVE-2026-88709",
-      "asset_id": "CVE-2026-88709",
+      "cve_id": "CVE-2026-118731",
+      "asset_id": "CVE-2026-118731",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Improper\nneutralization of special elements used in an OS command in certain\nASUS Router firmware allows an user with physical access\nto\ninsert a USB device containing a specially crafted directory name, potentially\nexecuting arbitrary commands with root privileges.\nRefer to the ' Security Update for ASUS Router Firmware\u00a0' section on the ASUS Security Advisory for more information.",
-      "last_modified": "2026-11-10T02:00:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88709"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118731"
     },
     {
-      "cve_id": "CVE-2026-125377",
-      "asset_id": "CVE-2026-125377",
+      "cve_id": "CVE-2026-118730",
+      "asset_id": "CVE-2026-118730",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Pig before 4.1.2 contains a missing authorization vulnerability in SysClientController that allows authenticated users without client-management permission to retrieve OAuth2 client secrets via GET /client/{clientId} and GET /client/export. Attackers can fetch clientSecret values for seed clients like pig, app, and daemon or export the client table, then obtain tokens using those clients' configured grant types.",
-      "last_modified": "2026-11-10T01:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125377"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118730"
     },
     {
-      "cve_id": "CVE-2026-125398",
-      "asset_id": "CVE-2026-125398",
+      "cve_id": "CVE-2026-100361",
+      "asset_id": "CVE-2026-100361",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Instatic before 0.0.21 contains an authorization bypass vulnerability in handleRowAuthor that allows authenticated users to skip table-level access checks by loading rows with getDataRow() instead of loadRowForAccess(). Attackers holding content.edit.any but lacking data.system.tables.read can send PATCH requests to /admin/api/cms/data/rows/:id/author to read system-table rows and reassign their authors.",
-      "last_modified": "2026-11-10T01:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125398"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the V8 write path checks that a field exists but does not enforce api-visible or sensitive metadata that hides the same field on reads. The affected flow begins at PATCH /Api/V8/module and uses user_hash, external_auth_only, api-visible: false, and sensitive: true to carry attacker-controlled data or authorization state into the security-sensitive operation. An authenticated user can mass-assign internal authentication fields, modify password hashes or external-authentication flags, and persist unauthorized account access. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:25:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100361"
     },
     {
-      "cve_id": "CVE-2026-125400",
-      "asset_id": "CVE-2026-125400",
+      "cve_id": "CVE-2026-118729",
+      "asset_id": "CVE-2026-118729",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ettercap through 0.8.4.1 contains a use-after-free vulnerability in func_pcre() in src/ec_filter.c that reads the PCRE2 ovector after freeing match data. Network-adjacent attackers can send packets matching a loaded pcre_regex() substitution filter to corrupt memory and potentially execute code as root.",
-      "last_modified": "2026-11-10T01:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125400"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118729"
     },
     {
-      "cve_id": "CVE-2026-125406",
-      "asset_id": "CVE-2026-125406",
+      "cve_id": "CVE-2026-118728",
+      "asset_id": "CVE-2026-118728",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ettercap through 0.8.4.1 contains a stack buffer underwrite vulnerability in the telnet dissector in src/dissectors/ec_telnet.c that decrements the output pointer on backspace without a lower bound check. Attackers can send a telnet stream with more backspaces than preceding characters to write below the stack buffer, corrupting the stack of the Ettercap process that normally runs as root.",
-      "last_modified": "2026-11-10T01:30:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125406"
+      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-11-10T18:25:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118728"
     },
     {
-      "cve_id": "CVE-2026-124077",
-      "asset_id": "CVE-2026-124077",
+      "cve_id": "CVE-2026-118727",
+      "asset_id": "CVE-2026-118727",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The GitIdentifiers class in Apache Commons Codec did not reject NUL bytes in tree entry names. Because Git uses a NUL byte to mark the end of each entry name in a tree object, a crafted name could make one tree serialize to the same bytes as a different tree. Two different directory trees could then receive the same Git tree identifier or SWHID.\n\n\n\nThe impact is limited: common file systems do not allow NUL bytes in file names, so trees built by walking a file system are not affected. Only applications that build trees from names supplied by other sources, such as entries of archive formats that permit NUL bytes in names (e.g. ZIP) or names passed directly to the API, are exposed.\n\n\n\nThis issue affects Apache Commons Codec: from 1.22.0 before 1.23.0.\n\n\n\nUsers are recommended to upgrade to version 1.23.0, which fixes the issue.",
-      "last_modified": "2026-11-10T01:17:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-124077"
+      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-11-10T18:25:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118727"
     },
     {
-      "cve_id": "CVE-2026-123158",
-      "asset_id": "CVE-2026-123158",
+      "cve_id": "CVE-2026-118726",
+      "asset_id": "CVE-2026-118726",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "sshd in OpenSSH before 10.6p2 on Linux, when musl libc is used without PAM, lacks a workaround for a password authentication bypass (related to misinterpretation of whether a string is intended to be a password hash). For some configurations of accounts, any password between 256 and 1024 characters succeeds. An example of a platform using musl libc without PAM is Alpine Linux.",
-      "last_modified": "2026-11-10T01:17:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123158"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118726"
     },
     {
-      "cve_id": "CVE-2026-119078",
-      "asset_id": "CVE-2026-119078",
+      "cve_id": "CVE-2026-118725",
+      "asset_id": "CVE-2026-118725",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Apache Commons Codec's Blake3 class documented the output of its doFinalize methods as depending on any previously finalized bytes, so that consecutive calls would return different output. In fact, doFinalize does not change the hash state: calling it again without supplying more input returns the same bytes. The key-derivation example in the class Javadoc, shipped since 1.16.0, derives two keys with two consecutive doFinalize calls. Code that follows it gets identical keys, so the separation between the derived keys is lost. The same applies to any application that calls doFinalize more than once on one instance and expects new output each time.\n\n\n\nThis issue affects Apache Commons Codec from 1.16.0 before 1.23.0.\n\n\n\nVersion 1.23.0 corrects the documentation, but the behavior of doFinalize is unchanged. Upgrading alone does not fix affected code. Users should check their applications for repeated doFinalize calls on the same Blake3 instance and derive multiple keys by requesting the combined length in one call and splitting the output, as the updated Javadoc shows.",
-      "last_modified": "2026-11-10T01:17:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119078"
+      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:25:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118725"
     },
     {
-      "cve_id": "CVE-2026-115864",
-      "asset_id": "CVE-2026-115864",
+      "cve_id": "CVE-2026-118724",
+      "asset_id": "CVE-2026-118724",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Monoceros versions before 0.30 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory.\n\nThe request body is read in a loop that asks sysread for all of the remaining declared length at once. Perl grows the read buffer to that size before any data arrives, so a length larger than available memory makes the worker exit with an uncatchable out of memory error before the application is called.\n\nA remote attacker can force a worker restart with each request of a few bytes.",
-      "last_modified": "2026-11-10T01:17:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115864"
+      "description": "Untrusted pointer dereference in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118724"
     },
     {
-      "cve_id": "CVE-2026-125383",
-      "asset_id": "CVE-2026-125383",
+      "cve_id": "CVE-2026-118723",
+      "asset_id": "CVE-2026-118723",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "INDOTALENT WHMS (Asp.Net-Core-Inventory-Order-Management-System) before 10.20261109 contains an authentication bypass vulnerability caused by a hard-coded JWT signing key, issuer and audience in appsettings.json. Unauthenticated remote attackers can forge tokens for any user ID and role that the Tokens/DI.cs validator trusts, gaining administrator access to the entire API.",
-      "last_modified": "2026-11-10T01:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125383"
+      "description": "Untrusted pointer dereference in Microsoft Office Excel allows an unauthorized attacker to execute code locally.",
+      "last_modified": "2026-11-10T18:25:01Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118723"
     },
     {
-      "cve_id": "CVE-2026-125384",
-      "asset_id": "CVE-2026-125384",
+      "cve_id": "CVE-2026-118722",
+      "asset_id": "CVE-2026-118722",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "INDOTALENT WHMS before 10.20261109 contains a default credentials vulnerability that allows unauthenticated attackers to gain administrator access because UserAdminSeeder creates admin@root.com with password 123456. Attackers can log in with these credentials, which carry every admin role and no forced password change, to fully control deployments that kept them.",
-      "last_modified": "2026-11-10T01:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125384"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:25:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118722"
     },
     {
-      "cve_id": "CVE-2026-125385",
-      "asset_id": "CVE-2026-125385",
+      "cve_id": "CVE-2026-118721",
+      "asset_id": "CVE-2026-118721",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "INDOTALENT WHMS before 10.20261109 contains a path traversal vulnerability that allows authenticated users to read arbitrary files via the documentName and imageName parameters. Attackers can self-register and supply traversal sequences to GetDocument or GetImage, which use Path.Combine without containment checks, to read files like appsettings.json.",
-      "last_modified": "2026-11-10T01:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125385"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118721"
     },
     {
-      "cve_id": "CVE-2026-125387",
-      "asset_id": "CVE-2026-125387",
+      "cve_id": "CVE-2026-118720",
+      "asset_id": "CVE-2026-118720",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Faveo Helpdesk through 2.0.3 contains an authorization bypass vulnerability in TicketController that allows authenticated agents to modify tickets outside their department by referencing raw ticket IDs. Attackers can call merge-tickets, change-owner, ticket/assign and ticket/surrender endpoints to close, merge or reassign other departments' tickets and enumerate customers' ticket subjects.",
-      "last_modified": "2026-11-10T01:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125387"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118720"
     },
     {
-      "cve_id": "CVE-2026-125397",
-      "asset_id": "CVE-2026-125397",
+      "cve_id": "CVE-2026-118719",
+      "asset_id": "CVE-2026-118719",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "NocoBase plugin-ai 2.1.0 through 2.2.41 contains an authorization bypass vulnerability in getAccessibleAIEmployee() that lets authenticated users access unassigned AI employees by overriding the role-derived filter with a supplied username. Attackers can use the dispatch-sub-agent-task tool to run ungranted AI employees with their tools and permissions, and get-ai-employee to read their prompts and tool configuration.",
-      "last_modified": "2026-11-10T01:15:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125397"
+      "description": "Double free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:59Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118719"
     },
     {
-      "cve_id": "CVE-2026-109799",
-      "asset_id": "CVE-2026-109799",
+      "cve_id": "CVE-2026-118718",
+      "asset_id": "CVE-2026-118718",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The SAP Cloud SDK for Python contains an improper cryptographic signature verification vulnerability (CWE-347) in IASContextProvider, the runtime-context provider registered by default via bootstrap(app).IASContextProvider extracted the app_tid, sap_gtid and user_uuid claims from the IAS JWT in the Authorization header using an unverified decoder and wrote them into the request-scoped RuntimeContext without validating the token signature. A remote caller could submit a self-signed JWT naming a victim tenant/user; the forged identity then propagated to every consumer of the runtime context:OTel span attributes (sap.tenancy.tenant_id, user.id) via RuntimeContextSpanProcessorlog records via IdentityLogFilteraudit events (tenant_id, user_initiator_id) via AuditClienttenant routing via CBCClientThis completes an earlier remediation that fixed the same unverified pattern in StarletteIASTelemetryMiddleware but did not cover IASContextProvider.",
-      "last_modified": "2026-11-10T01:04:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109799"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118718"
     },
     {
-      "cve_id": "CVE-2026-109797",
-      "asset_id": "CVE-2026-109797",
+      "cve_id": "CVE-2026-118717",
+      "asset_id": "CVE-2026-118717",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "In SAP/astonish, an authenticated user could potentially identify and operate on another team\ufffds sandbox containers because of improper tenant isolation in the legacy Incus sandbox-management API handlers. The affected handlers did not use the tenant-aware session lookup path, allowing cross-tenant container operations such as listing, exposing or proxying, and deleting containers.The issue affects only the legacy Incus backend. Kubernetes and OpenShell deployments are not affected because the relevant Incus-specific handlers are unavailable there.",
-      "last_modified": "2026-11-10T01:03:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109797"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118717"
     },
     {
-      "cve_id": "CVE-2026-125087",
-      "asset_id": "CVE-2026-125087",
+      "cve_id": "CVE-2026-118716",
+      "asset_id": "CVE-2026-118716",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was found in Michael-A-Kuykendall Shimmy up to 2.6.4. The affected element is an unknown function of the file src/server.rs of the component Inference API. Performing a manipulation results in missing authentication. The attack is possible to be carried out remotely. Upgrading to version 2.6.5 is sufficient to fix this issue. The patch is named 3f2ee748c02eeb229987913fe289a2ed9a24595d. You should upgrade the affected component.",
-      "last_modified": "2026-11-10T01:00:27Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125087"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:57Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118716"
     },
     {
-      "cve_id": "CVE-2026-117477",
-      "asset_id": "CVE-2026-117477",
+      "cve_id": "CVE-2026-118715",
+      "asset_id": "CVE-2026-118715",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "KUSANAGI provided by GMO Prime Strategy Co., Ltd. contains an HTTP header injection vulnerability that may allow arbitrary HTTP headers to be injected into the HTTP response when a user accesses a specially crafted URL.",
-      "last_modified": "2026-11-10T01:00:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-117477"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118715"
     },
     {
-      "cve_id": "CVE-2026-125041",
-      "asset_id": "CVE-2026-125041",
+      "cve_id": "CVE-2026-118714",
+      "asset_id": "CVE-2026-118714",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in GStreamer's gst-plugins-good MOV/MP4 demuxer. When processing an uncompressed video track, qtdemux fails to validate the declared row alignment and chroma geometry before using them to build a video buffer layout. A crafted file can cause an out-of-bounds heap read while the sample is copied, potentially crashing the application and causing denial of service.",
-      "last_modified": "2026-11-10T01:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125041"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118714"
     },
     {
-      "cve_id": "CVE-2026-125404",
-      "asset_id": "CVE-2026-125404",
+      "cve_id": "CVE-2026-118713",
+      "asset_id": "CVE-2026-118713",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Ettercap through 0.8.4.1 contains an integer underflow in ccmp_decrypt() in src/ec_encryption_ccmp.c that subtracts the 8-byte CCMP trailer without checking minimum length. Attackers on a network whose WPA key is loaded can send a short crafted CCMP frame to overflow a stack buffer in the Ettercap process, which normally runs as root.",
-      "last_modified": "2026-11-10T01:00:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125404"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118713"
     },
     {
-      "cve_id": "CVE-2026-123439",
-      "asset_id": "CVE-2026-123439",
+      "cve_id": "CVE-2026-118712",
+      "asset_id": "CVE-2026-118712",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123439"
+      "description": "Integer underflow (wrap or wraparound) in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118712"
     },
     {
-      "cve_id": "CVE-2026-123438",
-      "asset_id": "CVE-2026-123438",
+      "cve_id": "CVE-2026-118711",
+      "asset_id": "CVE-2026-118711",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123438"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118711"
     },
     {
-      "cve_id": "CVE-2026-123437",
-      "asset_id": "CVE-2026-123437",
+      "cve_id": "CVE-2026-118710",
+      "asset_id": "CVE-2026-118710",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123437"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118710"
     },
     {
-      "cve_id": "CVE-2026-123435",
-      "asset_id": "CVE-2026-123435",
+      "cve_id": "CVE-2026-100362",
+      "asset_id": "CVE-2026-100362",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123435"
+      "description": "SuiteCRM is an open-source, enterprise-ready Customer Relationship Management (CRM) software application. Prior to 7.15.2 and 8.10.2, the /legacy/Api/V8/OAuth2 password-grant endpoint returns distinct error messages for an invalid username and an invalid password. An unauthenticated remote attacker can use those response differences to enumerate valid CRM usernames and target confirmed accounts with password spraying, credential stuffing, brute-force, or social-engineering attacks. This issue is fixed in versions 7.15.2 and 8.10.2.",
+      "last_modified": "2026-11-10T18:24:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100362"
     },
     {
-      "cve_id": "CVE-2026-123432",
-      "asset_id": "CVE-2026-123432",
+      "cve_id": "CVE-2026-118709",
+      "asset_id": "CVE-2026-118709",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123432"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118709"
     },
     {
-      "cve_id": "CVE-2026-123431",
-      "asset_id": "CVE-2026-123431",
+      "cve_id": "CVE-2026-118708",
+      "asset_id": "CVE-2026-118708",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123431"
+      "description": "Release of invalid pointer or reference in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118708"
     },
     {
-      "cve_id": "CVE-2026-123430",
-      "asset_id": "CVE-2026-123430",
+      "cve_id": "CVE-2026-118707",
+      "asset_id": "CVE-2026-118707",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123430"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118707"
     },
     {
-      "cve_id": "CVE-2026-123429",
-      "asset_id": "CVE-2026-123429",
+      "cve_id": "CVE-2026-118706",
+      "asset_id": "CVE-2026-118706",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123429"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118706"
     },
     {
-      "cve_id": "CVE-2026-123427",
-      "asset_id": "CVE-2026-123427",
+      "cve_id": "CVE-2026-118705",
+      "asset_id": "CVE-2026-118705",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123427"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118705"
     },
     {
-      "cve_id": "CVE-2026-123426",
-      "asset_id": "CVE-2026-123426",
+      "cve_id": "CVE-2026-118704",
+      "asset_id": "CVE-2026-118704",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123426"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118704"
     },
     {
-      "cve_id": "CVE-2026-123425",
-      "asset_id": "CVE-2026-123425",
+      "cve_id": "CVE-2026-118703",
+      "asset_id": "CVE-2026-118703",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123425"
+      "description": "Use after free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118703"
     },
     {
-      "cve_id": "CVE-2026-123424",
-      "asset_id": "CVE-2026-123424",
+      "cve_id": "CVE-2026-118702",
+      "asset_id": "CVE-2026-118702",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This CVE ID has been rejected as a duplicate.",
-      "last_modified": "2026-11-10T00:55:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123424"
+      "description": "Double free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:50Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118702"
     },
     {
-      "cve_id": "CVE-2026-109805",
-      "asset_id": "CVE-2026-109805",
+      "cve_id": "CVE-2026-118701",
+      "asset_id": "CVE-2026-118701",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Due to a weak HMAC cryptography calculation when receiving an RFC callback in SAP NetWeaver and ABAP Platform (Application Server ABAP), an authenticated attacker with high privileges and access to a network segment between application servers on an SAP system could intercept network communication between application servers and change the identity of the caller, enabling the execution of unauthorized function calls on the target server with escalated privileges leading to High impact on Confidentiality, Integrity, and Availability of the application.",
-      "last_modified": "2026-11-10T00:49:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109805"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118701"
     },
     {
-      "cve_id": "CVE-2026-89125",
-      "asset_id": "CVE-2026-89125",
+      "cve_id": "CVE-2026-118700",
+      "asset_id": "CVE-2026-118700",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Due to Insecure Storage of Sensitive Information in SAP Web Dispatcher and Internet Communication Manager, an attacker with administrative privileges could obtain sensitive information from stored data. This may allow correlation of credentials across users and deployments, potentially leading to credential exposure and unauthorized access. Successful exploitation could expose credentials and facilitate unauthorized access to affected systems, resulting in a high impact on confidentiality and a low impact on integrity and availability.",
-      "last_modified": "2026-11-10T00:46:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-89125"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118700"
     },
     {
-      "cve_id": "CVE-2026-125086",
-      "asset_id": "CVE-2026-125086",
+      "cve_id": "CVE-2026-118302",
+      "asset_id": "CVE-2026-118302",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability has been found in D-Link M60 1.12.B01. Impacted is the function system of the file /etc/emDaemon/mosquitto.conf of the component emDaemon MQTT Broker. Such manipulation leads to hard-coded credentials. The attack can be executed remotely. The exploit has been disclosed to the public and may be used.",
-      "last_modified": "2026-11-10T00:45:28Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125086"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118302"
     },
     {
-      "cve_id": "CVE-2026-113960",
-      "asset_id": "CVE-2026-113960",
+      "cve_id": "CVE-2026-118301",
+      "asset_id": "CVE-2026-118301",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 26.7.3 and iPadOS 26.7.3, iOS 27.2.1 and iPadOS 27.2.1, macOS Golden Gate 27.2.1, macOS Sequoia 15.8.3, macOS Tahoe 26.7.3, visionOS 27.2.1, watchOS 27.2.1. A user added to an iMessage group may be able to access messages sent before they joined.",
-      "last_modified": "2026-11-10T00:45:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113960"
+      "description": "Use of uninitialized resource in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:48Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118301"
     },
     {
-      "cve_id": "CVE-2026-120017",
-      "asset_id": "CVE-2026-120017",
+      "cve_id": "CVE-2026-118300",
+      "asset_id": "CVE-2026-118300",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver AS ABAP and ABAP Platform does not perform sufficient verification of incoming authentication assertions under certain configurations. An unauthenticated attacker could submit specially crafted data to bypass authentication and impersonate arbitrary users, including privileged accounts. Successful exploitation could cause a full system compromise, with the impact potentially extending to connected components and systems beyond the affected system. This results in a high impact on confidentiality, integrity, and availability of the application.",
-      "last_modified": "2026-11-10T00:43:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120017"
+      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to disclose information over a network.",
+      "last_modified": "2026-11-10T18:24:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118300"
     },
     {
-      "cve_id": "CVE-2026-120016",
-      "asset_id": "CVE-2026-120016",
+      "cve_id": "CVE-2026-118299",
+      "asset_id": "CVE-2026-118299",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver Visual Composer does not perform sufficient input validation and output encoding on certain request data. An unauthenticated attacker could craft a malicious link containing specially crafted input. If a victim clicks the link, the injected script executes in the victim's browser within the context of the affected application. This results in a low impact on confidentiality and integrity. There is no impact on availability.",
-      "last_modified": "2026-11-10T00:42:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120016"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118299"
     },
     {
-      "cve_id": "CVE-2026-120015",
-      "asset_id": "CVE-2026-120015",
+      "cve_id": "CVE-2026-118298",
+      "asset_id": "CVE-2026-118298",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP Host Agent does not sufficiently validate certain inputs. Under certain condition, an attacker with low privileges could abuse the affected functionality to influence an internal component into loading a malicious file under a privileged account. Successful exploitation could lead to persistent code execution, resulting in a high impact on confidentiality, integrity and availability.",
-      "last_modified": "2026-11-10T00:42:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120015"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118298"
     },
     {
-      "cve_id": "CVE-2026-120014",
-      "asset_id": "CVE-2026-120014",
+      "cve_id": "CVE-2026-118297",
+      "asset_id": "CVE-2026-118297",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP HANA XSA Web Dispatcher does not perform sufficient request validation in certain administrative functionality. In the context of SAP HANA XSA Web Dispatcher, an unauthenticated attacker could trick a logged-on administrator into visiting a malicious link. Visiting the link could cause unintended actions in the administrator's session. Successful exploitation could lead to a temporary compromise of the SAP HANA XSA Web Dispatcher, resulting in a high impact on confidentiality, and partial impact on integrity, and availability.",
-      "last_modified": "2026-11-10T00:42:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120014"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118297"
     },
     {
-      "cve_id": "CVE-2026-120010",
-      "asset_id": "CVE-2026-120010",
+      "cve_id": "CVE-2026-118296",
+      "asset_id": "CVE-2026-118296",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver Application Server (SAP Message Server) does not properly size memory allocations when handling certain HTTP requests. An unauthenticated attacker could send a specially crafted request to trigger a heap buffer overflow in affected functionality. Successful exploitation causes the component to abort and remain unavailable until it is restarted by the framework, resulting in a high impact on availability of the system. There is no impact on confidentiality and integrity of the application.",
-      "last_modified": "2026-11-10T00:41:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120010"
+      "description": "Double free in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118296"
     },
     {
-      "cve_id": "CVE-2026-120009",
-      "asset_id": "CVE-2026-120009",
+      "cve_id": "CVE-2026-118295",
+      "asset_id": "CVE-2026-118295",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP ABAP Developer Tools (AMDP Data Preview) does not perform sufficient validation and authorization checks within certain affected functionality. An attacker with high privileges could submit specially crafted input to inject and execute arbitrary code on the system. Successful exploitation could allow the attacker to fully compromise the system, resulting in a high impact on confidentiality, integrity and availability.",
-      "last_modified": "2026-11-10T00:41:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120009"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118295"
     },
     {
-      "cve_id": "CVE-2026-120008",
-      "asset_id": "CVE-2026-120008",
+      "cve_id": "CVE-2026-118294",
+      "asset_id": "CVE-2026-118294",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver (Internet Graphics Service) does not sufficiently validate certain input values within incoming requests. An unauthenticated user could send a specially crafted request to trigger an out-of-bounds memory write in a worker process. Successful exploitation could result in memory corruption or repeated termination of the affected process, resulting in a high impact on availability and a low impact on integrity with no impact on confidentiality.",
-      "last_modified": "2026-11-10T00:41:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120008"
+      "description": "Heap-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118294"
     },
     {
-      "cve_id": "CVE-2026-109811",
-      "asset_id": "CVE-2026-109811",
+      "cve_id": "CVE-2026-118293",
+      "asset_id": "CVE-2026-118293",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "An internal ABAP HTTP component in SAP NetWeaver and ABAP Platform (Application Server ABAP) has SSRF vulnerability due to insecure default settings. An authenticated attacker with low privileges could trick the victim to interact with a malicious server which allows the attacker to access sensitive information belonging to the victim and modify limited non-sensitive information. This results in a high impact on confidentiality and low impact on integrity. Availability is not impacted.",
-      "last_modified": "2026-11-10T00:41:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109811"
+      "description": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:44Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118293"
     },
     {
-      "cve_id": "CVE-2026-109810",
-      "asset_id": "CVE-2026-109810",
+      "cve_id": "CVE-2026-118292",
+      "asset_id": "CVE-2026-118292",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver Application Server Java (Web Dynpro Java) does not sufficiently validate certain request parameters used to resolve styling resources in the application. An unauthenticated attacker could craft a malicious link that, when clicked by an authenticated victim, causes the victim's browser to load attacker-controlled styling content within the trusted application context. Successful exploitation could allow the attacker to redress the trusted user interface for phishing purposes and exfiltrate limited web page content, resulting in a low impact on confidentiality and integrity. There is no impact on availability.",
-      "last_modified": "2026-11-10T00:40:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109810"
+      "description": "Stack-based buffer overflow in Microsoft Office Excel allows an unauthorized attacker to execute code over a network.",
+      "last_modified": "2026-11-10T18:24:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118292"
     },
     {
-      "cve_id": "CVE-2026-109809",
-      "asset_id": "CVE-2026-109809",
+      "cve_id": "CVE-2026-118148",
+      "asset_id": "CVE-2026-118148",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver Application Server Java (NWDI Cockpit) does not perform sufficient authorization checks for certain functionality before processing the requests. An attacker with low privileges could exploit this to perform unauthorized modifications. Successful exploitation results in high impact on integrity, with no impact on confidentiality and availability of the application.",
-      "last_modified": "2026-11-10T00:40:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109809"
+      "description": "Improper authentication in Active Directory Domain Services allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118148"
     },
     {
-      "cve_id": "CVE-2026-109808",
-      "asset_id": "CVE-2026-109808",
+      "cve_id": "CVE-2026-118120",
+      "asset_id": "CVE-2026-118120",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Due to a missing authorization check in certain remote-enabled functionality, SAP Solution Tools Plug-In allows an authenticated attacker to invoke this functionality to access data that would otherwise be restricted. Exploitation is only possible under certain conditions, as the attacker must have prior knowledge of specific internal identifiers to successfully target the affected functionality. Successful exploitation could allow the attacker to read sensitive information, resulting in a low impact on confidentiality. There is no impact on integrity and availability.",
-      "last_modified": "2026-11-10T00:40:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109808"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:42Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118120"
     },
     {
-      "cve_id": "CVE-2026-109807",
-      "asset_id": "CVE-2026-109807",
+      "cve_id": "CVE-2026-118119",
+      "asset_id": "CVE-2026-118119",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver (Internet Graphics Service) does not sufficiently validate certain input values within incoming requests. An unauthenticated user could send a specially crafted request causing the affected process to read beyond the declared values, resulting in repeated termination of the worker process. This results in a high impact on availability with no impact on integrity or confidentiality.",
-      "last_modified": "2026-11-10T00:40:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109807"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118119"
     },
     {
-      "cve_id": "CVE-2026-109806",
-      "asset_id": "CVE-2026-109806",
+      "cve_id": "CVE-2026-118118",
+      "asset_id": "CVE-2026-118118",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver (Internet Graphics Service) does not sufficiently validate certain input values within incoming requests. An unauthenticated user could send a specially crafted request containing malformed image data, triggering an integer overflow that leads to repeated termination of the worker process. This results in a high impact on availability with no impact on integrity or confidentiality.",
-      "last_modified": "2026-11-10T00:39:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109806"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118118"
     },
     {
-      "cve_id": "CVE-2026-109804",
-      "asset_id": "CVE-2026-109804",
+      "cve_id": "CVE-2026-118117",
+      "asset_id": "CVE-2026-118117",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP Message Server does not properly handle certain malformed requests, which could be leveraged by an unauthenticated attacker to send specially crafted input. Successful exploitation could allow the attacker to retrieve sensitive information, resulting in a high impact on confidentiality. There is no impact on integrity and availability.",
-      "last_modified": "2026-11-10T00:38:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109804"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118117"
     },
     {
-      "cve_id": "CVE-2026-109803",
-      "asset_id": "CVE-2026-109803",
+      "cve_id": "CVE-2026-118116",
+      "asset_id": "CVE-2026-118116",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver Knowledge Management (XML Forms) does not sufficiently restrict the selection of XSL transformations processed by the affected functionality. Under certain conditions, an authenticated user with access to the affected functionality could cause an unauthorized XSL transformation to be processed, potentially leading to arbitrary code execution in the application context. Successful exploitation could impact the confidentiality, integrity, and availability of the application.",
-      "last_modified": "2026-11-10T00:38:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109803"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges locally.",
+      "last_modified": "2026-11-10T18:24:40Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118116"
     },
     {
-      "cve_id": "CVE-2026-109802",
-      "asset_id": "CVE-2026-109802",
+      "cve_id": "CVE-2026-118115",
+      "asset_id": "CVE-2026-118115",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver Application Server for ABAP does not properly validate certain input values. An authenticated user could send specially crafted requests to trigger an error in internal processing. This could crash the affected work process and make the system unavailable. This results in a high impact on availability with no impact on confidentiality and integrity.",
-      "last_modified": "2026-11-10T00:38:26Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109802"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118115"
     },
     {
-      "cve_id": "CVE-2026-109801",
-      "asset_id": "CVE-2026-109801",
+      "cve_id": "CVE-2026-118114",
+      "asset_id": "CVE-2026-118114",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP NetWeaver Application Server Java (NWDI Cockpit)\ufffd does not perform sufficient authorization checks for certain functionality that retrieves sensitive information. An attacker with low privileges could send a specially crafted request to access sensitive information belonging to other system users. Successful exploitation results in a high impact on confidentiality, with no impact on integrity or availability of the application.",
-      "last_modified": "2026-11-10T00:38:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109801"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118114"
     },
     {
-      "cve_id": "CVE-2026-109800",
-      "asset_id": "CVE-2026-109800",
+      "cve_id": "CVE-2026-118113",
+      "asset_id": "CVE-2026-118113",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP Web Dispatcher does not sufficiently validate certain inputs during processing, which could lead to memory corruption. An attacker authenticated as a non-administrative user could exploit this vulnerability by providing specially crafted input, causing the Web Dispatcher process to terminate without user interaction. As a result, the Web Dispatcher and all backend systems reachable through it become unavailable, leading to a high impact on availability. There is no impact on confidentiality or integrity of the application.",
-      "last_modified": "2026-11-10T00:37:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109800"
+      "description": "Improper neutralization of special elements used in an sql command ('sql injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118113"
     },
     {
-      "cve_id": "CVE-2026-109798",
-      "asset_id": "CVE-2026-109798",
+      "cve_id": "CVE-2026-118112",
+      "asset_id": "CVE-2026-118112",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SAP BusinessObjects Business Intelligence Platform (Web Intelligence) does not properly restrict external entity resolution when processing OLAP connection requests. An authenticated attacker could exploit this vulnerability to access restricted resources, enabling them to read sensitive files on the server and reach internal systems that are not otherwise exposed, impacting resources beyond the vulnerable component, resulting in a high impact on confidentiality and a low impact on both integrity and availability.",
-      "last_modified": "2026-11-10T00:37:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109798"
+      "description": "Improper control of generation of code ('code injection') in SQL Server allows an authorized attacker to elevate privileges over a network.",
+      "last_modified": "2026-11-10T18:24:37Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118112"
     }
   ]
 }
