@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-11-21T19:38:40.190797+00:00",
+  "last_updated": "2026-11-22T07:16:37.118697+00:00",
   "source": "OpenCVE API v2",
   "asset_count": 100,
   "vulnerable_asset_count": 100,
   "findings": [
     {
-      "cve_id": "CVE-2026-125294",
-      "asset_id": "CVE-2026-125294",
+      "cve_id": "CVE-2026-112465",
+      "asset_id": "CVE-2026-112465",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -19,13 +19,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "The Nexter Blocks Pro plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 5.0.10 via the `tpgb_ajax_register_user()` function. This is due to a byte-level denylist on the `tpgb_acf_key[]` and `tpgb_acf[]` parameters that fails to block Unicode look-alike characters \u2014 such as U+1E87 and U+00E7 in a key like `\u1e87p_\u00e7apabilities` \u2014 whose UTF-8 byte sequences do not match any ASCII-based pattern check, while the database's default accent-insensitive collation (`utf8mb4_unicode_ci` / `utf8mb4_0900_ai_ci`) treats the decorated key as equivalent to the canonical `wp_capabilities` row, causing `update_user_meta()` to overwrite the newly registered user's role with `administrator`. This makes it possible for unauthenticated attackers to register a new account bearing the full Administrator role, gaining complete control over the WordPress site including the ability to install plugins, modify files, and execute arbitrary code. The nonce required by the handler is publicly emitted on any page containing the tp-login-register block, making the full exploit chain \u2014 nonce retrieval, a single crafted registration POST, and the plugin's own `autologin` flow \u2014 trivially reachable on any default install where user registration is enabled. Successful exploitation causes the attacker's own account to receive the complete Administrator role.",
-      "last_modified": "2026-11-21T18:31:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125294"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, tvOS 27.2, visionOS 27.2. An app may be able to cause unexpected system termination or read kernel memory.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112465"
     },
     {
-      "cve_id": "CVE-2026-134006",
-      "asset_id": "CVE-2026-134006",
+      "cve_id": "CVE-2026-112662",
+      "asset_id": "CVE-2026-112662",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -38,13 +38,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A weakness has been identified in Moonshot AI Kimi Code up to 2.7.2. This vulnerability affects the function guardToolExecution of the file packages/agent-core-v2/src/features/plan/planService.ts of the component Plan Mode Permission Guard. Executing a manipulation can lead to improper authorization. The attack requires local access. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-11-21T18:30:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134006"
+      "description": "A race condition was addressed with additional validation. This issue is fixed in iOS 27.2 and iPadOS 27.2. An app may be able to access sensitive user data.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112662"
     },
     {
-      "cve_id": "CVE-2026-134278",
-      "asset_id": "CVE-2026-134278",
+      "cve_id": "CVE-2026-113955",
+      "asset_id": "CVE-2026-113955",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -57,13 +57,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja 2.3.0 before 2.8.0 contains an uncontrolled memory allocation in the CSV migration module because it does not de-duplicate label column mappings or cap labels per row, and enforces the item limit only after the full import is built. Authenticated users can send one request to /api/v2/migration/csv/migrate with repeated label mappings or many labels per row, exhausting memory until the server is OOM-killed.",
-      "last_modified": "2026-11-21T18:15:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134278"
+      "description": "A cross-origin issue was addressed with improved tracking of security origins. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2. Processing maliciously crafted web content may disclose sensitive user information.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113955"
     },
     {
-      "cve_id": "CVE-2026-134270",
-      "asset_id": "CVE-2026-134270",
+      "cve_id": "CVE-2026-114021",
+      "asset_id": "CVE-2026-114021",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -76,13 +76,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.19.0 before 2.8.0 contains a denial of service vulnerability that allows authenticated CalDAV users to exhaust server CPU by uploading VTODO properties with many parameters. Attackers can PUT an iCalendar body with thousands of parameters on one line to any valid project ID, triggering superlinear parsing before permission checks.",
-      "last_modified": "2026-11-21T18:15:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134270"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Connecting to a malicious NFS server may lead to kernel memory corruption.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114021"
     },
     {
-      "cve_id": "CVE-2026-134267",
-      "asset_id": "CVE-2026-134267",
+      "cve_id": "CVE-2026-111067",
+      "asset_id": "CVE-2026-111067",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -95,13 +95,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.21.0 before 2.8.0 contains a denial of service vulnerability that allows authenticated users to exhaust memory and CPU by creating tasks with many reminders and long titles. Attackers can store a task whose ParseAlarms rendering in pkg/caldav/caldav.go uses quadratic string concatenation, causing every CalDAV read, including other members' automatic syncs, to allocate gigabytes.",
-      "last_modified": "2026-11-21T18:15:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134267"
+      "description": "The UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 1.26.10, UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 2.26.10.26 does not guard all execution paths of its database restore process against second-order SQL injection, allowing a Subscriber-level user who has stored crafted content in their own account to escalate to administrator when an administrator later restores a backup.\nThis is due to an incomplete fix of CVE-2026-108761 in 1.26.9: the fix guards only one of the restore routine's execution paths, and a second path remains exploitable.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111067"
     },
     {
-      "cve_id": "CVE-2026-133993",
-      "asset_id": "CVE-2026-133993",
+      "cve_id": "CVE-2026-111975",
+      "asset_id": "CVE-2026-111975",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -114,13 +114,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security flaw has been discovered in D-Link DIR-600L 2.17b02. This affects the function FUN_0040efb0 of the file gena.cgi of the component GENA Subscription Handler. Performing a manipulation of the argument service results in stack-based buffer overflow. The attack is possible to be carried out remotely. The exploit has been released to the public and may be used for attacks.",
-      "last_modified": "2026-11-21T17:45:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133993"
+      "description": "The GiveWP  WordPress plugin before 4.19.2.1 does not exclude donors who chose to give anonymously from one of its public REST API listings, allowing unauthenticated users to retrieve those donors' names.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-111975"
     },
     {
-      "cve_id": "CVE-2026-134250",
-      "asset_id": "CVE-2026-134250",
+      "cve_id": "CVE-2026-115226",
+      "asset_id": "CVE-2026-115226",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -133,13 +133,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Grav Form plugin 1.1.0 before 9.1.40 contains a stored cross-site scripting vulnerability in Form::uploadFiles(), which sanitizes SVG only when a file's last extension is .svg and accepts markup under unrecognized extensions. Anonymous attackers can upload files like drawing.svg.foo through public any-type upload forms, running script in an administrator's session when opened, enabling super-admin creation on Grav 2.x with Admin2.",
-      "last_modified": "2026-11-21T17:45:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134250"
+      "description": "The GiveWP  WordPress plugin before 4.19.2.1 does not properly restrict access to sensitive donor information in one of its REST API endpoints, allowing any authenticated user who owns a donor record, such as a subscriber who has donated once, to retrieve the email address, phone number, name, postal address and company of all donors.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115226"
     },
     {
-      "cve_id": "CVE-2026-134249",
-      "asset_id": "CVE-2026-134249",
+      "cve_id": "CVE-2026-121150",
+      "asset_id": "CVE-2026-121150",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -152,13 +152,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SiYuan before 3.8.10 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain Administrator role by spoofing X-Forwarded-For through a loopback-trusted reverse proxy. Attackers can send requests with Host set to localhost and X-Forwarded-For set to 127.0.0.1 to read private note-history contents via the /history/*path route when no lock-screen password is set.",
-      "last_modified": "2026-11-21T17:45:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134249"
+      "description": "The UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 2.26.16.26, UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 1.26.16 do not correctly handle comment-like content found in the middle of a long SQL statement when restoring a database backup, allowing users with a role as low as Subscriber who have stored crafted content in their own profile to have SQL executed when an administrator later restores a backup, and so escalate their account to administrator.\n\nThis is a different code path from the backup restore issue fixed in 1.26.10, and it does not depend on the database server's maximum packet size.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121150"
     },
     {
-      "cve_id": "CVE-2026-134248",
-      "asset_id": "CVE-2026-134248",
+      "cve_id": "CVE-2026-131978",
+      "asset_id": "CVE-2026-131978",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -171,13 +171,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SiYuan 3.6.0 before 3.8.10 contains an information disclosure vulnerability that allows authenticated Readers to read protected documents through block-reference footnote resolution in Markdown export. Attackers can request copyStdMarkdown for a public document referencing a hidden, disabled, or password-protected document to disclose its body text without the publish password.",
-      "last_modified": "2026-11-21T17:45:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134248"
+      "description": "The Shortcodes Ultimate  WordPress plugin before 7.9.1 does not restrict which PHP functions a shortcode's filter attribute can call, allowing users with a role as low as Contributor to remove WordPress' term-slug sanitization and perform SQL injection attacks through another shortcode's taxonomy term attribute.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131978"
     },
     {
-      "cve_id": "CVE-2026-134247",
-      "asset_id": "CVE-2026-134247",
+      "cve_id": "CVE-2026-131983",
+      "asset_id": "CVE-2026-131983",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -190,13 +190,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SiYuan 3.8.0 before 3.8.10 contains an incorrect authorization vulnerability that allows anonymous attackers to read indexed asset text referenced only by publish-disabled attribute-view rows. Attackers can request /api/asset/getDocAssets on a public host document to obtain the leaked asset path, then query /api/search/getAssetContentByPath to retrieve the confidential file's full indexed text.",
-      "last_modified": "2026-11-21T17:45:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134247"
+      "description": "The FluentCommunity  WordPress plugin before 2.13.0 does not apply the per-link visibility rules of space sidebar links when listing spaces in its space discovery feature, allowing unauthenticated visitors to retrieve the titles and URLs of links restricted to logged-in users or specific memberships, as well as disabled links, for every public and private space.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131983"
     },
     {
-      "cve_id": "CVE-2026-134245",
-      "asset_id": "CVE-2026-134245",
+      "cve_id": "CVE-2026-131985",
+      "asset_id": "CVE-2026-131985",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -209,13 +209,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SiYuan 3.8.0 before 3.8.10 contains an incorrect authorization vulnerability in the serveAssets route that allows unauthenticated attackers to read password-protected document assets via name collisions. Attackers can request GET /assets/<name> when a visible document references the same relative asset name, retrieving the protected file's contents on public-publish instances with Basic Auth disabled.",
-      "last_modified": "2026-11-21T17:45:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134245"
+      "description": "The FluentCommunity  WordPress plugin before 2.13.0 does not verify that a referenced media item belongs to the user, or is not already attached elsewhere, before re-linking it to their own content, and its media identifiers are predictable from public post data, allowing users with a role as low as Subscriber to take over and delete media uploaded by other users, including administrators.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131985"
     },
     {
-      "cve_id": "CVE-2026-134242",
-      "asset_id": "CVE-2026-134242",
+      "cve_id": "CVE-2026-132042",
+      "asset_id": "CVE-2026-132042",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -228,13 +228,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Parse Server 2.5.0 before 8.6.121 and 9.0.0 before 9.11.1-alpha.1 does not handle a failure to serialize an object after a beforeSave trigger, leaving the request unsettled and terminating the server process. A remote attacker able to update an object in a class with a beforeSave trigger can send a dot notation key below a non-object field, such as a timestamp, to crash the server for all clients.",
-      "last_modified": "2026-11-21T17:45:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134242"
+      "description": "The Keywords to Links Converter WordPress plugin before 2.2.5 does not sanitise and escape a parameter before using it in a SQL statement via an AJAX action available to any authenticated user, allowing users with a role as low as Subscriber to perform SQL injection attacks and read arbitrary data from the database.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132042"
     },
     {
-      "cve_id": "CVE-2026-133221",
-      "asset_id": "CVE-2026-133221",
+      "cve_id": "CVE-2026-132081",
+      "asset_id": "CVE-2026-132081",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -247,13 +247,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A flaw was found in Keycloak. An authenticated remote user with a pending required security action, such as configuring multi-factor authentication (MFA), can bypass the mandatory action by submitting a specially crafted request to the consent endpoint without a valid session code. Keycloak incorrectly interprets the submission as a page refresh and completes the authentication process, allowing the user to access the application without fulfilling the required security policies.",
-      "last_modified": "2026-11-21T17:15:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133221"
+      "description": "The Titan Anti-spam & Security  WordPress plugin before 7.5.5 does not protect or remove the diagnostic archive it writes to the uploads folder when an administrator exports its logs, and names it after the export date alone, allowing unauthenticated visitors to download the Titan Anti-spam & Security  WordPress plugin before 7.5.5's logs, including visitor IP addresses, and the site's system information.",
+      "last_modified": "2026-11-22T06:30:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132081"
     },
     {
-      "cve_id": "CVE-2026-133990",
-      "asset_id": "CVE-2026-133990",
+      "cve_id": "CVE-2026-94259",
+      "asset_id": "CVE-2026-94259",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -266,13 +266,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A vulnerability was identified in Cockpit-HQ Cockpit up to 2.14.1. Affected by this issue is some unknown functionality of the file cron.php of the component Web Worker. Such manipulation of the argument token leads to missing authentication. The attack can be executed remotely. The attack requires a high level of complexity. The exploitation is known to be difficult. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-11-21T17:15:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133990"
+      "description": "The SMS Alert  WordPress plugin before 4.0.4 does not sanitise and escape a parameter before using it in a SQL statement, leading to SQL injection exploitable by administrators.",
+      "last_modified": "2026-11-22T06:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94259"
     },
     {
-      "cve_id": "CVE-2026-133120",
-      "asset_id": "CVE-2026-133120",
+      "cve_id": "CVE-2026-14233",
+      "asset_id": "CVE-2026-14233",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -285,13 +285,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/express is a compatibility layer that lets Express middleware run inside the Fastify web framework. In versions before 4.0.10, the plugin passes Express a request URL that does not always match the path Fastify's router dispatched, so path-scoped Express middleware can be skipped while the route handler still runs. Several request forms trigger the mismatch, including percent-decoding that rewrites a backslash to a slash or double-decodes an encoded percent sign, and a request target that begins with an asterisk, so the middleware and the handler disagree on the path or on parameter and query values. An unauthenticated client can therefore reach a handler that an authentication, authorization, or rate-limiting middleware was meant to protect, with no special configuration required. The issue is fixed in @fastify/express 4.0.10, and users should upgrade to 4.0.10 or later.",
-      "last_modified": "2026-11-21T17:08:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133120"
+      "description": "The LifterLMS  WordPress plugin before 10.0.5 does not perform a capability or nonce check in one of its quiz-question query AJAX handlers, allowing any authenticated user with subscriber-level access to enumerate the titles of all published quiz questions, including those for courses they are not enrolled in.",
+      "last_modified": "2026-11-22T06:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14233"
     },
     {
-      "cve_id": "CVE-2026-129850",
-      "asset_id": "CVE-2026-129850",
+      "cve_id": "CVE-2026-133362",
+      "asset_id": "CVE-2026-133362",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -304,13 +304,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/express is a compatibility layer that lets Express middleware run inside the Fastify web framework. In versions 4.0.0 through 4.0.9, when Fastify routing is configured to be case-insensitive, the router folds the request path to lower case in a way that maps certain non-ASCII Unicode characters to ASCII letters, but @fastify/express matches Express mount paths against the decoded path without applying the same folding. The two disagree, so a request that spells a letter of a mount path with an equivalent Unicode character is routed to the protected handler while the path-scoped middleware mounted on that path never matches and is skipped. An unauthenticated client can therefore reach a handler that an authentication, authorization, or rate-limiting middleware was meant to protect, though only when the application enables case-insensitive routing and the mount path contains an affected letter. The issue is fixed in @fastify/express 4.0.10, and users should upgrade to 4.0.10 or later.",
-      "last_modified": "2026-11-21T17:05:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-129850"
+      "description": "The ThinkRank SEO  WordPress plugin before 2.21.4 does not ensure that the settings section a request acts on is the section it was authorized for, allowing users granted access to only one ThinkRank SEO  WordPress plugin before 2.21.4 section by an administrator to read and update settings of other, more privileged sections, such as integration API keys and robots.txt content.",
+      "last_modified": "2026-11-22T06:00:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133362"
     },
     {
-      "cve_id": "CVE-2026-129504",
-      "asset_id": "CVE-2026-129504",
+      "cve_id": "CVE-2026-132814",
+      "asset_id": "CVE-2026-132814",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -323,13 +323,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/express is a compatibility layer that lets Express middleware run inside the Fastify web framework. In versions 4.0.0 through 4.0.9, the plugin joins a path-scoped middleware's mount path to the Fastify plugin prefix by string concatenation, so when the plugin prefix ends with a slash or the mount path omits its leading slash, the resulting Express mount path does not line up with the route the Fastify router serves. Express then fails to match and passes the request on while the Fastify router still dispatches the route, so the middleware is silently skipped. An application that uses path-scoped Express middleware for authentication or authorization inside a prefixed plugin can expose protected routes to unauthenticated clients, with no crafted request and no non-default option required, and string, array, and regular-expression mount paths are all affected. The issue is fixed in @fastify/express 4.0.10, and users should upgrade to 4.0.10 or later.",
-      "last_modified": "2026-11-21T17:03:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-129504"
+      "description": "The WPO365 | SEAMLESS WORDPRESS + MICROSOFT INTEGRATION (WPO365 | LOGIN) WordPress plugin before 45.0 does not verify that a Microsoft ID token was issued for the site's own application and tenant when multi-tenant sign-in is enabled with an empty list of allowed tenants, allowing unauthenticated attackers to log in as an existing user, including an administrator, with a token Microsoft issued to an application they control.",
+      "last_modified": "2026-11-22T06:00:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132814"
     },
     {
-      "cve_id": "CVE-2026-124626",
-      "asset_id": "CVE-2026-124626",
+      "cve_id": "CVE-2026-127024",
+      "asset_id": "CVE-2026-127024",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -342,13 +342,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/express is a compatibility layer that lets Express middleware run inside the Fastify web framework. In versions 4.0.5 through 4.0.9, the plugin matches path-scoped Express middleware with a matcher that requires a non-empty value for a dynamic segment, while Fastify's router accepts an empty parameter or wildcard value. When a route and an Express middleware mount share a dynamic pattern, a request with an empty segment matches the Fastify route and runs the handler while the middleware mounted on that pattern is skipped, so on a scoped mount an unauthenticated request can reach a protected handler. No special configuration is required, and the practical impact depends on what the empty value selects in the application. The issue is fixed in @fastify/express 4.0.10, and users should upgrade to 4.0.10 or later.",
-      "last_modified": "2026-11-21T17:01:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-124626"
+      "description": "The WordForm  WordPress plugin before 4.1.6 does not properly validate uploaded files, allowing unauthenticated users to upload arbitrary files, including PHP, which leads to remote code execution.",
+      "last_modified": "2026-11-22T06:00:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-127024"
     },
     {
-      "cve_id": "CVE-2026-133867",
-      "asset_id": "CVE-2026-133867",
+      "cve_id": "CVE-2026-123136",
+      "asset_id": "CVE-2026-123136",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -361,13 +361,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/express is a compatibility layer that lets Express middleware run inside the Fastify web framework. In versions 4.0.7 through 4.0.9, the plugin does not rewrite regular-expression mount paths to account for a parameterized plugin prefix, so when middleware is mounted with a regular expression inside a plugin registered under a parameterized prefix, the Express matcher treats the prefix parameter as literal text and never matches the real request path. As a result, Express silently skips that middleware while Fastify still runs the route handler, so an application that relies on regular-expression mounted middleware for authentication or authorization inside a parameterized-prefix plugin exposes protected routes to unauthenticated clients. No special configuration is required beyond a parameterized prefix and a regular-expression mount. The issue is fixed in @fastify/express 4.0.10, and users should upgrade to 4.0.10 or later.",
-      "last_modified": "2026-11-21T16:59:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133867"
+      "description": "The Event Tickets Manager for WooCommerce WordPress plugin before 1.6.2 does not check that the ticket type and price chosen through one of its unauthenticated AJAX actions belong to the event ticket later added to the cart, and stores them site-wide, allowing unauthenticated visitors to buy an event ticket at the lower ticket-type price configured on a different event.",
+      "last_modified": "2026-11-22T06:00:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123136"
     },
     {
-      "cve_id": "CVE-2026-133312",
-      "asset_id": "CVE-2026-133312",
+      "cve_id": "CVE-2026-123068",
+      "asset_id": "CVE-2026-123068",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -380,13 +380,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/rate-limit is the rate-limiting plugin for the Fastify web framework. Starting in version 11.1.0, the plugin documented a manual flow for limiting failed login attempts that peeks at the limiter, runs the password check, and consumes a slot only on failure. Because the peek and the consume are two separate store operations with the password check in between, concurrent requests can all pass the peek before any slot is consumed, so in versions 11.1.0 through 11.2.2 a burst of requests runs far more failed attempts than the configured limit, and the sequential path also allowed one attempt more than configured. The default per-request limiter is not affected. The issue is fixed in @fastify/rate-limit 11.3.0, which makes the manual flow atomic by reserving a slot in a single operation and refunding it only on success, and users should upgrade to 11.3.0 or later.",
-      "last_modified": "2026-11-21T16:54:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133312"
+      "description": "The Front User Submit  WordPress plugin before 5.1.0 does not validate the content of files uploaded through one of its unauthenticated endpoints and later serves them back with a Content-Type derived from the file's bytes and an inline disposition, allowing unauthenticated attackers to store an HTML or SVG payload and obtain a same-origin URL that executes arbitrary JavaScript in the browser of any user who opens it, including an administrator.",
+      "last_modified": "2026-11-22T06:00:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-123068"
     },
     {
-      "cve_id": "CVE-2026-133273",
-      "asset_id": "CVE-2026-133273",
+      "cve_id": "CVE-2026-120413",
+      "asset_id": "CVE-2026-120413",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -399,13 +399,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/swagger-ui is the plugin that serves Swagger UI documentation for Fastify applications. In versions 2.1.0 through 6.1.4, the authentication hooks that applications register to protect the documentation are applied to every route the plugin adds except the bundled static asset instance. When the option that serves bundled UI files from a local directory is enabled, that instance exposes every file in the directory without credentials, so a specification file an operator meant to keep behind the documentation login becomes reachable by an unauthenticated client who knows or guesses its name. Access is read-only and limited to files in that directory. The issue is fixed in @fastify/swagger-ui 6.1.5, which applies the same authentication hooks to the static asset route, and users should upgrade to 6.1.5 or later.",
-      "last_modified": "2026-11-21T16:50:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133273"
+      "description": "The Yoast SEO  WordPress plugin before 28.9 does not check that content is publicly viewable before returning its SEO metadata through a public REST endpoint, allowing unauthenticated users who know or can guess the URL of a private post, page or custom post type item to read its title, author, publication date and an excerpt of its content.",
+      "last_modified": "2026-11-22T06:00:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120413"
     },
     {
-      "cve_id": "CVE-2026-133250",
-      "asset_id": "CVE-2026-133250",
+      "cve_id": "CVE-2026-105394",
+      "asset_id": "CVE-2026-105394",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -418,13 +418,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@fastify/middie is the middleware engine for the Fastify web framework. In versions up to and including 9.3.7, middie matches path-scoped middleware against its own reading of the request path, which can differ from the path Fastify's router uses to dispatch the request. When the two disagree, the router can route a request to a handler covered by a middleware mount while middie skips that middleware, so an unauthenticated client reaches a handler that an authentication, authorization, or rate-limiting middleware was meant to protect, with no special configuration required. The mismatch is triggered by empty parameter or wildcard values, request targets that do not begin with a slash, and literal percent characters in a mount path. The issue is fixed in @fastify/middie 9.3.8, and users should upgrade to 9.3.8 or later.",
-      "last_modified": "2026-11-21T16:46:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133250"
+      "description": "The Asset CleanUp: Page Speed Booster WordPress plugin before 1.4.0.7 does not restrict which origins it reflects into its cross-origin resource sharing response headers and pairs the reflected origin with credentialed access, allowing a page on a related origin to read a logged-in user's authenticated content across origins.",
+      "last_modified": "2026-11-22T06:00:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105394"
     },
     {
-      "cve_id": "CVE-2026-0462",
-      "asset_id": "CVE-2026-0462",
+      "cve_id": "CVE-2026-107593",
+      "asset_id": "CVE-2026-107593",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -437,13 +437,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Insufficient Granularity of Access Control in AMD Secure Encrypted Virtualization (SEV) firmware could allow a malicious hypervisor to potentially redirect accesses to MMIO memory resulting in loss of guest memory integrity.",
-      "last_modified": "2026-11-21T16:45:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0462"
+      "description": "The Mooberry Book Manager WordPress plugin through 4.16.2 does not perform a capability check on one of its AJAX actions and protects it only with a nonce that it outputs to every authenticated user on all admin pages, allowing any logged-in user, including Subscribers, to trigger a site-wide rewrite of stored book purchase links and change a related Mooberry Book Manager WordPress plugin through 4.16.2 option.",
+      "last_modified": "2026-11-22T06:00:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107593"
     },
     {
-      "cve_id": "CVE-2026-133988",
-      "asset_id": "CVE-2026-133988",
+      "cve_id": "CVE-2026-107592",
+      "asset_id": "CVE-2026-107592",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -456,13 +456,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "A security vulnerability has been detected in Chaterm up to 0.12.2 on Windows. The affected element is an unknown function of the file resources/app-update.yml of the component Auto-Update Mechanism. Such manipulation leads to download of code without integrity check. It is possible to launch the attack remotely. This attack is characterized by high complexity. The exploitability is described as difficult. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "last_modified": "2026-11-21T16:45:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133988"
+      "description": "The Mooberry Book Manager WordPress plugin through 4.16.2 does not perform any capability or nonce check in one of its AJAX actions, allowing any authenticated user with a minimal role such as Subscriber to change the publisher assigned to any book, including books created by other users, and to create new book records. The missing nonce check also makes the action exploitable via CSRF against any logged-in user.",
+      "last_modified": "2026-11-22T06:00:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-107592"
     },
     {
-      "cve_id": "CVE-2026-134243",
-      "asset_id": "CVE-2026-134243",
+      "cve_id": "CVE-2026-112603",
+      "asset_id": "CVE-2026-112603",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -475,13 +475,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Parse Server before 8.6.122 and 9.0.0 before 9.11.1-alpha.2 does not prevent dot notation keys from changing a field that a beforeSave trigger keeps constant or reverts, affecting Object, Array, GeoPoint, Polygon, Bytes (on MongoDB), and ACL fields on create and update. A client allowed to write the object can modify such a field, such as a constant role list, to bypass Cloud Code authorization checks.",
-      "last_modified": "2026-11-21T16:36:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134243"
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in Xcode 27.2. An app may be able to gain root privileges.",
+      "last_modified": "2026-11-22T06:00:06Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112603"
     },
     {
-      "cve_id": "CVE-2026-134244",
-      "asset_id": "CVE-2026-134244",
+      "cve_id": "CVE-2026-113953",
+      "asset_id": "CVE-2026-113953",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -494,13 +494,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SiYuan 3.8.0 before 3.8.10 contains an information disclosure vulnerability in LAN sync that allows adjacent unauthenticated attackers to obtain device metadata by advertising a counterfeit peer with a replayed discovery tag. The client sends the sync scope ID, device name, OS, app version, and TLS client certificate to /peer-sync/v1/session/open before validating the server proof.",
-      "last_modified": "2026-11-21T16:36:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134244"
+      "description": "An integer overflow was addressed with improved input validation. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2, visionOS 27.2. Processing a maliciously crafted USD file may lead to unexpected app termination.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113953"
     },
     {
-      "cve_id": "CVE-2026-134246",
-      "asset_id": "CVE-2026-134246",
+      "cve_id": "CVE-2026-113954",
+      "asset_id": "CVE-2026-113954",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -513,13 +513,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SiYuan 3.6.0 before 3.6.2 and 3.7.3 before 3.8.10 contains a missing authorization vulnerability in the /api/block/getDOMText endpoint, which renders caller-supplied DOM without checking publish access for referenced image paths. When publish authentication is disabled, anonymous visitors can submit DOM referencing a known unpublished, non-encrypted asset path to retrieve its already-cached OCR text.",
-      "last_modified": "2026-11-21T16:36:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134246"
+      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in iOS 27.2 and iPadOS 27.2. Processing a maliciously crafted file may lead to unexpected app termination.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113954"
     },
     {
-      "cve_id": "CVE-2026-134251",
-      "asset_id": "CVE-2026-134251",
+      "cve_id": "CVE-2026-114022",
+      "asset_id": "CVE-2026-114022",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -532,13 +532,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Grav API plugin from 1.0.16 before 1.1.11 contains an authorization bypass vulnerability that allows scoped API key holders to override page permission rules because checks read the owning account's authority instead of the key's scopes. Attackers can use keys minted on super-admin accounts to edit, delete or read pages that deny those actions, or use media-scoped keys to change media on read-only pages.",
-      "last_modified": "2026-11-21T16:35:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134251"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to cause unexpected system termination.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114022"
     },
     {
-      "cve_id": "CVE-2026-134253",
-      "asset_id": "CVE-2026-134253",
+      "cve_id": "CVE-2026-114023",
+      "asset_id": "CVE-2026-114023",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -551,13 +551,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Grav API plugin from 1.0.0 before 1.1.4 contains a remote code execution vulnerability that allows publishers with media and page write rights to write theme template files through the blueprint-upload endpoint. Attackers can upload a file into a theme's Twig templates folder and include it from sandboxed page Twig to execute commands as the web-server user.",
-      "last_modified": "2026-11-21T16:35:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134253"
+      "description": "A path handling issue was addressed with improved validation. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Processing web content may lead to arbitrary code execution.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114023"
     },
     {
-      "cve_id": "CVE-2026-134254",
-      "asset_id": "CVE-2026-134254",
+      "cve_id": "CVE-2026-114025",
+      "asset_id": "CVE-2026-114025",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -570,13 +570,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio from 5.0.0 before 5.0.18 contains a path traversal vulnerability in DocumentsService::renameFile() that allows authenticated users to move files outside adm_my_files by supplying an unvalidated adm_new_name value. Attackers with folder upload permission can submit ../ sequences to file_rename_save to write files and create directories in arbitrary writable locations, including the web root.",
-      "last_modified": "2026-11-21T16:35:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134254"
+      "description": "An out-of-bounds write was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2. A user may be able to cause unexpected app termination or arbitrary code execution.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114025"
     },
     {
-      "cve_id": "CVE-2026-134255",
-      "asset_id": "CVE-2026-134255",
+      "cve_id": "CVE-2026-114026",
+      "asset_id": "CVE-2026-114026",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -589,13 +589,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio from 5.0.17 before 5.0.18 contains a stored cross-site scripting vulnerability that allows authenticated users to inject JavaScript by saving a crafted value in their STREET profile field. Attackers can break out of the unencoded title attribute in members_assignment_data.php with an onmouseover handler that executes in the session of role managers hovering over the address icon.",
-      "last_modified": "2026-11-21T16:35:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134255"
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, tvOS 27.2, visionOS 27.2, watchOS 27.2. Processing a maliciously crafted font may result in the disclosure of process memory.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114026"
     },
     {
-      "cve_id": "CVE-2026-134256",
-      "asset_id": "CVE-2026-134256",
+      "cve_id": "CVE-2026-114436",
+      "asset_id": "CVE-2026-114436",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -608,13 +608,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio from 5.0.17 before 5.0.18 contains a missing authorization vulnerability that allows authenticated regular users to upload images into the announcements module by abusing the CKEditor upload handler. Attackers can send id=ann_description to ckeditor_upload_handler.php to store images under adm_my_files/announcements/images and retrieve them via show_image.php, abusing the application as an image host.",
-      "last_modified": "2026-11-21T16:35:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134256"
+      "description": "The Video Conferencing with Zoom WordPress plugin before 4.7.0 does not check that a requested Zoom meeting's recordings were published on the site before fetching them with the site's connected Zoom account, allowing unauthenticated users who know a meeting ID to retrieve that meeting's cloud recording details, including its topic, share link, passcode when returned by Zoom, and direct play and download links.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114436"
     },
     {
-      "cve_id": "CVE-2026-134257",
-      "asset_id": "CVE-2026-134257",
+      "cve_id": "CVE-2026-119184",
+      "asset_id": "CVE-2026-119184",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -627,13 +627,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio before 5.0.18 contains an insufficient session expiration vulnerability that allows attackers to keep account access after a forgot-password reset because User::setPassword() deletes sessions using the visitor ID instead of the reset user's usr_id. Attackers already holding a victim's session or remember-me cookie can continue using it after the victim resets the password, keeping authenticated access to the account.",
-      "last_modified": "2026-11-21T16:35:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134257"
+      "description": "The Mapster WP Maps \u2014 Mapbox, MapLibre & Google Maps for WordPress plugin before 2.0.7 does not perform any authorization check when saving edits made through its bundled photo-gallery library, allowing any authenticated user with at least Contributor-level access to overwrite the title and content of, and write arbitrary metadata onto, any post, page or media attachment on the site regardless of ownership.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-119184"
     },
     {
-      "cve_id": "CVE-2026-134258",
-      "asset_id": "CVE-2026-134258",
+      "cve_id": "CVE-2026-121151",
+      "asset_id": "CVE-2026-121151",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -646,13 +646,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio 5.0.0 before 5.0.18 contains a path traversal vulnerability in the Documents & Files renameFile() action that allows authenticated users with folder upload rights to move files outside adm_my_files by supplying ../ sequences in adm_new_name. Attackers can relocate an uploaded SVG containing script to the web root, where it is served inline and executes stored cross-site scripting against administrators for account takeover.",
-      "last_modified": "2026-11-21T16:35:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134258"
+      "description": "The UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 2.26.16.26, UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 1.26.16 do not preserve long database values byte-for-byte when restoring a database backup, allowing users with a role as low as Subscriber to plant a serialized value that becomes a PHP Object Injection once an administrator backs up and restores the database.\n\nNo gadget chain is known in the UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 2.26.16.26, UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 1.26.16 or WordPress core, so the demonstrated effect is instantiation of an attacker-chosen class in the attacker's own requests. Exploitation requires the planted data to line up exactly with how the backup is read back, which depends on details of the attacker's row and the database dump format.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121151"
     },
     {
-      "cve_id": "CVE-2026-134259",
-      "asset_id": "CVE-2026-134259",
+      "cve_id": "CVE-2026-121154",
+      "asset_id": "CVE-2026-121154",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -665,13 +665,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio from 5.0.16 before 5.0.18 contains a stored cross-site scripting vulnerability that allows users with folder upload rights to store JavaScript by uploading SVG files served inline. Attackers can upload a script-bearing SVG that downloadFile() serves as image/svg+xml inline without nosniff or CSP, executing on the Admidio origin for viewers including unauthenticated visitors.",
-      "last_modified": "2026-11-21T16:35:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134259"
+      "description": "The UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 2.26.16.26, UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 1.26.16 do not keep serialized string lengths consistent when their database search and replace processes certain serialized values, allowing users with a role as low as Subscriber to plant data that becomes an attacker-chosen PHP object after an administrator runs a URL-lengthening search and replace or a migration restore.\n\nWhen the replacement changes the length of the text, the declared string lengths inside the stored value no longer match and the corrupted value is written back, so when WordPress later reads it the trailing bytes are parsed as further serialized structure, including an object of a class the attacker named. No gadget chain is known in the UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 2.26.16.26, UpdraftPlus: WP Backup & Migration Plugin WordPress plugin before 1.26.16 themselves; further impact depends on classes available from other installed code.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-121154"
     },
     {
-      "cve_id": "CVE-2026-134260",
-      "asset_id": "CVE-2026-134260",
+      "cve_id": "CVE-2026-131979",
+      "asset_id": "CVE-2026-131979",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -684,13 +684,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio 5.0.0 before 5.0.18 contains an improper authorization vulnerability in modules/profile/profile_new.php that allows authenticated Group Leaders to bypass field-level profile restrictions. Attackers can request mode=html_selection to read restricted field values and submit mode=save requests to modify restricted member profile fields.",
-      "last_modified": "2026-11-21T16:35:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134260"
+      "description": "The Shortcodes Ultimate  WordPress plugin before 7.9.1 does not restrict the content type of its lightbox shortcode, allowing users with the contributor role and above to make the lightbox fetch HTML from an attacker-controlled server and insert it into the page unsanitised, leading to Stored Cross-Site Scripting when a user opens the lightbox.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131979"
     },
     {
-      "cve_id": "CVE-2026-134261",
-      "asset_id": "CVE-2026-134261",
+      "cve_id": "CVE-2026-132073",
+      "asset_id": "CVE-2026-132073",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -703,13 +703,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio before 5.0.18 contains an insecure direct object reference vulnerability in mylist.php that loads list configurations by the list_uuid parameter while checking only the organization, not the owner or private flag. Authenticated users with Lists module access who know a victim's list UUID can read its name, selected profile fields, sort order and filter conditions.",
-      "last_modified": "2026-11-21T16:35:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134261"
+      "description": "The Keywords to Links Converter WordPress plugin before 2.2.5 does not validate a value submitted to one of its AJAX actions before saving it as an option that it later uses in an arithmetic operation on every admin and front-end request, allowing users with a role as low as Subscriber to make the whole site return a fatal error until the option is manually reset.",
+      "last_modified": "2026-11-22T05:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132073"
     },
     {
-      "cve_id": "CVE-2026-134262",
-      "asset_id": "CVE-2026-134262",
+      "cve_id": "CVE-2026-125396",
+      "asset_id": "CVE-2026-125396",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -722,13 +722,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio 5.0.0 before 5.0.18 contains a stored cross-site scripting vulnerability that allows role administrators to inject JavaScript by placing quote-breaking payloads in role names rendered unencoded in the data-message attribute in modules/profile/roles_functions.php. Attackers can execute scripts when a full administrator views an affected profile page, stealing the CSRF token to assign themselves the Administrator role.",
-      "last_modified": "2026-11-21T16:35:43Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134262"
+      "description": "Ghostscript before 10.08.0 contains a -dSAFER bypass vulnerability in the .putgstringcopy procedure in gs_fonts.ps, which calls the privileged .forceput operator without checking operand types. Attackers can supply crafted PostScript or PDF documents that trigger a type error, recover .forceput via a custom error handler, and cause a use-after-free across save/restore to execute arbitrary code.",
+      "last_modified": "2026-11-22T05:18:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125396"
     },
     {
-      "cve_id": "CVE-2026-134264",
-      "asset_id": "CVE-2026-134264",
+      "cve_id": "CVE-2026-134651",
+      "asset_id": "CVE-2026-134651",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -741,13 +741,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Admidio from 5.0.2 before 5.0.17 contains an arbitrary file read vulnerability that allows any logged-in member to read server files by placing local paths in img src attributes of eCard messages. Attackers can send an eCard to their own account so sendEcard() embeds files like adm_my_files/config.php via addEmbeddedImage(), disclosing database credentials and /etc/passwd.",
-      "last_modified": "2026-11-21T16:35:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134264"
+      "description": "A flaw was found in Quay. This vulnerability allows an authenticated remote attacker holding a restricted, short-lived JSON Web Token (JWT) to achieve privilege escalation. Because Quay improperly accepts scoped registry bearer tokens as valid robot account passwords, an attacker can authenticate directly as the robot account and obtain broader permissions. Consequently, unauthorized access persists and enables the attacker to generate fresh tokens even after the robot account's password has been reset.",
+      "last_modified": "2026-11-22T05:05:52Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134651"
     },
     {
-      "cve_id": "CVE-2026-134265",
-      "asset_id": "CVE-2026-134265",
+      "cve_id": "CVE-2026-23871",
+      "asset_id": "CVE-2026-23871",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -760,13 +760,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 2.4.0 before 2.8.0 contains a denial of service vulnerability in the richtext converter that allows authenticated project writers to exhaust server memory and CPU by storing tables with unbounded rowspan and colspan values. Any project reader or CalDAV client can trigger the expansion through markdown task reads, CalDAV GETs, or the frontend editor, producing 100 MB responses from a 64-byte description.",
-      "last_modified": "2026-11-21T16:35:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134265"
+      "description": "Incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4 could have caused a target's device to reveal its IP information to an attacker if an attacker sent media from an attacker-controlled URL when a crafted Click to WhatsApp ad-reply message was rendered and displayed in a message thread. This issue may have been abused in conjunction with specific spam messages.",
+      "last_modified": "2026-11-22T05:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-23871"
     },
     {
-      "cve_id": "CVE-2026-134266",
-      "asset_id": "CVE-2026-134266",
+      "cve_id": "CVE-2026-133968",
+      "asset_id": "CVE-2026-133968",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -779,13 +779,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.19.0 before 2.8.0 contains a denial of service vulnerability that allows authenticated users to exhaust CPU by supplying unbounded business-day operands in datemath filters. Attackers can send task or time-tracking filters like due_date > now+999999999999b, triggering a per-day loop in go-datemath that pins CPU cores and exhausts the server.",
-      "last_modified": "2026-11-21T16:35:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134266"
+      "description": "monailabel (aka MONAI Label) through 0.8.5 allows directory traversal, with resultant remote code execution, via the image parameter to the PUT /datastore/image endpoint, as exploited in the wild starting in September 2026.",
+      "last_modified": "2026-11-22T05:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133968"
     },
     {
-      "cve_id": "CVE-2026-134268",
-      "asset_id": "CVE-2026-134268",
+      "cve_id": "CVE-2026-130894",
+      "asset_id": "CVE-2026-130894",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -798,13 +798,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.21.0 before 2.8.0 contains a resource exhaustion vulnerability that allows authenticated users to trigger instance-wide database writes by setting a project position below 0.1. Attackers can repeatedly send PUT requests to /api/v2/projects/{id} so recalculateProjectPositions updates every user's root projects, holding SQLite's write lock and degrading availability.",
-      "last_modified": "2026-11-21T16:35:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134268"
+      "description": "The Newsletter  WordPress plugin before 9.4.0 does not protect its unsubscription actions against Cross-Site Request Forgery for subscribers it identifies from its own tracking cookie, allowing attackers to unsubscribe a subscriber from the site's newsletter by making them visit a malicious page.",
+      "last_modified": "2026-11-22T05:00:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-130894"
     },
     {
-      "cve_id": "CVE-2026-134269",
-      "asset_id": "CVE-2026-134269",
+      "cve_id": "CVE-2026-134623",
+      "asset_id": "CVE-2026-134623",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -817,13 +817,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.18.0 before 2.8.0 contains a resource amplification vulnerability in pkg/models/export.go that allows authenticated users to exhaust server memory by exporting heavily related tasks. Attackers can relate many tasks to one task with a large description and request a user export, causing an out-of-memory crash for all users.",
-      "last_modified": "2026-11-21T16:35:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134269"
+      "description": "A flaw has been found in Microweber up to 2.0.20. This impacts the function UserManager::make_logged of the file src/MicroweberPackages/App/Http/Controllers/ApiController.php of the component Generic API Dispatcher. This manipulation causes improper access controls. Remote exploitation of the attack is possible. The exploit has been published and may be used. Upgrading to version 2.0.21 will fix this issue. Patch name: e639d26e61b989b100f8b6f6bb78c0cecca79b99. You should upgrade the affected component.",
+      "last_modified": "2026-11-22T04:45:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134623"
     },
     {
-      "cve_id": "CVE-2026-134271",
-      "asset_id": "CVE-2026-134271",
+      "cve_id": "CVE-2026-132475",
+      "asset_id": "CVE-2026-132475",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -836,13 +836,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 1.0.0 before 2.8.0 contains a memory exhaustion vulnerability that allows authenticated users to crash the server by uploading extreme-width images as task attachments. Attackers can request the attachment preview endpoint so Lanczos resampling allocates width-proportional weight tables, OOM-killing the process repeatedly with sub-megabyte PNGs.",
-      "last_modified": "2026-11-21T16:35:35Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134271"
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27.2. An app may be able to cause unexpected system termination or corrupt kernel memory.",
+      "last_modified": "2026-11-22T04:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132475"
     },
     {
-      "cve_id": "CVE-2026-134272",
-      "asset_id": "CVE-2026-134272",
+      "cve_id": "CVE-2026-130891",
+      "asset_id": "CVE-2026-130891",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -855,13 +855,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.9.0 before 2.8.0 contains an information disclosure vulnerability that allows project admins to view share creators' email addresses via the link share list endpoint. Attackers with admin permission can request the project shares endpoint and read the shared_by email field, exposing addresses of creators including former project members.",
-      "last_modified": "2026-11-21T16:35:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134272"
+      "description": "The Newsletter  WordPress plugin before 9.4.0 does not check that a visitor is really the subscriber before showing them newsletters marked as private, and accepts a weaker subscriber identifier that anyone can obtain by submitting a known subscriber's email address to the public subscription form, allowing unauthenticated attackers who know a subscriber's email address to read every private newsletter sent to that subscriber.",
+      "last_modified": "2026-11-22T04:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-130891"
     },
     {
-      "cve_id": "CVE-2026-134273",
-      "asset_id": "CVE-2026-134273",
+      "cve_id": "CVE-2026-130892",
+      "asset_id": "CVE-2026-130892",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -874,13 +874,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 2.6.0 before 2.8.0 contains a resource exhaustion vulnerability in the Planka migration converter that multiplies task allocations for duplicate list IDs. Attackers controlling a Planka server can return boards with duplicate list IDs and many cards to exhaust memory and OOM-kill the Vikunja process.",
-      "last_modified": "2026-11-21T16:35:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134273"
+      "description": "The Newsletter  WordPress plugin before 9.4.0 does not properly validate the destination of the redirect performed when a subscriber changes their list membership from a newsletter link, checking only that it begins with the site's URL, allowing unauthenticated attackers to redirect users to external sites whose address starts with the site's URL.",
+      "last_modified": "2026-11-22T04:45:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-130892"
     },
     {
-      "cve_id": "CVE-2026-134275",
-      "asset_id": "CVE-2026-134275",
+      "cve_id": "CVE-2026-131975",
+      "asset_id": "CVE-2026-131975",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -893,13 +893,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.8.0 before 2.8.0 contains a denial of service vulnerability that allows authenticated project readers to amplify response size by repeating requested properties in CalDAV PROPFIND requests. Attackers can send PROPFIND requests to the dav projects endpoint with hundreds of duplicate calendar-data properties to exhaust server memory, CPU, and bandwidth.",
-      "last_modified": "2026-11-21T16:35:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134275"
+      "description": "The Shortcodes Ultimate  WordPress plugin before 7.9.1 does not prevent format specifiers in a shortcode attribute from being interpreted when building navigation menu markup, which could allow users with a role as low as Contributor to perform Stored Cross-Site Scripting attacks.",
+      "last_modified": "2026-11-22T04:30:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131975"
     },
     {
-      "cve_id": "CVE-2026-134276",
-      "asset_id": "CVE-2026-134276",
+      "cve_id": "CVE-2026-131976",
+      "asset_id": "CVE-2026-131976",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -912,13 +912,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 2.2.1 before 2.8.0 contains a TOTP replay protection bypass in ValidateTOTPPasscode that allows attackers to reuse consumed codes by padding them with whitespace. Attackers with valid credentials who observe a used passcode can resubmit it whitespace-padded to the login API within the validity window to obtain a session token.",
-      "last_modified": "2026-11-21T16:35:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134276"
+      "description": "The Shortcodes Ultimate  WordPress plugin before 7.9.1 does not prevent placeholders in a shortcode attribute from being expanded with unescaped nested shortcode output, allowing users with a role as low as contributor to perform Stored Cross-Site Scripting attacks.",
+      "last_modified": "2026-11-22T04:30:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131976"
     },
     {
-      "cve_id": "CVE-2026-134277",
-      "asset_id": "CVE-2026-134277",
+      "cve_id": "CVE-2026-131977",
+      "asset_id": "CVE-2026-131977",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -931,13 +931,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.16.0 before 2.8.0 contains an information disclosure vulnerability that writes users' Trello API tokens to application logs and Sentry by formatting provider errors verbatim in listeners.go. When a Trello migration fails with a transport error, the URL error embeds the token query parameter, letting anyone with log or telemetry access obtain the reusable third-party credential.",
-      "last_modified": "2026-11-21T16:35:29Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134277"
+      "description": "The Shortcodes Ultimate  WordPress plugin before 7.9.1 does not escape the error message returned when a remote feed cannot be retrieved before outputting it, which could allow users with the contributor role and above to perform Stored Cross-Site Scripting attacks against administrators by pointing the feed at a server they control.",
+      "last_modified": "2026-11-22T04:30:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131977"
     },
     {
-      "cve_id": "CVE-2026-134279",
-      "asset_id": "CVE-2026-134279",
+      "cve_id": "CVE-2026-131984",
+      "asset_id": "CVE-2026-131984",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -950,13 +950,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.20.5 before 2.8.0 contains a login cross-site request forgery vulnerability in the OpenID Connect callback in OpenIdAuth.vue that accepts a valueless state parameter. Attackers can send a crafted callback link with an empty state and their own authorization code to silently log victims into the attacker's account and view the victims' entered data.",
-      "last_modified": "2026-11-21T16:35:25Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134279"
+      "description": "The FluentCommunity  WordPress plugin before 2.7.0 does not verify that the user is allowed to manage the space it actually modifies or deletes, allowing a user who administers any one space to modify or permanently delete any other space on the site, together with its posts, comments, reactions and memberships.",
+      "last_modified": "2026-11-22T04:30:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131984"
     },
     {
-      "cve_id": "CVE-2026-134280",
-      "asset_id": "CVE-2026-134280",
+      "cve_id": "CVE-2026-132082",
+      "asset_id": "CVE-2026-132082",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -969,13 +969,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja 0.17.0 before 2.8.0 builds the task.deleted notification and webhook payload, including related tasks, with the deleting user's permissions and sends it to all project subscribers without per-recipient authorization checks. A user subscribed to a project, or owning its webhook, receives full data of related tasks in private projects they cannot read when a task in their project is deleted.",
-      "last_modified": "2026-11-21T16:35:24Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134280"
+      "description": "The RSVPMaker for Toastmasters WordPress plugin before 6.9.3 does not sanitise and escape a parameter before outputting it back in an admin page, leading to a Reflected Cross-Site Scripting which could be used against high privilege users such as admin.",
+      "last_modified": "2026-11-22T04:30:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132082"
     },
     {
-      "cve_id": "CVE-2026-134281",
-      "asset_id": "CVE-2026-134281",
+      "cve_id": "CVE-2026-40671",
+      "asset_id": "CVE-2026-40671",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -988,13 +988,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 2.2.0 before 2.8.0 contains an information disclosure vulnerability that allows authenticated users to read other users' private projects through the tasks.overdue webhook payload. Attackers can register a personal tasks.overdue webhook with one subscribed overdue task, then receive project titles, descriptions, and owner IDs from other users' reminders at external URLs.",
-      "last_modified": "2026-11-21T16:35:23Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134281"
+      "description": "Incomplete cleanup during VMRUN error handling could allow access to a Secure Encrypted Virtualization-Secure Nested Paging (SEV-SNP) guest register state, potentially resulting in information disclosure and impacts to confidentiality.",
+      "last_modified": "2026-11-22T04:30:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40671"
     },
     {
-      "cve_id": "CVE-2026-134282",
-      "asset_id": "CVE-2026-134282",
+      "cve_id": "CVE-2026-74127",
+      "asset_id": "CVE-2026-74127",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1007,13 +1007,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 0.14.0 before 2.8.0 contains a mass assignment vulnerability that allows authenticated users to set json-hidden fields by sending XML request bodies to the v1 API. Attackers can set BackgroundFileID on project creation to download any stored file via the background endpoint, or create bots with IsAdmin set to gain instance-admin access.",
-      "last_modified": "2026-11-21T16:35:22Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134282"
+      "description": "Improper verification of a cryptographic signature in the PSP Boot ROM of AMD Zeppelin (Zen1/Zen+) processors could allow an attacker with local access to the SPI flash to bypass secure boot authentication, potentially resulting in arbitrary unsigned code execution at full Platform Security Processor privilege, loss of confidentiality, loss of integrity of the host boot chain, and persistent loss of availability.",
+      "last_modified": "2026-11-22T04:30:04Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74127"
     },
     {
-      "cve_id": "CVE-2026-134284",
-      "asset_id": "CVE-2026-134284",
+      "cve_id": "CVE-2026-134616",
+      "asset_id": "CVE-2026-134616",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1026,13 +1026,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Vikunja from 1.0.0 before 2.8.0 contains an account takeover vulnerability that allows attackers to hijack SSO identities by planting local accounts with unverified victim emails. When emailfallback is enabled, attackers register or edit a local account using the victim's email, causing the victim's first OIDC login to link into the attacker-controlled account and expose their data.",
-      "last_modified": "2026-11-21T16:35:21Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134284"
+      "description": "A security vulnerability has been detected in itsourcecode Insurance Management System 1.0. The affected element is an unknown function of the file /deleteClient.php. Such manipulation of the argument client_id leads to sql injection. The attack may be performed from remote. The exploit has been disclosed publicly and may be used.",
+      "last_modified": "2026-11-22T04:00:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134616"
     },
     {
-      "cve_id": "CVE-2026-134286",
-      "asset_id": "CVE-2026-134286",
+      "cve_id": "CVE-2026-134572",
+      "asset_id": "CVE-2026-134572",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1045,13 +1045,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OpenRemote from 1.2.0 before 1.34.0 contains an authorization bypass vulnerability in AlarmFacade that allows restricted users with write:rules to create alarms for assets outside their ruleset subtree. Attackers can deploy a JSON asset-scoped ruleset using target.custom asset ids to create HIGH severity alarms and trigger operator notifications about arbitrary in-realm assets.",
-      "last_modified": "2026-11-21T16:35:20Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134286"
+      "description": "A vulnerability was identified in itsourcecode Insurance Management System 1.0. Affected by this issue is some unknown functionality of the file /deleteAgent.php. The manipulation of the argument agent_id leads to sql injection. Remote exploitation of the attack is possible. The exploit is publicly available and might be used.",
+      "last_modified": "2026-11-22T02:15:19Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134572"
     },
     {
-      "cve_id": "CVE-2026-134287",
-      "asset_id": "CVE-2026-134287",
+      "cve_id": "CVE-2026-131971",
+      "asset_id": "CVE-2026-131971",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1064,13 +1064,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "OpenRemote core before 1.34.0 contains an authentication bypass vulnerability in UserAssetProvisioningMQTTHandler that allows unauthenticated attackers to impersonate provisioned devices without proof of private key possession. Attackers can publish a known device's public certificate to the provisioning request topic, authenticating their anonymous MQTT connection as the device's service account to read and modify assets.",
-      "last_modified": "2026-11-21T16:35:19Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134287"
+      "description": "The Payment forms, Buy now buttons, and Invoicing System | GetPaid WordPress plugin before 2.8.63 does not check that the visitor is allowed to view an invoice before rendering it through its single-invoice shortcode, and its payment-form embed page lets unauthenticated users render that shortcode for any invoice ID, disclosing customers' names, billing addresses, phone numbers, line items and payment status.",
+      "last_modified": "2026-11-22T02:15:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131971"
     },
     {
-      "cve_id": "CVE-2026-134288",
-      "asset_id": "CVE-2026-134288",
+      "cve_id": "CVE-2026-132044",
+      "asset_id": "CVE-2026-132044",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1083,13 +1083,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains an authorization bypass vulnerability that allows clients with table write access to persist writes refused by THROWing table events within interactive transactions. Attackers can run a guarded statement via RPC begin and query, ignore the returned error, and commit to persist the record and event side effects.",
-      "last_modified": "2026-11-21T16:35:17Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134288"
+      "description": "The FluentCommunity  WordPress plugin before 2.8.0 does not check that a lesson belongs to the course a course creator is authorised to manage before moving it, allowing a user with the Course Creator role to move lessons out of other creators' courses into their own and read their content.",
+      "last_modified": "2026-11-22T02:15:02Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132044"
     },
     {
-      "cve_id": "CVE-2026-134289",
-      "asset_id": "CVE-2026-134289",
+      "cve_id": "CVE-2026-134654",
+      "asset_id": "CVE-2026-134654",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1102,13 +1102,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 1.0.0 before 4.0.0 prints SURREAL_PASS and SURREAL_TOKEN environment variable values in clear text in the --help and -h output of CLI commands such as surreal start, sql, import, export, and mcp, because the arguments do not set clap's hide_env_values. Anyone who later sees that terminal output, for example in shell logs, CI logs, or screen shares, can obtain root database credentials.",
-      "last_modified": "2026-11-21T16:35:16Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134289"
+      "description": "Mailflare before 48957fb contains a host header injection vulnerability in the password-reset request handler that allows unauthenticated attackers to poison reset links when APP_URL is unset. Attackers can submit a reset request for a victim's email with a malicious Host header, capturing the single-use token when the victim clicks the link to take over the account.",
+      "last_modified": "2026-11-22T02:03:17Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134654"
     },
     {
-      "cve_id": "CVE-2026-134290",
-      "asset_id": "CVE-2026-134290",
+      "cve_id": "CVE-2026-134655",
+      "asset_id": "CVE-2026-134655",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1121,13 +1121,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 2.2.0 before 4.0.0 includes the record id of a referencing row in the error returned when a delete is blocked by an ON DELETE REJECT reference, without checking the caller's SELECT permission on that row. An authenticated principal with DELETE permission can attempt to delete a referenced record and read the rejection error to learn the existence and exact ids of referencing records hidden by row-level SELECT permissions.",
-      "last_modified": "2026-11-21T16:35:15Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134290"
+      "description": "Open5GS AMF through 2.8.0 contains a missing resource release vulnerability that allows authenticated UEs to orphan SMF sessions by triggering Create SM Context response processing failures. Attackers can repeatedly release the RAN UE context while responses are pending, causing AMF_SESS_CLEAR() without Release SM Context requests and degrading SMF availability.",
+      "last_modified": "2026-11-22T02:03:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134655"
     },
     {
-      "cve_id": "CVE-2026-134291",
-      "asset_id": "CVE-2026-134291",
+      "cve_id": "CVE-2026-134656",
+      "asset_id": "CVE-2026-134656",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1140,13 +1140,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its filesystem storage bucket that only canonicalizes the bucket root, not descendant symlinks. Attackers can reference paths through a pre-existing symlink inside the bucket that pass the lexical prefix check, reading and writing files across the host filesystem.",
-      "last_modified": "2026-11-21T16:35:14Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134291"
+      "description": "OpenAirInterface CN5G SMF through 2.2.2 contains a missing resource release vulnerability in handle_pdu_session_release_sm_context_request() that fails to delete N7 SM policy associations at the PCF. Authenticated UEs can repeatedly establish and release PDU sessions through the AMF-initiated Release SM Context path to accumulate stale associations and exhaust PCF memory.",
+      "last_modified": "2026-11-22T02:03:15Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134656"
     },
     {
-      "cve_id": "CVE-2026-134292",
-      "asset_id": "CVE-2026-134292",
+      "cve_id": "CVE-2026-134657",
+      "asset_id": "CVE-2026-134657",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1159,13 +1159,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 1.0.0 before 4.0.0 contains a capability check bypass in its embedded JavaScript scripting engine, where the surrealdb.functions bridge calls the internal fnc::synchronous() and fnc::asynchronous() dispatchers without enforcing function capability checks. Authenticated users denied access to built-in functions in SurrealQL can execute them by calling them through surrealdb.functions from embedded JavaScript.",
-      "last_modified": "2026-11-21T16:35:13Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134292"
+      "description": "OpenAirInterface CN5G PCF through 2.2.2 contains a memory leak vulnerability in pcf_smpc::delete_sm_policy_handler() that leaves stale UE IPv4, SUPI and DNN index entries after association deletion. Attackers can trigger repeated SM policy create and delete cycles over N7 via PDU session establishment and release to grow PCF memory without bound and break association lookups.",
+      "last_modified": "2026-11-22T02:03:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134657"
     },
     {
-      "cve_id": "CVE-2026-134293",
-      "asset_id": "CVE-2026-134293",
+      "cve_id": "CVE-2026-134658",
+      "asset_id": "CVE-2026-134658",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1178,13 +1178,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.1.0 before 4.0.0 contains an SQL injection vulnerability in its Model Context Protocol (MCP) server because the identifier validator (consume_backtick_ident and validate_identifier) treats the first backtick as the closing delimiter, ignoring escape characters that the SurrealQL parser honors. Attackers can supply MCP tool arguments containing an escaped backtick to break out of the quoted identifier and execute arbitrary SurrealQL statements.",
-      "last_modified": "2026-11-21T16:35:12Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134293"
+      "description": "free5GC SMF through 1.4.6 contains a missing resource release vulnerability in HandlePDUSessionSMContextCreate that leaves CHF charging sessions open when PCF session rule application fails. Attackers can repeatedly trigger failed PDU session establishments to accumulate orphaned charging sessions on the CHF and degrade its availability.",
+      "last_modified": "2026-11-22T02:03:12Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134658"
     },
     {
-      "cve_id": "CVE-2026-134294",
-      "asset_id": "CVE-2026-134294",
+      "cve_id": "CVE-2026-134659",
+      "asset_id": "CVE-2026-134659",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1197,13 +1197,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its bucket storage layer on Windows, where ObjectKey::check_no_traversal splits object keys only on forward slashes while FileStore::to_os_path treats backslashes as directory separators. Attackers can supply object keys such as /..\\bucket2\\secret to bypass the traversal check and read or modify files in other buckets.",
-      "last_modified": "2026-11-21T16:35:11Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134294"
+      "description": "OpenAirInterface CN5G AMF before 2.2.2 contains a missing resource release vulnerability in amf_sbi::handle_itti_message() that leaves stale PDU session contexts when NRF lookup or SMF selection fails. Authenticated UEs can request PDU sessions while no SMF is selectable, causing deregistration to wait on SMF release timeouts and stall shared NAS processing for other UEs.",
+      "last_modified": "2026-11-22T02:03:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134659"
     },
     {
-      "cve_id": "CVE-2026-134295",
-      "asset_id": "CVE-2026-134295",
+      "cve_id": "CVE-2026-134660",
+      "asset_id": "CVE-2026-134660",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1216,13 +1216,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in direct filesystem buckets because BucketController::check_permission evaluates key-based ACLs against the un-normalized object key, while FileStore::to_os_path collapses '..' sequences without a traversal check. An authenticated tenant permitted only for certain keys can supply a key such as /public/../private/confidential.txt to read, write, or delete arbitrary files within the storage root.",
-      "last_modified": "2026-11-21T16:35:10Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134295"
+      "description": "GPAC MP4Box through 26.07.0 contains a type confusion vulnerability in xmt_parse_command() in src/scene_manager/loader_xmt.c that casts target nodes to GF_ParentNode without validation. Attackers can persuade users to process a crafted XMT-A file whose command targets a non-grouping node, causing gf_node_list_get_child() to perform an invalid memory read and crash MP4Box.",
+      "last_modified": "2026-11-22T02:03:09Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134660"
     },
     {
-      "cve_id": "CVE-2026-134298",
-      "asset_id": "CVE-2026-134298",
+      "cve_id": "CVE-2026-134661",
+      "asset_id": "CVE-2026-134661",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1235,13 +1235,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains an authorization bypass that allows users with the read-only VIEWER role to modify database schema, because CREATE on a nonexistent table implicitly defines it without the DEFINE TABLE permission check applied to explicit definitions. Authenticated VIEWER users can issue CREATE statements in non-STRICT databases to add arbitrary empty SCHEMALESS tables, cluttering schemas or colliding with application table names.",
-      "last_modified": "2026-11-21T16:35:09Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134298"
+      "description": "GPAC MP4Box through 26.07.0 contains a NULL pointer dereference vulnerability in gf_odf_encode_ui_config() in src/odf/descriptors.c that allows attackers to crash the process. Attackers can persuade users to process a crafted XMT file declaring an interaction stream without a UIConfig descriptor, causing a denial of service.",
+      "last_modified": "2026-11-22T02:03:07Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134661"
     },
     {
-      "cve_id": "CVE-2026-134299",
-      "asset_id": "CVE-2026-134299",
+      "cve_id": "CVE-2026-134662",
+      "asset_id": "CVE-2026-134662",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1254,13 +1254,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.0.4 before 4.0.0 does not apply operator-configured WebSocket frame, message, and buffer size limits to the GraphQL WebSocket upgrade handler at GET /graphql, falling back to permissive library defaults. Unauthenticated remote attackers who supply the target namespace and database in request headers can hold up to 64 MiB of in-flight data per concurrent connection, exhausting server memory and degrading availability.",
-      "last_modified": "2026-11-21T16:35:08Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134299"
+      "description": "GPAC MP4Box through 26.07.0 contains a double free vulnerability in the XMT-A scene loader that leaves a stale GF_Command pointer in a Conditional node's SFCommandBuffer when the buffer element is not properly closed. Attackers can persuade users to process a crafted XMT file with malformed nesting, causing gf_sg_sfcommand_del() to free the live command, corrupting heap memory and crashing the process.",
+      "last_modified": "2026-11-22T02:03:05Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134662"
     },
     {
-      "cve_id": "CVE-2026-134300",
-      "asset_id": "CVE-2026-134300",
+      "cve_id": "CVE-2026-134663",
+      "asset_id": "CVE-2026-134663",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1273,13 +1273,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB from 2.2.0 before 4.0.0 contains an authorization bypass vulnerability in Document::purge_references that lets authenticated users bypass target table PERMISSIONS by triggering REFERENCE ON DELETE cascades. Attackers can delete a referenced record to delete, unset, or run CUSTOM expressions on referencing records despite PERMISSIONS FOR delete or update NONE.",
-      "last_modified": "2026-11-21T16:35:07Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134300"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in the XMT scene loader that retains a pointer to a PROTO sub-graph freed by gf_sg_proto_del(). Attackers can supply a crafted XMT file imported with MP4Box, causing xmt_parse_command() to update the freed graph's referencing_commands list and crash the process.",
+      "last_modified": "2026-11-22T02:03:03Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134663"
     },
     {
-      "cve_id": "CVE-2026-134301",
-      "asset_id": "CVE-2026-134301",
+      "cve_id": "CVE-2026-134664",
+      "asset_id": "CVE-2026-134664",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1292,13 +1292,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB before 4.0.0 contains a guard bypass vulnerability that allows authenticated users to execute write subqueries by embedding them in LIVE query WHERE clauses or field projections. Attackers can inject CREATE, UPDATE, DELETE, or RELATE statements that run atomically inside other users' triggering transactions, amplifying writes and exfiltrating document data after permission revocation.",
-      "last_modified": "2026-11-21T16:35:06Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134301"
+      "description": "GPAC MP4Box through 26.07.0 contains a NULL pointer dereference vulnerability in src/compositor/mpeg4_sensors.c that allows attackers to crash the process via uninitialized sensor nodes. Attackers can supply a crafted XMT scene that makes compositor_mpeg4_get_sensor_handler_ex() call hs->IsEnabled through a near-NULL pointer, causing denial of service.",
+      "last_modified": "2026-11-22T02:03:00Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134664"
     },
     {
-      "cve_id": "CVE-2026-134302",
-      "asset_id": "CVE-2026-134302",
+      "cve_id": "CVE-2026-134665",
+      "asset_id": "CVE-2026-134665",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1311,13 +1311,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 1.0.0 before 4.0.0 contains a denial of service vulnerability that allows any user able to run queries to crash the server by triggering unchecked decimal overflow in math::sum or math::product. Attackers can submit a query summing or multiplying large decimal literals or aggregate stored decimals with GROUP ALL, causing a rust_decimal panic that terminates the entire server process.",
-      "last_modified": "2026-11-21T16:35:04Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134302"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in the XMT scene loader that allows attackers to access freed heap memory by supplying a crafted XMT file. When xmt_parse_element() replaces an SFNode field child, the freed node stays cached in parser->peeked_nodes and a later DEF lookup passes it to gf_node_get_name(), crashing MP4Box.",
+      "last_modified": "2026-11-22T02:02:58Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134665"
     },
     {
-      "cve_id": "CVE-2026-134303",
-      "asset_id": "CVE-2026-134303",
+      "cve_id": "CVE-2026-134666",
+      "asset_id": "CVE-2026-134666",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1330,13 +1330,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealKV before 1.1.0 contains an out-of-bounds read vulnerability in the safe InternalKeyRef::from_encoded constructor, which only checks key length with a debug-only assertion. Callers passing keys shorter than 16 bytes, or crafted or corrupted SSTable blocks, trigger unchecked length underflow in timestamp(), seq_num() and trailer(), reading heap bytes before the allocation or panicking.",
-      "last_modified": "2026-11-21T16:35:03Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134303"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in the XMT-A scene loader because xmt_node_end() frees unattached nodes but leaves them on the parser node stack. Attackers can persuade users to process a crafted XMT file whose text content makes xmt_text_content() pass the freed node to gf_node_get_tag(), reading freed heap memory and crashing MP4Box.",
+      "last_modified": "2026-11-22T02:02:56Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134666"
     },
     {
-      "cve_id": "CVE-2026-134306",
-      "asset_id": "CVE-2026-134306",
+      "cve_id": "CVE-2026-134667",
+      "asset_id": "CVE-2026-134667",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1349,13 +1349,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB before 4.0.0 contains an incorrect authorization vulnerability in filter_fields_by_permission that allows authenticated record users to read denied child field values. Attackers can query rows where overlapping items[*] and items[*].secret permissions compact arrays, causing shifted elements to retain field values denied by SELECT permissions.",
-      "last_modified": "2026-11-21T16:35:02Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134306"
+      "description": "GPAC MP4Box through 26.07.0 contains a stack-based buffer overflow vulnerability in xmt_resolve_od_links() that allows attackers to corrupt stack memory via over-long object descriptor URL fragments. Attackers can craft an XMT scene file whose URL fragment overflows the fixed 5000-byte szURL buffer via sprintf, crashing MP4Box when a user loads it.",
+      "last_modified": "2026-11-22T02:02:55Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134667"
     },
     {
-      "cve_id": "CVE-2026-134307",
-      "asset_id": "CVE-2026-134307",
+      "cve_id": "CVE-2026-134668",
+      "asset_id": "CVE-2026-134668",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1368,13 +1368,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains a permission bypass vulnerability that allows authenticated low-privilege database users to read restricted records by calling the GET /export endpoint. Attackers can export raw records that skip table SELECT predicates and field-level SELECT permissions, exposing other users' rows and hidden fields.",
-      "last_modified": "2026-11-21T16:35:01Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134307"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in the XMT scene loader that allows attackers to corrupt heap memory when xmt_node_end() discards an out-of-scope node without resetting command-buffer state. Attackers can supply a crafted XMT file that leaves parser->command_buffer and parser->command dangling, causing later parsing to access freed memory and crash MP4Box.",
+      "last_modified": "2026-11-22T02:02:54Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134668"
     },
     {
-      "cve_id": "CVE-2026-134309",
-      "asset_id": "CVE-2026-134309",
+      "cve_id": "CVE-2026-134669",
+      "asset_id": "CVE-2026-134669",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1387,13 +1387,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB 1.0.0 before 4.0.0 contains an authorization bypass vulnerability that allows authenticated users to shadow protected $access, $auth, and $token variables by binding them as FOR loop variables. Attackers can wrap queries in nested FOR loops with forged values to satisfy table permission predicates, enabling unauthorized reads, modifications, or deletions as a VIEWER.",
-      "last_modified": "2026-11-21T16:35:00Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134309"
+      "description": "GPAC MP4Box through 26.07.0 contains a heap-based buffer over-read vulnerability in gf_xml_sax_peek_node() in src/utils/xml_parser.c that lets attackers read past the heap line buffer. Attackers can craft an XMT file whose ROUTE or command references a later-defined node, crashing MP4Box when a user imports it.",
+      "last_modified": "2026-11-22T02:02:53Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134669"
     },
     {
-      "cve_id": "CVE-2026-134310",
-      "asset_id": "CVE-2026-134310",
+      "cve_id": "CVE-2026-134670",
+      "asset_id": "CVE-2026-134670",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1406,13 +1406,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "SurrealDB from 3.2.0 before 3.3.4 contains an authorization bypass vulnerability that allows record users to update protected rows by exploiting table-level PERMISSIONS FOR update predicates referencing COMPUTED fields. Because check_update_permissions evaluates the predicate before computed fields are populated, the field reads as NONE and deny-intended predicates like blocked != true pass, letting attackers modify records.",
-      "last_modified": "2026-11-21T16:34:59Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134310"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in xmt_node_end() in src/scene_manager/loader_xmt.c that writes to freed heap memory when replacing single-node field commands. Attackers can persuade users to process a crafted XMT file where a Conditional node owning the command is unregistered, corrupting heap memory and crashing MP4Box.",
+      "last_modified": "2026-11-22T02:02:51Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134670"
     },
     {
-      "cve_id": "CVE-2026-134311",
-      "asset_id": "CVE-2026-134311",
+      "cve_id": "CVE-2026-134671",
+      "asset_id": "CVE-2026-134671",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1425,13 +1425,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "better-auth 1.3.0 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains an incorrect authorization vulnerability in the admin plugin's /admin/update-user endpoint that lets roles holding user:update change another user's phoneNumber and phoneNumberVerified fields. Attackers can set their own verified phone number on a higher-privileged account and sign in via phone OTP to take it over.",
-      "last_modified": "2026-11-21T16:34:58Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134311"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in the XMT-A scene loader that allows attackers to corrupt heap memory via crafted XMT files. Attackers can persuade a user to process an XMT file whose discarded out-of-scope nodes cause gf_node_unregister() to dereference a freed child, crashing the process.",
+      "last_modified": "2026-11-22T02:02:49Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134671"
     },
     {
-      "cve_id": "CVE-2026-134312",
-      "asset_id": "CVE-2026-134312",
+      "cve_id": "CVE-2026-134672",
+      "asset_id": "CVE-2026-134672",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1444,13 +1444,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Better Auth 0.4.9 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains an OAuth sign-in authentication flaw that treats unverified provider emails as verified, including string \"false\" email_verified claims, unchecked generic OAuth profile/ID-token subject mismatches, and ignored Zoom provider options. Attackers holding a victim's address unverified at an affected provider can sign in, link to the victim's local account, and obtain its session.",
-      "last_modified": "2026-11-21T16:34:57Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134312"
+      "description": "GPAC MP4Box through 26.07.0 contains an uncontrolled recursion vulnerability in xmt_discard_subtree() in src/scene_manager/loader_xmt.c that allows attackers to exhaust the call stack. Attackers can persuade a user to process a crafted XMT file with deeply nested discarded SFNode and MFNode fields to crash MP4Box.",
+      "last_modified": "2026-11-22T02:02:47Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134672"
     },
     {
-      "cve_id": "CVE-2026-134313",
-      "asset_id": "CVE-2026-134313",
+      "cve_id": "CVE-2026-134673",
+      "asset_id": "CVE-2026-134673",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1463,13 +1463,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Better Auth (better-auth, @better-auth/kysely-adapter, and @better-auth/drizzle-adapter) before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains a race condition with MySQL or MariaDB serial IDs because the inserted row's ID is read via a separate LAST_INSERT_ID() query that may run on a different pooled connection. Under concurrent load, a user signing in can receive another user's session and act as that user.",
-      "last_modified": "2026-11-21T16:34:55Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134313"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in xmt_resolve_od_links() in loader_xmt.c that allows attackers to read freed heap memory via stale strstr() pointers. Attackers can persuade users to process a crafted XMT file whose MFURL field contains an entry without a URL string, causing sprintf() to read freed memory and crash the process.",
+      "last_modified": "2026-11-22T02:02:46Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134673"
     },
     {
-      "cve_id": "CVE-2026-134314",
-      "asset_id": "CVE-2026-134314",
+      "cve_id": "CVE-2026-134674",
+      "asset_id": "CVE-2026-134674",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1482,13 +1482,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "better-auth 1.3.7 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains a race condition in the emailOTP plugin attempt counter, collision-prone email change code keys, and accent-insensitive email lookups. Unauthenticated attackers can send concurrent guesses exceeding allowedAttempts to brute-force OTPs and sign in or reset passwords, signed-in users can verify addresses they do not own, and attackers receiving mail at accent-variant addresses can reset victims' passwords.",
-      "last_modified": "2026-11-21T16:34:54Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134314"
+      "description": "Freedit before 0.9.9 contains an authorization bypass vulnerability in the post_lock, post_hide, post_pin and comment_hide handlers that allows inn moderators to act on content from other inns. Attackers can supply their own inn id with a foreign post or comment id to lock or hide content instance-wide, or pin private posts to expose titles.",
+      "last_modified": "2026-11-22T02:02:45Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134674"
     },
     {
-      "cve_id": "CVE-2026-134315",
-      "asset_id": "CVE-2026-134315",
+      "cve_id": "CVE-2026-134675",
+      "asset_id": "CVE-2026-134675",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1501,13 +1501,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "better-auth 1.4.0 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains an improper authentication vulnerability because email-change links record the old and new addresses but not the requesting user. Attackers can open a still-valid link issued for their own account after a victim registers the attacker's released old address, gaining a session and changing the victim's email to one they control.",
-      "last_modified": "2026-11-21T16:34:53Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134315"
+      "description": "Servas before 1.2.0 contains a missing authorization vulnerability that allows authenticated users to modify and delete other users' data by supplying target resource ids. Attackers can abuse TagController update and destroy, LinkController destroy, and GroupController destroy actions to rename or delete tags and delete links and groups.",
+      "last_modified": "2026-11-22T02:02:43Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134675"
     },
     {
-      "cve_id": "CVE-2026-134316",
-      "asset_id": "CVE-2026-134316",
+      "cve_id": "CVE-2026-134676",
+      "asset_id": "CVE-2026-134676",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1520,13 +1520,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@better-auth/electron 1.5.0-beta.12 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 accepts any validly signed value as its transfer cookie and returns the full endpoint context, including the auth secret and social provider client secrets, in sign-in responses. Authenticated users can obtain these secrets to forge sessions as other users. Attackers knowing a password can exchange desktop authorization codes issued before two-factor verification to bypass the second factor.",
-      "last_modified": "2026-11-21T16:34:52Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134316"
+      "description": "GPAC MP4Box through 26.07.0 contains a heap use-after-free vulnerability in gf_odm_disconnect() in src/compositor/object_manager.c caused by a deferred scene_ns_remove_object task holding a raw object manager pointer. Attackers can supply a crafted XMT scene whose commands delete a Background2D node, freeing the object manager early to crash the process and corrupt heap memory.",
+      "last_modified": "2026-11-22T02:02:41Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134676"
     },
     {
-      "cve_id": "CVE-2026-134317",
-      "asset_id": "CVE-2026-134317",
+      "cve_id": "CVE-2026-134677",
+      "asset_id": "CVE-2026-134677",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1539,13 +1539,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@better-auth/stripe 1.2.0-beta.18 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains an authorization bypass vulnerability because the stripeCustomerId user field accepts values from sign-up and update-user requests, letting a user replace their own Stripe customer ID with another customer's. Attackers who know another customer's Stripe ID can open that customer's billing portal to view invoices and billing details, change payment methods, and cancel or modify subscriptions.",
-      "last_modified": "2026-11-21T16:34:51Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134317"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in the XMT scene loader that allows attackers to access freed heap memory via stale object descriptor links. Attackers can supply a crafted XMT scene where xmt_node_end() frees a subtree containing InputSensor MFURL fields, causing xmt_resolve_od_links() to read freed memory and crash MP4Box.",
+      "last_modified": "2026-11-22T02:02:39Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134677"
     },
     {
-      "cve_id": "CVE-2026-134318",
-      "asset_id": "CVE-2026-134318",
+      "cve_id": "CVE-2026-134678",
+      "asset_id": "CVE-2026-134678",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1558,13 +1558,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "better-auth 1.5.5 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains a privilege escalation vulnerability in the organization plugin, where the creator role check compares the raw invitation role string while later checks trim it. Admins or other non-creator roles that can invite can submit a padded role such as \" owner\" that becomes owner on acceptance, allowing deletion of the organization and removal of original owners.",
-      "last_modified": "2026-11-21T16:34:50Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134318"
+      "description": "Freedit before 0.9.9 contains an authorization bypass vulnerability in the edit_post_post handler for POST /post/edit/:pid that skips ownership and status checks when a Private inn is submitted. Members of a Private inn can overwrite any post by sequential id, including moderator-locked posts, re-attributing it to themselves and destroying original content.",
+      "last_modified": "2026-11-22T02:02:38Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134678"
     },
     {
-      "cve_id": "CVE-2026-134320",
-      "asset_id": "CVE-2026-134320",
+      "cve_id": "CVE-2026-134679",
+      "asset_id": "CVE-2026-134679",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1577,13 +1577,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "@better-auth/passkey 1.4.0-beta.16 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5, and the passkey plugin in better-auth 1.2.0-beta.18 before 1.4.0, do not confirm WebAuthn user verification when userVerification is \"required\" and take the expected origin from the request instead of configuration. Users can register or use passkeys without the required PIN or biometric check, and passkey responses created on another origin under the same relying party ID may be accepted.",
-      "last_modified": "2026-11-21T16:34:49Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134320"
+      "description": "WeddingShare through 1.8.2 contains a missing authorization vulnerability in the anonymous MediaViewerController.GalleryItem action that allows unauthenticated attackers to retrieve item upload paths without the gallery secret key. Attackers can enumerate sequential integer item ids to learn paths and uploader names, then download photos and videos from key-protected galleries served as static files.",
+      "last_modified": "2026-11-22T02:02:36Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134679"
     },
     {
-      "cve_id": "CVE-2026-134321",
-      "asset_id": "CVE-2026-134321",
+      "cve_id": "CVE-2026-134680",
+      "asset_id": "CVE-2026-134680",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1596,13 +1596,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "better-auth from 0.8.1-beta.5 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5, and @better-auth/passkey from 1.6.25 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5, let revoked sessions stay valid because secondary storage session lists are updated non-atomically and some routes trust cookie-cached sessions. An attacker holding a valid session can evade bulk revocation or bans, or use a revoked cached session to register a passkey or create a lasting session.",
-      "last_modified": "2026-11-21T16:34:48Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134321"
+      "description": "GPAC MP4Box through 26.07.0 contains a NULL pointer dereference vulnerability in TraverseForm() in src/compositor/mpeg4_form.c due to an off-by-one groupsIndex bounds check. Attackers can supply a crafted XMT scene with a Form node having constraints but an empty groupsIndex field to crash MP4Box, causing denial of service.",
+      "last_modified": "2026-11-22T02:02:35Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134680"
     },
     {
-      "cve_id": "CVE-2026-134322",
-      "asset_id": "CVE-2026-134322",
+      "cve_id": "CVE-2026-134681",
+      "asset_id": "CVE-2026-134681",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1615,13 +1615,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "better-auth 0.4.12-beta.7 before 1.7.16 and 1.8.0-beta.0 before 1.8.0-beta.5 contains an improper authentication vulnerability in the phone number plugin that lets sign-up and other flows save unverified phone numbers, which phone OTP sign-in then uses to select the account. Attackers can attach a victim's number to an attacker-controlled account so the victim's valid OTP sign-in yields a session for that account, exposing data the victim then enters.",
-      "last_modified": "2026-11-21T16:34:47Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134322"
+      "description": "GPAC MP4Box through 26.07.0 contains an uncontrolled recursion vulnerability in gf_sg_proto_instantiate() in src/scenegraph/vrml_proto.c that lacks cycle detection or depth limits. Attackers can craft an XMT scene whose PROTO body instantiates itself directly or indirectly, exhausting the stack and crashing MP4Box when imported.",
+      "last_modified": "2026-11-22T02:02:33Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134681"
     },
     {
-      "cve_id": "CVE-2026-134324",
-      "asset_id": "CVE-2026-134324",
+      "cve_id": "CVE-2026-134682",
+      "asset_id": "CVE-2026-134682",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1634,13 +1634,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB 26.3.1 before 26.11.1 contains a read-only bypass vulnerability that allows server administrators to commit writes through the MCP read-only query tool by submitting Groovy-fallback Gremlin scripts. GremlinQueryEngine.analyze() evaluates scripts like Graph API addVertex calls on the auto or groovy engine and classifies them as READ, persisting writes the read-only restriction should refuse.",
-      "last_modified": "2026-11-21T16:34:46Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134324"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in scene graph teardown that allows attackers to trigger access to freed memory via crafted scene files. A node shared across multiple PROTO node_code lists is freed by gf_sg_reset(), and gf_sg_proto_del() then calls gf_node_unregister() on the dangling pointer, crashing MP4Box.",
+      "last_modified": "2026-11-22T02:02:31Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134682"
     },
     {
-      "cve_id": "CVE-2026-134325",
-      "asset_id": "CVE-2026-134325",
+      "cve_id": "CVE-2026-134683",
+      "asset_id": "CVE-2026-134683",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1653,13 +1653,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB before 26.11.1 contains a denial of service vulnerability in the Redis protocol handler, which neither replies to nor closes a pre-authentication connection when it receives an array whose first element is not a string. Unauthenticated attackers can resend such an array just within the 30-second socket idle timeout to hold connections open indefinitely and exhaust RedisNetworkExecutor threads.",
-      "last_modified": "2026-11-21T16:34:45Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134325"
+      "description": "GPAC MP4Box through 26.07.0 contains an uncontrolled recursion vulnerability in xmt_remove_od_links_recursive() in loader_xmt.c that lacks any depth limit when walking node children. Attackers can supply a crafted XMT file with deeply nested or cyclic node and SFCommandBuffer references to exhaust the stack and crash MP4Box on import.",
+      "last_modified": "2026-11-22T02:02:30Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134683"
     },
     {
-      "cve_id": "CVE-2026-134327",
-      "asset_id": "CVE-2026-134327",
+      "cve_id": "CVE-2026-134684",
+      "asset_id": "CVE-2026-134684",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1672,13 +1672,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB before 26.11.1 contains an authorization bypass vulnerability that allows authenticated users to read schema definitions of denied types through listings ignoring per-type ACLs. Attackers can query the PostgreSQL wire catalog, GraphQL introspection, or MCP get_schema to reveal property names, indexes, inheritance, and materialized view SQL.",
-      "last_modified": "2026-11-21T16:34:44Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134327"
+      "description": "GPAC MP4Box through 26.07.0 contains a heap use-after-free vulnerability in the XMT loader that leaves freed node URL fields in the pending object descriptor link list after SFNode replacement. Attackers can supply a crafted XMT scene that reassigns a single-node field, causing xmt_resolve_od_links() to read freed memory, crashing the process and potentially corrupting the heap.",
+      "last_modified": "2026-11-22T02:02:29Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134684"
     },
     {
-      "cve_id": "CVE-2026-134329",
-      "asset_id": "CVE-2026-134329",
+      "cve_id": "CVE-2026-134685",
+      "asset_id": "CVE-2026-134685",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1691,13 +1691,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB 26.2.1 before 26.11.1 contains an observable response discrepancy in MCPToolUtils.resolveDatabase, which checks database existence before authorization and returns distinct 'not authorized' and 'does not exist' errors; separately, a failed Bolt LOGON from READY leaves the previous principal bound after RESET. Authenticated MCP callers can enumerate names of databases they are not granted by probing tools such as query or get_schema.",
-      "last_modified": "2026-11-21T16:34:42Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134329"
+      "description": "GPAC MP4Box through 26.07.0 contains a heap use-after-free vulnerability in load_xmt_done() in src/scene_manager/loader_xmt.c that reads freed nodes during XMT parser teardown. Attackers can craft an XMT scene with a scene replace command that destroys PROTO sub-graphs, crashing MP4Box and potentially corrupting heap memory when opened.",
+      "last_modified": "2026-11-22T02:02:27Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134685"
     },
     {
-      "cve_id": "CVE-2026-134334",
-      "asset_id": "CVE-2026-134334",
+      "cve_id": "CVE-2026-134686",
+      "asset_id": "CVE-2026-134686",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1710,13 +1710,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB from 26.7.1 before 26.11.1 contains an information disclosure vulnerability because LSMTreeFullTextIndex computes BM25 corpus statistics over all buckets of the indexed type, ignoring bucket access control on subtypes. Authenticated users with read access to a supertype but not its subtype can run EXPLAIN or PROFILE on full-text queries and read totalDocs and per-term df values to count hidden subtype documents containing chosen terms.",
-      "last_modified": "2026-11-21T16:34:41Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134334"
+      "description": "GPAC MP4Box through 26.07.0 contains a type confusion vulnerability in gf_sg_command_apply() in src/scenegraph/commands.c that misinterprets single node values as child lists for MFNode field replace commands. Attackers can supply a crafted XMT scene that causes an invalid node pointer to be dereferenced by gf_node_register(), crashing MP4Box for denial of service.",
+      "last_modified": "2026-11-22T02:02:26Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134686"
     },
     {
-      "cve_id": "CVE-2026-134335",
-      "asset_id": "CVE-2026-134335",
+      "cve_id": "CVE-2026-134687",
+      "asset_id": "CVE-2026-134687",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1729,13 +1729,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB 21.10.1 before 26.11.1 contains a resource-limit bypass vulnerability that allows restricted users to evade per-group readTimeout because limits are applied to shared cached statements and plans. Attackers can run SQL text previously cached by an unrestricted principal to skip timeouts, or impose their own timeout and limit on root and other users.",
-      "last_modified": "2026-11-21T16:34:40Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134335"
+      "description": "GPAC MP4Box through 26.07.0 contains a NULL pointer dereference vulnerability in gf_sg_command_apply() in src/scenegraph/commands.c when handling MFNode field replace commands. Attackers can supply a crafted XMT scene with an MFNode field replace command lacking a node value to crash MP4Box, causing denial of service.",
+      "last_modified": "2026-11-22T02:02:24Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134687"
     },
     {
-      "cve_id": "CVE-2026-134337",
-      "asset_id": "CVE-2026-134337",
+      "cve_id": "CVE-2026-134688",
+      "asset_id": "CVE-2026-134688",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1748,13 +1748,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB native-image server builds 26.8.1 before 26.11.1 contain an authorization bypass vulnerability that allows authenticated clients to perform writes through read-only query paths by nesting statements in SELECT. Missing reflection metadata leaves SqlAstInspector with an empty AST, letting INSERT in projections or LET clauses persist via the query endpoint, MCP read-only mode, and HA follower routing.",
-      "last_modified": "2026-11-21T16:34:39Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134337"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in the BT/XMT context loader that frees an interaction-type decoder-specific descriptor even when UIConfig re-encoding fails. Attackers can supply a crafted XMT scene with a BIFSConfig descriptor, causing gf_odf_delete_descriptor() to reuse and free it again, crashing MP4Box and corrupting heap memory.",
+      "last_modified": "2026-11-22T02:02:22Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134688"
     },
     {
-      "cve_id": "CVE-2026-134338",
-      "asset_id": "CVE-2026-134338",
+      "cve_id": "CVE-2026-134689",
+      "asset_id": "CVE-2026-134689",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1767,13 +1767,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB 25.8.1 before 26.11.1 contains an incorrect authorization vulnerability because per-type ACLs are keyed by type name, renames are not propagated to the permission configuration, and requestAccessOnType allows unknown type names by default. Authenticated users holding only updateSchema can run ALTER TYPE NAME on a denied type to gain read, DELETE and TRUNCATE access, immediately for TIMESERIES types and after the next security rebuild for record-backed types.",
-      "last_modified": "2026-11-21T16:34:38Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134338"
+      "description": "GPAC MP4Box through 26.07.0 contains a NULL pointer dereference vulnerability in JSScript_LoadVRML() in src/scenegraph/vrml_js.c that reads unchecked script_text pointers of Script node url entries. Attackers can supply a crafted XMT scene loading a Script node whose url entry lacks script text, crashing MP4Box and causing denial of service.",
+      "last_modified": "2026-11-22T02:02:20Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134689"
     },
     {
-      "cve_id": "CVE-2026-134339",
-      "asset_id": "CVE-2026-134339",
+      "cve_id": "CVE-2026-134690",
+      "asset_id": "CVE-2026-134690",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1786,13 +1786,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "ArcadeDB from 26.11.1-SNAPSHOT before 26.11.1 contains an authorization bypass vulnerability that allows authenticated users to skip per-type ACL checks when a database is opened on demand. Attackers can send the first POST /api/v1/batch/{database} request to a closed database to read and write types they are not entitled to access.",
-      "last_modified": "2026-11-21T16:34:37Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134339"
+      "description": "GPAC MP4Box through 26.07.0 contains a NULL pointer dereference vulnerability that allows attackers to crash the application by supplying a crafted XMT scene. Attackers can modify InputSensor, Layout or EnvironmentTest nodes during parsing, triggering compositor handlers that read uninitialized private stacks and cause denial of service.",
+      "last_modified": "2026-11-22T02:02:18Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134690"
     },
     {
-      "cve_id": "CVE-2026-134341",
-      "asset_id": "CVE-2026-134341",
+      "cve_id": "CVE-2026-134691",
+      "asset_id": "CVE-2026-134691",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1805,13 +1805,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "actix-http 3.0.0 before 3.20.3 contains a denial of service vulnerability that allows unauthenticated remote attackers to exhaust memory by sending large-window brotli request bodies. Attackers can send an 850-byte body with Content-Encoding: br declaring a 2^30 window, forcing about 1 GiB of decoder allocation per request and OOM-killing servers.",
-      "last_modified": "2026-11-21T16:34:36Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134341"
+      "description": "GPAC MP4Box through 26.07.0 contains a heap use-after-free vulnerability in gf_event_target_get_node() because destroyed node event targets remain in media object lists. Attackers can supply a crafted XMT scene with nodes such as InputSensor to trigger freed memory reads during gf_scene_disconnect(), crashing the process or corrupting heap memory.",
+      "last_modified": "2026-11-22T02:02:16Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134691"
     },
     {
-      "cve_id": "CVE-2026-134342",
-      "asset_id": "CVE-2026-134342",
+      "cve_id": "CVE-2026-134692",
+      "asset_id": "CVE-2026-134692",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1824,13 +1824,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "actix-http 3.18.10 before 3.20.2 contains an HTTP request smuggling vulnerability in its chunked decoder, which treats a bare LF after the last chunk as the start of a trailer section. Attackers can send a body ending in 0\\r\\n\\n through a connection-reusing proxy so the next request's body is parsed as new requests, bypassing WAF or upstream protections.",
-      "last_modified": "2026-11-21T16:34:34Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134342"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability because xmt_find_node() in loader_xmt.c resolves DEF names without verifying the node belongs to the current scene graph. Attackers can craft an XMT scene reusing a PROTO node across graphs, causing gf_node_unregister() to read freed memory during teardown, crashing MP4Box and corrupting heap memory.",
+      "last_modified": "2026-11-22T02:02:14Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134692"
     },
     {
-      "cve_id": "CVE-2026-134347",
-      "asset_id": "CVE-2026-134347",
+      "cve_id": "CVE-2026-134693",
+      "asset_id": "CVE-2026-134693",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1843,13 +1843,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "actix-files before 0.7.4 contains an information disclosure vulnerability that allows remote unauthenticated attackers to read hidden files by requesting Windows 8.3 short-name aliases. Attackers can request short names like ENV~1 or GIT~1/config to bypass the leading-dot check in actix_files::Files and retrieve .env secrets and .git contents.",
-      "last_modified": "2026-11-21T16:34:33Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134347"
+      "description": "GPAC MP4Box through 26.07.0 contains a NULL pointer dereference vulnerability in gf_sg_proto_create_node() in src/scenegraph/vrml_proto.c when cloning PROTO instances. Attackers can craft an XMT scene declaring more PROTO interface fields than the cloned instance supplies, crashing MP4Box when a user opens the file.",
+      "last_modified": "2026-11-22T02:02:13Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134693"
     },
     {
-      "cve_id": "CVE-2026-134348",
-      "asset_id": "CVE-2026-134348",
+      "cve_id": "CVE-2026-134694",
+      "asset_id": "CVE-2026-134694",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1862,13 +1862,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Rclone from 1.56.0 before 1.76.0 contains a timing side-channel vulnerability in its htpasswd authentication middleware that allows unauthenticated attackers to enumerate valid usernames. Attackers can send HTTP Basic Auth requests with wrong passwords and measure response times, because bcrypt verification runs only for existing users, enabling targeted password guessing.",
-      "last_modified": "2026-11-21T16:34:32Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134348"
+      "description": "Gammapy through 2.1 contains a code injection vulnerability in WcsGeom.from_header() that passes the WCSSHAPE FITS header card to eval(). Attackers can supply a crafted .fits file with a Python expression in WCSSHAPE, executing code as the user who loads it via Map.read().",
+      "last_modified": "2026-11-22T02:02:11Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134694"
     },
     {
-      "cve_id": "CVE-2026-134349",
-      "asset_id": "CVE-2026-134349",
+      "cve_id": "CVE-2026-134695",
+      "asset_id": "CVE-2026-134695",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1881,13 +1881,13 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "Rclone from 1.46.0 before 1.76.0 contains a memory exhaustion vulnerability in the remote control server that allows unauthenticated clients to crash rclone by sending oversized JSON bodies. Attackers can POST large JSON payloads to protected RC methods, which handlePost decodes before authorization checks, triggering out-of-memory termination and interrupting transfers.",
-      "last_modified": "2026-11-21T16:34:31Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134349"
+      "description": "GPAC MP4Box through 26.07.0 contains an out-of-bounds read vulnerability in avi_parse_input_file() in src/media_tools/avilib.c that increments track counters before checking AVI_MAX_TRACKS. Attackers can supply a crafted AVI file declaring a ninth audio stream, causing AVI_audio_format and AVI_close() to access track[8] and crash the process.",
+      "last_modified": "2026-11-22T02:02:10Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134695"
     },
     {
-      "cve_id": "CVE-2026-134350",
-      "asset_id": "CVE-2026-134350",
+      "cve_id": "CVE-2026-134696",
+      "asset_id": "CVE-2026-134696",
       "asset_name": "OpenCVE catalog",
       "vendor": "",
       "product": "",
@@ -1900,9 +1900,9 @@
       "patch_available": false,
       "vendor_url": "",
       "source": "OpenCVE",
-      "description": "rclone 1.67.0 before 1.76.0 contains a credential leak vulnerability in the Ulozto backend that sends X-Auth-Token and X-User-Token headers to unintended hosts on HTTP redirect because downloads use the authenticated f.rest client instead of f.cdn. Attackers who can observe or redirect CDN download traffic can capture the long-lived API key and session token to gain persistent access to the victim's Ulozto storage.",
-      "last_modified": "2026-11-21T16:34:30Z",
-      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134350"
+      "description": "GPAC MP4Box through 26.07.0 contains a use-after-free vulnerability in gf_sg_proto_del that allows attackers to free PROTOs still owned by another scene command via the GF_SG_PROTO_DELETE handler. Attackers can craft an XMT scene that declares a PROTO in one command and deletes it by ID in another, crashing MP4Box and corrupting heap memory when opened.",
+      "last_modified": "2026-11-22T02:02:08Z",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134696"
     }
   ]
 }
